@@ -1,0 +1,17 @@
+entity Tenant;
+
+entity User {
+    tenant: Tenant,
+    roles: Set<String>,
+};
+
+entity Document {
+    tenant: Tenant,
+    owner: User,
+    public?: Bool,
+};
+
+action read appliesTo {
+    principal: [User],
+    resource: [Document],
+};

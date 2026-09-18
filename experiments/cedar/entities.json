@@ -1,0 +1,11 @@
+[
+  {"uid":{"type":"Tenant","id":"acme"},"attrs":{},"parents":[]},
+  {"uid":{"type":"Tenant","id":"globex"},"attrs":{},"parents":[]},
+  {"uid":{"type":"User","id":"alice"},"attrs":{"tenant":{"__entity":{"type":"Tenant","id":"acme"}},"roles":["reader"]},"parents":[]},
+  {"uid":{"type":"User","id":"bob"},"attrs":{"tenant":{"__entity":{"type":"Tenant","id":"globex"}},"roles":[]},"parents":[]},
+  {"uid":{"type":"User","id":"charlie"},"attrs":{"tenant":{"__entity":{"type":"Tenant","id":"acme"}},"roles":[]},"parents":[]},
+  {"uid":{"type":"Document","id":"public-acme"},"attrs":{"tenant":{"__entity":{"type":"Tenant","id":"acme"}},"owner":{"__entity":{"type":"User","id":"alice"}},"public":true},"parents":[]},
+  {"uid":{"type":"Document","id":"private-acme"},"attrs":{"tenant":{"__entity":{"type":"Tenant","id":"acme"}},"owner":{"__entity":{"type":"User","id":"alice"}},"public":false},"parents":[]},
+  {"uid":{"type":"Document","id":"private-globex"},"attrs":{"tenant":{"__entity":{"type":"Tenant","id":"globex"}},"owner":{"__entity":{"type":"User","id":"bob"}},"public":false},"parents":[]},
+  {"uid":{"type":"Document","id":"missing-public"},"attrs":{"tenant":{"__entity":{"type":"Tenant","id":"acme"}},"owner":{"__entity":{"type":"User","id":"alice"}}},"parents":[]}
+]

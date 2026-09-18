@@ -1,0 +1,488 @@
+{
+  "tool": "cedar-lean-cli",
+  "image": "kikkuli-cedar-lean-cli:acb0db7-slim",
+  "image_id": "sha256:9f8a1324cbf6d7c80ff5de21942f3e6b19417930f8085ccee8490ff2f56c43bf",
+  "versions": {
+    "cedar_spec": "acb0db7daa838249d894d2af64c850e1c9bf0d7d",
+    "cedar_dependency": "9502ae02564a23028c732f8c1f2311635394c34f",
+    "lean": "4.34.0",
+    "rust": "1.91.1",
+    "cvc5": "1.2.1"
+  },
+  "verifier_sha256": {
+    "README.md": "196828d72d169161cf8108fbca5cb5f7904e16c3ad40bbf3d681eb427e3f7e01",
+    "Dockerfile": "6a07d93e79d8ec020a9ffc6ccd0d84dbaa1f4c2c49c99f8904986ade603cd511",
+    "PROVENANCE.md": "b80e41bc509b8fd27e9b5f0947467f6bab09a31d2bc5136709bd05796c701325",
+    "prepare.py": "5b48e5c598fc18acd4a16349555a488da19ee04f25676368c594a196bb9eb31d",
+    "run.py": "3db1a1fa6eed13d0e4797c10a2aa20895111ab3ef9256b345fa996529c825fbd",
+    "test_run.py": "08e81e32f1ab61025596a646b6ecac5a62ae4818a3cf9c5acf0bf7afff38923c",
+    "locks/cedar-lean-ffi.Cargo.lock": "2884e45805ee185056f22007200bda0d74bfd92edb08357a059b4eaf97d14f84",
+    "locks/cedar-lean-cli.Cargo.lock": "369f7cb96fbbdce04ef06680def4caea64df798a266d0a6ec1ca0ac3a4ea9bdf"
+  },
+  "verifier_sha256_after": {
+    "README.md": "196828d72d169161cf8108fbca5cb5f7904e16c3ad40bbf3d681eb427e3f7e01",
+    "Dockerfile": "6a07d93e79d8ec020a9ffc6ccd0d84dbaa1f4c2c49c99f8904986ade603cd511",
+    "PROVENANCE.md": "b80e41bc509b8fd27e9b5f0947467f6bab09a31d2bc5136709bd05796c701325",
+    "prepare.py": "5b48e5c598fc18acd4a16349555a488da19ee04f25676368c594a196bb9eb31d",
+    "run.py": "3db1a1fa6eed13d0e4797c10a2aa20895111ab3ef9256b345fa996529c825fbd",
+    "test_run.py": "08e81e32f1ab61025596a646b6ecac5a62ae4818a3cf9c5acf0bf7afff38923c",
+    "locks/cedar-lean-ffi.Cargo.lock": "2884e45805ee185056f22007200bda0d74bfd92edb08357a059b4eaf97d14f84",
+    "locks/cedar-lean-cli.Cargo.lock": "369f7cb96fbbdce04ef06680def4caea64df798a266d0a6ec1ca0ac3a4ea9bdf"
+  },
+  "verifier_unchanged": true,
+  "fixture_sha256": {
+    "schema.cedarschema": "d95dcbc2774035c68f123a0303fe7478d718f395c24362b775580b94d76eb08e",
+    "envelope.cedar": "cc2211eebbe842bcbf8060c71301456f40107dbedfa09fc48fefa7388a1b5ec3",
+    "candidate.cedar": "bab6713f9ae94a5e7bea94c9c8cefe025e0cd053b7b97cbb7768d3da90023ea2",
+    "broken.cedar": "4e8abe4840462f7dd4c22d2a3547b06eb53dcef78a153f5b7152be4e1dcb12ec",
+    "deny-all.cedar": "6521ae4bc5e049172f48eef36184e4d8a5603f35ea689765d19e6a2e867e6111",
+    "entities.json": "87b7746abcdd81d33a5851bf173029d7ba1848331a11a4d19f9ceb14cb992c41",
+    "request-positive.json": "48b0046a01fd793b24b220dc31fda918dc5ce5798774eed00f41b2ee743d9be9",
+    "request-cross-tenant.json": "449cd8017a1724990e5104ef89d884f679044c7c434cdf17e3deec97e6d63ec3",
+    "request-missing-public.json": "bf80beb42eeb4d656dfaaba1c2641c901b3318a17a3a398c14511771d28e909c"
+  },
+  "timeout_semantics": "A wall-clock timeout is reported as unknown; no timeout was reclassified as proof.",
+  "results": [
+    {
+      "name": "container_start",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 638.3,
+      "stdout": "",
+      "stderr": "",
+      "semantic": "runtime"
+    },
+    {
+      "name": "validator_candidate",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 2735.4,
+      "stdout": "Policyset successfully validated",
+      "stderr": "",
+      "semantic": "runtime"
+    },
+    {
+      "name": "validator_broken",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 306.3,
+      "stdout": "Policyset successfully validated",
+      "stderr": "",
+      "semantic": "runtime"
+    },
+    {
+      "name": "validator_entities",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 226.3,
+      "stdout": "Entities successfully validated",
+      "stderr": "",
+      "semantic": "runtime"
+    },
+    {
+      "name": "smt_candidate_implies_envelope",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 241.8,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_broken_does_not_imply_envelope",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 275.5,
+      "stdout": "pset1 does not imply pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   | Does Not Imply |\n==============================================================",
+      "stderr": "",
+      "semantic": "counterexample"
+    },
+    {
+      "name": "smt_envelope_implies_candidate_availability",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 224.2,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_deny_all_implies_envelope_vacuously",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 274.4,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_envelope_does_not_imply_deny_all",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 274.0,
+      "stdout": "pset1 does not imply pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   | Does Not Imply |\n==============================================================",
+      "stderr": "",
+      "semantic": "counterexample"
+    },
+    {
+      "name": "replay_positive_access",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 247.3,
+      "stdout": "This request was allowed as it matched the following policies: policy1 policy2 policy3",
+      "stderr": "",
+      "semantic": "runtime"
+    },
+    {
+      "name": "replay_cross_tenant_candidate",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 274.0,
+      "stdout": "This request was denies as it matched the following policies: policy0",
+      "stderr": "",
+      "semantic": "runtime"
+    },
+    {
+      "name": "replay_cross_tenant_envelope",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 253.4,
+      "stdout": "This request was denies as it matched the following policies: policy0",
+      "stderr": "",
+      "semantic": "runtime"
+    },
+    {
+      "name": "replay_cross_tenant_broken",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 229.4,
+      "stdout": "This request was allowed as it matched the following policies: policy0",
+      "stderr": "",
+      "semantic": "runtime"
+    },
+    {
+      "name": "replay_missing_public",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 280.4,
+      "stdout": "This request was implicitly denied as this request matched no policies",
+      "stderr": "",
+      "semantic": "runtime"
+    },
+    {
+      "name": "replay_positive_deny_all",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 243.4,
+      "stdout": "This request was denies as it matched the following policies: policy0",
+      "stderr": "",
+      "semantic": "runtime"
+    },
+    {
+      "name": "smtlib_emission",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 316.9,
+      "stdout": ";;\n;; SMTLib encoding for RequestEnv (PrincipalType: User, ActionName: read, ResourceType: Document)\n;;\n(reset)\n(set-option :produce-models true)\n(set-logic ALL)\n(declare-datatype Option (par (X) (\n  (none)\n  (some (val X)))))\n; Tenant\n(declare-datatype E0 (\n  (E0 (E0_eid String))))\n; {roles, tenant}\n(declare-datatype R1 (\n  (R1 (R1_a0 (Set String)) (R1_a1 E0))))\n; User\n(declare-datatype E2 (\n  (E2 (E2_eid String))))\n; \"principal\"\n(declare-const t0 E2)\n; attrs[User]\n(declare-fun f0 (E2) R1)\n(define-fun t1 () R1 (f0 t0))\n(define-fun t2 () E0 (R1_a1 t1))\n; {owner, public, tenant}\n(declare-datatype R3 (\n  (R3 (R3_a0 E2) (R3_a1 (Option Bool)) (R3_a2 E0))))\n; Document\n(declare-datatype E4 (\n  (E4 (E4_eid String))))\n; \"resource\"\n(declare-const t3 E4)\n; attrs[Document]\n(declare-fun f1 (E4) R3)\n(define-fun t4 () R3 (f1 t3))\n(define-fun t5 () E0 (R3_a2 t4))\n(define-fun t6 () Bool (= t2 t5))\n(define-fun t7 () (Set String) (R1_a0 t1))\n(define-fun t8 () Bool (set.member \"reader\" t7))\n(define-fun t9 () Bool (and t6 t8))\n(define-fun t10 () E2 (R3_a0 t4))\n(define-fun t11 () Bool (= t0 t10))\n(define-fun t12 () Bool (and t6 t11))\n(define-fun t13 () (Option Bool) (R3_a1 t4))\n(define-fun t14 () (Option Bool) (as none (Option Bool)))\n(define-fun t15 () Bool (= t13 t14))\n(define-fun t16 () Bool (not t15))\n(define-fun t17 () Bool (and t6 t16))\n(define-fun t18 () (Option Bool) (some false))\n(define-fun t19 () (Option Bool) (ite t17 t13 t18))\n(define-fun t20 () (Option Bool) (some true))\n(define-fun t21 () Bool (= t19 t20))\n(define-fun t22 () Bool (or t12 t21))\n(define-fun t23 () Bool (or t9 t22))\n(define-fun t24 () Bool (and t23 t6))\n(define-fun t25 () Bool (not t24))\n(define-fun t26 () (Option Bool) (ite t16 t13 t18))\n(define-fun t27 () Bool (= t26 t14))\n(define-fun t28 () Bool (val t26))\n(define-fun t29 () Bool (or t28 t11))\n(define-fun t30 () (Option Bool) (some t29))\n(define-fun t31 () (Option Bool) (ite t27 t14 t30))\n(define-fun t32 () Bool (val t31))\n(define-fun t33 () Bool (or t32 t8))\n(define-fun t34 () (Option Bool) (some t33))\n(define-fun t35 () (Option Bool) (ite t27 t14 t34))\n(define-fun t36 () (Option Bool) (ite t6 t35 t18))\n(define-fun t37 () Bool (= t36 t20))\n(define-fun t38 () Bool (and t37 t6))\n(define-fun t39 () Bool (or t25 t38))\n(define-fun t40 () Bool (not t39))\n(assert true)\n(assert t40)\n(check-sat)",
+      "stderr": "",
+      "semantic": "runtime"
+    }
+  ],
+  "fixture_sha256_before": {
+    "schema.cedarschema": "d95dcbc2774035c68f123a0303fe7478d718f395c24362b775580b94d76eb08e",
+    "envelope.cedar": "cc2211eebbe842bcbf8060c71301456f40107dbedfa09fc48fefa7388a1b5ec3",
+    "candidate.cedar": "bab6713f9ae94a5e7bea94c9c8cefe025e0cd053b7b97cbb7768d3da90023ea2",
+    "broken.cedar": "4e8abe4840462f7dd4c22d2a3547b06eb53dcef78a153f5b7152be4e1dcb12ec",
+    "deny-all.cedar": "6521ae4bc5e049172f48eef36184e4d8a5603f35ea689765d19e6a2e867e6111",
+    "entities.json": "87b7746abcdd81d33a5851bf173029d7ba1848331a11a4d19f9ceb14cb992c41",
+    "request-positive.json": "48b0046a01fd793b24b220dc31fda918dc5ce5798774eed00f41b2ee743d9be9",
+    "request-cross-tenant.json": "449cd8017a1724990e5104ef89d884f679044c7c434cdf17e3deec97e6d63ec3",
+    "request-missing-public.json": "bf80beb42eeb4d656dfaaba1c2641c901b3318a17a3a398c14511771d28e909c"
+  },
+  "fixture_sha256_after": {
+    "schema.cedarschema": "d95dcbc2774035c68f123a0303fe7478d718f395c24362b775580b94d76eb08e",
+    "envelope.cedar": "cc2211eebbe842bcbf8060c71301456f40107dbedfa09fc48fefa7388a1b5ec3",
+    "candidate.cedar": "bab6713f9ae94a5e7bea94c9c8cefe025e0cd053b7b97cbb7768d3da90023ea2",
+    "broken.cedar": "4e8abe4840462f7dd4c22d2a3547b06eb53dcef78a153f5b7152be4e1dcb12ec",
+    "deny-all.cedar": "6521ae4bc5e049172f48eef36184e4d8a5603f35ea689765d19e6a2e867e6111",
+    "entities.json": "87b7746abcdd81d33a5851bf173029d7ba1848331a11a4d19f9ceb14cb992c41",
+    "request-positive.json": "48b0046a01fd793b24b220dc31fda918dc5ce5798774eed00f41b2ee743d9be9",
+    "request-cross-tenant.json": "449cd8017a1724990e5104ef89d884f679044c7c434cdf17e3deec97e6d63ec3",
+    "request-missing-public.json": "bf80beb42eeb4d656dfaaba1c2641c901b3318a17a3a398c14511771d28e909c"
+  },
+  "warm_candidate_implies": [
+    {
+      "name": "smt_warm_candidate_implies_1",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 265.7,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_2",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 1408.8,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_3",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 278.1,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_4",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 273.9,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_5",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 246.6,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_6",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 285.7,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_7",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 286.6,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_8",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 300.5,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_9",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 327.5,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_10",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 243.4,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_11",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 320.1,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_12",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 337.3,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_13",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 260.9,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_14",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 226.8,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_15",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 240.0,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_16",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 395.3,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_17",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 1020.6,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_18",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 1915.7,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_19",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 320.6,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_20",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 262.2,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_21",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 273.7,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_22",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 228.6,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_23",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 274.5,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_24",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 354.7,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_25",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 278.2,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_26",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 257.2,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_27",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 303.8,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_28",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 266.2,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_29",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 391.9,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    },
+    {
+      "name": "smt_warm_candidate_implies_30",
+      "status": "ok",
+      "exit_code": 0,
+      "elapsed_ms": 552.8,
+      "stdout": "pset1 implies pset2\n\nPer request signature results:\n==============================================================\n| PrincipalType | ActionName | ResourceType |     Result     |\n--------------------------------------------------------------\n|     User      |    read    |   Document   |    Implies     |\n==============================================================",
+      "stderr": "",
+      "semantic": "proved"
+    }
+  ],
+  "admission": "accept",
+  "assertions_passed": true,
+  "failures": []
+}
