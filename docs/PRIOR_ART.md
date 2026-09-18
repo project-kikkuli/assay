@@ -1,10 +1,12 @@
 # Public context and provenance
 
-All source in this repository is newly written for a synthetic experiment.
-No private source trees, production incidents, configurations, or datasets are
-inputs to the implementation or demonstration. The example domain is a generic
-leased job queue. Agent sessions were given only narrow synthetic tasks and
-explicitly scoped scratch directories; prior conversation was not forwarded.
+The experiments use newly written synthetic fixtures and explicitly identified
+public subjects: the MIT-licensed FastAPI full-stack template, Apache-2.0 marimo,
+and Apache-2.0 Cedar. The template repair patch derives from that public source;
+its license is retained beside the patch. Each experiment records its revision
+and toolchain. No private source, incidents, configuration, or datasets are
+included. Workers received only public or synthetic inputs in scoped scratch
+directories, without prior conversation.
 
 Public conceptual influences:
 

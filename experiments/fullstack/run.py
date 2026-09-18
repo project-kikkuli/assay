@@ -112,6 +112,15 @@ def junit_counts(path):
     return result
 
 
+def junit_costs(path):
+    if not path.exists():
+        return []
+    cases = ET.parse(path).getroot().iter("testcase")
+    observations = [{"test": case.get("classname", "") + "::" + case.get("name", ""),
+                     "seconds": float(case.get("time", "0"))} for case in cases]
+    return sorted(observations, key=lambda case: case["seconds"], reverse=True)[:12]
+
+
 def tree_identity(root):
     paths = subprocess.check_output(["git", "ls-files", "-z"], cwd=root).split(b"\0")
     digest = hashlib.sha256()
@@ -169,7 +178,7 @@ class Lab:
             counts = junit_counts(report)
             if result["status"] == "passed" and (counts["passed"] == 0 or counts["errors"] or counts["failed"]):
                 result["status"] = "unresolved"
-            return self.record(kind, result, candidate=label, tests=counts)
+            return self.record(kind, result, candidate=label, tests=counts, slowest_tests=junit_costs(report))
 
     def frontend(self, candidate, label="baseline", build=False):
         modules = self.subject / "node_modules"

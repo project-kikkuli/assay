@@ -1,122 +1,65 @@
 # Assay
 
-Which verification mechanisms find consequential defects, under what assumptions,
-and at what cost? Assay compares them using executable counterexamples and
-recorded measurements. A fast green result is not the same as sufficient evidence.
+Can a thirty-second decision provide enough evidence to merge a production change?
 
-## Start with the evidence
+This repo tests parts of that argument against real Python, TypeScript, PostgreSQL,
+browser, and authorization-policy implementations. It retains counterexamples and
+negative results. It is not a production CI replacement.
 
-| Experiment | What it establishes |
+Recorded laptop gates fit roughly 20–29 seconds; the stronger gate's first hosted
+run took 105.5 seconds and rejected a browser transport failure. Thirty seconds
+is not established across environments. [Local and hosted evidence](experiments/fullstack/results/).
+
+```sh
+./lab                 # read recorded evidence; no installation or execution
+./lab show gate
+./lab show policy
+./lab show isolation
+./lab show scale
+```
+
+## What to inspect
+
+| Question | Experiment |
 |---|---|
-| [API fault challenges](experiments/fullstack/) | A real Python/PostgreSQL API suite catches 3/8 seeded defects; seven added behavioral checks catch 7/8. The remaining defect is retained. |
-| [Cross-language boundaries](experiments/boundaries/) | Actual generated TypeScript, API responses, database state, and browser pagination disagree in the unmodified application. Three mismatches are reproduced in about five seconds locally. |
-| [Execution and replay](docs/RESULTS.md) | The dependency-free example below measures reuse, deterministic schedule replay, and SQL work. It does not establish production-scale verification. |
+| Can a whole small application be checked quickly? | [Full-stack gate](experiments/fullstack/): API and browser suites, independent behavior checks, both languages' type checkers, and a production build. No test selection or result cache. |
+| Are the tests asking the right questions? | [Blind faults](experiments/fullstack/HOLDOUT.md): a seeded signup-privilege defect survives both original suites. Added lifecycle requirements catch it. |
+| Where do language boundaries fail? | [Wire and browser probes](experiments/boundaries/): accepted TypeScript inputs, HTTP errors, persisted state, pagination, and a causally reproduced signup race. |
+| Can some safety properties be checked symbolically? | [Cedar](experiments/cedar/): real Lean/CVC5 policy implications, including a positive-access obligation that rejects deny-all. |
+| Can the database prevent a class of leaks? | [Tenant isolation](experiments/isolation/): real restricted roles, forged context and bypass counterexamples, constraints, and query plans at two scales. |
+| What happens after a crash or during deployment? | [Outbox](experiments/outbox/) and [rolling schemas](experiments/compatibility/): bounded schedules replayed against Python/TypeScript/PostgreSQL, old/new clients, stale backfill, and lock conflicts. |
+| Does the result survive a larger codebase? | [marimo](experiments/marimo/): 6,505 frontend tests take about 101 seconds. Narrow selection helps; broad dependency closures do not fit thirty seconds. |
 
-The full-stack subject is a small public template, not a production monorepo.
-These experiments do not yet establish a trustworthy merge gate, complete
-verification, or universally thirty-second CI.
+The [design argument](docs/verification.md) connects the measurements to primary
+research and identifies the assumptions that still need to hold in a real system.
+Each experiment keeps its runnable source, evidence, and limits together.
 
-## Dependency-free demo
+## Run it yourself
 
-Requires Python 3.11 or newer. Clone this repository and run:
-
-```sh
-./demo
-```
-
-The launcher selects an installed Python 3.11+ and does not install anything.
-The equivalent command is `python3 -m assay demo` with a supported interpreter.
-
-The command runs a cold verification, repeats it against its own fresh cache,
-demonstrates invalidation after a source change, explores generated queue
-schedules, catches an injected fencing bug, minimizes the counterexample, and
-compares two SQL algorithms with measured timing and VM work.
-
-It writes `out/report.md`, `out/report.json`, `out/trace.json`, and
-`out/counterexample.json`. Open the Markdown report for source-linked details.
-Load `out/trace.json` in [Perfetto](https://ui.perfetto.dev/) for the timing lanes.
-This is instrumented operation timing, **not** hardware instruction tracing.
-
-Dive into the evidence without leaving the terminal:
+For a fresh clone, install Docker, uv, and Node **22.12.0**, then:
 
 ```sh
-./demo inspect
-./demo inspect --task queue-contracts
-./demo inspect --scenario 2
-./demo inspect --benchmark 6
+./lab prepare
+./lab replay gate
+./lab replay isolation
+./lab replay outbox
+./lab replay compatibility
+./lab prepare --stop
 ```
 
-The scenario view shows each business event and exactly which persisted fields
-changed. The benchmark view shows SQL, the actual query plan, VM work, raw
-timing samples, and the source entry point.
+Preparation downloads pinned public dependencies and starts disposable local
+PostgreSQL/Mailpit services. It is separate from warm verification time.
+The local setup state stays in ignored `out/lab/`; occupied service ports are
+not silently reused. Linux may also need Playwright's Chromium system dependencies.
+Cedar needs its separately documented image build.
 
-Replay the failure, then the correct implementation:
+Public fixture code and package installation execute on the host: use a disposable
+development machine for unfamiliar candidates. See [trust boundaries](SECURITY.md).
+Hosted workflows preserve freshly generated artifacts, not copies of local results.
 
-```sh
-./demo replay out/counterexample.json --unsafe
-# Expected exit 1: the deliberately broken implementation violated the rule.
-./demo replay out/counterexample.json
-# Expected exit 0: the same stale completion is refused.
-```
+For the dependency-free queue/scheduler/SQL demo, run `./demo`, then
+`./demo inspect`. It includes event-by-event state changes, query plans, work
+counts, and a Perfetto trace; it is a smaller model, not a benchmark of the public
+applications above.
 
-The original schedule opens a database connection, leases a parcel job, advances
-virtual time to expiry, reconnects, leases again with the same worker name, and
-submits the old token. Owner identity alone is insufficient. The immutable lease
-token is the decision the human should inspect in
-[the completion predicate](examples/parcel/queue.py) and
-[the independent replay oracle](assay/scenarios.py).
-
-## Three experiments
-
-| Experiment | What it tests | What a human can inspect |
-|---|---|---|
-| Evidence-aware command runner | Correct invalidation and fail-closed orchestration | Task inputs, policy, dependency keys, commands, outputs, reuse reasons |
-| Real persistent queue + virtual schedules | Lease expiry, reconnection, and stale workers | Business invariant, ordered events, before/after rows, failing token, minimized schedule |
-| SQL algorithm comparison | Candidate-selection cost as queue size grows | Query text, indexes, query plans, measured VM steps, timing distributions |
-
-## Wrap an existing suite
-
-An `assay.json` file names obligations, not shell pipelines:
-
-```json
-{
-  "version": 1,
-  "tasks": [{
-    "id": "unit",
-    "command": ["{python}", "-m", "unittest", "discover", "-s", "tests"],
-    "timeout_s": 30
-  }]
-}
-```
-
-```sh
-./demo run assay.json
-./demo run assay.json
-./demo audit assay.json --repeat 3
-```
-
-Omitting `inputs` conservatively hashes non-generated project files. Explicit
-input globs allow narrower reuse but are a manually maintained dependency
-contract. Start with `--no-cache` or shadow comparison in another codebase.
-`audit` bypasses caching and preserves every execution; failure followed by pass
-remains rejected with an instability finding. No automatic retry-to-green.
-
-Exit codes: `0` verified obligations, `1` observed rejection, `2` unresolved
-evidence. A skipped dependent task is unresolved, never a successful substitute.
-
-## Inspect and challenge the design
-
-- [Design and report schema](docs/DESIGN.md)
-- [Measured results from independent hosted CI](docs/RESULTS.md)
-- [Adoption boundaries and next experiments](docs/ADOPTION.md)
-- [Public prior art and provenance](docs/PRIOR_ART.md)
-- [Security and trust assumptions](SECURITY.md)
-
-```sh
-./demo selftest
-./demo explore --seeds 100 --steps 80
-```
-
-The GitHub workflow independently runs the tests and demo on Python 3.11/3.12.
-Its artifacts contain the measurements from that runner, not copied local
-results. No model calls or paid services are needed to run the experiment.
+[Public provenance](docs/PRIOR_ART.md) · [Original runner design](docs/DESIGN.md)

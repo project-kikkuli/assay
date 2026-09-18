@@ -10,6 +10,11 @@ catch seven. An incorrect administrator count survives both. Existing TypeScript
 types accept every mutation. These are hand-selected challenges, not an estimate
 of escaped production defects. The added checks and initial faults share an
 author; further independent challenges are needed.
+The [blind challenge](HOLDOUT.md) supplies one: the added oracle catches only
+3/12 faults, and a seeded signup-privilege escalation survives both suites.
+Four additional lifecycle checks now traverse real signup/login rather than
+bypassing them during setup. Both surviving faults are caught by those checks;
+that is post-challenge strengthening, not blind evaluation.
 
 The [repair variant](repaired.patch) fixes the independently observed null-input,
 offset, pagination, and signup-ordering problems. Its measured warm gate runs
@@ -18,6 +23,15 @@ wire/UI claims, TypeScript, mypy (no incremental cache), ty, Ruff, and a product
 frontend build. Three complete runs took **19.52, 20.29, and 28.71 seconds**;
 [records](results/gate.json) retain every stage. This is a small application on a
 shared laptop—not a large-codebase or hosted-dispatch latency claim.
+
+The gate now also requires the four lifecycle checks. Its first independent
+[hosted run](results/gate-hosted-first.json) took **105.54 seconds** and was
+rejected: 60 browser tests passed, one setup request had a socket reset, and one
+dependent test did not run. Python checks and independent boundaries passed.
+[Preparation](results/setup-hosted-first.json) took another 51.38 seconds,
+excluding later browser system-library installation and hosted queue time.
+The earlier laptop gate and this hosted run differ in environment and scope;
+neither establishes universally thirty-second CI.
 
 ## Run
 
