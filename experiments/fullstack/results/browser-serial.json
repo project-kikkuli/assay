@@ -1,0 +1,150 @@
+{
+  "upstream": "https://github.com/fastapi/full-stack-fastapi-template",
+  "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+  "platform": {
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "source_sha256": "601ca704354bdc853b3773e479bc3c5587feda6be99c1f63ae5a06e48a8b5ab0",
+  "verifier_sha256": {
+    "faults.json": "dcb7387b731a1270fad5b85f039ca2f782f2cf3170d6ee081626081d8916a3b5",
+    "oracle_tests.py": "b2cb16a6b3df53548539b41bdeabeb353f6f62971658787171df4b8cf9568f9b",
+    "run.py": "d9884e3e1683ec4dbc88bc1d94ad0545dd20c6bee87de352816fe865999ebfdb",
+    "test_run.py": "8cff010bc2ef4e8436414aac0ae78ad5a7c1d66d9293f48e4d8739418f91589c"
+  },
+  "python": "Python 3.14.6",
+  "node": "v22.12.0",
+  "mode": "browser",
+  "records": [
+    {
+      "check": "build",
+      "candidate": "baseline",
+      "seconds": 1.4637154999945778,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "7e31a467dc59c84607241a18b6d89cc1283f30954dceed54a3701fe014b89e39",
+      "output_tail": "vite v8.2.0 building client environment for production...\n\u001b[2K\ntransforming...\u2713 2242 modules transformed.\nrendering chunks...\ncomputing gzip size...\n../backend/app/frontend/index.html                             0.88 kB \u2502 gzip:   0.41 kB\n../backend/app/frontend/assets/index-KejARnPh.css             62.12 kB \u2502 gzip:  11.19 kB\n../backend/app/frontend/assets/useRouter-Cc2uka0g.js           0.15 kB \u2502 gzip:   0.14 kB\n../backend/app/frontend/assets/_layout-Rw55ueYt.js             0.42 kB \u2502 gzip:   0.30 kB\n../backend/app/frontend/assets/AuthLayout-BNg96sSG.js          0.70 kB \u2502 gzip:   0.36 kB\n../backend/app/frontend/assets/recover-password-D3BAIPe_.js    1.64 kB \u2502 gzip:   0.82 kB\n../backend/app/frontend/assets/password-input-DMAMZ13k.js      1.94 kB \u2502 gzip:   0.98 kB\n../backend/app/frontend/assets/login-D9nFLFKd.js               2.11 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/reset-password-BdkuTsLb.js      2.28 kB \u2502 gzip:   0.97 kB\n../backend/app/frontend/assets/dialog-BbM_SUd2.js              2.47 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/signup-BYnr3sv5.js              2.72 kB \u2502 gzip:   1.00 kB\n../backend/app/frontend/assets/_layout-CL0ty22d.js             6.42 kB \u2502 gzip:   2.63 kB\n../backend/app/frontend/assets/items-CuP8pgSa.js               8.89 kB \u2502 gzip:   2.71 kB\n../backend/app/frontend/assets/settings-CtTHH79l.js           10.22 kB \u2502 gzip:   3.40 kB\n../backend/app/frontend/assets/useBaseQuery-CYd3-LAO.js       16.28 kB \u2502 gzip:   5.46 kB\n../backend/app/frontend/assets/admin-CsQTjpZS.js              17.05 kB \u2502 gzip:   4.78 kB\n../backend/app/frontend/assets/theme-provider-D1cxwilt.js     24.42 kB \u2502 gzip:   9.13 kB\n../backend/app/frontend/assets/Logo-CjO14sjy.js               27.94 kB \u2502 gzip:   9.43 kB\n../backend/app/frontend/assets/loading-button-Bekf7U_a.js     38.56 kB \u2502 gzip:  13.67 kB\n../backend/app/frontend/assets/dist-BHxai6C8.js               41.39 kB \u2502 gzip:  14.86 kB\n../backend/app/frontend/assets/dist-DTQHgA9A.js               47.10 kB \u2502 gzip:  15.79 kB\n../backend/app/frontend/assets/DataTable-2mck46pI.js          75.13 kB \u2502 gzip:  20.94 kB\n../backend/app/frontend/assets/useCustomToast-BcHfjxNI.js    114.09 kB \u2502 gzip:  37.23 kB\n../backend/app/frontend/assets/index-tBamrX9e.js             355.00 kB \u2502 gzip: 109.29 kB\n\n\u2713 built in 341ms\n"
+    },
+    {
+      "check": "migration",
+      "workers": 1,
+      "seconds": 0.40146870899479836,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "seed",
+      "workers": 1,
+      "seconds": 0.2957004999916535,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "4e5921b9dfe49b1ece465462c944645d6720db355281c2cea42bbd63681a4170",
+      "output_tail": "INFO:__main__:Creating initial data\nINFO:__main__:Initial data created\n"
+    },
+    {
+      "check": "browser",
+      "workers": 1,
+      "tests": {
+        "startTime": "2026-09-18T05:47:08.405Z",
+        "duration": 33902.2,
+        "expected": 62,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "failures": [],
+      "server_tail": "",
+      "seconds": 34.235962791979546,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "f1271952974c0442fe4b5f9b08d35dcf2d3f3f2da5925344b867dd7ba75c80a2",
+      "output_tail": "min user management \u203a Password must be at least 8 characters\n[11/62] [chromium] \u203a tests/admin.spec.ts:168:3 \u203a Admin user management \u203a Passwords must match\n[12/62] [chromium] \u203a tests/admin.spec.ts:185:3 \u203a Admin page access control \u203a Non-superuser cannot access admin page\n[13/62] [chromium] \u203a tests/admin.spec.ts:198:3 \u203a Admin page access control \u203a Superuser can access admin page\n[14/62] [chromium] \u203a tests/items.spec.ts:11:1 \u203a Items page is accessible and shows correct title\n[15/62] [chromium] \u203a tests/items.spec.ts:17:1 \u203a Add Item button is visible\n[16/62] [chromium] \u203a tests/items.spec.ts:121:3 \u203a Items empty state \u203a Shows empty state message when no items exist\n[17/62] [chromium] \u203a tests/items.spec.ts:37:3 \u203a Items management \u203a Create a new item successfully\n[18/62] [chromium] \u203a tests/items.spec.ts:50:3 \u203a Items management \u203a Create item with only required fields\n[19/62] [chromium] \u203a tests/items.spec.ts:61:3 \u203a Items management \u203a Cancel item creation\n[20/62] [chromium] \u203a tests/items.spec.ts:69:3 \u203a Items management \u203a Title is required\n[21/62] [chromium] \u203a tests/items.spec.ts:90:5 \u203a Items management \u203a Edit and Delete \u203a Edit an item successfully\n[22/62] [chromium] \u203a tests/items.spec.ts:103:5 \u203a Items management \u203a Edit and Delete \u203a Delete an item successfully\n[23/62] [chromium] \u203a tests/login.spec.ts:19:1 \u203a Inputs are visible, empty and editable\n[24/62] [chromium] \u203a tests/login.spec.ts:26:1 \u203a Log In button is visible\n[25/62] [chromium] \u203a tests/login.spec.ts:32:1 \u203a Forgot Password link is visible\n[26/62] [chromium] \u203a tests/login.spec.ts:40:1 \u203a Log in with valid email and password \n[27/62] [chromium] \u203a tests/login.spec.ts:53:1 \u203a Log in with invalid email\n[28/62] [chromium] \u203a tests/login.spec.ts:62:1 \u203a Log in with invalid password\n[29/62] [chromium] \u203a tests/login.spec.ts:72:1 \u203a Successful log out\n[30/62] [chromium] \u203a tests/login.spec.ts:89:1 \u203a Logged-out user cannot access protected routes\n[31/62] [chromium] \u203a tests/login.spec.ts:109:1 \u203a Redirects to /login when token is wrong\n[32/62] [chromium] \u203a tests/reset-password.spec.ts:10:1 \u203a Password Recovery title is visible\n[33/62] [chromium] \u203a tests/reset-password.spec.ts:18:1 \u203a Input is visible, empty and editable\n[34/62] [chromium] \u203a tests/reset-password.spec.ts:26:1 \u203a Continue button is visible\n[35/62] [chromium] \u203a tests/reset-password.spec.ts:32:1 \u203a User can reset password successfully using the link\n[36/62] [chromium] \u203a tests/reset-password.spec.ts:70:1 \u203a Expired or invalid reset link\n[37/62] [chromium] \u203a tests/reset-password.spec.ts:83:1 \u203a Weak new password validation\n[38/62] [chromium] \u203a tests/sign-up.spec.ts:27:1 \u203a Inputs are visible, empty and editable\n[39/62] [chromium] \u203a tests/sign-up.spec.ts:36:1 \u203a Sign Up button is visible\n[40/62] [chromium] \u203a tests/sign-up.spec.ts:42:1 \u203a Log In link is visible\n[41/62] [chromium] \u203a tests/sign-up.spec.ts:48:1 \u203a Sign up with valid name, email, and password\n[42/62] [chromium] \u203a tests/sign-up.spec.ts:58:1 \u203a Sign up with invalid email\n[43/62] [chromium] \u203a tests/sign-up.spec.ts:73:1 \u203a Sign up with existing email\n[44/62] [chromium] \u203a tests/sign-up.spec.ts:94:1 \u203a Sign up with weak password\n[45/62] [chromium] \u203a tests/sign-up.spec.ts:109:1 \u203a Sign up with mismatched passwords\n[46/62] [chromium] \u203a tests/sign-up.spec.ts:123:1 \u203a Sign up with missing full name\n[47/62] [chromium] \u203a tests/sign-up.spec.ts:136:1 \u203a Sign up with missing email\n[48/62] [chromium] \u203a tests/sign-up.spec.ts:149:1 \u203a Sign up with missing password\n[49/62] [chromium] \u203a tests/user-settings.spec.ts:9:1 \u203a My profile tab is active by default\n[50/62] [chromium] \u203a tests/user-settings.spec.ts:17:1 \u203a All tabs are visible\n[51/62] [chromium] \u203a tests/user-settings.spec.ts:68:3 \u203a Edit user email \u203a Edit user email with a valid email\n[52/62] [chromium] \u203a tests/user-settings.spec.ts:92:3 \u203a Cancel edit actions \u203a Cancel edit action restores original name\n[53/62] [chromium] \u203a tests/user-settings.spec.ts:109:3 \u203a Cancel edit actions \u203a Cancel edit action restores original email\n[54/62] [chromium] \u203a tests/user-settings.spec.ts:130:3 \u203a Change password \u203a Update password successfully\n[55/62] [chromium] \u203a tests/user-settings.spec.ts:205:1 \u203a Appearance button is visible in sidebar\n[56/62] [chromium] \u203a tests/user-settings.spec.ts:210:1 \u203a User can switch between theme modes\n[57/62] [chromium] \u203a tests/user-settings.spec.ts:224:1 \u203a Selected mode is preserved across sessions\n[58/62] [chromium] \u203a tests/user-settings.spec.ts:41:3 \u203a Edit user profile \u203a Edit user name with a valid name\n[59/62] [chromium] \u203a tests/user-settings.spec.ts:54:3 \u203a Edit user profile \u203a Edit user email with an invalid email shows error\n[60/62] [chromium] \u203a tests/user-settings.spec.ts:169:3 \u203a Change password validation \u203a Update password with weak passwords\n[61/62] [chromium] \u203a tests/user-settings.spec.ts:182:3 \u203a Change password validation \u203a New password and confirmation password do not match\n[62/62] [chromium] \u203a tests/user-settings.spec.ts:193:3 \u203a Change password validation \u203a Current password and new password are the same\n  62 passed (33.9s)\n"
+    },
+    {
+      "check": "migration",
+      "workers": 1,
+      "seconds": 0.3959150829759892,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "seed",
+      "workers": 1,
+      "seconds": 0.3007070829917211,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "4e5921b9dfe49b1ece465462c944645d6720db355281c2cea42bbd63681a4170",
+      "output_tail": "INFO:__main__:Creating initial data\nINFO:__main__:Initial data created\n"
+    },
+    {
+      "check": "browser",
+      "workers": 1,
+      "tests": {
+        "startTime": "2026-09-18T05:47:43.986Z",
+        "duration": 32803.523,
+        "expected": 62,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "failures": [],
+      "server_tail": "",
+      "seconds": 33.093579707987374,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "aabb08f577d9816534f1016fa8e76b852a3c2c4e11186f068f7ff1fe4bbd3941",
+      "output_tail": "min user management \u203a Password must be at least 8 characters\n[11/62] [chromium] \u203a tests/admin.spec.ts:168:3 \u203a Admin user management \u203a Passwords must match\n[12/62] [chromium] \u203a tests/admin.spec.ts:185:3 \u203a Admin page access control \u203a Non-superuser cannot access admin page\n[13/62] [chromium] \u203a tests/admin.spec.ts:198:3 \u203a Admin page access control \u203a Superuser can access admin page\n[14/62] [chromium] \u203a tests/items.spec.ts:11:1 \u203a Items page is accessible and shows correct title\n[15/62] [chromium] \u203a tests/items.spec.ts:17:1 \u203a Add Item button is visible\n[16/62] [chromium] \u203a tests/items.spec.ts:121:3 \u203a Items empty state \u203a Shows empty state message when no items exist\n[17/62] [chromium] \u203a tests/items.spec.ts:37:3 \u203a Items management \u203a Create a new item successfully\n[18/62] [chromium] \u203a tests/items.spec.ts:50:3 \u203a Items management \u203a Create item with only required fields\n[19/62] [chromium] \u203a tests/items.spec.ts:61:3 \u203a Items management \u203a Cancel item creation\n[20/62] [chromium] \u203a tests/items.spec.ts:69:3 \u203a Items management \u203a Title is required\n[21/62] [chromium] \u203a tests/items.spec.ts:90:5 \u203a Items management \u203a Edit and Delete \u203a Edit an item successfully\n[22/62] [chromium] \u203a tests/items.spec.ts:103:5 \u203a Items management \u203a Edit and Delete \u203a Delete an item successfully\n[23/62] [chromium] \u203a tests/login.spec.ts:19:1 \u203a Inputs are visible, empty and editable\n[24/62] [chromium] \u203a tests/login.spec.ts:26:1 \u203a Log In button is visible\n[25/62] [chromium] \u203a tests/login.spec.ts:32:1 \u203a Forgot Password link is visible\n[26/62] [chromium] \u203a tests/login.spec.ts:40:1 \u203a Log in with valid email and password \n[27/62] [chromium] \u203a tests/login.spec.ts:53:1 \u203a Log in with invalid email\n[28/62] [chromium] \u203a tests/login.spec.ts:62:1 \u203a Log in with invalid password\n[29/62] [chromium] \u203a tests/login.spec.ts:72:1 \u203a Successful log out\n[30/62] [chromium] \u203a tests/login.spec.ts:89:1 \u203a Logged-out user cannot access protected routes\n[31/62] [chromium] \u203a tests/login.spec.ts:109:1 \u203a Redirects to /login when token is wrong\n[32/62] [chromium] \u203a tests/reset-password.spec.ts:10:1 \u203a Password Recovery title is visible\n[33/62] [chromium] \u203a tests/reset-password.spec.ts:18:1 \u203a Input is visible, empty and editable\n[34/62] [chromium] \u203a tests/reset-password.spec.ts:26:1 \u203a Continue button is visible\n[35/62] [chromium] \u203a tests/reset-password.spec.ts:32:1 \u203a User can reset password successfully using the link\n[36/62] [chromium] \u203a tests/reset-password.spec.ts:70:1 \u203a Expired or invalid reset link\n[37/62] [chromium] \u203a tests/reset-password.spec.ts:83:1 \u203a Weak new password validation\n[38/62] [chromium] \u203a tests/sign-up.spec.ts:27:1 \u203a Inputs are visible, empty and editable\n[39/62] [chromium] \u203a tests/sign-up.spec.ts:36:1 \u203a Sign Up button is visible\n[40/62] [chromium] \u203a tests/sign-up.spec.ts:42:1 \u203a Log In link is visible\n[41/62] [chromium] \u203a tests/sign-up.spec.ts:48:1 \u203a Sign up with valid name, email, and password\n[42/62] [chromium] \u203a tests/sign-up.spec.ts:58:1 \u203a Sign up with invalid email\n[43/62] [chromium] \u203a tests/sign-up.spec.ts:73:1 \u203a Sign up with existing email\n[44/62] [chromium] \u203a tests/sign-up.spec.ts:94:1 \u203a Sign up with weak password\n[45/62] [chromium] \u203a tests/sign-up.spec.ts:109:1 \u203a Sign up with mismatched passwords\n[46/62] [chromium] \u203a tests/sign-up.spec.ts:123:1 \u203a Sign up with missing full name\n[47/62] [chromium] \u203a tests/sign-up.spec.ts:136:1 \u203a Sign up with missing email\n[48/62] [chromium] \u203a tests/sign-up.spec.ts:149:1 \u203a Sign up with missing password\n[49/62] [chromium] \u203a tests/user-settings.spec.ts:9:1 \u203a My profile tab is active by default\n[50/62] [chromium] \u203a tests/user-settings.spec.ts:17:1 \u203a All tabs are visible\n[51/62] [chromium] \u203a tests/user-settings.spec.ts:68:3 \u203a Edit user email \u203a Edit user email with a valid email\n[52/62] [chromium] \u203a tests/user-settings.spec.ts:92:3 \u203a Cancel edit actions \u203a Cancel edit action restores original name\n[53/62] [chromium] \u203a tests/user-settings.spec.ts:109:3 \u203a Cancel edit actions \u203a Cancel edit action restores original email\n[54/62] [chromium] \u203a tests/user-settings.spec.ts:130:3 \u203a Change password \u203a Update password successfully\n[55/62] [chromium] \u203a tests/user-settings.spec.ts:205:1 \u203a Appearance button is visible in sidebar\n[56/62] [chromium] \u203a tests/user-settings.spec.ts:210:1 \u203a User can switch between theme modes\n[57/62] [chromium] \u203a tests/user-settings.spec.ts:224:1 \u203a Selected mode is preserved across sessions\n[58/62] [chromium] \u203a tests/user-settings.spec.ts:41:3 \u203a Edit user profile \u203a Edit user name with a valid name\n[59/62] [chromium] \u203a tests/user-settings.spec.ts:54:3 \u203a Edit user profile \u203a Edit user email with an invalid email shows error\n[60/62] [chromium] \u203a tests/user-settings.spec.ts:169:3 \u203a Change password validation \u203a Update password with weak passwords\n[61/62] [chromium] \u203a tests/user-settings.spec.ts:182:3 \u203a Change password validation \u203a New password and confirmation password do not match\n[62/62] [chromium] \u203a tests/user-settings.spec.ts:193:3 \u203a Change password validation \u203a Current password and new password are the same\n  62 passed (32.8s)\n"
+    },
+    {
+      "check": "migration",
+      "workers": 1,
+      "seconds": 0.4304517910059076,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "seed",
+      "workers": 1,
+      "seconds": 0.2986842920072377,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "4e5921b9dfe49b1ece465462c944645d6720db355281c2cea42bbd63681a4170",
+      "output_tail": "INFO:__main__:Creating initial data\nINFO:__main__:Initial data created\n"
+    },
+    {
+      "check": "browser",
+      "workers": 1,
+      "tests": {
+        "startTime": "2026-09-18T05:48:18.838Z",
+        "duration": 35918.445,
+        "expected": 62,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "failures": [],
+      "server_tail": "",
+      "seconds": 36.48211816701223,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "33931c665ca7c37da828b4fc73d99a9a77c585debda02cdafb2157cfa0b3f4ca",
+      "output_tail": "min user management \u203a Password must be at least 8 characters\n[11/62] [chromium] \u203a tests/admin.spec.ts:168:3 \u203a Admin user management \u203a Passwords must match\n[12/62] [chromium] \u203a tests/admin.spec.ts:185:3 \u203a Admin page access control \u203a Non-superuser cannot access admin page\n[13/62] [chromium] \u203a tests/admin.spec.ts:198:3 \u203a Admin page access control \u203a Superuser can access admin page\n[14/62] [chromium] \u203a tests/items.spec.ts:11:1 \u203a Items page is accessible and shows correct title\n[15/62] [chromium] \u203a tests/items.spec.ts:17:1 \u203a Add Item button is visible\n[16/62] [chromium] \u203a tests/items.spec.ts:121:3 \u203a Items empty state \u203a Shows empty state message when no items exist\n[17/62] [chromium] \u203a tests/items.spec.ts:37:3 \u203a Items management \u203a Create a new item successfully\n[18/62] [chromium] \u203a tests/items.spec.ts:50:3 \u203a Items management \u203a Create item with only required fields\n[19/62] [chromium] \u203a tests/items.spec.ts:61:3 \u203a Items management \u203a Cancel item creation\n[20/62] [chromium] \u203a tests/items.spec.ts:69:3 \u203a Items management \u203a Title is required\n[21/62] [chromium] \u203a tests/items.spec.ts:90:5 \u203a Items management \u203a Edit and Delete \u203a Edit an item successfully\n[22/62] [chromium] \u203a tests/items.spec.ts:103:5 \u203a Items management \u203a Edit and Delete \u203a Delete an item successfully\n[23/62] [chromium] \u203a tests/login.spec.ts:19:1 \u203a Inputs are visible, empty and editable\n[24/62] [chromium] \u203a tests/login.spec.ts:26:1 \u203a Log In button is visible\n[25/62] [chromium] \u203a tests/login.spec.ts:32:1 \u203a Forgot Password link is visible\n[26/62] [chromium] \u203a tests/login.spec.ts:40:1 \u203a Log in with valid email and password \n[27/62] [chromium] \u203a tests/login.spec.ts:53:1 \u203a Log in with invalid email\n[28/62] [chromium] \u203a tests/login.spec.ts:62:1 \u203a Log in with invalid password\n[29/62] [chromium] \u203a tests/login.spec.ts:72:1 \u203a Successful log out\n[30/62] [chromium] \u203a tests/login.spec.ts:89:1 \u203a Logged-out user cannot access protected routes\n[31/62] [chromium] \u203a tests/login.spec.ts:109:1 \u203a Redirects to /login when token is wrong\n[32/62] [chromium] \u203a tests/reset-password.spec.ts:10:1 \u203a Password Recovery title is visible\n[33/62] [chromium] \u203a tests/reset-password.spec.ts:18:1 \u203a Input is visible, empty and editable\n[34/62] [chromium] \u203a tests/reset-password.spec.ts:26:1 \u203a Continue button is visible\n[35/62] [chromium] \u203a tests/reset-password.spec.ts:32:1 \u203a User can reset password successfully using the link\n[36/62] [chromium] \u203a tests/reset-password.spec.ts:70:1 \u203a Expired or invalid reset link\n[37/62] [chromium] \u203a tests/reset-password.spec.ts:83:1 \u203a Weak new password validation\n[38/62] [chromium] \u203a tests/sign-up.spec.ts:27:1 \u203a Inputs are visible, empty and editable\n[39/62] [chromium] \u203a tests/sign-up.spec.ts:36:1 \u203a Sign Up button is visible\n[40/62] [chromium] \u203a tests/sign-up.spec.ts:42:1 \u203a Log In link is visible\n[41/62] [chromium] \u203a tests/sign-up.spec.ts:48:1 \u203a Sign up with valid name, email, and password\n[42/62] [chromium] \u203a tests/sign-up.spec.ts:58:1 \u203a Sign up with invalid email\n[43/62] [chromium] \u203a tests/sign-up.spec.ts:73:1 \u203a Sign up with existing email\n[44/62] [chromium] \u203a tests/sign-up.spec.ts:94:1 \u203a Sign up with weak password\n[45/62] [chromium] \u203a tests/sign-up.spec.ts:109:1 \u203a Sign up with mismatched passwords\n[46/62] [chromium] \u203a tests/sign-up.spec.ts:123:1 \u203a Sign up with missing full name\n[47/62] [chromium] \u203a tests/sign-up.spec.ts:136:1 \u203a Sign up with missing email\n[48/62] [chromium] \u203a tests/sign-up.spec.ts:149:1 \u203a Sign up with missing password\n[49/62] [chromium] \u203a tests/user-settings.spec.ts:9:1 \u203a My profile tab is active by default\n[50/62] [chromium] \u203a tests/user-settings.spec.ts:17:1 \u203a All tabs are visible\n[51/62] [chromium] \u203a tests/user-settings.spec.ts:68:3 \u203a Edit user email \u203a Edit user email with a valid email\n[52/62] [chromium] \u203a tests/user-settings.spec.ts:92:3 \u203a Cancel edit actions \u203a Cancel edit action restores original name\n[53/62] [chromium] \u203a tests/user-settings.spec.ts:109:3 \u203a Cancel edit actions \u203a Cancel edit action restores original email\n[54/62] [chromium] \u203a tests/user-settings.spec.ts:130:3 \u203a Change password \u203a Update password successfully\n[55/62] [chromium] \u203a tests/user-settings.spec.ts:205:1 \u203a Appearance button is visible in sidebar\n[56/62] [chromium] \u203a tests/user-settings.spec.ts:210:1 \u203a User can switch between theme modes\n[57/62] [chromium] \u203a tests/user-settings.spec.ts:224:1 \u203a Selected mode is preserved across sessions\n[58/62] [chromium] \u203a tests/user-settings.spec.ts:41:3 \u203a Edit user profile \u203a Edit user name with a valid name\n[59/62] [chromium] \u203a tests/user-settings.spec.ts:54:3 \u203a Edit user profile \u203a Edit user email with an invalid email shows error\n[60/62] [chromium] \u203a tests/user-settings.spec.ts:169:3 \u203a Change password validation \u203a Update password with weak passwords\n[61/62] [chromium] \u203a tests/user-settings.spec.ts:182:3 \u203a Change password validation \u203a New password and confirmation password do not match\n[62/62] [chromium] \u203a tests/user-settings.spec.ts:193:3 \u203a Change password validation \u203a Current password and new password are the same\n  62 passed (35.9s)\n"
+    }
+  ],
+  "setup_included": false,
+  "limitations": [
+    "Small template, not a large production system",
+    "Host execution, not a sandbox",
+    "Cached dependencies; provisioning and hosted dispatch excluded",
+    "Hand-selected faults do not estimate production defect detection"
+  ],
+  "total_seconds": 111.03474308399018,
+  "source_unchanged": true,
+  "verifier_unchanged": true
+}

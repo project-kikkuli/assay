@@ -1,0 +1,143 @@
+{
+  "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+  "source_sha256": "601ca704354bdc853b3773e479bc3c5587feda6be99c1f63ae5a06e48a8b5ab0",
+  "steps": [
+    {
+      "check": "migration",
+      "seconds": 0.3608787080156617,
+      "exit_code": 0,
+      "status": "passed",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "seed",
+      "seconds": 0.27859216698561795,
+      "exit_code": 0,
+      "status": "passed",
+      "output_tail": "150 synthetic items; fixture token omitted"
+    },
+    {
+      "check": "typescript_contract",
+      "seconds": 0.5528557920188177,
+      "exit_code": 0,
+      "status": "passed",
+      "output_tail": ""
+    },
+    {
+      "check": "build",
+      "seconds": 1.035113124991767,
+      "exit_code": 0,
+      "status": "passed",
+      "output_tail": "12 kB \u2502 gzip:  11.19 kB\n../backend/app/frontend/assets/useRouter-Cc2uka0g.js           0.15 kB \u2502 gzip:   0.14 kB\n../backend/app/frontend/assets/_layout-Rw55ueYt.js             0.42 kB \u2502 gzip:   0.30 kB\n../backend/app/frontend/assets/AuthLayout-BNg96sSG.js          0.70 kB \u2502 gzip:   0.36 kB\n../backend/app/frontend/assets/recover-password-D3BAIPe_.js    1.64 kB \u2502 gzip:   0.82 kB\n../backend/app/frontend/assets/password-input-DMAMZ13k.js      1.94 kB \u2502 gzip:   0.98 kB\n../backend/app/frontend/assets/login-D9nFLFKd.js               2.11 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/reset-password-BdkuTsLb.js      2.28 kB \u2502 gzip:   0.97 kB\n../backend/app/frontend/assets/dialog-BbM_SUd2.js              2.47 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/signup-BYnr3sv5.js              2.72 kB \u2502 gzip:   1.00 kB\n../backend/app/frontend/assets/_layout-CL0ty22d.js             6.42 kB \u2502 gzip:   2.63 kB\n../backend/app/frontend/assets/items-CuP8pgSa.js               8.89 kB \u2502 gzip:   2.71 kB\n../backend/app/frontend/assets/settings-CtTHH79l.js           10.22 kB \u2502 gzip:   3.40 kB\n../backend/app/frontend/assets/useBaseQuery-CYd3-LAO.js       16.28 kB \u2502 gzip:   5.46 kB\n../backend/app/frontend/assets/admin-CsQTjpZS.js              17.05 kB \u2502 gzip:   4.78 kB\n../backend/app/frontend/assets/theme-provider-D1cxwilt.js     24.42 kB \u2502 gzip:   9.13 kB\n../backend/app/frontend/assets/Logo-CjO14sjy.js               27.94 kB \u2502 gzip:   9.43 kB\n../backend/app/frontend/assets/loading-button-Bekf7U_a.js     38.56 kB \u2502 gzip:  13.67 kB\n../backend/app/frontend/assets/dist-BHxai6C8.js               41.39 kB \u2502 gzip:  14.86 kB\n../backend/app/frontend/assets/dist-DTQHgA9A.js               47.10 kB \u2502 gzip:  15.79 kB\n../backend/app/frontend/assets/DataTable-2mck46pI.js          75.13 kB \u2502 gzip:  20.94 kB\n../backend/app/frontend/assets/useCustomToast-BcHfjxNI.js    114.09 kB \u2502 gzip:  37.23 kB\n../backend/app/frontend/assets/index-tBamrX9e.js             355.00 kB \u2502 gzip: 109.29 kB\n\n\u2713 built in 363ms\n"
+    },
+    {
+      "check": "wire_and_browser",
+      "seconds": 2.173364958987804,
+      "exit_code": 0,
+      "status": "passed",
+      "output_tail": "(node:56570) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n{\"null_update\":{\"generated_type_accepts\":true,\"http_status\":500,\"title_preserved\":true,\"expected_status_class\":\"4xx\"},\"negative_offset\":{\"http_status\":500,\"expected_status_class\":\"4xx\"},\"pagination\":{\"seeded\":150,\"api_total\":150,\"api_first_page\":100,\"api_second_page\":50,\"browser_pages\":10,\"browser_unique_titles\":100,\"all_items_reachable\":false,\"observed_pages\":[{\"count\":10,\"first\":\"<svg onload=\\\"globalThis.__assayInjected=true\\\"></svg>\",\"last\":\"fixture-140\"},{\"count\":10,\"first\":\"fixture-139\",\"last\":\"fixture-130\"},{\"count\":10,\"first\":\"fixture-129\",\"last\":\"fixture-120\"},{\"count\":10,\"first\":\"fixture-119\",\"last\":\"fixture-110\"},{\"count\":10,\"first\":\"fixture-109\",\"last\":\"fixture-100\"},{\"count\":10,\"first\":\"fixture-099\",\"last\":\"fixture-090\"},{\"count\":10,\"first\":\"fixture-089\",\"last\":\"fixture-080\"},{\"count\":10,\"first\":\"fixture-079\",\"last\":\"fixture-070\"},{\"count\":10,\"first\":\"fixture-069\",\"last\":\"fixture-060\"},{\"count\":10,\"first\":\"fixture-059\",\"last\":\"fixture-050\"}]},\"title_rendering\":{\"injected_script_executed\":false,\"safely_rendered\":true}}\n"
+    }
+  ],
+  "oracle_sha256": {
+    "run.py": "1b2fcaafdf434b6fe50af0dc12803a2f0e0af6af24c7bed353fd7063e312ad3c",
+    "probe.ts": "dacfc7b4b7b39a9baa8eb174093853cd2085f40b007cb04468031814158fc757",
+    "seed.py": "6ccc4b64aa51142c127b6e13244bc26e8e934caa2272cfcaaf3508281d07df42"
+  },
+  "expectations": [
+    "Invalid user input returns 4xx rather than 500",
+    "All 150 owned items are reachable through table pagination",
+    "Stored titles cannot execute JavaScript"
+  ],
+  "limits": [
+    "Explicit product expectations, not inferred specifications",
+    "One dataset and one browser engine",
+    "Authentication is supplied as a trusted fixture",
+    "Host execution; not sandboxed"
+  ],
+  "observations": {
+    "null_update": {
+      "generated_type_accepts": true,
+      "http_status": 500,
+      "title_preserved": true,
+      "expected_status_class": "4xx"
+    },
+    "negative_offset": {
+      "http_status": 500,
+      "expected_status_class": "4xx"
+    },
+    "pagination": {
+      "seeded": 150,
+      "api_total": 150,
+      "api_first_page": 100,
+      "api_second_page": 50,
+      "browser_pages": 10,
+      "browser_unique_titles": 100,
+      "all_items_reachable": false,
+      "observed_pages": [
+        {
+          "count": 10,
+          "first": "<svg onload=\"globalThis.__assayInjected=true\"></svg>",
+          "last": "fixture-140"
+        },
+        {
+          "count": 10,
+          "first": "fixture-139",
+          "last": "fixture-130"
+        },
+        {
+          "count": 10,
+          "first": "fixture-129",
+          "last": "fixture-120"
+        },
+        {
+          "count": 10,
+          "first": "fixture-119",
+          "last": "fixture-110"
+        },
+        {
+          "count": 10,
+          "first": "fixture-109",
+          "last": "fixture-100"
+        },
+        {
+          "count": 10,
+          "first": "fixture-099",
+          "last": "fixture-090"
+        },
+        {
+          "count": 10,
+          "first": "fixture-089",
+          "last": "fixture-080"
+        },
+        {
+          "count": 10,
+          "first": "fixture-079",
+          "last": "fixture-070"
+        },
+        {
+          "count": 10,
+          "first": "fixture-069",
+          "last": "fixture-060"
+        },
+        {
+          "count": 10,
+          "first": "fixture-059",
+          "last": "fixture-050"
+        }
+      ]
+    },
+    "title_rendering": {
+      "injected_script_executed": false,
+      "safely_rendered": true
+    }
+  },
+  "claims": {
+    "invalid_title_is_client_error": false,
+    "invalid_offset_is_client_error": false,
+    "all_owned_items_reachable": false,
+    "stored_title_does_not_execute": true
+  },
+  "application_verdict": "rejected",
+  "seconds": 5.15132566698594,
+  "source_unchanged": true
+}

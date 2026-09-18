@@ -212,8 +212,8 @@ class Lab:
                 port = probe.getsockname()[1]
             base = f"http://127.0.0.1:{port}"
             env = clean_env() | {"DATABASE_URL": database_url(dsn), "FRONTEND_HOST": base,
-                "PLAYWRIGHT_BASE_URL": base, "VITE_API_URL": base, "MAILPIT_HOST": "http://127.0.0.1:58026",
-                "SMTP_HOST": "127.0.0.1", "SMTP_PORT": "51026", "SMTP_TLS": "false", "EMAILS_FROM_EMAIL": "hello@example.com"}
+                "PLAYWRIGHT_BASE_URL": base, "VITE_API_URL": base, "MAILPIT_HOST": os.environ.get("ASSAY_MAIL_HTTP", "http://127.0.0.1:58027"),
+                "SMTP_HOST": "127.0.0.1", "SMTP_PORT": os.environ.get("ASSAY_MAIL_PORT", "51027"), "SMTP_TLS": "false", "EMAILS_FROM_EMAIL": "hello@example.com"}
             # Playwright needs its normal browser cache, but the tested app receives no host credentials.
             cache = Path.home() / ("Library/Caches/ms-playwright" if platform.system() == "Darwin" else ".cache/ms-playwright")
             env["PLAYWRIGHT_BROWSERS_PATH"] = str(cache)

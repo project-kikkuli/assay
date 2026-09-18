@@ -1,14 +1,22 @@
 # Assay
 
-A small experiment in fast, explainable verification for agent-first software.
-Wrap existing test commands, preserve reusable evidence, and turn a concurrent
-business failure into a deterministic counterexample a human can inspect.
+Which verification mechanisms find consequential defects, under what assumptions,
+and at what cost? Assay compares them using executable counterexamples and
+recorded measurements. A fast green result is not the same as sufficient evidence.
 
-**Research prototype.** Local cache reuse is advisory, not a trusted merge gate.
-The demo uses a new synthetic application with real SQLite persistence. No
-production-readiness or universal 30-second-CI claim is made.
+## Start with the evidence
 
-## Morning demo — no installation or services
+| Experiment | What it establishes |
+|---|---|
+| [API fault challenges](experiments/fullstack/) | A real Python/PostgreSQL API suite catches 3/8 seeded defects; seven added behavioral checks catch 7/8. The remaining defect is retained. |
+| [Cross-language boundaries](experiments/boundaries/) | Actual generated TypeScript, API responses, database state, and browser pagination disagree in the unmodified application. Three mismatches are reproduced in about five seconds locally. |
+| [Execution and replay](docs/RESULTS.md) | The dependency-free example below measures reuse, deterministic schedule replay, and SQL work. It does not establish production-scale verification. |
+
+The full-stack subject is a small public template, not a production monorepo.
+These experiments do not yet establish a trustworthy merge gate, complete
+verification, or universally thirty-second CI.
+
+## Dependency-free demo
 
 Requires Python 3.11 or newer. Clone this repository and run:
 

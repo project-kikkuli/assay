@@ -1,0 +1,191 @@
+{
+  "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+  "probe": "signup",
+  "source_sha256": "601ca704354bdc853b3773e479bc3c5587feda6be99c1f63ae5a06e48a8b5ab0",
+  "steps": [
+    {
+      "check": "migration",
+      "seconds": 0.3832680839987006,
+      "exit_code": 0,
+      "status": "passed",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "seed",
+      "seconds": 0.2601680829830002,
+      "exit_code": 0,
+      "status": "passed",
+      "output_tail": "150 synthetic items; fixture token omitted"
+    },
+    {
+      "check": "typescript_contract",
+      "seconds": 0.7507224160071928,
+      "exit_code": 0,
+      "status": "passed",
+      "output_tail": ""
+    },
+    {
+      "check": "build",
+      "seconds": 1.341301124979509,
+      "exit_code": 0,
+      "status": "passed",
+      "output_tail": "12 kB \u2502 gzip:  11.19 kB\n../backend/app/frontend/assets/useRouter-Cc2uka0g.js           0.15 kB \u2502 gzip:   0.14 kB\n../backend/app/frontend/assets/_layout-Rw55ueYt.js             0.42 kB \u2502 gzip:   0.30 kB\n../backend/app/frontend/assets/AuthLayout-BNg96sSG.js          0.70 kB \u2502 gzip:   0.36 kB\n../backend/app/frontend/assets/recover-password-D3BAIPe_.js    1.64 kB \u2502 gzip:   0.82 kB\n../backend/app/frontend/assets/password-input-DMAMZ13k.js      1.94 kB \u2502 gzip:   0.98 kB\n../backend/app/frontend/assets/login-D9nFLFKd.js               2.11 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/reset-password-BdkuTsLb.js      2.28 kB \u2502 gzip:   0.97 kB\n../backend/app/frontend/assets/dialog-BbM_SUd2.js              2.47 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/signup-BYnr3sv5.js              2.72 kB \u2502 gzip:   1.00 kB\n../backend/app/frontend/assets/_layout-CL0ty22d.js             6.42 kB \u2502 gzip:   2.63 kB\n../backend/app/frontend/assets/items-CuP8pgSa.js               8.89 kB \u2502 gzip:   2.71 kB\n../backend/app/frontend/assets/settings-CtTHH79l.js           10.22 kB \u2502 gzip:   3.40 kB\n../backend/app/frontend/assets/useBaseQuery-CYd3-LAO.js       16.28 kB \u2502 gzip:   5.46 kB\n../backend/app/frontend/assets/admin-CsQTjpZS.js              17.05 kB \u2502 gzip:   4.78 kB\n../backend/app/frontend/assets/theme-provider-D1cxwilt.js     24.42 kB \u2502 gzip:   9.13 kB\n../backend/app/frontend/assets/Logo-CjO14sjy.js               27.94 kB \u2502 gzip:   9.43 kB\n../backend/app/frontend/assets/loading-button-Bekf7U_a.js     38.56 kB \u2502 gzip:  13.67 kB\n../backend/app/frontend/assets/dist-BHxai6C8.js               41.39 kB \u2502 gzip:  14.86 kB\n../backend/app/frontend/assets/dist-DTQHgA9A.js               47.10 kB \u2502 gzip:  15.79 kB\n../backend/app/frontend/assets/DataTable-2mck46pI.js          75.13 kB \u2502 gzip:  20.94 kB\n../backend/app/frontend/assets/useCustomToast-BcHfjxNI.js    114.09 kB \u2502 gzip:  37.23 kB\n../backend/app/frontend/assets/index-tBamrX9e.js             355.00 kB \u2502 gzip: 109.29 kB\n\n\u2713 built in 317ms\n"
+    },
+    {
+      "check": "wire_and_browser",
+      "seconds": 1.9199829169956502,
+      "exit_code": 0,
+      "status": "passed",
+      "output_tail": "64038) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n{\"status\":\"counterexample_observed\",\"events\":[{\"seq\":0,\"case\":\"old\",\"event\":\"signup_request_held\"},{\"seq\":1,\"case\":\"old\",\"event\":\"clicked_signup\"},{\"seq\":2,\"case\":\"old\",\"event\":\"held_observed_before_schedule_action\"},{\"seq\":3,\"case\":\"old\",\"event\":\"forced_goto_done_path_/login_completed_before_release_false\"},{\"seq\":4,\"case\":\"old\",\"event\":\"before_release_api_login_ok_false\"},{\"seq\":5,\"case\":\"old\",\"event\":\"premature_recovery_status_200\"},{\"seq\":6,\"case\":\"old\",\"event\":\"gate_released_forwarding\"},{\"seq\":7,\"case\":\"old\",\"event\":\"forward_response_status_200\"},{\"seq\":8,\"case\":\"old\",\"event\":\"forward_fulfilled\"},{\"seq\":9,\"case\":\"old\",\"event\":\"release_settled\"},{\"seq\":10,\"case\":\"old\",\"event\":\"api_login_ok_true_status_200\"},{\"seq\":11,\"case\":\"fixed\",\"event\":\"signup_request_held\"},{\"seq\":12,\"case\":\"fixed\",\"event\":\"clicked_signup\"},{\"seq\":13,\"case\":\"fixed\",\"event\":\"still_on_signup_while_held_true\"},{\"seq\":14,\"case\":\"fixed\",\"event\":\"gate_released\"},{\"seq\":15,\"case\":\"fixed\",\"event\":\"gate_released_forwarding\"},{\"seq\":16,\"case\":\"fixed\",\"event\":\"forward_response_status_200\"},{\"seq\":17,\"case\":\"fixed\",\"event\":\"forward_fulfilled\"},{\"seq\":18,\"case\":\"fixed\",\"event\":\"app_driven_login_observed\"},{\"seq\":19,\"case\":\"fixed\",\"event\":\"awaited_success_true\"},{\"seq\":20,\"case\":\"fixed\",\"event\":\"api_login_ok_true_status_200\"}],\"old\":{\"returned_before_registration\":true,\"url_path_after_forced_goto\":\"/login\",\"request_status\":200,\"request_error\":null,\"actual_login\":true,\"login_before_release\":false,\"recovery_before_registration_status\":200},\"fixed\":{\"awaited_success\":true,\"request_status\":200,\"request_error\":null,\"actual_login\":true},\"note\":\"old helper (user.ts:15-16) reaches /login before held signup commits; fixed stays /signup until release then follows app-driven /login (useAuth.ts:32-34). Ordering cause only; no never-flaky claim.\"}\n"
+    }
+  ],
+  "oracle_sha256": {
+    "run.py": "bccfc64cc12ca5c9d3e678783bae444f283e783e61cb3cb3a61f6139a5843d4c",
+    "probe.ts": "dacfc7b4b7b39a9baa8eb174093853cd2085f40b007cb04468031814158fc757",
+    "seed.py": "6ccc4b64aa51142c127b6e13244bc26e8e934caa2272cfcaaf3508281d07df42",
+    "signup.mts": "60c7317b556c9cc038af1c8da3f3b26ca19fff7d03a09d0425f6c4c784429c8b"
+  },
+  "expectations": [
+    "Signup helper cannot return before registration succeeds",
+    "Application-driven navigation follows registration acknowledgement"
+  ],
+  "limits": [
+    "Explicit product expectations, not inferred specifications",
+    "One dataset and one browser engine",
+    "Authentication is supplied as a trusted fixture",
+    "Host execution; not sandboxed"
+  ],
+  "observations": {
+    "status": "counterexample_observed",
+    "events": [
+      {
+        "seq": 0,
+        "case": "old",
+        "event": "signup_request_held"
+      },
+      {
+        "seq": 1,
+        "case": "old",
+        "event": "clicked_signup"
+      },
+      {
+        "seq": 2,
+        "case": "old",
+        "event": "held_observed_before_schedule_action"
+      },
+      {
+        "seq": 3,
+        "case": "old",
+        "event": "forced_goto_done_path_/login_completed_before_release_false"
+      },
+      {
+        "seq": 4,
+        "case": "old",
+        "event": "before_release_api_login_ok_false"
+      },
+      {
+        "seq": 5,
+        "case": "old",
+        "event": "premature_recovery_status_200"
+      },
+      {
+        "seq": 6,
+        "case": "old",
+        "event": "gate_released_forwarding"
+      },
+      {
+        "seq": 7,
+        "case": "old",
+        "event": "forward_response_status_200"
+      },
+      {
+        "seq": 8,
+        "case": "old",
+        "event": "forward_fulfilled"
+      },
+      {
+        "seq": 9,
+        "case": "old",
+        "event": "release_settled"
+      },
+      {
+        "seq": 10,
+        "case": "old",
+        "event": "api_login_ok_true_status_200"
+      },
+      {
+        "seq": 11,
+        "case": "fixed",
+        "event": "signup_request_held"
+      },
+      {
+        "seq": 12,
+        "case": "fixed",
+        "event": "clicked_signup"
+      },
+      {
+        "seq": 13,
+        "case": "fixed",
+        "event": "still_on_signup_while_held_true"
+      },
+      {
+        "seq": 14,
+        "case": "fixed",
+        "event": "gate_released"
+      },
+      {
+        "seq": 15,
+        "case": "fixed",
+        "event": "gate_released_forwarding"
+      },
+      {
+        "seq": 16,
+        "case": "fixed",
+        "event": "forward_response_status_200"
+      },
+      {
+        "seq": 17,
+        "case": "fixed",
+        "event": "forward_fulfilled"
+      },
+      {
+        "seq": 18,
+        "case": "fixed",
+        "event": "app_driven_login_observed"
+      },
+      {
+        "seq": 19,
+        "case": "fixed",
+        "event": "awaited_success_true"
+      },
+      {
+        "seq": 20,
+        "case": "fixed",
+        "event": "api_login_ok_true_status_200"
+      }
+    ],
+    "old": {
+      "returned_before_registration": true,
+      "url_path_after_forced_goto": "/login",
+      "request_status": 200,
+      "request_error": null,
+      "actual_login": true,
+      "login_before_release": false,
+      "recovery_before_registration_status": 200
+    },
+    "fixed": {
+      "awaited_success": true,
+      "request_status": 200,
+      "request_error": null,
+      "actual_login": true
+    },
+    "note": "old helper (user.ts:15-16) reaches /login before held signup commits; fixed stays /signup until release then follows app-driven /login (useAuth.ts:32-34). Ordering cause only; no never-flaky claim."
+  },
+  "claims": {
+    "original_helper_waits_for_registration": false,
+    "fixed_helper_waits_for_registration": true
+  },
+  "application_verdict": "rejected",
+  "seconds": 5.434067833004519,
+  "source_unchanged": true
+}
