@@ -4,7 +4,10 @@ This is an independent, synthetic tooling experiment. Use only this repository
 and cited public sources. Do not import private code, data, traces, names, paths,
 credentials, or examples from any other project.
 
-Python 3.11+, standard library only. Use apply_patch for edits. Keep the
+The original runner uses Python 3.11+ and the standard library. New research
+experiments may use pinned polyglot dependencies and public upstream projects;
+record provenance, licenses, setup costs, and reproducible commands. Use
+apply_patch for edits. Keep the
 verification runner independent of the example application's business logic.
 Tests use unittest. No wall-clock sleeps in correctness tests. Timings are
 observations, not deterministic correctness assertions. Do not claim formal

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "F01-list-data-owner-filter",
+    "path": "backend/app/api/routes/items.py",
+    "before": "        statement = (\n            select(Item)\n            .where(Item.owner_id == current_user.id)\n            .order_by(col(Item.created_at).desc())\n            .offset(skip)\n            .limit(limit)\n        )\n        items = session.exec(statement).all()",
+    "after": "        statement = (\n            select(Item)\n            .order_by(col(Item.created_at).desc())\n            .offset(skip)\n            .limit(limit)\n        )\n        items = session.exec(statement).all()",
+    "claim": "Remove the non-superuser list data ownership predicate; the upstream tests do not list as a normal user, while REQ_SCOPE_002 must catch the leak."
+  },
+  {
+    "id": "F02-list-count-owner-filter",
+    "path": "backend/app/api/routes/items.py",
+    "before": "        count_statement = (\n            select(func.count())\n            .select_from(Item)\n            .where(Item.owner_id == current_user.id)\n        )\n        count = session.exec(count_statement).one()",
+    "after": "        count_statement = select(func.count()).select_from(Item)\n        count = session.exec(count_statement).one()",
+    "claim": "Count all items for a normal user; the upstream tests do not assert normal-user count visibility, while REQ_SCOPE_002 must catch it."
+  },
+  {
+    "id": "F03-single-item-read-auth",
+    "path": "backend/app/api/routes/items.py",
+    "before": "    if not item:\n        raise HTTPException(status_code=404, detail=\"Item not found\")\n    if not current_user.is_superuser and (item.owner_id != current_user.id):\n        raise HTTPException(status_code=403, detail=\"Not enough permissions\")\n    return item",
+    "after": "    if not item:\n        raise HTTPException(status_code=404, detail=\"Item not found\")\n    return item",
+    "claim": "Remove single-item read authorization; the upstream test_read_item_not_enough_permissions should catch this mutant."
+  },
+  {
+    "id": "F04-user-public-hashed-password-leak",
+    "path": "backend/app/models.py",
+    "before": "class UserPublic(UserBase):\n    id: uuid.UUID",
+    "after": "class UserPublic(UserBase):\n    hashed_password: str\n    id: uuid.UUID",
+    "claim": "Expose the stored password hash through the public response model; upstream tests assert presence but not absence of sensitive fields, while REQ_DATA_005 must catch it."
+  },
+  {
+    "id": "F05-superuser-count-off-by-one",
+    "path": "backend/app/api/routes/items.py",
+    "before": "        count = session.exec(count_statement).one()\n        statement = (\n            select(Item).order_by(col(Item.created_at).desc()).offset(skip).limit(limit)\n        )",
+    "after": "        count = session.exec(count_statement).one() + 1\n        statement = (\n            select(Item).order_by(col(Item.created_at).desc()).offset(skip).limit(limit)\n        )",
+    "claim": "Return an incorrect superuser-visible count. This is an intentional oracle blind spot: the current independent suite has no superuser paging/count requirement, so this mutation should survive until an admin-count oracle is added."
+  },
+  {
+    "id": "F06-title-empty-allowed",
+    "path": "backend/app/models.py",
+    "before": "class ItemBase(SQLModel):\n    title: str = Field(min_length=1, max_length=255)",
+    "after": "class ItemBase(SQLModel):\n    title: str = Field(max_length=255)",
+    "claim": "Drop the non-empty title constraint; upstream tests use only valid titles, while REQ_WRITE_007 must reject the invalid create and update without persistence."
+  },
+  {
+    "id": "F07-update-item-auth",
+    "path": "backend/app/api/routes/items.py",
+    "before": "    if not current_user.is_superuser and (item.owner_id != current_user.id):\n        raise HTTPException(status_code=403, detail=\"Not enough permissions\")\n    update_dict = item_in.model_dump(exclude_unset=True)",
+    "after": "    update_dict = item_in.model_dump(exclude_unset=True)",
+    "claim": "Remove update ownership enforcement; the upstream test_update_item_not_enough_permissions should catch this mutant."
+  },
+  {
+    "id": "F08-delete-item-auth",
+    "path": "backend/app/api/routes/items.py",
+    "before": "    if not current_user.is_superuser and (item.owner_id != current_user.id):\n        raise HTTPException(status_code=403, detail=\"Not enough permissions\")\n    session.delete(item)",
+    "after": "    session.delete(item)",
+    "claim": "Remove delete ownership enforcement; the upstream test_delete_item_not_enough_permissions should catch this mutant."
+  }
+]

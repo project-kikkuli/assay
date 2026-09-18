@@ -1,0 +1,635 @@
+{
+  "upstream": "https://github.com/fastapi/full-stack-fastapi-template",
+  "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+  "platform": {
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "source_sha256": "601ca704354bdc853b3773e479bc3c5587feda6be99c1f63ae5a06e48a8b5ab0",
+  "verifier_sha256": {
+    "faults.json": "dcb7387b731a1270fad5b85f039ca2f782f2cf3170d6ee081626081d8916a3b5",
+    "oracle_tests.py": "b2cb16a6b3df53548539b41bdeabeb353f6f62971658787171df4b8cf9568f9b",
+    "run.py": "2807de43c8b007c60b7287deef5c28fa73cb3fe3480461a23e18f0ad554537a6",
+    "test_run.py": "8cff010bc2ef4e8436414aac0ae78ad5a7c1d66d9293f48e4d8739418f91589c"
+  },
+  "python": "Python 3.14.6",
+  "node": "v22.12.0",
+  "mode": "faults",
+  "records": [
+    {
+      "check": "migration",
+      "candidate": "baseline",
+      "seconds": 1.1852563330030534,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "upstream",
+      "candidate": "baseline",
+      "tests": {
+        "collected": 58,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 58
+      },
+      "seconds": 8.448420875007287,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "f9ea166e90b43bb37c559a34f0509af3e7447fb5b0581535b15964029003e0f5",
+      "output_tail": "..........................................................               [100%]\n=============================== warnings summary ===============================\n../.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n58 passed, 1 warning in 6.34s\n"
+    },
+    {
+      "check": "migration",
+      "candidate": "baseline",
+      "seconds": 1.138525624992326,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "oracle",
+      "candidate": "baseline",
+      "tests": {
+        "collected": 7,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 7
+      },
+      "seconds": 2.4317552919965237,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "4e19ebc5da1ec282faf92f013e438569ef1a883725e8b5c3833ce47fe8c19b46",
+      "output_tail": ".......                                                                  [100%]\n=============================== warnings summary ===============================\n../.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n7 passed, 1 warning in 1.49s\n"
+    },
+    {
+      "check": "typecheck",
+      "candidate": "baseline",
+      "seconds": 3.1247386249888223,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    },
+    {
+      "check": "migration",
+      "candidate": "F01-list-data-owner-filter",
+      "seconds": 1.1938279589812737,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "upstream",
+      "candidate": "F01-list-data-owner-filter",
+      "tests": {
+        "collected": 58,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 58
+      },
+      "seconds": 7.141690374992322,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "ce7c50f3fe7f013c6cc6c4eaef5ae72d489592f4b1ab860a2d6763118052b023",
+      "output_tail": "..........................................................               [100%]\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n58 passed, 2 warnings in 5.12s\n"
+    },
+    {
+      "check": "migration",
+      "candidate": "F01-list-data-owner-filter",
+      "seconds": 0.906512624991592,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "oracle",
+      "candidate": "F01-list-data-owner-filter",
+      "tests": {
+        "collected": 7,
+        "failed": 2,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 5
+      },
+      "seconds": 2.729806916991947,
+      "exit_code": 1,
+      "status": "failed",
+      "output_sha256": "e1ca94f0d62143fa946fbbdacafe8a634d4ac7cf525becc0ff96828bd2dc04dc",
+      "output_tail": ".F...F.                                                                  [100%]\n=================================== FAILURES ===================================\n______________ test_REQ_SCOPE_002_list_and_count_are_owner_scoped ______________\n\nclient = <starlette.testclient.TestClient object at 0x10b490ec0>\nscenario = Scenario(alice_email='oracle-alice-b541b9f4a6474c5da92cab07d7990053@example.com', alice_id=UUID('49213198-166a-47c7-a6...ODk3MTA2MDgsInN1YiI6IjJkMmU2ODZkLWVhZWItNDliMy1hNTcxLTU5M2ZlZTE0MzliZSJ9.Yg5MiJASGFIktaD2zhofI655vSQYJ9E0CWjdnNLx7fM'})\n\n    def test_REQ_SCOPE_002_list_and_count_are_owner_scoped(\n        client: TestClient, scenario: Scenario\n    ) -> None:\n        alice_response = client.get(f\"{API}/items/\", headers=scenario.alice_headers)\n        bob_response = client.get(f\"{API}/items/\", headers=scenario.bob_headers)\n        assert alice_response.status_code == 200\n        assert bob_response.status_code == 200\n    \n        alice_body = alice_response.json()\n        bob_body = bob_response.json()\n>       assert {row[\"id\"] for row in alice_body[\"data\"]} == {\n            str(item_id) for item_id in scenario.alice_item_ids\n        }\nE       AssertionError: assert {'3b145f83-f0...82b6bff7808c'} == {'45515f76-28...82b6bff7808c'}\nE         \nE         Extra items in the left set:\nE         '3b145f83-f0bb-433e-be49-35d93bdcdf19'\nE         '4c260675-39b8-4bc5-a6fc-ff08565bfc06'\nE         Use -v to get more diff\n\n$SOURCE/oracle_tests.py:162: AssertionError\n________ test_REQ_PAGE_006_paging_is_complete_disjoint_and_count_stable ________\n\nclient = <starlette.testclient.TestClient object at 0x10b490ec0>\nscenario = Scenario(alice_email='oracle-alice-36f7893b3d584d77824af14e295646c8@example.com', alice_id=UUID('8f826e36-4e55-4ce3-9c...ODk3MTA2MDksInN1YiI6IjY1MzNiZmFlLTQ1YmEtNDRiOS05Y2I5LTcyNzFlNWMzYmIyZSJ9.v1CgsLb5dvspP41b_zsaUegNnDbmkYTYaHMDtnsRdto'})\n\n    def test_REQ_PAGE_006_paging_is_complete_disjoint_and_count_stable(\n        client: TestClient, scenario: Scenario\n    ) -> None:\n        full_response = client.get(\n            f\"{API}/items/?skip=0&limit=100\", headers=scenario.alice_headers\n        )\n        assert full_response.status_code == 200\n        expected_order = [row[\"id\"] for row in full_response.json()[\"data\"]]\n>       assert expected_order == [str(item_id) for item_id in reversed(scenario.alice_item_ids)]\nE       AssertionError: assert ['ef2691cd-cf...8aee1c9e2759'] == ['ef2691cd-cf...fcb819c0a373']\nE         \nE         At index 2 diff: '3abc9a1f-d47d-4b77-be1c-caa0c4c6da8d' != '67ccf466-aec7-4b01-9edd-fcb819c0a373'\nE         Left contains 2 more items, first extra item: '67ccf466-aec7-4b01-9edd-fcb819c0a373'\nE         Use -v to get more diff\n\n$SOURCE/oracle_tests.py:270: AssertionError\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED ../../../../../../../../..$SOURCE/oracle_tests.py::test_REQ_SCOPE_002_list_and_count_are_owner_scoped\nFAILED ../../../../../../../../..$SOURCE/oracle_tests.py::test_REQ_PAGE_006_paging_is_complete_disjoint_and_count_stable\n2 failed, 5 passed, 2 warnings in 2.08s\n"
+    },
+    {
+      "check": "typecheck",
+      "candidate": "F01-list-data-owner-filter",
+      "seconds": 2.809568833996309,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    },
+    {
+      "check": "migration",
+      "candidate": "F02-list-count-owner-filter",
+      "seconds": 1.219417499989504,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "upstream",
+      "candidate": "F02-list-count-owner-filter",
+      "tests": {
+        "collected": 58,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 58
+      },
+      "seconds": 4.29109008301748,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "2545d1928544ee6417d77ade82c3d8ecb91cf9b43f5d5a33339e5ad288b3d1c3",
+      "output_tail": "..........................................................               [100%]\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n58 passed, 2 warnings in 3.09s\n"
+    },
+    {
+      "check": "migration",
+      "candidate": "F02-list-count-owner-filter",
+      "seconds": 0.33542462499463,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "oracle",
+      "candidate": "F02-list-count-owner-filter",
+      "tests": {
+        "collected": 7,
+        "failed": 2,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 5
+      },
+      "seconds": 0.8493176670162939,
+      "exit_code": 1,
+      "status": "failed",
+      "output_sha256": "097b7ecb266e0ce230607ece08ff3cb04dca65ae5b3906ed61b0b2373fa02365",
+      "output_tail": ".F...F.                                                                  [100%]\n=================================== FAILURES ===================================\n______________ test_REQ_SCOPE_002_list_and_count_are_owner_scoped ______________\n\nclient = <starlette.testclient.TestClient object at 0x10aeccec0>\nscenario = Scenario(alice_email='oracle-alice-e0cdc5806eba4109930eba165a1a0c32@example.com', alice_id=UUID('10f2e292-d26d-49da-8d...ODk3MTA2MTgsInN1YiI6ImJiODg5NzZjLWUwYjctNGYzZC05ZGM0LTBiYWFlMjcwOWQ0MiJ9.7JXrFHwc6Yvfk7aRgt74MiBp56ZuAgYvAeTG5RC1lm8'})\n\n    def test_REQ_SCOPE_002_list_and_count_are_owner_scoped(\n        client: TestClient, scenario: Scenario\n    ) -> None:\n        alice_response = client.get(f\"{API}/items/\", headers=scenario.alice_headers)\n        bob_response = client.get(f\"{API}/items/\", headers=scenario.bob_headers)\n        assert alice_response.status_code == 200\n        assert bob_response.status_code == 200\n    \n        alice_body = alice_response.json()\n        bob_body = bob_response.json()\n        assert {row[\"id\"] for row in alice_body[\"data\"]} == {\n            str(item_id) for item_id in scenario.alice_item_ids\n        }\n        assert {row[\"id\"] for row in bob_body[\"data\"]} == {\n            str(item_id) for item_id in scenario.bob_item_ids\n        }\n        assert all(row[\"owner_id\"] == str(scenario.alice_id) for row in alice_body[\"data\"])\n        assert all(row[\"owner_id\"] == str(scenario.bob_id) for row in bob_body[\"data\"])\n>       assert alice_body[\"count\"] == len(alice_body[\"data\"]) == 3\nE       AssertionError: assert 5 == 3\nE        +  where 3 = len([{'title': 'alice-2', 'description': 'alice-description-2', 'id': 'a5d212d1-f968-4b02-9b87-7f38b039e698', 'owner_id': ...description-0', 'id': '65dce8c7-f771-48f7-8e4b-72bb3ec1afe7', 'owner_id': '10f2e292-d26d-49da-8d03-621c4944a67e', ...}])\n\n$SOURCE/oracle_tests.py:170: AssertionError\n________ test_REQ_PAGE_006_paging_is_complete_disjoint_and_count_stable ________\n\nclient = <starlette.testclient.TestClient object at 0x10aeccec0>\nscenario = Scenario(alice_email='oracle-alice-fc4ce5044d5945ad8046d3adcc3c8b12@example.com', alice_id=UUID('f68d4d2d-c6e8-4502-b1...ODk3MTA2MTgsInN1YiI6IjU1ZjM5M2UwLTM4ODItNDI4ZS1hOTUyLTA1NzAwN2IzYjE5NSJ9.iq8x6sfdfiZIDX-qaTIjJqIYwdDAWgHTlaGnNDZQaAw'})\n\n    def test_REQ_PAGE_006_paging_is_complete_disjoint_and_count_stable(\n        client: TestClient, scenario: Scenario\n    ) -> None:\n        full_response = client.get(\n            f\"{API}/items/?skip=0&limit=100\", headers=scenario.alice_headers\n        )\n        assert full_response.status_code == 200\n        expected_order = [row[\"id\"] for row in full_response.json()[\"data\"]]\n        assert expected_order == [str(item_id) for item_id in reversed(scenario.alice_item_ids)]\n    \n        pages: list[str] = []\n        for skip in range(4):\n            response = client.get(\n                f\"{API}/items/?skip={skip}&limit=1\", headers=scenario.alice_headers\n            )\n            assert response.status_code == 200\n            body = response.json()\n>           assert body[\"count\"] == 3\nE           assert 5 == 3\n\n$SOURCE/oracle_tests.py:279: AssertionError\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED ../../../../../../../../..$SOURCE/oracle_tests.py::test_REQ_SCOPE_002_list_and_count_are_owner_scoped\nFAILED ../../../../../../../../..$SOURCE/oracle_tests.py::test_REQ_PAGE_006_paging_is_complete_disjoint_and_count_stable\n2 failed, 5 passed, 2 warnings in 0.56s\n"
+    },
+    {
+      "check": "typecheck",
+      "candidate": "F02-list-count-owner-filter",
+      "seconds": 1.701580875000218,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    },
+    {
+      "check": "migration",
+      "candidate": "F03-single-item-read-auth",
+      "seconds": 0.3347555829968769,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "upstream",
+      "candidate": "F03-single-item-read-auth",
+      "tests": {
+        "collected": 58,
+        "failed": 1,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 57
+      },
+      "seconds": 3.565918000007514,
+      "exit_code": 1,
+      "status": "failed",
+      "output_sha256": "11b21ba8f8398d9a0e4b3491e20318334b24ece1df1c189439e0801ca0fd10f2",
+      "output_tail": "...F......................................................               [100%]\n=================================== FAILURES ===================================\n____________________ test_read_item_not_enough_permissions _____________________\n\nclient = <starlette.testclient.TestClient object at 0x10d69f8c0>\nnormal_user_token_headers = {'Authorization': 'Bearer <fixture-token>'}\ndb = <sqlmodel.orm.session.Session object at 0x10d69dbe0>\n\n    def test_read_item_not_enough_permissions(\n        client: TestClient, normal_user_token_headers: dict[str, str], db: Session\n    ) -> None:\n        item = create_random_item(db)\n        response = client.get(\n            f\"{settings.API_V1_STR}/items/{item.id}\",\n            headers=normal_user_token_headers,\n        )\n>       assert response.status_code == 403\nE       assert 200 == 403\nE        +  where 200 = <Response [200 OK]>.status_code\n\ntests/api/routes/test_items.py:63: AssertionError\n---------------------------- Captured stderr setup -----------------------------\nINFO:httpx:HTTP Request: POST http://testserver/api/v1/login/access-token \"HTTP/1.1 200 OK\"\n------------------------------ Captured log setup ------------------------------\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/api/v1/login/access-token \"HTTP/1.1 200 OK\"\n----------------------------- Captured stderr call -----------------------------\nINFO:httpx:HTTP Request: GET http://testserver/api/v1/items/089fa81c-fe98-488c-a784-bc828d22c4a1 \"HTTP/1.1 200 OK\"\n------------------------------ Captured log call -------------------------------\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/api/v1/items/089fa81c-fe98-488c-a784-bc828d22c4a1 \"HTTP/1.1 200 OK\"\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED tests/api/routes/test_items.py::test_read_item_not_enough_permissions\n1 failed, 57 passed, 2 warnings in 2.94s\n"
+    },
+    {
+      "check": "migration",
+      "candidate": "F03-single-item-read-auth",
+      "seconds": 0.3317871249746531,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "oracle",
+      "candidate": "F03-single-item-read-auth",
+      "tests": {
+        "collected": 7,
+        "failed": 1,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 6
+      },
+      "seconds": 0.8481249580217991,
+      "exit_code": 1,
+      "status": "failed",
+      "output_sha256": "6190e5cf3f79feb0b39d11a965bd651f202d7e4f7a3722e3c2cc16ac3f503afa",
+      "output_tail": "..F....                                                                  [100%]\n=================================== FAILURES ===================================\n______ test_REQ_SCOPE_003_cross_owner_get_update_delete_do_not_interfere _______\n\nclient = <starlette.testclient.TestClient object at 0x10ce08ec0>\nscenario = Scenario(alice_email='oracle-alice-f7992f88646d4409901dbf627fde5afb@example.com', alice_id=UUID('943ffe96-d3d4-4e3f-aa...ODk3MTA2MjUsInN1YiI6ImI3YTRkNzZjLTAyNTUtNDFkMC1hYzU4LWVmZjQ4Yzg4NzcxZCJ9.EaPy0UdQGVcfWv5vOZo_nvlAI2PRf8W-PzZOOSlqjeE'})\n\n    def test_REQ_SCOPE_003_cross_owner_get_update_delete_do_not_interfere(\n        client: TestClient, scenario: Scenario\n    ) -> None:\n        target_id = scenario.alice_item_ids[0]\n        get_response = client.get(\n            f\"{API}/items/{target_id}\", headers=scenario.bob_headers\n        )\n        update_response = client.put(\n            f\"{API}/items/{target_id}\",\n            headers=scenario.bob_headers,\n            json={\"title\": \"bob-must-not-write\"},\n        )\n        delete_response = client.delete(\n            f\"{API}/items/{target_id}\", headers=scenario.bob_headers\n        )\n>       assert get_response.status_code == 403\nE       assert 200 == 403\nE        +  where 200 = <Response [200 OK]>.status_code\n\n$SOURCE/oracle_tests.py:189: AssertionError\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED ../../../../../../../../..$SOURCE/oracle_tests.py::test_REQ_SCOPE_003_cross_owner_get_update_delete_do_not_interfere\n1 failed, 6 passed, 2 warnings in 0.60s\n"
+    },
+    {
+      "check": "typecheck",
+      "candidate": "F03-single-item-read-auth",
+      "seconds": 1.670657333015697,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    },
+    {
+      "check": "migration",
+      "candidate": "F04-user-public-hashed-password-leak",
+      "seconds": 0.34017708300962113,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "upstream",
+      "candidate": "F04-user-public-hashed-password-leak",
+      "tests": {
+        "collected": 58,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 58
+      },
+      "seconds": 3.816869542002678,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "53d7734fd9ffc58e4bf8bc787968669c10a0d13e50783cac1be4876995e79e57",
+      "output_tail": "..........................................................               [100%]\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n58 passed, 2 warnings in 3.24s\n"
+    },
+    {
+      "check": "migration",
+      "candidate": "F04-user-public-hashed-password-leak",
+      "seconds": 0.32994266698369756,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "oracle",
+      "candidate": "F04-user-public-hashed-password-leak",
+      "tests": {
+        "collected": 7,
+        "failed": 1,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 6
+      },
+      "seconds": 0.8312698749941774,
+      "exit_code": 1,
+      "status": "failed",
+      "output_sha256": "6e631fb477bbf51b741baad8e4bc774fbafe56fb8f513be1cf6d2b348a3dbf92",
+      "output_tail": "....F..                                                                  [100%]\n=================================== FAILURES ===================================\n_________ test_REQ_DATA_005_user_responses_never_leak_sensitive_fields _________\n\nclient = <starlette.testclient.TestClient object at 0x10fc48ec0>\nscenario = Scenario(alice_email='oracle-alice-903cfa0ab9f64d36b43da602958abc1e@example.com', alice_id=UUID('a4eeb957-65e7-449a-8a...ODk3MTA2MzMsInN1YiI6IjQ0MzgzMTYwLWQ0MWItNGUxMi05ODNhLTMzMWZjNmJhY2YxNSJ9.aZk2-a5wbVvOXkHqDx4NKQMAPy6TUj7oPr1frQmUE_w'})\n\n    def test_REQ_DATA_005_user_responses_never_leak_sensitive_fields(\n        client: TestClient, scenario: Scenario\n    ) -> None:\n        response = client.get(f\"{API}/users/me\", headers=scenario.alice_headers)\n        assert response.status_code == 200\n        body = response.json()\n>       assert \"hashed_password\" not in body\nE       AssertionError: assert 'hashed_password' not in {'email': 'oracle-alice-903cfa0ab9f64d36b43da602958abc1e@example.com', 'is_active': True, 'is_superuser': False, 'full_name': 'Oracle Alice', ...}\n\n$SOURCE/oracle_tests.py:249: AssertionError\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED ../../../../../../../../..$SOURCE/oracle_tests.py::test_REQ_DATA_005_user_responses_never_leak_sensitive_fields\n1 failed, 6 passed, 2 warnings in 0.58s\n"
+    },
+    {
+      "check": "typecheck",
+      "candidate": "F04-user-public-hashed-password-leak",
+      "seconds": 1.5856725420162547,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    },
+    {
+      "check": "migration",
+      "candidate": "F05-superuser-count-off-by-one",
+      "seconds": 0.3314865000138525,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "upstream",
+      "candidate": "F05-superuser-count-off-by-one",
+      "tests": {
+        "collected": 58,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 58
+      },
+      "seconds": 3.531726042012451,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "6c07b314aca56be9a73a3a32e2c759a97ed867485fc96cfd5335e82095e2b913",
+      "output_tail": "..........................................................               [100%]\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n58 passed, 2 warnings in 2.86s\n"
+    },
+    {
+      "check": "migration",
+      "candidate": "F05-superuser-count-off-by-one",
+      "seconds": 0.42685200000414625,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "oracle",
+      "candidate": "F05-superuser-count-off-by-one",
+      "tests": {
+        "collected": 7,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 7
+      },
+      "seconds": 0.8279753329989035,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "8dff6d33f3e9aa2e55c2d17c0c479c891cda058292380e2ecafcba53ae4bbdab",
+      "output_tail": ".......                                                                  [100%]\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n7 passed, 2 warnings in 0.56s\n"
+    },
+    {
+      "check": "typecheck",
+      "candidate": "F05-superuser-count-off-by-one",
+      "seconds": 1.6236741250031628,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    },
+    {
+      "check": "migration",
+      "candidate": "F06-title-empty-allowed",
+      "seconds": 0.32304179202765226,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "upstream",
+      "candidate": "F06-title-empty-allowed",
+      "tests": {
+        "collected": 58,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 58
+      },
+      "seconds": 3.51530029202695,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "6385c19e826150c97f7bc802d17da2ddbdb92a57af0346f4d114ae41d396c5f9",
+      "output_tail": "..........................................................               [100%]\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n58 passed, 2 warnings in 2.91s\n"
+    },
+    {
+      "check": "migration",
+      "candidate": "F06-title-empty-allowed",
+      "seconds": 0.327090542006772,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "oracle",
+      "candidate": "F06-title-empty-allowed",
+      "tests": {
+        "collected": 7,
+        "failed": 1,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 6
+      },
+      "seconds": 0.8480076669948176,
+      "exit_code": 1,
+      "status": "failed",
+      "output_sha256": "9fedb510b5a31f08eaaf6d93c2a7443f5a460605bcd44049586dd4c352decf44",
+      "output_tail": "......F                                                                  [100%]\n=================================== FAILURES ===================================\n________ test_REQ_WRITE_007_invalid_writes_fail_without_partial_commit _________\n\nclient = <starlette.testclient.TestClient object at 0x10ba04ec0>\nscenario = Scenario(alice_email='oracle-alice-3b7f277a52a043328affac2619ea3044@example.com', alice_id=UUID('a17567a2-d49a-42ad-b7...ODk3MTA2NDYsInN1YiI6IjhhZjAzY2VmLTQzM2EtNGI3YS1hM2Y5LTBhYmY4YmNiYjBiZCJ9.QL-MKi9OovmMDVgpWHI-seEMe2xulfmdFr-M5CBlU0k'})\n\n    def test_REQ_WRITE_007_invalid_writes_fail_without_partial_commit(\n        client: TestClient, scenario: Scenario\n    ) -> None:\n        target_id = scenario.alice_item_ids[0]\n        with Session(engine) as session:\n            target = session.get(Item, target_id)\n            assert target is not None\n            original_title = target.title\n        before_count = _item_count(scenario.alice_id)\n    \n        invalid_create = client.post(\n            f\"{API}/items/\",\n            headers=scenario.alice_headers,\n            json={\"title\": \"\", \"description\": \"must be rejected\"},\n        )\n        invalid_update = client.put(\n            f\"{API}/items/{target_id}\",\n            headers=scenario.alice_headers,\n            json={\"title\": \"\"},\n        )\n>       assert invalid_create.status_code == 422\nE       assert 200 == 422\nE        +  where 200 = <Response [200 OK]>.status_code\n\n$SOURCE/oracle_tests.py:307: AssertionError\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED ../../../../../../../../..$SOURCE/oracle_tests.py::test_REQ_WRITE_007_invalid_writes_fail_without_partial_commit\n1 failed, 6 passed, 2 warnings in 0.58s\n"
+    },
+    {
+      "check": "typecheck",
+      "candidate": "F06-title-empty-allowed",
+      "seconds": 1.6417577909887768,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    },
+    {
+      "check": "migration",
+      "candidate": "F07-update-item-auth",
+      "seconds": 0.3425405420130119,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "upstream",
+      "candidate": "F07-update-item-auth",
+      "tests": {
+        "collected": 58,
+        "failed": 1,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 57
+      },
+      "seconds": 3.6145322500087786,
+      "exit_code": 1,
+      "status": "failed",
+      "output_sha256": "cd1e0b325d2b2c9fdd59dc0bb9987ac5edcc80831be98be908056e2d00b2f44b",
+      "output_tail": ".......F..................................................               [100%]\n=================================== FAILURES ===================================\n___________________ test_update_item_not_enough_permissions ____________________\n\nclient = <starlette.testclient.TestClient object at 0x10d7538c0>\nnormal_user_token_headers = {'Authorization': 'Bearer <fixture-token>'}\ndb = <sqlmodel.orm.session.Session object at 0x10d751be0>\n\n    def test_update_item_not_enough_permissions(\n        client: TestClient, normal_user_token_headers: dict[str, str], db: Session\n    ) -> None:\n        item = create_random_item(db)\n        data = {\"title\": \"Updated title\", \"description\": \"Updated description\"}\n        response = client.put(\n            f\"{settings.API_V1_STR}/items/{item.id}\",\n            headers=normal_user_token_headers,\n            json=data,\n        )\n>       assert response.status_code == 403\nE       assert 200 == 403\nE        +  where 200 = <Response [200 OK]>.status_code\n\ntests/api/routes/test_items.py:124: AssertionError\n----------------------------- Captured stderr call -----------------------------\nINFO:httpx:HTTP Request: PUT http://testserver/api/v1/items/0bcb3a4a-3aa2-4d8e-baf2-4862e1dfb3d2 \"HTTP/1.1 200 OK\"\n------------------------------ Captured log call -------------------------------\nINFO     httpx:_client.py:1025 HTTP Request: PUT http://testserver/api/v1/items/0bcb3a4a-3aa2-4d8e-baf2-4862e1dfb3d2 \"HTTP/1.1 200 OK\"\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED tests/api/routes/test_items.py::test_update_item_not_enough_permissions\n1 failed, 57 passed, 2 warnings in 3.01s\n"
+    },
+    {
+      "check": "migration",
+      "candidate": "F07-update-item-auth",
+      "seconds": 0.32404570799553767,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "oracle",
+      "candidate": "F07-update-item-auth",
+      "tests": {
+        "collected": 7,
+        "failed": 1,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 6
+      },
+      "seconds": 0.827722874993924,
+      "exit_code": 1,
+      "status": "failed",
+      "output_sha256": "3587bc21fa23cbb0c49e77632e4aab0f834de391e338e7313f571deb06b16177",
+      "output_tail": "..F....                                                                  [100%]\n=================================== FAILURES ===================================\n______ test_REQ_SCOPE_003_cross_owner_get_update_delete_do_not_interfere _______\n\nclient = <starlette.testclient.TestClient object at 0x10bd10ec0>\nscenario = Scenario(alice_email='oracle-alice-f91b5dc990184db59962b75ea2966be8@example.com', alice_id=UUID('e3f2b335-bec4-4f28-87...ODk3MTA2NTMsInN1YiI6IjMyMDkwYzRmLTVmODAtNDYxZS05YmYyLWU2NzJlNjNkNmNjNCJ9.fDrttQW4zBYCPu1PcXhe3l4Iq7-77No6XRqLnWLXgGc'})\n\n    def test_REQ_SCOPE_003_cross_owner_get_update_delete_do_not_interfere(\n        client: TestClient, scenario: Scenario\n    ) -> None:\n        target_id = scenario.alice_item_ids[0]\n        get_response = client.get(\n            f\"{API}/items/{target_id}\", headers=scenario.bob_headers\n        )\n        update_response = client.put(\n            f\"{API}/items/{target_id}\",\n            headers=scenario.bob_headers,\n            json={\"title\": \"bob-must-not-write\"},\n        )\n        delete_response = client.delete(\n            f\"{API}/items/{target_id}\", headers=scenario.bob_headers\n        )\n        assert get_response.status_code == 403\n>       assert update_response.status_code == 403\nE       assert 200 == 403\nE        +  where 200 = <Response [200 OK]>.status_code\n\n$SOURCE/oracle_tests.py:190: AssertionError\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED ../../../../../../../../..$SOURCE/oracle_tests.py::test_REQ_SCOPE_003_cross_owner_get_update_delete_do_not_interfere\n1 failed, 6 passed, 2 warnings in 0.56s\n"
+    },
+    {
+      "check": "typecheck",
+      "candidate": "F07-update-item-auth",
+      "seconds": 1.5688321249908768,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    },
+    {
+      "check": "migration",
+      "candidate": "F08-delete-item-auth",
+      "seconds": 0.33076216699555516,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "upstream",
+      "candidate": "F08-delete-item-auth",
+      "tests": {
+        "collected": 58,
+        "failed": 1,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 57
+      },
+      "seconds": 3.4741863339731935,
+      "exit_code": 1,
+      "status": "failed",
+      "output_sha256": "1851eccd4cd7fd74d7455dcb68b89fe225f6900b6385d4f021d280062b862405",
+      "output_tail": "..........F...............................................               [100%]\n=================================== FAILURES ===================================\n___________________ test_delete_item_not_enough_permissions ____________________\n\nclient = <starlette.testclient.TestClient object at 0x10b6df8c0>\nnormal_user_token_headers = {'Authorization': 'Bearer <fixture-token>'}\ndb = <sqlmodel.orm.session.Session object at 0x10b6ddbe0>\n\n    def test_delete_item_not_enough_permissions(\n        client: TestClient, normal_user_token_headers: dict[str, str], db: Session\n    ) -> None:\n        item = create_random_item(db)\n        response = client.delete(\n            f\"{settings.API_V1_STR}/items/{item.id}\",\n            headers=normal_user_token_headers,\n        )\n>       assert response.status_code == 403\nE       assert 200 == 403\nE        +  where 200 = <Response [200 OK]>.status_code\n\ntests/api/routes/test_items.py:162: AssertionError\n----------------------------- Captured stderr call -----------------------------\nINFO:httpx:HTTP Request: DELETE http://testserver/api/v1/items/1411f70a-389b-46e7-953c-45eef608ba09 \"HTTP/1.1 200 OK\"\n------------------------------ Captured log call -------------------------------\nINFO     httpx:_client.py:1025 HTTP Request: DELETE http://testserver/api/v1/items/1411f70a-389b-46e7-953c-45eef608ba09 \"HTTP/1.1 200 OK\"\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED tests/api/routes/test_items.py::test_delete_item_not_enough_permissions\n1 failed, 57 passed, 2 warnings in 2.89s\n"
+    },
+    {
+      "check": "migration",
+      "candidate": "F08-delete-item-auth",
+      "seconds": 0.32058125000912696,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "oracle",
+      "candidate": "F08-delete-item-auth",
+      "tests": {
+        "collected": 7,
+        "failed": 1,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 6
+      },
+      "seconds": 0.8381154999951832,
+      "exit_code": 1,
+      "status": "failed",
+      "output_sha256": "d4f08f239a4b131288296aacf8cf37f3eb0f6513c0c5865635f54439aa143a50",
+      "output_tail": "..F....                                                                  [100%]\n=================================== FAILURES ===================================\n______ test_REQ_SCOPE_003_cross_owner_get_update_delete_do_not_interfere _______\n\nclient = <starlette.testclient.TestClient object at 0x10fbccec0>\nscenario = Scenario(alice_email='oracle-alice-066aab0e6a664463b84f0980b8b978e7@example.com', alice_id=UUID('07c3719a-e0e4-44d2-b7...ODk3MTA2NjAsInN1YiI6ImRmM2VhYzkwLWRjMmItNDQ2Zi05OGZiLTE1OTliMzhlNjhlNiJ9.YG56sAp7L-pyCw_nW8PMlQur_TOc0yuIqkyePZoqNMs'})\n\n    def test_REQ_SCOPE_003_cross_owner_get_update_delete_do_not_interfere(\n        client: TestClient, scenario: Scenario\n    ) -> None:\n        target_id = scenario.alice_item_ids[0]\n        get_response = client.get(\n            f\"{API}/items/{target_id}\", headers=scenario.bob_headers\n        )\n        update_response = client.put(\n            f\"{API}/items/{target_id}\",\n            headers=scenario.bob_headers,\n            json={\"title\": \"bob-must-not-write\"},\n        )\n        delete_response = client.delete(\n            f\"{API}/items/{target_id}\", headers=scenario.bob_headers\n        )\n        assert get_response.status_code == 403\n        assert update_response.status_code == 403\n>       assert delete_response.status_code == 403\nE       assert 200 == 403\nE        +  where 200 = <Response [200 OK]>.status_code\n\n$SOURCE/oracle_tests.py:191: AssertionError\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED ../../../../../../../../..$SOURCE/oracle_tests.py::test_REQ_SCOPE_003_cross_owner_get_update_delete_do_not_interfere\n1 failed, 6 passed, 2 warnings in 0.57s\n"
+    },
+    {
+      "check": "typecheck",
+      "candidate": "F08-delete-item-auth",
+      "seconds": 1.6210721250099596,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    }
+  ],
+  "setup_included": false,
+  "limitations": [
+    "Small template, not a large production system",
+    "Host execution, not a sandbox",
+    "Cached dependencies; provisioning and hosted dispatch excluded",
+    "Hand-selected faults do not estimate production defect detection"
+  ],
+  "matrix": [
+    {
+      "fault": "F01-list-data-owner-filter",
+      "path": "backend/app/api/routes/items.py",
+      "claim": "Remove the non-superuser list data ownership predicate; the upstream tests do not list as a normal user, while REQ_SCOPE_002 must catch the leak.",
+      "mutated_file_sha256": "2420a49cb1d134e5bc3fb2db29589757d72b1422041fd576f6794a1254061beb",
+      "upstream": "survived",
+      "oracle": "caught",
+      "typecheck": "survived"
+    },
+    {
+      "fault": "F02-list-count-owner-filter",
+      "path": "backend/app/api/routes/items.py",
+      "claim": "Count all items for a normal user; the upstream tests do not assert normal-user count visibility, while REQ_SCOPE_002 must catch it.",
+      "mutated_file_sha256": "3f79ba44663b8fcd9e309af617773437721da454a4474914860ab123e9393b79",
+      "upstream": "survived",
+      "oracle": "caught",
+      "typecheck": "survived"
+    },
+    {
+      "fault": "F03-single-item-read-auth",
+      "path": "backend/app/api/routes/items.py",
+      "claim": "Remove single-item read authorization; the upstream test_read_item_not_enough_permissions should catch this mutant.",
+      "mutated_file_sha256": "e190cc45b4feef86a12abda60ae116c5a00ce151b637508540095ea6271d68fc",
+      "upstream": "caught",
+      "oracle": "caught",
+      "typecheck": "survived"
+    },
+    {
+      "fault": "F04-user-public-hashed-password-leak",
+      "path": "backend/app/models.py",
+      "claim": "Expose the stored password hash through the public response model; upstream tests assert presence but not absence of sensitive fields, while REQ_DATA_005 must catch it.",
+      "mutated_file_sha256": "9b42c22547dab5f82fdb230cbf7348707afdb01e49bd605ea9fb70a60890c138",
+      "upstream": "survived",
+      "oracle": "caught",
+      "typecheck": "survived"
+    },
+    {
+      "fault": "F05-superuser-count-off-by-one",
+      "path": "backend/app/api/routes/items.py",
+      "claim": "Return an incorrect superuser-visible count. This is an intentional oracle blind spot: the current independent suite has no superuser paging/count requirement, so this mutation should survive until an admin-count oracle is added.",
+      "mutated_file_sha256": "6ae4b4c8f92688a384e05661188aba4ed3bdf0f3d5e4952030eec1a5b1016981",
+      "upstream": "survived",
+      "oracle": "survived",
+      "typecheck": "survived"
+    },
+    {
+      "fault": "F06-title-empty-allowed",
+      "path": "backend/app/models.py",
+      "claim": "Drop the non-empty title constraint; upstream tests use only valid titles, while REQ_WRITE_007 must reject the invalid create and update without persistence.",
+      "mutated_file_sha256": "87e28e42c34660ad38c2d6da9aaee41e1f1da20757678a2b16b8ca590bcee6eb",
+      "upstream": "survived",
+      "oracle": "caught",
+      "typecheck": "survived"
+    },
+    {
+      "fault": "F07-update-item-auth",
+      "path": "backend/app/api/routes/items.py",
+      "claim": "Remove update ownership enforcement; the upstream test_update_item_not_enough_permissions should catch this mutant.",
+      "mutated_file_sha256": "66658e4f652ba04149f77bdd41bc58b1c0c0cc0d0b8bd076069990600cc0abef",
+      "upstream": "caught",
+      "oracle": "caught",
+      "typecheck": "survived"
+    },
+    {
+      "fault": "F08-delete-item-auth",
+      "path": "backend/app/api/routes/items.py",
+      "claim": "Remove delete ownership enforcement; the upstream test_delete_item_not_enough_permissions should catch this mutant.",
+      "mutated_file_sha256": "c8e945fb633012db5d6de0df2961affa76de8bb85d80e7e40eb88b0c323c96ca",
+      "upstream": "caught",
+      "oracle": "caught",
+      "typecheck": "survived"
+    }
+  ],
+  "total_seconds": 83.20627979197889,
+  "source_unchanged": true,
+  "verifier_unchanged": true
+}

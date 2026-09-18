@@ -7,3 +7,8 @@ out/
 *.db-shm
 *.db-wal
 .DS_Store
+node_modules/
+.cache/
+.pytest_cache/
+test-results/
+playwright-report/
