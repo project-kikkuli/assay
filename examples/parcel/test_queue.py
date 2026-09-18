@@ -1,8 +1,10 @@
 import tempfile
+from concurrent.futures import ThreadPoolExecutor
+import threading
 import unittest
 from pathlib import Path
 
-from queue import Lease, Queue
+from examples.parcel.queue import Lease, Queue
 
 
 class QueueTests(unittest.TestCase):
@@ -71,6 +73,20 @@ class QueueTests(unittest.TestCase):
         self.assertIsNone(two.claim("two-worker", 0))
         one.close()
         two.close()
+
+    def test_concurrent_connections_claim_once(self):
+        with Queue(self.path) as queue:
+            queue.enqueue("contended", "x")
+        barrier = threading.Barrier(4, timeout=5)
+
+        def claim(index):
+            with Queue(self.path) as queue:
+                barrier.wait()
+                return queue.claim(f"worker-{index}", 0)
+
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            leases = list(pool.map(claim, range(4)))
+        self.assertEqual(sum(lease is not None for lease in leases), 1)
 
     def test_invalid_inputs(self):
         queue = Queue(self.path)

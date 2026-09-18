@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "name": "Assay self-verification",
+  "tasks": [
+    {
+      "id": "report-contracts",
+      "description": "Safe source links, valid evidence tables, truthful timing samples, and trace format",
+      "command": ["{python}", "-m", "unittest", "discover", "-s", "tests", "-p", "test_report.py", "-v"],
+      "inputs": ["assay/report.py", "assay/__init__.py", "tests/test_report.py"],
+      "timeout_s": 15,
+      "source": ["assay/report.py", "tests/test_report.py"]
+    },
+    {
+      "id": "query-equivalence",
+      "description": "Compare both query algorithms to an independent oracle across mixed job states",
+      "command": ["{python}", "-m", "unittest", "discover", "-s", "tests", "-p", "test_benchmark.py", "-v"],
+      "inputs": ["assay/benchmark.py", "assay/__init__.py", "tests/test_benchmark.py"],
+      "timeout_s": 15,
+      "source": ["assay/benchmark.py", "tests/test_benchmark.py"]
+    },
+    {
+      "id": "runner-contracts",
+      "description": "Evidence invalidation, fail-closed dependencies, corruption, timeouts, and retry transparency",
+      "command": ["{python}", "-m", "unittest", "discover", "-s", "tests", "-p", "test_runner.py", "-v"],
+      "inputs": ["assay/runner.py", "assay/__init__.py", "tests/test_runner.py"],
+      "timeout_s": 15,
+      "source": ["assay/runner.py", "tests/test_runner.py"]
+    },
+    {
+      "id": "queue-contracts",
+      "description": "Persistence, idempotency, explicit time, expiry, and fencing against the real SQLite queue",
+      "command": ["{python}", "-m", "unittest", "examples.parcel.test_queue", "-v"],
+      "inputs": ["examples/**/*.py"],
+      "timeout_s": 15,
+      "source": ["examples/parcel/queue.py", "examples/parcel/test_queue.py"]
+    },
+    {
+      "id": "schedule-exploration",
+      "description": "Generated operation schedules and replay of a deliberately injected stale-worker fault",
+      "command": ["{python}", "-m", "unittest", "discover", "-s", "tests", "-p", "test_scenarios.py", "-v"],
+      "inputs": ["assay/scenarios.py", "assay/runner.py", "assay/__init__.py", "examples/**/*.py", "tests/test_scenarios.py"],
+      "needs": ["queue-contracts"],
+      "timeout_s": 15,
+      "source": ["assay/scenarios.py", "tests/test_scenarios.py"]
+    }
+  ]
+}
