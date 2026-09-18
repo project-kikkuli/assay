@@ -6,8 +6,8 @@ This repo tests parts of that argument against real Python, TypeScript, PostgreS
 browser, and authorization-policy implementations. It retains counterexamples and
 negative results. It is not a production CI replacement.
 
-Recorded laptop gates fit roughly 20–29 seconds; the stronger gate's first hosted
-run took 105.5 seconds and rejected a browser transport failure.
+Five complete laptop gates took 20–23 seconds; serial execution took 42–49.
+The first hosted run took 105.5 seconds and rejected a browser transport failure.
 A subsequent two-worker hosted run passed all three repetitions in 111–114
 seconds. Thirty seconds is not established across environments.
 [Local and hosted evidence](experiments/fullstack/results/).

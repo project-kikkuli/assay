@@ -3,6 +3,7 @@ import math
 import sqlite3
 import statistics
 import time
+from contextlib import closing
 
 BASELINE_QUERY = """
 SELECT id FROM jobs
@@ -34,7 +35,7 @@ def measure_queries(sizes=(100, 1000, 10000), repeats=15) -> list[dict]:
         raise ValueError("Need positive sizes and at least two timing samples")
     reports = []
     for size in sizes:
-        with sqlite3.connect(":memory:") as db:
+        with closing(sqlite3.connect(":memory:")) as db:
             db.executescript("""
                 CREATE TABLE jobs(id INTEGER PRIMARY KEY, status TEXT, lease_until INTEGER);
                 CREATE INDEX jobs_status_expiry_id ON jobs(status, lease_until, id);

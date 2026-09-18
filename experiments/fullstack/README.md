@@ -17,14 +17,16 @@ bypassing them during setup. Both surviving faults are caught by those checks;
 that is post-challenge strengthening, not blind evaluation.
 
 The [repair variant](repaired.patch) fixes the independently observed null-input,
-offset, pagination, and signup-ordering problems. Its measured warm gate runs
-the 62 API tests, seven independent API checks, 62 browser tests, five independent
+offset, pagination, and signup-ordering problems. Its warm gate runs
+the 62 API tests, seven independent API checks, four lifecycle checks, 62 browser tests, five independent
 wire/UI claims, TypeScript, mypy (no incremental cache), ty, Ruff, and a production
-frontend build. Three complete runs took **19.52, 20.29, and 28.71 seconds**;
-[records](results/gate.json) retain every stage. This is a small application on a
-shared laptop—not a large-codebase or hosted-dispatch latency claim.
+frontend build. Five complete runs took **20.35–23.07 seconds**;
+[records](results/gate.json) retain every stage. The same checks run serially
+took **42.02–48.67 seconds** in three runs ([records](results/gate-local-serial.json)).
+These are sequential batches on a shared 12-logical-CPU laptop, not randomized
+capacity trials, large-codebase measurements, or hosted-dispatch latency claims.
 
-The gate now also requires the four lifecycle checks. Its first independent
+Its first independent
 [hosted run](results/gate-hosted-first.json) took **105.54 seconds** and was
 rejected: 60 browser tests passed, one setup request had a socket reset, and one
 dependent test did not run. Python checks and independent boundaries passed.

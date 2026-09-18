@@ -1,6 +1,7 @@
 import random
 import sqlite3
 import unittest
+from contextlib import closing
 
 from assay.benchmark import BASELINE_QUERY, CANDIDATE_QUERY, measure_queries
 
@@ -8,7 +9,7 @@ from assay.benchmark import BASELINE_QUERY, CANDIDATE_QUERY, measure_queries
 class BenchmarkTests(unittest.TestCase):
     def test_rewrite_preserves_oldest_eligible_across_mixed_states(self):
         rng = random.Random(812)
-        with sqlite3.connect(":memory:") as db:
+        with closing(sqlite3.connect(":memory:")) as db:
             db.execute("CREATE TABLE jobs(id INTEGER PRIMARY KEY, status TEXT, lease_until INTEGER)")
             for _ in range(100):
                 db.execute("DELETE FROM jobs")
