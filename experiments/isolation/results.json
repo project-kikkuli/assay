@@ -1,0 +1,1125 @@
+{
+  "catalog": {
+    "database": [
+      {
+        "current_database": "assay_isolation_worker_a9594c1c7b6c",
+        "current_user": "postgres"
+      }
+    ],
+    "grants": [
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_app_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_bypass_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_bypass_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_bypass_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_bypass_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_bypass_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "REFERENCES",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "TRIGGER",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "TRUNCATE",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "REFERENCES",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "TRIGGER",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "TRUNCATE",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "REFERENCES",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "TRIGGER",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "TRUNCATE",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "REFERENCES",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "TRIGGER",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "TRUNCATE",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "REFERENCES",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "TRIGGER",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "TRUNCATE",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "REFERENCES",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "TRIGGER",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "TRUNCATE",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_owner_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_tenant_a_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "child_records"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "events"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "implicit_check_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "owner_bypass_fixture"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "policy_regression"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "DELETE",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "INSERT",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "SELECT",
+        "table_name": "records"
+      },
+      {
+        "grantee": "assay_iso_tenant_b_a9594c1c7b6c",
+        "privilege_type": "UPDATE",
+        "table_name": "records"
+      }
+    ],
+    "memberships": [],
+    "policies": [
+      {
+        "cmd": "ALL",
+        "permissive": "PERMISSIVE",
+        "policyname": "child_records_app_policy",
+        "qual": "(tenant_id = current_setting('app.tenant_id'::text, true))",
+        "roles": [
+          "assay_iso_app_a9594c1c7b6c"
+        ],
+        "schemaname": "public",
+        "tablename": "child_records",
+        "with_check": "(tenant_id = current_setting('app.tenant_id'::text, true))"
+      },
+      {
+        "cmd": "ALL",
+        "permissive": "PERMISSIVE",
+        "policyname": "child_records_role_policy",
+        "qual": "(tenant_id = CURRENT_USER)",
+        "roles": [
+          "assay_iso_tenant_a_a9594c1c7b6c",
+          "assay_iso_tenant_b_a9594c1c7b6c"
+        ],
+        "schemaname": "public",
+        "tablename": "child_records",
+        "with_check": "(tenant_id = CURRENT_USER)"
+      },
+      {
+        "cmd": "ALL",
+        "permissive": "PERMISSIVE",
+        "policyname": "events_app_policy",
+        "qual": "(tenant_id = current_setting('app.tenant_id'::text, true))",
+        "roles": [
+          "assay_iso_app_a9594c1c7b6c"
+        ],
+        "schemaname": "public",
+        "tablename": "events",
+        "with_check": "(tenant_id = current_setting('app.tenant_id'::text, true))"
+      },
+      {
+        "cmd": "ALL",
+        "permissive": "PERMISSIVE",
+        "policyname": "events_role_policy",
+        "qual": "(tenant_id = CURRENT_USER)",
+        "roles": [
+          "assay_iso_tenant_a_a9594c1c7b6c",
+          "assay_iso_tenant_b_a9594c1c7b6c"
+        ],
+        "schemaname": "public",
+        "tablename": "events",
+        "with_check": "(tenant_id = CURRENT_USER)"
+      },
+      {
+        "cmd": "SELECT",
+        "permissive": "PERMISSIVE",
+        "policyname": "implicit_check_select",
+        "qual": "(tenant_id = current_setting('app.tenant_id'::text, true))",
+        "roles": [
+          "assay_iso_app_a9594c1c7b6c"
+        ],
+        "schemaname": "public",
+        "tablename": "implicit_check_fixture",
+        "with_check": null
+      },
+      {
+        "cmd": "UPDATE",
+        "permissive": "PERMISSIVE",
+        "policyname": "implicit_check_update",
+        "qual": "(tenant_id = current_setting('app.tenant_id'::text, true))",
+        "roles": [
+          "assay_iso_app_a9594c1c7b6c"
+        ],
+        "schemaname": "public",
+        "tablename": "implicit_check_fixture",
+        "with_check": null
+      },
+      {
+        "cmd": "ALL",
+        "permissive": "PERMISSIVE",
+        "policyname": "owner_fixture_app_policy",
+        "qual": "(tenant_id = current_setting('app.tenant_id'::text, true))",
+        "roles": [
+          "assay_iso_app_a9594c1c7b6c"
+        ],
+        "schemaname": "public",
+        "tablename": "owner_bypass_fixture",
+        "with_check": "(tenant_id = current_setting('app.tenant_id'::text, true))"
+      },
+      {
+        "cmd": "SELECT",
+        "permissive": "PERMISSIVE",
+        "policyname": "policy_regression_select",
+        "qual": "true",
+        "roles": [
+          "assay_iso_app_a9594c1c7b6c"
+        ],
+        "schemaname": "public",
+        "tablename": "policy_regression",
+        "with_check": null
+      },
+      {
+        "cmd": "UPDATE",
+        "permissive": "PERMISSIVE",
+        "policyname": "policy_regression_update",
+        "qual": "(tenant_id = current_setting('app.tenant_id'::text, true))",
+        "roles": [
+          "assay_iso_app_a9594c1c7b6c"
+        ],
+        "schemaname": "public",
+        "tablename": "policy_regression",
+        "with_check": "true"
+      },
+      {
+        "cmd": "ALL",
+        "permissive": "PERMISSIVE",
+        "policyname": "records_app_policy",
+        "qual": "(tenant_id = current_setting('app.tenant_id'::text, true))",
+        "roles": [
+          "assay_iso_app_a9594c1c7b6c"
+        ],
+        "schemaname": "public",
+        "tablename": "records",
+        "with_check": "(tenant_id = current_setting('app.tenant_id'::text, true))"
+      },
+      {
+        "cmd": "ALL",
+        "permissive": "PERMISSIVE",
+        "policyname": "records_role_policy",
+        "qual": "(tenant_id = CURRENT_USER)",
+        "roles": [
+          "assay_iso_tenant_a_a9594c1c7b6c",
+          "assay_iso_tenant_b_a9594c1c7b6c"
+        ],
+        "schemaname": "public",
+        "tablename": "records",
+        "with_check": "(tenant_id = CURRENT_USER)"
+      }
+    ],
+    "privilege_checks": [
+      {
+        "can_events_select": true,
+        "can_insert": true,
+        "can_select": true,
+        "rolname": "assay_iso_app_a9594c1c7b6c"
+      },
+      {
+        "can_events_select": true,
+        "can_insert": false,
+        "can_select": true,
+        "rolname": "assay_iso_bypass_a9594c1c7b6c"
+      },
+      {
+        "can_events_select": true,
+        "can_insert": true,
+        "can_select": true,
+        "rolname": "assay_iso_owner_a9594c1c7b6c"
+      },
+      {
+        "can_events_select": true,
+        "can_insert": true,
+        "can_select": true,
+        "rolname": "assay_iso_tenant_a_a9594c1c7b6c"
+      },
+      {
+        "can_events_select": true,
+        "can_insert": true,
+        "can_select": true,
+        "rolname": "assay_iso_tenant_b_a9594c1c7b6c"
+      }
+    ],
+    "roles": [
+      {
+        "rolbypassrls": false,
+        "rolcanlogin": true,
+        "rolinherit": false,
+        "rolname": "assay_iso_app_a9594c1c7b6c",
+        "rolsuper": false
+      },
+      {
+        "rolbypassrls": true,
+        "rolcanlogin": false,
+        "rolinherit": false,
+        "rolname": "assay_iso_bypass_a9594c1c7b6c",
+        "rolsuper": false
+      },
+      {
+        "rolbypassrls": false,
+        "rolcanlogin": false,
+        "rolinherit": false,
+        "rolname": "assay_iso_owner_a9594c1c7b6c",
+        "rolsuper": false
+      },
+      {
+        "rolbypassrls": false,
+        "rolcanlogin": true,
+        "rolinherit": false,
+        "rolname": "assay_iso_tenant_a_a9594c1c7b6c",
+        "rolsuper": false
+      },
+      {
+        "rolbypassrls": false,
+        "rolcanlogin": true,
+        "rolinherit": false,
+        "rolname": "assay_iso_tenant_b_a9594c1c7b6c",
+        "rolsuper": false
+      }
+    ],
+    "server": "PostgreSQL 18.6 (Debian 18.6-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+    "tables": [
+      {
+        "owner": "assay_iso_owner_a9594c1c7b6c",
+        "relforcerowsecurity": true,
+        "relname": "child_records",
+        "relrowsecurity": true
+      },
+      {
+        "owner": "assay_iso_owner_a9594c1c7b6c",
+        "relforcerowsecurity": true,
+        "relname": "events",
+        "relrowsecurity": true
+      },
+      {
+        "owner": "assay_iso_owner_a9594c1c7b6c",
+        "relforcerowsecurity": true,
+        "relname": "implicit_check_fixture",
+        "relrowsecurity": true
+      },
+      {
+        "owner": "assay_iso_owner_a9594c1c7b6c",
+        "relforcerowsecurity": false,
+        "relname": "owner_bypass_fixture",
+        "relrowsecurity": true
+      },
+      {
+        "owner": "assay_iso_owner_a9594c1c7b6c",
+        "relforcerowsecurity": true,
+        "relname": "policy_regression",
+        "relrowsecurity": true
+      },
+      {
+        "owner": "assay_iso_owner_a9594c1c7b6c",
+        "relforcerowsecurity": true,
+        "relname": "records",
+        "relrowsecurity": true
+      }
+    ]
+  },
+  "environment": {
+    "app_role": "assay_iso_app_a9594c1c7b6c",
+    "database": "assay_isolation_worker_a9594c1c7b6c",
+    "host": "127.0.0.1",
+    "port": 55439,
+    "psycopg": "3.3.4",
+    "python": "3.14.6 (main, Aug  4 2026, 19:23:56) [Clang 22.1.3 ]",
+    "roles": [
+      "assay_iso_owner_a9594c1c7b6c",
+      "assay_iso_app_a9594c1c7b6c",
+      "assay_iso_tenant_a_a9594c1c7b6c",
+      "assay_iso_tenant_b_a9594c1c7b6c",
+      "assay_iso_bypass_a9594c1c7b6c"
+    ]
+  },
+  "migration": {
+    "contract": "not attempted",
+    "old_and_new_rows": [
+      {
+        "new_value": "v2",
+        "old_value": "v1",
+        "tenant_id": "new-writer"
+      },
+      {
+        "new_value": "v1",
+        "old_value": "v1",
+        "tenant_id": "old"
+      },
+      {
+        "new_value": "v1",
+        "old_value": "v1",
+        "tenant_id": "old-writer"
+      }
+    ],
+    "status": "observed"
+  },
+  "role_matrix": {
+    "app_setrole_attempts": [
+      {
+        "case": "app_set_role",
+        "current_user_after_reset": "assay_iso_app_a9594c1c7b6c",
+        "detail": null,
+        "error": "permission denied to set role \"assay_iso_owner_a9594c1c7b6c\"",
+        "ok": false,
+        "sqlstate": "42501",
+        "target": "assay_iso_owner_a9594c1c7b6c"
+      },
+      {
+        "case": "app_set_role",
+        "current_user_after_reset": "assay_iso_app_a9594c1c7b6c",
+        "detail": null,
+        "error": "permission denied to set role \"assay_iso_bypass_a9594c1c7b6c\"",
+        "ok": false,
+        "sqlstate": "42501",
+        "target": "assay_iso_bypass_a9594c1c7b6c"
+      },
+      {
+        "case": "app_set_role",
+        "current_user_after_reset": "assay_iso_app_a9594c1c7b6c",
+        "detail": null,
+        "error": "permission denied to set role \"assay_iso_tenant_a_a9594c1c7b6c\"",
+        "ok": false,
+        "sqlstate": "42501",
+        "target": "assay_iso_tenant_a_a9594c1c7b6c"
+      },
+      {
+        "case": "app_set_role",
+        "current_user_after_reset": "assay_iso_app_a9594c1c7b6c",
+        "detail": null,
+        "error": "permission denied to set role \"assay_iso_tenant_b_a9594c1c7b6c\"",
+        "ok": false,
+        "sqlstate": "42501",
+        "target": "assay_iso_tenant_b_a9594c1c7b6c"
+      }
+    ],
+    "bypassrls_rows": 5,
+    "expected_counterexamples": [
+      "table_owner_unforced_rows",
+      "bypassrls_rows"
+    ],
+    "per_tenant_roles": [
+      {
+        "cross_tenant_insert": {
+          "case": "cross_tenant_insert",
+          "detail": null,
+          "error": "new row violates row-level security policy for table \"records\"",
+          "ok": false,
+          "sqlstate": "42501"
+        },
+        "current_user": "assay_iso_tenant_a_a9594c1c7b6c",
+        "current_user_after_reset": "assay_iso_tenant_a_a9594c1c7b6c",
+        "guc_spoof_visible_rows": 2,
+        "role": "assay_iso_tenant_a_a9594c1c7b6c",
+        "set_role_other_tenant": {
+          "case": "set_role_other_tenant",
+          "detail": null,
+          "error": "permission denied to set role \"assay_iso_tenant_b_a9594c1c7b6c\"",
+          "ok": false,
+          "sqlstate": "42501"
+        },
+        "visible_rows": 2
+      },
+      {
+        "cross_tenant_insert": {
+          "case": "cross_tenant_insert",
+          "detail": null,
+          "error": "new row violates row-level security policy for table \"records\"",
+          "ok": false,
+          "sqlstate": "42501"
+        },
+        "current_user": "assay_iso_tenant_b_a9594c1c7b6c",
+        "current_user_after_reset": "assay_iso_tenant_b_a9594c1c7b6c",
+        "guc_spoof_visible_rows": 3,
+        "role": "assay_iso_tenant_b_a9594c1c7b6c",
+        "set_role_other_tenant": {
+          "case": "set_role_other_tenant",
+          "detail": null,
+          "error": "permission denied to set role \"assay_iso_tenant_a_a9594c1c7b6c\"",
+          "ok": false,
+          "sqlstate": "42501"
+        },
+        "visible_rows": 3
+      }
+    ],
+    "table_owner_forced_rows": 0,
+    "table_owner_unforced_rows": 2
+  },
+  "security_matrix": {
+    "cases": [
+      {
+        "case": "omit_where_select",
+        "ok": true,
+        "value": 2
+      },
+      {
+        "case": "omit_where_update",
+        "ok": true,
+        "value": {
+          "tenant_b_after": 30,
+          "tenant_b_before": 30,
+          "updated": 2
+        }
+      },
+      {
+        "case": "omit_where_delete",
+        "ok": true,
+        "value": {
+          "after": 0,
+          "before": 2,
+          "deleted": 2
+        }
+      },
+      {
+        "case": "wrong_tenant_insert",
+        "detail": null,
+        "error": "new row violates row-level security policy for table \"records\"",
+        "ok": false,
+        "sqlstate": "42501"
+      },
+      {
+        "case": "with_check_policy_behavior",
+        "ok": true,
+        "value": {
+          "explicit_with_check_true_plus_broad_select": {
+            "case": "explicit_with_check_true",
+            "observed_tenant": "assay_iso_tenant_b_a9594c1c7b6c",
+            "ok": true,
+            "value": {
+              "current_user": "assay_iso_app_a9594c1c7b6c",
+              "tenant_context": "assay_iso_tenant_a_a9594c1c7b6c",
+              "updated": 1
+            }
+          },
+          "omitted_with_check": {
+            "case": "omitted_with_check_inherits_using",
+            "detail": null,
+            "error": "new row violates row-level security policy for table \"implicit_check_fixture\"",
+            "ok": false,
+            "sqlstate": "42501"
+          }
+        }
+      },
+      {
+        "case": "cross_join_lookup",
+        "ok": true,
+        "value": {
+          "cross_join_rows": 4,
+          "expected_cross_join_rows": 4,
+          "visible_rows": 2
+        }
+      },
+      {
+        "case": "duplicate_idempotency_key",
+        "ok": true,
+        "value": {
+          "duplicate_rejected": true,
+          "sqlstate": "23505"
+        }
+      },
+      {
+        "case": "cross_tenant_composite_fk",
+        "detail": "Key is not present in table \"records\".",
+        "error": "insert or update on table \"child_records\" violates foreign key constraint \"child_records_tenant_id_parent_id_fkey\"",
+        "ok": false,
+        "sqlstate": "23503"
+      },
+      {
+        "case": "missing_context",
+        "ok": true,
+        "value": {
+          "insert": {
+            "case": "missing_context_insert",
+            "detail": null,
+            "error": "new row violates row-level security policy for table \"records\"",
+            "ok": false,
+            "sqlstate": "42501"
+          },
+          "visible_rows": 0
+        }
+      },
+      {
+        "case": "context_after_rollback",
+        "ok": true,
+        "value": {
+          "after_visible_without_context": 0,
+          "inside_visible": 2,
+          "setting_after": ""
+        }
+      },
+      {
+        "case": "context_after_commit",
+        "ok": true,
+        "value": {
+          "after_visible_without_context": 0,
+          "inside_visible": 3,
+          "setting_after": ""
+        }
+      },
+      {
+        "case": "same_role_can_spoof_tenant_guc",
+        "ok": true,
+        "value": {
+          "expected": "counterexample",
+          "spoofed_tenant_rows": 3
+        }
+      }
+    ],
+    "role": "assay_iso_app_a9594c1c7b6c"
+  },
+  "source_sha256": {
+    "README.md": "067a0b3ffc3d9903b5b9f2e7c4d1587aaf5b708ced7ccadbdde9b60b1fe7a48c",
+    "checks.py": "acb97a3b2665330a5ec58f0d40c61383c0d4351091753c5abe271a81791d9fef",
+    "performance.py": "eca83f6c2f733305fdb16bd5dd6eb32257f8434119a7852c59d45eed343137ed",
+    "requirements.txt": "d375af9a0f805ccfd0fbf9a4943cfc6f44b4d7371e6a2376f6b8318d3c73e3d6",
+    "run.py": "f065832ee4bcca90d39ae60dd1164141600acfcfd38e9409664805640d22ec64",
+    "test_checks.py": "c600127a18d82904bf1fc59c187a074bec683a1646ab43c17c207cd8d574484f",
+    "test_run_controls.py": "31b2d0c8155a6da2eb00c80d9f6c6603eacf7ba9cb27c80ba6d5bc9c2c9c75d9"
+  },
+  "status": "passed_with_expected_counterexamples",
+  "teardown": {
+    "database_dropped": true,
+    "owned_database": "assay_isolation_worker_a9594c1c7b6c",
+    "owned_roles": [
+      "assay_iso_owner_a9594c1c7b6c",
+      "assay_iso_app_a9594c1c7b6c",
+      "assay_iso_tenant_a_a9594c1c7b6c",
+      "assay_iso_tenant_b_a9594c1c7b6c",
+      "assay_iso_bypass_a9594c1c7b6c"
+    ],
+    "roles_remaining": [],
+    "target_database_sessions_before_drop": []
+  }
+}

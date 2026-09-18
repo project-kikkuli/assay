@@ -1,0 +1,611 @@
+{
+  "cases": [
+    {
+      "baseline_explicit_predicate_bypassrls": {
+        "explain_json": {
+          "Execution Time": 0.039,
+          "Plan": {
+            "Actual Loops": 1,
+            "Actual Rows": 1.0,
+            "Actual Startup Time": 0.026,
+            "Actual Total Time": 0.027,
+            "Async Capable": false,
+            "Disabled": false,
+            "Local Dirtied Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Written Blocks": 0,
+            "Node Type": "Aggregate",
+            "Parallel Aware": false,
+            "Partial Mode": "Simple",
+            "Plan Rows": 1,
+            "Plan Width": 8,
+            "Plans": [
+              {
+                "Actual Loops": 1,
+                "Actual Rows": 100.0,
+                "Actual Startup Time": 0.016,
+                "Actual Total Time": 0.023,
+                "Alias": "events",
+                "Async Capable": false,
+                "Disabled": false,
+                "Heap Fetches": 100,
+                "Index Cond": "((tenant_id = 'assay_iso_tenant_a_a9594c1c7b6c'::text) AND (event_id >= 1) AND (event_id <= 100))",
+                "Index Name": "events_pkey",
+                "Index Searches": 1,
+                "Local Dirtied Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Written Blocks": 0,
+                "Node Type": "Index Only Scan",
+                "Parallel Aware": false,
+                "Parent Relationship": "Outer",
+                "Plan Rows": 1,
+                "Plan Width": 0,
+                "Relation Name": "events",
+                "Rows Removed by Index Recheck": 0,
+                "Scan Direction": "Forward",
+                "Shared Dirtied Blocks": 0,
+                "Shared Hit Blocks": 4,
+                "Shared Read Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Startup Cost": 0.42,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Total Cost": 8.44
+              }
+            ],
+            "Shared Dirtied Blocks": 0,
+            "Shared Hit Blocks": 4,
+            "Shared Read Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Startup Cost": 8.44,
+            "Strategy": "Plain",
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Total Cost": 8.45
+          },
+          "Planning": {
+            "Local Dirtied Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Written Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Hit Blocks": 91,
+            "Shared Read Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.086,
+          "Triggers": []
+        },
+        "max_ms": 0.178458,
+        "min_ms": 0.111584,
+        "n": 25,
+        "p50_ms": 0.137125,
+        "p95_ms": 0.158583,
+        "plan_summary": {
+          "execution_time_ms": 0.039,
+          "planning_time_ms": 0.086,
+          "rows_removed_by_filter": [
+            0
+          ],
+          "scan_actual_rows": [
+            100.0
+          ],
+          "scan_index_names": [
+            "events_pkey"
+          ],
+          "scan_nodes": [
+            {
+              "Actual Loops": 1,
+              "Actual Rows": 100.0,
+              "Index Cond": "((tenant_id = 'assay_iso_tenant_a_a9594c1c7b6c'::text) AND (event_id >= 1) AND (event_id <= 100))",
+              "Index Name": "events_pkey",
+              "Node Type": "Index Only Scan",
+              "Plan Rows": 1,
+              "Rows Removed by Index Recheck": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Hit Blocks": 4,
+              "Shared Read Blocks": 0,
+              "Shared Written Blocks": 0
+            }
+          ],
+          "scan_shared_hit_blocks": [
+            4
+          ],
+          "scan_shared_read_blocks": [
+            0
+          ]
+        },
+        "query": "SELECT count(*) FROM events WHERE tenant_id = 'assay_iso_tenant_a_a9594c1c7b6c' AND event_id BETWEEN 1 AND 100",
+        "result": 100,
+        "samples_ms": [
+          0.111584,
+          0.140417,
+          0.13925,
+          0.132167,
+          0.137834,
+          0.137125,
+          0.131,
+          0.112625,
+          0.135291,
+          0.1365,
+          0.12525,
+          0.133375,
+          0.148167,
+          0.144625,
+          0.15125,
+          0.158583,
+          0.129333,
+          0.141708,
+          0.125041,
+          0.178458,
+          0.112916,
+          0.143375,
+          0.131417,
+          0.141125,
+          0.1475
+        ]
+      },
+      "expected_rows": 100,
+      "plan_classification": "equivalent",
+      "plan_equivalence": {
+        "same_index_names": true,
+        "same_result": true,
+        "same_scan_cardinality": true
+      },
+      "rls": {
+        "explain_json": {
+          "Execution Time": 0.046,
+          "Plan": {
+            "Actual Loops": 1,
+            "Actual Rows": 1.0,
+            "Actual Startup Time": 0.031,
+            "Actual Total Time": 0.031,
+            "Async Capable": false,
+            "Disabled": false,
+            "Local Dirtied Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Written Blocks": 0,
+            "Node Type": "Aggregate",
+            "Parallel Aware": false,
+            "Partial Mode": "Simple",
+            "Plan Rows": 1,
+            "Plan Width": 8,
+            "Plans": [
+              {
+                "Actual Loops": 1,
+                "Actual Rows": 100.0,
+                "Actual Startup Time": 0.021,
+                "Actual Total Time": 0.027,
+                "Alias": "events",
+                "Async Capable": false,
+                "Disabled": false,
+                "Heap Fetches": 100,
+                "Index Cond": "((tenant_id = current_setting('app.tenant_id'::text, true)) AND (event_id >= 1) AND (event_id <= 100))",
+                "Index Name": "events_pkey",
+                "Index Searches": 1,
+                "Local Dirtied Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Written Blocks": 0,
+                "Node Type": "Index Only Scan",
+                "Parallel Aware": false,
+                "Parent Relationship": "Outer",
+                "Plan Rows": 1,
+                "Plan Width": 0,
+                "Relation Name": "events",
+                "Rows Removed by Index Recheck": 0,
+                "Scan Direction": "Forward",
+                "Shared Dirtied Blocks": 0,
+                "Shared Hit Blocks": 4,
+                "Shared Read Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Startup Cost": 0.42,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Total Cost": 8.44
+              }
+            ],
+            "Shared Dirtied Blocks": 0,
+            "Shared Hit Blocks": 4,
+            "Shared Read Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Startup Cost": 8.45,
+            "Strategy": "Plain",
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Total Cost": 8.46
+          },
+          "Planning": {
+            "Local Dirtied Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Written Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Hit Blocks": 100,
+            "Shared Read Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.104,
+          "Triggers": []
+        },
+        "max_ms": 0.159292,
+        "min_ms": 0.124166,
+        "n": 25,
+        "p50_ms": 0.137792,
+        "p95_ms": 0.15825,
+        "plan_summary": {
+          "execution_time_ms": 0.046,
+          "planning_time_ms": 0.104,
+          "rows_removed_by_filter": [
+            0
+          ],
+          "scan_actual_rows": [
+            100.0
+          ],
+          "scan_index_names": [
+            "events_pkey"
+          ],
+          "scan_nodes": [
+            {
+              "Actual Loops": 1,
+              "Actual Rows": 100.0,
+              "Index Cond": "((tenant_id = current_setting('app.tenant_id'::text, true)) AND (event_id >= 1) AND (event_id <= 100))",
+              "Index Name": "events_pkey",
+              "Node Type": "Index Only Scan",
+              "Plan Rows": 1,
+              "Rows Removed by Index Recheck": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Hit Blocks": 4,
+              "Shared Read Blocks": 0,
+              "Shared Written Blocks": 0
+            }
+          ],
+          "scan_shared_hit_blocks": [
+            4
+          ],
+          "scan_shared_read_blocks": [
+            0
+          ]
+        },
+        "query": "SELECT count(*) FROM events WHERE event_id BETWEEN 1 AND 100",
+        "result": 100,
+        "samples_ms": [
+          0.139875,
+          0.146083,
+          0.148209,
+          0.137792,
+          0.159292,
+          0.153541,
+          0.141917,
+          0.136417,
+          0.138959,
+          0.132083,
+          0.133417,
+          0.126958,
+          0.15825,
+          0.132583,
+          0.124166,
+          0.132083,
+          0.137583,
+          0.133459,
+          0.139583,
+          0.138541,
+          0.135416,
+          0.142792,
+          0.138584,
+          0.130083,
+          0.135875
+        ]
+      },
+      "semantic_note": "Both queries count the same tenant/event range; baseline is not an isolation claim.",
+      "tenant": "assay_iso_tenant_a_a9594c1c7b6c"
+    },
+    {
+      "baseline_explicit_predicate_bypassrls": {
+        "explain_json": {
+          "Execution Time": 5.972,
+          "Plan": {
+            "Actual Loops": 1,
+            "Actual Rows": 1.0,
+            "Actual Startup Time": 5.965,
+            "Actual Total Time": 5.965,
+            "Async Capable": false,
+            "Disabled": false,
+            "Local Dirtied Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Written Blocks": 0,
+            "Node Type": "Aggregate",
+            "Parallel Aware": false,
+            "Partial Mode": "Simple",
+            "Plan Rows": 1,
+            "Plan Width": 8,
+            "Plans": [
+              {
+                "Actual Loops": 1,
+                "Actual Rows": 100000.0,
+                "Actual Startup Time": 0.006,
+                "Actual Total Time": 3.903,
+                "Alias": "events",
+                "Async Capable": false,
+                "Disabled": false,
+                "Filter": "((event_id >= 1) AND (event_id <= 100000) AND (tenant_id = 'assay_iso_tenant_b_a9594c1c7b6c'::text))",
+                "Local Dirtied Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Written Blocks": 0,
+                "Node Type": "Seq Scan",
+                "Parallel Aware": false,
+                "Parent Relationship": "Outer",
+                "Plan Rows": 99973,
+                "Plan Width": 0,
+                "Relation Name": "events",
+                "Rows Removed by Filter": 100,
+                "Shared Dirtied Blocks": 0,
+                "Shared Hit Blocks": 835,
+                "Shared Read Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Startup Cost": 0.0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Total Cost": 2586.75
+              }
+            ],
+            "Shared Dirtied Blocks": 0,
+            "Shared Hit Blocks": 835,
+            "Shared Read Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Startup Cost": 2836.68,
+            "Strategy": "Plain",
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Total Cost": 2836.69
+          },
+          "Planning": {
+            "Local Dirtied Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Written Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Hit Blocks": 3,
+            "Shared Read Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.025,
+          "Triggers": []
+        },
+        "max_ms": 3.98575,
+        "min_ms": 3.565,
+        "n": 25,
+        "p50_ms": 3.689375,
+        "p95_ms": 3.957833,
+        "plan_summary": {
+          "execution_time_ms": 5.972,
+          "planning_time_ms": 0.025,
+          "rows_removed_by_filter": [
+            100
+          ],
+          "scan_actual_rows": [
+            100000.0
+          ],
+          "scan_index_names": [
+            null
+          ],
+          "scan_nodes": [
+            {
+              "Actual Loops": 1,
+              "Actual Rows": 100000.0,
+              "Filter": "((event_id >= 1) AND (event_id <= 100000) AND (tenant_id = 'assay_iso_tenant_b_a9594c1c7b6c'::text))",
+              "Node Type": "Seq Scan",
+              "Plan Rows": 99973,
+              "Rows Removed by Filter": 100,
+              "Shared Dirtied Blocks": 0,
+              "Shared Hit Blocks": 835,
+              "Shared Read Blocks": 0,
+              "Shared Written Blocks": 0
+            }
+          ],
+          "scan_shared_hit_blocks": [
+            835
+          ],
+          "scan_shared_read_blocks": [
+            0
+          ]
+        },
+        "query": "SELECT count(*) FROM events WHERE tenant_id = 'assay_iso_tenant_b_a9594c1c7b6c' AND event_id BETWEEN 1 AND 100000",
+        "result": 100000,
+        "samples_ms": [
+          3.565,
+          3.600416,
+          3.630417,
+          3.815291,
+          3.735625,
+          3.840125,
+          3.567916,
+          3.569125,
+          3.604375,
+          3.957833,
+          3.98575,
+          3.886583,
+          3.898375,
+          3.913792,
+          3.782917,
+          3.797958,
+          3.689375,
+          3.673083,
+          3.649375,
+          3.705667,
+          3.6135,
+          3.603333,
+          3.669292,
+          3.682959,
+          3.77275
+        ]
+      },
+      "expected_rows": 100000,
+      "plan_classification": "equivalent",
+      "plan_equivalence": {
+        "same_index_names": true,
+        "same_result": true,
+        "same_scan_cardinality": true
+      },
+      "rls": {
+        "explain_json": {
+          "Execution Time": 9.906,
+          "Plan": {
+            "Actual Loops": 1,
+            "Actual Rows": 1.0,
+            "Actual Startup Time": 9.903,
+            "Actual Total Time": 9.903,
+            "Async Capable": false,
+            "Disabled": false,
+            "Local Dirtied Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Written Blocks": 0,
+            "Node Type": "Aggregate",
+            "Parallel Aware": false,
+            "Partial Mode": "Simple",
+            "Plan Rows": 1,
+            "Plan Width": 8,
+            "Plans": [
+              {
+                "Actual Loops": 1,
+                "Actual Rows": 100000.0,
+                "Actual Startup Time": 0.011,
+                "Actual Total Time": 8.035,
+                "Alias": "events",
+                "Async Capable": false,
+                "Disabled": false,
+                "Filter": "((event_id >= 1) AND (event_id <= 100000) AND (tenant_id = current_setting('app.tenant_id'::text, true)))",
+                "Local Dirtied Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Written Blocks": 0,
+                "Node Type": "Seq Scan",
+                "Parallel Aware": false,
+                "Parent Relationship": "Outer",
+                "Plan Rows": 99973,
+                "Plan Width": 0,
+                "Relation Name": "events",
+                "Rows Removed by Filter": 100,
+                "Shared Dirtied Blocks": 0,
+                "Shared Hit Blocks": 835,
+                "Shared Read Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Startup Cost": 0.0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Total Cost": 2837.0
+              }
+            ],
+            "Shared Dirtied Blocks": 0,
+            "Shared Hit Blocks": 835,
+            "Shared Read Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Startup Cost": 3086.93,
+            "Strategy": "Plain",
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Total Cost": 3086.94
+          },
+          "Planning": {
+            "Local Dirtied Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Written Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Hit Blocks": 3,
+            "Shared Read Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.022,
+          "Triggers": []
+        },
+        "max_ms": 7.835625,
+        "min_ms": 6.991333,
+        "n": 25,
+        "p50_ms": 7.2195,
+        "p95_ms": 7.681417,
+        "plan_summary": {
+          "execution_time_ms": 9.906,
+          "planning_time_ms": 0.022,
+          "rows_removed_by_filter": [
+            100
+          ],
+          "scan_actual_rows": [
+            100000.0
+          ],
+          "scan_index_names": [
+            null
+          ],
+          "scan_nodes": [
+            {
+              "Actual Loops": 1,
+              "Actual Rows": 100000.0,
+              "Filter": "((event_id >= 1) AND (event_id <= 100000) AND (tenant_id = current_setting('app.tenant_id'::text, true)))",
+              "Node Type": "Seq Scan",
+              "Plan Rows": 99973,
+              "Rows Removed by Filter": 100,
+              "Shared Dirtied Blocks": 0,
+              "Shared Hit Blocks": 835,
+              "Shared Read Blocks": 0,
+              "Shared Written Blocks": 0
+            }
+          ],
+          "scan_shared_hit_blocks": [
+            835
+          ],
+          "scan_shared_read_blocks": [
+            0
+          ]
+        },
+        "query": "SELECT count(*) FROM events WHERE event_id BETWEEN 1 AND 100000",
+        "result": 100000,
+        "samples_ms": [
+          7.3075,
+          7.835625,
+          7.681417,
+          7.472875,
+          7.616375,
+          7.297292,
+          7.2195,
+          7.51275,
+          7.083042,
+          7.408542,
+          7.01675,
+          7.37125,
+          7.283167,
+          7.268542,
+          7.105875,
+          7.283375,
+          7.135458,
+          7.20375,
+          7.10025,
+          7.09475,
+          7.083333,
+          7.099667,
+          6.991333,
+          7.179041,
+          7.19925
+        ]
+      },
+      "semantic_note": "Both queries count the same tenant/event range; baseline is not an isolation claim.",
+      "tenant": "assay_iso_tenant_b_a9594c1c7b6c"
+    }
+  ],
+  "repetitions": 25,
+  "rows_total": 100100,
+  "warmup": 5
+}
