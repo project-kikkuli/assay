@@ -1,0 +1,826 @@
+{
+  "candidate_ddl": [
+    "CREATE INDEX continuum_perf_tenant_seq ON reservations(tenant, seq)",
+    "CREATE INDEX continuum_perf_tenant_status_quantity ON reservations(tenant, status, quantity)"
+  ],
+  "cases": {
+    "1000": {
+      "cancelled_rows": 992,
+      "candidate_indexes": {
+        "boundaries": {
+          "before_first_cursor": "121",
+          "before_first_ids": [
+            "reservation-1000-000000",
+            "reservation-1000-000020",
+            "reservation-1000-000040",
+            "reservation-1000-000060",
+            "reservation-1000-000080",
+            "reservation-1000-000100",
+            "reservation-1000-000120"
+          ],
+          "expected_alpha_count": 50,
+          "first_ids": [
+            "reservation-1000-000000",
+            "reservation-1000-000020",
+            "reservation-1000-000040",
+            "reservation-1000-000060",
+            "reservation-1000-000080",
+            "reservation-1000-000100",
+            "reservation-1000-000120"
+          ],
+          "first_next_cursor": "121",
+          "matches_expected": true,
+          "observed_alpha_count": 50,
+          "repeated_second_cursor": "261",
+          "repeated_second_ids": [
+            "reservation-1000-000140",
+            "reservation-1000-000160",
+            "reservation-1000-000180",
+            "reservation-1000-000200",
+            "reservation-1000-000220",
+            "reservation-1000-000240",
+            "reservation-1000-000260"
+          ],
+          "second_ids": [
+            "reservation-1000-000140",
+            "reservation-1000-000160",
+            "reservation-1000-000180",
+            "reservation-1000-000200",
+            "reservation-1000-000220",
+            "reservation-1000-000240",
+            "reservation-1000-000260"
+          ],
+          "second_next_cursor": "261",
+          "terminal_cursor": null,
+          "terminal_items": []
+        },
+        "candidate_indexes": [
+          "CREATE INDEX continuum_perf_tenant_seq ON reservations(tenant, seq)",
+          "CREATE INDEX continuum_perf_tenant_status_quantity ON reservations(tenant, status, quantity)"
+        ],
+        "capacity": {
+          "first_ms": 53.80325,
+          "first_progress_opcodes_n1": 250,
+          "median_ms": 0.76925,
+          "median_progress_opcodes_n1": 250,
+          "samples": [
+            {
+              "elapsed_ms": 53.80325,
+              "progress_opcodes_n1": 250
+            },
+            {
+              "elapsed_ms": 0.710125,
+              "progress_opcodes_n1": 0
+            },
+            {
+              "elapsed_ms": 0.76925,
+              "progress_opcodes_n1": 0
+            }
+          ],
+          "used": 8
+        },
+        "list": {
+          "expected_count": 50,
+          "first_ms": 15.507542,
+          "first_progress_opcodes_n1": 723,
+          "median_ms": 15.507542,
+          "median_progress_opcodes_n1": 723,
+          "page_ids_sha256": "e81d1809d6943686db981b39054ca59aad363dc9c53bd1a54748ad330cde8c5c",
+          "returned_count": 50,
+          "samples": [
+            {
+              "elapsed_ms": 15.507542,
+              "progress_opcodes_n1": 723
+            },
+            {
+              "elapsed_ms": 9.293208,
+              "progress_opcodes_n1": null
+            },
+            {
+              "elapsed_ms": 19.386458,
+              "progress_opcodes_n1": null
+            }
+          ]
+        },
+        "query_plans": {
+          "capacity": [
+            {
+              "detail": "SEARCH reservations USING COVERING INDEX continuum_perf_tenant_status_quantity (tenant=? AND status=?)",
+              "id": 3,
+              "notused": 102,
+              "parent": 0
+            }
+          ],
+          "list_cursor_page": [
+            {
+              "detail": "SEARCH reservations USING INDEX continuum_perf_tenant_seq (tenant=? AND seq>?)",
+              "id": 5,
+              "notused": 94,
+              "parent": 0
+            }
+          ],
+          "list_first_page": [
+            {
+              "detail": "SEARCH reservations USING INDEX continuum_perf_tenant_seq (tenant=?)",
+              "id": 5,
+              "notused": 113,
+              "parent": 0
+            }
+          ]
+        },
+        "schema_variant": "candidate"
+      },
+      "equivalence": {
+        "capacity_output_equal": true,
+        "list_boundary_outputs_equal": true,
+        "list_cardinality_equal": true,
+        "list_page_signature_equal": true
+      },
+      "existing_schema": {
+        "boundaries": {
+          "before_first_cursor": "121",
+          "before_first_ids": [
+            "reservation-1000-000000",
+            "reservation-1000-000020",
+            "reservation-1000-000040",
+            "reservation-1000-000060",
+            "reservation-1000-000080",
+            "reservation-1000-000100",
+            "reservation-1000-000120"
+          ],
+          "expected_alpha_count": 50,
+          "first_ids": [
+            "reservation-1000-000000",
+            "reservation-1000-000020",
+            "reservation-1000-000040",
+            "reservation-1000-000060",
+            "reservation-1000-000080",
+            "reservation-1000-000100",
+            "reservation-1000-000120"
+          ],
+          "first_next_cursor": "121",
+          "matches_expected": true,
+          "observed_alpha_count": 50,
+          "repeated_second_cursor": "261",
+          "repeated_second_ids": [
+            "reservation-1000-000140",
+            "reservation-1000-000160",
+            "reservation-1000-000180",
+            "reservation-1000-000200",
+            "reservation-1000-000220",
+            "reservation-1000-000240",
+            "reservation-1000-000260"
+          ],
+          "second_ids": [
+            "reservation-1000-000140",
+            "reservation-1000-000160",
+            "reservation-1000-000180",
+            "reservation-1000-000200",
+            "reservation-1000-000220",
+            "reservation-1000-000240",
+            "reservation-1000-000260"
+          ],
+          "second_next_cursor": "261",
+          "terminal_cursor": null,
+          "terminal_items": []
+        },
+        "candidate_indexes": [],
+        "capacity": {
+          "first_ms": 3.426875,
+          "first_progress_opcodes_n1": 3472,
+          "median_ms": 1.472291,
+          "median_progress_opcodes_n1": 3472,
+          "samples": [
+            {
+              "elapsed_ms": 3.426875,
+              "progress_opcodes_n1": 3472
+            },
+            {
+              "elapsed_ms": 1.472291,
+              "progress_opcodes_n1": 0
+            },
+            {
+              "elapsed_ms": 1.02725,
+              "progress_opcodes_n1": 0
+            }
+          ],
+          "used": 8
+        },
+        "list": {
+          "expected_count": 50,
+          "first_ms": 2.643292,
+          "first_progress_opcodes_n1": 4545,
+          "median_ms": 9.465125,
+          "median_progress_opcodes_n1": 4545,
+          "page_ids_sha256": "e81d1809d6943686db981b39054ca59aad363dc9c53bd1a54748ad330cde8c5c",
+          "returned_count": 50,
+          "samples": [
+            {
+              "elapsed_ms": 2.643292,
+              "progress_opcodes_n1": 4545
+            },
+            {
+              "elapsed_ms": 18.414208,
+              "progress_opcodes_n1": null
+            },
+            {
+              "elapsed_ms": 9.465125,
+              "progress_opcodes_n1": null
+            }
+          ]
+        },
+        "query_plans": {
+          "capacity": [
+            {
+              "detail": "SCAN reservations",
+              "id": 3,
+              "notused": 115,
+              "parent": 0
+            }
+          ],
+          "list_cursor_page": [
+            {
+              "detail": "SEARCH reservations USING INDEX sqlite_autoindex_reservations_2 (seq>?)",
+              "id": 5,
+              "notused": 101,
+              "parent": 0
+            }
+          ],
+          "list_first_page": [
+            {
+              "detail": "SCAN reservations USING INDEX sqlite_autoindex_reservations_2",
+              "id": 5,
+              "notused": 121,
+              "parent": 0
+            }
+          ]
+        },
+        "schema_variant": "existing"
+      },
+      "total_rows": 1000
+    },
+    "10000": {
+      "cancelled_rows": 9992,
+      "candidate_indexes": {
+        "boundaries": {
+          "before_first_cursor": "121",
+          "before_first_ids": [
+            "reservation-10000-000000",
+            "reservation-10000-000020",
+            "reservation-10000-000040",
+            "reservation-10000-000060",
+            "reservation-10000-000080",
+            "reservation-10000-000100",
+            "reservation-10000-000120"
+          ],
+          "expected_alpha_count": 500,
+          "first_ids": [
+            "reservation-10000-000000",
+            "reservation-10000-000020",
+            "reservation-10000-000040",
+            "reservation-10000-000060",
+            "reservation-10000-000080",
+            "reservation-10000-000100",
+            "reservation-10000-000120"
+          ],
+          "first_next_cursor": "121",
+          "matches_expected": true,
+          "observed_alpha_count": 500,
+          "repeated_second_cursor": "261",
+          "repeated_second_ids": [
+            "reservation-10000-000140",
+            "reservation-10000-000160",
+            "reservation-10000-000180",
+            "reservation-10000-000200",
+            "reservation-10000-000220",
+            "reservation-10000-000240",
+            "reservation-10000-000260"
+          ],
+          "second_ids": [
+            "reservation-10000-000140",
+            "reservation-10000-000160",
+            "reservation-10000-000180",
+            "reservation-10000-000200",
+            "reservation-10000-000220",
+            "reservation-10000-000240",
+            "reservation-10000-000260"
+          ],
+          "second_next_cursor": "261",
+          "terminal_cursor": null,
+          "terminal_items": []
+        },
+        "candidate_indexes": [
+          "CREATE INDEX continuum_perf_tenant_seq ON reservations(tenant, seq)",
+          "CREATE INDEX continuum_perf_tenant_status_quantity ON reservations(tenant, status, quantity)"
+        ],
+        "capacity": {
+          "first_ms": 0.871042,
+          "first_progress_opcodes_n1": 250,
+          "median_ms": 0.871042,
+          "median_progress_opcodes_n1": 250,
+          "samples": [
+            {
+              "elapsed_ms": 0.871042,
+              "progress_opcodes_n1": 250
+            },
+            {
+              "elapsed_ms": 0.922666,
+              "progress_opcodes_n1": 0
+            },
+            {
+              "elapsed_ms": 0.773625,
+              "progress_opcodes_n1": 0
+            }
+          ],
+          "used": 8
+        },
+        "list": {
+          "expected_count": 500,
+          "first_ms": 2.537708,
+          "first_progress_opcodes_n1": 1282,
+          "median_ms": 2.537708,
+          "median_progress_opcodes_n1": 1282,
+          "page_ids_sha256": "8ee0f9208e510a472690cf223e5b4a665cf0cb2a355bd457ec9ec7f80c8a45db",
+          "returned_count": 100,
+          "samples": [
+            {
+              "elapsed_ms": 2.537708,
+              "progress_opcodes_n1": 1282
+            },
+            {
+              "elapsed_ms": 1.442084,
+              "progress_opcodes_n1": null
+            },
+            {
+              "elapsed_ms": 82.535209,
+              "progress_opcodes_n1": null
+            }
+          ]
+        },
+        "query_plans": {
+          "capacity": [
+            {
+              "detail": "SEARCH reservations USING COVERING INDEX continuum_perf_tenant_status_quantity (tenant=? AND status=?)",
+              "id": 3,
+              "notused": 135,
+              "parent": 0
+            }
+          ],
+          "list_cursor_page": [
+            {
+              "detail": "SEARCH reservations USING INDEX continuum_perf_tenant_seq (tenant=? AND seq>?)",
+              "id": 5,
+              "notused": 126,
+              "parent": 0
+            }
+          ],
+          "list_first_page": [
+            {
+              "detail": "SEARCH reservations USING INDEX continuum_perf_tenant_seq (tenant=?)",
+              "id": 5,
+              "notused": 146,
+              "parent": 0
+            }
+          ]
+        },
+        "schema_variant": "candidate"
+      },
+      "equivalence": {
+        "capacity_output_equal": true,
+        "list_boundary_outputs_equal": true,
+        "list_cardinality_equal": true,
+        "list_page_signature_equal": true
+      },
+      "existing_schema": {
+        "boundaries": {
+          "before_first_cursor": "121",
+          "before_first_ids": [
+            "reservation-10000-000000",
+            "reservation-10000-000020",
+            "reservation-10000-000040",
+            "reservation-10000-000060",
+            "reservation-10000-000080",
+            "reservation-10000-000100",
+            "reservation-10000-000120"
+          ],
+          "expected_alpha_count": 500,
+          "first_ids": [
+            "reservation-10000-000000",
+            "reservation-10000-000020",
+            "reservation-10000-000040",
+            "reservation-10000-000060",
+            "reservation-10000-000080",
+            "reservation-10000-000100",
+            "reservation-10000-000120"
+          ],
+          "first_next_cursor": "121",
+          "matches_expected": true,
+          "observed_alpha_count": 500,
+          "repeated_second_cursor": "261",
+          "repeated_second_ids": [
+            "reservation-10000-000140",
+            "reservation-10000-000160",
+            "reservation-10000-000180",
+            "reservation-10000-000200",
+            "reservation-10000-000220",
+            "reservation-10000-000240",
+            "reservation-10000-000260"
+          ],
+          "second_ids": [
+            "reservation-10000-000140",
+            "reservation-10000-000160",
+            "reservation-10000-000180",
+            "reservation-10000-000200",
+            "reservation-10000-000220",
+            "reservation-10000-000240",
+            "reservation-10000-000260"
+          ],
+          "second_next_cursor": "261",
+          "terminal_cursor": null,
+          "terminal_items": []
+        },
+        "candidate_indexes": [],
+        "capacity": {
+          "first_ms": 22.775375,
+          "first_progress_opcodes_n1": 33172,
+          "median_ms": 22.775375,
+          "median_progress_opcodes_n1": 33172,
+          "samples": [
+            {
+              "elapsed_ms": 22.775375,
+              "progress_opcodes_n1": 33172
+            },
+            {
+              "elapsed_ms": 3.573416,
+              "progress_opcodes_n1": 0
+            },
+            {
+              "elapsed_ms": 24.260708,
+              "progress_opcodes_n1": 0
+            }
+          ],
+          "used": 8
+        },
+        "list": {
+          "expected_count": 500,
+          "first_ms": 25.881,
+          "first_progress_opcodes_n1": 8956,
+          "median_ms": 4.088042,
+          "median_progress_opcodes_n1": 8956,
+          "page_ids_sha256": "8ee0f9208e510a472690cf223e5b4a665cf0cb2a355bd457ec9ec7f80c8a45db",
+          "returned_count": 100,
+          "samples": [
+            {
+              "elapsed_ms": 25.881,
+              "progress_opcodes_n1": 8956
+            },
+            {
+              "elapsed_ms": 4.088042,
+              "progress_opcodes_n1": null
+            },
+            {
+              "elapsed_ms": 1.881042,
+              "progress_opcodes_n1": null
+            }
+          ]
+        },
+        "query_plans": {
+          "capacity": [
+            {
+              "detail": "SCAN reservations",
+              "id": 3,
+              "notused": 148,
+              "parent": 0
+            }
+          ],
+          "list_cursor_page": [
+            {
+              "detail": "SEARCH reservations USING INDEX sqlite_autoindex_reservations_2 (seq>?)",
+              "id": 5,
+              "notused": 134,
+              "parent": 0
+            }
+          ],
+          "list_first_page": [
+            {
+              "detail": "SCAN reservations USING INDEX sqlite_autoindex_reservations_2",
+              "id": 5,
+              "notused": 154,
+              "parent": 0
+            }
+          ]
+        },
+        "schema_variant": "existing"
+      },
+      "total_rows": 10000
+    },
+    "100000": {
+      "cancelled_rows": 99992,
+      "candidate_indexes": {
+        "boundaries": {
+          "before_first_cursor": "121",
+          "before_first_ids": [
+            "reservation-100000-000000",
+            "reservation-100000-000020",
+            "reservation-100000-000040",
+            "reservation-100000-000060",
+            "reservation-100000-000080",
+            "reservation-100000-000100",
+            "reservation-100000-000120"
+          ],
+          "expected_alpha_count": 5000,
+          "first_ids": [
+            "reservation-100000-000000",
+            "reservation-100000-000020",
+            "reservation-100000-000040",
+            "reservation-100000-000060",
+            "reservation-100000-000080",
+            "reservation-100000-000100",
+            "reservation-100000-000120"
+          ],
+          "first_next_cursor": "121",
+          "matches_expected": true,
+          "observed_alpha_count": 5000,
+          "repeated_second_cursor": "261",
+          "repeated_second_ids": [
+            "reservation-100000-000140",
+            "reservation-100000-000160",
+            "reservation-100000-000180",
+            "reservation-100000-000200",
+            "reservation-100000-000220",
+            "reservation-100000-000240",
+            "reservation-100000-000260"
+          ],
+          "second_ids": [
+            "reservation-100000-000140",
+            "reservation-100000-000160",
+            "reservation-100000-000180",
+            "reservation-100000-000200",
+            "reservation-100000-000220",
+            "reservation-100000-000240",
+            "reservation-100000-000260"
+          ],
+          "second_next_cursor": "261",
+          "terminal_cursor": null,
+          "terminal_items": []
+        },
+        "candidate_indexes": [
+          "CREATE INDEX continuum_perf_tenant_seq ON reservations(tenant, seq)",
+          "CREATE INDEX continuum_perf_tenant_status_quantity ON reservations(tenant, status, quantity)"
+        ],
+        "capacity": {
+          "first_ms": 0.750792,
+          "first_progress_opcodes_n1": 250,
+          "median_ms": 0.739584,
+          "median_progress_opcodes_n1": 250,
+          "samples": [
+            {
+              "elapsed_ms": 0.750792,
+              "progress_opcodes_n1": 250
+            },
+            {
+              "elapsed_ms": 0.712125,
+              "progress_opcodes_n1": 0
+            },
+            {
+              "elapsed_ms": 0.739584,
+              "progress_opcodes_n1": 0
+            }
+          ],
+          "used": 8
+        },
+        "list": {
+          "expected_count": 5000,
+          "first_ms": 1.621417,
+          "first_progress_opcodes_n1": 1282,
+          "median_ms": 1.530541,
+          "median_progress_opcodes_n1": 1282,
+          "page_ids_sha256": "89adde253b80958e2939b3b166f15496bdf07429f973363cad3cc5429e3807da",
+          "returned_count": 100,
+          "samples": [
+            {
+              "elapsed_ms": 1.621417,
+              "progress_opcodes_n1": 1282
+            },
+            {
+              "elapsed_ms": 1.530541,
+              "progress_opcodes_n1": null
+            },
+            {
+              "elapsed_ms": 1.45825,
+              "progress_opcodes_n1": null
+            }
+          ]
+        },
+        "query_plans": {
+          "capacity": [
+            {
+              "detail": "SEARCH reservations USING COVERING INDEX continuum_perf_tenant_status_quantity (tenant=? AND status=?)",
+              "id": 3,
+              "notused": 169,
+              "parent": 0
+            }
+          ],
+          "list_cursor_page": [
+            {
+              "detail": "SEARCH reservations USING INDEX continuum_perf_tenant_seq (tenant=? AND seq>?)",
+              "id": 5,
+              "notused": 160,
+              "parent": 0
+            }
+          ],
+          "list_first_page": [
+            {
+              "detail": "SEARCH reservations USING INDEX continuum_perf_tenant_seq (tenant=?)",
+              "id": 5,
+              "notused": 180,
+              "parent": 0
+            }
+          ]
+        },
+        "schema_variant": "candidate"
+      },
+      "equivalence": {
+        "capacity_output_equal": true,
+        "list_boundary_outputs_equal": true,
+        "list_cardinality_equal": true,
+        "list_page_signature_equal": true
+      },
+      "existing_schema": {
+        "boundaries": {
+          "before_first_cursor": "121",
+          "before_first_ids": [
+            "reservation-100000-000000",
+            "reservation-100000-000020",
+            "reservation-100000-000040",
+            "reservation-100000-000060",
+            "reservation-100000-000080",
+            "reservation-100000-000100",
+            "reservation-100000-000120"
+          ],
+          "expected_alpha_count": 5000,
+          "first_ids": [
+            "reservation-100000-000000",
+            "reservation-100000-000020",
+            "reservation-100000-000040",
+            "reservation-100000-000060",
+            "reservation-100000-000080",
+            "reservation-100000-000100",
+            "reservation-100000-000120"
+          ],
+          "first_next_cursor": "121",
+          "matches_expected": true,
+          "observed_alpha_count": 5000,
+          "repeated_second_cursor": "261",
+          "repeated_second_ids": [
+            "reservation-100000-000140",
+            "reservation-100000-000160",
+            "reservation-100000-000180",
+            "reservation-100000-000200",
+            "reservation-100000-000220",
+            "reservation-100000-000240",
+            "reservation-100000-000260"
+          ],
+          "second_ids": [
+            "reservation-100000-000140",
+            "reservation-100000-000160",
+            "reservation-100000-000180",
+            "reservation-100000-000200",
+            "reservation-100000-000220",
+            "reservation-100000-000240",
+            "reservation-100000-000260"
+          ],
+          "second_next_cursor": "261",
+          "terminal_cursor": null,
+          "terminal_items": []
+        },
+        "candidate_indexes": [],
+        "capacity": {
+          "first_ms": 321.426709,
+          "first_progress_opcodes_n1": 330172,
+          "median_ms": 261.693333,
+          "median_progress_opcodes_n1": 330172,
+          "samples": [
+            {
+              "elapsed_ms": 321.426709,
+              "progress_opcodes_n1": 330172
+            },
+            {
+              "elapsed_ms": 70.404542,
+              "progress_opcodes_n1": 0
+            },
+            {
+              "elapsed_ms": 261.693333,
+              "progress_opcodes_n1": 0
+            }
+          ],
+          "used": 8
+        },
+        "list": {
+          "expected_count": 5000,
+          "first_ms": 26.611958,
+          "first_progress_opcodes_n1": 8956,
+          "median_ms": 8.079791,
+          "median_progress_opcodes_n1": 8956,
+          "page_ids_sha256": "89adde253b80958e2939b3b166f15496bdf07429f973363cad3cc5429e3807da",
+          "returned_count": 100,
+          "samples": [
+            {
+              "elapsed_ms": 26.611958,
+              "progress_opcodes_n1": 8956
+            },
+            {
+              "elapsed_ms": 7.790541,
+              "progress_opcodes_n1": null
+            },
+            {
+              "elapsed_ms": 8.079791,
+              "progress_opcodes_n1": null
+            }
+          ]
+        },
+        "query_plans": {
+          "capacity": [
+            {
+              "detail": "SCAN reservations",
+              "id": 3,
+              "notused": 182,
+              "parent": 0
+            }
+          ],
+          "list_cursor_page": [
+            {
+              "detail": "SEARCH reservations USING INDEX sqlite_autoindex_reservations_2 (seq>?)",
+              "id": 5,
+              "notused": 168,
+              "parent": 0
+            }
+          ],
+          "list_first_page": [
+            {
+              "detail": "SCAN reservations USING INDEX sqlite_autoindex_reservations_2",
+              "id": 5,
+              "notused": 188,
+              "parent": 0
+            }
+          ]
+        },
+        "schema_variant": "existing"
+      },
+      "total_rows": 100000
+    }
+  },
+  "contract_version": 1,
+  "experiment": "continuum SQLite reservation cost evidence",
+  "method": {
+    "capacity": "SELECT COALESCE(SUM(quantity), 0) AS used FROM reservations WHERE tenant=? AND status IN ('reserved', 'approved', 'fulfilled')",
+    "list": "ReservationService.list_reservations with an observed Store connection",
+    "progress_handler": "sqlite3 set_progress_handler(callback, 1); each callback represents one VM opcode",
+    "timings": "first connection/query sample plus repeated samples; diagnostic only",
+    "warm_cache_note": "opcode counts and first samples are retained because repeated timings can be cache-warm"
+  },
+  "opcode_slope": {
+    "candidate_capacity_first": {
+      "at_1000": 250.0,
+      "at_100000": 250.0,
+      "ratio_100000_to_1000": 1.0
+    },
+    "candidate_list_first": {
+      "at_1000": 723.0,
+      "at_100000": 1282.0,
+      "ratio_100000_to_1000": 1.7731673582295988
+    },
+    "existing_capacity_first": {
+      "at_1000": 3472.0,
+      "at_100000": 330172.0,
+      "ratio_100000_to_1000": 95.09562211981567
+    },
+    "existing_list_first": {
+      "at_1000": 4545.0,
+      "at_100000": 8956.0,
+      "ratio_100000_to_1000": 1.9705170517051704
+    }
+  },
+  "python": "3.12.9",
+  "runtime_seconds": 21.12283675,
+  "samples_per_query": 3,
+  "scales": [
+    1000,
+    10000,
+    100000
+  ],
+  "source": {
+    "api_sha256": "af3a7debd22aef4d7239fa33bb921adea69b2a8bc7eff6cc30f0a941c4399bcc",
+    "capacity_function_sha256": "b546485f99e8d84d0d05d71bc4c57edac8e9e846b73dbe89f1cb701b423d40ec",
+    "checked_markers": {
+      "capacity_predicate": true,
+      "capacity_select": true,
+      "list_cursor": true,
+      "list_order_limit": true,
+      "list_select": true,
+      "list_tenant_order": true
+    },
+    "list_function_sha256": "5aff38df40061f3034f540a8e7440cfdc25505d18d8b47b158758981fe401f44"
+  },
+  "status": "observed"
+}

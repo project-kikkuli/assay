@@ -19,7 +19,7 @@ import tempfile
 import time
 import uuid
 
-from capsule import World, command, request
+from capsule import World, command, request, run_process
 from evidence import Authority, Store, admit, canonical, digest, expected_keys, file_hash, run_graph, tree
 
 ROOT = Path(__file__).resolve().parent
@@ -27,6 +27,8 @@ REPO = ROOT.parent.parent
 OUT = REPO / "out/continuum"
 ENVIRONMENTS = json.loads((ROOT / "environment.json").read_text())
 IGNORED = {"node_modules", "dist", "__pycache__", ".pytest_cache"}
+CONTROL_FILES = ("run.py", "capsule.py", "evidence.py", "verify.py", "contract.json", "browser.mjs", "edge.py")
+EXECUTOR_SOURCE = {name: file_hash(ROOT / name) for name in CONTROL_FILES}
 
 
 def dependency_tree(root):
@@ -89,6 +91,7 @@ def blob_restore(sha, path, *, executable=False):
 def compile_client(root, environment):
     before = tree(root / "client", exclude=IGNORED)
     args = ["docker", "run", "--rm", "--network=none", "--read-only", "--cap-drop=ALL",
+            "--user", f"{os.getuid()}:{os.getgid()}",
             "--security-opt=no-new-privileges", "--tmpfs", "/tmp:rw,size=64m",
             "--mount", f"type=bind,source={root / 'client'},target=/client,readonly",
             "--mount", f"type=bind,source={root / 'client/dist'},target=/client/dist", "-w", "/client",
@@ -169,9 +172,10 @@ def compile_haskell(root):
     output = root / "haskell-bin"
     output.mkdir(exist_ok=True)
     command(["docker", "run", "--rm", "--network=none", "--read-only", "--tmpfs", "/tmp:rw,size=128m",
+             "--user", f"{os.getuid()}:{os.getgid()}",
              "--mount", f"type=bind,source={root / 'auditors'},target=/src,readonly",
              "--mount", f"type=bind,source={output},target=/out", ENVIRONMENTS["haskell"],
-             "ghc", "-O1", "-outputdir", "/out", "-o", "/out/admission", "/src/admission.hs"], timeout=120)
+             "ghc", "-no-user-package-db", "-O1", "-outputdir", "/out", "-o", "/out/admission", "/src/admission.hs"], timeout=120)
     return {"passed": True, "binary": blob_put(output / "admission")}
 
 
@@ -187,7 +191,8 @@ def audit_ledger(root, inputs):
 
 def policy_decision(root, binary, observation, compatibility="compatible", human="none", evidence="valid"):
     blob_restore(binary, root / "haskell-bin/admission", executable=True)
-    outcome = subprocess.run(["docker", "run", "--rm", "-i", "--network=none", "--read-only",
+    outcome = run_process(["docker", "run", "--rm", "-i", "--network=none", "--read-only",
+                               "--user", f"{os.getuid()}:{os.getgid()}",
                                "--mount", f"type=bind,source={root / 'haskell-bin'},target=/policy,readonly",
                                ENVIRONMENTS["haskell"], "/policy/admission"],
                               input=f"v1\t{evidence}\t{observation}\t{compatibility}\t{human}\n",
@@ -231,14 +236,17 @@ def migration(root):
 
 def make_actions(root, profile):
     environment = ENVIRONMENTS[profile]
-    recipe = digest({name: file_hash(ROOT / name) for name in
-                     ("run.py", "capsule.py", "evidence.py", "verify.py", "contract.json", "browser.mjs", "edge.py")})
+    current_source = {name: file_hash(ROOT / name) for name in CONTROL_FILES}
+    if current_source != EXECUTOR_SOURCE:
+        raise ValueError("trusted executor source changed during this process; restart before issuing evidence")
+    recipe = digest(current_source)
     app = tree(root / "app")
     client = tree(root / "client", exclude=IGNORED)
     dependencies = digest(dependency_tree(root / "client/node_modules"))
     trusted = {"contract": file_hash(root / "verifier/contract.json"), "controls": tree(root / "verifier")}
     def action(inputs, env, run, deps=(), restore=None):
-        return {"inputs": inputs, "environment": env, "recipe": recipe, "run": run, "deps": list(deps), "restore": restore}
+        return {"inputs": inputs, "environment": {"runtime": env, "uid": os.getuid(), "gid": os.getgid()},
+                "recipe": recipe, "run": run, "deps": list(deps), "restore": restore}
     return {
         "client": action({"source": client, "dependencies": dependencies}, environment["node"],
                          lambda _: compile_client(root, environment), restore=lambda result: restore_client(root, result)),
@@ -261,6 +269,7 @@ def make_actions(root, profile):
 def check(*, profile="current", jobs=4, reuse=True, overrides=None):
     started = time.perf_counter()
     root = freeze(overrides)
+    capture_seconds = time.perf_counter() - started
     authority = Authority(OUT / "operator")
     store = Store(OUT / "receipts", authority)
     actions = make_actions(root, profile)
@@ -273,17 +282,27 @@ def check(*, profile="current", jobs=4, reuse=True, overrides=None):
                      policy=digest({name: action["recipe"] for name, action in actions.items()}), artifact_action="package")
     report = {"format": "continuum.run.v1", "profile": profile, "jobs": jobs, "reuse": reuse,
               "seconds": time.perf_counter() - started, "graph": graph, "admission": decision,
+              "capture_seconds": capture_seconds,
               "preparation_included": False,
               "limits": ["trusted operator host and Docker daemon", "synthetic identities and workload",
                          "not deterministic OS scheduling", "hosted queue and image/dependency preparation not measured"]}
     (root / "report.json").write_bytes(canonical(report))
+    trace = {"traceEvents": [{"name": name, "cat": "verification", "ph": "X", "pid": 1, "tid": name,
+                              "ts": item["start_seconds"] * 1_000_000, "dur": item["observed_seconds"] * 1_000_000,
+                              "args": {"cache": item["cache"], "dependencies": item["dependencies"],
+                                       "action_key": item["receipt"]["payload"]["action_key"]}}
+                             for name, item in graph["actions"].items()]}
+    (root / "trace.json").write_bytes(canonical(trace))
     return report, root
 
 
 def concise(report):
     return {"seconds": round(report["seconds"], 3), "graph_seconds": round(report["graph"]["seconds"], 3),
             "decision": report["admission"]["decision"], "cache_hits": report["graph"]["cache_hits"],
-            "actions": {name: {"cache": item["cache"], "seconds": round(item["receipt"]["payload"]["execution_seconds"], 3),
+            "capture_seconds": round(report.get("capture_seconds", 0), 3),
+            "actions": {name: {"cache": item["cache"], "seconds": round(item["observed_seconds"], 3),
+                               "start_seconds": round(item["start_seconds"], 3), "dependencies": item["dependencies"],
+                               "evidence_execution_seconds": round(item["receipt"]["payload"]["execution_seconds"], 3),
                                "passed": item["receipt"]["payload"]["result"]["passed"],
                                "error": item["receipt"]["payload"]["result"].get("error")}
                         for name, item in report["graph"]["actions"].items()}}

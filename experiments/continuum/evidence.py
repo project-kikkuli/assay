@@ -131,6 +131,11 @@ def run_graph(actions, store, *, jobs=1, reuse=True):
     completed, pending, running = {}, dict(actions), {}
 
     def execute(name, action):
+        observed_start = time.perf_counter()
+        def observed(result):
+            return {**result, "start_seconds": observed_start - started,
+                    "observed_seconds": time.perf_counter() - observed_start,
+                    "dependencies": list(action.get("deps", []))}
         spec = {"name": name, "inputs": action["inputs"], "recipe": action["recipe"],
                 "environment": action.get("environment", {}),
                 "dependencies": {dep: {field: completed[dep]["receipt"]["payload"][field]
@@ -141,7 +146,7 @@ def run_graph(actions, store, *, jobs=1, reuse=True):
         if previous is not None:
             if action.get("restore") and previous["payload"]["result"]["passed"]:
                 action["restore"](previous["payload"]["result"])
-            return {"cache": "hit", "receipt": previous}
+            return observed({"cache": "hit", "receipt": previous})
         begin = time.perf_counter()
         try:
             result = action["run"]({dep: completed[dep]["receipt"]["payload"]["result"]
@@ -150,7 +155,7 @@ def run_graph(actions, store, *, jobs=1, reuse=True):
                 raise ValueError("action did not produce an explicit verdict")
         except Exception as error:
             result = {"passed": False, "kind": "inconclusive", "error": f"{type(error).__name__}: {error}"}
-        return {"cache": "miss", "receipt": store.put(spec, result, time.perf_counter() - begin)}
+        return observed({"cache": "miss", "receipt": store.put(spec, result, time.perf_counter() - begin)})
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
         while pending or running:

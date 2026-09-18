@@ -14,9 +14,23 @@ import urllib.request
 import uuid
 
 
+def run_process(args, **kwargs):
+    """A timed-out Docker CLI must not leave its application running anonymously."""
+    args = [str(value) for value in args]
+    owned = None
+    if args[:2] == ["docker", "run"] and "--name" not in args:
+        owned = f"assay-continuum-action-{uuid.uuid4().hex[:12]}"
+        args[2:2] = ["--name", owned]
+    try:
+        return subprocess.run(args, **kwargs)
+    except BaseException:
+        if owned:
+            subprocess.run(["docker", "rm", "-f", owned], capture_output=True, timeout=15)
+        raise
+
+
 def command(args, *, cwd=None, timeout=90):
-    result = subprocess.run([str(value) for value in args], cwd=cwd, capture_output=True,
-                            text=True, timeout=timeout)
+    result = run_process(args, cwd=cwd, capture_output=True, text=True, timeout=timeout)
     if result.returncode:
         raise RuntimeError(f"{args[0]} failed ({result.returncode}): {result.stderr[-2500:]} {result.stdout[-1000:]}")
     return result.stdout.strip()
@@ -57,6 +71,7 @@ class World:
     def launch(self, name, image, args, *, mounts=(), port=None, working=None, network=None):
         identity = f"{self.prefix}-{name}"
         cli = ["run", "-d", "--name", identity, "--network", network or self.network,
+               "--user", f"{os.getuid()}:{os.getgid()}",
                "--read-only", "--cap-drop=ALL",
                "--security-opt=no-new-privileges", "--pids-limit=128", "--memory=256m", "--cpus=1",
                "--tmpfs", "/tmp:rw,nosuid,nodev,size=64m", "-e", "PYTHONDONTWRITEBYTECODE=1"]
@@ -127,6 +142,7 @@ class World:
         identity = f"{self.prefix}-worker-{uuid.uuid4().hex[:6]}"
         self.containers.append(identity)
         return ["docker", "run", "--rm", "--name", identity, "--network", self.network,
+                "--user", f"{os.getuid()}:{os.getgid()}",
                 "--read-only", "--cap-drop=ALL", "--security-opt=no-new-privileges", "--pids-limit=128",
                 "--memory=256m", "--cpus=1", "--tmpfs", "/tmp:rw,nosuid,nodev,size=16m",
                 "--mount", f"type=bind,source={self.root / 'client'},target=/client,readonly", "-w", "/client",
@@ -143,7 +159,11 @@ class World:
     def close(self):
         failures = []
         for identity in reversed(self.containers):
-            result = subprocess.run(["docker", "rm", "-f", identity], capture_output=True, text=True, timeout=15)
+            try:
+                result = subprocess.run(["docker", "rm", "-f", identity], capture_output=True, text=True, timeout=15)
+            except subprocess.TimeoutExpired:
+                failures.append(identity)
+                continue
             if result.returncode and "No such container" not in result.stderr:
                 failures.append(identity)
         result = subprocess.run(["docker", "network", "rm", self.network], capture_output=True, text=True, timeout=15)
