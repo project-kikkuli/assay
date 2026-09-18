@@ -1,0 +1,41 @@
+{
+  "crash_cutpoints": true,
+  "delivery_selection": "any queued index",
+  "depth_bound": 16,
+  "duplicate_delivery": true,
+  "elapsed_ms": 0.093,
+  "final_state": {
+    "accepted": [
+      "cmd-1"
+    ],
+    "consumer": [
+      "cmd-1",
+      "processed_committed"
+    ],
+    "crashed": [],
+    "ledger": {},
+    "outbox": {
+      "cmd-1": "pending"
+    },
+    "processed": [
+      "evt:cmd-1"
+    ],
+    "producer": null,
+    "queue": []
+  },
+  "found_counterexample": true,
+  "max_outstanding": 3,
+  "max_queue": 3,
+  "model_states": 11,
+  "model_version": "outbox-model-v2-total-outstanding-bound",
+  "outstanding_bound": 3,
+  "trace": [
+    "begin_accept:cmd-1",
+    "accept:cmd-1@commit",
+    "enqueue:cmd-1",
+    "deliver:cmd-1@index=0",
+    "consumer:cmd-1@mark_processed_commit"
+  ],
+  "variant": "processed-before-ledger",
+  "violation": "processed marker committed without ledger effect"
+}

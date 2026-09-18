@@ -1,0 +1,230 @@
+{
+  "actual_replay": {
+    "first_consume": {
+      "elapsed_ms": 111.428,
+      "stdout": {
+        "event_id": "evt:cmd-1",
+        "outcome": "simulated_crash_after_processed",
+        "variant": "processed-before-ledger"
+      }
+    },
+    "invariant": {
+      "accepted_has_event": true,
+      "duplicate_ledger_effects": [],
+      "holds": false,
+      "ledger_counts": [],
+      "missing_events": [],
+      "orphan_ledger": [],
+      "orphan_processed": [],
+      "outbox": [
+        {
+          "command_id": "cmd-1",
+          "status": "pending"
+        }
+      ],
+      "processed": [
+        "evt:cmd-1"
+      ],
+      "processed_without_ledger": [
+        "evt:cmd-1"
+      ]
+    },
+    "model_trace": [
+      "begin_accept:cmd-1",
+      "accept:cmd-1@commit",
+      "enqueue:cmd-1",
+      "deliver:cmd-1@index=0",
+      "consumer:cmd-1@mark_processed_commit"
+    ],
+    "note": "enqueue/deliver entries are a SQL projection of model trace metadata; no broker is exercised or claimed",
+    "retry_after_marked_consume": {
+      "elapsed_ms": 101.887,
+      "stdout": {
+        "event_id": "evt:cmd-1",
+        "outcome": "dedup_skipped",
+        "variant": "processed-before-ledger"
+      }
+    },
+    "sql_projection_of_model_trace": [
+      "begin_accept:cmd-1",
+      "accept:cmd-1@commit",
+      "enqueue:cmd-1",
+      "deliver:cmd-1@index=0",
+      "consumer:cmd-1@mark_processed_commit"
+    ]
+  },
+  "actual_variants": {
+    "ghost-delivery": {
+      "actions": [
+        "begin_accept:cmd-1",
+        "accept:cmd-1@commit"
+      ],
+      "ghost_consume": {
+        "elapsed_ms": 97.3,
+        "stdout": {
+          "event_id": "evt:ghost",
+          "outcome": "rejected_missing_outbox",
+          "variant": "normal"
+        }
+      },
+      "invariant": {
+        "accepted_has_event": true,
+        "duplicate_ledger_effects": [],
+        "holds": true,
+        "ledger_counts": [],
+        "missing_events": [],
+        "orphan_ledger": [],
+        "orphan_processed": [],
+        "outbox": [
+          {
+            "command_id": "cmd-1",
+            "status": "pending"
+          }
+        ],
+        "processed": [],
+        "processed_without_ledger": []
+      }
+    },
+    "missing-dedup": {
+      "actions": [
+        "begin_accept:cmd-1",
+        "accept:cmd-1@commit"
+      ],
+      "first_consume": {
+        "elapsed_ms": 209.281,
+        "stdout": {
+          "event_id": "evt:cmd-1",
+          "outcome": "committed",
+          "variant": "missing-dedup"
+        }
+      },
+      "invariant": {
+        "accepted_has_event": true,
+        "duplicate_ledger_effects": [
+          "cmd-1"
+        ],
+        "holds": false,
+        "ledger_counts": [
+          {
+            "command_id": "cmd-1",
+            "count": 2
+          }
+        ],
+        "missing_events": [],
+        "orphan_ledger": [],
+        "orphan_processed": [],
+        "outbox": [
+          {
+            "command_id": "cmd-1",
+            "status": "published"
+          }
+        ],
+        "processed": [
+          "evt:cmd-1"
+        ],
+        "processed_without_ledger": []
+      },
+      "second_consume": {
+        "elapsed_ms": 200.668,
+        "stdout": {
+          "event_id": "evt:cmd-1",
+          "outcome": "committed",
+          "variant": "missing-dedup"
+        }
+      }
+    },
+    "non-atomic-outbox": {
+      "actions": [
+        "begin_accept:cmd-1",
+        "accept:cmd-1@command_commit",
+        "crash:cmd-1@after_command_before_outbox"
+      ],
+      "invariant": {
+        "accepted_has_event": false,
+        "duplicate_ledger_effects": [],
+        "holds": false,
+        "ledger_counts": [],
+        "missing_events": [
+          "cmd-1"
+        ],
+        "orphan_ledger": [],
+        "orphan_processed": [],
+        "outbox": [],
+        "processed": [],
+        "processed_without_ledger": []
+      }
+    },
+    "normal": {
+      "actions": [
+        "begin_accept:cmd-1",
+        "accept:cmd-1@commit"
+      ],
+      "first_consume": {
+        "elapsed_ms": 99.901,
+        "stdout": {
+          "event_id": "evt:cmd-1",
+          "outcome": "committed",
+          "variant": "normal"
+        }
+      },
+      "invariant": {
+        "accepted_has_event": true,
+        "duplicate_ledger_effects": [],
+        "holds": true,
+        "ledger_counts": [
+          {
+            "command_id": "cmd-1",
+            "count": 1
+          }
+        ],
+        "missing_events": [],
+        "orphan_ledger": [],
+        "orphan_processed": [],
+        "outbox": [
+          {
+            "command_id": "cmd-1",
+            "status": "published"
+          }
+        ],
+        "processed": [
+          "evt:cmd-1"
+        ],
+        "processed_without_ledger": []
+      },
+      "second_consume": {
+        "elapsed_ms": 91.208,
+        "stdout": {
+          "event_id": "evt:cmd-1",
+          "outcome": "dedup_skipped",
+          "variant": "normal"
+        }
+      }
+    }
+  },
+  "actual_variants_elapsed_ms": 1370.524,
+  "limitation": "crash is simulated after a committed processed marker; bounded safety evidence only, with no fairness/liveness, process-kill, broker, or external-effect claim",
+  "model_elapsed_ms": 0.093,
+  "model_states": 11,
+  "model_version": "outbox-model-v2-total-outstanding-bound",
+  "provenance": {
+    "source_sha256": {
+      "checks.py": "3d2e77e550f961eddc8a12276e69f3a296405ba7a1c33d7e5c3be762414f44e0",
+      "consumer.ts": "83a135ecffded50413d4e8bb7d7470328423485a6ba323f74a0a1e804a0efd65",
+      "model.py": "ddd265a0ea95facd3ddfee7b7a9cb5ef15264be99c84c2e58b50531b18adf17f",
+      "package-lock.json": "5e8342cada59ec67bfbdfd4eb4aabad5bfe3eb76a4517a036bfc848044cd5e92",
+      "package.json": "642d5866d8eecb8be13314501b59a68684b2a77a7455051d26108a3c857b691b",
+      "run_actual.py": "77b7354fd6dc055ccba50a15db6be3f8e347cf475b2abf582bd3526d1d096e16",
+      "schema.sql": "50b26c85409cb31db30ade6a943114e770c2c7bfbab683f2755fc30015fb2028",
+      "test_outbox.py": "b49ed4fabd5138ba5f7f47977d34039d9ae52c1ec410772af1ca163436f1f576"
+    },
+    "tools": {
+      "node": "v22.12.0",
+      "pg_dependency": "8.13.1",
+      "postgres": "18.6 (Debian 18.6-1.pgdg13+2)",
+      "psycopg": "3.3.4",
+      "python": "3.14.6",
+      "uv": "uv 0.12.3 (Homebrew 2026-08-07 aarch64-apple-darwin)"
+    }
+  },
+  "variant": "processed-before-ledger"
+}

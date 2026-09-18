@@ -1,0 +1,43 @@
+{
+  "crash_cutpoints": true,
+  "delivery_selection": "any queued index",
+  "depth_bound": 16,
+  "duplicate_delivery": true,
+  "elapsed_ms": 0.677,
+  "final_state": {
+    "accepted": [
+      "cmd-1"
+    ],
+    "consumer": null,
+    "crashed": [],
+    "ledger": {
+      "cmd-1": 2
+    },
+    "outbox": {
+      "cmd-1": "published"
+    },
+    "processed": [
+      "evt:cmd-1"
+    ],
+    "producer": null,
+    "queue": []
+  },
+  "found_counterexample": true,
+  "max_outstanding": 3,
+  "max_queue": 3,
+  "model_states": 61,
+  "model_version": "outbox-model-v2-total-outstanding-bound",
+  "outstanding_bound": 3,
+  "trace": [
+    "begin_accept:cmd-1",
+    "accept:cmd-1@commit",
+    "enqueue:cmd-1",
+    "enqueue:cmd-1",
+    "deliver:cmd-1@index=0",
+    "consumer:cmd-1@atomic_commit",
+    "deliver:cmd-1@index=0",
+    "consumer:cmd-1@atomic_commit"
+  ],
+  "variant": "missing-dedup",
+  "violation": "duplicate ledger effect: ['cmd-1']"
+}

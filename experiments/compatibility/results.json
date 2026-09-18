@@ -1,0 +1,300 @@
+{
+  "total_seconds": 3.025,
+  "stages": {
+    "build_s": 0.598,
+    "matrix_s": 1.009,
+    "backfill_s": 0.302,
+    "rollout_s": 0.441,
+    "lock_s": 0.168
+  },
+  "versions": {
+    "python": "3.14.6",
+    "node": "v22.12.0",
+    "psycopg": "3.3.4",
+    "pg_npm": "8.16.3",
+    "pg_installed": "8.16.3",
+    "tsc": "5.6.3",
+    "typescript_declared": "5.6.3",
+    "postgres": "PostgreSQL 18.6 (Debian 18.6-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit"
+  },
+  "hashes": {
+    "verifier_py": "4a1d02546a7660893a9fd9b768ab34e90a1a13cd3399ec44d870b0ab4f428157",
+    "newclient_ts": "883b1fa0c3a1045f850bf7c6b985b6d0a06acfe4164a1acc447151562c8d4f20",
+    "newclient_js": "ed22d481bf02eb8167ce3403515aec9b4bcfa9d014e29dd3df3ff26473708fa9",
+    "schema_sql": "6b7a60f35d1d805f2afb3be0848c8e58858d5912aad4a6662149eba053bfaf78",
+    "package_json": "be90d992507b51a8d742635e50cf4f6ddb2b5c7fbd0487b4a140b13854c9d19f",
+    "package_lock": "1c822fa149c36794093ff13e376bc6a1eea05d107945ba2b340f377b9bcd3385",
+    "tsconfig": "315b566248a0d9cd88a7391b83ea993261d8f173699f201289ab28bef1f16c48"
+  },
+  "source_unchanged": true,
+  "gate": {
+    "original": false,
+    "naive_rename": false,
+    "expand": false,
+    "bridge": true,
+    "contract": false
+  },
+  "matrix_detail": {
+    "original": {
+      "flags": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "want": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "old_write": {
+        "ok": true,
+        "id": "642d64a2-dd96-453c-93b3-31c71adbe0c1"
+      },
+      "old_read": {
+        "ok": true,
+        "value": "assay-old-original"
+      },
+      "new_write": {
+        "ok": false,
+        "sqlstate": "42703",
+        "message": "column \"display_name\" of relation \"documents\" does not exist"
+      },
+      "new_read": {
+        "ok": false,
+        "unknown": true,
+        "message": "no id"
+      },
+      "x_new": {
+        "ok": false,
+        "sqlstate": "42703",
+        "message": "column \"display_name\" does not exist"
+      },
+      "x_old": {
+        "ok": false,
+        "unknown": true,
+        "message": "vacuous"
+      }
+    },
+    "naive_rename": {
+      "flags": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "want": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "old_write": {
+        "ok": false,
+        "sqlstate": "42703",
+        "message": "column \"title\" of relation \"documents\" does not exist"
+      },
+      "old_read": {
+        "ok": false,
+        "unknown": true,
+        "message": "no id"
+      },
+      "new_write": {
+        "ok": true,
+        "id": "ab52202f-ec63-451e-bcc0-ed763200a80e"
+      },
+      "new_read": {
+        "ok": true,
+        "value": "assay-new-naive_rename"
+      },
+      "x_new": {
+        "ok": false,
+        "unknown": true,
+        "message": "vacuous"
+      },
+      "x_old": {
+        "ok": false,
+        "sqlstate": "42703",
+        "message": "column \"title\" does not exist"
+      }
+    },
+    "expand": {
+      "flags": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "want": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "old_write": {
+        "ok": true,
+        "id": "1ab2dcd9-6409-4316-aea0-f8701fd11e81"
+      },
+      "old_read": {
+        "ok": true,
+        "value": "assay-old-expand"
+      },
+      "new_write": {
+        "ok": false,
+        "sqlstate": "23502",
+        "message": "null value in column \"title\" of relation \"documents\" violates not-null constraint"
+      },
+      "new_read": {
+        "ok": false,
+        "unknown": true,
+        "message": "no id"
+      },
+      "x_new": {
+        "ok": true,
+        "value": null
+      },
+      "x_old": {
+        "ok": false,
+        "unknown": true,
+        "message": "vacuous"
+      }
+    },
+    "bridge": {
+      "flags": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "want": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "old_write": {
+        "ok": true,
+        "id": "695bf9e9-7994-4144-ab57-0c465bc7df33"
+      },
+      "old_read": {
+        "ok": true,
+        "value": "assay-old-bridge"
+      },
+      "new_write": {
+        "ok": true,
+        "id": "02fb3093-541c-4730-a7e0-8eed3b73b88d"
+      },
+      "new_read": {
+        "ok": true,
+        "value": "assay-new-bridge"
+      },
+      "x_new": {
+        "ok": true,
+        "value": "assay-old-bridge"
+      },
+      "x_old": {
+        "ok": true,
+        "value": "assay-new-bridge"
+      }
+    },
+    "contract": {
+      "flags": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "want": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "old_write": {
+        "ok": false,
+        "sqlstate": "42703",
+        "message": "column \"title\" of relation \"documents\" does not exist"
+      },
+      "old_read": {
+        "ok": false,
+        "unknown": true,
+        "message": "no id"
+      },
+      "new_write": {
+        "ok": true,
+        "id": "78828edb-46a5-4eaa-b2c0-1594de02847d"
+      },
+      "new_read": {
+        "ok": true,
+        "value": "assay-new-contract"
+      },
+      "x_new": {
+        "ok": false,
+        "unknown": true,
+        "message": "vacuous"
+      },
+      "x_old": {
+        "ok": false,
+        "sqlstate": "42703",
+        "message": "column \"title\" does not exist"
+      }
+    }
+  },
+  "witness": {
+    "naive_final": [
+      "assay-v2-newer",
+      "assay-v1-snapshot"
+    ]
+  },
+  "rollout": {
+    "sql": [
+      "CREATE TABLE documents(id uuid PK,title TEXT NOT NULL)--prod",
+      "ALTER TABLE documents ADD COLUMN display_name TEXT NULL",
+      "CREATE TRIGGER assay_sync_title_display BEFORE INSERT OR UPDATE ...",
+      "UPDATE documents SET display_name=title WHERE display_name IS NULL",
+      "ALTER TABLE ... ADD CONSTRAINT assay_names_equal CHECK(title NOTNULL AND display_name NOTNULL AND title=display_name)",
+      "DROP TRIGGER assay_sync_title_display",
+      "ALTER TABLE documents DROP COLUMN title",
+      "ALTER TABLE documents ALTER COLUMN display_name SET NOT NULL"
+    ]
+  },
+  "lock": {
+    "sqlstate": "55P03",
+    "elapsed_ms": 52.9
+  },
+  "counts": {
+    "positive_checks": 26,
+    "expected_counterexamples": 13,
+    "unexpected_faults": 0
+  },
+  "positive_evidence": [
+    "bridge: old insert synced committed ('assay-b1' both)",
+    "bridge: old 1-field update propagated committed ('assay-b2' both)",
+    "bridge: new insert backfilled title committed ('assay-n1' both)",
+    "bridge: new 1-field update propagated committed ('assay-n2' both)",
+    "guarded backfill IS NULL touched 0; newer title kept",
+    "retry: single row, invariant holds",
+    "rollout: interleaved old write propagated",
+    "rollout: backfill filled 1 NULL from current title; 2 synced",
+    "rollout: both clients roundtrip",
+    "rollout: new client ok after contract",
+    "migration ok after release"
+  ],
+  "expected_counterexamples": [
+    "matrix:original:new-write-new-read incompatible as expected (42703)",
+    "matrix:original:old-write-new-read incompatible as expected (42703)",
+    "matrix:naive_rename:old-write-old-read incompatible as expected (42703)",
+    "matrix:naive_rename:new-write-old-read incompatible as expected (42703)",
+    "matrix:expand:new-write-new-read incompatible as expected (23502)",
+    "matrix:expand:old-write-new-read value mismatch as expected (value=None)",
+    "matrix:contract:old-write-old-read incompatible as expected (42703)",
+    "matrix:contract:new-write-old-read incompatible as expected (42703)",
+    "naive-backfill lost update: title='assay-v2-newer' vs display='assay-v1-snapshot'; equality is not protection",
+    "conflict rejected as expected (P0001)",
+    "unguarded stale accepted: both fields clobbered (cannot distinguish from legit write)",
+    "rollout: old write rejected after contract (42703)",
+    "migration blocked (55P03 after 52.9ms)"
+  ],
+  "unexpected_faults": []
+}
