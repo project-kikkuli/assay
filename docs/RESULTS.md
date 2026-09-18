@@ -26,6 +26,20 @@ include local hashing and cache validation but do not include hosted scheduling
 or checkout. The demo additionally changes a source input and confirms its
 previous successful result is not reused.
 
+### Follow-up: hosted queueing breaks a universal 30-second promise
+
+[Run 35309985237](https://github.com/project-kikkuli/assay/actions/runs/35309985237)
+tested the hardened commit `dfc084ac01dd91a8c35bf27f1a42abaccdb1d01e`.
+All **48 tests** passed on both interpreters. Cold verification was 1.154–1.277 s
+and first warm reuse was 38.98–68.42 ms. However, the complete workflow took
+**50 seconds**: its Python 3.11 job started 39 seconds after workflow creation,
+then completed in 10 seconds. The Python 3.12 job started after four seconds.
+
+This negative result is important. Fast verification alone does not ensure a
+fast hosted verdict. A dependable 30-second objective needs bounded scheduling
+latency or pre-provisioned execution capacity, plus appropriate load/cost tests.
+The two observed runs (13 s and 50 s) do not establish a p95 distribution.
+
 ## Performance explanation, not just a stopwatch
 
 On Python 3.12's hosted runner, selecting the next job from 10,000 ready rows:
