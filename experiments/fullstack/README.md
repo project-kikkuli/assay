@@ -11,6 +11,14 @@ types accept every mutation. These are hand-selected challenges, not an estimate
 of escaped production defects. The added checks and initial faults share an
 author; further independent challenges are needed.
 
+The [repair variant](repaired.patch) fixes the independently observed null-input,
+offset, pagination, and signup-ordering problems. Its measured warm gate runs
+the 62 API tests, seven independent API checks, 62 browser tests, five independent
+wire/UI claims, TypeScript, mypy (no incremental cache), ty, Ruff, and a production
+frontend build. Three complete runs took **19.52, 20.29, and 28.71 seconds**;
+[records](results/gate.json) retain every stage. This is a small application on a
+shared laptop—not a large-codebase or hosted-dispatch latency claim.
+
 ## Run
 
 Prepare the pinned upstream checkout with `uv sync --frozen --all-packages` and
@@ -21,6 +29,19 @@ disposable local PostgreSQL 18 server, then:
 uv run experiments/fullstack/run.py --subject "$SUBJECT" --mode baseline
 uv run experiments/fullstack/run.py --subject "$SUBJECT" --mode faults
 ```
+
+For the repaired gate, apply the patch to a separate pinned checkout with the
+same prepared dependencies, then run with PostgreSQL, Mailpit, and Chromium:
+
+```sh
+git -C "$VARIANT" apply "$ASSAY/experiments/fullstack/repaired.patch"
+uv run experiments/fullstack/gate.py --subject "$VARIANT"
+```
+
+The API, browser, and boundary branches use separate UUID databases. They share
+one freshly built, hash-checked frontend artifact; they do not reuse test results.
+`--serial` provides a sequential comparison. Missing evidence, source drift,
+inconsistent counts, and unknown outcomes cannot produce an accepted gate.
 
 The default database fixture is localhost:55439, user `postgres`, password
 `assay-local-only`. Override with `ASSAY_PG_DSN`. The runner creates and removes

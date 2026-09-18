@@ -31,6 +31,7 @@ def main():
     parser.add_argument("--screenshot", type=Path)
     parser.add_argument("--enforce", action="store_true", help="exit 1 when an explicit application expectation is violated")
     parser.add_argument("--probe", choices=["data", "signup"], default="data")
+    parser.add_argument("--built-artifact", help="reuse a just-built frontend only if its SHA-256 matches; gate orchestration only")
     args = parser.parse_args()
     subject = args.subject.resolve()
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=subject, text=True).strip()
@@ -49,6 +50,7 @@ def main():
     os.close(fd)
     probe = Path(probe_name)
     probe.write_text((HERE / ("probe.ts" if args.probe == "data" else "signup.mts")).read_text())
+    contract = probe.with_name(probe.stem + "_contract.mts")
     try:
         with harness.database(dsn) as db, tempfile.TemporaryDirectory(prefix="assay-boundary-") as scratch:
             env = harness.clean_env() | {"DATABASE_URL": harness.database_url(db), "PYTHONPATH": str(subject / "backend"), "VITE_API_URL": ""}
@@ -64,7 +66,20 @@ def main():
             # Tokens are fixture inputs, not useful evidence.
             evidence["steps"][-1]["output_tail"] = "150 synthetic items; fixture token omitted"
             execute("typescript_contract", [node, subject / "node_modules/typescript/bin/tsc", "--ignoreConfig", "--noEmit", "--target", "es2022", "--module", "preserve", "--moduleResolution", "bundler", "--types", "node", "--skipLibCheck", probe], subject / "frontend")
-            execute("build", [node, subject / "node_modules/vite/bin/vite.js", "build"], subject / "frontend")
+            if args.probe == "data":
+                contract.write_text((HERE / "contract.ts").read_text())
+                result = harness.run([node, subject / "node_modules/typescript/bin/tsc", "--ignoreConfig", "--noEmit", "--strictNullChecks", "--target", "es2022", "--module", "preserve", "--moduleResolution", "bundler", "--skipLibCheck", contract], subject / "frontend", env)
+                diagnostic = result.pop("output")
+                accepts_null = result["exit_code"] == 0
+                if not accepts_null and not (result["exit_code"] == 2 and "error TS2322:" in diagnostic and "Type 'null' is not assignable" in diagnostic):
+                    raise RuntimeError("nullability probe failed for an unexpected reason")
+                evidence["generated_client"] = {"accepts_null_title": accepts_null, "strict_null_checks": True, "seconds": result["seconds"], "diagnostic": harness.sanitize(diagnostic, subject)}
+            if args.built_artifact:
+                if harness.artifact_identity(subject / "backend/app/frontend") != args.built_artifact:
+                    raise RuntimeError("built frontend artifact identity mismatch")
+                evidence["reused_build_sha256"] = args.built_artifact
+            else:
+                execute("build", [node, subject / "node_modules/vite/bin/vite.js", "build"], subject / "frontend")
             with socket.socket() as sock:
                 sock.bind(("127.0.0.1", 0))
                 port = sock.getsockname()[1]
@@ -91,6 +106,7 @@ def main():
                     observation = evidence["observations"]
                     evidence["claims"] = ({
                         "invalid_title_is_client_error": 400 <= observation["null_update"]["http_status"] < 500,
+                        "invalid_title_does_not_modify_storage": observation["null_update"]["title_preserved"],
                         "invalid_offset_is_client_error": 400 <= observation["negative_offset"]["http_status"] < 500,
                         "all_owned_items_reachable": observation["pagination"]["all_items_reachable"],
                         "stored_title_does_not_execute": observation["title_rendering"]["safely_rendered"],
@@ -109,13 +125,16 @@ def main():
                             server.wait()
     finally:
         probe.unlink(missing_ok=True)
+        contract.unlink(missing_ok=True)
         evidence["seconds"] = time.perf_counter() - started
         evidence["source_unchanged"] = evidence["source_sha256"] == harness.tree_identity(subject)
+        evidence["oracle_unchanged"] = evidence["oracle_sha256"] == {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in HERE.iterdir() if p.suffix in {".ts", ".mts", ".py"}}
+        evidence["artifact_unchanged"] = not args.built_artifact or harness.artifact_identity(subject / "backend/app/frontend") == args.built_artifact
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(evidence, indent=2) + "\n")
     print(json.dumps(evidence.get("observations"), indent=2))
     # Successful observation is not an application pass.
-    if not evidence["source_unchanged"] or not evidence.get("observations"):
+    if not evidence["source_unchanged"] or not evidence["oracle_unchanged"] or not evidence["artifact_unchanged"] or not evidence.get("observations"):
         return 2
     return 1 if args.enforce and evidence["application_verdict"] == "rejected" else 0
 

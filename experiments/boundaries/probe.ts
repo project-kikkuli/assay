@@ -1,12 +1,11 @@
-import type { ItemUpdate } from "./src/client/types.gen";
 import { chromium, expect } from "@playwright/test";
 
 const fixture = JSON.parse(process.env.ASSAY_BOUNDARY_FIXTURE!);
 const base = process.env.ASSAY_API!;
 const headers = { Authorization: `Bearer ${fixture.token}`, "Content-Type": "application/json" };
 
-// This value is accepted by the actual generated TypeScript client type.
-const update: ItemUpdate = { title: null };
+// Deliberately invalid wire input; type acceptance is measured separately.
+const update = { title: null };
 const invalidUpdate = await fetch(`${base}/api/v1/items/${fixture.item}`, {
   method: "PUT", headers, body: JSON.stringify(update),
 });
@@ -25,6 +24,11 @@ try {
   await page.evaluate(token => localStorage.setItem("access_token", token), fixture.token);
   await page.goto(`${base}/items`);
   await expect(page.locator("tbody tr").first().locator("td").first()).toContainText(/[0-9a-f]{8}-[0-9a-f]{4}-/);
+  await expect(page.locator("tbody tr")).toHaveCount(10);
+  // Cross the 100-row boundary with three full pages, also exercising page-size changes.
+  await page.getByRole("combobox").click();
+  await page.getByRole("option", { name: "50", exact: true }).click();
+  await expect(page.locator("tbody tr")).toHaveCount(50);
   const titles = new Set<string>();
   const observedPages: { count: number; first: string; last: string }[] = [];
   let pages = 0;
@@ -39,15 +43,16 @@ try {
     if (await next.isDisabled()) break;
     await next.click();
     await expect(page.locator("tbody tr").first().locator("td").nth(1)).not.toHaveText(rows[0]);
+    await expect(page.locator("tbody tr").first().locator("td").first()).toContainText(/[0-9a-f]{8}-[0-9a-f]{4}-/);
   }
   const injected = await page.evaluate(() => Boolean((globalThis as { __assayInjected?: boolean }).__assayInjected));
   if (process.env.ASSAY_SCREENSHOT) await page.screenshot({ path: process.env.ASSAY_SCREENSHOT, fullPage: true });
   console.log(JSON.stringify({
-    null_update: { generated_type_accepts: true, http_status: invalidUpdate.status,
+    null_update: { http_status: invalidUpdate.status,
       title_preserved: persisted.title === "fixture-000", expected_status_class: "4xx" },
     negative_offset: { http_status: negativeOffset.status, expected_status_class: "4xx" },
     pagination: { seeded: fixture.seeded_count, api_total: first.count, api_first_page: first.data.length,
-      api_second_page: rest.data.length, browser_pages: pages, browser_unique_titles: titles.size,
+      api_second_page: rest.data.length, initial_page_size: 10, exercised_page_size: 50, browser_pages: pages, browser_unique_titles: titles.size,
       all_items_reachable: titles.size === fixture.seeded_count, observed_pages: observedPages },
     title_rendering: { injected_script_executed: injected, safely_rendered: !injected },
   }));

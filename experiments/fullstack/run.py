@@ -128,6 +128,18 @@ def verifier_identity():
             for p in sorted(HERE.iterdir()) if p.suffix in {".py", ".json", ".ts"}}
 
 
+def artifact_identity(root):
+    paths = sorted(path for path in root.rglob("*") if path.is_file())
+    if not paths:
+        raise ValueError("built frontend artifact is missing or empty")
+    digest = hashlib.sha256()
+    for path in paths:
+        digest.update(path.relative_to(root).as_posix().encode() + b"\0")
+        digest.update(path.read_bytes())
+        digest.update(b"\0")
+    return digest.hexdigest()
+
+
 @dataclass
 class Lab:
     subject: Path
@@ -165,6 +177,15 @@ class Lab:
                    [self.node, modules / "typescript/bin/tsc", "-p", "tsconfig.build.json", "--noEmit"])
         env = clean_env() | {"VITE_API_URL": ""}
         return self.record("build" if build else "typecheck", run(command, candidate / "frontend", env), candidate=label)
+
+    def python_static(self):
+        for name, command in [
+            ("mypy", [self.python, "-m", "mypy", "app", "--no-incremental"]),
+            ("ty", [self.subject / ".venv/bin/ty", "check", "app"]),
+            ("ruff", [self.python, "-m", "ruff", "check", "app"]),
+            ("python_format", [self.python, "-m", "ruff", "format", "app", "--check"]),
+        ]:
+            self.record(name, run(command, self.subject / "backend", clean_env()), candidate="baseline")
 
     def faults(self):
         baseline = [self.backend(self.subject), self.backend(self.subject, "oracle"), self.frontend(self.subject)]
@@ -241,16 +262,22 @@ class Lab:
                     browser_report = json.loads(report.read_text()) if report.exists() else {}
                     stats = browser_report.get("stats", {})
                     errors = []
+                    actual_passed = 0
                     def failures(suites):
+                        nonlocal actual_passed
                         for suite in suites:
                             for spec in suite.get("specs", []):
                                 for test in spec.get("tests", []):
+                                    results = test.get("results", [])
+                                    if results and results[-1].get("status") == "passed" and test.get("expectedStatus") == "passed":
+                                        actual_passed += 1
                                     for attempt in test.get("results", []):
                                         if attempt.get("status") not in {"passed", "skipped"}:
                                             errors.append({"test": spec["title"], "status": attempt.get("status"),
                                                 "errors": [sanitize(e.get("message", ""), self.subject) for e in attempt.get("errors", [])]})
                             failures(suite.get("suites", []))
                     failures(browser_report.get("suites", []))
+                    stats["actual_passed"] = actual_passed
                     if result["status"] == "passed" and (not stats.get("expected") or stats.get("unexpected") or stats.get("flaky")):
                         result["status"] = "unresolved"
                     log.flush()

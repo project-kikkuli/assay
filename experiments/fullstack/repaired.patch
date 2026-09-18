@@ -1,0 +1,392 @@
+diff --git a/backend/app/api/routes/items.py b/backend/app/api/routes/items.py
+index f0eb30e..830bba5 100644
+--- a/backend/app/api/routes/items.py
++++ b/backend/app/api/routes/items.py
+@@ -1,7 +1,7 @@
+ import uuid
+-from typing import Any
++from typing import Annotated, Any
+ 
+-from fastapi import APIRouter, HTTPException
++from fastapi import APIRouter, HTTPException, Query
+ from sqlmodel import col, func, select
+ 
+ from app.api.deps import CurrentUser, SessionDep
+@@ -12,7 +12,10 @@ router = APIRouter(prefix="/items", tags=["items"])
+ 
+ @router.get("/", response_model=ItemsPublic)
+ def read_items(
+-    session: SessionDep, current_user: CurrentUser, skip: int = 0, limit: int = 100
++    session: SessionDep,
++    current_user: CurrentUser,
++    skip: Annotated[int, Query(ge=0)] = 0,
++    limit: Annotated[int, Query(ge=1, le=100)] = 100,
+ ) -> Any:
+     """
+     Retrieve items.
+@@ -22,7 +25,10 @@ def read_items(
+         count_statement = select(func.count()).select_from(Item)
+         count = session.exec(count_statement).one()
+         statement = (
+-            select(Item).order_by(col(Item.created_at).desc()).offset(skip).limit(limit)
++            select(Item)
++            .order_by(col(Item.created_at).desc(), col(Item.id).desc())
++            .offset(skip)
++            .limit(limit)
+         )
+         items = session.exec(statement).all()
+     else:
+@@ -35,7 +41,7 @@ def read_items(
+         statement = (
+             select(Item)
+             .where(Item.owner_id == current_user.id)
+-            .order_by(col(Item.created_at).desc())
++            .order_by(col(Item.created_at).desc(), col(Item.id).desc())
+             .offset(skip)
+             .limit(limit)
+         )
+diff --git a/backend/app/models.py b/backend/app/models.py
+index dcedf9a..38dd348 100644
+--- a/backend/app/models.py
++++ b/backend/app/models.py
+@@ -1,7 +1,8 @@
+ import uuid
+ from datetime import UTC, datetime
+ 
+-from pydantic import EmailStr
++from pydantic import EmailStr, field_validator
++from pydantic.json_schema import SkipJsonSchema
+ from sqlalchemy import DateTime
+ from sqlmodel import Field, Relationship, SQLModel
+ 
+@@ -83,9 +84,23 @@ class ItemCreate(ItemBase):
+ 
+ # Properties to receive on item update
+ class ItemUpdate(SQLModel):
+-    title: str | None = Field(default=None, min_length=1, max_length=255)
++    # None represents omission in memory, but is not an accepted wire value.
++    title: str | SkipJsonSchema[None] = Field(
++        default=None,
++        min_length=1,
++        max_length=255,
++        schema_extra={"json_schema_extra": lambda schema: schema.pop("default", None)},
++    )
+     description: str | None = Field(default=None, max_length=255)
+ 
++    @field_validator("title", mode="before")
++    @classmethod
++    def reject_explicit_null_title(cls, value: object) -> object:
++        # Defaults are not validated, so an omitted title remains a partial update.
++        if value is None:
++            raise ValueError("Title cannot be null")
++        return value
++
+ 
+ # Database model, database table inferred from class name
+ class Item(ItemBase, table=True):
+diff --git a/backend/tests/api/routes/test_items.py b/backend/tests/api/routes/test_items.py
+index 3e82cd0..7f3c733 100644
+--- a/backend/tests/api/routes/test_items.py
++++ b/backend/tests/api/routes/test_items.py
+@@ -1,4 +1,5 @@
+ import uuid
++from datetime import UTC, datetime
+ 
+ from fastapi.testclient import TestClient
+ from sqlmodel import Session
+@@ -162,3 +163,68 @@ def test_delete_item_not_enough_permissions(
+     assert response.status_code == 403
+     content = response.json()
+     assert content["detail"] == "Not enough permissions"
++
++
++def test_update_item_title_null_rejected(
++    client: TestClient, superuser_token_headers: dict[str, str], db: Session
++) -> None:
++    item = create_random_item(db)
++    original_title = item.title
++    response = client.put(
++        f"{settings.API_V1_STR}/items/{item.id}",
++        headers=superuser_token_headers,
++        json={"title": None},
++    )
++    assert response.status_code == 422
++    db.refresh(item)
++    assert item.title == original_title
++
++
++def test_update_item_description_only_keeps_title(
++    client: TestClient, superuser_token_headers: dict[str, str], db: Session
++) -> None:
++    item = create_random_item(db)
++    original_title = item.title
++    response = client.put(
++        f"{settings.API_V1_STR}/items/{item.id}",
++        headers=superuser_token_headers,
++        json={"description": "Only description changed"},
++    )
++    assert response.status_code == 200
++    content = response.json()
++    assert content["title"] == original_title
++    assert content["description"] == "Only description changed"
++
++
++def test_read_items_invalid_pagination(
++    client: TestClient, superuser_token_headers: dict[str, str]
++) -> None:
++    for params in ({"skip": -1}, {"limit": 0}, {"limit": 101}):
++        response = client.get(
++            f"{settings.API_V1_STR}/items/",
++            headers=superuser_token_headers,
++            params=params,
++        )
++        assert response.status_code == 422
++
++
++def test_read_items_tied_timestamps_ordered_by_id_desc(
++    client: TestClient, superuser_token_headers: dict[str, str], db: Session
++) -> None:
++    item1 = create_random_item(db)
++    item2 = create_random_item(db)
++    fixed = datetime.now(UTC)
++    item1.created_at = fixed
++    item2.created_at = fixed
++    db.add(item1)
++    db.add(item2)
++    db.commit()
++    response = client.get(
++        f"{settings.API_V1_STR}/items/",
++        headers=superuser_token_headers,
++        params={"skip": 0, "limit": 100},
++    )
++    assert response.status_code == 200
++    ids = [row["id"] for row in response.json()["data"]]
++    expected_first_two = sorted([str(item1.id), str(item2.id)], reverse=True)
++    assert ids[:2] == expected_first_two
+diff --git a/frontend/src/client/types.gen.ts b/frontend/src/client/types.gen.ts
+index 6252d88..58883ec 100644
+--- a/frontend/src/client/types.gen.ts
++++ b/frontend/src/client/types.gen.ts
+@@ -91,7 +91,7 @@ export type ItemUpdate = {
+     /**
+      * Title
+      */
+-    title?: string | null;
++    title?: string;
+     /**
+      * Description
+      */
+diff --git a/frontend/src/components/Common/DataTable.tsx b/frontend/src/components/Common/DataTable.tsx
+index e5bf2ae..c514dca 100644
+--- a/frontend/src/components/Common/DataTable.tsx
++++ b/frontend/src/components/Common/DataTable.tsx
+@@ -3,6 +3,8 @@ import {
+   flexRender,
+   getCoreRowModel,
+   getPaginationRowModel,
++  type OnChangeFn,
++  type PaginationState,
+   useReactTable,
+ } from "@tanstack/react-table"
+ import {
+@@ -32,19 +34,44 @@ import {
+ interface DataTableProps<TData, TValue> {
+   columns: ColumnDef<TData, TValue>[]
+   data: TData[]
++  rowCount?: number
++  pagination?: PaginationState
++  onPaginationChange?: OnChangeFn<PaginationState>
+ }
+ 
+ export function DataTable<TData, TValue>({
+   columns,
+   data,
++  rowCount,
++  pagination,
++  onPaginationChange,
+ }: DataTableProps<TData, TValue>) {
++  const isControlled =
++    pagination !== undefined &&
++    onPaginationChange !== undefined &&
++    rowCount !== undefined
+   const table = useReactTable({
+     data,
+     columns,
++    ...(isControlled
++      ? {
++          manualPagination: true,
++          pageCount: Math.max(
++            1,
++            Math.ceil((rowCount ?? 0) / (pagination?.pageSize ?? 1)),
++          ),
++          state: { pagination: pagination as PaginationState },
++          onPaginationChange: onPaginationChange as OnChangeFn<PaginationState>,
++        }
++      : {}),
+     getCoreRowModel: getCoreRowModel(),
+-    getPaginationRowModel: getPaginationRowModel(),
++    ...(!isControlled
++      ? { getPaginationRowModel: getPaginationRowModel() }
++      : {}),
+   })
+ 
++  const totalCount = rowCount ?? data.length
++
+   return (
+     <div className="flex flex-col gap-4">
+       <Table>
+@@ -102,10 +129,10 @@ export function DataTable<TData, TValue>({
+               {Math.min(
+                 (table.getState().pagination.pageIndex + 1) *
+                   table.getState().pagination.pageSize,
+-                data.length,
++                totalCount,
+               )}{" "}
+               of{" "}
+-              <span className="font-medium text-foreground">{data.length}</span>{" "}
++              <span className="font-medium text-foreground">{totalCount}</span>{" "}
+               entries
+             </div>
+             <div className="flex items-center gap-x-2">
+diff --git a/frontend/src/routes/_layout/items.tsx b/frontend/src/routes/_layout/items.tsx
+index 0dbb97f..2c2a8d7 100644
+--- a/frontend/src/routes/_layout/items.tsx
++++ b/frontend/src/routes/_layout/items.tsx
+@@ -1,7 +1,8 @@
+ import { useSuspenseQuery } from "@tanstack/react-query"
+ import { createFileRoute } from "@tanstack/react-router"
++import type { OnChangeFn, PaginationState } from "@tanstack/react-table"
+ import { Search } from "lucide-react"
+-import { Suspense } from "react"
++import { Suspense, useEffect, useState } from "react"
+ 
+ import { ItemsService } from "@/client"
+ import { DataTable } from "@/components/Common/DataTable"
+@@ -9,11 +10,13 @@ import AddItem from "@/components/Items/AddItem"
+ import { columns } from "@/components/Items/columns"
+ import PendingItems from "@/components/Pending/PendingItems"
+ 
+-function getItemsQueryOptions() {
++function getItemsQueryOptions(pagination: PaginationState) {
++  const skip = pagination.pageIndex * pagination.pageSize
++  const limit = pagination.pageSize
+   return {
+     queryFn: async () =>
+-      (await ItemsService.readItems({ query: { skip: 0, limit: 100 } })).data,
+-    queryKey: ["items"],
++      (await ItemsService.readItems({ query: { skip, limit } })).data,
++    queryKey: ["items", { limit, skip }],
+   }
+ }
+ 
+@@ -28,10 +31,28 @@ export const Route = createFileRoute("/_layout/items")({
+   }),
+ })
+ 
+-function ItemsTableContent() {
+-  const { data: items } = useSuspenseQuery(getItemsQueryOptions())
++function ItemsTableContent({
++  pagination,
++  onPaginationChange,
++}: {
++  pagination: PaginationState
++  onPaginationChange: OnChangeFn<PaginationState>
++}) {
++  const { data: items } = useSuspenseQuery(getItemsQueryOptions(pagination))
+ 
+-  if (items.data.length === 0) {
++  useEffect(() => {
++    const pageCount = Math.ceil(items.count / pagination.pageSize)
++    if (pageCount > 0 && pagination.pageIndex > pageCount - 1) {
++      onPaginationChange({
++        pageIndex: pageCount - 1,
++        pageSize: pagination.pageSize,
++      })
++    } else if (items.count === 0 && pagination.pageIndex !== 0) {
++      onPaginationChange({ pageIndex: 0, pageSize: pagination.pageSize })
++    }
++  }, [items.count, pagination, onPaginationChange])
++
++  if (items.count === 0) {
+     return (
+       <div className="flex flex-col items-center justify-center text-center py-12">
+         <div className="rounded-full bg-muted p-4 mb-4">
+@@ -43,18 +64,50 @@ function ItemsTableContent() {
+     )
+   }
+ 
+-  return <DataTable columns={columns} data={items.data} />
++  return (
++    <DataTable
++      columns={columns}
++      data={items.data}
++      rowCount={items.count}
++      pagination={pagination}
++      onPaginationChange={onPaginationChange}
++    />
++  )
+ }
+ 
+-function ItemsTable() {
++function ItemsTable({
++  pagination,
++  onPaginationChange,
++}: {
++  pagination: PaginationState
++  onPaginationChange: OnChangeFn<PaginationState>
++}) {
+   return (
+     <Suspense fallback={<PendingItems />}>
+-      <ItemsTableContent />
++      <ItemsTableContent
++        pagination={pagination}
++        onPaginationChange={onPaginationChange}
++      />
+     </Suspense>
+   )
+ }
+ 
+ function Items() {
++  const [pagination, setPagination] = useState<PaginationState>({
++    pageIndex: 0,
++    pageSize: 10,
++  })
++
++  const handlePaginationChange: OnChangeFn<PaginationState> = (updater) => {
++    setPagination((prev) => {
++      const next = typeof updater === "function" ? updater(prev) : updater
++      if (next.pageSize !== prev.pageSize) {
++        return { pageIndex: 0, pageSize: next.pageSize }
++      }
++      return next
++    })
++  }
++
+   return (
+     <div className="flex flex-col gap-6">
+       <div className="flex items-center justify-between">
+@@ -64,7 +117,10 @@ function Items() {
+         </div>
+         <AddItem />
+       </div>
+-      <ItemsTable />
++      <ItemsTable
++        pagination={pagination}
++        onPaginationChange={handlePaginationChange}
++      />
+     </div>
+   )
+ }
+diff --git a/frontend/tests/utils/user.ts b/frontend/tests/utils/user.ts
+index 33f86e3..4b79944 100644
+--- a/frontend/tests/utils/user.ts
++++ b/frontend/tests/utils/user.ts
+@@ -13,7 +13,7 @@ export async function signUpNewUser(
+   await page.getByTestId("password-input").fill(password)
+   await page.getByTestId("confirm-password-input").fill(password)
+   await page.getByRole("button", { name: "Sign Up" }).click()
+-  await page.goto("/login")
++  await page.waitForURL("/login")
+ }
+ 
+ export async function logInUser(page: Page, email: string, password: string) {
