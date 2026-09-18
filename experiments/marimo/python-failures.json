@@ -1,0 +1,118 @@
+{
+  "project": "marimo",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "--python",
+    "3.12",
+    "--no-default-groups",
+    "--group",
+    "test-optional",
+    "pytest",
+    "--lf",
+    "-q",
+    "--tb=short",
+    "-r",
+    "fEx"
+  ],
+  "selection": "pytest --lf from the preceding full optional run",
+  "duration_s": 9.444,
+  "status": "failed",
+  "returncode": 1,
+  "counts": {
+    "failed": 15
+  },
+  "failure_names": [
+    {
+      "name": "tests/_cli/test_cli.py::test_editor_sandbox_supplies_server_tools[uv-file]",
+      "classification": "optional_dependency/environment",
+      "cause": "bare test venv sees ruff on the allowlisted PATH; test expects ruff, pylsp, and pylsp_ruff absent"
+    },
+    {
+      "name": "tests/_cli/test_cli.py::test_editor_sandbox_supplies_server_tools[uv-folder]",
+      "classification": "optional_dependency/environment",
+      "cause": "bare test venv sees ruff on the allowlisted PATH; test expects ruff, pylsp, and pylsp_ruff absent"
+    },
+    {
+      "name": "tests/_cli/test_cli.py::test_editor_sandbox_supplies_server_tools[uv-stdin]",
+      "classification": "optional_dependency/environment",
+      "cause": "bare test venv sees ruff on the allowlisted PATH; test expects ruff, pylsp, and pylsp_ruff absent"
+    },
+    {
+      "name": "tests/_cli/test_cli.py::test_editor_sandbox_supplies_server_tools[uv-new]",
+      "classification": "optional_dependency/environment",
+      "cause": "bare test venv sees ruff on the allowlisted PATH; test expects ruff, pylsp, and pylsp_ruff absent"
+    },
+    {
+      "name": "tests/_cli/test_cli.py::test_shell_completion[bash-0-True-False]",
+      "classification": "fixture/configuration",
+      "cause": "source checkout has no built static assets; assets mount logs unexpected stderr"
+    },
+    {
+      "name": "tests/_cli/test_cli.py::test_shell_completion[bash.exe-0-True-False]",
+      "classification": "fixture/configuration",
+      "cause": "source checkout has no built static assets; assets mount logs unexpected stderr"
+    },
+    {
+      "name": "tests/_cli/test_cli.py::test_shell_completion[/usr/bin/zsh-0-True-False]",
+      "classification": "fixture/configuration",
+      "cause": "source checkout has no built static assets; assets mount logs unexpected stderr"
+    },
+    {
+      "name": "tests/_cli/test_cli_export.py::TestExportHTML::test_export_watch_no_out_dir",
+      "classification": "fixture/configuration",
+      "cause": "missing built static assets prepend an error to stderr and mask the expected CLI text"
+    },
+    {
+      "name": "tests/_cli/test_cli_export.py::TestExportScript::test_export_watch_script_no_out_dir",
+      "classification": "fixture/configuration",
+      "cause": "missing built static assets prepend an error to stderr and mask the expected CLI text"
+    },
+    {
+      "name": "tests/_cli/test_cli_export.py::TestExportMarkdown::test_export_watch_markdown_no_out_dir",
+      "classification": "fixture/configuration",
+      "cause": "missing built static assets prepend an error to stderr and mask the expected CLI text"
+    },
+    {
+      "name": "tests/_cli/test_pair_integration.py::test_interrupt_disconnects_and_kernel_recovers",
+      "classification": "fixture/configuration",
+      "cause": "missing built static assets prepend an error to stderr and mask the expected CLI text"
+    },
+    {
+      "name": "tests/_pyodide/test_pyodide_session.py::test_pyodide_bridge_format",
+      "classification": "optional_dependency/environment",
+      "cause": "ruff is unavailable, so formatting returns no code entries and the bridge response is empty"
+    },
+    {
+      "name": "tests/_server/api/endpoints/test_assets.py::test_favicon",
+      "classification": "fixture/configuration",
+      "cause": "source checkout lacks built frontend assets, so the endpoint returns 404"
+    },
+    {
+      "name": "tests/_server/api/test_middleware.py::test_base_url",
+      "classification": "fixture/configuration",
+      "cause": "source checkout lacks built frontend assets, so the endpoint returns 404"
+    },
+    {
+      "name": "tests/_utils/test_formatter.py::TestRuffFormatter::test_ruff_formatter_preserves_comments",
+      "classification": "optional_dependency/environment",
+      "cause": "ruff is unavailable; formatter output lacks the expected key"
+    }
+  ],
+  "classification_counts": {
+    "optional_dependency/environment": 6,
+    "fixture/configuration": 9,
+    "actual_assertion": 0
+  },
+  "causality_validation": {
+    "status": "validated_by_upstream_preparation",
+    "after_selected": "15/15 passed",
+    "details": "Four sandbox cases pass with an isolated uv PATH, nine asset/configuration cases pass with the actual frontend build, and the Ruff-dependent cases pass after declared dev-group Ruff installation."
+  },
+  "notes": [
+    "Raw pytest output is intentionally not retained.",
+    "This diagnoses the recorded failures; it does not alter upstream tests or fixtures."
+  ]
+}

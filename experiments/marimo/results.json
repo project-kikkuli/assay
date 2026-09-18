@@ -1,0 +1,125 @@
+{
+  "project": "marimo",
+  "source": "https://github.com/marimo-team/marimo",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "license": "Apache-2.0",
+  "clone": "shallow depth 1 from public main",
+  "inventory": {
+    "marimo_python_files": 1316,
+    "python_pytest_files": 589,
+    "frontend_src_typescript_javascript_files": 1604,
+    "workspace_package_typescript_javascript_files": 38,
+    "frontend_test_files": 500,
+    "github_workflows": 27,
+    "post_setup_checkout_size": "2.3G"
+  },
+  "ci": {
+    "python_workflow": ".github/workflows/test_be.yaml",
+    "frontend_workflow": ".github/workflows/test_fe.yaml",
+    "documented_python_command": "uv run --group test pytest",
+    "documented_frontend_command": "pnpm turbo --filter @marimo-team/frontend test -- --run",
+    "documented_frontend_typecheck": "pnpm turbo --filter @marimo-team/frontend typecheck"
+  },
+  "cold_setup": [
+    {"name": "python_lock", "status": "passed", "duration_s": 2.692},
+    {"name": "python_install", "status": "passed", "duration_s": 1.785},
+    {"name": "frontend_install", "status": "passed", "duration_s": 55.063}
+  ],
+  "python_lock": {
+    "generated_by": "uv lock --python 3.12",
+    "artifact": "subject.uv.lock",
+    "artifact_bytes": 2013200,
+    "sha256": "f0cb929d44e806eda60dac98031d4ad6b6455b6b152644384759e752fcdc681b",
+    "pin_examples": {
+      "marimo": "0.24.2",
+      "pydantic": "2.13.5",
+      "pydantic-ai-slim": "2.42.0",
+      "pytest": "9.0.3"
+    }
+  },
+  "warm_tests": [
+    {
+      "name": "python_tests",
+      "status": "failed",
+      "returncode": 2,
+      "duration_s": 4.392,
+      "counts": {"errors": 2, "skipped": 19},
+      "blocker": "collection imports pydantic, which is not in the core test environment"
+    },
+    {
+      "name": "frontend_tests",
+      "status": "passed",
+      "duration_s": 108.225,
+      "counts": {"test_suites": 1750, "passed_suites": 1750, "tests": 6505, "passed": 6505, "failed": 0, "pending": 0}
+    },
+    {"name": "frontend_typecheck", "status": "passed", "duration_s": 3.097}
+  ],
+  "optional_python_tests": {
+    "status": "failed_partial",
+    "duration_s": 730.10,
+    "command": "UV_EXCLUDE_NEWER=2026-09-18 uv run --locked --python 3.12 --no-default-groups --group test-optional pytest -q --durations=10",
+    "group": "test-optional",
+    "counts": {"passed": 12526, "failed": 15, "skipped": 108, "xfailed": 56, "xpassed": 16, "warnings": 209},
+    "note": "Optional dependencies fixed the two pydantic collection errors; remaining failures are upstream/environment-sensitive and are not reported as green."
+  },
+  "selected_python_validation": {
+    "before": "15 selected failures reproduced; prior last-failed selection also reported 25 passing tests",
+    "after": "15/15 selected tests passed",
+    "python_sync_s": 1.407,
+    "frontend_build_s": 9.114,
+    "asset_files": 480,
+    "asset_bytes": 26686370,
+    "ruff": "0.16.7 importable and executable after test-optional + dev sync",
+    "selected_test_s": 31.546,
+    "causality": "verified: four failures were host Ruff PATH contamination, nine required real static assets, and two required the declared Ruff module"
+  },
+  "direct_vitest_profile": {
+    "all": {
+      "status": "passed",
+      "duration_s": 101.305,
+      "test_suites": 1750,
+      "tests": 6505,
+      "phase_ms": {"environment_setup": 316877.664, "prepare": 4493.723, "collect": 483730.3, "setup": 162564.8, "tests_and_hooks": 38735.042}
+    },
+    "related_focus": {"status": "passed", "duration_s": 82.642, "test_suites": 900, "tests": 3379},
+    "slowest_file": {"path": "frontend/src/components/editor/file-tree/__tests__/file-explorer-navigation.test.tsx", "duration_ms": 6666.737}
+  },
+  "worker_comparison": {
+    "default": 122.446,
+    "max_workers_4": 119.517,
+    "max_workers_8": 103.932,
+    "each": "fresh direct --no-cache run; 6505/6505 passed"
+  },
+  "mechanism_checks": {
+    "configured_mechanism": "frontend/vitest.config.ts sets environment=jsdom and setupFiles=src/__tests__/setup.ts",
+    "configured_jsdom": "19/19 passed in 3.505s",
+    "explicit_node": "invalid_empty_report: two suites failed collection with zero tests; not used as a green result",
+    "naive_node_root_cause": "global setup imports blob-polyfill, whose module initialization reads document; node has no document before test collection",
+    "minimal_node": "separate temporary config, node environment, isolation=true, only vi.clearAllMocks setup: seed 1 19/19 in 2.957s; seed 2 19/19 in 1.619s",
+    "turbo_typecheck": "first 7.699s cache miss; second 2.402s cache hit (both passed)",
+    "seeded_defect": "inverted runs.ts guard: related caught 12/56 failures in 9.010s; full caught 12/6505 in 121.725s"
+  },
+  "affected_gate": {
+    "command": "vitest related src/core/cells/runs.ts --no-cache",
+    "baseline": {"duration_s": 30.592, "tests": 56, "passed": 56, "phase_ms": {"environment": 2327.136, "transform_prepare": 90.097, "collection": 12024.763, "setup": 1137.04, "tests_and_hooks": 115.135}},
+    "seeded_defect": {"duration_s": 11.255, "tests": 56, "passed": 44, "failed": 12, "phase_ms": {"environment": 2921.3, "transform_prepare": 89.381, "collection": 12380.409, "setup": 1145.787, "tests_and_hooks": 126.573}},
+    "timing_note": "Vitest exposes prepareDuration, not a separate transform counter; transform_prepare is that direct diagnostic."
+  },
+  "full_mutant_vs_baseline": {
+    "baseline": "all_direct: 6505/6505 passed in 101.305s",
+    "seeded_defect": "all: 6493 passed, 12 failed in 121.725s",
+    "same_fault": "runs.ts run-id guard inverted"
+  },
+  "resource_selector_probe": {
+    "source_ts": "process exit 0, but vitest related src/index.ts selected 0 suites/0 tests; admission unresolved/no coverage",
+    "generated_json": "vitest related data/generated/models.json selected 2 suites/2 tests, both passed",
+    "note": "This is one held-out generated-JSON boundary observation, not a safe dependency-graph claim."
+  },
+  "limitations": [
+    "Upstream has no committed uv.lock at this revision; cold setup generated a local lock before uv sync --locked.",
+    "UV_EXCLUDE_NEWER was pinned to 2026-09-18 for repeatable public-index resolution.",
+    "Node 22.12 required an experiment-local npx pnpm@10.34.4 compatibility launcher, which resolved to pnpm 10.34.5.",
+    "Optional Python integrations, E2E/browser tests, Docker, secrets, and paid services were not run.",
+    "One macOS arm64 run; timings are observations, not capacity or correctness guarantees."
+  ]
+}

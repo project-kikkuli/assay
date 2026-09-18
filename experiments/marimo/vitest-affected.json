@@ -1,0 +1,219 @@
+{
+  "project": "marimo",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "gate": "vitest related src/core/cells/runs.ts --no-cache",
+  "baseline": {
+    "name": "affected_baseline",
+    "command": [
+      "npx",
+      "--yes",
+      "--package=pnpm@10.34.4",
+      "pnpm",
+      "--filter",
+      "@marimo-team/frontend",
+      "exec",
+      "vitest",
+      "related",
+      "src/core/cells/runs.ts",
+      "--no-cache",
+      "--reporter=json",
+      "--outputFile",
+      "<experiment>/.affected_baseline.json",
+      "--reporter",
+      "<experiment>/vitest_timing_reporter.mjs"
+    ],
+    "duration_s": 30.592,
+    "status": "passed",
+    "cache_mode": "Vitest direct --no-cache; Turbo not invoked",
+    "counts": {
+      "test_suites": 17,
+      "passed_suites": 17,
+      "failed_suites": 0,
+      "tests": 56,
+      "passed": 56,
+      "failed": 0,
+      "pending": 0
+    },
+    "files": [
+      {
+        "path": "frontend/src/__tests__/main.test.tsx",
+        "duration_ms": 15.728,
+        "tests": 11,
+        "failed": 0,
+        "environment_setup_ms": 466.915333,
+        "prepare_ms": 16.172666999999933,
+        "collect_ms": 3208.1785,
+        "setup_ms": 229.11416699999995,
+        "tests_and_hooks_ms": 16.262833000000228,
+        "import_durations_ms": {}
+      },
+      {
+        "path": "frontend/src/__tests__/mount.test.ts",
+        "duration_ms": 7.517,
+        "tests": 7,
+        "failed": 0,
+        "environment_setup_ms": 461.636416,
+        "prepare_ms": 20.628750000000082,
+        "collect_ms": 2932.677666,
+        "setup_ms": 225.870042,
+        "tests_and_hooks_ms": 8.676790999999866,
+        "import_durations_ms": {}
+      },
+      {
+        "path": "frontend/src/core/cells/__tests__/runs.test.ts",
+        "duration_ms": 4.181,
+        "tests": 17,
+        "failed": 0,
+        "environment_setup_ms": 465.696042,
+        "prepare_ms": 18.305374999999913,
+        "collect_ms": 52.42116599999997,
+        "setup_ms": 227.00183300000003,
+        "tests_and_hooks_ms": 4.968959000000041,
+        "import_durations_ms": {}
+      },
+      {
+        "path": "frontend/src/core/websocket/__tests__/useMarimoKernelConnection.hook.test.tsx",
+        "duration_ms": 80.766,
+        "tests": 11,
+        "failed": 0,
+        "environment_setup_ms": 466.21133299999997,
+        "prepare_ms": 17.507499999999936,
+        "collect_ms": 2916.313542,
+        "setup_ms": 227.43291699999997,
+        "tests_and_hooks_ms": 81.19837499999994,
+        "import_durations_ms": {}
+      },
+      {
+        "path": "frontend/src/core/websocket/__tests__/useMarimoKernelConnection.test.ts",
+        "duration_ms": 4.251,
+        "tests": 10,
+        "failed": 0,
+        "environment_setup_ms": 466.677083,
+        "prepare_ms": 17.482790999999906,
+        "collect_ms": 2915.1723749999996,
+        "setup_ms": 227.62075000000004,
+        "tests_and_hooks_ms": 4.0277500000001965,
+        "import_durations_ms": {}
+      }
+    ],
+    "timing": {
+      "aggregate_module_ms": {
+        "environment_setup_ms": 2327.136,
+        "prepare_ms": 90.097,
+        "collect_ms": 12024.763,
+        "setup_ms": 1137.04,
+        "tests_and_hooks_ms": 115.135
+      }
+    },
+    "validity": "fresh_positive_report"
+  },
+  "seeded_defect": {
+    "name": "affected_seeded_defect",
+    "command": [
+      "npx",
+      "--yes",
+      "--package=pnpm@10.34.4",
+      "pnpm",
+      "--filter",
+      "@marimo-team/frontend",
+      "exec",
+      "vitest",
+      "related",
+      "src/core/cells/runs.ts",
+      "--no-cache",
+      "--reporter=json",
+      "--outputFile",
+      "<experiment>/.affected_seeded_defect.json",
+      "--reporter",
+      "<experiment>/vitest_timing_reporter.mjs"
+    ],
+    "duration_s": 11.255,
+    "status": "failed",
+    "cache_mode": "Vitest direct --no-cache; Turbo not invoked",
+    "counts": {
+      "test_suites": 17,
+      "passed_suites": 15,
+      "failed_suites": 2,
+      "tests": 56,
+      "passed": 44,
+      "failed": 12,
+      "pending": 0
+    },
+    "files": [
+      {
+        "path": "frontend/src/__tests__/main.test.tsx",
+        "duration_ms": 17.759,
+        "tests": 11,
+        "failed": 0,
+        "environment_setup_ms": 579.8321249999999,
+        "prepare_ms": 21.870166999999924,
+        "collect_ms": 3333.883792,
+        "setup_ms": 229.88941699999998,
+        "tests_and_hooks_ms": 18.146708000000217,
+        "import_durations_ms": {}
+      },
+      {
+        "path": "frontend/src/__tests__/mount.test.ts",
+        "duration_ms": 8.543,
+        "tests": 7,
+        "failed": 0,
+        "environment_setup_ms": 587.232792,
+        "prepare_ms": 17.81149999999991,
+        "collect_ms": 3010.4915840000003,
+        "setup_ms": 228.29666600000007,
+        "tests_and_hooks_ms": 9.171624999999949,
+        "import_durations_ms": {}
+      },
+      {
+        "path": "frontend/src/core/cells/__tests__/runs.test.ts",
+        "duration_ms": 10.186,
+        "tests": 17,
+        "failed": 12,
+        "environment_setup_ms": 593.349959,
+        "prepare_ms": 10.560125000000085,
+        "collect_ms": 58.68508399999996,
+        "setup_ms": 226.71729199999993,
+        "tests_and_hooks_ms": 10.367166999999995,
+        "import_durations_ms": {}
+      },
+      {
+        "path": "frontend/src/core/websocket/__tests__/useMarimoKernelConnection.hook.test.tsx",
+        "duration_ms": 84.288,
+        "tests": 11,
+        "failed": 0,
+        "environment_setup_ms": 577.880166,
+        "prepare_ms": 21.156417000000033,
+        "collect_ms": 2988.560125,
+        "setup_ms": 230.795166,
+        "tests_and_hooks_ms": 84.33208300000024,
+        "import_durations_ms": {}
+      },
+      {
+        "path": "frontend/src/core/websocket/__tests__/useMarimoKernelConnection.test.ts",
+        "duration_ms": 3.295,
+        "tests": 10,
+        "failed": 0,
+        "environment_setup_ms": 583.005416,
+        "prepare_ms": 17.98254099999997,
+        "collect_ms": 2988.788458,
+        "setup_ms": 230.08841700000005,
+        "tests_and_hooks_ms": 4.555457999999817,
+        "import_durations_ms": {}
+      }
+    ],
+    "timing": {
+      "aggregate_module_ms": {
+        "environment_setup_ms": 2921.3,
+        "prepare_ms": 89.381,
+        "collect_ms": 12380.409,
+        "setup_ms": 1145.787,
+        "tests_and_hooks_ms": 126.573
+      }
+    },
+    "validity": "fresh_positive_report"
+  },
+  "notes": [
+    "The source guard is restored in a finally block; upstream tests are not changed.",
+    "Both reports were required to be fresh and positive-count; raw reports are discarded."
+  ]
+}

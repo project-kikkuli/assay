@@ -1,0 +1,74 @@
+{
+  "project": "marimo",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "runs": {
+    "source_ts": {
+      "target": "src/index.ts",
+      "command": [
+        "npx",
+        "--yes",
+        "--package=pnpm@10.34.4",
+        "pnpm",
+        "--filter",
+        "@marimo-team/llm-info",
+        "exec",
+        "vitest",
+        "related",
+        "src/index.ts",
+        "--no-cache",
+        "--reporter=json",
+        "--outputFile",
+        "<temporary>/source_ts.json"
+      ],
+      "duration_s": 2.369,
+      "status": "passed",
+      "process_exit": 0,
+      "validity": "fresh_empty_report",
+      "admission": "unresolved_no_tests_selected",
+      "counts": {
+        "test_suites": 0,
+        "tests": 0,
+        "passed": 0,
+        "failed": 0
+      },
+      "selected_files": []
+    },
+    "generated_json": {
+      "target": "data/generated/models.json",
+      "command": [
+        "npx",
+        "--yes",
+        "--package=pnpm@10.34.4",
+        "pnpm",
+        "--filter",
+        "@marimo-team/llm-info",
+        "exec",
+        "vitest",
+        "related",
+        "data/generated/models.json",
+        "--no-cache",
+        "--reporter=json",
+        "--outputFile",
+        "<temporary>/generated_json.json"
+      ],
+      "duration_s": 1.493,
+      "status": "passed",
+      "process_exit": 0,
+      "validity": "fresh_positive_report",
+      "admission": "admitted_positive_count",
+      "counts": {
+        "test_suites": 2,
+        "tests": 2,
+        "passed": 2,
+        "failed": 0
+      },
+      "selected_files": [
+        "packages/llm-info/src/__tests__/json-structure.test.ts"
+      ]
+    }
+  },
+  "notes": [
+    "This is a selector observation for one generated JSON boundary, not a graph-safety claim.",
+    "Both runs are direct Vitest --no-cache runs with isolation left at its default."
+  ]
+}

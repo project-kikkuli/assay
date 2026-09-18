@@ -1,0 +1,32 @@
+{
+  "project": "marimo",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "runs": [
+    {
+      "name": "first",
+      "status": "passed",
+      "duration_s": 7.699,
+      "turbo_cache": {
+        "hits": 0,
+        "misses": 1,
+        "bypasses": 2
+      },
+      "validity": "cache_marker_observed"
+    },
+    {
+      "name": "second",
+      "status": "passed",
+      "duration_s": 2.402,
+      "turbo_cache": {
+        "hits": 1,
+        "misses": 0,
+        "bypasses": 2
+      },
+      "validity": "cache_marker_observed"
+    }
+  ],
+  "notes": [
+    "Runs use the upstream Turbo typecheck task twice with the same dedicated external cache.",
+    "Only cache markers, status, and duration are retained; raw output is discarded."
+  ]
+}

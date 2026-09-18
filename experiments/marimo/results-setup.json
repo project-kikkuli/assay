@@ -1,0 +1,64 @@
+{
+  "project": "marimo",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "runner_python": "3.9.6",
+  "benchmark_python": "3.12 via uv",
+  "setup": [
+    {
+      "name": "python_lock",
+      "command": [
+        "uv",
+        "lock",
+        "--python",
+        "3.12"
+      ],
+      "status": "passed",
+      "returncode": 0,
+      "duration_s": 2.692,
+      "counts": {}
+    },
+    {
+      "name": "python_install",
+      "command": [
+        "uv",
+        "sync",
+        "--locked",
+        "--python",
+        "3.12",
+        "--no-default-groups",
+        "--group",
+        "test"
+      ],
+      "status": "passed",
+      "returncode": 0,
+      "duration_s": 1.785,
+      "counts": {}
+    },
+    {
+      "name": "frontend_install",
+      "command": [
+        "npx",
+        "--yes",
+        "--package=pnpm@10.34.4",
+        "pnpm",
+        "install",
+        "--frozen-lockfile",
+        "--store-dir",
+        "<experiment>/.cache/pnpm-store"
+      ],
+      "status": "passed",
+      "returncode": 0,
+      "duration_s": 55.063,
+      "counts": {}
+    }
+  ],
+  "tests": [],
+  "notes": [
+    "Python dependencies were resolved into a generated local uv.lock because upstream does not commit one at this revision.",
+    "UV_EXCLUDE_NEWER is pinned to 2026-09-18 for repeatable public-index resolution.",
+    "Frontend dependencies use the checked-in pnpm-lock.yaml with frozen resolution.",
+    "The benchmark commands use Python 3.12 through uv; the runner interpreter version is reported separately.",
+    "Counts are parsed from runner summaries; no raw worker transcript is persisted.",
+    "This is the initial setup record; current scripts place dependency caches outside the Assay tree."
+  ]
+}

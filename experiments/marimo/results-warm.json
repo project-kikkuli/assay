@@ -1,0 +1,85 @@
+{
+  "project": "marimo",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "runner_python": "3.12.5",
+  "benchmark_python": "3.12 via uv",
+  "setup": [],
+  "tests": [
+    {
+      "name": "python_tests",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "--python",
+        "3.12",
+        "--no-default-groups",
+        "--group",
+        "test",
+        "pytest"
+      ],
+      "status": "failed",
+      "returncode": 2,
+      "duration_s": 4.392,
+      "counts": {
+        "errors": 2,
+        "skipped": 19
+      }
+    },
+    {
+      "name": "frontend_tests",
+      "command": [
+        "npx",
+        "--yes",
+        "--package=pnpm@10.34.4",
+        "pnpm",
+        "turbo",
+        "--filter",
+        "@marimo-team/frontend",
+        "test",
+        "--",
+        "--run",
+        "--reporter=json",
+        "--outputFile",
+        "<experiment>/.vitest-report.json"
+      ],
+      "status": "passed",
+      "validity": "initial_record_pre_fresh_report_guard",
+      "returncode": 0,
+      "duration_s": 108.225,
+      "counts": {
+        "test_suites": 1750,
+        "passed_suites": 1750,
+        "tests": 6505,
+        "passed": 6505,
+        "failed": 0,
+        "pending": 0
+      }
+    },
+    {
+      "name": "frontend_typecheck",
+      "command": [
+        "npx",
+        "--yes",
+        "--package=pnpm@10.34.4",
+        "pnpm",
+        "turbo",
+        "--filter",
+        "@marimo-team/frontend",
+        "typecheck"
+      ],
+      "status": "passed",
+      "returncode": 0,
+      "duration_s": 3.097,
+      "counts": {}
+    }
+  ],
+  "notes": [
+    "Python dependencies were resolved into a generated local uv.lock because upstream does not commit one at this revision.",
+    "UV_EXCLUDE_NEWER is pinned to 2026-09-18 for repeatable public-index resolution.",
+    "Frontend dependencies use the checked-in pnpm-lock.yaml with frozen resolution.",
+    "The benchmark commands use Python 3.12 through uv; the runner interpreter version is reported separately.",
+    "Counts are parsed from runner summaries; no raw worker transcript is persisted.",
+    "This initial Turbo record predates the fresh-report validation; current direct evidence is in vitest-profile.json and vitest-workers.json."
+  ]
+}

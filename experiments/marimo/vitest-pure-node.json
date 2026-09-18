@@ -1,0 +1,95 @@
+{
+  "project": "marimo",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "tests": [
+    "src/core/cells/__tests__/runs.test.ts",
+    "src/core/state/__tests__/jotai.test.ts"
+  ],
+  "setup": {
+    "environment": "node",
+    "isolation": true,
+    "setup": "beforeEach(vi.clearAllMocks()) only",
+    "omitted": [
+      "blob-polyfill",
+      "@testing-library/react cleanup",
+      "ResizeObserver/IntersectionObserver shims"
+    ],
+    "reason": "These tests exercise reducer/Jotai state only; import tracing found no DOM use in their module boundary."
+  },
+  "runs": [
+    {
+      "seed": 1,
+      "command": [
+        "npx",
+        "--yes",
+        "--package=pnpm@10.34.4",
+        "pnpm",
+        "--filter",
+        "@marimo-team/frontend",
+        "exec",
+        "vitest",
+        "run",
+        "--no-cache",
+        "--isolate",
+        "--config",
+        "<temporary>/vitest.node.config.mjs",
+        "src/core/cells/__tests__/runs.test.ts",
+        "src/core/state/__tests__/jotai.test.ts",
+        "--reporter=json",
+        "--outputFile",
+        "<temporary>/seed-1.json",
+        "--sequence.shuffle=true",
+        "--sequence.seed=1"
+      ],
+      "duration_s": 2.957,
+      "status": "passed",
+      "validity": "fresh_positive_report",
+      "counts": {
+        "test_suites": 5,
+        "tests": 19,
+        "passed": 19,
+        "failed": 0,
+        "pending": 0
+      }
+    },
+    {
+      "seed": 2,
+      "command": [
+        "npx",
+        "--yes",
+        "--package=pnpm@10.34.4",
+        "pnpm",
+        "--filter",
+        "@marimo-team/frontend",
+        "exec",
+        "vitest",
+        "run",
+        "--no-cache",
+        "--isolate",
+        "--config",
+        "<temporary>/vitest.node.config.mjs",
+        "src/core/cells/__tests__/runs.test.ts",
+        "src/core/state/__tests__/jotai.test.ts",
+        "--reporter=json",
+        "--outputFile",
+        "<temporary>/seed-2.json",
+        "--sequence.shuffle=true",
+        "--sequence.seed=2"
+      ],
+      "duration_s": 1.619,
+      "status": "passed",
+      "validity": "fresh_positive_report",
+      "counts": {
+        "test_suites": 5,
+        "tests": 19,
+        "passed": 19,
+        "failed": 0,
+        "pending": 0
+      }
+    }
+  ],
+  "notes": [
+    "Separate temporary Vitest config; original tests and upstream config are unchanged.",
+    "This is a 19-test mechanism check, not a whole-suite speed estimate."
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "project": "marimo",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "test_files": [
+    "src/core/cells/__tests__/runs.test.ts",
+    "src/core/state/__tests__/jotai.test.ts"
+  ],
+  "naive_node_root_cause": "The upstream global setup imports blob-polyfill; its initialization reads document, so node fails before test collection. The selected modules otherwise use reducer/Jotai state without DOM globals.",
+  "runs": {
+    "configured_jsdom": {
+      "name": "environment_jsdom",
+      "command": [
+        "npx",
+        "--yes",
+        "--package=pnpm@10.34.4",
+        "pnpm",
+        "--filter",
+        "@marimo-team/frontend",
+        "exec",
+        "vitest",
+        "run",
+        "--no-cache",
+        "src/core/cells/__tests__/runs.test.ts",
+        "src/core/state/__tests__/jotai.test.ts",
+        "--reporter=json",
+        "--outputFile",
+        "<experiment>/.environment_jsdom.json",
+        "--reporter",
+        "<experiment>/vitest_timing_reporter.mjs"
+      ],
+      "duration_s": 3.505,
+      "status": "passed",
+      "cache_mode": "Vitest direct --no-cache; Turbo not invoked",
+      "counts": {
+        "test_suites": 5,
+        "passed_suites": 5,
+        "failed_suites": 0,
+        "tests": 19,
+        "passed": 19,
+        "failed": 0,
+        "pending": 0
+      },
+      "files": [
+        {
+          "path": "frontend/src/core/cells/__tests__/runs.test.ts",
+          "duration_ms": 4.172,
+          "tests": 17,
+          "failed": 0,
+          "environment_setup_ms": 347.715041,
+          "prepare_ms": 3.637540999999999,
+          "collect_ms": 40.68708399999991,
+          "setup_ms": 145.47329200000001,
+          "tests_and_hooks_ms": 4.694292000000019,
+          "import_durations_ms": {}
+        },
+        {
+          "path": "frontend/src/core/state/__tests__/jotai.test.ts",
+          "duration_ms": 11.855,
+          "tests": 2,
+          "failed": 0,
+          "environment_setup_ms": 348.464833,
+          "prepare_ms": 3.4309580000000324,
+          "collect_ms": 23.168750000000045,
+          "setup_ms": 143.35641600000002,
+          "tests_and_hooks_ms": 12.658208000000059,
+          "import_durations_ms": {}
+        }
+      ],
+      "timing": {
+        "aggregate_module_ms": {
+          "environment_setup_ms": 696.18,
+          "prepare_ms": 7.068,
+          "collect_ms": 63.856,
+          "setup_ms": 288.83,
+          "tests_and_hooks_ms": 17.353
+        }
+      },
+      "validity": "fresh_positive_report"
+    },
+    "explicit_node": {
+      "name": "environment_node",
+      "command": [
+        "npx",
+        "--yes",
+        "--package=pnpm@10.34.4",
+        "pnpm",
+        "--filter",
+        "@marimo-team/frontend",
+        "exec",
+        "vitest",
+        "run",
+        "--no-cache",
+        "--environment",
+        "node",
+        "src/core/cells/__tests__/runs.test.ts",
+        "src/core/state/__tests__/jotai.test.ts",
+        "--reporter=json",
+        "--outputFile",
+        "<experiment>/.environment_node.json",
+        "--reporter",
+        "<experiment>/vitest_timing_reporter.mjs"
+      ],
+      "duration_s": 2.493,
+      "status": "invalid",
+      "cache_mode": "Vitest direct --no-cache; Turbo not invoked",
+      "counts": {
+        "test_suites": 2,
+        "passed_suites": 0,
+        "failed_suites": 2,
+        "tests": 0,
+        "passed": 0,
+        "failed": 0,
+        "pending": 0
+      },
+      "files": [
+        {
+          "path": "frontend/src/core/cells/__tests__/runs.test.ts",
+          "duration_ms": 0,
+          "tests": 0,
+          "failed": 0,
+          "environment_setup_ms": 0.03745800000000088,
+          "prepare_ms": 2.1466670000000008,
+          "collect_ms": 0,
+          "setup_ms": 0,
+          "tests_and_hooks_ms": 0,
+          "import_durations_ms": {}
+        },
+        {
+          "path": "frontend/src/core/state/__tests__/jotai.test.ts",
+          "duration_ms": 0,
+          "tests": 0,
+          "failed": 0,
+          "environment_setup_ms": 0.038958000000000936,
+          "prepare_ms": 2.1911249999999995,
+          "collect_ms": 0,
+          "setup_ms": 0,
+          "tests_and_hooks_ms": 0,
+          "import_durations_ms": {}
+        }
+      ],
+      "timing": {
+        "aggregate_module_ms": {
+          "environment_setup_ms": 0.076,
+          "prepare_ms": 4.338,
+          "collect_ms": 0,
+          "setup_ms": 0,
+          "tests_and_hooks_ms": 0
+        }
+      },
+      "validity": "invalid_empty_report"
+    }
+  },
+  "notes": [
+    "This is a mechanism comparison, not a replacement for the configured suite.",
+    "Isolation remains enabled; only the environment is changed in the node case."
+  ]
+}
