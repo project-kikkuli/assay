@@ -256,6 +256,8 @@ def main():
     finally:
         report["total_seconds"] = time.perf_counter() - started
         write(args.output, report)
+        print(json.dumps({key: report[key] for key in ("status", "total_seconds", "scope_decision", "failure")
+                          if key in report}), flush=True)
     return 0 if report["status"] == "completed" else 1
 
 

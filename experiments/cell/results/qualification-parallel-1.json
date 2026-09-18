@@ -1,0 +1,25 @@
+{
+  "baseline_written": true,
+  "parallel_branches": 2,
+  "seconds": 25.25415133300703,
+  "status": "qualified_locally",
+  "steps": [
+    {
+      "exit_code": 0,
+      "inventory_valid": true,
+      "name": "boundary_tests",
+      "seconds": 1.5908847080136184,
+      "tests_passed": 30
+    },
+    {
+      "exit_code": 0,
+      "name": "core_challenges",
+      "seconds": 16.432428957981756
+    },
+    {
+      "exit_code": 0,
+      "name": "composition",
+      "seconds": 23.476358707994223
+    }
+  ]
+}

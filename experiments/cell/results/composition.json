@@ -7,30 +7,30 @@
       "check": "build",
       "status": "passed",
       "exit_code": 0,
-      "seconds": 1.461,
-      "output_tail": "12 kB \u2502 gzip:  11.19 kB\n../backend/app/frontend/assets/useRouter-Cc2uka0g.js           0.15 kB \u2502 gzip:   0.14 kB\n../backend/app/frontend/assets/_layout-D3lFoA-u.js             0.42 kB \u2502 gzip:   0.30 kB\n../backend/app/frontend/assets/AuthLayout-_RG3Zima.js          0.70 kB \u2502 gzip:   0.36 kB\n../backend/app/frontend/assets/recover-password-aezg7Nnh.js    1.64 kB \u2502 gzip:   0.82 kB\n../backend/app/frontend/assets/password-input-CmfI6913.js      1.94 kB \u2502 gzip:   0.98 kB\n../backend/app/frontend/assets/login-8JPY_MR3.js               2.11 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/reset-password-BFX4PpoD.js      2.28 kB \u2502 gzip:   0.97 kB\n../backend/app/frontend/assets/dialog-C01DT4SF.js              2.47 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/signup-BDgwnJQh.js              2.72 kB \u2502 gzip:   0.99 kB\n../backend/app/frontend/assets/_layout-qAM_DC6h.js             6.42 kB \u2502 gzip:   2.63 kB\n../backend/app/frontend/assets/items-zX6P2w6T.js               9.49 kB \u2502 gzip:   2.90 kB\n../backend/app/frontend/assets/settings-70d6TzdP.js           10.22 kB \u2502 gzip:   3.40 kB\n../backend/app/frontend/assets/useBaseQuery-CYd3-LAO.js       16.28 kB \u2502 gzip:   5.46 kB\n../backend/app/frontend/assets/admin-ve5AQa3D.js              17.05 kB \u2502 gzip:   4.79 kB\n../backend/app/frontend/assets/theme-provider-D1cxwilt.js     24.42 kB \u2502 gzip:   9.13 kB\n../backend/app/frontend/assets/Logo-BxHjgxus.js               27.94 kB \u2502 gzip:   9.43 kB\n../backend/app/frontend/assets/loading-button-BN_jWq_N.js     38.56 kB \u2502 gzip:  13.67 kB\n../backend/app/frontend/assets/dist-0WDpuApi.js               41.39 kB \u2502 gzip:  14.86 kB\n../backend/app/frontend/assets/dist-BGxl33DE.js               47.10 kB \u2502 gzip:  15.79 kB\n../backend/app/frontend/assets/DataTable-v8Qs6LEz.js          75.35 kB \u2502 gzip:  21.03 kB\n../backend/app/frontend/assets/useCustomToast-BcHfjxNI.js    114.09 kB \u2502 gzip:  37.23 kB\n../backend/app/frontend/assets/index-B_8s6WYG.js             355.00 kB \u2502 gzip: 109.29 kB\n\n\u2713 built in 356ms\n",
+      "seconds": 1.418,
+      "output_tail": "12 kB \u2502 gzip:  11.19 kB\n../backend/app/frontend/assets/useRouter-Cc2uka0g.js           0.15 kB \u2502 gzip:   0.14 kB\n../backend/app/frontend/assets/_layout-D3lFoA-u.js             0.42 kB \u2502 gzip:   0.30 kB\n../backend/app/frontend/assets/AuthLayout-_RG3Zima.js          0.70 kB \u2502 gzip:   0.36 kB\n../backend/app/frontend/assets/recover-password-aezg7Nnh.js    1.64 kB \u2502 gzip:   0.82 kB\n../backend/app/frontend/assets/password-input-CmfI6913.js      1.94 kB \u2502 gzip:   0.98 kB\n../backend/app/frontend/assets/login-8JPY_MR3.js               2.11 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/reset-password-BFX4PpoD.js      2.28 kB \u2502 gzip:   0.97 kB\n../backend/app/frontend/assets/dialog-C01DT4SF.js              2.47 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/signup-BDgwnJQh.js              2.72 kB \u2502 gzip:   0.99 kB\n../backend/app/frontend/assets/_layout-qAM_DC6h.js             6.42 kB \u2502 gzip:   2.63 kB\n../backend/app/frontend/assets/items-zX6P2w6T.js               9.49 kB \u2502 gzip:   2.90 kB\n../backend/app/frontend/assets/settings-70d6TzdP.js           10.22 kB \u2502 gzip:   3.40 kB\n../backend/app/frontend/assets/useBaseQuery-CYd3-LAO.js       16.28 kB \u2502 gzip:   5.46 kB\n../backend/app/frontend/assets/admin-ve5AQa3D.js              17.05 kB \u2502 gzip:   4.79 kB\n../backend/app/frontend/assets/theme-provider-D1cxwilt.js     24.42 kB \u2502 gzip:   9.13 kB\n../backend/app/frontend/assets/Logo-BxHjgxus.js               27.94 kB \u2502 gzip:   9.43 kB\n../backend/app/frontend/assets/loading-button-BN_jWq_N.js     38.56 kB \u2502 gzip:  13.67 kB\n../backend/app/frontend/assets/dist-0WDpuApi.js               41.39 kB \u2502 gzip:  14.86 kB\n../backend/app/frontend/assets/dist-BGxl33DE.js               47.10 kB \u2502 gzip:  15.79 kB\n../backend/app/frontend/assets/DataTable-v8Qs6LEz.js          75.35 kB \u2502 gzip:  21.03 kB\n../backend/app/frontend/assets/useCustomToast-BcHfjxNI.js    114.09 kB \u2502 gzip:  37.23 kB\n../backend/app/frontend/assets/index-B_8s6WYG.js             355.00 kB \u2502 gzip: 109.29 kB\n\n\u2713 built in 399ms\n",
       "artifact_sha256": "95372c5f78df9b1d9ca9f2baab27f04de944e8e64cd2c2b29d9b953785e9b43c"
     },
     {
       "repeat": 0,
       "mode": "baseline",
       "status": "passed",
-      "database": "assay_cell_4ef18f25ef4f440aa16352ecc07b43ab",
+      "database": "assay_cell_e0ecce4c4e8243a5ab17b71f7fe25521",
       "cleanup": "removed",
       "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
       "migration_exit_code": 0,
-      "setup_seconds": 0.5180936669930816,
+      "setup_seconds": 0.5242354579968378,
       "seed": {
         "status": "passed",
         "exit_code": 0,
-        "seconds": 0.283,
+        "seconds": 0.341,
         "output_tail": "INFO:__main__:Creating initial data\nINFO:__main__:Initial data created\n"
       },
       "browser_command": {
         "status": "passed",
         "exit_code": 0,
-        "seconds": 8.541,
-        "output_tail": ":10},\"cases\":[{\"file\":\"../../../../..<redacted-path>\",\"title\":\"authenticate\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Items page is accessible and shows correct title\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Add Item button is visible\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Create a new item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Create item with only required fields\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Cancel item creation\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Title is required\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Edit an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Delete an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Shows empty state message when no items exist\",\"status\":\"passed\"}],\"tests\":{\"expected\":10,\"actual_passed\":10,\"unexpected\":0,\"flaky\":0,\"skipped\":0},\"cross_tenant\":{\"passed\":true,\"signup\":[200,200],\"login\":[200,200],\"owner_create\":200,\"other_user_read\":403,\"owner_delete\":200},\"admin_positive_control\":{\"passed\":true,\"login\":200,\"create\":200,\"update\":200,\"read\":200,\"delete\":200},\"elapsed_seconds\":8.473146834000001,\"stdout_sha256\":\"c2dfbcf647155e69498b1463dcadc0f408638a004355182e89f05df4402dcc71\",\"stderr_tail\":\"\"}\n"
+        "seconds": 8.791,
+        "output_tail": "_stat\":10},\"cases\":[{\"file\":\"../../../../..<redacted-path>\",\"title\":\"authenticate\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Items page is accessible and shows correct title\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Add Item button is visible\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Create a new item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Create item with only required fields\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Cancel item creation\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Title is required\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Edit an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Delete an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Shows empty state message when no items exist\",\"status\":\"passed\"}],\"tests\":{\"expected\":10,\"actual_passed\":10,\"unexpected\":0,\"flaky\":0,\"skipped\":0},\"cross_tenant\":{\"passed\":true,\"signup\":[200,200],\"login\":[200,200],\"owner_create\":200,\"other_user_read\":403,\"owner_delete\":200},\"admin_positive_control\":{\"passed\":true,\"login\":200,\"create\":200,\"update\":200,\"read\":200,\"delete\":200},\"elapsed_seconds\":8.725634458,\"stdout_sha256\":\"99ca232cf82d5fda61e259a7315b62859a80a0b6e1b93aa0b22f1cb156af6a1d\",\"stderr_tail\":\"\"}\n"
       },
       "browser": {
         "status": "passed",
@@ -128,32 +128,32 @@
           "read": 200,
           "delete": 200
         },
-        "elapsed_seconds": 8.473146834000001,
-        "stdout_sha256": "c2dfbcf647155e69498b1463dcadc0f408638a004355182e89f05df4402dcc71",
+        "elapsed_seconds": 8.725634458,
+        "stdout_sha256": "99ca232cf82d5fda61e259a7315b62859a80a0b6e1b93aa0b22f1cb156af6a1d",
         "stderr_tail": ""
       },
-      "total_seconds": 10.068
+      "total_seconds": 10.489
     },
     {
       "repeat": 0,
       "mode": "cell",
       "status": "passed",
-      "database": "assay_cell_19c886916e2d48f38d9d1688a6897baa",
+      "database": "assay_cell_00a05cda4aad429dbd7aab78106668fb",
       "cleanup": "removed",
       "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
       "migration_exit_code": 0,
-      "setup_seconds": 0.4552755410259124,
+      "setup_seconds": 0.49290758301503956,
       "seed": {
         "status": "passed",
         "exit_code": 0,
-        "seconds": 0.282,
+        "seconds": 0.319,
         "output_tail": "INFO:__main__:Creating initial data\nINFO:__main__:Initial data created\n"
       },
       "browser_command": {
         "status": "passed",
         "exit_code": 0,
-        "seconds": 8.144,
-        "output_tail": "_stat\":10},\"cases\":[{\"file\":\"../../../../..<redacted-path>\",\"title\":\"authenticate\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Items page is accessible and shows correct title\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Add Item button is visible\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Create a new item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Create item with only required fields\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Cancel item creation\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Title is required\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Edit an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Delete an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Shows empty state message when no items exist\",\"status\":\"passed\"}],\"tests\":{\"expected\":10,\"actual_passed\":10,\"unexpected\":0,\"flaky\":0,\"skipped\":0},\"cross_tenant\":{\"passed\":true,\"signup\":[200,200],\"login\":[200,200],\"owner_create\":200,\"other_user_read\":403,\"owner_delete\":200},\"admin_positive_control\":{\"passed\":true,\"login\":200,\"create\":200,\"update\":200,\"read\":200,\"delete\":200},\"elapsed_seconds\":8.090345792,\"stdout_sha256\":\"822907b4553ff108b6a1eec7b34be49aa18c49399a3e3c7261d8289fc1100643\",\"stderr_tail\":\"\"}\n"
+        "seconds": 8.33,
+        "output_tail": "_stat\":10},\"cases\":[{\"file\":\"../../../../..<redacted-path>\",\"title\":\"authenticate\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Items page is accessible and shows correct title\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Add Item button is visible\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Create a new item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Create item with only required fields\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Cancel item creation\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Title is required\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Edit an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Delete an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../..<redacted-path>\",\"title\":\"Shows empty state message when no items exist\",\"status\":\"passed\"}],\"tests\":{\"expected\":10,\"actual_passed\":10,\"unexpected\":0,\"flaky\":0,\"skipped\":0},\"cross_tenant\":{\"passed\":true,\"signup\":[200,200],\"login\":[200,200],\"owner_create\":200,\"other_user_read\":403,\"owner_delete\":200},\"admin_positive_control\":{\"passed\":true,\"login\":200,\"create\":200,\"update\":200,\"read\":200,\"delete\":200},\"elapsed_seconds\":8.268448209,\"stdout_sha256\":\"615725c04afd7aa60ab71871c98d37a3a9f70977c1baca6cf7ba341a83bd1d62\",\"stderr_tail\":\"\"}\n"
       },
       "browser": {
         "status": "passed",
@@ -251,8 +251,8 @@
           "read": 200,
           "delete": 200
         },
-        "elapsed_seconds": 8.090345792,
-        "stdout_sha256": "822907b4553ff108b6a1eec7b34be49aa18c49399a3e3c7261d8289fc1100643",
+        "elapsed_seconds": 8.268448209,
+        "stdout_sha256": "615725c04afd7aa60ab71871c98d37a3a9f70977c1baca6cf7ba341a83bd1d62",
         "stderr_tail": ""
       },
       "shutdown": {
@@ -260,10 +260,10 @@
         "kernel_cleanup": {
           "ledger_rows_deleted": 4,
           "roles_dropped": [
-            "cell_actor_105c663865844030800580c383a73a6d",
-            "cell_actor_30e944d32f504a2aa228b4de0bd5c85a",
-            "cell_actor_3fe81cf3188f4f49a656a9d1d6eda073",
-            "cell_actor_fb47643098fb47a68bdd51e688cb6c02"
+            "cell_actor_1cfa0318cb3b486aa3f1c81f9e661392",
+            "cell_actor_2e8f99881068417bac282ec2a9a7e68c",
+            "cell_actor_4512cb55c29a4ce99d5ba1c3068388c3",
+            "cell_actor_7b00f75bc4034bfb86256f158835dd95"
           ],
           "policy_preserved": true
         },
@@ -272,98 +272,98 @@
           "worker_sha256_before": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7",
           "calls": [
             {
-              "request_id": "067aae7b78bb41708ae12481bdb4bdcf",
-              "elapsed_ms": 0.6
-            },
-            {
-              "request_id": "4f15ae3670924010b2e03420af44c8af",
-              "elapsed_ms": 0.8
-            },
-            {
-              "request_id": "5187567569b64a64967dfc65f3647fb3",
+              "request_id": "e119366c3cce4370aec44ffdfb987f18",
               "elapsed_ms": 1.4
             },
             {
-              "request_id": "80c1d6743a4644abbc809320bfb7c7d1",
-              "elapsed_ms": 0.5
-            },
-            {
-              "request_id": "1d1fc50d04c5418ca67bb6a4f7d70d1c",
-              "elapsed_ms": 0.6
-            },
-            {
-              "request_id": "3a90cfd74a6c476bbca32f27de1ddbd2",
-              "elapsed_ms": 1.4
-            },
-            {
-              "request_id": "3a0e6d1e6ad1482c8a7f3b33f7893db0",
+              "request_id": "9c89c9a61b2f4dc3be3001cf90005817",
               "elapsed_ms": 0.4
             },
             {
-              "request_id": "14b3727d75c248c1be2299abd7d53a29",
+              "request_id": "4b8dd25209f545b9b09880f429288c9e",
               "elapsed_ms": 0.5
             },
             {
-              "request_id": "7ce4df06d4f742179ea6ce56bd3d59b2",
+              "request_id": "679da40d5af64d24aa64cf13f2353a71",
               "elapsed_ms": 0.5
             },
             {
-              "request_id": "ace36f17998740f88b14e8781916d076",
-              "elapsed_ms": 0.7
+              "request_id": "36aa674d2dc04d459fa5166771dba287",
+              "elapsed_ms": 0.5
             },
             {
-              "request_id": "8b9e116e9be64e68adc470f634a8b71c",
-              "elapsed_ms": 0.4
+              "request_id": "a31782a4c3bb4a20b8f8e33191e65153",
+              "elapsed_ms": 0.5
             },
             {
-              "request_id": "40d35e6837684864a0d6b5c9ea245b41",
+              "request_id": "fdd0aca4cee14270bf27a84f692167eb",
               "elapsed_ms": 1.5
             },
             {
-              "request_id": "3a508e7d817c4114b99871ca7c8348b7",
+              "request_id": "435dc9643aa64a0699ffdedcdc97c789",
               "elapsed_ms": 0.5
             },
             {
-              "request_id": "24bb7be16bdf411399177f09f9c7f935",
-              "elapsed_ms": 1.4
-            },
-            {
-              "request_id": "93e1c14ecc524710be9c4a870e5f964d",
-              "elapsed_ms": 1.1
-            },
-            {
-              "request_id": "66055493b02f4edab7544496ee0e927d",
-              "elapsed_ms": 5.7
-            },
-            {
-              "request_id": "0d0fdc41a74044deaa018113966b25c4",
+              "request_id": "23fc4fbd15c746c2b8fcde5b40642028",
               "elapsed_ms": 0.6
             },
             {
-              "request_id": "884415e5df7a4508afef05df0a2ee66d",
+              "request_id": "947323ccb50a4ffe9889d86ba901d6da",
+              "elapsed_ms": 0.6
+            },
+            {
+              "request_id": "407a57f7a53f4fe9b44465174f4372b6",
+              "elapsed_ms": 1.3
+            },
+            {
+              "request_id": "ed92b2c1dee941699da33eeb30c65909",
+              "elapsed_ms": 0.6
+            },
+            {
+              "request_id": "e3561f86f10b4911b3d8450823f99915",
+              "elapsed_ms": 1.7
+            },
+            {
+              "request_id": "41248a4bcd5a49b195f19b2703757b1c",
+              "elapsed_ms": 0.7
+            },
+            {
+              "request_id": "4025eccfd0eb428cb2bc1777dccd532d",
+              "elapsed_ms": 0.6
+            },
+            {
+              "request_id": "69005b4b3a3148e2ae76a3705b5b059d",
+              "elapsed_ms": 1.3
+            },
+            {
+              "request_id": "35648ed2a53540079b5072bcb1315b27",
+              "elapsed_ms": 1.8
+            },
+            {
+              "request_id": "c4636259e02a490ba9d7b8d16586171e",
+              "elapsed_ms": 1.6
+            },
+            {
+              "request_id": "3171d238981a476c9d22e533fc3270a1",
               "elapsed_ms": 0.5
             },
             {
-              "request_id": "758271028dd34dbd913d6a894be08afe",
+              "request_id": "c232c63f3cd54612bdf5fc50c429f099",
+              "elapsed_ms": 0.6
+            },
+            {
+              "request_id": "4015d24019cc4f75903a918ca646af75",
               "elapsed_ms": 0.4
             },
             {
-              "request_id": "e5bc4984617e4054b86c526ea7070024",
-              "elapsed_ms": 1.2
-            },
-            {
-              "request_id": "7b926efb61e04dde9fdd16e7775384c2",
-              "elapsed_ms": 0.5
-            },
-            {
-              "request_id": "6e3ffe53418c48ad8053c3577daddfcb",
-              "elapsed_ms": 0.3
+              "request_id": "39803d62d7d4435e88c75e0f91be8122",
+              "elapsed_ms": 0.4
             }
           ],
           "image_reference": "python:3.12-slim-bookworm@sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9",
           "image_digest": "sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9",
           "image_id": "sha256:a74ddf067736251b63204a4d7a26411cffa3da75600b4e67ad54c9c79f3f81cb",
-          "startup_ms": 372.1,
+          "startup_ms": 218.1,
           "container_controls": {
             "passed": true,
             "failures": [],
@@ -408,7 +408,7 @@
             }
           },
           "cleanup": {
-            "container_id": "6267166a44467e629cb91deb621f3ac8680b33c5b72c18ee3379da851765ccc4",
+            "container_id": "e85241d8537f26551406f87c70fe794b4b617bc877014408b88f456b999f15b4",
             "status": "removed"
           },
           "candidate_sha256_after": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
@@ -417,7 +417,7 @@
         },
         "status": "passed"
       },
-      "total_seconds": 10.018
+      "total_seconds": 10.219
     }
   ],
   "source_unchanged": true,
@@ -433,7 +433,7 @@
       "cell_core": {
         "worker.py": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7",
         "fixture.py": "a6724693905b7835155f6e0ad6f347fbc77c7ef08d9970267eed411d3d3cd151",
-        "run.py": "f65920fbd0055c87e2d010c69e9d183dda22728dbcbd18d4b9e9cfaed61e593d",
+        "run.py": "cb441ccf4cea801bd047b5093bead07a66a1391f829b5f91dfde709c33689742",
         "gateway.py": "bf5107ce70bc8e7e5e644ef387921676508d72ba70396e3bda029b9dbcc8099a",
         "kernel.py": "2fbaf9ff5488d599dd25da91d0303a8b0fd0fc96c7dfc109a3a76bafb05e9148",
         "behavior.py": "c3ba119d71a2f46db104df5b6293e4793dde69245b233f6f6b7f2793551b790c",
@@ -449,7 +449,8 @@
         "test_actor_runtime.py": "ae491c6b5e401530c682be52096dcdad2a55428c9a467877b18ccc298c252984",
         "admission.py": "5bf8020874a31b784afa34d836aaa11b2dd1b7540c1c0aa37a125e41299dd545",
         "performance.py": "5ea36c58ddd45a0fe507ace986c24fa7b8b6f13bf8237012326af0e59c7edcba",
-        "qualify.py": "f4870c1f0f7b2d7b0f34f2d3dad8771eef1d8199aa31946c6c93fdb1606ba712",
+        "prepare.py": "3a693a8d5aef604dfd2cfcd7447d6acdc200ca4b6707c4ae0af08326a56926d0",
+        "qualify.py": "53b1a4e16b95ff49456a49c77add345dba155166a990b087331a7fc600700e1a",
         "actor_runtime.py": "1b5a7cf68d0845ab5cb2e4ef380861be48733491174707f977b8bb07261f9877",
         "candidates/healthy.py": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
         "candidates/attack_target_only.py": "566c6328e5d5b392ffda9da29cc9e4212fd4574069373ce70a40b10f2b22f8ab",
@@ -473,7 +474,7 @@
       "cell_core": {
         "worker.py": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7",
         "fixture.py": "a6724693905b7835155f6e0ad6f347fbc77c7ef08d9970267eed411d3d3cd151",
-        "run.py": "f65920fbd0055c87e2d010c69e9d183dda22728dbcbd18d4b9e9cfaed61e593d",
+        "run.py": "cb441ccf4cea801bd047b5093bead07a66a1391f829b5f91dfde709c33689742",
         "gateway.py": "bf5107ce70bc8e7e5e644ef387921676508d72ba70396e3bda029b9dbcc8099a",
         "kernel.py": "2fbaf9ff5488d599dd25da91d0303a8b0fd0fc96c7dfc109a3a76bafb05e9148",
         "behavior.py": "c3ba119d71a2f46db104df5b6293e4793dde69245b233f6f6b7f2793551b790c",
@@ -489,7 +490,8 @@
         "test_actor_runtime.py": "ae491c6b5e401530c682be52096dcdad2a55428c9a467877b18ccc298c252984",
         "admission.py": "5bf8020874a31b784afa34d836aaa11b2dd1b7540c1c0aa37a125e41299dd545",
         "performance.py": "5ea36c58ddd45a0fe507ace986c24fa7b8b6f13bf8237012326af0e59c7edcba",
-        "qualify.py": "f4870c1f0f7b2d7b0f34f2d3dad8771eef1d8199aa31946c6c93fdb1606ba712",
+        "prepare.py": "3a693a8d5aef604dfd2cfcd7447d6acdc200ca4b6707c4ae0af08326a56926d0",
+        "qualify.py": "53b1a4e16b95ff49456a49c77add345dba155166a990b087331a7fc600700e1a",
         "actor_runtime.py": "1b5a7cf68d0845ab5cb2e4ef380861be48733491174707f977b8bb07261f9877",
         "candidates/healthy.py": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
         "candidates/attack_target_only.py": "566c6328e5d5b392ffda9da29cc9e4212fd4574069373ce70a40b10f2b22f8ab",
@@ -509,6 +511,6 @@
       }
     }
   },
-  "variant_sha256": "4524d91da110e333cc1ac28bbf45e0e33dcedcb05d61021205a81b32240d145f",
-  "total_seconds": 21.779
+  "variant_sha256": "1cf98975582e7f5222894205d4c0880ea1d8be4e096e2288e66a7d258a3ada15",
+  "total_seconds": 22.346
 }

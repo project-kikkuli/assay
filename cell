@@ -84,6 +84,16 @@ def _show(args: list[str]) -> int:
         return 1
 
     print("cell")
+    for name, filename, key in (
+        ("actor-only check", "final-fast.json", "total_seconds"),
+        ("full qualification", "qualification.json", "seconds"),
+    ):
+        path = ROOT / "experiments/cell/results" / filename
+        if path.is_file():
+            record = json.loads(path.read_text())
+            elapsed = record.get(key)
+            timing = f"{elapsed:.3f}s" if isinstance(elapsed, (int, float)) else "unknown time"
+            print(f"  {name}: {record.get('status', 'unknown')} {timing} (recorded)")
     if measured is None:
         print("  core: pending (measured evidence unavailable)")
     else:
@@ -104,11 +114,12 @@ def _show(args: list[str]) -> int:
         print("  composition: pending (local and recorded evidence absent)")
     else:
         records = composition.get("records", []) if isinstance(composition, dict) else []
-        times = [record.get("seconds") for record in records if isinstance(record.get("seconds"), (int, float))]
+        times = [record["total_seconds"] for record in records if isinstance(record.get("total_seconds"), (int, float))]
         total = composition.get("total_seconds", composition.get("seconds")) if isinstance(composition, dict) else None
         total_text = f"{total:.3f}s" if isinstance(total, (int, float)) else "n/a"
         range_text = "n/a" if not times else f"{min(times):.3f}-{max(times):.3f}s"
         print(f"  composition: {composition.get('status', 'unknown')} source={composition_source} total={total_text} record_range={range_text}")
+    print("  timing scope: dependencies/services warm; fresh fixture, actor startup and cleanup included; no CI queue")
     print(f"  full: {MEASURED.relative_to(ROOT)}; local={LOCAL_COMPOSITION.relative_to(ROOT)}; recorded={RECORDED_COMPOSITION.relative_to(ROOT)}")
     print(f"  readme: {README.relative_to(ROOT)}")
     return 0
@@ -197,6 +208,11 @@ def main(argv: list[str]) -> int:
         return _check(args)
     if command == "trace":
         return _trace(args)
+    if command == "prepare":
+        if args:
+            print("usage: ./cell prepare (after ./lab prepare)", file=sys.stderr)
+            return 2
+        return _run([sys.executable, str(ROOT / "experiments/cell/prepare.py")], time.monotonic() + 400)
     if command == "qualify":
         if args:
             print("usage: ./cell qualify", file=sys.stderr)

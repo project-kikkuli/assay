@@ -10,10 +10,12 @@ The existing [public-fixture repairs](../fullstack/repaired.patch) apply.
 
 Five fresh actor-only checks took **2.34–2.61 seconds**, including original
 migrations, actor startup, 14 fixed obligations, 60 generated commands, and
-cleanup. Initial qualification took 38.61 seconds serially: 30 boundary tests,
-three healthy replays, 14 challenges, and original/cell browser composition.
+cleanup. Four full qualifications took **22.66–25.25 seconds** with two parallel
+branches, versus 38.61 seconds serially: 30 boundary tests, three healthy replays,
+14 challenges, and original/cell browser composition.
 The cell-backed browser run itself took 10.02 seconds and exercised 22 actor
-requests. These are warm-dependency laptop measurements, not a hosted CI SLA.
+requests. These are warm-dependency measurements on a 12-logical-CPU ARM laptop,
+not a hosted CI SLA.
 [Raw evidence](results/).
 
 ## Where the trust goes
@@ -57,6 +59,13 @@ currently implements a Python CRUD policy; the application around it is polyglot
 General workflow logic, concurrent transitions, and browser-only regressions need
 additional boundaries and verifiers.
 
+A production pilot should begin with one existing domain boundary: keep its
+authentication and storage adapter protected, restrict business code to explicit
+proposals, and run the new checks alongside the old gate. Remove an E2E only when
+its behavioral obligation has an independent replacement and its remaining
+composition risk is covered. This experiment does not establish a safe blanket
+removal rule or production uptime guarantees.
+
 The fast check runs real SQL, fresh original migrations, and a new actor process.
 It does not reuse test results. Dependencies, the container image, and PostgreSQL
 must already be prepared. Queueing and cold installation are outside this timer.
@@ -81,8 +90,9 @@ positive controls are in the separate [confinement experiment](../confinement/).
 After `./lab prepare`:
 
 ```sh
+./cell prepare                 # pinned actor image and production UI build
 ./cell qualify
-./cell check experiments/cell/candidates/healthy.py
+./cell check experiments/cell/candidates/refactor.py  # changed code, same contract
 ./cell check experiments/cell/candidates/attack_uppercase_title.py  # rejects
 ./cell trace attack_drop_patch_field.py
 ```
@@ -91,6 +101,7 @@ Qualification runs the boundary tests, healthy/model replays, all challenges, an
 both original and cell-backed browser suites. It then writes a local baseline to
 `out/cell/baseline.json`. This is an operator action, never a candidate-controlled
 CI step. A failed qualification invalidates the previous local baseline.
+Preparation downloads dependencies outside the timer; do it before measuring.
 
 The [performance probe](performance.py) runs the kernel's real count/page queries
 as the restricted role at 100 and 100,000 rows. Read the plans as well as timings:

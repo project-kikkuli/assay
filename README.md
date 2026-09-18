@@ -9,8 +9,10 @@ negative results. It is not a production CI replacement.
 Start with the [bounded business cell](experiments/cell/). It connects a real
 React/API/database feature to an authority-limited actor, independent state-model
 checks, protected-baseline invalidation, and query-cost evidence. `./cell` reads
-the recorded results; `./cell qualify` establishes a local baseline after setup;
-`./cell check experiments/cell/candidates/healthy.py` exercises its fast lane.
+the recorded results; after `./lab prepare` and `./cell prepare`, `./cell qualify`
+establishes a local baseline;
+`./cell check experiments/cell/candidates/refactor.py` exercises its fast lane
+with a changed implementation.
 
 Five complete laptop gates took 20–23 seconds; serial execution took 42–49.
 The first hosted run took 105.5 seconds and rejected a browser transport failure.

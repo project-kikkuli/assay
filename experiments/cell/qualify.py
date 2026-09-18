@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
 from pathlib import Path
 import re
@@ -61,21 +62,36 @@ def main():
                                  "--output", str(output / "measured.json")]),
             ("composition", [str(python), str(HERE / "integration.py"), "--output", str(output / "composition.json")]),
         ]
-        for name, argv in commands:
+        def execute(entry):
+            name, argv = entry
             step_started = time.perf_counter()
             result = subprocess.run(argv, cwd=ROOT, env=env, capture_output=True, text=True, timeout=180)
             step = {"name": name, "exit_code": result.returncode,
                     "seconds": time.perf_counter() - step_started}
-            report["steps"].append(step)
-            print(json.dumps(step), flush=True)
-            if result.returncode:
-                raise RuntimeError(name + " failed; see its fresh report")
             if name == "boundary_tests":
                 count = re.search(r"Ran (\d+) tests", result.stderr)
-                if not count or int(count[1]) < 19 or "skipped=" in result.stderr:
-                    raise RuntimeError("missing or skipped boundary tests")
-                step["tests_passed"] = int(count[1])
+                step["tests_passed"] = int(count[1]) if count else 0
+                step["inventory_valid"] = bool(count and int(count[1]) >= 30 and "skipped=" not in result.stderr)
+            return step
+
+        def record(step):
+            report["steps"].append(step)
+            print(json.dumps(step), flush=True)
             write(output / "qualification.json", report)
+            return step["exit_code"] == 0 and step.get("inventory_valid", True)
+
+        if not record(execute(commands[0])):
+            raise RuntimeError("boundary tests failed or were missing/skipped")
+        # Independent UUID databases, actor containers, and browser source copies.
+        # Finish both branches and retain both reports even if one rejects.
+        report["parallel_branches"] = 2
+        valid = []
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            pending = [pool.submit(execute, entry) for entry in commands[1:]]
+            for future in as_completed(pending):
+                valid.append(record(future.result()))
+        if not all(valid):
+            raise RuntimeError("one or more qualification branches failed")
         measured = json.loads((output / "measured.json").read_text())
         composition = json.loads((output / "composition.json").read_text())
         if (measured.get("status") != "completed" or measured.get("challenge_expectations_met") is not True

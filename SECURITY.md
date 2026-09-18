@@ -22,3 +22,9 @@ authentic entity facts and does not prove application security. Database
 experiments assume the stated role and connection configuration. The full-stack
 harness runs public candidate code on the host and is not an adversarial sandbox.
 Read each experiment's assumptions before treating evidence as an admission rule.
+
+The cell experiment runs its candidate actor inside an observed, restricted
+Docker container; only the actor is untrusted. Its host-side kernel, verifier,
+public application, dependency installation, and locally generated baseline are
+operator-trusted. `cell qualify` must never run as a candidate-controlled way to
+authorize that same candidate. It is not a protected hosted admission service.
