@@ -32,7 +32,7 @@ EXECUTOR_SOURCE = {name: file_hash(ROOT / name) for name in CONTROL_FILES}
 
 
 def dependency_tree(root):
-    inventory = {}
+    inventory = {".": {"kind": "directory", "mode": Path(root).stat().st_mode & 0o777}}
     for path in sorted(Path(root).rglob("*")):
         rel = path.relative_to(root).as_posix()
         if path.is_symlink():
@@ -40,7 +40,9 @@ def dependency_tree(root):
                 raise ValueError(f"dependency symlink escapes closure: {rel}")
             inventory[rel] = {"symlink": os.readlink(path)}
         elif path.is_file():
-            inventory[rel] = file_hash(path)
+            inventory[rel] = {"sha256": file_hash(path), "mode": path.stat().st_mode & 0o777}
+        elif path.is_dir():
+            inventory[rel] = {"kind": "directory", "mode": path.stat().st_mode & 0o777}
     return inventory
 
 
@@ -118,7 +120,7 @@ def artifact_digest(root):
 
 
 def load_verifier(root):
-    spec = importlib.util.spec_from_file_location("continuum_independent_verifier", root / "verifier/verify.py")
+    spec = importlib.util.spec_from_file_location(f"continuum_verifier_{uuid.uuid4().hex}", root / "verifier/verify.py")
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
     # Import loaders write __pycache__ into otherwise captured input trees.
@@ -330,7 +332,11 @@ def main():
     parser.add_argument("--no-cache", action="store_true")
     args = parser.parse_args()
     if args.mode == "prepare":
-        print(json.dumps(prepare(), indent=2))
+        try:
+            print(json.dumps(prepare(), indent=2))
+        except Exception as error:
+            print(json.dumps({"status": "inconclusive", "stage": "preparation", "error": str(error)}))
+            raise SystemExit(1)
         return
     report, _ = check(profile=args.profile, jobs=args.jobs, reuse=not args.no_cache)
     print(json.dumps(concise(report), indent=2))

@@ -110,6 +110,17 @@ class EvidenceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             tree(root)
 
+    def test_permissions_are_inputs_even_when_bytes_are_identical(self):
+        root = Path(self.tmp.name) / "source"
+        root.mkdir()
+        source = root / "program.py"
+        source.write_text("print('same bytes')\n")
+        before = tree(root)
+        source.chmod(0o400)
+        after = tree(root)
+        self.assertNotEqual(before, after)
+        self.assertEqual(before["program.py"]["sha256"], after["program.py"]["sha256"])
+
 
 if __name__ == "__main__":
     unittest.main()

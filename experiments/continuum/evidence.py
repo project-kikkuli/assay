@@ -28,7 +28,7 @@ def file_hash(path):
 def tree(root, *, exclude=()):
     """Exact regular-file inventory. No inferred dependencies or followed symlinks."""
     root = Path(root)
-    found = {}
+    found = {".": {"kind": "directory", "mode": root.stat().st_mode & 0o777}}
     for path in sorted(root.rglob("*")):
         rel = path.relative_to(root)
         if any(part in exclude for part in rel.parts):
@@ -36,7 +36,9 @@ def tree(root, *, exclude=()):
         if path.is_symlink():
             raise ValueError(f"symlink input refused: {rel}")
         if path.is_file():
-            found[rel.as_posix()] = file_hash(path)
+            found[rel.as_posix()] = {"sha256": file_hash(path), "mode": path.stat().st_mode & 0o777}
+        elif path.is_dir():
+            found[rel.as_posix()] = {"kind": "directory", "mode": path.stat().st_mode & 0o777}
     return found
 
 

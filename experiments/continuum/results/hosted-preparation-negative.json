@@ -1,0 +1,8 @@
+{
+  "run_url": "https://github.com/project-kikkuli/assay/actions/runs/35374565644",
+  "source_commit": "17b7840",
+  "stage": "preparation",
+  "classification": "inconclusive",
+  "observation": "Docker Hub authentication endpoint timed out while resolving the pinned Haskell image; application verification did not run.",
+  "lesson": "A stable fast gate requires prepared execution capacity. Image pinning does not make a registry available. Provisioning must remain visible and separate from business verification."
+}

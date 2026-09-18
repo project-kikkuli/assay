@@ -22,6 +22,7 @@ jobs:
           node-version: '22.12.0'
       - name: Prepare pinned toolchains, dependencies and browser
         run: |
+          set -o pipefail
           rustup toolchain install 1.91.1 --profile minimal
           rustup default 1.91.1
           mkdir -p out/continuum-hosted
@@ -29,7 +30,7 @@ jobs:
           node experiments/continuum/client/node_modules/@playwright/test/cli.js install-deps chromium
       - name: Test the evidence machinery and independent verifier
         run: |
-          python -m unittest discover -s experiments/continuum -p 'test_evidence.py' -v
+          python -m unittest discover -s experiments/continuum -p 'test_*.py' -v
           python -m unittest discover -s experiments/continuum -p 'verifier_tests.py' -v
       - name: Exercise faults, deployment recovery, and cold-action versus reused evidence
         run: ./continuum all --output out/continuum-hosted
