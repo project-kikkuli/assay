@@ -52,6 +52,8 @@
       <header>
         <h1>Continuum evidence viewer</h1>
         <p class="lede">Static reader for the recorded campaign results. Timings are observations; unavailable result files remain unknown.</p>
+        <p><a href="?dataset=hosted">Hosted Linux campaign</a> · <a href="?dataset=local">Local campaign</a> · <a href="README.md">Findings and limits</a> · <a href="contract.json">Business contract</a></p>
+        <p id="dataset-note" class="note"></p>
         <div id="load-status" class="status" role="status" aria-live="polite">Loading result files…</div>
       </header>
       <section id="benchmark" aria-labelledby="benchmark-heading">
@@ -87,12 +89,15 @@
         "performance.json",
       ];
 
+      const DATASET = new URLSearchParams(location.search).get("dataset") === "local" ? "local" : "hosted";
+      const RESULT_ROOT = DATASET === "hosted" ? "results/hosted/" : "results/";
+      document.querySelector("#dataset-note").textContent = `Showing ${DATASET} execution results. The initial blind faults and SQL cost study are local in both views. Preparation and hosted queue time are excluded from gate timings.`;
       const FILE_PATHS = {
-        "benchmark.json": "results/benchmark.json",
+        "benchmark.json": RESULT_ROOT + "benchmark.json",
         "faults-initial.json": "results/faults-initial.json",
-        "faults.json": "results/faults.json",
-        "lifecycle.json": "results/lifecycle.json",
-        "admission-attacks.json": "results/admission-attacks.json",
+        "faults.json": RESULT_ROOT + "faults.json",
+        "lifecycle.json": RESULT_ROOT + "lifecycle.json",
+        "admission-attacks.json": RESULT_ROOT + "admission-attacks.json",
         "performance.json": "./performance.json",
       };
 

@@ -9,6 +9,31 @@ auditor, and a Haskell deployment policy. It is not a claim that these four lang
 need the same testing strategy. The common interface is evidence about an artifact,
 an environment, and an obligation.
 
+## Result
+
+The [hosted campaign](https://github.com/project-kikkuli/assay/actions/runs/35374985310)
+passed on commit `c8ca5c2`. These are complete decisions for this bounded application,
+not extrapolations to a large repository:
+
+| Scenario | Hosted seconds | Reused actions |
+|---|---:|---:|
+| All actions, one worker | 20.731 | 0/10 |
+| All actions, four workers | 12.480 | 0/10 |
+| All actions, eight workers | 12.815 | 0/10 |
+| Identical target, five repetitions | 3.450–3.460 | 10/10 |
+| Changed capacity implementation | 10.997 | 4/10 |
+| Changed runtime | 8.717 | 5/10 |
+
+[Raw hosted records](results/hosted/benchmark.json) include action start times,
+dependencies, execution times and capture overhead. The fresh preparation took
+45.9 seconds; the entire multi-experiment job took 232 seconds. Neither is hidden
+inside a claim of “30-second CI.” [Local measurements](results/benchmark.json)
+show substantial contention, including an 82-second serial run. No p95 is established.
+
+Seven admission attacks were rejected, and the actual post-acceptance worker-crash
+scenario recovered without duplicating the fixture's delivery. Eight known defects
+were caught after verifier repair; the initial blind result was six of eight.
+
 ## Run and inspect
 
 Requires Docker, Python 3.12+, Node 22, Rust, and OpenSSL with Ed25519 support.
@@ -102,6 +127,42 @@ toolchains are only partially identified, input declarations are handwritten,
 and Docker/host failures remain possible. There is no proof of comprehensive
 sandboxing, complete input closure, or non-flakiness. A production adopter should
 reuse a mature build engine and isolate its evidence issuer, not ship this runner.
+
+## What is worth adopting
+
+The promising unit is a **verified change**, not a test job. Agents request checks
+while working; merge recomputes obligations for the actual merge tree; deployment
+consumes the verified artifact and gathers fresh observations. Preparation stays
+off the fast path. Four workers helped here; eight did not. Evidence reuse made
+the larger difference, without treating a changed business implementation as an
+unchanged target.
+
+Replace the *business-rule burden* of large E2E suites with independent state and
+wire-contract checks against real implementations. Retain browser composition,
+real authentication/database integration, and broader audits. The blind misses
+show why agent-written passing tests alone are inadequate.
+
+For support, retain one chain: observed incident → contained effects → explicit
+unknowns → responsible human → executable regression → fresh deployment evidence.
+A human should resolve missing facts, not supply an override that turns unknown
+into safe. This demo creates the packet and replays its crash scenario; it does
+not integrate a ticket system, authenticate approvers, or automatically minimize
+production incidents.
+
+The next production experiment should shadow one real vertical slice alongside
+its existing gate, compare omissions and outcomes, and only then retire redundant
+checks. Keep these gaps explicit:
+
+- A protected issuer, policy ownership and complete execution inputs are required
+  before trusting evidence from autonomous agents. This local fixture is not that service.
+- Tenant checks here are tested application logic, **not confidentiality by
+  construction**. That requires a separately protected capability/data boundary;
+  neither cached tests nor post-deploy detection can make a leaked secret un-leak.
+- The target database, real identity provider, destructive migrations, resource
+  exhaustion and production canary signals need their own qualification. SQLite
+  work counts are not a production latency budget.
+- One small application, eight seeded defects and a few timings do not establish
+  whole-repository scaling, defect recall, a latency percentile, or an uptime guarantee.
 
 ## Provenance
 
