@@ -1,0 +1,70 @@
+{
+  "schema_version": "cell-actor-items-v1",
+  "feature": "public fullstack Items",
+  "source_scope": [
+    "out/lab/fullstack/frontend/tests/items.spec.ts",
+    "out/lab/fullstack/frontend/src/routes/_layout/items.tsx",
+    "out/lab/fullstack/frontend/src/components/Items/AddItem.tsx",
+    "out/lab/fullstack/frontend/src/components/Items/EditItem.tsx",
+    "out/lab/fullstack/frontend/src/components/Items/DeleteItem.tsx",
+    "out/lab/fullstack/backend/app/api/routes/items.py",
+    "out/lab/fullstack/backend/app/models.py"
+  ],
+  "contract": {
+    "actor": "decide(command, view) -> proposal",
+    "healthy_proposal": {"op": "command.op", "target": "command.item_id", "fields": "command.fields"},
+    "ops": ["create", "update", "delete", "list", "read"],
+    "authority": "kernel binds storage and item ownership to the authenticated principal",
+    "boundary": "actor has no DB credentials, network, environment, filesystem, or oracle access",
+    "healthy_acceptance": "one authenticated principal creates, reads, lists, updates, and deletes an item; exact fields and ownership persist"
+  },
+  "obligations": [
+    {"id": "create-exact-fields", "layer": "api_db", "claim": "create preserves title and optional description and assigns authenticated owner"},
+    {"id": "patch-semantics", "layer": "api_db", "claim": "update changes requested fields only; omitted fields remain unchanged"},
+    {"id": "item-authority", "layer": "api_db", "claim": "read/update/delete cannot cross the authenticated owner boundary"},
+    {"id": "list-pagination", "layer": "api_db", "claim": "list honors skip/limit, count, and owner filtering"},
+    {"id": "client-wire", "layer": "composition", "claim": "client uses /items, exact request fields, item id path, and invalidates the items query"},
+    {"id": "ui-failure", "layer": "frontend", "claim": "failed save does not report success, close the form, or leave stale visible state"}
+  ],
+  "healthy_cases": [
+    {"id": "healthy-crud", "commands": ["create(title,description)", "read(id)", "list(skip=0,limit=10)", "update(id,title,description)", "delete(id)"], "expected": "all five operations succeed with exact persisted fields and no other owner's rows"}
+  ],
+  "report": {
+    "status": "design_only",
+    "execution": "not_run",
+    "admission_rule": "a case is not admitted by proposal shape or process exit alone; require the listed witness and fresh state evidence",
+    "category_legend": {
+      "authority_rejection": "proposal must be rejected and storage must remain unchanged",
+      "behavioral_regression": "kernel may accept the data; exact application behavior must fail the witness",
+      "composition_regression": "wire, cache, or pagination behavior must fail the witness",
+      "capability_rejection": "untrusted actor must receive no environment, filesystem, network, or database oracle",
+      "capability_attempt_evidence": "a confined actor may remain behaviorally green, but the attempted read and redacted outcome must be reported",
+      "resource_rejection": "bounded timeout or payload limits must prevent admission and preserve the process boundary"
+    }
+  },
+  "cases": [
+    {"id": "wrong-request-field", "candidate": "candidates/attack_wrong_request_field.py", "layer": "composition", "expected_category": "composition_regression", "fault": "renames title to name", "expected_failure": "request-schema/behavior check rejects; no item is stored", "report": "wire-field mutation should fail exact create witness", "witness": "create title=ExactTitle; assert persisted title is ExactTitle, not a missing-title error", "original_spec": "likely catches create flow; no direct wire-field assertion", "realistic": true},
+    {"id": "forge-green", "candidate": "candidates/attack_forge_green.py", "layer": "frontend", "expected_category": "behavioral_regression", "fault": "adds ok/status/close_ui success claims", "expected_failure": "unknown proposal fields are rejected or ignored; failed mutation remains visibly failed and storage unchanged", "report": "forged success must not admit a rejected update", "witness": "force a rejected update; assert no success toast/close and reread unchanged item", "original_spec": "likely misses failure path", "realistic": true},
+    {"id": "stale-invalidation", "candidate": "candidates/attack_stale_invalidation.py", "layer": "composition", "expected_category": "composition_regression", "fault": "invalidates obsolete page-shaped cache key", "expected_failure": "mutation gate rejects side-channel or verifier catches stale list after mutation", "report": "fresh same-key list evidence is required after mutation", "witness": "mutate item then list the same query key and require new exact title/deletion", "original_spec": "may catch same-page edit/delete; misses cache-key scope and cross-page freshness", "realistic": true},
+    {"id": "delete-wrong-id", "candidate": "candidates/attack_delete_wrong_id.py", "layer": "authority_rejection", "expected_category": "authority_rejection", "fault": "targets oracle-canary-item instead of requested id", "expected_failure": "authority/not-found rejection and zero storage changes", "report": "wrong target must not delete or mutate any stored item", "witness": "create A and B; request delete A; assert A remains and B is untouched", "original_spec": "likely catches direct single-item delete; misses wrong-target isolation", "realistic": true},
+    {"id": "paging", "candidate": "candidates/attack_paging.py", "layer": "composition", "expected_category": "composition_regression", "fault": "adds limit to skip for list", "expected_failure": "list result/order/count differs from requested page", "report": "page identity and ordering must match requested skip/limit", "witness": "create >limit items; compare requested skip=0 page with exact ids", "original_spec": "misses: no pagination navigation", "realistic": true},
+    {"id": "owner-injection", "candidate": "candidates/attack_owner_id_injection.py", "layer": "api_db", "expected_category": "authority_rejection", "fault": "injects owner_id into item fields", "expected_failure": "authority violation rejected; zero storage changes", "report": "client fields cannot select storage owner", "witness": "create as principal A with owner_id=B; assert rejection and unchanged rows for A and B", "original_spec": "misses: one principal and no owner assertion", "realistic": true},
+    {"id": "raw-sql", "candidate": "candidates/attack_raw_sql_unknown_op.py", "layer": "api_db", "expected_category": "authority_rejection", "fault": "emits unknown sql op and raw DELETE text", "expected_failure": "unknown operation/proposal shape rejected; no SQL execution or storage change", "report": "unknown operations never reach the database", "witness": "seed two rows; submit proposal; reread both rows and inspect no DB side effect", "original_spec": "misses: only public CRUD operations", "realistic": true},
+    {"id": "uppercase-title", "candidate": "candidates/attack_uppercase_title.py", "layer": "frontend", "expected_category": "behavioral_regression", "fault": "uppercases a valid requested title", "expected_failure": "behavioral exact-value verifier rejects; kernel may accept valid text", "report": "semantic validity is insufficient for exact requested business behavior", "witness": "request title=MixedCase; reread exact MixedCase", "original_spec": "likely catches exact visible title; not a kernel-security claim", "realistic": true},
+    {"id": "drop-patch-field", "candidate": "candidates/attack_drop_patch_field.py", "layer": "frontend", "expected_category": "behavioral_regression", "fault": "omits requested description from update", "expected_failure": "behavioral patch verifier rejects; kernel may correctly preserve omitted fields", "report": "requested patch fields must be checked independently", "witness": "update title and description together; reread both exact values", "original_spec": "misses when only title is edited", "realistic": true},
+    {"id": "oracle-probe", "candidate": "candidates/attack_oracle_probe.py", "layer": "api_db", "expected_category": "capability_rejection", "fault": "requests DATABASE_URL and /oracle-canary material", "expected_failure": "capability/shape rejection; no secret, host, network, or DB observation", "report": "untrusted actor gets no oracle result or capability", "witness": "run with canary-only verifier view; assert no oracle field is accepted or echoed", "original_spec": "misses: no adversarial capability check", "realistic": true},
+    {"id": "env-read", "candidate": "candidates/attack_env_read.py", "layer": "api_db", "expected_category": "capability_attempt_evidence", "fault": "actually calls getenv(DATABASE_URL) and reads /oracle-canary", "expected_failure": "confined run may return healthy; any value reaching title is a confinement failure", "report": "record env_attempted, env_present, path_attempted, path_readable, and leaked=false; redact all values", "witness": "execute only in the controlled runner; compare exact healthy proposal and sanitized access-attempt telemetry", "original_spec": "misses: no actor capability observation", "realistic": true},
+    {"id": "hang", "candidate": "candidates/attack_hang.py", "layer": "api_db", "expected_category": "resource_rejection", "fault": "never returns from decide", "expected_failure": "bounded timeout; process group killed; no admission or storage change", "report": "record timeout_ms, process-group termination, and no acceptance; do not convert timeout to pass", "witness": "invoke under a process-group timeout and verify the parent and descendants terminate", "original_spec": "misses: no adversarial liveness case", "realistic": true},
+    {"id": "output-flood", "candidate": "candidates/attack_output_flood.py", "layer": "api_db", "expected_category": "resource_rejection", "fault": "returns a 1 MiB proposal field", "expected_failure": "payload/envelope limit rejects before behavioral admission", "report": "record serialized proposal bytes and rejection category; no storage change", "witness": "invoke with output-size accounting and require bounded memory/output", "original_spec": "misses: no oversized proposal case", "realistic": true},
+    {"id": "delete-target-only", "candidate": "candidates/attack_target_only.py", "layer": "api_db", "expected_category": "authority_rejection", "fault": "changes only the target for delete; preserves all other operations", "expected_failure": "authority/not-found rejection and zero storage changes", "report": "postchallenge correction isolates target mutation; preserve delete_wrong_id's op-confounded result separately", "witness": "create A and B; request delete A; assert A remains, B remains, and create/update/read/list proposals are unchanged", "original_spec": "likely catches direct single-item delete; misses explicit target-only isolation", "realistic": true, "metadata": "postchallenge_correction"}
+  ],
+  "interpretation": {
+    "authority_failures": "target changes, owner injection, raw SQL, and oracle probes must reject or leave storage unchanged",
+    "behavior_failures": "uppercase and dropped fields are client/behavior regressions; do not claim the kernel prevents them",
+    "coverage_limit": "these are manual witnesses and replacement faults, not proof of production coverage or unseen-branch soundness",
+    "vacuous_boundary": "forge-green extras are only meaningful if the contract/verifier checks proposal shape and failed-save UI behavior"
+  },
+  "postchallenge_corrections": [
+    {"id": "delete-target-only", "replaces": "none", "related_original": "delete-wrong-id", "reason": "isolates target mutation while preserving delete operation; original op-confounded result remains blind evidence", "status": "postchallenge_correction"}
+  ]
+}
