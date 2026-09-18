@@ -136,6 +136,25 @@ class RunnerTests(unittest.TestCase):
         self.write()
         self.assertEqual(self.execute()["status"], "unresolved")
 
+    def test_final_integrity_error_cannot_leave_verified_verdict(self):
+        (self.root / "check.py").write_text("from pathlib import Path\nPath('new-link').symlink_to('check.py')\n")
+        result = self.execute()
+        self.assertEqual(result["tasks"][0]["status"], "verified")
+        self.assertEqual(result["status"], "unresolved")
+
+    def test_executable_permission_change_invalidates_success(self):
+        script = self.root / "check.sh"
+        script.write_text("#!/bin/sh\nexit 0\n")
+        script.chmod(0o755)
+        self.task.update(command=["./check.sh"], inputs=["check.sh"])
+        self.write()
+        self.assertEqual(self.execute()["status"], "verified")
+        self.assertTrue(self.execute()["tasks"][0]["cached"])
+        script.chmod(0o644)
+        result = self.execute()
+        self.assertEqual(result["status"], "unresolved")
+        self.assertFalse(result["tasks"][0]["cached"])
+
     def test_manifest_validation(self):
         cases = [
             {"version": 1, "tasks": []},

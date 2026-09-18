@@ -117,9 +117,9 @@ def load_manifest(path: Path) -> dict:
     return manifest
 
 
-def inventory(root: Path, patterns: list[str] | None = None) -> dict[str, str]:
+def inventory(root: Path, patterns: list[str] | None = None) -> dict[str, dict]:
     """Hash names as well as content: added/deleted glob matches invalidate."""
-    files: dict[str, str] = {}
+    files: dict[str, dict] = {}
     for pattern in patterns or ["**/*"]:
         _relative(pattern)
         matched = False
@@ -135,7 +135,7 @@ def inventory(root: Path, patterns: list[str] | None = None) -> dict[str, str]:
             if not path.resolve().is_relative_to(root):
                 raise ManifestError(f"Input escaped project: {relative}")
             matched = True
-            files[relative.as_posix()] = file_digest(path)
+            files[relative.as_posix()] = {"sha256": file_digest(path), "executable_bits": path.stat().st_mode & 0o111}
         if patterns is not None and not matched:
             raise ManifestError(f"Input pattern matches no files: {pattern}")
     if not files:
@@ -228,6 +228,8 @@ def run(manifest_path: str | Path, *, root: str | Path | None = None,
         report["candidate"] = digest(before)
         policy_hash = digest(manifest)
         runtime = runtime_identity()
+        report["runtime"] = runtime
+        report["policy_sha256"] = policy_hash
         cache = Path(cache_dir).resolve() if cache_dir else root / ".assay/cache"
         tasks = {t["id"]: t for t in manifest["tasks"]}
         completed: dict[str, dict] = {}
@@ -244,13 +246,20 @@ def run(manifest_path: str | Path, *, root: str | Path | None = None,
                     return {**base, "status": "unresolved", "reason": "Required dependency has no successful evidence", "duration_ms": 0.0}
                 inputs = inventory(root, task.get("inputs"))
                 base["input_files"] = list(inputs)
+                base["input_hashes"] = inputs
                 command = [sys.executable if part == "{python}" else part for part in task["command"]]
                 environment = {"PATH": os.defpath, "LANG": "C.UTF-8", "TZ": "UTC", "PYTHONHASHSEED": "0", "PYTHONDONTWRITEBYTECODE": "1", **task.get("env", {})}
-                executable = shutil.which(command[0], path=environment["PATH"])
-                executable_hash = file_digest(Path(executable).resolve()) if executable else None
+                if "/" in command[0]:
+                    target = Path(command[0])
+                    target = target if target.is_absolute() else root / target
+                    executable = target.resolve() if target.is_file() else None
+                else:
+                    found = shutil.which(command[0], path=environment["PATH"])
+                    executable = Path(found).resolve() if found else None
+                executable_identity = {"sha256": file_digest(executable), "executable_bits": executable.stat().st_mode & 0o111} if executable else None
                 key = digest({"schema": SCHEMA, "policy": policy_hash, "task": task,
                               "inputs": inputs, "runtime": runtime, "environment": environment,
-                              "executable_sha256": executable_hash,
+                              "executable": executable_identity,
                               "dependencies": {k: v["key"] for k, v in dependencies.items()}})
                 base["key"] = key
                 cached = _read_cache(cache, key) if use_cache else None
@@ -297,6 +306,7 @@ def run(manifest_path: str | Path, *, root: str | Path | None = None,
             report["status"] = "unresolved"
             report["warnings"].append("Project or policy changed during the run; candidate-level evidence is unresolved.")
     except (ManifestError, OSError, ValueError) as exc:
+        report["status"] = "unresolved"
         report["warnings"].append(str(exc))
     report["duration_ms"] = (time.perf_counter() - started) * 1000
     return report

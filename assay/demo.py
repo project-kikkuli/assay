@@ -17,11 +17,13 @@ def demo(root: Path) -> dict:
         cold = run(root / "assay.json", cache_dir=cache)
         warm = run(root / "assay.json", cache_dir=cache)
         warm_samples = [warm["duration_ms"]]
+        warm_reports = [warm]
         for _ in range(4):
             sample = run(root / "assay.json", cache_dir=cache)
             if sample["status"] != "verified":
                 raise AssertionError("Warm validation failed")
             warm_samples.append(sample["duration_ms"])
+            warm_reports.append(sample)
 
     correct = replay(FENCING_CASE)
     broken = replay(FENCING_CASE, unsafe=True)
@@ -39,16 +41,21 @@ def demo(root: Path) -> dict:
         (project / "check.py").write_text("print('fixture v2')\n")
         changed = run(project / "assay.json")
         invalidation = {"original_key": original["tasks"][0]["key"], "reused": reused["tasks"][0]["cached"],
+                        "original_status": original["status"], "reused_status": reused["status"], "changed_status": changed["status"],
                         "changed_key": changed["tasks"][0]["key"], "changed_reused": changed["tasks"][0]["cached"],
                         "changed_duration_ms": changed["duration_ms"]}
     passed = (cold["status"] == warm["status"] == correct["status"] == exploration["status"] == "verified"
               and broken["status"] == minimized["status"] == "rejected"
               and invalidation["reused"] and not invalidation["changed_reused"]
+              and original["status"] == reused["status"] == changed["status"] == "verified"
+              and all(all(task["cached"] for task in sample["tasks"]) for sample in warm_reports)
               and invalidation["original_key"] != invalidation["changed_key"])
     benchmarks = measure_queries()
     benchmarks.insert(0, {"name": "Warm verification admission", "samples_ms": warm_samples,
                           "p50_ms": quantile(warm_samples, .5), "p95_ms": quantile(warm_samples, .95),
-                          "work": {"tasks": len(warm["tasks"]), "executed_commands": 0}, "source": "assay/runner.py",
+                          "work": {"tasks": len(warm["tasks"]),
+                                   "executed_commands_per_sample": [sum(not t["cached"] for t in sample["tasks"]) for sample in warm_reports]},
+                          "source": "assay/runner.py",
                           "notes": "Local advisory cache; not a hosted CI latency or security claim. Five samples only."})
     result = {**cold, "name": "Assay runnable experiment", "status": "verified" if passed else "rejected",
               "duration_ms": (time.perf_counter() - start) * 1000,

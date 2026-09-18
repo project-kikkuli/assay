@@ -45,9 +45,9 @@ timing samples, and the source entry point.
 Replay the failure, then the correct implementation:
 
 ```sh
-python3 -m assay replay out/counterexample.json --unsafe
+./demo replay out/counterexample.json --unsafe
 # Expected exit 1: the deliberately broken implementation violated the rule.
-python3 -m assay replay out/counterexample.json
+./demo replay out/counterexample.json
 # Expected exit 0: the same stale completion is refused.
 ```
 
@@ -82,9 +82,9 @@ An `assay.json` file names obligations, not shell pipelines:
 ```
 
 ```sh
-python3 -m assay run assay.json
-python3 -m assay run assay.json
-python3 -m assay audit assay.json --repeat 3
+./demo run assay.json
+./demo run assay.json
+./demo audit assay.json --repeat 3
 ```
 
 Omitting `inputs` conservatively hashes non-generated project files. Explicit
@@ -99,13 +99,14 @@ evidence. A skipped dependent task is unresolved, never a successful substitute.
 ## Inspect and challenge the design
 
 - [Design and report schema](docs/DESIGN.md)
+- [Measured results from independent hosted CI](docs/RESULTS.md)
 - [Adoption boundaries and next experiments](docs/ADOPTION.md)
 - [Public prior art and provenance](docs/PRIOR_ART.md)
 - [Security and trust assumptions](SECURITY.md)
 
 ```sh
-python3 -m unittest discover -s tests -v
-python3 -m assay explore --seeds 100 --steps 80
+./demo selftest
+./demo explore --seeds 100 --steps 80
 ```
 
 The GitHub workflow independently runs the tests and demo on Python 3.11/3.12.

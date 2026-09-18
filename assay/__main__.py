@@ -31,6 +31,7 @@ def main(argv=None) -> int:
         return 2
     parser = argparse.ArgumentParser(description="Explainable verification experiments; local evidence is advisory")
     commands = parser.add_subparsers(dest="action", required=True)
+    commands.add_parser("selftest", help="Run the experiment's unittest suite")
     for name in ("run", "audit"):
         sub = commands.add_parser(name)
         sub.add_argument("manifest", nargs="?", default="assay.json")
@@ -57,7 +58,11 @@ def main(argv=None) -> int:
     selectors.add_argument("--scenario", type=int)
     selectors.add_argument("--benchmark", type=int)
     args = parser.parse_args(argv)
-    if args.action == "inspect":
+    if args.action == "selftest":
+        import unittest
+        suite = unittest.defaultTestLoader.discover("tests")
+        return 0 if unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful() else 1
+    elif args.action == "inspect":
         from .inspect import explain
         try:
             print(explain(json.loads(args.report.read_text()), task=args.task, scenario=args.scenario, benchmark=args.benchmark))
@@ -99,4 +104,8 @@ def main(argv=None) -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        print(f"UNRESOLVED: {exc}", file=sys.stderr)
+        sys.exit(2)
