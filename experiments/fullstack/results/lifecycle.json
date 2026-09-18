@@ -1,0 +1,94 @@
+{
+  "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+  "scope": "Post-challenge requirements; these are no longer blind faults",
+  "records": [
+    {
+      "check": "migration",
+      "candidate": "baseline",
+      "seconds": 0.5507407920085825,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "lifecycle",
+      "candidate": "baseline",
+      "tests": {
+        "collected": 4,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 4
+      },
+      "seconds": 1.3464148750063032,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "bf0bcc15da107b2175117d3a53e1abfb9414ced0f0c46b16700d70134131c27f",
+      "output_tail": "....                                                                     [100%]\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n4 passed, 2 warnings in 0.99s\n"
+    },
+    {
+      "check": "migration",
+      "candidate": "H10",
+      "seconds": 0.36145616599242203,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "lifecycle",
+      "candidate": "H10",
+      "tests": {
+        "collected": 4,
+        "failed": 2,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 2
+      },
+      "seconds": 1.0616801670112181,
+      "exit_code": 1,
+      "status": "failed",
+      "output_sha256": "80e2058d595b3ac5f9fc012a73838e76e83c94ac0d08510025f3a345ea1b7a9f",
+      "output_tail": "FF..                                                                     [100%]\n=================================== FAILURES ===================================\n_________ test_public_signup_cannot_create_privileged_accounts[extra0] _________\n\nclient = <starlette.testclient.TestClient object at 0x10dafb8c0>, extra = {}\n\n    @pytest.mark.parametrize(\"extra\", [{}, {\"is_superuser\": True}])\n    def test_public_signup_cannot_create_privileged_accounts(client, extra):\n        email, user = signup(client, **extra)\n>       assert user[\"is_superuser\"] is False\nE       assert True is False\n\n$SOURCE/lifecycle_tests.py:62: AssertionError\n_________ test_public_signup_cannot_create_privileged_accounts[extra1] _________\n\nclient = <starlette.testclient.TestClient object at 0x10dc05e50>\nextra = {'is_superuser': True}\n\n    @pytest.mark.parametrize(\"extra\", [{}, {\"is_superuser\": True}])\n    def test_public_signup_cannot_create_privileged_accounts(client, extra):\n        email, user = signup(client, **extra)\n>       assert user[\"is_superuser\"] is False\nE       assert True is False\n\n$SOURCE/lifecycle_tests.py:62: AssertionError\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED ../../../../../../../../..$SOURCE/lifecycle_tests.py::test_public_signup_cannot_create_privileged_accounts[extra0]\nFAILED ../../../../../../../../..$SOURCE/lifecycle_tests.py::test_public_signup_cannot_create_privileged_accounts[extra1]\n2 failed, 2 passed, 2 warnings in 0.76s\n"
+    },
+    {
+      "check": "migration",
+      "candidate": "H12",
+      "seconds": 0.34895245800726116,
+      "exit_code": 0,
+      "status": "passed",
+      "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+      "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+    },
+    {
+      "check": "lifecycle",
+      "candidate": "H12",
+      "tests": {
+        "collected": 4,
+        "failed": 1,
+        "skipped": 0,
+        "errors": 0,
+        "passed": 3
+      },
+      "seconds": 1.1439231249969453,
+      "exit_code": 1,
+      "status": "failed",
+      "output_sha256": "d69ba728739c0f16e8c0c0fd23d548e0e3d089a5f85c27e01f7b6e7763035c79",
+      "output_tail": "...F                                                                     [100%]\n=================================== FAILURES ===================================\n_______ test_partial_updates_preserve_omitted_fields_in_both_directions ________\n\nclient = <starlette.testclient.TestClient object at 0x10ce5f100>\n\n    def test_partial_updates_preserve_omitted_fields_in_both_directions(client):\n        email, _ = signup(client)\n        headers = login(client, email)\n        created = client.post(\n            f\"{API}/items/\",\n            headers=headers,\n            json={\"title\": \"original\", \"description\": \"initial\"},\n        )\n        assert created.status_code == 200\n        identity = created.json()[\"id\"]\n        for patch, expected in [\n            ({\"description\": \"changed\"}, (\"original\", \"changed\")),\n            ({\"title\": \"renamed\"}, (\"renamed\", \"changed\")),\n        ]:\n            response = client.put(f\"{API}/items/{identity}\", headers=headers, json=patch)\n>           assert response.status_code == 200, response.text\nE           AssertionError: Internal Server Error\nE           assert 500 == 200\nE            +  where 500 = <Response [500 Internal Server Error]>.status_code\n\n$SOURCE/lifecycle_tests.py:116: AssertionError\n=============================== warnings summary ===============================\n../../../../../../../..$SCRATCH/full-stack-fastapi-template/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\napp/main.py:36\n  $SCRATCH/candidate/backend/app/main.py:36: UserWarning: Frontend directory '$SCRATCH/candidate/backend/app/frontend' does not exist. Resolved absolute path: '$SCRATCH/candidate/backend/app/frontend'\n    app.frontend(\"/\", directory=FRONTEND_DIR)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED ../../../../../../../../..$SOURCE/lifecycle_tests.py::test_partial_updates_preserve_omitted_fields_in_both_directions\n1 failed, 3 passed, 2 warnings in 0.84s\n"
+    }
+  ],
+  "matrix": [
+    {
+      "fault": "H10",
+      "outcome": "caught"
+    },
+    {
+      "fault": "H12",
+      "outcome": "caught"
+    }
+  ],
+  "oracle_sha256": "b85e6cd4f3f81765558f626eb5855c5787394e256ad6103d3d7395666ac43f5f",
+  "oracle_unchanged": true,
+  "expected_outcomes_observed": true
+}

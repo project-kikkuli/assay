@@ -31,7 +31,7 @@ def policy_identity():
 def decide(records, boundary, boundary_exit, expected_source):
     """Positive evidence is mandatory; absence, setup failure, or drift is not green."""
     by_name = {record["check"]: record for record in records}
-    required = {"upstream": 58, "oracle": 7, "browser": 62}
+    required = {"upstream": 62, "oracle": 7, "lifecycle": 4, "browser": 62}
     required_names = (*required, "build", "typecheck", "mypy", "ty", "ruff", "python_format")
     if any(sum(record["check"] == name for record in records) != 1 for name in required_names):
         return "unresolved"
@@ -77,7 +77,7 @@ def main():
     report = {
         "revision": revision, "source_sha256": tree_identity(subject), "policy_sha256": policy_identity(),
         "runs": [], "setup_included": False, "schedule": "serial" if args.serial else "isolated-parallel",
-        "scope": "Complete pinned-template suite plus five independent boundary claims; no test selection or result cache",
+        "scope": "Complete repaired-template suite, seven frozen API checks, four lifecycle checks, five boundary claims; no test selection or result cache",
         "limits": ["Warm installed dependencies and running disposable PostgreSQL/Mailpit", "Hosted dispatch excluded",
                    "Host execution, not an adversarial sandbox", "Finite observations, not universal correctness",
                    "Candidate-owned upstream tests; additional oracles are separate but not OS-protected"],
@@ -100,6 +100,7 @@ def main():
                     lab.python_static()
                     lab.backend(subject)
                     lab.backend(subject, "oracle")
+                    lab.backend(subject, "lifecycle", oracle=HERE / "lifecycle_tests.py")
                 with tempfile.TemporaryDirectory(prefix="assay-gate-") as scratch:
                     evidence = Path(scratch) / "boundary.json"
                     def boundary_checks():

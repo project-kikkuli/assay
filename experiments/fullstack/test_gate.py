@@ -10,6 +10,7 @@ class AdmissionTests(unittest.TestCase):
             {"check": "upstream", "status": "passed", "tests": {"passed": 62}},
             {"check": "oracle", "status": "passed", "tests": {"passed": 7}},
             {"check": "browser", "status": "passed", "tests": {"expected": 62, "actual_passed": 62}},
+            {"check": "lifecycle", "status": "passed", "tests": {"passed": 4}},
             {"check": "build", "status": "passed"},
             {"check": "typecheck", "status": "passed"},
             *({"check": name, "status": "passed"} for name in ("mypy", "ty", "ruff", "python_format")),

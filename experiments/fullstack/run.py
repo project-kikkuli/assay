@@ -157,13 +157,13 @@ class Lab:
         print(json.dumps({k: record[k] for k in ("check", "status", "seconds")}), flush=True)
         return record
 
-    def backend(self, candidate, kind="upstream", label="baseline"):
+    def backend(self, candidate, kind="upstream", label="baseline", oracle=None):
         with database(self.admin_dsn) as dsn, tempfile.TemporaryDirectory(prefix="assay-junit-") as scratch:
             env = clean_env() | {"DATABASE_URL": database_url(dsn), "PYTHONPATH": str(candidate / "backend")}
             migration = self.record("migration", run([self.python, "-m", "alembic", "upgrade", "head"], candidate / "backend", env), candidate=label)
             if migration["status"] != "passed":
                 return migration
-            target = "tests" if kind == "upstream" else HERE / "oracle_tests.py"
+            target = "tests" if kind == "upstream" else oracle or HERE / "oracle_tests.py"
             report = Path(scratch) / "junit.xml"
             result = run([self.python, "-m", "pytest", str(target), "-q", "--junitxml", report], candidate / "backend", env)
             counts = junit_counts(report)
