@@ -234,7 +234,7 @@ class Lab:
                     path.write_text(before)
         return matrix
 
-    def browser(self, workers):
+    def browser(self, workers, observe_http=False):
         with database(self.admin_dsn) as dsn, tempfile.TemporaryDirectory(prefix="assay-browser-") as scratch:
             # A socket reservation chooses a free port; uvicorn bind failure remains an explicit setup failure.
             with socket.socket() as probe:
@@ -267,6 +267,9 @@ class Lab:
                             time.sleep(.05)  # readiness polling, not a correctness assertion
                     report = Path(scratch) / "browser.json"
                     env["PLAYWRIGHT_JSON_OUTPUT_FILE"] = str(report)
+                    if observe_http:
+                        env["NODE_OPTIONS"] = f"--require={HERE / 'observe-http.cjs'}"
+                        env["ASSAY_HTTP_TRACE"] = scratch
                     result = run([self.node, self.subject / "node_modules/@playwright/test/cli.js", "test", f"--workers={workers}", "--retries=0", "--reporter=json"], self.subject / "frontend", env, timeout=300)
                     browser_report = json.loads(report.read_text()) if report.exists() else {}
                     stats = browser_report.get("stats", {})
@@ -292,7 +295,10 @@ class Lab:
                     log.flush()
                     log.seek(0)
                     server_tail = sanitize(log.read()[-5000:], self.subject) if errors else ""
-                    return self.record("browser", result, workers=workers, tests=stats, failures=errors, server_tail=server_tail)
+                    transport = [json.loads(line) for path in sorted(Path(scratch).glob("http-*.jsonl"))
+                                 for line in path.read_text().splitlines()] if observe_http else []
+                    return self.record("browser", result, workers=workers, tests=stats, failures=errors,
+                                       server_tail=server_tail, transport_observed=observe_http, transport_observations=transport)
                 finally:
                     if server.poll() is None:
                         os.killpg(server.pid, signal.SIGTERM)

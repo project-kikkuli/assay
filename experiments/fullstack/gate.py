@@ -25,7 +25,7 @@ def policy_identity():
     roots = [HERE, HERE.parent / "boundaries"]
     return {str(path.relative_to(HERE.parent)): hashlib.sha256(path.read_bytes()).hexdigest()
             for root in roots for path in sorted(root.iterdir())
-            if path.suffix in {".py", ".ts", ".mts", ".json"}}
+            if path.suffix in {".py", ".ts", ".mts", ".cjs", ".json"}}
 
 
 def decide(records, boundary, boundary_exit, expected_source):
@@ -66,6 +66,7 @@ def main():
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--repeat", type=int, default=1)
     parser.add_argument("--serial", action="store_true", help="run all checks sequentially for comparison")
+    parser.add_argument("--observe-http", action="store_true", help="record local Node fixture transport metadata without retrying")
     parser.add_argument("--output", type=Path, default=Path("out/gate.json"))
     args = parser.parse_args()
     if args.repeat < 1 or args.workers < 1:
@@ -76,6 +77,7 @@ def main():
         parser.error("prepare the pinned upstream revision first")
     report = {
         "revision": revision, "source_sha256": tree_identity(subject), "policy_sha256": policy_identity(),
+        "logical_cpus": os.cpu_count(), "http_observation_enabled": args.observe_http,
         "runs": [], "setup_included": False, "schedule": "serial" if args.serial else "isolated-parallel",
         "scope": "Complete repaired-template suite, seven frozen API checks, four lifecycle checks, five boundary claims; no test selection or result cache",
         "limits": ["Warm installed dependencies and running disposable PostgreSQL/Mailpit", "Hosted dispatch excluded",
@@ -109,13 +111,13 @@ def main():
                                    HERE.parent.parent, clean_env() | {"ASSAY_PG_DSN": dsn}, timeout=210)
                     if args.serial:
                         api_checks()
-                        lab.browser(args.workers)
+                        lab.browser(args.workers, args.observe_http)
                         result = boundary_checks()
                     else:
                         # Separate processes and UUID databases; the built assets are read-only inputs.
                         with ThreadPoolExecutor(max_workers=3) as pool:
                             api = pool.submit(api_checks)
-                            browser = pool.submit(lab.browser, args.workers)
+                            browser = pool.submit(lab.browser, args.workers, args.observe_http)
                             boundaries = pool.submit(boundary_checks)
                             api.result()
                             browser.result()
