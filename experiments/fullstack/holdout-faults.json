@@ -1,0 +1,110 @@
+[
+  {
+    "after": "    if not current_user.is_superuser or (item.owner_id != current_user.id):\n        raise HTTPException(status_code=403, detail=\"Not enough permissions\")\n    update_dict = item_in.model_dump(exclude_unset=True)",
+    "before": "    if not current_user.is_superuser and (item.owner_id != current_user.id):\n        raise HTTPException(status_code=403, detail=\"Not enough permissions\")\n    update_dict = item_in.model_dump(exclude_unset=True)",
+    "category": "authorization",
+    "claim": "Item owners (and superusers acting on others' items) must be able to update an owned item; non-owners must be denied.",
+    "id": "H01",
+    "path": "backend/app/api/routes/items.py",
+    "witness": "User A creates item; PUT /items/{id} with only description as owner gets 403; superuser PUT on another user's item also gets 403 instead of 200."
+  },
+  {
+    "after": "    session.delete(item)\n    return Message(message=\"Item deleted successfully\")",
+    "before": "    session.delete(item)\n    session.commit()\n    return Message(message=\"Item deleted successfully\")",
+    "category": "deletion effects",
+    "claim": "Successful DELETE /items/{id} must durably remove the item so subsequent reads fail and lists shrink.",
+    "id": "H02",
+    "path": "backend/app/api/routes/items.py",
+    "witness": "Create item, DELETE /items/{id} returns success, then GET /items/{id} still returns 200 and GET /items/ still lists it."
+  },
+  {
+    "after": "    if user is not None:\n        return user\n    if not current_user.is_superuser:",
+    "before": "    if user == current_user:\n        return user\n    if not current_user.is_superuser:",
+    "category": "authorization",
+    "claim": "Only superusers (or the user themselves) may fetch arbitrary user records by id.",
+    "id": "H03",
+    "path": "backend/app/api/routes/users.py",
+    "witness": "As non-superuser A, GET /users/{B-id} for another user B returns 200 with B's data instead of 403."
+  },
+  {
+    "after": "    if not user:\n        raise HTTPException(status_code=400, detail=\"Incorrect email or password\")\n    elif user.is_active:\n        raise HTTPException(status_code=400, detail=\"Inactive user\")",
+    "before": "    if not user:\n        raise HTTPException(status_code=400, detail=\"Incorrect email or password\")\n    elif not user.is_active:\n        raise HTTPException(status_code=400, detail=\"Inactive user\")",
+    "category": "credential lifecycle",
+    "claim": "Active users with correct credentials must obtain a token; inactive users must be rejected.",
+    "id": "H04",
+    "path": "backend/app/api/routes/login.py",
+    "witness": "POST /login/access-token with active user's correct password returns 400 Inactive user; deactivated user's correct password returns a valid token."
+  },
+  {
+    "after": "        user_create, update={\"hashed_password\": user_create.password}",
+    "before": "        user_create, update={\"hashed_password\": get_password_hash(user_create.password)}",
+    "category": "security",
+    "claim": "Stored passwords must be salted hashes, never plaintext, and subsequent password verification must succeed.",
+    "id": "H05",
+    "path": "backend/app/crud.py",
+    "witness": "Superuser POST /users/ creates user, then POST /login/access-token with that password returns 400; DB hashed_password equals plaintext."
+  },
+  {
+    "after": "        extra_data[\"hashed_password\"] = password",
+    "before": "        extra_data[\"hashed_password\"] = hashed_password",
+    "category": "credential lifecycle",
+    "claim": "Admin password updates must store a verified hash so the new password authenticates and the old one does not.",
+    "id": "H06",
+    "path": "backend/app/crud.py",
+    "witness": "PATCH /users/{id} with new password succeeds, then login with new password fails (400) because plaintext was stored."
+  },
+  {
+    "after": "    verified, _ = verify_password(body.current_password, current_user.hashed_password)\n    if verified:\n        raise HTTPException(status_code=400, detail=\"Incorrect password\")",
+    "before": "    verified, _ = verify_password(body.current_password, current_user.hashed_password)\n    if not verified:\n        raise HTTPException(status_code=400, detail=\"Incorrect password\")",
+    "category": "credential lifecycle",
+    "claim": "Password change requires proof of the current password; wrong current passwords must be rejected.",
+    "id": "H07",
+    "path": "backend/app/api/routes/users.py",
+    "witness": "PATCH /users/me/password with correct current_password returns 400 Incorrect password, while a wrong current_password is accepted and changes the hash."
+  },
+  {
+    "after": "    if body.current_password != body.new_password:",
+    "before": "    if body.current_password == body.new_password:",
+    "category": "validation",
+    "claim": "New password must differ from the current password; identical reuse must be rejected and distinct passwords allowed.",
+    "id": "H08",
+    "path": "backend/app/api/routes/users.py",
+    "witness": "PATCH /users/me/password with distinct new password returns 400 same-as-current, while reusing the same password succeeds."
+  },
+  {
+    "after": "        count_statement = select(func.count()).select_from(Item)",
+    "before": "        count_statement = (\n            select(func.count())\n            .select_from(Item)\n            .where(Item.owner_id == current_user.id)\n        )",
+    "category": "count consistency",
+    "claim": "Non-superuser item listing count must equal the number of that user's own items, not the global total.",
+    "id": "H09",
+    "path": "backend/app/api/routes/items.py",
+    "witness": "User A with 1 item and user B with 2 items: GET /items/ as A returns 1-element data but count=3, leaking cross-user existence via count."
+  },
+  {
+    "after": "    user_create = UserCreate.model_validate(user_in, update={\"is_superuser\": True})",
+    "before": "    user_create = UserCreate.model_validate(user_in)",
+    "category": "authorization",
+    "claim": "Open self-signup must create an ordinary non-privileged user and must not grant superuser privileges.",
+    "id": "H10",
+    "path": "backend/app/api/routes/users.py",
+    "witness": "POST /users/signup as anonymous, then GET /users/ with new token succeeds (200) instead of 403, showing attacker became superuser."
+  },
+  {
+    "after": "    email = verify_password_reset_token(token=body.token)\n    if email:\n        raise HTTPException(status_code=400, detail=\"Invalid token\")",
+    "before": "    email = verify_password_reset_token(token=body.token)\n    if not email:\n        raise HTTPException(status_code=400, detail=\"Invalid token\")",
+    "category": "credential lifecycle",
+    "claim": "Valid password-reset tokens must be accepted and invalid/expired tokens rejected for password reset.",
+    "id": "H11",
+    "path": "backend/app/api/routes/login.py",
+    "witness": "Obtain valid reset token via recovery flow, POST /reset-password/ with it returns 400 Invalid token so password can never be reset."
+  },
+  {
+    "after": "    update_dict = item_in.model_dump()",
+    "before": "    update_dict = item_in.model_dump(exclude_unset=True)",
+    "category": "state preservation",
+    "claim": "Partial item updates must preserve unspecified fields; only explicitly supplied fields may change.",
+    "id": "H12",
+    "path": "backend/app/api/routes/items.py",
+    "witness": "Create item with title+description, PUT /items/{id} with only description, then GET shows title cleared/nulled instead of preserved."
+  }
+]

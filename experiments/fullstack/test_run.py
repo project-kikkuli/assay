@@ -8,6 +8,14 @@ import run
 
 
 class HarnessTests(unittest.TestCase):
+    def test_static_checker_uses_subject_interpreter_not_launcher_path(self):
+        subject = Path("/public-subject")
+        lab = run.Lab(subject, "unused", "node", subject / ".venv/bin/python", [])
+        with patch.object(run, "run", side_effect=lambda *_args: {"output": "", "status": "passed", "seconds": 0}) as execute:
+            lab.python_static()
+        command = execute.call_args_list[1].args[0]
+        self.assertEqual(command[-2:], ["--python", subject / ".venv/bin/python"])
+
     def test_missing_report_is_not_evidence(self):
         self.assertEqual(run.junit_counts(Path("nonexistent-junit.xml"))["passed"], 0)
 

@@ -181,7 +181,7 @@ class Lab:
     def python_static(self):
         for name, command in [
             ("mypy", [self.python, "-m", "mypy", "app", "--no-incremental"]),
-            ("ty", [self.subject / ".venv/bin/ty", "check", "app"]),
+            ("ty", [self.subject / ".venv/bin/ty", "check", "app", "--python", self.python]),
             ("ruff", [self.python, "-m", "ruff", "check", "app"]),
             ("python_format", [self.python, "-m", "ruff", "format", "app", "--check"]),
         ]:
