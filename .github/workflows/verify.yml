@@ -22,6 +22,11 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: Test runner, application, oracle, and reports
         run: python -m unittest discover -s tests -v
+      - name: Test input invalidation and fail-closed experiment reports
+        run: |
+          python -m unittest discover -s experiments/python-selection -p 'test_*.py' -v
+          python experiments/outbox-concurrency/test_concurrency.py
+          python -m unittest discover -s experiments/confinement -p 'test_*.py' -v
       - name: Run the cold/warm, fault-injection, and performance demo
         run: python -m assay demo --out out
       - name: Preserve independently generated evidence

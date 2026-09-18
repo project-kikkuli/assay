@@ -6,6 +6,9 @@ This repo tests parts of that argument against real Python, TypeScript, PostgreS
 browser, and authorization-policy implementations. It retains counterexamples and
 negative results. It is not a production CI replacement.
 
+Start with [the findings and adoption path](RESULTS.md): what worked, what failed,
+and which checks could replace the business-rule burden of E2E tests.
+
 The newest connected experiment is [Continuum](experiments/continuum/): exact-input
 evidence reuse across a polyglot application, environment transitions, deployment
 faults, and a support handoff. `./continuum view` opens its recorded evidence locally;

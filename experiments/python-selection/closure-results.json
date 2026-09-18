@@ -1,0 +1,1465 @@
+{
+  "status": "passed",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "scope": "tests/_server/api/endpoints/test_assets.py",
+  "expected_tests": 41,
+  "cases": [
+    {
+      "name": "baseline",
+      "key": "1cf779831df9cfbce3109fbbd3a4650b6b5a3684fedb5e5ecb87eec51b8d3364",
+      "inventory_entries": 3103,
+      "hash_seconds": 0.380125,
+      "decision": "executed_pass",
+      "result": {
+        "command": [
+          "<external>/subject/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/_server/api/endpoints/test_assets.py",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 3.687,
+        "counts": {
+          "passed": 41
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 41,
+          "phases_s": {
+            "pre_collection_setup": 0.002,
+            "collection_and_testmon_analysis": 0.102,
+            "test_execution": 1.695,
+            "post_processing": 0.002,
+            "process_observed": 1.8
+          },
+          "exit_status": 0
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "inputs_stable": true,
+      "decision_seconds": 4.460148
+    },
+    {
+      "name": "unchanged-1",
+      "key": "1cf779831df9cfbce3109fbbd3a4650b6b5a3684fedb5e5ecb87eec51b8d3364",
+      "inventory_entries": 3103,
+      "hash_seconds": 0.528114,
+      "decision": "reuse",
+      "passed": 41,
+      "decision_seconds": 0.528124
+    },
+    {
+      "name": "unchanged-2",
+      "key": "1cf779831df9cfbce3109fbbd3a4650b6b5a3684fedb5e5ecb87eec51b8d3364",
+      "inventory_entries": 3103,
+      "hash_seconds": 0.518735,
+      "decision": "reuse",
+      "passed": 41,
+      "decision_seconds": 0.518744
+    },
+    {
+      "name": "unchanged-3",
+      "key": "1cf779831df9cfbce3109fbbd3a4650b6b5a3684fedb5e5ecb87eec51b8d3364",
+      "inventory_entries": 3103,
+      "hash_seconds": 0.441919,
+      "decision": "reuse",
+      "passed": 41,
+      "decision_seconds": 0.441928
+    },
+    {
+      "name": "unchanged-4",
+      "key": "1cf779831df9cfbce3109fbbd3a4650b6b5a3684fedb5e5ecb87eec51b8d3364",
+      "inventory_entries": 3103,
+      "hash_seconds": 0.49326,
+      "decision": "reuse",
+      "passed": 41,
+      "decision_seconds": 0.49327
+    },
+    {
+      "name": "unchanged-5",
+      "key": "1cf779831df9cfbce3109fbbd3a4650b6b5a3684fedb5e5ecb87eec51b8d3364",
+      "inventory_entries": 3103,
+      "hash_seconds": 0.498915,
+      "decision": "reuse",
+      "passed": 41,
+      "decision_seconds": 0.498924
+    },
+    {
+      "name": "deleted-favicon",
+      "key": "94c0d1940f4504dc3b4fe64f77dae1417b861923b3d25c0024dc0b2be6ecff19",
+      "inventory_entries": 3102,
+      "hash_seconds": 0.468245,
+      "decision": "not_green",
+      "result": {
+        "command": [
+          "<external>/subject/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/_server/api/endpoints/test_assets.py",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "failed",
+        "returncode": 1,
+        "duration_s": 2.161,
+        "counts": {
+          "failed": 1,
+          "passed": 40
+        },
+        "failure_excerpt": ".................F.......................                                [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n_________________________________ test_favicon _________________________________\n\nclient = <starlette.testclient.TestClient object at 0x10a85a9f0>\n\n    def test_favicon(client: TestClient) -> None:\n        response = client.get(\"/favicon.ico\")\n>       assert response.status_code == 200, response.text\nE       AssertionError: {\"detail\":\"Not Found\"}\nE       assert 404 == 200\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\ntests/_server/api/endpoints/test_assets.py:383: AssertionError\n=============================== warnings summary ===============================\n../../../../../../../..<host-path>:53\n  <host-path>:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED tests/_server/api/endpoints/test_assets.py::test_favicon - AssertionError: {\"detail\":\"Not Found\"}\nassert 404 == 200\n +  where 404 = <Response [404 Not Found]>.status_code\n1 failed, 40 passed, 1 warning in 0.96s\n",
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 41,
+          "phases_s": {
+            "pre_collection_setup": 0.002,
+            "collection_and_testmon_analysis": 0.046,
+            "test_execution": 0.818,
+            "post_processing": 0.001,
+            "process_observed": 0.867
+          },
+          "exit_status": 1
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "inputs_stable": true,
+      "decision_seconds": 3.014453
+    },
+    {
+      "name": "restored-favicon",
+      "key": "1cf779831df9cfbce3109fbbd3a4650b6b5a3684fedb5e5ecb87eec51b8d3364",
+      "inventory_entries": 3103,
+      "hash_seconds": 0.442763,
+      "decision": "reuse",
+      "passed": 41,
+      "decision_seconds": 0.442779
+    },
+    {
+      "name": "added-resource",
+      "key": "a97afc39f14f534e7ed1e9231be1e8fedb6681c5098f3fbe341483b38f0082d8",
+      "inventory_entries": 3104,
+      "hash_seconds": 0.436635,
+      "decision": "executed_pass",
+      "result": {
+        "command": [
+          "<external>/subject/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/_server/api/endpoints/test_assets.py",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 1.924,
+        "counts": {
+          "passed": 41
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 41,
+          "phases_s": {
+            "pre_collection_setup": 0.002,
+            "collection_and_testmon_analysis": 0.049,
+            "test_execution": 0.796,
+            "post_processing": 0.001,
+            "process_observed": 0.847
+          },
+          "exit_status": 0
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "inputs_stable": true,
+      "decision_seconds": 2.737273
+    },
+    {
+      "name": "changed-python-source",
+      "key": "8e31020ba149be3b7f3d19cfbfcb4500dd8871b548e70fbb31bd44db32ce4c0f",
+      "inventory_entries": 3103,
+      "hash_seconds": 0.408771,
+      "decision": "executed_pass",
+      "result": {
+        "command": [
+          "<external>/subject/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/_server/api/endpoints/test_assets.py",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 2.128,
+        "counts": {
+          "passed": 41
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 41,
+          "phases_s": {
+            "pre_collection_setup": 0.002,
+            "collection_and_testmon_analysis": 0.047,
+            "test_execution": 0.969,
+            "post_processing": 0.001,
+            "process_observed": 1.019
+          },
+          "exit_status": 0
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "inputs_stable": true,
+      "decision_seconds": 2.955599
+    },
+    {
+      "name": "unsafe-public-html-cache",
+      "key": "f5cff570d8287bc6d342da7c4a23f4618273ac9ec49283b5004a10044ad33e33",
+      "inventory_entries": 3103,
+      "hash_seconds": 0.390889,
+      "decision": "not_green",
+      "result": {
+        "command": [
+          "<external>/subject/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/_server/api/endpoints/test_assets.py",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "failed",
+        "returncode": 1,
+        "duration_s": 3.615,
+        "counts": {
+          "failed": 1,
+          "passed": 40
+        },
+        "failure_excerpt": "..........F..............................                                [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n__________________ test_index_response_revalidates_with_etag ___________________\n\nclient = <starlette.testclient.TestClient object at 0x1098740b0>\n\n    def test_index_response_revalidates_with_etag(client: TestClient) -> None:\n        response = client.get(\"/\", headers=token_header())\n        assert response.status_code == 200, response.text\n>       assert response.headers[\"cache-control\"] == \"private, no-cache\"\nE       AssertionError: assert 'public, max-age=86400' == 'private, no-cache'\nE         \nE         - private, no-cache\nE         + public, max-age=86400\n\ntests/_server/api/endpoints/test_assets.py:221: AssertionError\n=============================== warnings summary ===============================\n../../../../../../../..<host-path>:53\n  <host-path>:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED tests/_server/api/endpoints/test_assets.py::test_index_response_revalidates_with_etag - AssertionError: assert 'public, max-age=86400' == 'private, no-cache'\n  \n  - private, no-cache\n  + public, max-age=86400\n1 failed, 40 passed, 1 warning in 2.19s\n",
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 41,
+          "phases_s": {
+            "pre_collection_setup": 0.002,
+            "collection_and_testmon_analysis": 0.049,
+            "test_execution": 1.981,
+            "post_processing": 0.001,
+            "process_observed": 2.033
+          },
+          "exit_status": 1
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "inputs_stable": true,
+      "decision_seconds": 5.138565
+    },
+    {
+      "name": "changed-runtime",
+      "key": "912f8eae6b92d4c19c7b72e8f23067475c5efe8aa9e63b4af3bda1992ac03f84",
+      "inventory_entries": 3103,
+      "hash_seconds": 1.685131,
+      "decision": "rerun_required",
+      "decision_seconds": 1.68517
+    },
+    {
+      "name": "changed-command",
+      "key": "9c3a92e49c75e28f13d1ed25626b3b2e0b2c50636483ea9b024bfe95eee8189c",
+      "inventory_entries": 3103,
+      "hash_seconds": 1.19536,
+      "decision": "rerun_required",
+      "decision_seconds": 1.195374
+    },
+    {
+      "name": "changed-verifier",
+      "key": "bc92d5d06738699a899b0903cb36181af87c28d0b00acbc7931fafb4af12d178",
+      "inventory_entries": 3103,
+      "hash_seconds": 0.811729,
+      "decision": "rerun_required",
+      "decision_seconds": 0.811739
+    }
+  ],
+  "inputs": [
+    "marimo",
+    "tests",
+    "pyproject.toml",
+    "uv.lock",
+    "conftest.py"
+  ],
+  "limits": [
+    "One 41-test obligation, not admission for the entire application",
+    "Trusted sequential host fixture; no protected issuer or immutable sandbox",
+    "Dependency versions identify the reused venv, not all dependency bytes",
+    "Explicit roots, not inferred dependency closure; cache directories excluded",
+    "Preparation and dependencies outside measured decision time"
+  ],
+  "preparation_seconds": 4.231224,
+  "runtime": {
+    "python": "3.12.9 (main, Mar 17 2025, 21:36:21) [Clang 20.1.0 ]",
+    "packages": [
+      [
+        "Deprecated",
+        "1.3.1"
+      ],
+      [
+        "Jinja2",
+        "3.1.6"
+      ],
+      [
+        "Mako",
+        "1.4.1"
+      ],
+      [
+        "Markdown",
+        "3.10.3"
+      ],
+      [
+        "MarkupSafe",
+        "3.0.3"
+      ],
+      [
+        "PyJWT",
+        "2.13.0"
+      ],
+      [
+        "PyMySQL",
+        "1.2.0"
+      ],
+      [
+        "PyYAML",
+        "6.0.3"
+      ],
+      [
+        "Pygments",
+        "2.21.0"
+      ],
+      [
+        "SQLAlchemy",
+        "2.0.52"
+      ],
+      [
+        "abnf",
+        "2.2.0"
+      ],
+      [
+        "absl-py",
+        "2.5.0"
+      ],
+      [
+        "adbc-driver-manager",
+        "1.12.0"
+      ],
+      [
+        "adbc-driver-sqlite",
+        "1.12.0"
+      ],
+      [
+        "aiofiles",
+        "25.1.0"
+      ],
+      [
+        "alembic",
+        "1.19.2"
+      ],
+      [
+        "altair",
+        "6.2.2"
+      ],
+      [
+        "annotated-types",
+        "0.8.0"
+      ],
+      [
+        "anthropic",
+        "1.5.0"
+      ],
+      [
+        "anyio",
+        "4.15.1"
+      ],
+      [
+        "anywidget",
+        "0.9.21"
+      ],
+      [
+        "appnope",
+        "1.0.0"
+      ],
+      [
+        "array-api-compat",
+        "1.15.0"
+      ],
+      [
+        "arro3-core",
+        "0.8.2"
+      ],
+      [
+        "asn1crypto",
+        "1.5.1"
+      ],
+      [
+        "asttokens",
+        "3.0.2"
+      ],
+      [
+        "asyncmy2",
+        "0.2.21"
+      ],
+      [
+        "atpublic",
+        "7.0.0"
+      ],
+      [
+        "attrs",
+        "26.1.0"
+      ],
+      [
+        "backcall",
+        "0.2.0"
+      ],
+      [
+        "backoff",
+        "2.2.1"
+      ],
+      [
+        "backports.zstd",
+        "1.7.0"
+      ],
+      [
+        "basedpyright",
+        "1.40.1"
+      ],
+      [
+        "beautifulsoup4",
+        "4.15.0"
+      ],
+      [
+        "biom_format",
+        "2.1.17"
+      ],
+      [
+        "black",
+        "26.5.1"
+      ],
+      [
+        "bleach",
+        "6.4.0"
+      ],
+      [
+        "bokeh",
+        "3.9.2"
+      ],
+      [
+        "boto3",
+        "1.43.92"
+      ],
+      [
+        "botocore",
+        "1.43.92"
+      ],
+      [
+        "cachetools",
+        "7.1.8"
+      ],
+      [
+        "certifi",
+        "2026.7.22"
+      ],
+      [
+        "cffi",
+        "2.1.1"
+      ],
+      [
+        "chardet",
+        "7.6.0"
+      ],
+      [
+        "charset-normalizer",
+        "3.5.1"
+      ],
+      [
+        "chdb",
+        "4.3.0"
+      ],
+      [
+        "chdb-core",
+        "26.7.3"
+      ],
+      [
+        "cint",
+        "1.0.0"
+      ],
+      [
+        "click",
+        "8.5.0"
+      ],
+      [
+        "clickhouse-connect",
+        "1.8.0"
+      ],
+      [
+        "cloudpathlib",
+        "0.25.0"
+      ],
+      [
+        "colorcet",
+        "3.2.1"
+      ],
+      [
+        "comm",
+        "0.2.3"
+      ],
+      [
+        "contourpy",
+        "1.3.3"
+      ],
+      [
+        "coverage",
+        "7.16.0"
+      ],
+      [
+        "cryptography",
+        "50.0.1"
+      ],
+      [
+        "cycler",
+        "0.12.1"
+      ],
+      [
+        "decorator",
+        "5.3.1"
+      ],
+      [
+        "defusedxml",
+        "0.7.1"
+      ],
+      [
+        "dirty-equals",
+        "0.9.0"
+      ],
+      [
+        "diskcache-weave",
+        "5.6.3.post1"
+      ],
+      [
+        "distro",
+        "1.9.0"
+      ],
+      [
+        "docstring-to-markdown",
+        "0.17"
+      ],
+      [
+        "docstring_parser",
+        "0.18.0"
+      ],
+      [
+        "docutils",
+        "0.23"
+      ],
+      [
+        "duckdb",
+        "1.5.5"
+      ],
+      [
+        "etils",
+        "1.14.0"
+      ],
+      [
+        "execnet",
+        "2.1.2"
+      ],
+      [
+        "executing",
+        "2.2.1"
+      ],
+      [
+        "fastjsonschema",
+        "2.22.2"
+      ],
+      [
+        "fickling",
+        "0.1.12"
+      ],
+      [
+        "filelock",
+        "3.32.6"
+      ],
+      [
+        "flax",
+        "0.12.9"
+      ],
+      [
+        "fonttools",
+        "4.65.0"
+      ],
+      [
+        "formulaic",
+        "1.2.2"
+      ],
+      [
+        "fsspec",
+        "2026.7.0"
+      ],
+      [
+        "genai-prices",
+        "0.1.6"
+      ],
+      [
+        "geopandas",
+        "1.1.4"
+      ],
+      [
+        "google-auth",
+        "2.58.0"
+      ],
+      [
+        "google-genai",
+        "2.23.0"
+      ],
+      [
+        "googleapis-common-protos",
+        "1.75.0"
+      ],
+      [
+        "gql",
+        "4.0.0"
+      ],
+      [
+        "graphql-core",
+        "3.2.12"
+      ],
+      [
+        "graphviz",
+        "0.21"
+      ],
+      [
+        "griffelib",
+        "2.3.0"
+      ],
+      [
+        "grpcio",
+        "1.83.1"
+      ],
+      [
+        "h11",
+        "0.16.0"
+      ],
+      [
+        "h5py",
+        "3.16.0"
+      ],
+      [
+        "hf-xet",
+        "1.6.0"
+      ],
+      [
+        "holoviews",
+        "1.23.2"
+      ],
+      [
+        "httpcore",
+        "1.0.9"
+      ],
+      [
+        "httpcore2",
+        "2.12.0"
+      ],
+      [
+        "httpx",
+        "0.28.1"
+      ],
+      [
+        "httpx2",
+        "2.12.0"
+      ],
+      [
+        "huggingface_hub",
+        "1.31.0"
+      ],
+      [
+        "humanize",
+        "4.16.0"
+      ],
+      [
+        "hvplot",
+        "0.11.3"
+      ],
+      [
+        "hypothesis",
+        "6.102.6"
+      ],
+      [
+        "ibis-framework",
+        "12.0.0"
+      ],
+      [
+        "idna",
+        "3.19"
+      ],
+      [
+        "importlib_metadata",
+        "8.5.0"
+      ],
+      [
+        "importlib_resources",
+        "7.1.0"
+      ],
+      [
+        "iniconfig",
+        "2.3.0"
+      ],
+      [
+        "inline-snapshot",
+        "0.29.4"
+      ],
+      [
+        "interface_meta",
+        "2.0.1"
+      ],
+      [
+        "intervaltree",
+        "3.2.1"
+      ],
+      [
+        "ipython",
+        "8.12.3"
+      ],
+      [
+        "ipywidgets",
+        "8.1.9"
+      ],
+      [
+        "itsdangerous",
+        "2.2.0"
+      ],
+      [
+        "jax",
+        "0.11.1"
+      ],
+      [
+        "jaxlib",
+        "0.11.1"
+      ],
+      [
+        "jedi",
+        "0.20.0"
+      ],
+      [
+        "jiter",
+        "0.16.0"
+      ],
+      [
+        "jmespath",
+        "1.1.0"
+      ],
+      [
+        "jsonschema",
+        "4.26.0"
+      ],
+      [
+        "jsonschema-specifications",
+        "2025.9.1"
+      ],
+      [
+        "jupyter_client",
+        "8.10.0"
+      ],
+      [
+        "jupyter_core",
+        "5.9.1"
+      ],
+      [
+        "jupyterlab_pygments",
+        "0.3.0"
+      ],
+      [
+        "jupyterlab_widgets",
+        "3.0.17"
+      ],
+      [
+        "jupytext",
+        "1.19.5"
+      ],
+      [
+        "kaitaistruct",
+        "0.11"
+      ],
+      [
+        "kiwisolver",
+        "1.5.1"
+      ],
+      [
+        "lark",
+        "1.3.1"
+      ],
+      [
+        "linkify-it-py",
+        "2.2.0"
+      ],
+      [
+        "logfire-api",
+        "5.0.0"
+      ],
+      [
+        "loro",
+        "1.13.2"
+      ],
+      [
+        "lxml",
+        "6.1.3"
+      ],
+      [
+        "lz4",
+        "4.4.5"
+      ],
+      [
+        "marimo",
+        "0.24.2"
+      ],
+      [
+        "markdown-it-py",
+        "4.2.0"
+      ],
+      [
+        "matplotlib",
+        "3.10.9"
+      ],
+      [
+        "matplotlib-inline",
+        "0.2.2"
+      ],
+      [
+        "mcp",
+        "2.2.0"
+      ],
+      [
+        "mcp-types",
+        "2.2.0"
+      ],
+      [
+        "mdit-py-plugins",
+        "0.6.1"
+      ],
+      [
+        "mdurl",
+        "0.1.2"
+      ],
+      [
+        "mistune",
+        "3.3.4"
+      ],
+      [
+        "ml_dtypes",
+        "0.6.0"
+      ],
+      [
+        "mmh3",
+        "5.3.0"
+      ],
+      [
+        "mpmath",
+        "1.3.0"
+      ],
+      [
+        "msgpack",
+        "1.2.2"
+      ],
+      [
+        "msgspec",
+        "0.21.1"
+      ],
+      [
+        "multidict",
+        "6.8.0"
+      ],
+      [
+        "mypy_extensions",
+        "1.1.0"
+      ],
+      [
+        "narwhals",
+        "2.26.0"
+      ],
+      [
+        "natsort",
+        "8.4.0"
+      ],
+      [
+        "nbclient",
+        "0.11.0"
+      ],
+      [
+        "nbconvert",
+        "7.17.1"
+      ],
+      [
+        "nbformat",
+        "5.11.1"
+      ],
+      [
+        "networkx",
+        "3.6.1"
+      ],
+      [
+        "nh3",
+        "0.3.7"
+      ],
+      [
+        "nodejs-wheel-binaries",
+        "24.19.0"
+      ],
+      [
+        "numpy",
+        "2.5.3"
+      ],
+      [
+        "obstore",
+        "0.11.1"
+      ],
+      [
+        "openai",
+        "3.13.0"
+      ],
+      [
+        "opentelemetry-api",
+        "1.28.2"
+      ],
+      [
+        "opentelemetry-exporter-otlp-proto-common",
+        "1.28.2"
+      ],
+      [
+        "opentelemetry-exporter-otlp-proto-grpc",
+        "1.28.2"
+      ],
+      [
+        "opentelemetry-exporter-otlp-proto-http",
+        "1.28.2"
+      ],
+      [
+        "opentelemetry-proto",
+        "1.28.2"
+      ],
+      [
+        "opentelemetry-sdk",
+        "1.28.2"
+      ],
+      [
+        "opentelemetry-semantic-conventions",
+        "0.49b2"
+      ],
+      [
+        "opt_einsum",
+        "3.4.0"
+      ],
+      [
+        "optax",
+        "0.2.8"
+      ],
+      [
+        "orbax-checkpoint",
+        "0.12.4"
+      ],
+      [
+        "packaging",
+        "26.3"
+      ],
+      [
+        "pandas",
+        "3.0.5"
+      ],
+      [
+        "pandocfilters",
+        "1.5.1"
+      ],
+      [
+        "panel",
+        "1.9.4"
+      ],
+      [
+        "panel-material-ui",
+        "0.14.2"
+      ],
+      [
+        "param",
+        "2.4.2"
+      ],
+      [
+        "parso",
+        "0.8.7"
+      ],
+      [
+        "parsy",
+        "2.2"
+      ],
+      [
+        "pathspec",
+        "1.1.1"
+      ],
+      [
+        "patsy",
+        "1.0.3"
+      ],
+      [
+        "pdfminer.six",
+        "20260107"
+      ],
+      [
+        "pexpect",
+        "4.9.0"
+      ],
+      [
+        "pickleshare",
+        "0.7.5"
+      ],
+      [
+        "pillow",
+        "12.0.0"
+      ],
+      [
+        "platformdirs",
+        "4.11.8"
+      ],
+      [
+        "plotly",
+        "7.0.0"
+      ],
+      [
+        "pluggy",
+        "1.6.0"
+      ],
+      [
+        "polars",
+        "1.44.2"
+      ],
+      [
+        "polars-runtime-32",
+        "1.44.2"
+      ],
+      [
+        "polyfile-weave",
+        "0.5.9"
+      ],
+      [
+        "prometheus_client",
+        "0.26.0"
+      ],
+      [
+        "prompt_toolkit",
+        "3.0.53"
+      ],
+      [
+        "propcache",
+        "0.5.2"
+      ],
+      [
+        "protobuf",
+        "5.29.6"
+      ],
+      [
+        "psutil",
+        "7.2.2"
+      ],
+      [
+        "psygnal",
+        "0.16.0"
+      ],
+      [
+        "ptyprocess",
+        "0.7.0"
+      ],
+      [
+        "pure_eval",
+        "0.2.4"
+      ],
+      [
+        "pyarrow",
+        "25.0.1"
+      ],
+      [
+        "pyarrow-hotfix",
+        "0.7"
+      ],
+      [
+        "pyarrow-stubs",
+        "20.0.0.20260819"
+      ],
+      [
+        "pyasn1",
+        "0.6.4"
+      ],
+      [
+        "pyasn1_modules",
+        "0.4.2"
+      ],
+      [
+        "pycparser",
+        "3.0"
+      ],
+      [
+        "pydantic",
+        "2.13.5"
+      ],
+      [
+        "pydantic-ai-slim",
+        "2.42.0"
+      ],
+      [
+        "pydantic-graph",
+        "2.42.0"
+      ],
+      [
+        "pydantic_core",
+        "2.46.5"
+      ],
+      [
+        "pyiceberg",
+        "0.12.0"
+      ],
+      [
+        "pymdown-extensions",
+        "11.0.2"
+      ],
+      [
+        "pyogrio",
+        "0.13.0"
+      ],
+      [
+        "pyparsing",
+        "3.3.2"
+      ],
+      [
+        "pyproj",
+        "3.8.0"
+      ],
+      [
+        "pyroaring",
+        "1.1.0"
+      ],
+      [
+        "pytest",
+        "9.0.3"
+      ],
+      [
+        "pytest-asyncio",
+        "1.3.0"
+      ],
+      [
+        "pytest-codecov",
+        "0.7.0"
+      ],
+      [
+        "pytest-cov",
+        "7.1.0"
+      ],
+      [
+        "pytest-picked",
+        "0.5.1"
+      ],
+      [
+        "pytest-rerunfailures",
+        "16.6.1"
+      ],
+      [
+        "pytest-sugar",
+        "1.1.1"
+      ],
+      [
+        "pytest-timeout",
+        "2.4.0"
+      ],
+      [
+        "pytest-xdist",
+        "3.8.0"
+      ],
+      [
+        "python-dateutil",
+        "2.9.0.post0"
+      ],
+      [
+        "python-lsp-jsonrpc",
+        "1.1.2"
+      ],
+      [
+        "python-lsp-server",
+        "1.15.0"
+      ],
+      [
+        "python-multipart",
+        "0.0.32"
+      ],
+      [
+        "pytokens",
+        "0.4.1"
+      ],
+      [
+        "pytz",
+        "2026.3.post1"
+      ],
+      [
+        "pyviz_comms",
+        "3.0.6"
+      ],
+      [
+        "pyzmq",
+        "27.2.0"
+      ],
+      [
+        "redshift_connector",
+        "2.1.16"
+      ],
+      [
+        "referencing",
+        "0.37.0"
+      ],
+      [
+        "regex",
+        "2026.9.10"
+      ],
+      [
+        "requests",
+        "2.34.2"
+      ],
+      [
+        "rich",
+        "15.0.0"
+      ],
+      [
+        "rpds-py",
+        "2026.6.3"
+      ],
+      [
+        "ruff",
+        "0.16.7"
+      ],
+      [
+        "s3transfer",
+        "0.19.2"
+      ],
+      [
+        "scikit-bio",
+        "0.7.3"
+      ],
+      [
+        "scipy",
+        "1.18.1"
+      ],
+      [
+        "scramp",
+        "1.4.17"
+      ],
+      [
+        "sentry-sdk",
+        "2.69.1"
+      ],
+      [
+        "setuptools",
+        "84.0.0"
+      ],
+      [
+        "shapely",
+        "2.1.2"
+      ],
+      [
+        "simplejson",
+        "4.1.2"
+      ],
+      [
+        "six",
+        "1.17.0"
+      ],
+      [
+        "sniffio",
+        "1.3.1"
+      ],
+      [
+        "sortedcontainers",
+        "2.4.0"
+      ],
+      [
+        "soupsieve",
+        "2.9.2"
+      ],
+      [
+        "sqlglot",
+        "30.18.0"
+      ],
+      [
+        "sqlglotc",
+        "30.18.0"
+      ],
+      [
+        "sse-starlette",
+        "3.4.11"
+      ],
+      [
+        "stack-data",
+        "0.6.3"
+      ],
+      [
+        "starlette",
+        "1.6.0"
+      ],
+      [
+        "starrocks",
+        "1.3.4"
+      ],
+      [
+        "statsmodels",
+        "0.15.0"
+      ],
+      [
+        "strictyaml",
+        "1.7.3"
+      ],
+      [
+        "sympy",
+        "1.14.0"
+      ],
+      [
+        "tenacity",
+        "9.1.4"
+      ],
+      [
+        "tensorstore",
+        "0.1.85"
+      ],
+      [
+        "termcolor",
+        "3.3.0"
+      ],
+      [
+        "tiktoken",
+        "0.14.0"
+      ],
+      [
+        "tinycss2",
+        "1.5.1"
+      ],
+      [
+        "tomlkit",
+        "0.15.1"
+      ],
+      [
+        "toolz",
+        "1.1.0"
+      ],
+      [
+        "torch",
+        "2.14.0"
+      ],
+      [
+        "tornado",
+        "6.5.8"
+      ],
+      [
+        "tqdm",
+        "4.70.0"
+      ],
+      [
+        "traitlets",
+        "5.16.1"
+      ],
+      [
+        "treescope",
+        "0.1.10"
+      ],
+      [
+        "truststore",
+        "0.10.4"
+      ],
+      [
+        "typing-inspection",
+        "0.4.4"
+      ],
+      [
+        "typing_extensions",
+        "4.16.0"
+      ],
+      [
+        "typos",
+        "1.23.7"
+      ],
+      [
+        "tzdata",
+        "2026.3"
+      ],
+      [
+        "ujson",
+        "6.0.0"
+      ],
+      [
+        "urllib3",
+        "2.5.0"
+      ],
+      [
+        "uvicorn",
+        "0.52.4"
+      ],
+      [
+        "uvloop",
+        "0.22.1"
+      ],
+      [
+        "vegafusion",
+        "2.0.3"
+      ],
+      [
+        "vl-convert-python",
+        "1.9.0.post1"
+      ],
+      [
+        "wcwidth",
+        "0.8.3"
+      ],
+      [
+        "weave",
+        "0.53.9"
+      ],
+      [
+        "webencodings",
+        "0.6.1"
+      ],
+      [
+        "websockets",
+        "16.1.1"
+      ],
+      [
+        "widgetsnbextension",
+        "4.0.16"
+      ],
+      [
+        "wrapt",
+        "2.4.1"
+      ],
+      [
+        "xyzservices",
+        "2026.9.1"
+      ],
+      [
+        "yarl",
+        "1.24.5"
+      ],
+      [
+        "zipp",
+        "4.1.0"
+      ],
+      [
+        "zstandard",
+        "0.25.0"
+      ]
+    ],
+    "executable_sha256": "9756b294b1d22f9e8ffd93fcc680e6f1c7ffaa97e7c6b49988177096adfab09b"
+  },
+  "source_sha256": {
+    "run_closure.py": "cd7da6fb1eb9f1afa3ea44092f284768a65e019c56f54af81f03408094a347ba",
+    "closure.py": "cd536d65047f509c00a5434fa236f849395fc258720574051e4f67b2b2a0ca2b",
+    "run_selection.py": "d9cfb579a1136ead85d1bdd2d787d11394660cabcc5d753753144ad852bef6d8",
+    "python_selection_timing.py": "aad5d6c3b3ed1b3f425b81ace3343a496ba729beecaee29dd5e86f324b99f886",
+    "test_closure.py": "3a392314206f4bdb6cdc8fc7d9cff287e39afbfeef86d1ac4941a0127cf5994a"
+  }
+}

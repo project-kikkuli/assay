@@ -29,3 +29,11 @@ two-worker runs do not prove that lowering concurrency fixed it. The full-stack
 workflow records transport metadata with `--observe-http`; another occurrence
 can be correlated without adding retries. These controls are complete; diagnosing
 that historical incident is not.
+
+A [fresh four-worker hosted replay](https://github.com/project-kikkuli/assay/actions/runs/35391223131)
+on `1b956cda9506ced6928826e88ffc1b500ea3b85b` passed all 62 browser tests with
+no retries and no recorded transport errors in 17 observed Node requests.
+The [complete gate](hosted/hosted-gate.json) took 72.92s; preparation took 34.10s,
+and the job took about 145s. This is another failed attempt to reproduce the
+original reset, not evidence that four workers are always safe or that the
+flake was fixed. The controls establish how to distinguish causes *if* it recurs.

@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'experiments/outbox/**'
+      - 'experiments/outbox-concurrency/**'
+      - 'experiments/revocation/**'
       - 'experiments/isolation/**'
       - 'experiments/compatibility/**'
       - '.github/workflows/mechanisms.yml'
@@ -67,6 +69,16 @@ jobs:
           python run.py
           python -m unittest -v test_checks.py test_run_controls.py
           python -O -m unittest -v test_checks.py test_run_controls.py
+      - name: Concurrent consumers and real process-kill recovery
+        run: |
+          python experiments/outbox-concurrency/test_concurrency.py
+          python -O experiments/outbox-concurrency/test_concurrency.py
+          python experiments/outbox-concurrency/run.py --output out/concurrency-fresh.json
+      - name: Permission-revocation race and bounded locking repair
+        run: |
+          python -m unittest experiments.revocation.test_run -v
+          python -O -m unittest experiments.revocation.test_run -v
+          python experiments/revocation/run.py --output out/revocation-fresh.json
       - name: Mixed Python and TypeScript clients during a rolling schema change
         working-directory: experiments/compatibility
         run: |
@@ -83,5 +95,7 @@ jobs:
             experiments/isolation/results.json
             experiments/isolation/performance.json
             experiments/compatibility/results.json
+            out/concurrency-fresh.json
+            out/revocation-fresh.json
           if-no-files-found: error
           retention-days: 7

@@ -7,14 +7,14 @@
     "repaired_consumer.ts": "be61d4e8cabf719e66d948357ea5aec2b795d8f941346eb108ca973dfa13637f",
     "run.py": "96a4cfb9fba7826fb5ccf504943156aa23644af437b76415337207aad7e869e8",
     "test_concurrency.py": "28e7fc514829758a67532d072fbede0123de5d9567caeb3ad720c9832ab8745b",
-    "README.md": "ab475213eee611d91bdeaf39d074e3208d4d8a7477e091c6d75e1dd14f3e38db",
+    "README.md": "d593aee39f3a885379c77ac9abcb2967d9ecfc373be379a61564f8469f60be70",
     "outbox/package-lock.json": "5e8342cada59ec67bfbdfd4eb4aabad5bfe3eb76a4517a036bfc848044cd5e92",
     "outbox/fixtures/db.env": "ee615adc4447a1460898f3c4db970d3b5fdd07508bee768bd7944db39b455724"
   },
   "source_unchanged": true,
   "ownership": {
     "database": {
-      "name": "assay_outbox_concurrency_cf33ce8c591b4b96908438d6f661e0d5",
+      "name": "assay_outbox_concurrency_93f7ee282e2f4ec0a9a069461942ec20",
       "created": true,
       "dropped": true
     }
@@ -30,18 +30,8 @@
       "pre_release_events": [
         {
           "phase": "connected",
-          "backend_pid": 19007,
+          "backend_pid": 19153,
           "child": 0
-        },
-        {
-          "phase": "connected",
-          "backend_pid": 19006,
-          "child": 1
-        },
-        {
-          "phase": "precheck_done",
-          "seen": false,
-          "child": 1
         },
         {
           "phase": "precheck_done",
@@ -51,6 +41,16 @@
         {
           "phase": "waiting_for_row_lock",
           "child": 0
+        },
+        {
+          "phase": "connected",
+          "backend_pid": 19154,
+          "child": 1
+        },
+        {
+          "phase": "precheck_done",
+          "seen": false,
+          "child": 1
         },
         {
           "phase": "waiting_for_row_lock",
@@ -79,28 +79,28 @@
           "child": 1
         }
       ],
-      "coordinator_pid": 19005,
+      "coordinator_pid": 19152,
       "child_backend_pids": [
-        19007,
-        19006
+        19153,
+        19154
       ],
       "blocked": {
-        "19007": [
-          19005
+        "19153": [
+          19152
         ],
-        "19006": [
-          19007
+        "19154": [
+          19153
         ],
-        "19005": []
+        "19152": []
       },
       "blocking_graph": {
-        "19007": [
-          19005
+        "19153": [
+          19152
         ],
-        "19006": [
-          19007
+        "19154": [
+          19153
         ],
-        "19005": []
+        "19152": []
       },
       "outcomes": [
         {
@@ -140,21 +140,21 @@
       "pre_release_events": [
         {
           "phase": "connected",
-          "backend_pid": 19011,
-          "child": 1
+          "backend_pid": 19159,
+          "child": 0
         },
         {
           "phase": "waiting_for_row_lock",
-          "child": 1
+          "child": 0
         },
         {
           "phase": "connected",
-          "backend_pid": 19012,
-          "child": 0
+          "backend_pid": 19160,
+          "child": 1
         },
         {
           "phase": "waiting_for_row_lock",
-          "child": 0
+          "child": 1
         }
       ],
       "post_release_events": [
@@ -164,12 +164,12 @@
         },
         {
           "phase": "postlock_check",
-          "seen": true,
+          "seen": false,
           "child": 0
         },
         {
           "phase": "outcome",
-          "outcome": "dedup_skipped",
+          "outcome": "committed",
           "error_code": null,
           "child": 0
         },
@@ -179,49 +179,49 @@
         },
         {
           "phase": "postlock_check",
-          "seen": false,
+          "seen": true,
           "child": 1
         },
         {
           "phase": "outcome",
-          "outcome": "committed",
+          "outcome": "dedup_skipped",
           "error_code": null,
           "child": 1
         }
       ],
-      "coordinator_pid": 19010,
+      "coordinator_pid": 19157,
       "child_backend_pids": [
-        19012,
-        19011
+        19159,
+        19160
       ],
       "blocked": {
-        "19012": [
-          19011
+        "19159": [
+          19157
         ],
-        "19011": [
-          19010
+        "19160": [
+          19159
         ],
-        "19010": []
+        "19157": []
       },
       "blocking_graph": {
-        "19012": [
-          19011
+        "19159": [
+          19157
         ],
-        "19011": [
-          19010
+        "19160": [
+          19159
         ],
-        "19010": []
+        "19157": []
       },
       "outcomes": [
         {
           "phase": "outcome",
-          "outcome": "dedup_skipped",
+          "outcome": "committed",
           "error_code": null,
           "child": 0
         },
         {
           "phase": "outcome",
-          "outcome": "committed",
+          "outcome": "dedup_skipped",
           "error_code": null,
           "child": 1
         }
@@ -252,7 +252,7 @@
       "barrier_events": [
         {
           "phase": "connected",
-          "backend_pid": 19016,
+          "backend_pid": 19164,
           "child": 0
         },
         {
@@ -310,7 +310,7 @@
       "recovery_events": [
         {
           "phase": "connected",
-          "backend_pid": 19019,
+          "backend_pid": 19167,
           "child": 0
         },
         {
@@ -363,7 +363,7 @@
       "barrier_events": [
         {
           "phase": "connected",
-          "backend_pid": 19023,
+          "backend_pid": 19171,
           "child": 0
         },
         {
@@ -435,7 +435,7 @@
       "recovery_events": [
         {
           "phase": "connected",
-          "backend_pid": 19026,
+          "backend_pid": 19174,
           "child": 0
         },
         {
@@ -494,5 +494,5 @@
     "confirmed": true,
     "database_dropped": true
   },
-  "walltime_seconds": 3.334
+  "walltime_seconds": 2.712
 }
