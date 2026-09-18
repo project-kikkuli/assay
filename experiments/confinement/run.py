@@ -176,7 +176,7 @@ def start_network_server(reference: str, network_name: str, cidfile: Path) -> di
     server_code = (
         "import socket; "
         f"s=socket.socket(); s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1); "
-        f"s.bind(('0.0.0.0', {NETWORK_PORT})); s.listen(1); "
+        f"s.bind(('0.0.0.0', {NETWORK_PORT})); s.listen(1); print('ready', flush=True); "
         "c,_=s.accept(); c.sendall(b'owned-network-canary'); c.close(); s.close()"
     )
     started = time.perf_counter()
@@ -223,7 +223,10 @@ def start_network_server(reference: str, network_name: str, cidfile: Path) -> di
     deadline = time.monotonic() + 5
     while time.monotonic() < deadline:
         inspected = inspect_container(server_id)
-        if inspected.get("status") == "ok" and inspected["record"]["State"].get("Running"):
+        logs = subprocess.run(["docker", "logs", server_id], capture_output=True,
+                              text=True, env=safe_env(), timeout=5)
+        if (inspected.get("status") == "ok" and inspected["record"]["State"].get("Running")
+                and logs.returncode == 0 and logs.stdout.strip() == "ready"):
             return {
                 "container_id": server_id,
                 "elapsed_ms": round((time.perf_counter() - started) * 1000, 1),
@@ -234,6 +237,13 @@ def start_network_server(reference: str, network_name: str, cidfile: Path) -> di
 
 
 def network_server_connected(server_id: str) -> bool:
+    try:
+        completed = subprocess.run(["docker", "wait", server_id], capture_output=True,
+                                   text=True, env=safe_env(), timeout=5)
+    except subprocess.TimeoutExpired:
+        return False
+    if completed.returncode != 0 or completed.stdout.strip() != "0":
+        return False
     inspected = inspect_container(server_id)
     if inspected.get("status") != "ok":
         return False

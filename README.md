@@ -45,6 +45,11 @@ seconds. Thirty seconds is not established across environments.
 | Can the database prevent a class of leaks? | [Tenant isolation](experiments/isolation/): real restricted roles, forged context and bypass counterexamples, constraints, and query plans at two scales. |
 | What happens after a crash or during deployment? | [Outbox](experiments/outbox/) and [rolling schemas](experiments/compatibility/): bounded schedules replayed against Python/TypeScript/PostgreSQL, old/new clients, stale backfill, and lock conflicts. |
 | Does the result survive a larger codebase? | [marimo](experiments/marimo/): 6,505 frontend tests take about 101 seconds. Narrow selection helps; broad dependency closures do not fit thirty seconds. |
+| Can executed-code coverage safely select tests? | [Python selection](experiments/python-selection/): the large baseline still fails, and deleting an asset selects zero tests despite a direct failure. Do not treat this as a working fast gate. |
+| Can a revoked reader see newly changed data? | [Revocation](experiments/revocation/): a real PostgreSQL race and a bounded locking repair, repeated three times. |
+| Do workers survive actual concurrency and process death? | [Concurrent outbox](experiments/outbox-concurrency/): two Node processes, observed database lock barriers, and SIGKILL before/after commit. |
+| Can candidate code manufacture a pass? | [Confinement](experiments/confinement/): real container boundaries and deliberately exposed positive controls; the business oracle is intentionally trivial. |
+| Was the hosted network flake explained? | [Transport](experiments/transport/): two causal controls pass; the original hosted reset remains unclassified. |
 
 The [design argument](docs/verification.md) connects the measurements to primary
 research and identifies the assumptions that still need to hold in a real system.

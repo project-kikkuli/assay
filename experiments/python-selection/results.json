@@ -1,0 +1,288 @@
+{
+  "project": "marimo",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "plugin": "pytest-testmon==2.2.0",
+  "status": "observed",
+  "validity": "invalid_subject_environment",
+  "validity_note": "The recorded bootstrap used a PATH without the prepared subject venv and ran pytest from the plugin-only overlay; see diagnosis.json for matched-environment comparisons.",
+  "assumptions": [
+    "Testmon uses Coverage.py execution dependencies and its first --testmon run must be whole-suite.",
+    "Static files/resources and external services are not tracked; a resource deletion is tested as a counterexample.",
+    "A zero-test unchanged selection is conditional reuse evidence, not acceptance or soundness evidence."
+  ],
+  "bootstrap": {
+    "venv": {
+      "command": [
+        "uv",
+        "venv",
+        "--python",
+        "3.12",
+        "<external>/testmon-venv"
+      ],
+      "status": "passed",
+      "returncode": 0,
+      "duration_s": 0.32
+    },
+    "plugin_install": {
+      "command": [
+        "uv",
+        "pip",
+        "install",
+        "--python",
+        "<external>/testmon-venv/bin/python",
+        "pytest-testmon==2.2.0"
+      ],
+      "status": "passed",
+      "returncode": 0,
+      "duration_s": 0.436
+    },
+    "plugin_probe": {
+      "command": [
+        "<external>/testmon-venv/bin/python",
+        "-c",
+        "import importlib.metadata; print(importlib.metadata.version('pytest-testmon'))"
+      ],
+      "status": "passed",
+      "returncode": 0,
+      "duration_s": 0.059,
+      "version_observed": [
+        "2.2.0"
+      ]
+    }
+  },
+  "readiness": {
+    "frontend_dist_files": 480,
+    "frontend_dist_bytes": 26686370,
+    "staged_static_files": 480,
+    "staged_static_bytes": 26686370,
+    "extra_overlay_bytes": 17416152,
+    "extra_budget_bytes": 1000000000
+  },
+  "baseline": {
+    "command": [
+      "<external>/testmon-venv/bin/python",
+      "-m",
+      "pytest",
+      "--testmon",
+      "-q",
+      "--tb=short",
+      "--durations=10",
+      "tests/",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "failed",
+    "returncode": 1,
+    "duration_s": 860.59,
+    "counts": {
+      "failed": 122,
+      "passed": 12372,
+      "skipped": 155,
+      "xfailed": 56,
+      "xpassed": 16
+    },
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 12721,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 8.184,
+        "test_execution": 809.386,
+        "post_processing": 28.183,
+        "process_observed": 845.756
+      },
+      "exit_status": 1
+    },
+    "selection_admission": "positive_test_count"
+  },
+  "warm_unchanged": {
+    "command": [
+      "<external>/testmon-venv/bin/python",
+      "-m",
+      "pytest",
+      "--testmon",
+      "-q",
+      "--tb=short",
+      "tests/",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "failed",
+    "returncode": 1,
+    "duration_s": 27.274,
+    "counts": {
+      "failed": 116,
+      "passed": 6,
+      "deselected": 646
+    },
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 122,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 0.668,
+        "test_execution": 14.63,
+        "post_processing": 1.312,
+        "process_observed": 16.61
+      },
+      "exit_status": 1
+    },
+    "selection_admission": "positive_test_count"
+  },
+  "target_baseline": {
+    "command": [
+      "<external>/testmon-venv/bin/python",
+      "-m",
+      "pytest",
+      "--no-testmon",
+      "-q",
+      "tests/_utils/test_formatter.py::TestRuffFormatter::test_ruff_formatter_calls_ruff_function",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "passed",
+    "returncode": 0,
+    "duration_s": 0.608,
+    "counts": {
+      "passed": 1
+    },
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 1,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 0.017,
+        "test_execution": 0.003,
+        "post_processing": 0.006,
+        "process_observed": 0.027
+      },
+      "exit_status": 0
+    },
+    "selection_admission": "positive_test_count"
+  },
+  "mutant_testmon": {
+    "command": [
+      "<external>/testmon-venv/bin/python",
+      "-m",
+      "pytest",
+      "--testmon",
+      "-q",
+      "tests/_utils/test_formatter.py::TestRuffFormatter::test_ruff_formatter_calls_ruff_function",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "passed",
+    "returncode": 0,
+    "duration_s": 7.517,
+    "counts": {
+      "passed": 1
+    },
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 1,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 0.095,
+        "test_execution": 0.422,
+        "post_processing": 1.113,
+        "process_observed": 1.631
+      },
+      "exit_status": 0
+    },
+    "selection_admission": "positive_test_count"
+  },
+  "mutant_direct": {
+    "command": [
+      "<external>/testmon-venv/bin/python",
+      "-m",
+      "pytest",
+      "--no-testmon",
+      "-q",
+      "tests/_utils/test_formatter.py::TestRuffFormatter::test_ruff_formatter_calls_ruff_function",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "passed",
+    "returncode": 0,
+    "duration_s": 0.984,
+    "counts": {
+      "passed": 1
+    },
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 1,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 0.016,
+        "test_execution": 0.003,
+        "post_processing": 0.006,
+        "process_observed": 0.026
+      },
+      "exit_status": 0
+    },
+    "selection_admission": "positive_test_count"
+  },
+  "resource_mutation_testmon": {
+    "command": [
+      "<external>/testmon-venv/bin/python",
+      "-m",
+      "pytest",
+      "--testmon",
+      "-q",
+      "tests/_server/api/endpoints/test_assets.py::test_favicon",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "failed",
+    "returncode": 1,
+    "duration_s": 7.371,
+    "counts": {
+      "failed": 1
+    },
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 1,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 0.148,
+        "test_execution": 0.776,
+        "post_processing": 0.313,
+        "process_observed": 1.238
+      },
+      "exit_status": 1
+    },
+    "selection_admission": "positive_test_count"
+  },
+  "resource_mutation_direct": {
+    "command": [
+      "<external>/testmon-venv/bin/python",
+      "-m",
+      "pytest",
+      "--no-testmon",
+      "-q",
+      "tests/_server/api/endpoints/test_assets.py::test_favicon",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "failed",
+    "returncode": 1,
+    "duration_s": 0.755,
+    "counts": {
+      "failed": 1
+    },
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 1,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 0.028,
+        "test_execution": 0.05,
+        "post_processing": 0.005,
+        "process_observed": 0.085
+      },
+      "exit_status": 1
+    },
+    "selection_admission": "positive_test_count"
+  },
+  "elapsed_s": 908.669
+}

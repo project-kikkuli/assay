@@ -1,0 +1,498 @@
+{
+  "status": "passed",
+  "phase": "complete",
+  "source_sha256": {
+    "schema.sql": "0d0da238db48845634f19553139967bcd1302b41be520d5b9657c33f9c1487df",
+    "consumer.ts": "e64ce5f5d6c3650a3a4acdd6b7fc963c451fd66a280b154c22b3aeb334e85d79",
+    "repaired_consumer.ts": "be61d4e8cabf719e66d948357ea5aec2b795d8f941346eb108ca973dfa13637f",
+    "run.py": "96a4cfb9fba7826fb5ccf504943156aa23644af437b76415337207aad7e869e8",
+    "test_concurrency.py": "28e7fc514829758a67532d072fbede0123de5d9567caeb3ad720c9832ab8745b",
+    "README.md": "ab475213eee611d91bdeaf39d074e3208d4d8a7477e091c6d75e1dd14f3e38db",
+    "outbox/package-lock.json": "5e8342cada59ec67bfbdfd4eb4aabad5bfe3eb76a4517a036bfc848044cd5e92",
+    "outbox/fixtures/db.env": "ee615adc4447a1460898f3c4db970d3b5fdd07508bee768bd7944db39b455724"
+  },
+  "source_unchanged": true,
+  "ownership": {
+    "database": {
+      "name": "assay_outbox_concurrency_ed83500a89ad44848db7c41452a86226",
+      "created": true,
+      "dropped": true
+    }
+  },
+  "limits": [
+    "No broker, external side effect, exactly-once claim, or unbounded liveness claim",
+    "The ledger row is the only internal effect observed",
+    "Both concurrency consumers are held by one coordinator row lock before release"
+  ],
+  "concurrency": [
+    {
+      "source": "consumer.ts",
+      "pre_release_events": [
+        {
+          "phase": "connected",
+          "backend_pid": 1138,
+          "child": 1
+        },
+        {
+          "phase": "connected",
+          "backend_pid": 1137,
+          "child": 0
+        },
+        {
+          "phase": "precheck_done",
+          "seen": false,
+          "child": 0
+        },
+        {
+          "phase": "precheck_done",
+          "seen": false,
+          "child": 1
+        },
+        {
+          "phase": "waiting_for_row_lock",
+          "child": 0
+        },
+        {
+          "phase": "waiting_for_row_lock",
+          "child": 1
+        }
+      ],
+      "post_release_events": [
+        {
+          "phase": "row_lock_acquired",
+          "child": 0
+        },
+        {
+          "phase": "outcome",
+          "outcome": "rolled_back_unique_violation",
+          "error_code": "23505",
+          "child": 0
+        },
+        {
+          "phase": "row_lock_acquired",
+          "child": 1
+        },
+        {
+          "phase": "outcome",
+          "outcome": "committed",
+          "error_code": null,
+          "child": 1
+        }
+      ],
+      "coordinator_pid": 1136,
+      "child_backend_pids": [
+        1137,
+        1138
+      ],
+      "blocked": {
+        "1137": [
+          1138
+        ],
+        "1138": [
+          1136
+        ],
+        "1136": []
+      },
+      "blocking_graph": {
+        "1137": [
+          1138
+        ],
+        "1138": [
+          1136
+        ],
+        "1136": []
+      },
+      "outcomes": [
+        {
+          "phase": "outcome",
+          "outcome": "rolled_back_unique_violation",
+          "error_code": "23505",
+          "child": 0
+        },
+        {
+          "phase": "outcome",
+          "outcome": "committed",
+          "error_code": null,
+          "child": 1
+        }
+      ],
+      "state": {
+        "outbox": [
+          {
+            "event_id": "evt:cmd-1",
+            "command_id": "cmd-1",
+            "status": "published"
+          }
+        ],
+        "processed": [
+          "evt:cmd-1"
+        ],
+        "ledger": [
+          {
+            "command_id": "cmd-1",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "source": "repaired_consumer.ts",
+      "pre_release_events": [
+        {
+          "phase": "connected",
+          "backend_pid": 1142,
+          "child": 0
+        },
+        {
+          "phase": "waiting_for_row_lock",
+          "child": 0
+        },
+        {
+          "phase": "connected",
+          "backend_pid": 1143,
+          "child": 1
+        },
+        {
+          "phase": "waiting_for_row_lock",
+          "child": 1
+        }
+      ],
+      "post_release_events": [
+        {
+          "phase": "row_lock_acquired",
+          "child": 0
+        },
+        {
+          "phase": "postlock_check",
+          "seen": false,
+          "child": 0
+        },
+        {
+          "phase": "outcome",
+          "outcome": "committed",
+          "error_code": null,
+          "child": 0
+        },
+        {
+          "phase": "row_lock_acquired",
+          "child": 1
+        },
+        {
+          "phase": "postlock_check",
+          "seen": true,
+          "child": 1
+        },
+        {
+          "phase": "outcome",
+          "outcome": "dedup_skipped",
+          "error_code": null,
+          "child": 1
+        }
+      ],
+      "coordinator_pid": 1141,
+      "child_backend_pids": [
+        1142,
+        1143
+      ],
+      "blocked": {
+        "1142": [
+          1141
+        ],
+        "1143": [
+          1142
+        ],
+        "1141": []
+      },
+      "blocking_graph": {
+        "1142": [
+          1141
+        ],
+        "1143": [
+          1142
+        ],
+        "1141": []
+      },
+      "outcomes": [
+        {
+          "phase": "outcome",
+          "outcome": "committed",
+          "error_code": null,
+          "child": 0
+        },
+        {
+          "phase": "outcome",
+          "outcome": "dedup_skipped",
+          "error_code": null,
+          "child": 1
+        }
+      ],
+      "state": {
+        "outbox": [
+          {
+            "event_id": "evt:cmd-1",
+            "command_id": "cmd-1",
+            "status": "published"
+          }
+        ],
+        "processed": [
+          "evt:cmd-1"
+        ],
+        "ledger": [
+          {
+            "command_id": "cmd-1",
+            "count": 1
+          }
+        ]
+      }
+    }
+  ],
+  "crash": [
+    {
+      "barrier": "before_commit",
+      "barrier_events": [
+        {
+          "phase": "connected",
+          "backend_pid": 1147,
+          "child": 0
+        },
+        {
+          "phase": "waiting_for_row_lock",
+          "child": 0
+        },
+        {
+          "phase": "row_lock_acquired",
+          "child": 0
+        },
+        {
+          "phase": "postlock_check",
+          "seen": false,
+          "child": 0
+        },
+        {
+          "phase": "before_commit",
+          "child": 0
+        }
+      ],
+      "killed_returncode": -9,
+      "state_before_kill": {
+        "outbox": [
+          {
+            "event_id": "evt:cmd-1",
+            "command_id": "cmd-1",
+            "status": "pending"
+          }
+        ],
+        "processed": [],
+        "ledger": []
+      },
+      "state_after_kill": {
+        "outbox": [
+          {
+            "event_id": "evt:cmd-1",
+            "command_id": "cmd-1",
+            "status": "pending"
+          }
+        ],
+        "processed": [],
+        "ledger": []
+      },
+      "state_before_recovery": {
+        "outbox": [
+          {
+            "event_id": "evt:cmd-1",
+            "command_id": "cmd-1",
+            "status": "pending"
+          }
+        ],
+        "processed": [],
+        "ledger": []
+      },
+      "recovery_events": [
+        {
+          "phase": "connected",
+          "backend_pid": 1150,
+          "child": 0
+        },
+        {
+          "phase": "waiting_for_row_lock",
+          "child": 0
+        },
+        {
+          "phase": "row_lock_acquired",
+          "child": 0
+        },
+        {
+          "phase": "postlock_check",
+          "seen": false,
+          "child": 0
+        },
+        {
+          "phase": "outcome",
+          "outcome": "committed",
+          "error_code": null,
+          "child": 0
+        }
+      ],
+      "recovery_outcome": {
+        "phase": "outcome",
+        "outcome": "committed",
+        "error_code": null,
+        "child": 0
+      },
+      "final_state": {
+        "outbox": [
+          {
+            "event_id": "evt:cmd-1",
+            "command_id": "cmd-1",
+            "status": "published"
+          }
+        ],
+        "processed": [
+          "evt:cmd-1"
+        ],
+        "ledger": [
+          {
+            "command_id": "cmd-1",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "barrier": "after_commit",
+      "barrier_events": [
+        {
+          "phase": "connected",
+          "backend_pid": 1154,
+          "child": 0
+        },
+        {
+          "phase": "waiting_for_row_lock",
+          "child": 0
+        },
+        {
+          "phase": "row_lock_acquired",
+          "child": 0
+        },
+        {
+          "phase": "postlock_check",
+          "seen": false,
+          "child": 0
+        },
+        {
+          "phase": "after_commit",
+          "child": 0
+        }
+      ],
+      "killed_returncode": -9,
+      "state_before_kill": {
+        "outbox": [
+          {
+            "event_id": "evt:cmd-1",
+            "command_id": "cmd-1",
+            "status": "pending"
+          }
+        ],
+        "processed": [],
+        "ledger": []
+      },
+      "state_after_kill": {
+        "outbox": [
+          {
+            "event_id": "evt:cmd-1",
+            "command_id": "cmd-1",
+            "status": "published"
+          }
+        ],
+        "processed": [
+          "evt:cmd-1"
+        ],
+        "ledger": [
+          {
+            "command_id": "cmd-1",
+            "count": 1
+          }
+        ]
+      },
+      "state_before_recovery": {
+        "outbox": [
+          {
+            "event_id": "evt:cmd-1",
+            "command_id": "cmd-1",
+            "status": "published"
+          }
+        ],
+        "processed": [
+          "evt:cmd-1"
+        ],
+        "ledger": [
+          {
+            "command_id": "cmd-1",
+            "count": 1
+          }
+        ]
+      },
+      "recovery_events": [
+        {
+          "phase": "connected",
+          "backend_pid": 1157,
+          "child": 0
+        },
+        {
+          "phase": "waiting_for_row_lock",
+          "child": 0
+        },
+        {
+          "phase": "row_lock_acquired",
+          "child": 0
+        },
+        {
+          "phase": "postlock_check",
+          "seen": true,
+          "child": 0
+        },
+        {
+          "phase": "outcome",
+          "outcome": "dedup_skipped",
+          "error_code": null,
+          "child": 0
+        }
+      ],
+      "recovery_outcome": {
+        "phase": "outcome",
+        "outcome": "dedup_skipped",
+        "error_code": null,
+        "child": 0
+      },
+      "final_state": {
+        "outbox": [
+          {
+            "event_id": "evt:cmd-1",
+            "command_id": "cmd-1",
+            "status": "published"
+          }
+        ],
+        "processed": [
+          "evt:cmd-1"
+        ],
+        "ledger": [
+          {
+            "command_id": "cmd-1",
+            "count": 1
+          }
+        ]
+      }
+    }
+  ],
+  "tool_versions": {
+    "node": "v22.12.0",
+    "psycopg": "3.3.4",
+    "postgres": "18.6 (Debian 18.6-1.pgdg13+2)",
+    "postgres_version_num": "180006"
+  },
+  "cleanup": {
+    "confirmed": true,
+    "database_dropped": true
+  },
+  "walltime_seconds": 0.781
+}

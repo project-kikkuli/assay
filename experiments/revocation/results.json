@@ -1,0 +1,717 @@
+{
+  "provenance": {
+    "postgresql_docs": "https://www.postgresql.org/docs/18/ddl-rowsecurity.html",
+    "psycopg": "3.3.4",
+    "python": "3.14.6",
+    "source_sha256_after": {
+      "README.md": "251dbe18063030cdde1ab82af12cb9201c35c535ac218df51b1870ca044f01a7",
+      "requirements.txt": "d375af9a0f805ccfd0fbf9a4943cfc6f44b4d7371e6a2376f6b8318d3c73e3d6",
+      "run.py": "87968a8ddc4f063bc54c4608ee6678fbfa98012d5370fb85d3eb86a99f8c76a4",
+      "test_run.py": "c1945ccb0f2696ea64349195526f942d147fcf673402504031be5f4b1ccdbcae"
+    },
+    "source_sha256_before": {
+      "README.md": "251dbe18063030cdde1ab82af12cb9201c35c535ac218df51b1870ca044f01a7",
+      "requirements.txt": "d375af9a0f805ccfd0fbf9a4943cfc6f44b4d7371e6a2376f6b8318d3c73e3d6",
+      "run.py": "87968a8ddc4f063bc54c4608ee6678fbfa98012d5370fb85d3eb86a99f8c76a4",
+      "test_run.py": "c1945ccb0f2696ea64349195526f942d147fcf673402504031be5f4b1ccdbcae"
+    },
+    "source_unchanged": true
+  },
+  "repeat_count": 3,
+  "repeats": [
+    {
+      "child_exit_code": 0,
+      "cleanup": {
+        "database": "assay_revocation_9455e7240f2f",
+        "database_absent": true,
+        "database_dropped": true,
+        "roles": [
+          "assay_revoke_owner_9455e7240f2f",
+          "assay_revoke_reader_9455e7240f2f"
+        ],
+        "roles_absent": true,
+        "roles_dropped": true
+      },
+      "provenance": {
+        "postgresql_docs": "https://www.postgresql.org/docs/18/ddl-rowsecurity.html",
+        "psycopg": "3.3.4",
+        "python": "3.14.6",
+        "source_sha256_after": {
+          "README.md": "251dbe18063030cdde1ab82af12cb9201c35c535ac218df51b1870ca044f01a7",
+          "requirements.txt": "d375af9a0f805ccfd0fbf9a4943cfc6f44b4d7371e6a2376f6b8318d3c73e3d6",
+          "run.py": "87968a8ddc4f063bc54c4608ee6678fbfa98012d5370fb85d3eb86a99f8c76a4",
+          "test_run.py": "c1945ccb0f2696ea64349195526f942d147fcf673402504031be5f4b1ccdbcae"
+        },
+        "source_sha256_before": {
+          "README.md": "251dbe18063030cdde1ab82af12cb9201c35c535ac218df51b1870ca044f01a7",
+          "requirements.txt": "d375af9a0f805ccfd0fbf9a4943cfc6f44b4d7371e6a2376f6b8318d3c73e3d6",
+          "run.py": "87968a8ddc4f063bc54c4608ee6678fbfa98012d5370fb85d3eb86a99f8c76a4",
+          "test_run.py": "c1945ccb0f2696ea64349195526f942d147fcf673402504031be5f4b1ccdbcae"
+        },
+        "source_unchanged": true
+      },
+      "repeat_index": 1,
+      "resources": {
+        "database": "assay_revocation_9455e7240f2f",
+        "owner": "assay_revoke_owner_9455e7240f2f",
+        "reader": "assay_revoke_reader_9455e7240f2f"
+      },
+      "role_facts": {
+        "owner": {
+          "database_owner": "assay_revoke_owner_9455e7240f2f",
+          "rolbypassrls": false,
+          "rolcanlogin": false,
+          "rolinherit": false,
+          "rolname": "assay_revoke_owner_9455e7240f2f",
+          "rolsuper": false
+        },
+        "reader": {
+          "database_owner": "assay_revoke_owner_9455e7240f2f",
+          "is_owner": false,
+          "rolbypassrls": false,
+          "rolcanlogin": true,
+          "rolinherit": false,
+          "rolname": "assay_revoke_reader_9455e7240f2f",
+          "rolsuper": false
+        }
+      },
+      "run_id": "9455e7240f2f",
+      "server_version": "PostgreSQL 18.6 (Debian 18.6-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+      "status": "passed",
+      "variants": {
+        "baseline": {
+          "barrier": {
+            "admin_pid": 18956,
+            "mechanism": "pg_stat_activity + pg_blocking_pids",
+            "observation_ms": 10.115458979271352,
+            "reader_pid": 18958,
+            "state": {
+              "blocking_pids": [
+                18956
+              ],
+              "pid": 18958,
+              "query": "SELECT secret_id, secret FROM \"secrets_baseline_9455e7240f2f\" WHERE secret_id = 1 FOR UPDATE",
+              "state": "active",
+              "wait_event": "transactionid",
+              "wait_event_type": "Lock"
+            },
+            "verified": true
+          },
+          "contention_ms": {
+            "reader_query": 7.282750011654571,
+            "to_verified_barrier": 10.115458979271352,
+            "whole_schedule": 36.0122499987483
+          },
+          "expected_leak": true,
+          "leaked_rotated_secret": true,
+          "membership_update_boundary": {
+            "membership_lock_column_update_granted": true,
+            "membership_protected_update_affected_rows": 0,
+            "protected_updates_denied": true,
+            "secret_lock_column_update_granted": true,
+            "secret_protected_update_affected_rows": 0,
+            "sqlstates": [
+              "42501",
+              "42501"
+            ]
+          },
+          "new_secret": "rotated-baseline-9455e7240f2f",
+          "positive_read": {
+            "allowed": true,
+            "facts": {
+              "isolation": "read committed",
+              "pid": 18957,
+              "user": "assay_revoke_reader_9455e7240f2f"
+            },
+            "rows": [
+              {
+                "secret": "initial-secret-baseline",
+                "secret_id": 1
+              }
+            ]
+          },
+          "reader_precheck": {
+            "membership": [
+              {
+                "can_read": true,
+                "reader_name": "assay_revoke_reader_9455e7240f2f"
+              }
+            ]
+          },
+          "reader_rows_after_commit": [
+            {
+              "secret": "rotated-baseline-9455e7240f2f",
+              "secret_id": 1
+            }
+          ],
+          "schedule": [
+            "admin UPDATE membership can_read=false (uncommitted)",
+            "admin UPDATE secret (uncommitted)",
+            "reader SELECT ... FOR UPDATE",
+            "verified reader lock wait on admin",
+            "admin COMMIT",
+            "reader resumes and commits"
+          ],
+          "transaction_facts": {
+            "admin": {
+              "isolation": "read committed",
+              "pid": 18956,
+              "user": "postgres"
+            },
+            "reader": {
+              "isolation": "read committed",
+              "pid": 18958,
+              "user": "assay_revoke_reader_9455e7240f2f"
+            }
+          },
+          "variant": "baseline"
+        },
+        "select_for_share": {
+          "barrier": {
+            "admin_pid": 18962,
+            "mechanism": "pg_stat_activity + pg_blocking_pids",
+            "observation_ms": 8.10204099980183,
+            "reader_pid": 18964,
+            "state": {
+              "blocking_pids": [
+                18962
+              ],
+              "pid": 18964,
+              "query": "SELECT secret_id, secret FROM \"secrets_share_9455e7240f2f\" WHERE secret_id = 1 FOR UPDATE",
+              "state": "active",
+              "wait_event": "transactionid",
+              "wait_event_type": "Lock"
+            },
+            "verified": true
+          },
+          "contention_ms": {
+            "reader_query": 5.763584020314738,
+            "to_verified_barrier": 8.10204099980183,
+            "whole_schedule": 33.77500001806766
+          },
+          "expected_leak": false,
+          "leaked_rotated_secret": false,
+          "membership_update_boundary": {
+            "membership_lock_column_update_granted": true,
+            "membership_protected_update_affected_rows": 0,
+            "protected_updates_denied": true,
+            "secret_lock_column_update_granted": true,
+            "secret_protected_update_affected_rows": 0,
+            "sqlstates": [
+              "42501",
+              "42501"
+            ]
+          },
+          "new_secret": "rotated-select_for_share-9455e7240f2f",
+          "positive_read": {
+            "allowed": true,
+            "facts": {
+              "isolation": "read committed",
+              "pid": 18963,
+              "user": "assay_revoke_reader_9455e7240f2f"
+            },
+            "rows": [
+              {
+                "secret": "initial-secret-select_for_share",
+                "secret_id": 1
+              }
+            ]
+          },
+          "reader_precheck": {
+            "membership": [
+              {
+                "can_read": true,
+                "reader_name": "assay_revoke_reader_9455e7240f2f"
+              }
+            ]
+          },
+          "reader_rows_after_commit": [],
+          "schedule": [
+            "admin UPDATE membership can_read=false (uncommitted)",
+            "admin UPDATE secret (uncommitted)",
+            "reader SELECT ... FOR UPDATE",
+            "verified reader lock wait on admin",
+            "admin COMMIT",
+            "reader resumes and commits"
+          ],
+          "transaction_facts": {
+            "admin": {
+              "isolation": "read committed",
+              "pid": 18962,
+              "user": "postgres"
+            },
+            "reader": {
+              "isolation": "read committed",
+              "pid": 18964,
+              "user": "assay_revoke_reader_9455e7240f2f"
+            }
+          },
+          "variant": "select_for_share"
+        }
+      }
+    },
+    {
+      "child_exit_code": 0,
+      "cleanup": {
+        "database": "assay_revocation_72d256cf3730",
+        "database_absent": true,
+        "database_dropped": true,
+        "roles": [
+          "assay_revoke_owner_72d256cf3730",
+          "assay_revoke_reader_72d256cf3730"
+        ],
+        "roles_absent": true,
+        "roles_dropped": true
+      },
+      "provenance": {
+        "postgresql_docs": "https://www.postgresql.org/docs/18/ddl-rowsecurity.html",
+        "psycopg": "3.3.4",
+        "python": "3.14.6",
+        "source_sha256_after": {
+          "README.md": "251dbe18063030cdde1ab82af12cb9201c35c535ac218df51b1870ca044f01a7",
+          "requirements.txt": "d375af9a0f805ccfd0fbf9a4943cfc6f44b4d7371e6a2376f6b8318d3c73e3d6",
+          "run.py": "87968a8ddc4f063bc54c4608ee6678fbfa98012d5370fb85d3eb86a99f8c76a4",
+          "test_run.py": "c1945ccb0f2696ea64349195526f942d147fcf673402504031be5f4b1ccdbcae"
+        },
+        "source_sha256_before": {
+          "README.md": "251dbe18063030cdde1ab82af12cb9201c35c535ac218df51b1870ca044f01a7",
+          "requirements.txt": "d375af9a0f805ccfd0fbf9a4943cfc6f44b4d7371e6a2376f6b8318d3c73e3d6",
+          "run.py": "87968a8ddc4f063bc54c4608ee6678fbfa98012d5370fb85d3eb86a99f8c76a4",
+          "test_run.py": "c1945ccb0f2696ea64349195526f942d147fcf673402504031be5f4b1ccdbcae"
+        },
+        "source_unchanged": true
+      },
+      "repeat_index": 2,
+      "resources": {
+        "database": "assay_revocation_72d256cf3730",
+        "owner": "assay_revoke_owner_72d256cf3730",
+        "reader": "assay_revoke_reader_72d256cf3730"
+      },
+      "role_facts": {
+        "owner": {
+          "database_owner": "assay_revoke_owner_72d256cf3730",
+          "rolbypassrls": false,
+          "rolcanlogin": false,
+          "rolinherit": false,
+          "rolname": "assay_revoke_owner_72d256cf3730",
+          "rolsuper": false
+        },
+        "reader": {
+          "database_owner": "assay_revoke_owner_72d256cf3730",
+          "is_owner": false,
+          "rolbypassrls": false,
+          "rolcanlogin": true,
+          "rolinherit": false,
+          "rolname": "assay_revoke_reader_72d256cf3730",
+          "rolsuper": false
+        }
+      },
+      "run_id": "72d256cf3730",
+      "server_version": "PostgreSQL 18.6 (Debian 18.6-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+      "status": "passed",
+      "variants": {
+        "baseline": {
+          "barrier": {
+            "admin_pid": 18973,
+            "mechanism": "pg_stat_activity + pg_blocking_pids",
+            "observation_ms": 8.283291012048721,
+            "reader_pid": 18975,
+            "state": {
+              "blocking_pids": [
+                18973
+              ],
+              "pid": 18975,
+              "query": "SELECT secret_id, secret FROM \"secrets_baseline_72d256cf3730\" WHERE secret_id = 1 FOR UPDATE",
+              "state": "active",
+              "wait_event": "transactionid",
+              "wait_event_type": "Lock"
+            },
+            "verified": true
+          },
+          "contention_ms": {
+            "reader_query": 6.297082989476621,
+            "to_verified_barrier": 8.283291012048721,
+            "whole_schedule": 31.72370800166391
+          },
+          "expected_leak": true,
+          "leaked_rotated_secret": true,
+          "membership_update_boundary": {
+            "membership_lock_column_update_granted": true,
+            "membership_protected_update_affected_rows": 0,
+            "protected_updates_denied": true,
+            "secret_lock_column_update_granted": true,
+            "secret_protected_update_affected_rows": 0,
+            "sqlstates": [
+              "42501",
+              "42501"
+            ]
+          },
+          "new_secret": "rotated-baseline-72d256cf3730",
+          "positive_read": {
+            "allowed": true,
+            "facts": {
+              "isolation": "read committed",
+              "pid": 18974,
+              "user": "assay_revoke_reader_72d256cf3730"
+            },
+            "rows": [
+              {
+                "secret": "initial-secret-baseline",
+                "secret_id": 1
+              }
+            ]
+          },
+          "reader_precheck": {
+            "membership": [
+              {
+                "can_read": true,
+                "reader_name": "assay_revoke_reader_72d256cf3730"
+              }
+            ]
+          },
+          "reader_rows_after_commit": [
+            {
+              "secret": "rotated-baseline-72d256cf3730",
+              "secret_id": 1
+            }
+          ],
+          "schedule": [
+            "admin UPDATE membership can_read=false (uncommitted)",
+            "admin UPDATE secret (uncommitted)",
+            "reader SELECT ... FOR UPDATE",
+            "verified reader lock wait on admin",
+            "admin COMMIT",
+            "reader resumes and commits"
+          ],
+          "transaction_facts": {
+            "admin": {
+              "isolation": "read committed",
+              "pid": 18973,
+              "user": "postgres"
+            },
+            "reader": {
+              "isolation": "read committed",
+              "pid": 18975,
+              "user": "assay_revoke_reader_72d256cf3730"
+            }
+          },
+          "variant": "baseline"
+        },
+        "select_for_share": {
+          "barrier": {
+            "admin_pid": 18979,
+            "mechanism": "pg_stat_activity + pg_blocking_pids",
+            "observation_ms": 8.018915978027508,
+            "reader_pid": 18981,
+            "state": {
+              "blocking_pids": [
+                18979
+              ],
+              "pid": 18981,
+              "query": "SELECT secret_id, secret FROM \"secrets_share_72d256cf3730\" WHERE secret_id = 1 FOR UPDATE",
+              "state": "active",
+              "wait_event": "transactionid",
+              "wait_event_type": "Lock"
+            },
+            "verified": true
+          },
+          "contention_ms": {
+            "reader_query": 6.159707991173491,
+            "to_verified_barrier": 8.018915978027508,
+            "whole_schedule": 31.612624996341765
+          },
+          "expected_leak": false,
+          "leaked_rotated_secret": false,
+          "membership_update_boundary": {
+            "membership_lock_column_update_granted": true,
+            "membership_protected_update_affected_rows": 0,
+            "protected_updates_denied": true,
+            "secret_lock_column_update_granted": true,
+            "secret_protected_update_affected_rows": 0,
+            "sqlstates": [
+              "42501",
+              "42501"
+            ]
+          },
+          "new_secret": "rotated-select_for_share-72d256cf3730",
+          "positive_read": {
+            "allowed": true,
+            "facts": {
+              "isolation": "read committed",
+              "pid": 18980,
+              "user": "assay_revoke_reader_72d256cf3730"
+            },
+            "rows": [
+              {
+                "secret": "initial-secret-select_for_share",
+                "secret_id": 1
+              }
+            ]
+          },
+          "reader_precheck": {
+            "membership": [
+              {
+                "can_read": true,
+                "reader_name": "assay_revoke_reader_72d256cf3730"
+              }
+            ]
+          },
+          "reader_rows_after_commit": [],
+          "schedule": [
+            "admin UPDATE membership can_read=false (uncommitted)",
+            "admin UPDATE secret (uncommitted)",
+            "reader SELECT ... FOR UPDATE",
+            "verified reader lock wait on admin",
+            "admin COMMIT",
+            "reader resumes and commits"
+          ],
+          "transaction_facts": {
+            "admin": {
+              "isolation": "read committed",
+              "pid": 18979,
+              "user": "postgres"
+            },
+            "reader": {
+              "isolation": "read committed",
+              "pid": 18981,
+              "user": "assay_revoke_reader_72d256cf3730"
+            }
+          },
+          "variant": "select_for_share"
+        }
+      }
+    },
+    {
+      "child_exit_code": 0,
+      "cleanup": {
+        "database": "assay_revocation_d947d7898fb6",
+        "database_absent": true,
+        "database_dropped": true,
+        "roles": [
+          "assay_revoke_owner_d947d7898fb6",
+          "assay_revoke_reader_d947d7898fb6"
+        ],
+        "roles_absent": true,
+        "roles_dropped": true
+      },
+      "provenance": {
+        "postgresql_docs": "https://www.postgresql.org/docs/18/ddl-rowsecurity.html",
+        "psycopg": "3.3.4",
+        "python": "3.14.6",
+        "source_sha256_after": {
+          "README.md": "251dbe18063030cdde1ab82af12cb9201c35c535ac218df51b1870ca044f01a7",
+          "requirements.txt": "d375af9a0f805ccfd0fbf9a4943cfc6f44b4d7371e6a2376f6b8318d3c73e3d6",
+          "run.py": "87968a8ddc4f063bc54c4608ee6678fbfa98012d5370fb85d3eb86a99f8c76a4",
+          "test_run.py": "c1945ccb0f2696ea64349195526f942d147fcf673402504031be5f4b1ccdbcae"
+        },
+        "source_sha256_before": {
+          "README.md": "251dbe18063030cdde1ab82af12cb9201c35c535ac218df51b1870ca044f01a7",
+          "requirements.txt": "d375af9a0f805ccfd0fbf9a4943cfc6f44b4d7371e6a2376f6b8318d3c73e3d6",
+          "run.py": "87968a8ddc4f063bc54c4608ee6678fbfa98012d5370fb85d3eb86a99f8c76a4",
+          "test_run.py": "c1945ccb0f2696ea64349195526f942d147fcf673402504031be5f4b1ccdbcae"
+        },
+        "source_unchanged": true
+      },
+      "repeat_index": 3,
+      "resources": {
+        "database": "assay_revocation_d947d7898fb6",
+        "owner": "assay_revoke_owner_d947d7898fb6",
+        "reader": "assay_revoke_reader_d947d7898fb6"
+      },
+      "role_facts": {
+        "owner": {
+          "database_owner": "assay_revoke_owner_d947d7898fb6",
+          "rolbypassrls": false,
+          "rolcanlogin": false,
+          "rolinherit": false,
+          "rolname": "assay_revoke_owner_d947d7898fb6",
+          "rolsuper": false
+        },
+        "reader": {
+          "database_owner": "assay_revoke_owner_d947d7898fb6",
+          "is_owner": false,
+          "rolbypassrls": false,
+          "rolcanlogin": true,
+          "rolinherit": false,
+          "rolname": "assay_revoke_reader_d947d7898fb6",
+          "rolsuper": false
+        }
+      },
+      "run_id": "d947d7898fb6",
+      "server_version": "PostgreSQL 18.6 (Debian 18.6-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+      "status": "passed",
+      "variants": {
+        "baseline": {
+          "barrier": {
+            "admin_pid": 18990,
+            "mechanism": "pg_stat_activity + pg_blocking_pids",
+            "observation_ms": 8.166500017978251,
+            "reader_pid": 18992,
+            "state": {
+              "blocking_pids": [
+                18990
+              ],
+              "pid": 18992,
+              "query": "SELECT secret_id, secret FROM \"secrets_baseline_d947d7898fb6\" WHERE secret_id = 1 FOR UPDATE",
+              "state": "active",
+              "wait_event": "transactionid",
+              "wait_event_type": "Lock"
+            },
+            "verified": true
+          },
+          "contention_ms": {
+            "reader_query": 6.357957987347618,
+            "to_verified_barrier": 8.166500017978251,
+            "whole_schedule": 32.06558298552409
+          },
+          "expected_leak": true,
+          "leaked_rotated_secret": true,
+          "membership_update_boundary": {
+            "membership_lock_column_update_granted": true,
+            "membership_protected_update_affected_rows": 0,
+            "protected_updates_denied": true,
+            "secret_lock_column_update_granted": true,
+            "secret_protected_update_affected_rows": 0,
+            "sqlstates": [
+              "42501",
+              "42501"
+            ]
+          },
+          "new_secret": "rotated-baseline-d947d7898fb6",
+          "positive_read": {
+            "allowed": true,
+            "facts": {
+              "isolation": "read committed",
+              "pid": 18991,
+              "user": "assay_revoke_reader_d947d7898fb6"
+            },
+            "rows": [
+              {
+                "secret": "initial-secret-baseline",
+                "secret_id": 1
+              }
+            ]
+          },
+          "reader_precheck": {
+            "membership": [
+              {
+                "can_read": true,
+                "reader_name": "assay_revoke_reader_d947d7898fb6"
+              }
+            ]
+          },
+          "reader_rows_after_commit": [
+            {
+              "secret": "rotated-baseline-d947d7898fb6",
+              "secret_id": 1
+            }
+          ],
+          "schedule": [
+            "admin UPDATE membership can_read=false (uncommitted)",
+            "admin UPDATE secret (uncommitted)",
+            "reader SELECT ... FOR UPDATE",
+            "verified reader lock wait on admin",
+            "admin COMMIT",
+            "reader resumes and commits"
+          ],
+          "transaction_facts": {
+            "admin": {
+              "isolation": "read committed",
+              "pid": 18990,
+              "user": "postgres"
+            },
+            "reader": {
+              "isolation": "read committed",
+              "pid": 18992,
+              "user": "assay_revoke_reader_d947d7898fb6"
+            }
+          },
+          "variant": "baseline"
+        },
+        "select_for_share": {
+          "barrier": {
+            "admin_pid": 18996,
+            "mechanism": "pg_stat_activity + pg_blocking_pids",
+            "observation_ms": 7.241749990498647,
+            "reader_pid": 18998,
+            "state": {
+              "blocking_pids": [
+                18996
+              ],
+              "pid": 18998,
+              "query": "SELECT secret_id, secret FROM \"secrets_share_d947d7898fb6\" WHERE secret_id = 1 FOR UPDATE",
+              "state": "active",
+              "wait_event": "transactionid",
+              "wait_event_type": "Lock"
+            },
+            "verified": true
+          },
+          "contention_ms": {
+            "reader_query": 5.129750003106892,
+            "to_verified_barrier": 7.241749990498647,
+            "whole_schedule": 28.63491600146517
+          },
+          "expected_leak": false,
+          "leaked_rotated_secret": false,
+          "membership_update_boundary": {
+            "membership_lock_column_update_granted": true,
+            "membership_protected_update_affected_rows": 0,
+            "protected_updates_denied": true,
+            "secret_lock_column_update_granted": true,
+            "secret_protected_update_affected_rows": 0,
+            "sqlstates": [
+              "42501",
+              "42501"
+            ]
+          },
+          "new_secret": "rotated-select_for_share-d947d7898fb6",
+          "positive_read": {
+            "allowed": true,
+            "facts": {
+              "isolation": "read committed",
+              "pid": 18997,
+              "user": "assay_revoke_reader_d947d7898fb6"
+            },
+            "rows": [
+              {
+                "secret": "initial-secret-select_for_share",
+                "secret_id": 1
+              }
+            ]
+          },
+          "reader_precheck": {
+            "membership": [
+              {
+                "can_read": true,
+                "reader_name": "assay_revoke_reader_d947d7898fb6"
+              }
+            ]
+          },
+          "reader_rows_after_commit": [],
+          "schedule": [
+            "admin UPDATE membership can_read=false (uncommitted)",
+            "admin UPDATE secret (uncommitted)",
+            "reader SELECT ... FOR UPDATE",
+            "verified reader lock wait on admin",
+            "admin COMMIT",
+            "reader resumes and commits"
+          ],
+          "transaction_facts": {
+            "admin": {
+              "isolation": "read committed",
+              "pid": 18996,
+              "user": "postgres"
+            },
+            "reader": {
+              "isolation": "read committed",
+              "pid": 18998,
+              "user": "assay_revoke_reader_d947d7898fb6"
+            }
+          },
+          "variant": "select_for_share"
+        }
+      }
+    }
+  ],
+  "status": "passed"
+}

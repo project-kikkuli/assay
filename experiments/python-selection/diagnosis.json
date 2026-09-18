@@ -1,0 +1,745 @@
+{
+  "project": "marimo",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "plugin": "pytest-testmon==2.2.0",
+  "cases": {
+    "cli_path": "tests/_cli/test_cli.py::test_cli_help_exit_code",
+    "package_manager": "tests/_code_mode/test_code_mode_context.py::TestPackages::test_add_single",
+    "static_asset": "tests/_server/api/endpoints/test_assets.py::test_favicon",
+    "export": "tests/_export/test_exporter.py::TestPDFExport::test_webpdf_inlines_code_wrapping_css",
+    "runtime": "tests/_runtime/test_wasm_threading.py::test_top_level_marimo_import_bootstraps_wasm_threading_first"
+  },
+  "modes": {
+    "subject_no_testmon": {
+      "cli_path": {
+        "command": [
+          "<repo>/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "--tb=short",
+          "tests/_cli/test_cli.py::test_cli_help_exit_code",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 1.185,
+        "counts": {
+          "passed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.223,
+            "test_execution": 0.361,
+            "post_processing": 0.007,
+            "process_observed": 0.592
+          },
+          "exit_status": 0
+        }
+      },
+      "package_manager": {
+        "command": [
+          "<repo>/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "--tb=short",
+          "tests/_code_mode/test_code_mode_context.py::TestPackages::test_add_single",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "failed",
+        "returncode": 1,
+        "duration_s": 0.58,
+        "counts": {
+          "failed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.02,
+            "test_execution": 0.051,
+            "post_processing": 0.006,
+            "process_observed": 0.078
+          },
+          "exit_status": 1
+        },
+        "failure_excerpt": "F                                                                        [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n_________________________ TestPackages.test_add_single _________________________\ntests/_code_mode/test_code_mode_context.py:648: in test_add_single\n    assert mock_install.call_count == 1\nE   AssertionError: assert 0 == 1\nE    +  where 0 = <AsyncMock name='install' id='4494614912'>.call_count\n----------------------------- Captured stdout call -----------------------------\nfailed to install pandas\n----------------------------- Captured stderr call -----------------------------\n[E 260918 03:56:54 package_manager:77] pixi is not available. Check out the docs for installation instructions: https://docs.conda.io/projects/conda/\n=========================== short test summary info ============================\nFAILED tests/_code_mode/test_code_mode_context.py::TestPackages::test_add_single - AssertionError: assert 0 == 1\n +  where 0 = <AsyncMock name='install' id='4494614912'>.call_count\n1 failed in 0.13s\n"
+      },
+      "static_asset": {
+        "command": [
+          "<repo>/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "--tb=short",
+          "tests/_server/api/endpoints/test_assets.py::test_favicon",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 0.684,
+        "counts": {
+          "passed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.027,
+            "test_execution": 0.012,
+            "post_processing": 0.006,
+            "process_observed": 0.046
+          },
+          "exit_status": 0
+        }
+      },
+      "export": {
+        "command": [
+          "<repo>/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "--tb=short",
+          "tests/_export/test_exporter.py::TestPDFExport::test_webpdf_inlines_code_wrapping_css",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 1.013,
+        "counts": {
+          "passed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.034,
+            "test_execution": 0.396,
+            "post_processing": 0.006,
+            "process_observed": 0.438
+          },
+          "exit_status": 0
+        }
+      },
+      "runtime": {
+        "command": [
+          "<repo>/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "--tb=short",
+          "tests/_runtime/test_wasm_threading.py::test_top_level_marimo_import_bootstraps_wasm_threading_first",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 0.753,
+        "counts": {
+          "passed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.018,
+            "test_execution": 0.223,
+            "post_processing": 0.007,
+            "process_observed": 0.249
+          },
+          "exit_status": 0
+        }
+      }
+    },
+    "subject_with_testmon": {
+      "cli_path": {
+        "command": [
+          "<repo>/.venv/bin/python",
+          "-m",
+          "pytest",
+          "--testmon",
+          "-q",
+          "--tb=short",
+          "tests/_cli/test_cli.py::test_cli_help_exit_code",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 1.275,
+        "counts": {
+          "passed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.186,
+            "test_execution": 0.448,
+            "post_processing": 0.007,
+            "process_observed": 0.642
+          },
+          "exit_status": 0
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "package_manager": {
+        "command": [
+          "<repo>/.venv/bin/python",
+          "-m",
+          "pytest",
+          "--testmon",
+          "-q",
+          "--tb=short",
+          "tests/_code_mode/test_code_mode_context.py::TestPackages::test_add_single",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "failed",
+        "returncode": 1,
+        "duration_s": 0.977,
+        "counts": {
+          "failed": 1
+        },
+        "failure_excerpt": "F                                                                        [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n_________________________ TestPackages.test_add_single _________________________\ntests/_code_mode/test_code_mode_context.py:648: in test_add_single\n    assert mock_install.call_count == 1\nE   AssertionError: assert 0 == 1\nE    +  where 0 = <AsyncMock name='install' id='4517488560'>.call_count\n----------------------------- Captured stdout call -----------------------------\nfailed to install pandas\n----------------------------- Captured stderr call -----------------------------\n[E 260918 03:56:58 package_manager:77] pixi is not available. Check out the docs for installation instructions: https://docs.conda.io/projects/conda/\n------------------------------ Captured log call -------------------------------\nERROR    marimo:package_manager.py:77 pixi is not available. Check out the docs for installation instructions: https://docs.conda.io/projects/conda/\n=========================== short test summary info ============================\nFAILED tests/_code_mode/test_code_mode_context.py::TestPackages::test_add_single - AssertionError: assert 0 == 1\n +  where 0 = <AsyncMock name='install' id='4517488560'>.call_count\n1 failed in 0.44s\n",
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.025,
+            "test_execution": 0.358,
+            "post_processing": 0.007,
+            "process_observed": 0.391
+          },
+          "exit_status": 1
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "static_asset": {
+        "command": [
+          "<repo>/.venv/bin/python",
+          "-m",
+          "pytest",
+          "--testmon",
+          "-q",
+          "--tb=short",
+          "tests/_server/api/endpoints/test_assets.py::test_favicon",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 0.962,
+        "counts": {
+          "passed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.03,
+            "test_execution": 0.204,
+            "post_processing": 0.007,
+            "process_observed": 0.243
+          },
+          "exit_status": 0
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "export": {
+        "command": [
+          "<repo>/.venv/bin/python",
+          "-m",
+          "pytest",
+          "--testmon",
+          "-q",
+          "--tb=short",
+          "tests/_export/test_exporter.py::TestPDFExport::test_webpdf_inlines_code_wrapping_css",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 1.94,
+        "counts": {
+          "passed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.046,
+            "test_execution": 1.229,
+            "post_processing": 0.007,
+            "process_observed": 1.283
+          },
+          "exit_status": 0
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "runtime": {
+        "command": [
+          "<repo>/.venv/bin/python",
+          "-m",
+          "pytest",
+          "--testmon",
+          "-q",
+          "--tb=short",
+          "tests/_runtime/test_wasm_threading.py::test_top_level_marimo_import_bootstraps_wasm_threading_first",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 0.924,
+        "counts": {
+          "passed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.019,
+            "test_execution": 0.303,
+            "post_processing": 0.007,
+            "process_observed": 0.329
+          },
+          "exit_status": 0
+        },
+        "selection_admission": "positive_test_count"
+      }
+    },
+    "separate_overlay_no_testmon": {
+      "cli_path": {
+        "command": [
+          "<external>/testmon-venv/bin/python",
+          "-m",
+          "pytest",
+          "--no-testmon",
+          "-q",
+          "--tb=short",
+          "tests/_cli/test_cli.py::test_cli_help_exit_code",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 1.159,
+        "counts": {
+          "passed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.191,
+            "test_execution": 0.344,
+            "post_processing": 0.007,
+            "process_observed": 0.543
+          },
+          "exit_status": 0
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "package_manager": {
+        "command": [
+          "<external>/testmon-venv/bin/python",
+          "-m",
+          "pytest",
+          "--no-testmon",
+          "-q",
+          "--tb=short",
+          "tests/_code_mode/test_code_mode_context.py::TestPackages::test_add_single",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "failed",
+        "returncode": 1,
+        "duration_s": 0.621,
+        "counts": {
+          "failed": 1
+        },
+        "failure_excerpt": "F                                                                        [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n_________________________ TestPackages.test_add_single _________________________\ntests/_code_mode/test_code_mode_context.py:648: in test_add_single\n    assert mock_install.call_count == 1\nE   AssertionError: assert 0 == 1\nE    +  where 0 = <AsyncMock name='install' id='4512814368'>.call_count\n----------------------------- Captured stdout call -----------------------------\nfailed to install pandas\n----------------------------- Captured stderr call -----------------------------\n[E 260918 03:57:04 package_manager:77] pixi is not available. Check out the docs for installation instructions: https://docs.conda.io/projects/conda/\n=========================== short test summary info ============================\nFAILED tests/_code_mode/test_code_mode_context.py::TestPackages::test_add_single - AssertionError: assert 0 == 1\n +  where 0 = <AsyncMock name='install' id='4512814368'>.call_count\n1 failed in 0.13s\n",
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.018,
+            "test_execution": 0.061,
+            "post_processing": 0.006,
+            "process_observed": 0.086
+          },
+          "exit_status": 1
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "static_asset": {
+        "command": [
+          "<external>/testmon-venv/bin/python",
+          "-m",
+          "pytest",
+          "--no-testmon",
+          "-q",
+          "--tb=short",
+          "tests/_server/api/endpoints/test_assets.py::test_favicon",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 0.693,
+        "counts": {
+          "passed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.027,
+            "test_execution": 0.012,
+            "post_processing": 0.006,
+            "process_observed": 0.046
+          },
+          "exit_status": 0
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "export": {
+        "command": [
+          "<external>/testmon-venv/bin/python",
+          "-m",
+          "pytest",
+          "--no-testmon",
+          "-q",
+          "--tb=short",
+          "tests/_export/test_exporter.py::TestPDFExport::test_webpdf_inlines_code_wrapping_css",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "failed",
+        "returncode": 1,
+        "duration_s": 0.829,
+        "counts": {
+          "failed": 1
+        },
+        "failure_excerpt": "F                                                                        [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n_____________ TestPDFExport.test_webpdf_inlines_code_wrapping_css ______________\n.venv/lib/python3.12/site-packages/traitlets/traitlets.py:652: in get\n    value = obj._trait_values[self.name]\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   KeyError: 'template_paths'\n\nDuring handling of the above exception, another exception occurred:\ntests/_export/test_exporter.py:1970: in test_webpdf_inlines_code_wrapping_css\n    pdf_data = _render_webpdf_with_nbconvert(\nmarimo/_export/exporter.py:141: in _render_webpdf_with_nbconvert\n    web_exporter = WebPDFExporter(  # type: ignore[no-untyped-call]\n.venv/lib/python3.12/site-packages/nbconvert/exporters/templateexporter.py:354: in __init__\n    super().__init__(config=config, **kw)\n.venv/lib/python3.12/site-packages/nbconvert/exporters/exporter.py:123: in __init__\n    self._init_preprocessors()\n.venv/lib/python3.12/site-packages/nbconvert/exporters/templateexporter.py:540: in _init_preprocessors\n    conf = self._get_conf()\n           ^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/nbconvert/exporters/templateexporter.py:558: in _get_conf\n    for path in map(Path, self.template_paths):\n                          ^^^^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/traitlets/traitlets.py:705: in __get__\n    return self.get(obj, cls)  # type:ignore[return-value]\n           ^^^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/traitlets/traitlets.py:655: in get\n    default = obj.trait_defaults(self.name)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/traitlets/traitlets.py:1904: in trait_defaults\n    return self._get_trait_default_generator(names[0])(self)  # type:ignore[no-any-return]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/traitlets/traitlets.py:1263: in __call__\n    return self.func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/nbconvert/exporters/templateexporter.py:575: in _template_paths\n    template_names = self.get_template_names()\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/nbconvert/exporters/templateexporter.py:669: in get_template_names\n    raise ValueError(msg)\nE   ValueError: No template sub-directory with name 'webpdf' found in the following paths:\nE   \t<host-path>\nE   \t<host-path>\nE   \t/usr/local/share/jupyter\nE   \t/usr/share/jupyter\n=========================== short test summary info ============================\nFAILED tests/_export/test_exporter.py::TestPDFExport::test_webpdf_inlines_code_wrapping_css - ValueError: No template sub-directory with name 'webpdf' found in the following paths:\n\t<host-path>\n\t<host-path>\n\t/usr/local/share/jupyter\n\t/usr/share/jupyter\n1 failed in 0.32s\n",
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.043,
+            "test_execution": 0.231,
+            "post_processing": 0.006,
+            "process_observed": 0.281
+          },
+          "exit_status": 1
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "runtime": {
+        "command": [
+          "<external>/testmon-venv/bin/python",
+          "-m",
+          "pytest",
+          "--no-testmon",
+          "-q",
+          "--tb=short",
+          "tests/_runtime/test_wasm_threading.py::test_top_level_marimo_import_bootstraps_wasm_threading_first",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "failed",
+        "returncode": 1,
+        "duration_s": 0.644,
+        "counts": {
+          "failed": 1
+        },
+        "failure_excerpt": "F                                                                        [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n_________ test_top_level_marimo_import_bootstraps_wasm_threading_first _________\ntests/_runtime/test_wasm_threading.py:364: in test_top_level_marimo_import_bootstraps_wasm_threading_first\n    result = subprocess.run(\n<host-path>:573: in run\n    raise CalledProcessError(retcode, process.args,\nE   subprocess.CalledProcessError: Command '['<host-path> '-c', '\\nimport json\\nimport sys\\nimport types\\nimport threading\\nimport asyncio\\n\\nsys.platform = \"emscripten\"\\ntry:\\n    import posix\\nexcept ImportError:\\n    posix = types.ModuleType(\"posix\")\\n    sys.modules[\"posix\"] = posix\\nif not hasattr(posix, \"_emscripten_log\"):\\n    posix._emscripten_log = lambda line: None\\npyodide = types.ModuleType(\"pyodide\")\\nffi = types.ModuleType(\"pyodide.ffi\")\\ndef run_sync(awaitable):\\n    return asyncio.run(awaitable)\\nffi.run_sync = run_sync\\npyodide.ffi = ffi\\nsys.modules[\"pyodide\"] = pyodide\\nsys.modules[\"pyodide.ffi\"] = ffi\\n\\noriginal_thread = threading.Thread\\noriginal_local = threading.local\\n\\nimport marimo\\nfrom marimo._runtime.context import types as context_types\\nfrom marimo._runtime._wasm._concurrency._threading import AsyncLocal\\n\\nevents = []\\nasync def target():\\n    events.append(\"start\")\\n    await asyncio.sleep(0)\\n    events.append(\"done\")\\n\\nthread = marimo.Thread(target=target)\\nthread.start()\\nthread.join(timeout=1)\\n\\nprint(json.dumps({\\n    \"thread_patched\": threading.Thread is not original_thread,\\n    \"local_patched\": threading.local is not original_local,\\n    \"public_thread_uses_patched_base\": issubclass(\\n        marimo.Thread,\\n        threading.Thread,\\n    ),\\n    \"runtime_context_uses_patched_local\": isinstance(\\n        context_types._THREAD_LOCAL_CONTEXT,\\n        AsyncLocal,\\n    ),\\n    \"async_thread_events\": events,\\n    \"async_thread_alive\": thread.is_alive(),\\n}))\\n']' returned non-zero exit status 1.\n=========================== short test summary info ============================\nFAILED tests/_runtime/test_wasm_threading.py::test_top_level_marimo_import_bootstraps_wasm_threading_first - subprocess.CalledProcessError: Command '['<host-path> '-c', '\\nimport json\\nimport sys\\nimport types\\nimport threading\\nimport asyncio\\n\\nsys.platform = \"emscripten\"\\ntry:\\n    import posix\\nexcept ImportError:\\n    posix = types.ModuleType(\"posix\")\\n    sys.modules[\"posix\"] = posix\\nif not hasattr(posix, \"_emscripten_log\"):\\n    posix._emscripten_log = lambda line: None\\npyodide = types.ModuleType(\"pyodide\")\\nffi = types.ModuleType(\"pyodide.ffi\")\\ndef run_sync(awaitable):\\n    return asyncio.run(awaitable)\\nffi.run_sync = run_sync\\npyodide.ffi = ffi\\nsys.modules[\"pyodide\"] = pyodide\\nsys.modules[\"pyodide.ffi\"] = ffi\\n\\noriginal_thread = threading.Thread\\noriginal_local = threading.local\\n\\nimport marimo\\nfrom marimo._runtime.context import types as context_types\\nfrom marimo._runtime._wasm._concurrency._threading import AsyncLocal\\n\\nevents = []\\nasync def target():\\n    events.append(\"start\")\\n    await asyncio.sleep(0)\\n    events.append(\"done\")\\n\\nthread = marimo.Thread(target=target)\\nthread.start()\\nthread.join(timeout=1)\\n\\nprint(json.dumps({\\n    \"thread_patched\": threading.Thread is not original_thread,\\n    \"local_patched\": threading.local is not original_local,\\n    \"public_thread_uses_patched_base\": issubclass(\\n        marimo.Thread,\\n        threading.Thread,\\n    ),\\n    \"runtime_context_uses_patched_local\": isinstance(\\n        context_types._THREAD_LOCAL_CONTEXT,\\n        AsyncLocal,\\n    ),\\n    \"async_thread_events\": events,\\n    \"async_thread_alive\": thread.is_alive(),\\n}))\\n']' returned non-zero exit status 1.\n1 failed in 0.17s\n",
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.018,
+            "test_execution": 0.093,
+            "post_processing": 0.006,
+            "process_observed": 0.118
+          },
+          "exit_status": 1
+        },
+        "selection_admission": "positive_test_count"
+      }
+    },
+    "separate_overlay_with_testmon": {
+      "cli_path": {
+        "command": [
+          "<external>/testmon-venv/bin/python",
+          "-m",
+          "pytest",
+          "--testmon",
+          "-q",
+          "--tb=short",
+          "tests/_cli/test_cli.py::test_cli_help_exit_code",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 1.643,
+        "counts": {
+          "passed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.192,
+            "test_execution": 0.773,
+            "post_processing": 0.007,
+            "process_observed": 0.974
+          },
+          "exit_status": 0
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "package_manager": {
+        "command": [
+          "<external>/testmon-venv/bin/python",
+          "-m",
+          "pytest",
+          "--testmon",
+          "-q",
+          "--tb=short",
+          "tests/_code_mode/test_code_mode_context.py::TestPackages::test_add_single",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "failed",
+        "returncode": 1,
+        "duration_s": 1.391,
+        "counts": {
+          "failed": 1
+        },
+        "failure_excerpt": "F                                                                        [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n_________________________ TestPackages.test_add_single _________________________\ntests/_code_mode/test_code_mode_context.py:648: in test_add_single\n    assert mock_install.call_count == 1\nE   AssertionError: assert 0 == 1\nE    +  where 0 = <AsyncMock name='install' id='4497925776'>.call_count\n----------------------------- Captured stdout call -----------------------------\nfailed to install pandas\n----------------------------- Captured stderr call -----------------------------\n[E 260918 03:57:09 package_manager:77] pixi is not available. Check out the docs for installation instructions: https://docs.conda.io/projects/conda/\n=========================== short test summary info ============================\nFAILED tests/_code_mode/test_code_mode_context.py::TestPackages::test_add_single - AssertionError: assert 0 == 1\n +  where 0 = <AsyncMock name='install' id='4497925776'>.call_count\n1 failed in 0.81s\n",
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.019,
+            "test_execution": 0.743,
+            "post_processing": 0.007,
+            "process_observed": 0.77
+          },
+          "exit_status": 1
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "static_asset": {
+        "command": [
+          "<external>/testmon-venv/bin/python",
+          "-m",
+          "pytest",
+          "--testmon",
+          "-q",
+          "--tb=short",
+          "tests/_server/api/endpoints/test_assets.py::test_favicon",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_s": 1.615,
+        "counts": {
+          "passed": 1
+        },
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.029,
+            "test_execution": 0.84,
+            "post_processing": 0.007,
+            "process_observed": 0.876
+          },
+          "exit_status": 0
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "export": {
+        "command": [
+          "<external>/testmon-venv/bin/python",
+          "-m",
+          "pytest",
+          "--testmon",
+          "-q",
+          "--tb=short",
+          "tests/_export/test_exporter.py::TestPDFExport::test_webpdf_inlines_code_wrapping_css",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "failed",
+        "returncode": 1,
+        "duration_s": 3.137,
+        "counts": {
+          "failed": 1
+        },
+        "failure_excerpt": "F                                                                        [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n_____________ TestPDFExport.test_webpdf_inlines_code_wrapping_css ______________\n.venv/lib/python3.12/site-packages/traitlets/traitlets.py:652: in get\n    value = obj._trait_values[self.name]\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   KeyError: 'template_paths'\n\nDuring handling of the above exception, another exception occurred:\ntests/_export/test_exporter.py:1970: in test_webpdf_inlines_code_wrapping_css\n    pdf_data = _render_webpdf_with_nbconvert(\nmarimo/_export/exporter.py:141: in _render_webpdf_with_nbconvert\n    web_exporter = WebPDFExporter(  # type: ignore[no-untyped-call]\n.venv/lib/python3.12/site-packages/nbconvert/exporters/templateexporter.py:354: in __init__\n    super().__init__(config=config, **kw)\n.venv/lib/python3.12/site-packages/nbconvert/exporters/exporter.py:123: in __init__\n    self._init_preprocessors()\n.venv/lib/python3.12/site-packages/nbconvert/exporters/templateexporter.py:540: in _init_preprocessors\n    conf = self._get_conf()\n           ^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/nbconvert/exporters/templateexporter.py:558: in _get_conf\n    for path in map(Path, self.template_paths):\n                          ^^^^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/traitlets/traitlets.py:705: in __get__\n    return self.get(obj, cls)  # type:ignore[return-value]\n           ^^^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/traitlets/traitlets.py:655: in get\n    default = obj.trait_defaults(self.name)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/traitlets/traitlets.py:1904: in trait_defaults\n    return self._get_trait_default_generator(names[0])(self)  # type:ignore[no-any-return]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/traitlets/traitlets.py:1263: in __call__\n    return self.func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/nbconvert/exporters/templateexporter.py:575: in _template_paths\n    template_names = self.get_template_names()\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^\n.venv/lib/python3.12/site-packages/nbconvert/exporters/templateexporter.py:669: in get_template_names\n    raise ValueError(msg)\nE   ValueError: No template sub-directory with name 'webpdf' found in the following paths:\nE   \t<host-path>\nE   \t<host-path>\nE   \t/usr/local/share/jupyter\nE   \t/usr/share/jupyter\n=========================== short test summary info ============================\nFAILED tests/_export/test_exporter.py::TestPDFExport::test_webpdf_inlines_code_wrapping_css - ValueError: No template sub-directory with name 'webpdf' found in the following paths:\n\t<host-path>\n\t<host-path>\n\t/usr/local/share/jupyter\n\t/usr/share/jupyter\n1 failed in 2.50s\n",
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.045,
+            "test_execution": 2.404,
+            "post_processing": 0.01,
+            "process_observed": 2.46
+          },
+          "exit_status": 1
+        },
+        "selection_admission": "positive_test_count"
+      },
+      "runtime": {
+        "command": [
+          "<external>/testmon-venv/bin/python",
+          "-m",
+          "pytest",
+          "--testmon",
+          "-q",
+          "--tb=short",
+          "tests/_runtime/test_wasm_threading.py::test_top_level_marimo_import_bootstraps_wasm_threading_first",
+          "-p",
+          "python_selection_timing"
+        ],
+        "status": "failed",
+        "returncode": 1,
+        "duration_s": 1.154,
+        "counts": {
+          "failed": 1
+        },
+        "failure_excerpt": "F                                                                        [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n_________ test_top_level_marimo_import_bootstraps_wasm_threading_first _________\ntests/_runtime/test_wasm_threading.py:364: in test_top_level_marimo_import_bootstraps_wasm_threading_first\n    result = subprocess.run(\n<host-path>:573: in run\n    raise CalledProcessError(retcode, process.args,\nE   subprocess.CalledProcessError: Command '['<host-path> '-c', '\\nimport json\\nimport sys\\nimport types\\nimport threading\\nimport asyncio\\n\\nsys.platform = \"emscripten\"\\ntry:\\n    import posix\\nexcept ImportError:\\n    posix = types.ModuleType(\"posix\")\\n    sys.modules[\"posix\"] = posix\\nif not hasattr(posix, \"_emscripten_log\"):\\n    posix._emscripten_log = lambda line: None\\npyodide = types.ModuleType(\"pyodide\")\\nffi = types.ModuleType(\"pyodide.ffi\")\\ndef run_sync(awaitable):\\n    return asyncio.run(awaitable)\\nffi.run_sync = run_sync\\npyodide.ffi = ffi\\nsys.modules[\"pyodide\"] = pyodide\\nsys.modules[\"pyodide.ffi\"] = ffi\\n\\noriginal_thread = threading.Thread\\noriginal_local = threading.local\\n\\nimport marimo\\nfrom marimo._runtime.context import types as context_types\\nfrom marimo._runtime._wasm._concurrency._threading import AsyncLocal\\n\\nevents = []\\nasync def target():\\n    events.append(\"start\")\\n    await asyncio.sleep(0)\\n    events.append(\"done\")\\n\\nthread = marimo.Thread(target=target)\\nthread.start()\\nthread.join(timeout=1)\\n\\nprint(json.dumps({\\n    \"thread_patched\": threading.Thread is not original_thread,\\n    \"local_patched\": threading.local is not original_local,\\n    \"public_thread_uses_patched_base\": issubclass(\\n        marimo.Thread,\\n        threading.Thread,\\n    ),\\n    \"runtime_context_uses_patched_local\": isinstance(\\n        context_types._THREAD_LOCAL_CONTEXT,\\n        AsyncLocal,\\n    ),\\n    \"async_thread_events\": events,\\n    \"async_thread_alive\": thread.is_alive(),\\n}))\\n']' returned non-zero exit status 1.\n=========================== short test summary info ============================\nFAILED tests/_runtime/test_wasm_threading.py::test_top_level_marimo_import_bootstraps_wasm_threading_first - subprocess.CalledProcessError: Command '['<host-path> '-c', '\\nimport json\\nimport sys\\nimport types\\nimport threading\\nimport asyncio\\n\\nsys.platform = \"emscripten\"\\ntry:\\n    import posix\\nexcept ImportError:\\n    posix = types.ModuleType(\"posix\")\\n    sys.modules[\"posix\"] = posix\\nif not hasattr(posix, \"_emscripten_log\"):\\n    posix._emscripten_log = lambda line: None\\npyodide = types.ModuleType(\"pyodide\")\\nffi = types.ModuleType(\"pyodide.ffi\")\\ndef run_sync(awaitable):\\n    return asyncio.run(awaitable)\\nffi.run_sync = run_sync\\npyodide.ffi = ffi\\nsys.modules[\"pyodide\"] = pyodide\\nsys.modules[\"pyodide.ffi\"] = ffi\\n\\noriginal_thread = threading.Thread\\noriginal_local = threading.local\\n\\nimport marimo\\nfrom marimo._runtime.context import types as context_types\\nfrom marimo._runtime._wasm._concurrency._threading import AsyncLocal\\n\\nevents = []\\nasync def target():\\n    events.append(\"start\")\\n    await asyncio.sleep(0)\\n    events.append(\"done\")\\n\\nthread = marimo.Thread(target=target)\\nthread.start()\\nthread.join(timeout=1)\\n\\nprint(json.dumps({\\n    \"thread_patched\": threading.Thread is not original_thread,\\n    \"local_patched\": threading.local is not original_local,\\n    \"public_thread_uses_patched_base\": issubclass(\\n        marimo.Thread,\\n        threading.Thread,\\n    ),\\n    \"runtime_context_uses_patched_local\": isinstance(\\n        context_types._THREAD_LOCAL_CONTEXT,\\n        AsyncLocal,\\n    ),\\n    \"async_thread_events\": events,\\n    \"async_thread_alive\": thread.is_alive(),\\n}))\\n']' returned non-zero exit status 1.\n1 failed in 0.59s\n",
+        "timing": {
+          "validity": "fresh_timing",
+          "selected_tests": 1,
+          "phases_s": {
+            "pre_collection_setup": 0.001,
+            "collection_and_testmon_analysis": 0.018,
+            "test_execution": 0.521,
+            "post_processing": 0.007,
+            "process_observed": 0.548
+          },
+          "exit_status": 1
+        },
+        "selection_admission": "positive_test_count"
+      }
+    }
+  },
+  "assumptions": [
+    "Subject mode uses the prepared .venv and prepends its bin directory to the explicit PATH allowlist.",
+    "Overlay modes use a fresh venv containing only pytest-testmon==2.2.0 and the prepared subject site-packages.",
+    "All modes stage the real frontend/dist (480 files) before comparison, matching the full bootstrap; the separate resource deletion is not this diagnosis."
+  ],
+  "bootstrap": {
+    "venv": {
+      "command": [
+        "uv",
+        "venv",
+        "--python",
+        "3.12",
+        "<external>/testmon-venv"
+      ],
+      "status": "passed",
+      "returncode": 0,
+      "duration_s": 0.047
+    },
+    "plugin_install": {
+      "command": [
+        "uv",
+        "pip",
+        "install",
+        "--python",
+        "<external>/testmon-venv/bin/python",
+        "pytest-testmon==2.2.0"
+      ],
+      "status": "passed",
+      "returncode": 0,
+      "duration_s": 0.332
+    }
+  },
+  "plugin_probe": {
+    "command": [
+      "<repo>/.venv/bin/python",
+      "-m",
+      "pytest",
+      "--trace-config",
+      "--collect-only",
+      "-q",
+      "tests/_cli/test_cli.py::test_cli_help_exit_code"
+    ],
+    "status": "passed",
+    "returncode": 0,
+    "duration_s": 1.291,
+    "plugin_id": "testmon.pytest_testmon",
+    "testmon_trace_lines": [
+      "PLUGIN registered: <module '_pytest.mark' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.main' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.runner' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.fixtures' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.helpconfig' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.python' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.terminal' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.debugging' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.unittest' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.capture' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.skipping' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.legacypath' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.tmpdir' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.monkeypatch' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.recwarn' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.pastebin' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.assertion' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.junitxml' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.doctest' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.cacheprovider' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.setuponly' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.setupplan' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.stepwise' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.unraisableexception' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.threadexception' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.warnings' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.logging' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.reports' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.faulthandler' from '<host-path>",
+      "PLUGIN registered: <module '_pytest.subtests' from '<host-path>",
+      "PLUGIN registered: <module 'testmon.pytest_testmon' from '<host-path>"
+    ]
+  },
+  "readiness": {
+    "staged_static_files": 480,
+    "staged_static_bytes": 26686370
+  },
+  "status": "observed"
+}

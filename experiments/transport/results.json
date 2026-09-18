@@ -1,0 +1,666 @@
+{
+  "node": "v22.12.0",
+  "axios": "1.18.0",
+  "iterations": 5,
+  "source_sha256": "962e85d2dad92994c5057407fa1e6ee7e999d561366056b0a4c02373523617a3",
+  "modes": {
+    "stale-keepalive": {
+      "keepAlive": {
+        "keepAlive": true,
+        "requests": [
+          {
+            "phase": "warm",
+            "iteration": 0,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": 54550
+          },
+          {
+            "phase": "probe",
+            "iteration": 0,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": true,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 1,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": 54551
+          },
+          {
+            "phase": "probe",
+            "iteration": 1,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": true,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 2,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": 54552
+          },
+          {
+            "phase": "probe",
+            "iteration": 2,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": true,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 3,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": 54553
+          },
+          {
+            "phase": "probe",
+            "iteration": 3,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": true,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 4,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": 54554
+          },
+          {
+            "phase": "probe",
+            "iteration": 4,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": true,
+            "localPort": null
+          }
+        ],
+        "failures": 5,
+        "reusedFailures": 5,
+        "serverRequests": [
+          {
+            "request": 1,
+            "connection": 1,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 2,
+            "connection": 1,
+            "connectionRequest": 2,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 3,
+            "connection": 2,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 4,
+            "connection": 2,
+            "connectionRequest": 2,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 5,
+            "connection": 3,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 6,
+            "connection": 3,
+            "connectionRequest": 2,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 7,
+            "connection": 4,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 8,
+            "connection": 4,
+            "connectionRequest": 2,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 9,
+            "connection": 5,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 10,
+            "connection": 5,
+            "connectionRequest": 2,
+            "method": "POST",
+            "path": "/transport"
+          }
+        ],
+        "serverConnections": 5
+      },
+      "freshConnection": {
+        "keepAlive": false,
+        "requests": [
+          {
+            "phase": "warm",
+            "iteration": 0,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 0,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 1,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 1,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 2,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 2,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 3,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 3,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 4,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 4,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": null
+          }
+        ],
+        "failures": 0,
+        "reusedFailures": 0,
+        "serverRequests": [
+          {
+            "request": 1,
+            "connection": 1,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 2,
+            "connection": 2,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 3,
+            "connection": 3,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 4,
+            "connection": 4,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 5,
+            "connection": 5,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 6,
+            "connection": 6,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 7,
+            "connection": 7,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 8,
+            "connection": 8,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 9,
+            "connection": 9,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 10,
+            "connection": 10,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          }
+        ],
+        "serverConnections": 10
+      },
+      "causalWitness": true
+    },
+    "server-pressure": {
+      "keepAlive": {
+        "keepAlive": true,
+        "requests": [
+          {
+            "phase": "warm",
+            "iteration": 0,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": 54567
+          },
+          {
+            "phase": "probe",
+            "iteration": 0,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": true,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 1,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 1,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 2,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 2,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 3,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 3,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 4,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 4,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          }
+        ],
+        "failures": 9,
+        "reusedFailures": 1,
+        "serverRequests": [
+          {
+            "request": 1,
+            "connection": 1,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 2,
+            "connection": 1,
+            "connectionRequest": 2,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 3,
+            "connection": 2,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 4,
+            "connection": 3,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 5,
+            "connection": 4,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 6,
+            "connection": 5,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 7,
+            "connection": 6,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 8,
+            "connection": 7,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 9,
+            "connection": 8,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 10,
+            "connection": 9,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          }
+        ],
+        "serverConnections": 9
+      },
+      "freshConnection": {
+        "keepAlive": false,
+        "requests": [
+          {
+            "phase": "warm",
+            "iteration": 0,
+            "status": 200,
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 0,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 1,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 1,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 2,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 2,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 3,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 3,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "warm",
+            "iteration": 4,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          },
+          {
+            "phase": "probe",
+            "iteration": 4,
+            "status": null,
+            "code": "ECONNRESET",
+            "message": "socket hang up",
+            "reusedSocket": false,
+            "localPort": null
+          }
+        ],
+        "failures": 9,
+        "reusedFailures": 0,
+        "serverRequests": [
+          {
+            "request": 1,
+            "connection": 1,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 2,
+            "connection": 2,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 3,
+            "connection": 3,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 4,
+            "connection": 4,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 5,
+            "connection": 5,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 6,
+            "connection": 6,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 7,
+            "connection": 7,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 8,
+            "connection": 8,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 9,
+            "connection": 9,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          },
+          {
+            "request": 10,
+            "connection": 10,
+            "connectionRequest": 1,
+            "method": "POST",
+            "path": "/transport"
+          }
+        ],
+        "serverConnections": 10
+      },
+      "causalWitness": true
+    }
+  },
+  "verdict": "controlled-witness-passed",
+  "limits": [
+    "The stale mode is a deterministic local positive control, not evidence that Uvicorn caused the hosted failure.",
+    "The pressure mode resets requests independent of connection reuse; it is a falsifier for keep-alive-only explanations.",
+    "No retry, production client, workflow, or hosted server is modified."
+  ]
+}

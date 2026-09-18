@@ -1,0 +1,235 @@
+{
+  "project": "marimo",
+  "revision": "e8009f0f50220af0825fc920ba48af90fdddf617",
+  "plugin": "pytest-testmon==2.2.0",
+  "status": "observed",
+  "target": "tests/_utils/test_formatter.py::TestRuffFormatter::test_ruff_formatter_preserves_comments",
+  "resource_scope": "tests/_server/api/endpoints/test_assets.py",
+  "resource_test": "tests/_server/api/endpoints/test_assets.py::test_favicon",
+  "assumptions": [
+    "The formatter test exercises the real output path, so the output mutation should be caught by the original test.",
+    "The resource run uses a file scope, not an explicit test node; zero selection after deleting a static file is unresolved evidence, not a pass."
+  ],
+  "bootstrap": {
+    "venv": {
+      "command": [
+        "uv",
+        "venv",
+        "--python",
+        "3.12",
+        "<external>/testmon-venv"
+      ],
+      "status": "passed",
+      "returncode": 0,
+      "duration_s": 0.106
+    },
+    "plugin_install": {
+      "command": [
+        "uv",
+        "pip",
+        "install",
+        "--python",
+        "<external>/testmon-venv/bin/python",
+        "pytest-testmon==2.2.0"
+      ],
+      "status": "passed",
+      "returncode": 0,
+      "duration_s": 0.393
+    }
+  },
+  "target_baseline": {
+    "command": [
+      "<repo>/.venv/bin/python",
+      "-m",
+      "pytest",
+      "--testmon",
+      "-q",
+      "tests/_utils/test_formatter.py::TestRuffFormatter::test_ruff_formatter_preserves_comments",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "passed",
+    "returncode": 0,
+    "duration_s": 1.756,
+    "counts": {
+      "passed": 1
+    },
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 1,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 0.039,
+        "test_execution": 0.461,
+        "post_processing": 0.007,
+        "process_observed": 0.508
+      },
+      "exit_status": 0
+    },
+    "selection_admission": "positive_test_count"
+  },
+  "mutant_testmon": {
+    "command": [
+      "<repo>/.venv/bin/python",
+      "-m",
+      "pytest",
+      "--testmon",
+      "-q",
+      "tests/_utils/test_formatter.py::TestRuffFormatter::test_ruff_formatter_preserves_comments",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "failed",
+    "returncode": 1,
+    "duration_s": 0.799,
+    "counts": {
+      "failed": 1
+    },
+    "failure_excerpt": "F                                                                        [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n___________ TestRuffFormatter.test_ruff_formatter_preserves_comments ___________\n\nself = <test_formatter.TestRuffFormatter object at 0x10b70d640>\n\n    @pytest.mark.skipif(not HAS_RUFF, reason=\"ruff not installed\")\n    async def test_ruff_formatter_preserves_comments(self) -> None:\n        \"\"\"Regression test for #10054/#10057: comments must survive the real\n        wrap -> ruff -> unwrap round-trip. Comments are not AST nodes, so a\n        leading comment sits before the first body statement's lineno and a\n        trailing comment sits after the last statement's end_lineno; both were\n        previously dropped.\"\"\"\n        cell_code = \"# leading comment\\nx=1\\ny = 2  # inline comment\\n# interior comment\\nz = 3  # last-line comment\\n# trailing comment\"\n    \n>       result = await RuffFormatter(line_length=88).format({\"c\": cell_code})\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\ntests/_utils/test_formatter.py:253: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nmarimo/_utils/formatter.py:184: in format\n    result[key] = unwrap_cell_body(wrapped_result[key])\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nformatted = ''\n\n    def unwrap_cell_body(formatted: str) -> str:\n        \"\"\"Extract the body of a wrapped `def _():` cell after ruff formatting.\n    \n        Used by RuffFormatter to unwrap cells that were temporarily wrapped in a\n        dummy function so ruff applies function-scope blank-line rules (E301)\n        instead of file-scope rules (E302).\n        \"\"\"\n        tree = ast_parse(formatted)\n>       fn = tree.body[0]\n             ^^^^^^^^^^^^\nE       IndexError: list index out of range\n\nmarimo/_ast/parse.py:75: IndexError\n=========================== short test summary info ============================\nFAILED tests/_utils/test_formatter.py::TestRuffFormatter::test_ruff_formatter_preserves_comments - IndexError: list index out of range\n1 failed in 0.24s\n",
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 1,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 0.019,
+        "test_execution": 0.165,
+        "post_processing": 0.007,
+        "process_observed": 0.193
+      },
+      "exit_status": 1
+    },
+    "selection_admission": "positive_test_count"
+  },
+  "mutant_direct": {
+    "command": [
+      "<repo>/.venv/bin/python",
+      "-m",
+      "pytest",
+      "--no-testmon",
+      "-q",
+      "tests/_utils/test_formatter.py::TestRuffFormatter::test_ruff_formatter_preserves_comments",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "failed",
+    "returncode": 1,
+    "duration_s": 0.64,
+    "counts": {
+      "failed": 1
+    },
+    "failure_excerpt": "F                                                                        [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n___________ TestRuffFormatter.test_ruff_formatter_preserves_comments ___________\n\nself = <test_formatter.TestRuffFormatter object at 0x10adb8d10>\n\n    @pytest.mark.skipif(not HAS_RUFF, reason=\"ruff not installed\")\n    async def test_ruff_formatter_preserves_comments(self) -> None:\n        \"\"\"Regression test for #10054/#10057: comments must survive the real\n        wrap -> ruff -> unwrap round-trip. Comments are not AST nodes, so a\n        leading comment sits before the first body statement's lineno and a\n        trailing comment sits after the last statement's end_lineno; both were\n        previously dropped.\"\"\"\n        cell_code = \"# leading comment\\nx=1\\ny = 2  # inline comment\\n# interior comment\\nz = 3  # last-line comment\\n# trailing comment\"\n    \n>       result = await RuffFormatter(line_length=88).format({\"c\": cell_code})\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\ntests/_utils/test_formatter.py:253: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nmarimo/_utils/formatter.py:184: in format\n    result[key] = unwrap_cell_body(wrapped_result[key])\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nformatted = ''\n\n    def unwrap_cell_body(formatted: str) -> str:\n        \"\"\"Extract the body of a wrapped `def _():` cell after ruff formatting.\n    \n        Used by RuffFormatter to unwrap cells that were temporarily wrapped in a\n        dummy function so ruff applies function-scope blank-line rules (E301)\n        instead of file-scope rules (E302).\n        \"\"\"\n        tree = ast_parse(formatted)\n>       fn = tree.body[0]\n             ^^^^^^^^^^^^\nE       IndexError: list index out of range\n\nmarimo/_ast/parse.py:75: IndexError\n=========================== short test summary info ============================\nFAILED tests/_utils/test_formatter.py::TestRuffFormatter::test_ruff_formatter_preserves_comments - IndexError: list index out of range\n1 failed in 0.18s\n",
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 1,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 0.016,
+        "test_execution": 0.093,
+        "post_processing": 0.006,
+        "process_observed": 0.117
+      },
+      "exit_status": 1
+    },
+    "selection_admission": "positive_test_count"
+  },
+  "readiness": {
+    "staged_static_files": 480,
+    "staged_static_bytes": 26686370
+  },
+  "resource_baseline": {
+    "command": [
+      "<repo>/.venv/bin/python",
+      "-m",
+      "pytest",
+      "--testmon",
+      "-q",
+      "tests/_server/api/endpoints/test_assets.py",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "passed",
+    "returncode": 0,
+    "duration_s": 1.939,
+    "counts": {
+      "passed": 41
+    },
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 41,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 0.029,
+        "test_execution": 1.146,
+        "post_processing": 0.007,
+        "process_observed": 1.184
+      },
+      "exit_status": 0
+    },
+    "selection_admission": "positive_test_count"
+  },
+  "resource_mutation_testmon": {
+    "command": [
+      "<repo>/.venv/bin/python",
+      "-m",
+      "pytest",
+      "--testmon",
+      "-q",
+      "tests/_server/api/endpoints/test_assets.py",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "unknown_zero_tests",
+    "returncode": 0,
+    "duration_s": 0.762,
+    "counts": {
+      "deselected": 41
+    },
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 0,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 0.03,
+        "test_execution": 0.0,
+        "post_processing": 0.007,
+        "process_observed": 0.039
+      },
+      "exit_status": 5
+    },
+    "selection_admission": "unknown_zero_tests"
+  },
+  "resource_mutation_direct": {
+    "command": [
+      "<repo>/.venv/bin/python",
+      "-m",
+      "pytest",
+      "--no-testmon",
+      "-q",
+      "tests/_server/api/endpoints/test_assets.py",
+      "-p",
+      "python_selection_timing"
+    ],
+    "status": "failed",
+    "returncode": 1,
+    "duration_s": 1.111,
+    "counts": {
+      "failed": 1,
+      "passed": 40
+    },
+    "failure_excerpt": ".................F.......................                                [100%]\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 inline-snapshot \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nINFO: CI run was detected because environment variable \"CI\" was defined. \ninline-snapshot runs with --inline-snapshot=disable by default in CI. This means\nthat tests with snapshots will continue to run, but snapshot(x) will only return\nx and inline-snapshot will not be able to fix snapshots or generate reports. You\ncan change this by using --inline-snapshot=report for example.\n\n\n=================================== FAILURES ===================================\n_________________________________ test_favicon _________________________________\n\nclient = <starlette.testclient.TestClient object at 0x10a8b1100>\n\n    def test_favicon(client: TestClient) -> None:\n        response = client.get(\"/favicon.ico\")\n>       assert response.status_code == 200, response.text\nE       AssertionError: {\"detail\":\"Not Found\"}\nE       assert 404 == 200\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\ntests/_server/api/endpoints/test_assets.py:383: AssertionError\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/starlette/testclient.py:53\n  <host-path>:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED tests/_server/api/endpoints/test_assets.py::test_favicon - AssertionError: {\"detail\":\"Not Found\"}\nassert 404 == 200\n +  where 404 = <Response [404 Not Found]>.status_code\n1 failed, 40 passed, 1 warning in 0.53s\n",
+    "timing": {
+      "validity": "fresh_timing",
+      "selected_tests": 41,
+      "phases_s": {
+        "pre_collection_setup": 0.001,
+        "collection_and_testmon_analysis": 0.027,
+        "test_execution": 0.437,
+        "post_processing": 0.006,
+        "process_observed": 0.471
+      },
+      "exit_status": 1
+    },
+    "selection_admission": "positive_test_count"
+  },
+  "elapsed_s": 7.85
+}
