@@ -55,8 +55,12 @@
         <div id="load-status" class="status" role="status" aria-live="polite">Loading result files…</div>
       </header>
       <section id="benchmark" aria-labelledby="benchmark-heading">
-        <h2 id="benchmark-heading">Benchmark timings and critical path</h2>
+        <h2 id="benchmark-heading">Benchmark timings and evidence execution</h2>
         <div id="benchmark-content"></div>
+      </section>
+      <section id="performance" aria-labelledby="performance-heading">
+        <h2 id="performance-heading">SQLite performance evidence</h2>
+        <div id="performance-content"></div>
       </section>
       <section id="faults" aria-labelledby="faults-heading">
         <h2 id="faults-heading">Fault detection: initial vs strengthened</h2>
@@ -80,7 +84,17 @@
         "faults.json",
         "lifecycle.json",
         "admission-attacks.json",
+        "performance.json",
       ];
+
+      const FILE_PATHS = {
+        "benchmark.json": "results/benchmark.json",
+        "faults-initial.json": "results/faults-initial.json",
+        "faults.json": "results/faults.json",
+        "lifecycle.json": "results/lifecycle.json",
+        "admission-attacks.json": "results/admission-attacks.json",
+        "performance.json": "./performance.json",
+      };
 
       const loaded = new Map();
 
@@ -128,6 +142,39 @@
 
       function seconds(value) {
         return numberValue(value, " s");
+      }
+
+      function hasNumber(value) {
+        return typeof value === "number" && Number.isFinite(value);
+      }
+
+      function hasCurrentActionTiming(action) {
+        return hasNumber(action.evidence_execution_seconds) || hasNumber(action.observed_seconds);
+      }
+
+      function currentActionSeconds(action) {
+        if (hasNumber(action.observed_seconds)) return `${action.observed_seconds} s (observed)`;
+        if (hasNumber(action.evidence_execution_seconds) && hasNumber(action.seconds)) return `${action.seconds} s (current)`;
+        return "not recorded";
+      }
+
+      function evidenceSeconds(action) {
+        if (hasNumber(action.evidence_execution_seconds)) return `${action.evidence_execution_seconds} s (receipt)`;
+        return hasNumber(action.seconds) ? `${action.seconds} s (historical receipt)` : "unknown";
+      }
+
+      function actionStartSeconds(action) {
+        return hasNumber(action.start_seconds) ? `${action.start_seconds} s offset` : "not recorded";
+      }
+
+      function actionDependencies(action) {
+        return Array.isArray(action.dependencies) ? (action.dependencies.length ? action.dependencies.join(", ") : "none") : "not recorded";
+      }
+
+      function booleanPill(value) {
+        if (value === true) return element("span", "pill good", "equal");
+        if (value === false) return element("span", "pill bad", "not equal");
+        return element("span", "pill", "unknown");
       }
 
       function statusPill(value) {
@@ -179,6 +226,7 @@
         if (!records.length) return readyMessage(container, "No benchmark records were recorded.");
 
         const intro = element("p", "note", textValue(result.data.scope, "Recorded campaign timing; scope was not supplied."));
+        const captureNote = element("p", "muted", "Capture is recorded separately as source/dependency capture overhead and may expose an input/IO bottleneck; it is not action execution time.");
         const hardware = safeObject(result.data.hardware);
         const hardwareText = Object.entries(hardware).map(([key, value]) => `${key}: ${textValue(value)}`).join(" · ");
         const hardwareNote = element("p", "muted", hardwareText || "Hardware metadata not recorded.");
@@ -188,14 +236,20 @@
             textValue(item.case),
             seconds(item.seconds),
             seconds(item.graph_seconds),
+            seconds(item.capture_seconds),
             statusPill(item.decision),
             numberValue(item.cache_hits),
             numberValue(Object.keys(safeObject(item.actions)).length),
           ];
         });
-        const summary = table(["Scenario", "Total", "Graph", "Admission", "Cache hits", "Receipt stages"], rows);
+        const summary = table(["Scenario", "Total", "Graph", "Capture", "Admission", "Cache hits", "Receipt stages"], rows);
         const details = element("div");
-        append(details, element("h3", null, "Receipt stages / critical path inputs"), element("p", "note", "Stages are shown in recorded action order. No unrecorded critical-path duration is inferred."));
+        const hasCurrentTiming = records.some((record) => Object.values(safeObject(safeObject(record).actions)).some((action) => hasCurrentActionTiming(safeObject(action))));
+        const hasTimeline = records.some((record) => Object.values(safeObject(safeObject(record).actions)).some((action) => hasNumber(safeObject(action).start_seconds)));
+        const hasDependencies = records.some((record) => Object.values(safeObject(safeObject(record).actions)).some((action) => Array.isArray(safeObject(action).dependencies)));
+        append(details, element("h3", null, "Receipt stages and observed timeline"), element("p", "note", hasCurrentTiming
+          ? "Current action durations and start offsets are shown where recorded. This is an observed graph timeline, not an inferred p95 or abstract critical path."
+          : "Older records do not contain current action timing. The fallback receipt time is historical and may represent a cache hit's original execution."));
         for (const record of records) {
           const item = safeObject(record);
           const detail = document.createElement("details");
@@ -203,12 +257,17 @@
           const summaryNode = element("summary", null, `${textValue(item.case)} · ${seconds(item.seconds)} total · ${numberValue(item.cache_hits)} cache hits`);
           const actionRows = Object.entries(actions).map(([name, action]) => {
             const item = safeObject(action);
-            return [name, statusPill(item.cache), seconds(item.seconds), item.passed === true ? statusPill("passed") : item.passed === false ? statusPill("failed") : statusPill("unknown"), textValue(item.error, "—")];
+            const result = item.passed === true ? statusPill("passed") : item.passed === false ? statusPill("failed") : statusPill("unknown");
+            if (hasCurrentTiming) return [name, statusPill(item.cache), currentActionSeconds(item), evidenceSeconds(item), actionStartSeconds(item), actionDependencies(item), result, textValue(item.error, "—")];
+            return [name, statusPill(item.cache), evidenceSeconds(item), actionStartSeconds(item), actionDependencies(item), result, textValue(item.error, "—")];
           });
-          append(detail, summaryNode, element("div", null, table(["Stage", "Cache", "Time", "Result", "Error"], actionRows)));
+          const headers = hasCurrentTiming
+            ? ["Stage", "Cache", "current observed elapsed", "evidence execution time (receipt)", hasTimeline ? "start offset" : "start offset (not recorded)", hasDependencies ? "dependencies" : "dependencies (not recorded)", "Result", "Error"]
+            : ["Stage", "Cache", "evidence execution time (historical on hits)", "start offset (not recorded)", "dependencies (not recorded)", "Result", "Error"];
+          append(detail, summaryNode, element("div", null, table(headers, actionRows)));
           details.append(detail);
         }
-        container.replaceChildren(intro, hardwareNote, summary, details);
+        container.replaceChildren(intro, captureNote, hardwareNote, summary, details);
       }
 
       function faultCount(data) {
@@ -328,6 +387,72 @@
         container.replaceChildren(cards, explanation, comparison);
       }
 
+      function performanceMetric(value) {
+        return typeof value === "number" && Number.isFinite(value) ? String(value) : "unknown";
+      }
+
+      function renderPerformance(result) {
+        const container = document.querySelector("#performance-content");
+        if (result.state !== "ready") return unavailable(container, "performance.json", result.detail);
+        const data = safeObject(result.data);
+        const cases = safeObject(data.cases);
+        const slope = safeObject(data.opcode_slope);
+        const intro = element("p", "note", `${textValue(data.experiment, "Performance experiment name not recorded.")} · status: ${textValue(data.status)}`);
+        const metadata = table(["Field", "Recorded value"], [
+          ["Scales", safeArray(data.scales).join(", ") || "unknown"],
+          ["Samples per query", performanceMetric(data.samples_per_query)],
+          ["Runtime", seconds(data.runtime_seconds)],
+          ["Python", textValue(data.python)],
+        ]);
+
+        const slopeRows = [
+          ["Existing capacity", performanceMetric(safeObject(slope.existing_capacity_first).at_1000), performanceMetric(safeObject(slope.existing_capacity_first).at_100000), performanceMetric(safeObject(slope.existing_capacity_first).ratio_100000_to_1000)],
+          ["Candidate capacity", performanceMetric(safeObject(slope.candidate_capacity_first).at_1000), performanceMetric(safeObject(slope.candidate_capacity_first).at_100000), performanceMetric(safeObject(slope.candidate_capacity_first).ratio_100000_to_1000)],
+          ["Existing list first page", performanceMetric(safeObject(slope.existing_list_first).at_1000), performanceMetric(safeObject(slope.existing_list_first).at_100000), performanceMetric(safeObject(slope.existing_list_first).ratio_100000_to_1000)],
+          ["Candidate list first page", performanceMetric(safeObject(slope.candidate_list_first).at_1000), performanceMetric(safeObject(slope.candidate_list_first).at_100000), performanceMetric(safeObject(slope.candidate_list_first).ratio_100000_to_1000)],
+        ];
+        const slopeTable = table(["First-sample VM opcodes", "1,000 rows", "100,000 rows", "Ratio"], slopeRows);
+
+        const costRows = Object.entries(cases).map(([scale, rawCase]) => {
+          const item = safeObject(rawCase);
+          const existing = safeObject(item.existing_schema);
+          const candidate = safeObject(item.candidate_indexes);
+          const existingCapacity = safeObject(existing.capacity);
+          const candidateCapacity = safeObject(candidate.capacity);
+          const existingList = safeObject(existing.list);
+          const candidateList = safeObject(candidate.list);
+          return [
+            scale,
+            `${performanceMetric(existingCapacity.first_progress_opcodes_n1)} / ${performanceMetric(existingCapacity.median_ms)} ms`,
+            `${performanceMetric(candidateCapacity.first_progress_opcodes_n1)} / ${performanceMetric(candidateCapacity.median_ms)} ms`,
+            `${performanceMetric(existingList.first_progress_opcodes_n1)} / ${performanceMetric(existingList.median_ms)} ms`,
+            `${performanceMetric(candidateList.first_progress_opcodes_n1)} / ${performanceMetric(candidateList.median_ms)} ms`,
+          ];
+        });
+        const costsTable = table(["Rows", "Existing capacity: opcodes / median ms", "Candidate capacity: opcodes / median ms", "Existing list: opcodes / median ms", "Candidate list: opcodes / median ms"], costRows);
+
+        const ddl = element("div");
+        append(ddl, element("h3", null, "Candidate DDL"));
+        const ddlStatements = safeArray(data.candidate_ddl);
+        if (ddlStatements.length) {
+          for (const statement of ddlStatements) ddl.append(element("pre", null, statement));
+        } else {
+          ddl.append(element("p", "empty", "Candidate DDL was not recorded."));
+        }
+
+        const equivalenceRows = Object.entries(cases).map(([scale, rawCase]) => {
+          const checks = safeObject(safeObject(rawCase).equivalence);
+          return [scale, booleanPill(checks.capacity_output_equal), booleanPill(checks.list_boundary_outputs_equal), booleanPill(checks.list_cardinality_equal), booleanPill(checks.list_page_signature_equal)];
+        });
+        const equivalence = element("div");
+        append(equivalence, element("h3", null, "Equivalence checks and limits"));
+        if (equivalenceRows.length) equivalence.append(table(["Rows", "Capacity output", "List boundaries", "List cardinality", "List page signature"], equivalenceRows));
+        const method = safeObject(data.method);
+        append(equivalence, element("p", "note", textValue(method.timings, "Timing method not recorded.")), element("p", "note", textValue(method.warm_cache_note, "Warm-cache limitation not recorded.")), element("p", "note", "p95: not recorded and not estimated. These samples do not establish an abstract percentile or an end-to-end critical path."));
+
+        append(container, intro, element("h3", null, "Run metadata"), metadata, element("h3", null, "Opcode slope"), slopeTable, element("h3", null, "Recorded query costs"), costsTable, ddl, equivalence);
+      }
+
       function renderAdmission(result) {
         const container = document.querySelector("#admission-content");
         if (result.state !== "ready") return unavailable(container, "results/admission-attacks.json", result.detail);
@@ -385,7 +510,7 @@
 
       async function loadFile(name) {
         try {
-          const response = await fetch(`results/${name}`, { cache: "no-store" });
+          const response = await fetch(FILE_PATHS[name], { cache: "no-store" });
           if (!response.ok) return { state: "missing", detail: `HTTP ${response.status}; no result was published.` };
           try {
             return { state: "ready", data: await response.json() };
@@ -401,6 +526,7 @@
         const entries = await Promise.all(FILES.map(async (name) => [name, await loadFile(name)]));
         for (const [name, result] of entries) loaded.set(name, result);
         renderBenchmark(loaded.get("benchmark.json"));
+        renderPerformance(loaded.get("performance.json"));
         renderFaults(loaded.get("faults-initial.json"), loaded.get("faults.json"));
         renderAdmission(loaded.get("admission-attacks.json"));
         renderLifecycle(loaded.get("lifecycle.json"));

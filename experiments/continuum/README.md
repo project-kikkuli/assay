@@ -22,6 +22,7 @@ it is outside the measured verification interval.
 ./continuum faults             # independently authored semantic defects
 ./continuum lifecycle          # stale evidence attacks, actual worker death, recovery
 ./continuum bench              # serial/parallel, five cache hits, source/runtime changes
+python3 experiments/continuum/performance.py  # actual SQL work at 1k/10k/100k rows
 ./continuum view               # open http://127.0.0.1:8765/view.html
 ```
 
@@ -78,6 +79,11 @@ It missed wrong stored quantities and cancellation with no effect. Subsequent
 checks against those same faults are regression checks, not a new blind evaluation.
 [A loaded-host run](results/loaded-host-negative.json) exceeded thirty seconds and
 withheld admission on a policy timeout. Faster isolated runs do not erase it.
+
+[The performance probe](performance.json) found capacity-query work growing from
+3,472 to 330,172 SQLite VM instructions. Candidate indexes held it at 250 while
+preserving the checked capacity and pagination outputs. This is cost evidence,
+not a deployed schema change, load test, or existing admission budget.
 
 Current measurements are in [results](results/). Source capture and admission are
 included; downloads, hosted queue time, and real production observation windows

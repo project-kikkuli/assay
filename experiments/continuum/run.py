@@ -121,7 +121,9 @@ def load_verifier(root):
     spec = importlib.util.spec_from_file_location("continuum_independent_verifier", root / "verifier/verify.py")
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
-    spec.loader.exec_module(module)
+    # Import loaders write __pycache__ into otherwise captured input trees.
+    # Execute these trusted source bytes without modifying the evidence subject.
+    exec(compile((root / "verifier/verify.py").read_bytes(), spec.origin, "exec"), module.__dict__)
     return module
 
 
@@ -245,7 +247,8 @@ def make_actions(root, profile):
     dependencies = digest(dependency_tree(root / "client/node_modules"))
     trusted = {"contract": file_hash(root / "verifier/contract.json"), "controls": tree(root / "verifier")}
     def action(inputs, env, run, deps=(), restore=None):
-        return {"inputs": inputs, "environment": {"runtime": env, "uid": os.getuid(), "gid": os.getgid()},
+        return {"inputs": inputs, "environment": {"runtime": env, "uid": os.getuid(), "gid": os.getgid(),
+                "observer_python": sys.version, "observer_platform": platform.platform()},
                 "recipe": recipe, "run": run, "deps": list(deps), "restore": restore}
     return {
         "client": action({"source": client, "dependencies": dependencies}, environment["node"],
