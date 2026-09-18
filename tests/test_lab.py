@@ -72,6 +72,13 @@ class ReaderTests(unittest.TestCase):
         self.assertIn(latest["built_artifact_sha256"][:12], output)
         self.assertIn(latest["boundary"]["source_sha256"][:12], output)
 
+    def test_gate_view_keeps_hosted_negative_result_visible(self):
+        output, _ = capture(lab.show_gate)
+        self.assertIn("hosted / 4 browser workers", output)
+        self.assertIn("hosted / 2 browser workers", output)
+        self.assertIn("No transport fix is established", output)
+        self.assertIn("rejected", output)
+
     def test_policy_view_summarizes_repeated_checks(self):
         data = {
             "admission": "accept",

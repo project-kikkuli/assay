@@ -268,7 +268,7 @@ class Lab:
                     report = Path(scratch) / "browser.json"
                     env["PLAYWRIGHT_JSON_OUTPUT_FILE"] = str(report)
                     if observe_http:
-                        env["NODE_OPTIONS"] = f"--require={HERE / 'observe-http.cjs'}"
+                        env["NODE_OPTIONS"] = "--require=" + json.dumps(str(HERE / "observe-http.cjs"))
                         env["ASSAY_HTTP_TRACE"] = scratch
                     result = run([self.node, self.subject / "node_modules/@playwright/test/cli.js", "test", f"--workers={workers}", "--retries=0", "--reporter=json"], self.subject / "frontend", env, timeout=300)
                     browser_report = json.loads(report.read_text()) if report.exists() else {}

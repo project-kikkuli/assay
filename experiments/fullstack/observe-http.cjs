@@ -8,7 +8,8 @@ const original = http.request
 let written = 0
 
 function record(value) {
-  if (!directory || written >= 500) return
+  if (!directory || written > 500) return
+  if (written === 500) value = { event: "trace_truncated", limit: 500 }
   written += 1
   fs.appendFileSync(
     path.join(directory, `http-${process.pid}.jsonl`),

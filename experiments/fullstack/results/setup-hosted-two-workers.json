@@ -1,0 +1,16 @@
+{
+  "claim": "fresh preparation and its component setup timings; not whole-job time",
+  "prepare_lab_seconds": 41.464,
+  "component_seconds": {
+    "fetch": 0.5152653250000014,
+    "python_dependencies": 2.4263724039999985,
+    "javascript_dependencies": 12.678604342,
+    "chromium": 11.865367788,
+    "outbox": 0.6665623000000096,
+    "compatibility": 0.9175488980000068
+  },
+  "warm_gate_seconds": 338.588,
+  "warm_gate_exit_code": 0,
+  "logical_cpus": 2,
+  "memory_bytes": 8323973120
+}

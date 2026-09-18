@@ -1,0 +1,1652 @@
+{
+  "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+  "source_sha256": "27daa0a0912f15c38a191d04a586326bd90f78bc36a99c6aa6bc7c23b3943886",
+  "policy_sha256": {
+    "fullstack/faults.json": "dcb7387b731a1270fad5b85f039ca2f782f2cf3170d6ee081626081d8916a3b5",
+    "fullstack/gate.py": "16e1475ddb54226644b1e58b5b9807c937fce67f9c39fa434f5e8beda2704d8d",
+    "fullstack/holdout-faults.json": "7427e8f58b5ba16eb8ab548ad3a3b73553dc1dfebfc49e11450e0c2afccfe81a",
+    "fullstack/holdout.py": "eb9a6a4d6caefc5bf91defff26b5429db8a17877008c268d756978a5c8751a77",
+    "fullstack/lifecycle.py": "d96069af265a529d7818bac2ea659ea55ffb6752a0cd3b5561feef30aede6635",
+    "fullstack/lifecycle_tests.py": "b85e6cd4f3f81765558f626eb5855c5787394e256ad6103d3d7395666ac43f5f",
+    "fullstack/observe-http.cjs": "63a7ccc60e15f22c3a87e3f7afe24e2bc415315921cb32a339a25fd2cf70f89e",
+    "fullstack/oracle_tests.py": "b2cb16a6b3df53548539b41bdeabeb353f6f62971658787171df4b8cf9568f9b",
+    "fullstack/run.py": "a5f87b68661dafc678f43bc3544cc499487bb85a4a30c4f8dabf7f6fe976dd40",
+    "fullstack/test_gate.py": "70633de526b379df0d41dbc777121d9968dd8568c1acde2aa0858b5f6bbed717",
+    "fullstack/test_run.py": "ded69a60bf08f27601dcb84cdf99b51e3daf426a5566b23978dff69f2b5c9d98",
+    "boundaries/contract.ts": "b343cf85733af16b132cf560534b868d8c079b5ae9c34c0be7058a6e5831f80f",
+    "boundaries/probe.ts": "2a54e3ced3782040b8d29dfca7a9944a225460c24aa033d45ffea107f3087b8a",
+    "boundaries/results.json": "11553b6119897be70ae9df1e0a1c8bc90710552a1b1d0aa7ee29ebaee10e9490",
+    "boundaries/run.py": "b914f54d3a82c3c89a8828f3a4eba65a37e8b439d92ce1afba75e481efe2c26e",
+    "boundaries/seed.py": "6ccc4b64aa51142c127b6e13244bc26e8e934caa2272cfcaaf3508281d07df42",
+    "boundaries/signup-results.json": "9d2aa277be269387697117bbf5395b48328c2926779a420f453f3c891e1f3ecb",
+    "boundaries/signup.mts": "60c7317b556c9cc038af1c8da3f3b26ca19fff7d03a09d0425f6c4c784429c8b"
+  },
+  "logical_cpus": 2,
+  "http_observation_enabled": true,
+  "runs": [
+    {
+      "records": [
+        {
+          "check": "typecheck",
+          "candidate": "baseline",
+          "seconds": 6.694154444999995,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "output_tail": ""
+        },
+        {
+          "check": "build",
+          "candidate": "baseline",
+          "seconds": 2.847617741999997,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cb4fb9c31aeeca94536ca8a9b8efe2c468617469ad594d49150513d2f78de8fa",
+          "output_tail": "vite v8.2.0 building client environment for production...\n\u001b[2K\ntransforming...\u2713 2242 modules transformed.\nrendering chunks...\ncomputing gzip size...\n../backend/app/frontend/index.html                             0.88 kB \u2502 gzip:   0.41 kB\n../backend/app/frontend/assets/index-KejARnPh.css             62.12 kB \u2502 gzip:  11.19 kB\n../backend/app/frontend/assets/useRouter-Cc2uka0g.js           0.15 kB \u2502 gzip:   0.14 kB\n../backend/app/frontend/assets/_layout-D3lFoA-u.js             0.42 kB \u2502 gzip:   0.30 kB\n../backend/app/frontend/assets/AuthLayout-_RG3Zima.js          0.70 kB \u2502 gzip:   0.36 kB\n../backend/app/frontend/assets/recover-password-aezg7Nnh.js    1.64 kB \u2502 gzip:   0.82 kB\n../backend/app/frontend/assets/password-input-CmfI6913.js      1.94 kB \u2502 gzip:   0.98 kB\n../backend/app/frontend/assets/login-8JPY_MR3.js               2.11 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/reset-password-BFX4PpoD.js      2.28 kB \u2502 gzip:   0.97 kB\n../backend/app/frontend/assets/dialog-C01DT4SF.js              2.47 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/signup-BDgwnJQh.js              2.72 kB \u2502 gzip:   0.99 kB\n../backend/app/frontend/assets/_layout-qAM_DC6h.js             6.42 kB \u2502 gzip:   2.63 kB\n../backend/app/frontend/assets/items-zX6P2w6T.js               9.49 kB \u2502 gzip:   2.90 kB\n../backend/app/frontend/assets/settings-70d6TzdP.js           10.22 kB \u2502 gzip:   3.40 kB\n../backend/app/frontend/assets/useBaseQuery-CYd3-LAO.js       16.28 kB \u2502 gzip:   5.46 kB\n../backend/app/frontend/assets/admin-ve5AQa3D.js              17.05 kB \u2502 gzip:   4.79 kB\n../backend/app/frontend/assets/theme-provider-D1cxwilt.js     24.42 kB \u2502 gzip:   9.13 kB\n../backend/app/frontend/assets/Logo-BxHjgxus.js               27.94 kB \u2502 gzip:   9.43 kB\n../backend/app/frontend/assets/loading-button-BN_jWq_N.js     38.56 kB \u2502 gzip:  13.67 kB\n../backend/app/frontend/assets/dist-0WDpuApi.js               41.39 kB \u2502 gzip:  14.86 kB\n../backend/app/frontend/assets/dist-BGxl33DE.js               47.10 kB \u2502 gzip:  15.79 kB\n../backend/app/frontend/assets/DataTable-v8Qs6LEz.js          75.35 kB \u2502 gzip:  21.03 kB\n../backend/app/frontend/assets/useCustomToast-BcHfjxNI.js    114.09 kB \u2502 gzip:  37.23 kB\n../backend/app/frontend/assets/index-B_8s6WYG.js             355.00 kB \u2502 gzip: 109.29 kB\n\n\u2713 built in 1.38s\n"
+        },
+        {
+          "check": "migration",
+          "workers": 2,
+          "seconds": 5.972170395000006,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+          "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+        },
+        {
+          "check": "seed",
+          "workers": 2,
+          "seconds": 4.918526514999996,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "4e5921b9dfe49b1ece465462c944645d6720db355281c2cea42bbd63681a4170",
+          "output_tail": "INFO:__main__:Creating initial data\nINFO:__main__:Initial data created\n"
+        },
+        {
+          "check": "mypy",
+          "candidate": "baseline",
+          "seconds": 34.216399816999996,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "df31673ff938e9a6a603c56cfd13949b42c1b8edcba9d2688c7f771f48c449d9",
+          "output_tail": "Success: no issues found in 19 source files\n"
+        },
+        {
+          "check": "ty",
+          "candidate": "baseline",
+          "seconds": 1.2118639429999973,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+          "output_tail": "All checks passed!\n"
+        },
+        {
+          "check": "ruff",
+          "candidate": "baseline",
+          "seconds": 0.20356403099998488,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+          "output_tail": "All checks passed!\n"
+        },
+        {
+          "check": "python_format",
+          "candidate": "baseline",
+          "seconds": 0.16431051300000377,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "a0a0f191878d553ae2b88299d5ead34d7a6367937ff1bd9e304fb73059c83f8a",
+          "output_tail": "19 files already formatted\n"
+        },
+        {
+          "check": "migration",
+          "candidate": "baseline",
+          "seconds": 9.91461083499999,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+          "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+        },
+        {
+          "check": "upstream",
+          "candidate": "baseline",
+          "tests": {
+            "collected": 62,
+            "failed": 0,
+            "skipped": 0,
+            "errors": 0,
+            "passed": 62
+          },
+          "slowest_tests": [
+            {
+              "test": "tests.crud.test_user::test_authenticate_user_with_bcrypt_upgrades_to_argon2",
+              "seconds": 1.844
+            },
+            {
+              "test": "tests.api.routes.test_users::test_update_password_me",
+              "seconds": 1.249
+            },
+            {
+              "test": "tests.api.routes.test_login::test_login_with_bcrypt_password_upgrades_to_argon2",
+              "seconds": 1.131
+            },
+            {
+              "test": "tests.api.routes.test_items::test_create_item",
+              "seconds": 0.834
+            },
+            {
+              "test": "tests.api.routes.test_login::test_reset_password",
+              "seconds": 0.591
+            },
+            {
+              "test": "tests.crud.test_user::test_update_user",
+              "seconds": 0.567
+            },
+            {
+              "test": "tests.api.routes.test_users::test_update_user_email_exists",
+              "seconds": 0.489
+            },
+            {
+              "test": "tests.api.routes.test_items::test_read_item_not_enough_permissions",
+              "seconds": 0.465
+            },
+            {
+              "test": "tests.api.routes.test_users::test_register_user",
+              "seconds": 0.425
+            },
+            {
+              "test": "tests.api.routes.test_users::test_delete_user_me",
+              "seconds": 0.409
+            },
+            {
+              "test": "tests.crud.test_user::test_authenticate_user",
+              "seconds": 0.394
+            },
+            {
+              "test": "tests.api.routes.test_users::test_retrieve_users",
+              "seconds": 0.348
+            }
+          ],
+          "seconds": 33.64171463100001,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "6993f27bf09f3737eb4a87bc5021a0f945dc078bca86362fb03dd36581dc1a08",
+          "output_tail": "..............................................................           [100%]\n=============================== warnings summary ===============================\n../.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n62 passed, 1 warning in 16.78s\n"
+        },
+        {
+          "check": "migration",
+          "candidate": "baseline",
+          "seconds": 8.218629209,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+          "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+        },
+        {
+          "check": "browser",
+          "workers": 2,
+          "tests": {
+            "startTime": "2026-09-18T07:40:45.801Z",
+            "duration": 66474.357,
+            "expected": 62,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0,
+            "actual_passed": 62
+          },
+          "failures": [],
+          "server_tail": "",
+          "transport_observed": true,
+          "transport_observations": [
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 36194,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 235.24852400000054
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 36194,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 204.75698399999965
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 37728,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 208.6590620000061
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 37728,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 212.205584000003
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 37728,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 211.01736200000596
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 37728,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 163.5344200000036
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 36420,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 222.52023100000224
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 36420,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 183.24473900000157
+            },
+            {
+              "method": "GET",
+              "path": "/api/v1/search",
+              "reusedSocket": false,
+              "localPort": 33304,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 6.600413000000117
+            },
+            {
+              "method": "GET",
+              "path": "/api/v1/search",
+              "reusedSocket": true,
+              "localPort": 33304,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 8.454354999994393
+            },
+            {
+              "method": "GET",
+              "path": "/view/LJBDbeYapuwNZKScSwoUZm.html",
+              "reusedSocket": true,
+              "localPort": 33304,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 4.670760000000882
+            },
+            {
+              "method": "GET",
+              "path": "/api/v1/search",
+              "reusedSocket": true,
+              "localPort": 33304,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 6.277479999997013
+            },
+            {
+              "method": "GET",
+              "path": "/api/v1/search",
+              "reusedSocket": true,
+              "localPort": 33304,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 7.92017200000555
+            },
+            {
+              "method": "GET",
+              "path": "/view/m8kVnkrGV4gDHhynBmeRMB.html",
+              "reusedSocket": true,
+              "localPort": 33304,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 4.311182999997982
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 37744,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 279.81643699999404
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 37744,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 247.25763400000142
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 51650,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 175.33066099999996
+            }
+          ],
+          "seconds": 68.463706175,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cf59ccc59814ce024fde83c9949da449e2b934a5773b1dac30c4205bafac2e53",
+          "output_tail": "dmin user management \u203a Password must be at least 8 characters\n[11/62] [chromium] \u203a tests/admin.spec.ts:168:3 \u203a Admin user management \u203a Passwords must match\n[12/62] [chromium] \u203a tests/admin.spec.ts:185:3 \u203a Admin page access control \u203a Non-superuser cannot access admin page\n[13/62] [chromium] \u203a tests/admin.spec.ts:198:3 \u203a Admin page access control \u203a Superuser can access admin page\n[14/62] [chromium] \u203a tests/items.spec.ts:11:1 \u203a Items page is accessible and shows correct title\n[15/62] [chromium] \u203a tests/items.spec.ts:17:1 \u203a Add Item button is visible\n[16/62] [chromium] \u203a tests/items.spec.ts:121:3 \u203a Items empty state \u203a Shows empty state message when no items exist\n[17/62] [chromium] \u203a tests/items.spec.ts:37:3 \u203a Items management \u203a Create a new item successfully\n[18/62] [chromium] \u203a tests/items.spec.ts:69:3 \u203a Items management \u203a Title is required\n[19/62] [chromium] \u203a tests/items.spec.ts:50:3 \u203a Items management \u203a Create item with only required fields\n[20/62] [chromium] \u203a tests/items.spec.ts:90:5 \u203a Items management \u203a Edit and Delete \u203a Edit an item successfully\n[21/62] [chromium] \u203a tests/items.spec.ts:61:3 \u203a Items management \u203a Cancel item creation\n[22/62] [chromium] \u203a tests/login.spec.ts:19:1 \u203a Inputs are visible, empty and editable\n[23/62] [chromium] \u203a tests/items.spec.ts:103:5 \u203a Items management \u203a Edit and Delete \u203a Delete an item successfully\n[24/62] [chromium] \u203a tests/login.spec.ts:26:1 \u203a Log In button is visible\n[25/62] [chromium] \u203a tests/login.spec.ts:32:1 \u203a Forgot Password link is visible\n[26/62] [chromium] \u203a tests/login.spec.ts:40:1 \u203a Log in with valid email and password \n[27/62] [chromium] \u203a tests/login.spec.ts:53:1 \u203a Log in with invalid email\n[28/62] [chromium] \u203a tests/login.spec.ts:62:1 \u203a Log in with invalid password\n[29/62] [chromium] \u203a tests/login.spec.ts:72:1 \u203a Successful log out\n[30/62] [chromium] \u203a tests/login.spec.ts:89:1 \u203a Logged-out user cannot access protected routes\n[31/62] [chromium] \u203a tests/login.spec.ts:109:1 \u203a Redirects to /login when token is wrong\n[32/62] [chromium] \u203a tests/reset-password.spec.ts:10:1 \u203a Password Recovery title is visible\n[33/62] [chromium] \u203a tests/reset-password.spec.ts:18:1 \u203a Input is visible, empty and editable\n[34/62] [chromium] \u203a tests/reset-password.spec.ts:26:1 \u203a Continue button is visible\n[35/62] [chromium] \u203a tests/reset-password.spec.ts:32:1 \u203a User can reset password successfully using the link\n[36/62] [chromium] \u203a tests/reset-password.spec.ts:70:1 \u203a Expired or invalid reset link\n[37/62] [chromium] \u203a tests/reset-password.spec.ts:83:1 \u203a Weak new password validation\n[38/62] [chromium] \u203a tests/sign-up.spec.ts:27:1 \u203a Inputs are visible, empty and editable\n[39/62] [chromium] \u203a tests/sign-up.spec.ts:36:1 \u203a Sign Up button is visible\n[40/62] [chromium] \u203a tests/sign-up.spec.ts:42:1 \u203a Log In link is visible\n[41/62] [chromium] \u203a tests/sign-up.spec.ts:48:1 \u203a Sign up with valid name, email, and password\n[42/62] [chromium] \u203a tests/sign-up.spec.ts:58:1 \u203a Sign up with invalid email\n[43/62] [chromium] \u203a tests/sign-up.spec.ts:73:1 \u203a Sign up with existing email\n[44/62] [chromium] \u203a tests/sign-up.spec.ts:94:1 \u203a Sign up with weak password\n[45/62] [chromium] \u203a tests/sign-up.spec.ts:109:1 \u203a Sign up with mismatched passwords\n[46/62] [chromium] \u203a tests/sign-up.spec.ts:123:1 \u203a Sign up with missing full name\n[47/62] [chromium] \u203a tests/sign-up.spec.ts:136:1 \u203a Sign up with missing email\n[48/62] [chromium] \u203a tests/sign-up.spec.ts:149:1 \u203a Sign up with missing password\n[49/62] [chromium] \u203a tests/user-settings.spec.ts:9:1 \u203a My profile tab is active by default\n[50/62] [chromium] \u203a tests/user-settings.spec.ts:17:1 \u203a All tabs are visible\n[51/62] [chromium] \u203a tests/user-settings.spec.ts:68:3 \u203a Edit user email \u203a Edit user email with a valid email\n[52/62] [chromium] \u203a tests/user-settings.spec.ts:92:3 \u203a Cancel edit actions \u203a Cancel edit action restores original name\n[53/62] [chromium] \u203a tests/user-settings.spec.ts:109:3 \u203a Cancel edit actions \u203a Cancel edit action restores original email\n[54/62] [chromium] \u203a tests/user-settings.spec.ts:130:3 \u203a Change password \u203a Update password successfully\n[55/62] [chromium] \u203a tests/user-settings.spec.ts:205:1 \u203a Appearance button is visible in sidebar\n[56/62] [chromium] \u203a tests/user-settings.spec.ts:210:1 \u203a User can switch between theme modes\n[57/62] [chromium] \u203a tests/user-settings.spec.ts:224:1 \u203a Selected mode is preserved across sessions\n[58/62] [chromium] \u203a tests/user-settings.spec.ts:41:3 \u203a Edit user profile \u203a Edit user name with a valid name\n[59/62] [chromium] \u203a tests/user-settings.spec.ts:54:3 \u203a Edit user profile \u203a Edit user email with an invalid email shows error\n[60/62] [chromium] \u203a tests/user-settings.spec.ts:182:3 \u203a Change password validation \u203a New password and confirmation password do not match\n[61/62] [chromium] \u203a tests/user-settings.spec.ts:169:3 \u203a Change password validation \u203a Update password with weak passwords\n[62/62] [chromium] \u203a tests/user-settings.spec.ts:193:3 \u203a Change password validation \u203a Current password and new password are the same\n  62 passed (1.1m)\n"
+        },
+        {
+          "check": "oracle",
+          "candidate": "baseline",
+          "tests": {
+            "collected": 7,
+            "failed": 0,
+            "skipped": 0,
+            "errors": 0,
+            "passed": 7
+          },
+          "slowest_tests": [
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_AUTH_001_unauthenticated_and_wrong_password_are_rejected",
+              "seconds": 0.162
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_SCOPE_003_cross_owner_get_update_delete_do_not_interfere",
+              "seconds": 0.051
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_PAGE_006_paging_is_complete_disjoint_and_count_stable",
+              "seconds": 0.044
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_SCOPE_002_list_and_count_are_owner_scoped",
+              "seconds": 0.033
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_SCOPE_004_owner_spoof_cannot_transfer_item",
+              "seconds": 0.033
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_WRITE_007_invalid_writes_fail_without_partial_commit",
+              "seconds": 0.032
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_DATA_005_user_responses_never_leak_sensitive_fields",
+              "seconds": 0.023
+            }
+          ],
+          "seconds": 5.950908853000016,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "59835a67190280735811c197ef6d3984c5efeb92b5a96ee6b6daec69f6e44b52",
+          "output_tail": ".......                                                                  [100%]\n=============================== warnings summary ===============================\n../.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n7 passed, 1 warning in 3.62s\n"
+        },
+        {
+          "check": "migration",
+          "candidate": "baseline",
+          "seconds": 2.3543710330000067,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+          "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+        },
+        {
+          "check": "lifecycle",
+          "candidate": "baseline",
+          "tests": {
+            "collected": 4,
+            "failed": 0,
+            "skipped": 0,
+            "errors": 0,
+            "passed": 4
+          },
+          "slowest_tests": [
+            {
+              "test": "experiments.fullstack.lifecycle_tests::test_password_change_requires_current_secret_and_preserves_authentication",
+              "seconds": 0.7
+            },
+            {
+              "test": "experiments.fullstack.lifecycle_tests::test_public_signup_cannot_create_privileged_accounts[extra0]",
+              "seconds": 0.234
+            },
+            {
+              "test": "experiments.fullstack.lifecycle_tests::test_partial_updates_preserve_omitted_fields_in_both_directions",
+              "seconds": 0.209
+            },
+            {
+              "test": "experiments.fullstack.lifecycle_tests::test_public_signup_cannot_create_privileged_accounts[extra1]",
+              "seconds": 0.192
+            }
+          ],
+          "seconds": 5.72121230099998,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "586a926e12360329a0211401caf1f34ca24dc8d4d3b59e7b7ee8af44f1c50548",
+          "output_tail": "....                                                                     [100%]\n=============================== warnings summary ===============================\n../.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n4 passed, 1 warning in 4.54s\n"
+        }
+      ],
+      "verdict": "supported",
+      "built_artifact_sha256": "cd182ee00d417731579483673445d033875d056eb2d8549eb9f85519ee6d24b7",
+      "boundary": {
+        "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+        "probe": "data",
+        "source_sha256": "27daa0a0912f15c38a191d04a586326bd90f78bc36a99c6aa6bc7c23b3943886",
+        "steps": [
+          {
+            "check": "migration",
+            "seconds": 6.268112699000014,
+            "exit_code": 0,
+            "status": "passed",
+            "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+          },
+          {
+            "check": "seed",
+            "seconds": 5.342484124999999,
+            "exit_code": 0,
+            "status": "passed",
+            "output_tail": "150 synthetic items; fixture token omitted"
+          },
+          {
+            "check": "typescript_contract",
+            "seconds": 3.4558578640000235,
+            "exit_code": 0,
+            "status": "passed",
+            "output_tail": ""
+          },
+          {
+            "check": "wire_and_browser",
+            "seconds": 6.7279217389999815,
+            "exit_code": 0,
+            "status": "passed",
+            "output_tail": "(node:3621) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n{\"null_update\":{\"http_status\":422,\"title_preserved\":true,\"expected_status_class\":\"4xx\"},\"negative_offset\":{\"http_status\":422,\"expected_status_class\":\"4xx\"},\"pagination\":{\"seeded\":150,\"api_total\":150,\"api_first_page\":100,\"api_second_page\":50,\"initial_page_size\":10,\"exercised_page_size\":50,\"browser_pages\":3,\"browser_unique_titles\":150,\"all_items_reachable\":true,\"observed_pages\":[{\"count\":50,\"first\":\"<svg onload=\\\"globalThis.__assayInjected=true\\\"></svg>\",\"last\":\"fixture-100\"},{\"count\":50,\"first\":\"fixture-099\",\"last\":\"fixture-050\"},{\"count\":50,\"first\":\"fixture-049\",\"last\":\"fixture-000\"}]},\"title_rendering\":{\"injected_script_executed\":false,\"safely_rendered\":true}}\n"
+          }
+        ],
+        "oracle_sha256": {
+          "seed.py": "6ccc4b64aa51142c127b6e13244bc26e8e934caa2272cfcaaf3508281d07df42",
+          "run.py": "b914f54d3a82c3c89a8828f3a4eba65a37e8b439d92ce1afba75e481efe2c26e",
+          "signup.mts": "60c7317b556c9cc038af1c8da3f3b26ca19fff7d03a09d0425f6c4c784429c8b",
+          "probe.ts": "2a54e3ced3782040b8d29dfca7a9944a225460c24aa033d45ffea107f3087b8a",
+          "contract.ts": "b343cf85733af16b132cf560534b868d8c079b5ae9c34c0be7058a6e5831f80f"
+        },
+        "expectations": [
+          "Invalid user input returns 4xx rather than 500",
+          "All 150 owned items are reachable through table pagination",
+          "Stored titles cannot execute JavaScript"
+        ],
+        "limits": [
+          "Explicit product expectations, not inferred specifications",
+          "One dataset and one browser engine",
+          "Authentication is supplied as a trusted fixture",
+          "Host execution; not sandboxed"
+        ],
+        "generated_client": {
+          "accepts_null_title": false,
+          "strict_null_checks": true,
+          "seconds": 1.6987528079999947,
+          "diagnostic": "assay_boundary_t4ggf2yt_contract.mts(4,30): error TS2322: Type 'null' is not assignable to type 'string | undefined'.\n"
+        },
+        "reused_build_sha256": "cd182ee00d417731579483673445d033875d056eb2d8549eb9f85519ee6d24b7",
+        "observations": {
+          "null_update": {
+            "http_status": 422,
+            "title_preserved": true,
+            "expected_status_class": "4xx"
+          },
+          "negative_offset": {
+            "http_status": 422,
+            "expected_status_class": "4xx"
+          },
+          "pagination": {
+            "seeded": 150,
+            "api_total": 150,
+            "api_first_page": 100,
+            "api_second_page": 50,
+            "initial_page_size": 10,
+            "exercised_page_size": 50,
+            "browser_pages": 3,
+            "browser_unique_titles": 150,
+            "all_items_reachable": true,
+            "observed_pages": [
+              {
+                "count": 50,
+                "first": "<svg onload=\"globalThis.__assayInjected=true\"></svg>",
+                "last": "fixture-100"
+              },
+              {
+                "count": 50,
+                "first": "fixture-099",
+                "last": "fixture-050"
+              },
+              {
+                "count": 50,
+                "first": "fixture-049",
+                "last": "fixture-000"
+              }
+            ]
+          },
+          "title_rendering": {
+            "injected_script_executed": false,
+            "safely_rendered": true
+          }
+        },
+        "claims": {
+          "invalid_title_is_client_error": true,
+          "invalid_title_does_not_modify_storage": true,
+          "invalid_offset_is_client_error": true,
+          "all_owned_items_reachable": true,
+          "stored_title_does_not_execute": true
+        },
+        "application_verdict": "supported",
+        "seconds": 32.45325349000001,
+        "source_unchanged": true,
+        "oracle_unchanged": true,
+        "artifact_unchanged": true
+      },
+      "boundary_process_seconds": 33.055194615999994,
+      "boundary_exit": 0,
+      "artifact_unchanged": true,
+      "seconds": 111.30675611500001
+    },
+    {
+      "records": [
+        {
+          "check": "typecheck",
+          "candidate": "baseline",
+          "seconds": 6.552610130000005,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "output_tail": ""
+        },
+        {
+          "check": "build",
+          "candidate": "baseline",
+          "seconds": 2.4514868259999787,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "0ec74e848e031f5056cf4b972c85fef3e1f16e63aced7f092f669ac628807450",
+          "output_tail": "vite v8.2.0 building client environment for production...\n\u001b[2K\ntransforming...\u2713 2242 modules transformed.\nrendering chunks...\ncomputing gzip size...\n../backend/app/frontend/index.html                             0.88 kB \u2502 gzip:   0.41 kB\n../backend/app/frontend/assets/index-KejARnPh.css             62.12 kB \u2502 gzip:  11.19 kB\n../backend/app/frontend/assets/useRouter-Cc2uka0g.js           0.15 kB \u2502 gzip:   0.14 kB\n../backend/app/frontend/assets/_layout-D3lFoA-u.js             0.42 kB \u2502 gzip:   0.30 kB\n../backend/app/frontend/assets/AuthLayout-_RG3Zima.js          0.70 kB \u2502 gzip:   0.36 kB\n../backend/app/frontend/assets/recover-password-aezg7Nnh.js    1.64 kB \u2502 gzip:   0.82 kB\n../backend/app/frontend/assets/password-input-CmfI6913.js      1.94 kB \u2502 gzip:   0.98 kB\n../backend/app/frontend/assets/login-8JPY_MR3.js               2.11 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/reset-password-BFX4PpoD.js      2.28 kB \u2502 gzip:   0.97 kB\n../backend/app/frontend/assets/dialog-C01DT4SF.js              2.47 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/signup-BDgwnJQh.js              2.72 kB \u2502 gzip:   0.99 kB\n../backend/app/frontend/assets/_layout-qAM_DC6h.js             6.42 kB \u2502 gzip:   2.63 kB\n../backend/app/frontend/assets/items-zX6P2w6T.js               9.49 kB \u2502 gzip:   2.90 kB\n../backend/app/frontend/assets/settings-70d6TzdP.js           10.22 kB \u2502 gzip:   3.40 kB\n../backend/app/frontend/assets/useBaseQuery-CYd3-LAO.js       16.28 kB \u2502 gzip:   5.46 kB\n../backend/app/frontend/assets/admin-ve5AQa3D.js              17.05 kB \u2502 gzip:   4.79 kB\n../backend/app/frontend/assets/theme-provider-D1cxwilt.js     24.42 kB \u2502 gzip:   9.13 kB\n../backend/app/frontend/assets/Logo-BxHjgxus.js               27.94 kB \u2502 gzip:   9.43 kB\n../backend/app/frontend/assets/loading-button-BN_jWq_N.js     38.56 kB \u2502 gzip:  13.67 kB\n../backend/app/frontend/assets/dist-0WDpuApi.js               41.39 kB \u2502 gzip:  14.86 kB\n../backend/app/frontend/assets/dist-BGxl33DE.js               47.10 kB \u2502 gzip:  15.79 kB\n../backend/app/frontend/assets/DataTable-v8Qs6LEz.js          75.35 kB \u2502 gzip:  21.03 kB\n../backend/app/frontend/assets/useCustomToast-BcHfjxNI.js    114.09 kB \u2502 gzip:  37.23 kB\n../backend/app/frontend/assets/index-B_8s6WYG.js             355.00 kB \u2502 gzip: 109.29 kB\n\n\u2713 built in 1.32s\n"
+        },
+        {
+          "check": "migration",
+          "workers": 2,
+          "seconds": 5.550570829999998,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+          "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+        },
+        {
+          "check": "seed",
+          "workers": 2,
+          "seconds": 5.287179444000003,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "4e5921b9dfe49b1ece465462c944645d6720db355281c2cea42bbd63681a4170",
+          "output_tail": "INFO:__main__:Creating initial data\nINFO:__main__:Initial data created\n"
+        },
+        {
+          "check": "mypy",
+          "candidate": "baseline",
+          "seconds": 43.481634044999964,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "df31673ff938e9a6a603c56cfd13949b42c1b8edcba9d2688c7f771f48c449d9",
+          "output_tail": "Success: no issues found in 19 source files\n"
+        },
+        {
+          "check": "ty",
+          "candidate": "baseline",
+          "seconds": 1.337234900999988,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+          "output_tail": "All checks passed!\n"
+        },
+        {
+          "check": "ruff",
+          "candidate": "baseline",
+          "seconds": 0.14634257699998443,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+          "output_tail": "All checks passed!\n"
+        },
+        {
+          "check": "python_format",
+          "candidate": "baseline",
+          "seconds": 0.09115666100001363,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "a0a0f191878d553ae2b88299d5ead34d7a6367937ff1bd9e304fb73059c83f8a",
+          "output_tail": "19 files already formatted\n"
+        },
+        {
+          "check": "migration",
+          "candidate": "baseline",
+          "seconds": 10.209898328999998,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+          "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+        },
+        {
+          "check": "browser",
+          "workers": 2,
+          "tests": {
+            "startTime": "2026-09-18T07:42:35.161Z",
+            "duration": 66689.54000000001,
+            "expected": 62,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0,
+            "actual_passed": 62
+          },
+          "failures": [],
+          "server_tail": "",
+          "transport_observed": true,
+          "transport_observations": [
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 46128,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 335.89389799999844
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 46128,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 223.75092900000163
+            },
+            {
+              "method": "GET",
+              "path": "/api/v1/search",
+              "reusedSocket": false,
+              "localPort": 34902,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 23.130817000004754
+            },
+            {
+              "method": "GET",
+              "path": "/view/dYmW7u4esR6mXAHDRkhoyF.html",
+              "reusedSocket": true,
+              "localPort": 34902,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 7.53498799999943
+            },
+            {
+              "method": "GET",
+              "path": "/api/v1/search",
+              "reusedSocket": true,
+              "localPort": 34902,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 3.4904139999998733
+            },
+            {
+              "method": "GET",
+              "path": "/api/v1/search",
+              "reusedSocket": true,
+              "localPort": 34902,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 4.9571020000003045
+            },
+            {
+              "method": "GET",
+              "path": "/view/ApwWmoAFmyrZN3x9unnNM8.html",
+              "reusedSocket": true,
+              "localPort": 34902,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 7.435811999996076
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 39210,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 223.48476500000106
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 39210,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 235.8961960000015
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 47130,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 315.9032720000032
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 45940,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 358.39895799999977
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 45940,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 329.731458000002
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 39140,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 268.20135299999674
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 39140,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 271.61089399999764
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 47068,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 188.88078700000187
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 47068,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 238.37640599999577
+            }
+          ],
+          "seconds": 68.34088996499997,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "1e4dc8264f3692a97396653f5a2f562d488726accd7a5e88b1c40fd651974b10",
+          "output_tail": "dmin user management \u203a Password must be at least 8 characters\n[11/62] [chromium] \u203a tests/admin.spec.ts:168:3 \u203a Admin user management \u203a Passwords must match\n[12/62] [chromium] \u203a tests/admin.spec.ts:185:3 \u203a Admin page access control \u203a Non-superuser cannot access admin page\n[13/62] [chromium] \u203a tests/admin.spec.ts:198:3 \u203a Admin page access control \u203a Superuser can access admin page\n[14/62] [chromium] \u203a tests/items.spec.ts:11:1 \u203a Items page is accessible and shows correct title\n[15/62] [chromium] \u203a tests/items.spec.ts:17:1 \u203a Add Item button is visible\n[16/62] [chromium] \u203a tests/items.spec.ts:121:3 \u203a Items empty state \u203a Shows empty state message when no items exist\n[17/62] [chromium] \u203a tests/items.spec.ts:37:3 \u203a Items management \u203a Create a new item successfully\n[18/62] [chromium] \u203a tests/items.spec.ts:69:3 \u203a Items management \u203a Title is required\n[19/62] [chromium] \u203a tests/items.spec.ts:50:3 \u203a Items management \u203a Create item with only required fields\n[20/62] [chromium] \u203a tests/items.spec.ts:90:5 \u203a Items management \u203a Edit and Delete \u203a Edit an item successfully\n[21/62] [chromium] \u203a tests/items.spec.ts:61:3 \u203a Items management \u203a Cancel item creation\n[22/62] [chromium] \u203a tests/login.spec.ts:19:1 \u203a Inputs are visible, empty and editable\n[23/62] [chromium] \u203a tests/items.spec.ts:103:5 \u203a Items management \u203a Edit and Delete \u203a Delete an item successfully\n[24/62] [chromium] \u203a tests/login.spec.ts:26:1 \u203a Log In button is visible\n[25/62] [chromium] \u203a tests/login.spec.ts:32:1 \u203a Forgot Password link is visible\n[26/62] [chromium] \u203a tests/login.spec.ts:40:1 \u203a Log in with valid email and password \n[27/62] [chromium] \u203a tests/login.spec.ts:53:1 \u203a Log in with invalid email\n[28/62] [chromium] \u203a tests/login.spec.ts:62:1 \u203a Log in with invalid password\n[29/62] [chromium] \u203a tests/login.spec.ts:72:1 \u203a Successful log out\n[30/62] [chromium] \u203a tests/login.spec.ts:89:1 \u203a Logged-out user cannot access protected routes\n[31/62] [chromium] \u203a tests/login.spec.ts:109:1 \u203a Redirects to /login when token is wrong\n[32/62] [chromium] \u203a tests/reset-password.spec.ts:10:1 \u203a Password Recovery title is visible\n[33/62] [chromium] \u203a tests/reset-password.spec.ts:18:1 \u203a Input is visible, empty and editable\n[34/62] [chromium] \u203a tests/reset-password.spec.ts:26:1 \u203a Continue button is visible\n[35/62] [chromium] \u203a tests/reset-password.spec.ts:32:1 \u203a User can reset password successfully using the link\n[36/62] [chromium] \u203a tests/reset-password.spec.ts:70:1 \u203a Expired or invalid reset link\n[37/62] [chromium] \u203a tests/reset-password.spec.ts:83:1 \u203a Weak new password validation\n[38/62] [chromium] \u203a tests/sign-up.spec.ts:27:1 \u203a Inputs are visible, empty and editable\n[39/62] [chromium] \u203a tests/sign-up.spec.ts:36:1 \u203a Sign Up button is visible\n[40/62] [chromium] \u203a tests/sign-up.spec.ts:42:1 \u203a Log In link is visible\n[41/62] [chromium] \u203a tests/sign-up.spec.ts:48:1 \u203a Sign up with valid name, email, and password\n[42/62] [chromium] \u203a tests/sign-up.spec.ts:58:1 \u203a Sign up with invalid email\n[43/62] [chromium] \u203a tests/sign-up.spec.ts:73:1 \u203a Sign up with existing email\n[44/62] [chromium] \u203a tests/sign-up.spec.ts:94:1 \u203a Sign up with weak password\n[45/62] [chromium] \u203a tests/sign-up.spec.ts:109:1 \u203a Sign up with mismatched passwords\n[46/62] [chromium] \u203a tests/sign-up.spec.ts:123:1 \u203a Sign up with missing full name\n[47/62] [chromium] \u203a tests/sign-up.spec.ts:149:1 \u203a Sign up with missing password\n[48/62] [chromium] \u203a tests/sign-up.spec.ts:136:1 \u203a Sign up with missing email\n[49/62] [chromium] \u203a tests/user-settings.spec.ts:9:1 \u203a My profile tab is active by default\n[50/62] [chromium] \u203a tests/user-settings.spec.ts:17:1 \u203a All tabs are visible\n[51/62] [chromium] \u203a tests/user-settings.spec.ts:68:3 \u203a Edit user email \u203a Edit user email with a valid email\n[52/62] [chromium] \u203a tests/user-settings.spec.ts:92:3 \u203a Cancel edit actions \u203a Cancel edit action restores original name\n[53/62] [chromium] \u203a tests/user-settings.spec.ts:109:3 \u203a Cancel edit actions \u203a Cancel edit action restores original email\n[54/62] [chromium] \u203a tests/user-settings.spec.ts:130:3 \u203a Change password \u203a Update password successfully\n[55/62] [chromium] \u203a tests/user-settings.spec.ts:205:1 \u203a Appearance button is visible in sidebar\n[56/62] [chromium] \u203a tests/user-settings.spec.ts:210:1 \u203a User can switch between theme modes\n[57/62] [chromium] \u203a tests/user-settings.spec.ts:224:1 \u203a Selected mode is preserved across sessions\n[58/62] [chromium] \u203a tests/user-settings.spec.ts:41:3 \u203a Edit user profile \u203a Edit user name with a valid name\n[59/62] [chromium] \u203a tests/user-settings.spec.ts:182:3 \u203a Change password validation \u203a New password and confirmation password do not match\n[60/62] [chromium] \u203a tests/user-settings.spec.ts:54:3 \u203a Edit user profile \u203a Edit user email with an invalid email shows error\n[61/62] [chromium] \u203a tests/user-settings.spec.ts:169:3 \u203a Change password validation \u203a Update password with weak passwords\n[62/62] [chromium] \u203a tests/user-settings.spec.ts:193:3 \u203a Change password validation \u203a Current password and new password are the same\n  62 passed (1.1m)\n"
+        },
+        {
+          "check": "upstream",
+          "candidate": "baseline",
+          "tests": {
+            "collected": 62,
+            "failed": 0,
+            "skipped": 0,
+            "errors": 0,
+            "passed": 62
+          },
+          "slowest_tests": [
+            {
+              "test": "tests.api.routes.test_login::test_login_with_bcrypt_password_upgrades_to_argon2",
+              "seconds": 1.846
+            },
+            {
+              "test": "tests.crud.test_user::test_authenticate_user_with_bcrypt_upgrades_to_argon2",
+              "seconds": 1.693
+            },
+            {
+              "test": "tests.api.routes.test_users::test_update_password_me",
+              "seconds": 1.299
+            },
+            {
+              "test": "tests.api.routes.test_login::test_reset_password",
+              "seconds": 1.015
+            },
+            {
+              "test": "tests.api.routes.test_items::test_create_item",
+              "seconds": 0.767
+            },
+            {
+              "test": "tests.api.routes.test_items::test_read_item_not_enough_permissions",
+              "seconds": 0.687
+            },
+            {
+              "test": "tests.crud.test_user::test_update_user",
+              "seconds": 0.633
+            },
+            {
+              "test": "tests.api.routes.test_login::test_recovery_password",
+              "seconds": 0.541
+            },
+            {
+              "test": "tests.api.routes.test_login::test_login_with_argon2_password_keeps_hash",
+              "seconds": 0.534
+            },
+            {
+              "test": "tests.api.routes.test_users::test_get_users_normal_user_me",
+              "seconds": 0.518
+            },
+            {
+              "test": "tests.crud.test_user::test_authenticate_user",
+              "seconds": 0.501
+            },
+            {
+              "test": "tests.api.routes.test_users::test_delete_user_me",
+              "seconds": 0.489
+            }
+          ],
+          "seconds": 33.116458835,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "4edb989a72281ddcaefe37edc3c40670b101d3108f0094199d051e09352ebf18",
+          "output_tail": "..............................................................           [100%]\n=============================== warnings summary ===============================\n../.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n62 passed, 1 warning in 21.32s\n"
+        },
+        {
+          "check": "migration",
+          "candidate": "baseline",
+          "seconds": 2.4453103239999905,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+          "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+        },
+        {
+          "check": "oracle",
+          "candidate": "baseline",
+          "tests": {
+            "collected": 7,
+            "failed": 0,
+            "skipped": 0,
+            "errors": 0,
+            "passed": 7
+          },
+          "slowest_tests": [
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_AUTH_001_unauthenticated_and_wrong_password_are_rejected",
+              "seconds": 0.164
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_SCOPE_003_cross_owner_get_update_delete_do_not_interfere",
+              "seconds": 0.052
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_PAGE_006_paging_is_complete_disjoint_and_count_stable",
+              "seconds": 0.047
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_SCOPE_002_list_and_count_are_owner_scoped",
+              "seconds": 0.033
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_SCOPE_004_owner_spoof_cannot_transfer_item",
+              "seconds": 0.033
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_WRITE_007_invalid_writes_fail_without_partial_commit",
+              "seconds": 0.033
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_DATA_005_user_responses_never_leak_sensitive_fields",
+              "seconds": 0.023
+            }
+          ],
+          "seconds": 4.980708824999965,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "f169482bef449b975ce0d6b2b3e2aeaf29dea82e7c170bc145f98d08972c7614",
+          "output_tail": ".......                                                                  [100%]\n=============================== warnings summary ===============================\n../.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n7 passed, 1 warning in 3.68s\n"
+        },
+        {
+          "check": "migration",
+          "candidate": "baseline",
+          "seconds": 2.517287289999956,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+          "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+        },
+        {
+          "check": "lifecycle",
+          "candidate": "baseline",
+          "tests": {
+            "collected": 4,
+            "failed": 0,
+            "skipped": 0,
+            "errors": 0,
+            "passed": 4
+          },
+          "slowest_tests": [
+            {
+              "test": "experiments.fullstack.lifecycle_tests::test_password_change_requires_current_secret_and_preserves_authentication",
+              "seconds": 0.714
+            },
+            {
+              "test": "experiments.fullstack.lifecycle_tests::test_public_signup_cannot_create_privileged_accounts[extra0]",
+              "seconds": 0.234
+            },
+            {
+              "test": "experiments.fullstack.lifecycle_tests::test_partial_updates_preserve_omitted_fields_in_both_directions",
+              "seconds": 0.22
+            },
+            {
+              "test": "experiments.fullstack.lifecycle_tests::test_public_signup_cannot_create_privileged_accounts[extra1]",
+              "seconds": 0.189
+            }
+          ],
+          "seconds": 6.005189901999984,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "6bb9098192d6c7ee87a320c379ba82745e9d1cb11d7276ba04b8d9d1c3c8acec",
+          "output_tail": "....                                                                     [100%]\n=============================== warnings summary ===============================\n../.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n4 passed, 1 warning in 4.66s\n"
+        }
+      ],
+      "verdict": "supported",
+      "built_artifact_sha256": "cd182ee00d417731579483673445d033875d056eb2d8549eb9f85519ee6d24b7",
+      "boundary": {
+        "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+        "probe": "data",
+        "source_sha256": "27daa0a0912f15c38a191d04a586326bd90f78bc36a99c6aa6bc7c23b3943886",
+        "steps": [
+          {
+            "check": "migration",
+            "seconds": 6.294148300999979,
+            "exit_code": 0,
+            "status": "passed",
+            "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+          },
+          {
+            "check": "seed",
+            "seconds": 5.3951294180000104,
+            "exit_code": 0,
+            "status": "passed",
+            "output_tail": "150 synthetic items; fixture token omitted"
+          },
+          {
+            "check": "typescript_contract",
+            "seconds": 3.685193340000012,
+            "exit_code": 0,
+            "status": "passed",
+            "output_tail": ""
+          },
+          {
+            "check": "wire_and_browser",
+            "seconds": 9.045417772999997,
+            "exit_code": 0,
+            "status": "passed",
+            "output_tail": "(node:11615) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n{\"null_update\":{\"http_status\":422,\"title_preserved\":true,\"expected_status_class\":\"4xx\"},\"negative_offset\":{\"http_status\":422,\"expected_status_class\":\"4xx\"},\"pagination\":{\"seeded\":150,\"api_total\":150,\"api_first_page\":100,\"api_second_page\":50,\"initial_page_size\":10,\"exercised_page_size\":50,\"browser_pages\":3,\"browser_unique_titles\":150,\"all_items_reachable\":true,\"observed_pages\":[{\"count\":50,\"first\":\"<svg onload=\\\"globalThis.__assayInjected=true\\\"></svg>\",\"last\":\"fixture-100\"},{\"count\":50,\"first\":\"fixture-099\",\"last\":\"fixture-050\"},{\"count\":50,\"first\":\"fixture-049\",\"last\":\"fixture-000\"}]},\"title_rendering\":{\"injected_script_executed\":false,\"safely_rendered\":true}}\n"
+          }
+        ],
+        "oracle_sha256": {
+          "seed.py": "6ccc4b64aa51142c127b6e13244bc26e8e934caa2272cfcaaf3508281d07df42",
+          "run.py": "b914f54d3a82c3c89a8828f3a4eba65a37e8b439d92ce1afba75e481efe2c26e",
+          "signup.mts": "60c7317b556c9cc038af1c8da3f3b26ca19fff7d03a09d0425f6c4c784429c8b",
+          "probe.ts": "2a54e3ced3782040b8d29dfca7a9944a225460c24aa033d45ffea107f3087b8a",
+          "contract.ts": "b343cf85733af16b132cf560534b868d8c079b5ae9c34c0be7058a6e5831f80f"
+        },
+        "expectations": [
+          "Invalid user input returns 4xx rather than 500",
+          "All 150 owned items are reachable through table pagination",
+          "Stored titles cannot execute JavaScript"
+        ],
+        "limits": [
+          "Explicit product expectations, not inferred specifications",
+          "One dataset and one browser engine",
+          "Authentication is supplied as a trusted fixture",
+          "Host execution; not sandboxed"
+        ],
+        "generated_client": {
+          "accepts_null_title": false,
+          "strict_null_checks": true,
+          "seconds": 1.6782527759999937,
+          "diagnostic": "assay_boundary_te0pr7kf_contract.mts(4,30): error TS2322: Type 'null' is not assignable to type 'string | undefined'.\n"
+        },
+        "reused_build_sha256": "cd182ee00d417731579483673445d033875d056eb2d8549eb9f85519ee6d24b7",
+        "observations": {
+          "null_update": {
+            "http_status": 422,
+            "title_preserved": true,
+            "expected_status_class": "4xx"
+          },
+          "negative_offset": {
+            "http_status": 422,
+            "expected_status_class": "4xx"
+          },
+          "pagination": {
+            "seeded": 150,
+            "api_total": 150,
+            "api_first_page": 100,
+            "api_second_page": 50,
+            "initial_page_size": 10,
+            "exercised_page_size": 50,
+            "browser_pages": 3,
+            "browser_unique_titles": 150,
+            "all_items_reachable": true,
+            "observed_pages": [
+              {
+                "count": 50,
+                "first": "<svg onload=\"globalThis.__assayInjected=true\"></svg>",
+                "last": "fixture-100"
+              },
+              {
+                "count": 50,
+                "first": "fixture-099",
+                "last": "fixture-050"
+              },
+              {
+                "count": 50,
+                "first": "fixture-049",
+                "last": "fixture-000"
+              }
+            ]
+          },
+          "title_rendering": {
+            "injected_script_executed": false,
+            "safely_rendered": true
+          }
+        },
+        "claims": {
+          "invalid_title_is_client_error": true,
+          "invalid_title_does_not_modify_storage": true,
+          "invalid_offset_is_client_error": true,
+          "all_owned_items_reachable": true,
+          "stored_title_does_not_execute": true
+        },
+        "application_verdict": "supported",
+        "seconds": 36.10020186400001,
+        "source_unchanged": true,
+        "oracle_unchanged": true,
+        "artifact_unchanged": true
+      },
+      "boundary_process_seconds": 36.90886081199997,
+      "boundary_exit": 0,
+      "artifact_unchanged": true,
+      "seconds": 113.49174102499998
+    },
+    {
+      "records": [
+        {
+          "check": "typecheck",
+          "candidate": "baseline",
+          "seconds": 6.583136326999977,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "output_tail": ""
+        },
+        {
+          "check": "build",
+          "candidate": "baseline",
+          "seconds": 2.436113051999996,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "55945ce557f362900f7ab16d4bc3536ccf9321925b04c73942ed80ab0bdd2d26",
+          "output_tail": "vite v8.2.0 building client environment for production...\n\u001b[2K\ntransforming...\u2713 2242 modules transformed.\nrendering chunks...\ncomputing gzip size...\n../backend/app/frontend/index.html                             0.88 kB \u2502 gzip:   0.41 kB\n../backend/app/frontend/assets/index-KejARnPh.css             62.12 kB \u2502 gzip:  11.19 kB\n../backend/app/frontend/assets/useRouter-Cc2uka0g.js           0.15 kB \u2502 gzip:   0.14 kB\n../backend/app/frontend/assets/_layout-D3lFoA-u.js             0.42 kB \u2502 gzip:   0.30 kB\n../backend/app/frontend/assets/AuthLayout-_RG3Zima.js          0.70 kB \u2502 gzip:   0.36 kB\n../backend/app/frontend/assets/recover-password-aezg7Nnh.js    1.64 kB \u2502 gzip:   0.82 kB\n../backend/app/frontend/assets/password-input-CmfI6913.js      1.94 kB \u2502 gzip:   0.98 kB\n../backend/app/frontend/assets/login-8JPY_MR3.js               2.11 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/reset-password-BFX4PpoD.js      2.28 kB \u2502 gzip:   0.97 kB\n../backend/app/frontend/assets/dialog-C01DT4SF.js              2.47 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/signup-BDgwnJQh.js              2.72 kB \u2502 gzip:   0.99 kB\n../backend/app/frontend/assets/_layout-qAM_DC6h.js             6.42 kB \u2502 gzip:   2.63 kB\n../backend/app/frontend/assets/items-zX6P2w6T.js               9.49 kB \u2502 gzip:   2.90 kB\n../backend/app/frontend/assets/settings-70d6TzdP.js           10.22 kB \u2502 gzip:   3.40 kB\n../backend/app/frontend/assets/useBaseQuery-CYd3-LAO.js       16.28 kB \u2502 gzip:   5.46 kB\n../backend/app/frontend/assets/admin-ve5AQa3D.js              17.05 kB \u2502 gzip:   4.79 kB\n../backend/app/frontend/assets/theme-provider-D1cxwilt.js     24.42 kB \u2502 gzip:   9.13 kB\n../backend/app/frontend/assets/Logo-BxHjgxus.js               27.94 kB \u2502 gzip:   9.43 kB\n../backend/app/frontend/assets/loading-button-BN_jWq_N.js     38.56 kB \u2502 gzip:  13.67 kB\n../backend/app/frontend/assets/dist-0WDpuApi.js               41.39 kB \u2502 gzip:  14.86 kB\n../backend/app/frontend/assets/dist-BGxl33DE.js               47.10 kB \u2502 gzip:  15.79 kB\n../backend/app/frontend/assets/DataTable-v8Qs6LEz.js          75.35 kB \u2502 gzip:  21.03 kB\n../backend/app/frontend/assets/useCustomToast-BcHfjxNI.js    114.09 kB \u2502 gzip:  37.23 kB\n../backend/app/frontend/assets/index-B_8s6WYG.js             355.00 kB \u2502 gzip: 109.29 kB\n\n\u2713 built in 1.27s\n"
+        },
+        {
+          "check": "migration",
+          "workers": 2,
+          "seconds": 7.031038281000008,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+          "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+        },
+        {
+          "check": "seed",
+          "workers": 2,
+          "seconds": 4.864066106999985,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "4e5921b9dfe49b1ece465462c944645d6720db355281c2cea42bbd63681a4170",
+          "output_tail": "INFO:__main__:Creating initial data\nINFO:__main__:Initial data created\n"
+        },
+        {
+          "check": "mypy",
+          "candidate": "baseline",
+          "seconds": 38.79290203100004,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "df31673ff938e9a6a603c56cfd13949b42c1b8edcba9d2688c7f771f48c449d9",
+          "output_tail": "Success: no issues found in 19 source files\n"
+        },
+        {
+          "check": "ty",
+          "candidate": "baseline",
+          "seconds": 0.9796537349999994,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+          "output_tail": "All checks passed!\n"
+        },
+        {
+          "check": "ruff",
+          "candidate": "baseline",
+          "seconds": 0.14299717500000497,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+          "output_tail": "All checks passed!\n"
+        },
+        {
+          "check": "python_format",
+          "candidate": "baseline",
+          "seconds": 0.22275406299996803,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "a0a0f191878d553ae2b88299d5ead34d7a6367937ff1bd9e304fb73059c83f8a",
+          "output_tail": "19 files already formatted\n"
+        },
+        {
+          "check": "migration",
+          "candidate": "baseline",
+          "seconds": 10.078845682999997,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+          "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+        },
+        {
+          "check": "upstream",
+          "candidate": "baseline",
+          "tests": {
+            "collected": 62,
+            "failed": 0,
+            "skipped": 0,
+            "errors": 0,
+            "passed": 62
+          },
+          "slowest_tests": [
+            {
+              "test": "tests.api.routes.test_login::test_login_with_bcrypt_password_upgrades_to_argon2",
+              "seconds": 2.0
+            },
+            {
+              "test": "tests.api.routes.test_users::test_update_password_me",
+              "seconds": 1.586
+            },
+            {
+              "test": "tests.crud.test_user::test_authenticate_user_with_bcrypt_upgrades_to_argon2",
+              "seconds": 1.465
+            },
+            {
+              "test": "tests.api.routes.test_login::test_reset_password",
+              "seconds": 0.878
+            },
+            {
+              "test": "tests.crud.test_user::test_update_user",
+              "seconds": 0.668
+            },
+            {
+              "test": "tests.api.routes.test_users::test_retrieve_users",
+              "seconds": 0.657
+            },
+            {
+              "test": "tests.api.routes.test_users::test_delete_user_me",
+              "seconds": 0.609
+            },
+            {
+              "test": "tests.api.routes.test_items::test_create_item",
+              "seconds": 0.506
+            },
+            {
+              "test": "tests.api.routes.test_users::test_register_user",
+              "seconds": 0.49
+            },
+            {
+              "test": "tests.api.routes.test_items::test_read_item_not_enough_permissions",
+              "seconds": 0.452
+            },
+            {
+              "test": "tests.api.routes.test_login::test_login_with_argon2_password_keeps_hash",
+              "seconds": 0.451
+            },
+            {
+              "test": "tests.api.routes.test_users::test_update_user_email_exists",
+              "seconds": 0.429
+            }
+          ],
+          "seconds": 34.59554747100003,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "1fa6a103179b873eebafa9a172f343d500b28a6be4e93824f17098db5bbe766e",
+          "output_tail": "..............................................................           [100%]\n=============================== warnings summary ===============================\n../.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n62 passed, 1 warning in 19.56s\n"
+        },
+        {
+          "check": "browser",
+          "workers": 2,
+          "tests": {
+            "startTime": "2026-09-18T07:44:30.534Z",
+            "duration": 66291.675,
+            "expected": 62,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0,
+            "actual_passed": 62
+          },
+          "failures": [],
+          "server_tail": "",
+          "transport_observed": true,
+          "transport_observations": [
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 42292,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 263.96495199999845
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 46622,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 354.6033840000018
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 46622,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 324.5563600000023
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 56804,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 227.16270699999586
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 35794,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 257.29989000000023
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 35794,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 219.37183899999945
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 35794,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 206.21302699999796
+            },
+            {
+              "method": "GET",
+              "path": "/api/v1/search",
+              "reusedSocket": false,
+              "localPort": 53236,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 21.581938999996055
+            },
+            {
+              "method": "GET",
+              "path": "/view/eJ7VefpM8XpbHQFkh74ybq.html",
+              "reusedSocket": true,
+              "localPort": 53236,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 7.166461000000709
+            },
+            {
+              "method": "GET",
+              "path": "/api/v1/search",
+              "reusedSocket": true,
+              "localPort": 53236,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 12.594962999995914
+            },
+            {
+              "method": "GET",
+              "path": "/view/fHx6FvaHQr45EtqdCADcSN.html",
+              "reusedSocket": true,
+              "localPort": 53236,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 19.128869000000122
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 46626,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 341.71427499999845
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 46626,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 338.70715400000336
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": false,
+              "localPort": 56716,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 187.96860800000286
+            },
+            {
+              "method": "POST",
+              "path": "/api/v1/private/users/",
+              "reusedSocket": true,
+              "localPort": 56716,
+              "event": "response",
+              "status": 200,
+              "elapsed_ms": 281.971375000001
+            }
+          ],
+          "seconds": 68.37686909199999,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "558c0eb5c04e74faa2a5ebe91f9aa1e68f44b732d0a478c14328e4837105c7c5",
+          "output_tail": "dmin user management \u203a Password must be at least 8 characters\n[11/62] [chromium] \u203a tests/admin.spec.ts:168:3 \u203a Admin user management \u203a Passwords must match\n[12/62] [chromium] \u203a tests/admin.spec.ts:185:3 \u203a Admin page access control \u203a Non-superuser cannot access admin page\n[13/62] [chromium] \u203a tests/admin.spec.ts:198:3 \u203a Admin page access control \u203a Superuser can access admin page\n[14/62] [chromium] \u203a tests/items.spec.ts:11:1 \u203a Items page is accessible and shows correct title\n[15/62] [chromium] \u203a tests/items.spec.ts:17:1 \u203a Add Item button is visible\n[16/62] [chromium] \u203a tests/items.spec.ts:121:3 \u203a Items empty state \u203a Shows empty state message when no items exist\n[17/62] [chromium] \u203a tests/items.spec.ts:37:3 \u203a Items management \u203a Create a new item successfully\n[18/62] [chromium] \u203a tests/items.spec.ts:69:3 \u203a Items management \u203a Title is required\n[19/62] [chromium] \u203a tests/items.spec.ts:50:3 \u203a Items management \u203a Create item with only required fields\n[20/62] [chromium] \u203a tests/items.spec.ts:90:5 \u203a Items management \u203a Edit and Delete \u203a Edit an item successfully\n[21/62] [chromium] \u203a tests/items.spec.ts:61:3 \u203a Items management \u203a Cancel item creation\n[22/62] [chromium] \u203a tests/login.spec.ts:19:1 \u203a Inputs are visible, empty and editable\n[23/62] [chromium] \u203a tests/items.spec.ts:103:5 \u203a Items management \u203a Edit and Delete \u203a Delete an item successfully\n[24/62] [chromium] \u203a tests/login.spec.ts:26:1 \u203a Log In button is visible\n[25/62] [chromium] \u203a tests/login.spec.ts:32:1 \u203a Forgot Password link is visible\n[26/62] [chromium] \u203a tests/login.spec.ts:40:1 \u203a Log in with valid email and password \n[27/62] [chromium] \u203a tests/login.spec.ts:53:1 \u203a Log in with invalid email\n[28/62] [chromium] \u203a tests/login.spec.ts:62:1 \u203a Log in with invalid password\n[29/62] [chromium] \u203a tests/login.spec.ts:72:1 \u203a Successful log out\n[30/62] [chromium] \u203a tests/login.spec.ts:89:1 \u203a Logged-out user cannot access protected routes\n[31/62] [chromium] \u203a tests/login.spec.ts:109:1 \u203a Redirects to /login when token is wrong\n[32/62] [chromium] \u203a tests/reset-password.spec.ts:10:1 \u203a Password Recovery title is visible\n[33/62] [chromium] \u203a tests/reset-password.spec.ts:18:1 \u203a Input is visible, empty and editable\n[34/62] [chromium] \u203a tests/reset-password.spec.ts:26:1 \u203a Continue button is visible\n[35/62] [chromium] \u203a tests/reset-password.spec.ts:32:1 \u203a User can reset password successfully using the link\n[36/62] [chromium] \u203a tests/reset-password.spec.ts:70:1 \u203a Expired or invalid reset link\n[37/62] [chromium] \u203a tests/reset-password.spec.ts:83:1 \u203a Weak new password validation\n[38/62] [chromium] \u203a tests/sign-up.spec.ts:27:1 \u203a Inputs are visible, empty and editable\n[39/62] [chromium] \u203a tests/sign-up.spec.ts:36:1 \u203a Sign Up button is visible\n[40/62] [chromium] \u203a tests/sign-up.spec.ts:42:1 \u203a Log In link is visible\n[41/62] [chromium] \u203a tests/sign-up.spec.ts:48:1 \u203a Sign up with valid name, email, and password\n[42/62] [chromium] \u203a tests/sign-up.spec.ts:58:1 \u203a Sign up with invalid email\n[43/62] [chromium] \u203a tests/sign-up.spec.ts:73:1 \u203a Sign up with existing email\n[44/62] [chromium] \u203a tests/sign-up.spec.ts:94:1 \u203a Sign up with weak password\n[45/62] [chromium] \u203a tests/sign-up.spec.ts:109:1 \u203a Sign up with mismatched passwords\n[46/62] [chromium] \u203a tests/sign-up.spec.ts:123:1 \u203a Sign up with missing full name\n[47/62] [chromium] \u203a tests/sign-up.spec.ts:136:1 \u203a Sign up with missing email\n[48/62] [chromium] \u203a tests/sign-up.spec.ts:149:1 \u203a Sign up with missing password\n[49/62] [chromium] \u203a tests/user-settings.spec.ts:9:1 \u203a My profile tab is active by default\n[50/62] [chromium] \u203a tests/user-settings.spec.ts:17:1 \u203a All tabs are visible\n[51/62] [chromium] \u203a tests/user-settings.spec.ts:68:3 \u203a Edit user email \u203a Edit user email with a valid email\n[52/62] [chromium] \u203a tests/user-settings.spec.ts:92:3 \u203a Cancel edit actions \u203a Cancel edit action restores original name\n[53/62] [chromium] \u203a tests/user-settings.spec.ts:109:3 \u203a Cancel edit actions \u203a Cancel edit action restores original email\n[54/62] [chromium] \u203a tests/user-settings.spec.ts:130:3 \u203a Change password \u203a Update password successfully\n[55/62] [chromium] \u203a tests/user-settings.spec.ts:205:1 \u203a Appearance button is visible in sidebar\n[56/62] [chromium] \u203a tests/user-settings.spec.ts:210:1 \u203a User can switch between theme modes\n[57/62] [chromium] \u203a tests/user-settings.spec.ts:224:1 \u203a Selected mode is preserved across sessions\n[58/62] [chromium] \u203a tests/user-settings.spec.ts:41:3 \u203a Edit user profile \u203a Edit user name with a valid name\n[59/62] [chromium] \u203a tests/user-settings.spec.ts:54:3 \u203a Edit user profile \u203a Edit user email with an invalid email shows error\n[60/62] [chromium] \u203a tests/user-settings.spec.ts:182:3 \u203a Change password validation \u203a New password and confirmation password do not match\n[61/62] [chromium] \u203a tests/user-settings.spec.ts:169:3 \u203a Change password validation \u203a Update password with weak passwords\n[62/62] [chromium] \u203a tests/user-settings.spec.ts:193:3 \u203a Change password validation \u203a Current password and new password are the same\n  62 passed (1.1m)\n"
+        },
+        {
+          "check": "migration",
+          "candidate": "baseline",
+          "seconds": 6.029708727000013,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+          "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+        },
+        {
+          "check": "oracle",
+          "candidate": "baseline",
+          "tests": {
+            "collected": 7,
+            "failed": 0,
+            "skipped": 0,
+            "errors": 0,
+            "passed": 7
+          },
+          "slowest_tests": [
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_AUTH_001_unauthenticated_and_wrong_password_are_rejected",
+              "seconds": 0.165
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_SCOPE_003_cross_owner_get_update_delete_do_not_interfere",
+              "seconds": 0.053
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_PAGE_006_paging_is_complete_disjoint_and_count_stable",
+              "seconds": 0.046
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_SCOPE_002_list_and_count_are_owner_scoped",
+              "seconds": 0.034
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_SCOPE_004_owner_spoof_cannot_transfer_item",
+              "seconds": 0.034
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_WRITE_007_invalid_writes_fail_without_partial_commit",
+              "seconds": 0.034
+            },
+            {
+              "test": "experiments.fullstack.oracle_tests::test_REQ_DATA_005_user_responses_never_leak_sensitive_fields",
+              "seconds": 0.024
+            }
+          ],
+          "seconds": 4.948874255999954,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "f169482bef449b975ce0d6b2b3e2aeaf29dea82e7c170bc145f98d08972c7614",
+          "output_tail": ".......                                                                  [100%]\n=============================== warnings summary ===============================\n../.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n7 passed, 1 warning in 3.68s\n"
+        },
+        {
+          "check": "migration",
+          "candidate": "baseline",
+          "seconds": 2.386999395000032,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "cbe319c0ec9ce6eeaf9b96bb2b888e88189d7c80eca3f7fcee2245b392a61d6d",
+          "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+        },
+        {
+          "check": "lifecycle",
+          "candidate": "baseline",
+          "tests": {
+            "collected": 4,
+            "failed": 0,
+            "skipped": 0,
+            "errors": 0,
+            "passed": 4
+          },
+          "slowest_tests": [
+            {
+              "test": "experiments.fullstack.lifecycle_tests::test_password_change_requires_current_secret_and_preserves_authentication",
+              "seconds": 0.709
+            },
+            {
+              "test": "experiments.fullstack.lifecycle_tests::test_public_signup_cannot_create_privileged_accounts[extra0]",
+              "seconds": 0.234
+            },
+            {
+              "test": "experiments.fullstack.lifecycle_tests::test_partial_updates_preserve_omitted_fields_in_both_directions",
+              "seconds": 0.215
+            },
+            {
+              "test": "experiments.fullstack.lifecycle_tests::test_public_signup_cannot_create_privileged_accounts[extra1]",
+              "seconds": 0.19
+            }
+          ],
+          "seconds": 5.879642633000003,
+          "exit_code": 0,
+          "status": "passed",
+          "output_sha256": "df7cbb120a04458323730badcffb437cbee10f3b8da383648562a454d205ea7f",
+          "output_tail": "....                                                                     [100%]\n=============================== warnings summary ===============================\n../.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  $SOURCE/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n4 passed, 1 warning in 4.60s\n"
+        }
+      ],
+      "verdict": "supported",
+      "built_artifact_sha256": "cd182ee00d417731579483673445d033875d056eb2d8549eb9f85519ee6d24b7",
+      "boundary": {
+        "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+        "probe": "data",
+        "source_sha256": "27daa0a0912f15c38a191d04a586326bd90f78bc36a99c6aa6bc7c23b3943886",
+        "steps": [
+          {
+            "check": "migration",
+            "seconds": 5.92130189400001,
+            "exit_code": 0,
+            "status": "passed",
+            "output_tail": "INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.\nINFO  [alembic.runtime.migration] Will assume transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> e2412789c190, Initialize models\nINFO  [alembic.runtime.migration] Running upgrade e2412789c190 -> 9c0a54914c78, Add max length for string(varchar) fields in User and Items models\nINFO  [alembic.runtime.migration] Running upgrade 9c0a54914c78 -> d98dd8ec85a3, Edit replace id integers in all models to use UUID instead\nINFO  [alembic.runtime.migration] Running upgrade d98dd8ec85a3 -> 1a31ce608336, Add cascade delete relationships\nINFO  [alembic.runtime.migration] Running upgrade 1a31ce608336 -> fe56fa70289e, Add created_at to User and Item\n"
+          },
+          {
+            "check": "seed",
+            "seconds": 5.975606836999987,
+            "exit_code": 0,
+            "status": "passed",
+            "output_tail": "150 synthetic items; fixture token omitted"
+          },
+          {
+            "check": "typescript_contract",
+            "seconds": 3.930205612000009,
+            "exit_code": 0,
+            "status": "passed",
+            "output_tail": ""
+          },
+          {
+            "check": "wire_and_browser",
+            "seconds": 7.261849536,
+            "exit_code": 0,
+            "status": "passed",
+            "output_tail": "(node:19416) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n{\"null_update\":{\"http_status\":422,\"title_preserved\":true,\"expected_status_class\":\"4xx\"},\"negative_offset\":{\"http_status\":422,\"expected_status_class\":\"4xx\"},\"pagination\":{\"seeded\":150,\"api_total\":150,\"api_first_page\":100,\"api_second_page\":50,\"initial_page_size\":10,\"exercised_page_size\":50,\"browser_pages\":3,\"browser_unique_titles\":150,\"all_items_reachable\":true,\"observed_pages\":[{\"count\":50,\"first\":\"<svg onload=\\\"globalThis.__assayInjected=true\\\"></svg>\",\"last\":\"fixture-100\"},{\"count\":50,\"first\":\"fixture-099\",\"last\":\"fixture-050\"},{\"count\":50,\"first\":\"fixture-049\",\"last\":\"fixture-000\"}]},\"title_rendering\":{\"injected_script_executed\":false,\"safely_rendered\":true}}\n"
+          }
+        ],
+        "oracle_sha256": {
+          "seed.py": "6ccc4b64aa51142c127b6e13244bc26e8e934caa2272cfcaaf3508281d07df42",
+          "run.py": "b914f54d3a82c3c89a8828f3a4eba65a37e8b439d92ce1afba75e481efe2c26e",
+          "signup.mts": "60c7317b556c9cc038af1c8da3f3b26ca19fff7d03a09d0425f6c4c784429c8b",
+          "probe.ts": "2a54e3ced3782040b8d29dfca7a9944a225460c24aa033d45ffea107f3087b8a",
+          "contract.ts": "b343cf85733af16b132cf560534b868d8c079b5ae9c34c0be7058a6e5831f80f"
+        },
+        "expectations": [
+          "Invalid user input returns 4xx rather than 500",
+          "All 150 owned items are reachable through table pagination",
+          "Stored titles cannot execute JavaScript"
+        ],
+        "limits": [
+          "Explicit product expectations, not inferred specifications",
+          "One dataset and one browser engine",
+          "Authentication is supplied as a trusted fixture",
+          "Host execution; not sandboxed"
+        ],
+        "generated_client": {
+          "accepts_null_title": false,
+          "strict_null_checks": true,
+          "seconds": 1.6065598779999846,
+          "diagnostic": "assay_boundary_248hzjvn_contract.mts(4,30): error TS2322: Type 'null' is not assignable to type 'string | undefined'.\n"
+        },
+        "reused_build_sha256": "cd182ee00d417731579483673445d033875d056eb2d8549eb9f85519ee6d24b7",
+        "observations": {
+          "null_update": {
+            "http_status": 422,
+            "title_preserved": true,
+            "expected_status_class": "4xx"
+          },
+          "negative_offset": {
+            "http_status": 422,
+            "expected_status_class": "4xx"
+          },
+          "pagination": {
+            "seeded": 150,
+            "api_total": 150,
+            "api_first_page": 100,
+            "api_second_page": 50,
+            "initial_page_size": 10,
+            "exercised_page_size": 50,
+            "browser_pages": 3,
+            "browser_unique_titles": 150,
+            "all_items_reachable": true,
+            "observed_pages": [
+              {
+                "count": 50,
+                "first": "<svg onload=\"globalThis.__assayInjected=true\"></svg>",
+                "last": "fixture-100"
+              },
+              {
+                "count": 50,
+                "first": "fixture-099",
+                "last": "fixture-050"
+              },
+              {
+                "count": 50,
+                "first": "fixture-049",
+                "last": "fixture-000"
+              }
+            ]
+          },
+          "title_rendering": {
+            "injected_script_executed": false,
+            "safely_rendered": true
+          }
+        },
+        "claims": {
+          "invalid_title_is_client_error": true,
+          "invalid_title_does_not_modify_storage": true,
+          "invalid_offset_is_client_error": true,
+          "all_owned_items_reachable": true,
+          "stored_title_does_not_execute": true
+        },
+        "application_verdict": "supported",
+        "seconds": 33.72343034099998,
+        "source_unchanged": true,
+        "oracle_unchanged": true,
+        "artifact_unchanged": true
+      },
+      "boundary_process_seconds": 34.49600562799998,
+      "boundary_exit": 0,
+      "artifact_unchanged": true,
+      "seconds": 113.24297740500003
+    }
+  ],
+  "setup_included": false,
+  "schedule": "isolated-parallel",
+  "scope": "Complete repaired-template suite, seven frozen API checks, four lifecycle checks, five boundary claims; no test selection or result cache",
+  "limits": [
+    "Warm installed dependencies and running disposable PostgreSQL/Mailpit",
+    "Hosted dispatch excluded",
+    "Host execution, not an adversarial sandbox",
+    "Finite observations, not universal correctness",
+    "Candidate-owned upstream tests; additional oracles are separate but not OS-protected"
+  ],
+  "source_unchanged": true,
+  "policy_unchanged": true,
+  "verdict": "supported"
+}

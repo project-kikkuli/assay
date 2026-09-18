@@ -7,8 +7,10 @@ browser, and authorization-policy implementations. It retains counterexamples an
 negative results. It is not a production CI replacement.
 
 Recorded laptop gates fit roughly 20–29 seconds; the stronger gate's first hosted
-run took 105.5 seconds and rejected a browser transport failure. Thirty seconds
-is not established across environments. [Local and hosted evidence](experiments/fullstack/results/).
+run took 105.5 seconds and rejected a browser transport failure.
+A subsequent two-worker hosted run passed all three repetitions in 111–114
+seconds. Thirty seconds is not established across environments.
+[Local and hosted evidence](experiments/fullstack/results/).
 
 ```sh
 ./lab                 # read recorded evidence; no installation or execution

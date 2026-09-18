@@ -31,7 +31,12 @@ dependent test did not run. Python checks and independent boundaries passed.
 [Preparation](results/setup-hosted-first.json) took another 51.38 seconds,
 excluding later browser system-library installation and hosted queue time.
 The earlier laptop gate and this hosted run differ in environment and scope;
-neither establishes universally thirty-second CI.
+neither establishes universally thirty-second CI. A second hosted run on a
+recorded **2-CPU, 8.3 GB** runner used two browser workers: all three repetitions
+passed in **111.31–113.49 seconds**. The browser branch alone took about 68 seconds,
+and nonincremental mypy took 34–43 seconds. [Evidence](results/gate-hosted-two-workers.json)
+records reused HTTP connections without errors. This does not establish a fix
+for the first failure, and the complete gate still misses the latency target.
 
 ## Run
 

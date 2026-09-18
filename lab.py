@@ -634,6 +634,17 @@ def show_gate() -> None:
     ]
     print(f"gate: recorded verdict={data['verdict']}")
     print(table(["run", "verdict", "seconds"], rows))
+    hosted_rows = []
+    for filename, label in (("gate-hosted-first.json", "hosted / 4 browser workers"),
+                            ("gate-hosted-two-workers.json", "hosted / 2 browser workers")):
+        hosted, problem = load_object(Path("experiments/fullstack/results") / filename, validate_gate)
+        if hosted is None:
+            hosted_rows.append([label, problem, "unavailable"])
+        else:
+            hosted_rows.append([label, hosted["verdict"],
+                                numeric_range([run["seconds"] for run in hosted["runs"]], "s")])
+    print(table(["independent hosted observations", "verdict", "gate cost"], hosted_rows))
+    print("Hosted scope includes lifecycle checks; preparation and queue time are excluded. No transport fix is established.")
     latest = data["runs"][-1]
     records = latest.get("records")
     if isinstance(records, list) and all(isinstance(row, dict) for row in records):
