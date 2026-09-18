@@ -1,0 +1,472 @@
+{
+  "provenance": {
+    "source_sha256_after": {
+      "fixture.py": "a6724693905b7835155f6e0ad6f347fbc77c7ef08d9970267eed411d3d3cd151",
+      "kernel.py": "2fbaf9ff5488d599dd25da91d0303a8b0fd0fc96c7dfc109a3a76bafb05e9148",
+      "performance.py": "5ea36c58ddd45a0fe507ace986c24fa7b8b6f13bf8237012326af0e59c7edcba",
+      "test_performance.py": "682560344a67f2d4b35093be54b24a233790ad8a1c01affad118b78c2f1e537d"
+    },
+    "source_sha256_before": {
+      "fixture.py": "a6724693905b7835155f6e0ad6f347fbc77c7ef08d9970267eed411d3d3cd151",
+      "kernel.py": "2fbaf9ff5488d599dd25da91d0303a8b0fd0fc96c7dfc109a3a76bafb05e9148",
+      "performance.py": "5ea36c58ddd45a0fe507ace986c24fa7b8b6f13bf8237012326af0e59c7edcba",
+      "test_performance.py": "682560344a67f2d4b35093be54b24a233790ad8a1c01affad118b78c2f1e537d"
+    },
+    "source_unchanged": true
+  },
+  "scales": {
+    "100": {
+      "analyze_baseline_seconds": 0.0037276670045685023,
+      "analyze_indexed_seconds": 0.003397332999156788,
+      "baseline": {
+        "correct": true,
+        "count_query": {
+          "execution_time_ms": 0.13,
+          "plan": {
+            "actual_loops": 1,
+            "actual_rows": 1.0,
+            "actual_total_time_ms": 0.125,
+            "node_type": "Aggregate",
+            "plan_rows": 1,
+            "plans": [
+              {
+                "actual_loops": 1,
+                "actual_rows": 20.0,
+                "actual_total_time_ms": 0.123,
+                "node_type": "Seq Scan",
+                "plan_rows": 20,
+                "plans": [],
+                "relation": "item",
+                "rows_removed_by_filter": 80,
+                "shared_hit_blocks": 202,
+                "shared_read_blocks": 0,
+                "startup_cost": 0.0,
+                "total_cost": 28.25
+              }
+            ],
+            "shared_hit_blocks": 202,
+            "shared_read_blocks": 0,
+            "startup_cost": 28.3,
+            "total_cost": 28.31
+          },
+          "planning_time_ms": 0.146,
+          "query": "SELECT count(*) FROM public.\"item\" WHERE owner_id = public.cell_kernel_current_user_id()"
+        },
+        "expected_page_ids": [
+          "0f4b3b89-4495-5c8b-b184-3d48df9a6d2a",
+          "c9088c4a-08c7-5cb2-bc63-17641d3a91e9",
+          "852d52cc-dfa2-5724-bc6a-593a2fd0aac0",
+          "a375afbf-6f46-5f84-afe8-37098d6b1445",
+          "420258fe-5bb2-5b69-af70-f1527cbc0f48"
+        ],
+        "indexed": false,
+        "max_ms": 9.100374998524785,
+        "median_ms": 7.275459007360041,
+        "min_ms": 7.181458990089595,
+        "observed_count": 20,
+        "observed_page_ids": [
+          "0f4b3b89-4495-5c8b-b184-3d48df9a6d2a",
+          "c9088c4a-08c7-5cb2-bc63-17641d3a91e9",
+          "852d52cc-dfa2-5724-bc6a-593a2fd0aac0",
+          "a375afbf-6f46-5f84-afe8-37098d6b1445",
+          "420258fe-5bb2-5b69-af70-f1527cbc0f48"
+        ],
+        "other_count": 80,
+        "page_query": {
+          "execution_time_ms": 0.126,
+          "plan": {
+            "actual_loops": 1,
+            "actual_rows": 5.0,
+            "actual_total_time_ms": 0.122,
+            "node_type": "Limit",
+            "plan_rows": 5,
+            "plans": [
+              {
+                "actual_loops": 1,
+                "actual_rows": 5.0,
+                "actual_total_time_ms": 0.122,
+                "node_type": "Sort",
+                "plan_rows": 20,
+                "plans": [
+                  {
+                    "actual_loops": 1,
+                    "actual_rows": 20.0,
+                    "actual_total_time_ms": 0.115,
+                    "node_type": "Seq Scan",
+                    "plan_rows": 20,
+                    "plans": [],
+                    "relation": "item",
+                    "rows_removed_by_filter": 80,
+                    "shared_hit_blocks": 202,
+                    "shared_read_blocks": 0,
+                    "startup_cost": 0.0,
+                    "total_cost": 28.25
+                  }
+                ],
+                "shared_hit_blocks": 208,
+                "shared_read_blocks": 0,
+                "startup_cost": 28.58,
+                "total_cost": 28.63
+              }
+            ],
+            "shared_hit_blocks": 208,
+            "shared_read_blocks": 0,
+            "startup_cost": 28.58,
+            "total_cost": 28.59
+          },
+          "planning_time_ms": 0.173,
+          "query": "SELECT id, title, description, owner_id, created_at FROM public.\"item\" WHERE owner_id = public.cell_kernel_current_user_id() ORDER BY created_at DESC, id DESC OFFSET %s LIMIT %s"
+        },
+        "samples_ms": [
+          9.100374998524785,
+          7.275459007360041,
+          7.181458990089595
+        ]
+      },
+      "cleanup": "removed",
+      "database": "assay_cell_e09a4b576e13478da32fd7f0c82bd49d",
+      "fixture_seconds_including_migrations_and_cleanup": 0.7205085839959793,
+      "index_setup_seconds": 0.0035397500032559037,
+      "indexed": {
+        "correct": true,
+        "count_query": {
+          "execution_time_ms": 0.03,
+          "plan": {
+            "actual_loops": 1,
+            "actual_rows": 1.0,
+            "actual_total_time_ms": 0.011,
+            "node_type": "Aggregate",
+            "plan_rows": 1,
+            "plans": [
+              {
+                "actual_loops": 1,
+                "actual_rows": 20.0,
+                "actual_total_time_ms": 0.01,
+                "index": "cell_perf_owner_created_id",
+                "node_type": "Index Only Scan",
+                "plan_rows": 20,
+                "plans": [],
+                "relation": "item",
+                "shared_hit_blocks": 4,
+                "shared_read_blocks": 0,
+                "startup_cost": 0.39,
+                "total_cost": 10.49
+              }
+            ],
+            "shared_hit_blocks": 4,
+            "shared_read_blocks": 0,
+            "startup_cost": 10.54,
+            "total_cost": 10.55
+          },
+          "planning_time_ms": 0.165,
+          "query": "SELECT count(*) FROM public.\"item\" WHERE owner_id = public.cell_kernel_current_user_id()"
+        },
+        "expected_page_ids": [
+          "0f4b3b89-4495-5c8b-b184-3d48df9a6d2a",
+          "c9088c4a-08c7-5cb2-bc63-17641d3a91e9",
+          "852d52cc-dfa2-5724-bc6a-593a2fd0aac0",
+          "a375afbf-6f46-5f84-afe8-37098d6b1445",
+          "420258fe-5bb2-5b69-af70-f1527cbc0f48"
+        ],
+        "indexed": true,
+        "max_ms": 7.336167007451877,
+        "median_ms": 6.99062499916181,
+        "min_ms": 6.747332983650267,
+        "observed_count": 20,
+        "observed_page_ids": [
+          "0f4b3b89-4495-5c8b-b184-3d48df9a6d2a",
+          "c9088c4a-08c7-5cb2-bc63-17641d3a91e9",
+          "852d52cc-dfa2-5724-bc6a-593a2fd0aac0",
+          "a375afbf-6f46-5f84-afe8-37098d6b1445",
+          "420258fe-5bb2-5b69-af70-f1527cbc0f48"
+        ],
+        "other_count": 80,
+        "page_query": {
+          "execution_time_ms": 0.007,
+          "plan": {
+            "actual_loops": 1,
+            "actual_rows": 5.0,
+            "actual_total_time_ms": 0.005,
+            "node_type": "Limit",
+            "plan_rows": 5,
+            "plans": [
+              {
+                "actual_loops": 1,
+                "actual_rows": 5.0,
+                "actual_total_time_ms": 0.004,
+                "index": "cell_perf_owner_created_id",
+                "node_type": "Index Scan",
+                "plan_rows": 20,
+                "plans": [],
+                "relation": "item",
+                "shared_hit_blocks": 4,
+                "shared_read_blocks": 0,
+                "startup_cost": 0.39,
+                "total_cost": 10.49
+              }
+            ],
+            "shared_hit_blocks": 4,
+            "shared_read_blocks": 0,
+            "startup_cost": 0.39,
+            "total_cost": 2.92
+          },
+          "planning_time_ms": 0.188,
+          "query": "SELECT id, title, description, owner_id, created_at FROM public.\"item\" WHERE owner_id = public.cell_kernel_current_user_id() ORDER BY created_at DESC, id DESC OFFSET %s LIMIT %s"
+        },
+        "samples_ms": [
+          7.336167007451877,
+          6.99062499916181,
+          6.747332983650267
+        ]
+      },
+      "migration_exit_code": 0,
+      "owner_rows": 20,
+      "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+      "role_cleanup": {
+        "ledger_rows_deleted": 2,
+        "policy_preserved": true,
+        "roles_absent": true,
+        "roles_dropped": [
+          "cell_actor_251fdabffc8e4e888435a1debc2e5a5e",
+          "cell_actor_2aec0096e33648f7b9574afa8a065e4e"
+        ]
+      },
+      "role_setup": {
+        "policy": "cell_kernel_owner",
+        "users": [
+          "251fdabf-fc8e-4e88-8435-a1debc2e5a5e",
+          "2aec0096-e336-48f7-b957-4afa8a065e4e"
+        ]
+      },
+      "setup_seconds": 0.026584916020510718,
+      "total_rows": 100
+    },
+    "100000": {
+      "analyze_baseline_seconds": 0.06837454199558124,
+      "analyze_indexed_seconds": 0.06597666701418348,
+      "baseline": {
+        "correct": true,
+        "count_query": {
+          "execution_time_ms": 94.976,
+          "plan": {
+            "actual_loops": 1,
+            "actual_rows": 1.0,
+            "actual_total_time_ms": 94.967,
+            "node_type": "Aggregate",
+            "plan_rows": 1,
+            "plans": [
+              {
+                "actual_loops": 1,
+                "actual_rows": 20.0,
+                "actual_total_time_ms": 94.964,
+                "node_type": "Seq Scan",
+                "plan_rows": 20,
+                "plans": [],
+                "relation": "item",
+                "rows_removed_by_filter": 99980,
+                "shared_hit_blocks": 201136,
+                "shared_read_blocks": 0,
+                "startup_cost": 0.0,
+                "total_cost": 27386.0
+              }
+            ],
+            "shared_hit_blocks": 201136,
+            "shared_read_blocks": 0,
+            "startup_cost": 27386.05,
+            "total_cost": 27386.06
+          },
+          "planning_time_ms": 0.213,
+          "query": "SELECT count(*) FROM public.\"item\" WHERE owner_id = public.cell_kernel_current_user_id()"
+        },
+        "expected_page_ids": [
+          "5e7f9dc8-3d8d-56a2-a0b7-f8c431873656",
+          "4516a5fe-c5e6-5f35-a6f5-c6a190e7bd8f",
+          "fbe1ddbc-b297-5c3e-a652-c33f51b059c0",
+          "26376dcf-ed2e-56d9-ba7f-90ea485067fa",
+          "b7391fd4-e55e-5e6e-b304-578639770d1c"
+        ],
+        "indexed": false,
+        "max_ms": 207.22845901036635,
+        "median_ms": 202.34970800811425,
+        "min_ms": 200.80320799024776,
+        "observed_count": 20,
+        "observed_page_ids": [
+          "5e7f9dc8-3d8d-56a2-a0b7-f8c431873656",
+          "4516a5fe-c5e6-5f35-a6f5-c6a190e7bd8f",
+          "fbe1ddbc-b297-5c3e-a652-c33f51b059c0",
+          "26376dcf-ed2e-56d9-ba7f-90ea485067fa",
+          "b7391fd4-e55e-5e6e-b304-578639770d1c"
+        ],
+        "other_count": 99980,
+        "page_query": {
+          "execution_time_ms": 95.405,
+          "plan": {
+            "actual_loops": 1,
+            "actual_rows": 5.0,
+            "actual_total_time_ms": 95.4,
+            "node_type": "Limit",
+            "plan_rows": 5,
+            "plans": [
+              {
+                "actual_loops": 1,
+                "actual_rows": 5.0,
+                "actual_total_time_ms": 95.399,
+                "node_type": "Sort",
+                "plan_rows": 20,
+                "plans": [
+                  {
+                    "actual_loops": 1,
+                    "actual_rows": 20.0,
+                    "actual_total_time_ms": 95.389,
+                    "node_type": "Seq Scan",
+                    "plan_rows": 20,
+                    "plans": [],
+                    "relation": "item",
+                    "rows_removed_by_filter": 99980,
+                    "shared_hit_blocks": 201136,
+                    "shared_read_blocks": 0,
+                    "startup_cost": 0.0,
+                    "total_cost": 27386.0
+                  }
+                ],
+                "shared_hit_blocks": 201142,
+                "shared_read_blocks": 0,
+                "startup_cost": 27386.33,
+                "total_cost": 27386.38
+              }
+            ],
+            "shared_hit_blocks": 201142,
+            "shared_read_blocks": 0,
+            "startup_cost": 27386.33,
+            "total_cost": 27386.34
+          },
+          "planning_time_ms": 0.216,
+          "query": "SELECT id, title, description, owner_id, created_at FROM public.\"item\" WHERE owner_id = public.cell_kernel_current_user_id() ORDER BY created_at DESC, id DESC OFFSET %s LIMIT %s"
+        },
+        "samples_ms": [
+          202.34970800811425,
+          200.80320799024776,
+          207.22845901036635
+        ]
+      },
+      "cleanup": "removed",
+      "database": "assay_cell_871818d55f4a450797c2f7a456b1af02",
+      "fixture_seconds_including_migrations_and_cleanup": 3.1512998339894693,
+      "index_setup_seconds": 0.029884624993428588,
+      "indexed": {
+        "correct": true,
+        "count_query": {
+          "execution_time_ms": 0.023,
+          "plan": {
+            "actual_loops": 1,
+            "actual_rows": 1.0,
+            "actual_total_time_ms": 0.013,
+            "node_type": "Aggregate",
+            "plan_rows": 1,
+            "plans": [
+              {
+                "actual_loops": 1,
+                "actual_rows": 20.0,
+                "actual_total_time_ms": 0.012,
+                "index": "cell_perf_owner_created_id",
+                "node_type": "Index Only Scan",
+                "plan_rows": 27,
+                "plans": [],
+                "relation": "item",
+                "shared_hit_blocks": 6,
+                "shared_read_blocks": 0,
+                "startup_cost": 0.67,
+                "total_cost": 54.64
+              }
+            ],
+            "shared_hit_blocks": 6,
+            "shared_read_blocks": 0,
+            "startup_cost": 54.71,
+            "total_cost": 54.72
+          },
+          "planning_time_ms": 0.176,
+          "query": "SELECT count(*) FROM public.\"item\" WHERE owner_id = public.cell_kernel_current_user_id()"
+        },
+        "expected_page_ids": [
+          "5e7f9dc8-3d8d-56a2-a0b7-f8c431873656",
+          "4516a5fe-c5e6-5f35-a6f5-c6a190e7bd8f",
+          "fbe1ddbc-b297-5c3e-a652-c33f51b059c0",
+          "26376dcf-ed2e-56d9-ba7f-90ea485067fa",
+          "b7391fd4-e55e-5e6e-b304-578639770d1c"
+        ],
+        "indexed": true,
+        "max_ms": 8.692584000527859,
+        "median_ms": 7.903125020675361,
+        "min_ms": 7.849999994505197,
+        "observed_count": 20,
+        "observed_page_ids": [
+          "5e7f9dc8-3d8d-56a2-a0b7-f8c431873656",
+          "4516a5fe-c5e6-5f35-a6f5-c6a190e7bd8f",
+          "fbe1ddbc-b297-5c3e-a652-c33f51b059c0",
+          "26376dcf-ed2e-56d9-ba7f-90ea485067fa",
+          "b7391fd4-e55e-5e6e-b304-578639770d1c"
+        ],
+        "other_count": 99980,
+        "page_query": {
+          "execution_time_ms": 0.009,
+          "plan": {
+            "actual_loops": 1,
+            "actual_rows": 5.0,
+            "actual_total_time_ms": 0.006,
+            "node_type": "Limit",
+            "plan_rows": 5,
+            "plans": [
+              {
+                "actual_loops": 1,
+                "actual_rows": 5.0,
+                "actual_total_time_ms": 0.006,
+                "index": "cell_perf_owner_created_id",
+                "node_type": "Index Scan",
+                "plan_rows": 27,
+                "plans": [],
+                "relation": "item",
+                "shared_hit_blocks": 6,
+                "shared_read_blocks": 0,
+                "startup_cost": 0.67,
+                "total_cost": 54.64
+              }
+            ],
+            "shared_hit_blocks": 6,
+            "shared_read_blocks": 0,
+            "startup_cost": 0.67,
+            "total_cost": 10.66
+          },
+          "planning_time_ms": 0.172,
+          "query": "SELECT id, title, description, owner_id, created_at FROM public.\"item\" WHERE owner_id = public.cell_kernel_current_user_id() ORDER BY created_at DESC, id DESC OFFSET %s LIMIT %s"
+        },
+        "samples_ms": [
+          8.692584000527859,
+          7.903125020675361,
+          7.849999994505197
+        ]
+      },
+      "migration_exit_code": 0,
+      "owner_rows": 20,
+      "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+      "role_cleanup": {
+        "ledger_rows_deleted": 2,
+        "policy_preserved": true,
+        "roles_absent": true,
+        "roles_dropped": [
+          "cell_actor_76a31e120a6b4a8094a36ecaf1fd33cc",
+          "cell_actor_c6d9dabc8db849baad745f046d2633de"
+        ]
+      },
+      "role_setup": {
+        "policy": "cell_kernel_owner",
+        "users": [
+          "76a31e12-0a6b-4a80-94a3-6ecaf1fd33cc",
+          "c6d9dabc-8db8-49ba-ad74-5f046d2633de"
+        ]
+      },
+      "setup_seconds": 1.0269425830047112,
+      "total_rows": 100000
+    }
+  },
+  "status": "passed"
+}

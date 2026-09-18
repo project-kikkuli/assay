@@ -79,9 +79,11 @@ class Actor:
         self._temp = None
         self._closed = False
         self._lock = threading.RLock()
+        self._candidate_bytes = self.candidate_path.read_bytes()
+        self._worker_bytes = self.worker_path.read_bytes()
         self.observations = {
-            "candidate_sha256_before": _hash(self.candidate_path),
-            "worker_sha256_before": _hash(self.worker_path),
+            "candidate_sha256_before": hashlib.sha256(self._candidate_bytes).hexdigest(),
+            "worker_sha256_before": hashlib.sha256(self._worker_bytes).hexdigest(),
             "calls": [],
         }
 
@@ -101,8 +103,8 @@ class Actor:
             root = Path(self._temp.name)
             candidate = root / "candidate.py"
             worker = root / "worker.py"
-            candidate.write_bytes(self.candidate_path.read_bytes())
-            worker.write_bytes(self.worker_path.read_bytes())
+            candidate.write_bytes(self._candidate_bytes)
+            worker.write_bytes(self._worker_bytes)
             candidate.chmod(0o444)
             worker.chmod(0o444)
             self.cidfile = root / "container.id"
@@ -146,6 +148,14 @@ class Actor:
                 self.process.stdin.flush()
                 response = self._read_line(time.monotonic() + self.timeout)
             except Exception as exc:
+                known = {
+                    "deadline exceeded": "deadline_exceeded",
+                    "output cap exceeded": "output_cap_exceeded",
+                    "worker process ended": "process_ended",
+                    "worker wrote to stderr": "stderr_output",
+                    "extra protocol output": "extra_output",
+                }
+                self.observations["failure_kind"] = known.get(str(exc), "invalid_transport")
                 self._abort("request became unknown")
                 raise ActorUnknown(str(exc)) from exc
             if response.get("request_id") != request_id or set(response) != {"request_id", "proposal"}:

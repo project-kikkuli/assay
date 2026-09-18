@@ -1,0 +1,213 @@
+#!/usr/bin/env python3
+"""Small public entrypoint for the cell experiment."""
+
+from __future__ import annotations
+
+import json
+import os
+from pprint import pprint
+from pathlib import Path
+import signal
+import subprocess
+import sys
+import time
+
+
+ROOT = Path(__file__).resolve().parent
+SUBJECT = ROOT / "out" / "lab" / "fullstack"
+PYTHON = SUBJECT / ".venv" / "bin" / "python"
+RUN = ROOT / "experiments" / "cell" / "run.py"
+INTEGRATION = ROOT / "experiments" / "cell" / "integration.py"
+QUALIFY = ROOT / "experiments" / "cell" / "qualify.py"
+MEASURED = ROOT / "experiments" / "cell" / "results" / "measured.json"
+RECORDED_COMPOSITION = ROOT / "experiments" / "cell" / "results" / "composition.json"
+LOCAL_COMPOSITION = ROOT / "out" / "cell" / "composition.json"
+README = ROOT / "experiments" / "cell" / "README.md"
+DEADLINE_SECONDS = 180
+
+
+def _environment() -> dict[str, str]:
+    """Pass only the interpreter path and the browser cache home."""
+    return {
+        "PATH": os.environ.get("PATH", "/usr/local/bin:/usr/bin:/bin"),
+        "HOME": os.environ.get("HOME", str(Path.home())),
+        "PYTHONUNBUFFERED": "1",
+    }
+
+
+def _run(command: list[str], deadline: float) -> int:
+    remaining = deadline - time.monotonic()
+    if remaining <= 0:
+        print("cell: process deadline exceeded", file=sys.stderr)
+        return 124
+    process = subprocess.Popen(
+        command,
+        cwd=ROOT,
+        env=_environment(),
+        start_new_session=True,
+    )
+    try:
+        return process.wait(timeout=remaining)
+    except subprocess.TimeoutExpired:
+        try:
+            os.killpg(process.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+        process.wait(timeout=10)
+        print("cell: process deadline exceeded", file=sys.stderr)
+        return 124
+
+
+def _show(args: list[str]) -> int:
+    if args:
+        print("usage: ./cell [show]", file=sys.stderr)
+        return 2
+    try:
+        measured = json.loads(MEASURED.read_text()) if MEASURED.is_file() else None
+        if LOCAL_COMPOSITION.is_file():
+            composition = json.loads(LOCAL_COMPOSITION.read_text())
+            composition_source = "local"
+        elif RECORDED_COMPOSITION.is_file():
+            composition = json.loads(RECORDED_COMPOSITION.read_text())
+            composition_source = "recorded"
+        else:
+            composition = None
+            composition_source = None
+    except (OSError, json.JSONDecodeError) as error:
+        print(f"cell: show unavailable: {type(error).__name__}", file=sys.stderr)
+        return 1
+    if measured is not None and not isinstance(measured, dict):
+        print("cell: show unavailable: measured evidence is not an object", file=sys.stderr)
+        return 1
+    if composition is not None and not isinstance(composition, dict):
+        print("cell: show unavailable: composition evidence is not an object", file=sys.stderr)
+        return 1
+
+    print("cell")
+    if measured is None:
+        print("  core: pending (measured evidence unavailable)")
+    else:
+        runs = measured.get("runs", []) if isinstance(measured, dict) else []
+        positives = [run for run in runs if run.get("kind") == "positive"]
+        challenges = [run for run in runs if run.get("kind") == "challenge"]
+        healthy_times = [run.get("seconds") for run in positives if isinstance(run.get("seconds"), (int, float))]
+        total = measured.get("total_seconds")
+        total_text = f"{total:.3f}s" if isinstance(total, (int, float)) else "n/a"
+        range_text = "n/a" if not healthy_times else f"{min(healthy_times):.3f}-{max(healthy_times):.3f}s"
+        expected = measured.get("expected_challenge_count", measured.get("expected_challenges"))
+        if expected is None and isinstance(measured.get("challenge_counts"), dict):
+            expected = measured["challenge_counts"].get("expected")
+        expected_text = str(expected) if isinstance(expected, int) else "unrecorded"
+        print(f"  core: {measured.get('status', 'unknown')} total={total_text} healthy={len(positives)} range={range_text}")
+        print(f"  challenges: expected={expected_text} observed={len(challenges)} gate={measured.get('challenge_expectations_met', 'unrecorded')}")
+    if composition is None:
+        print("  composition: pending (local and recorded evidence absent)")
+    else:
+        records = composition.get("records", []) if isinstance(composition, dict) else []
+        times = [record.get("seconds") for record in records if isinstance(record.get("seconds"), (int, float))]
+        total = composition.get("total_seconds", composition.get("seconds")) if isinstance(composition, dict) else None
+        total_text = f"{total:.3f}s" if isinstance(total, (int, float)) else "n/a"
+        range_text = "n/a" if not times else f"{min(times):.3f}-{max(times):.3f}s"
+        print(f"  composition: {composition.get('status', 'unknown')} source={composition_source} total={total_text} record_range={range_text}")
+    print(f"  full: {MEASURED.relative_to(ROOT)}; local={LOCAL_COMPOSITION.relative_to(ROOT)}; recorded={RECORDED_COMPOSITION.relative_to(ROOT)}")
+    print(f"  readme: {README.relative_to(ROOT)}")
+    return 0
+
+
+def _trace(args: list[str]) -> int:
+    if len(args) > 1:
+        print("usage: ./cell trace [CANDIDATE_FILENAME]", file=sys.stderr)
+        return 2
+    candidate = args[0] if args else "healthy.py"
+    if not MEASURED.is_file():
+        print("cell: trace unavailable; measured evidence is missing", file=sys.stderr)
+        return 1
+    try:
+        measured = json.loads(MEASURED.read_text())
+    except (OSError, json.JSONDecodeError) as error:
+        print(f"cell: trace unavailable: {type(error).__name__}", file=sys.stderr)
+        return 1
+    runs = [run for run in measured.get("runs", []) if run.get("candidate") == candidate or Path(str(run.get("candidate", ""))).name == Path(candidate).name]
+    if not runs:
+        print(f"cell: no measured candidate named {candidate}", file=sys.stderr)
+        return 1
+    run = runs[0]
+    print(f"run: {run.get('candidate')} status={run.get('status')} seconds={run.get('seconds', 'n/a')}")
+    print("obligations:")
+    pprint(run.get("obligations", []), sort_dicts=False, width=120)
+    print("trace:")
+    pprint(run.get("trace", []), sort_dicts=False, width=120)
+    return 0
+
+
+def _replay(args: list[str]) -> int:
+    if args:
+        print("usage: ./cell replay", file=sys.stderr)
+        return 2
+    required = (PYTHON, RUN, INTEGRATION)
+    missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
+    if missing:
+        print(f"cell: replay unavailable; missing {', '.join(missing)}", file=sys.stderr)
+        return 1
+    deadline = time.monotonic() + DEADLINE_SECONDS
+    status = _run([str(PYTHON), str(RUN), "--repeat", "3", "--challenges"], deadline)
+    if status != 0:
+        return status
+    return _run([str(PYTHON), str(INTEGRATION), "--output", "out/cell/composition.json"], deadline)
+
+
+def _check(args: list[str]) -> int:
+    if len(args) != 1:
+        print("usage: ./cell check CANDIDATE", file=sys.stderr)
+        return 2
+    candidate = Path(args[0])
+    if not candidate.is_absolute():
+        candidate = ROOT / candidate
+    candidate = candidate.resolve()
+    if not candidate.is_file():
+        print("cell: candidate is not a file", file=sys.stderr)
+        return 2
+    if not PYTHON.is_file() or not RUN.is_file():
+        print("cell: check unavailable; prepared subject is missing", file=sys.stderr)
+        return 1
+    return _run(
+        [
+            str(PYTHON),
+            str(RUN),
+            "--candidate",
+            str(candidate),
+            "--baseline",
+            "out/cell/baseline.json",
+            "--repeat",
+            "1",
+            "--output",
+            "out/cell/check.json",
+        ],
+        time.monotonic() + DEADLINE_SECONDS,
+    )
+
+
+def main(argv: list[str]) -> int:
+    command, args = (argv[0], argv[1:]) if argv else ("show", [])
+    if command == "show":
+        return _show(args)
+    if command == "replay":
+        return _replay(args)
+    if command == "check":
+        return _check(args)
+    if command == "trace":
+        return _trace(args)
+    if command == "qualify":
+        if args:
+            print("usage: ./cell qualify", file=sys.stderr)
+            return 2
+        if not PYTHON.is_file() or not QUALIFY.is_file():
+            print("cell: qualify unavailable; prepared harness is missing", file=sys.stderr)
+            return 1
+        return _run([str(PYTHON), str(QUALIFY)], time.monotonic() + 300)
+    print(f"cell: unknown command: {command}", file=sys.stderr)
+    return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

@@ -90,5 +90,5 @@ def observe(dsn, owner=None):
         query = "SELECT id,title,description,owner_id,created_at FROM item"
         rows = db.execute(query + (" WHERE owner_id=%s" if owner else "") + " ORDER BY id",
                           (owner,) if owner else ()).fetchall()
-    return [{k: str(v) if isinstance(v, uuid.UUID) or hasattr(v, "isoformat") else v
+    return [{k: v.isoformat() if hasattr(v, "isoformat") else str(v) if isinstance(v, uuid.UUID) else v
              for k, v in row.items()} for row in rows]

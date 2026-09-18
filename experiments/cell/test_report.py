@@ -12,6 +12,10 @@ class ReportTests(unittest.TestCase):
                          "runtime": {"container_controls": {"passed": True},
                                      "cleanup": {"status": "removed"}}}
                         for name, status in CHALLENGES.items()]
+        for record in self.records:
+            if record["candidate"] in {"attack_hang.py", "attack_output_flood.py"}:
+                record["runtime"]["failure_kind"] = ("deadline_exceeded" if record["candidate"] == "attack_hang.py"
+                                                        else "output_cap_exceeded")
 
     def test_exact_expected_results(self):
         self.assertTrue(challenges_valid(self.records))
@@ -32,6 +36,11 @@ class ReportTests(unittest.TestCase):
             records = copy.deepcopy(self.records)
             records[0][field] = value
             self.assertFalse(challenges_valid(records))
+
+    def test_resource_probe_requires_its_actual_cause(self):
+        records = copy.deepcopy(self.records)
+        next(r for r in records if r["candidate"] == "attack_hang.py")["runtime"]["failure_kind"] = "process_ended"
+        self.assertFalse(challenges_valid(records))
 
 
 if __name__ == "__main__":

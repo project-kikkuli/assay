@@ -1,0 +1,3015 @@
+{
+  "challenge_expectations_met": null,
+  "dependencies_prepared": true,
+  "environment": {
+    "machine": "arm64",
+    "system": "Darwin"
+  },
+  "expected_challenge_count": 0,
+  "fixture": {
+    "cleanup": "removed",
+    "database": "assay_cell_7911623e97e7450481b03c3243b87573",
+    "migration_exit_code": 0,
+    "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+    "setup_seconds": 0.4445919579884503
+  },
+  "inputs_unchanged": true,
+  "merge_admission": "not_implemented",
+  "positive_gate_passed": true,
+  "runs": [
+    {
+      "candidate": "healthy.py",
+      "candidate_sha256": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
+      "candidate_unchanged": true,
+      "cleanup": "removed",
+      "eligibility": {
+        "changed": [],
+        "lane": "actor_checks_required",
+        "reason": "only the bounded actor may differ"
+      },
+      "kind": "positive",
+      "model": {
+        "creates": 20,
+        "foreign_denials": 3,
+        "initial_rows": 0,
+        "passed": true,
+        "records": [
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-0",
+                "title": "seed-260918-title-0"
+              },
+              "op": "create",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-0"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.506090+00:00",
+                "description": "seed-260918-description-0",
+                "id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-0"
+              }
+            },
+            "observed_rows": 1,
+            "step": 0
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-1",
+                "title": "seed-260918-title-1"
+              },
+              "op": "create",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-1"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.523582+00:00",
+                "description": "seed-260918-description-1",
+                "id": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "seed-260918-title-1"
+              }
+            },
+            "observed_rows": 2,
+            "step": 1
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-2",
+                "title": "seed-260918-title-2"
+              },
+              "op": "create",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-2"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.541099+00:00",
+                "description": "seed-260918-description-2",
+                "id": "1327dde4-5c41-4520-8aab-c48a101a2f64",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-2"
+              }
+            },
+            "observed_rows": 3,
+            "step": 2
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-3",
+                "title": "seed-260918-title-3"
+              },
+              "op": "create",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-3"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.558634+00:00",
+                "description": "seed-260918-description-3",
+                "id": "88f50f57-bb62-4f84-aff6-9879c185c194",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "seed-260918-title-3"
+              }
+            },
+            "observed_rows": 4,
+            "step": 3
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-4",
+                "title": "seed-260918-title-4"
+              },
+              "op": "create",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-4"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.576038+00:00",
+                "description": "seed-260918-description-4",
+                "id": "fbf4672a-5b90-4164-beda-96eef1634547",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-4"
+              }
+            },
+            "observed_rows": 5,
+            "step": 4
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-5",
+                "title": "seed-260918-title-5"
+              },
+              "op": "create",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-5"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.594245+00:00",
+                "description": "seed-260918-description-5",
+                "id": "6c4f88b4-7010-4d5f-b989-f0b7462ca76b",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "seed-260918-title-5"
+              }
+            },
+            "observed_rows": 6,
+            "step": 5
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-6",
+                "title": "seed-260918-title-6"
+              },
+              "op": "create",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-6"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.618017+00:00",
+                "description": "seed-260918-description-6",
+                "id": "1368babb-4e0d-4a2e-b9a5-1c61422eb4e5",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-6"
+              }
+            },
+            "observed_rows": 7,
+            "step": 6
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-7",
+                "title": "seed-260918-title-7"
+              },
+              "op": "create",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-7"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.637090+00:00",
+                "description": "seed-260918-description-7",
+                "id": "33e1db3b-7e57-43d6-a424-c39d61f78698",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "seed-260918-title-7"
+              }
+            },
+            "observed_rows": 8,
+            "step": 7
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-8",
+                "title": "seed-260918-title-8"
+              },
+              "op": "create",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-8"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.655241+00:00",
+                "description": "seed-260918-description-8",
+                "id": "71c6de02-9d1d-4f00-9d13-2e0d777cf353",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-8"
+              }
+            },
+            "observed_rows": 9,
+            "step": 8
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-9",
+                "title": "seed-260918-title-9"
+              },
+              "op": "create",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-9"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.673332+00:00",
+                "description": "seed-260918-description-9",
+                "id": "ff6310da-010a-4598-bf97-a18a91501168",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "seed-260918-title-9"
+              }
+            },
+            "observed_rows": 10,
+            "step": 9
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-10",
+                "title": "seed-260918-title-10"
+              },
+              "op": "create",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-10"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.691066+00:00",
+                "description": "seed-260918-description-10",
+                "id": "281daf4e-a785-4aeb-8af3-cc21ac8add3e",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-10"
+              }
+            },
+            "observed_rows": 11,
+            "step": 10
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-11",
+                "title": "seed-260918-title-11"
+              },
+              "op": "create",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-11"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.709726+00:00",
+                "description": "seed-260918-description-11",
+                "id": "9bc95dce-2ae5-4e61-b349-564ea40f7eb0",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "seed-260918-title-11"
+              }
+            },
+            "observed_rows": 12,
+            "step": 11
+          },
+          {
+            "command": {
+              "foreign": true,
+              "op": "read",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-1"
+            },
+            "event": {
+              "error": "KernelError",
+              "outcome": "expected_foreign_rejection"
+            },
+            "observed_rows": 12,
+            "step": 12
+          },
+          {
+            "command": {
+              "fields": {
+                "title": "foreign-260918"
+              },
+              "foreign": true,
+              "op": "update",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-0"
+            },
+            "event": {
+              "error": "KernelError",
+              "outcome": "expected_foreign_rejection"
+            },
+            "observed_rows": 12,
+            "step": 13
+          },
+          {
+            "command": {
+              "foreign": true,
+              "op": "delete",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-1"
+            },
+            "event": {
+              "error": "KernelError",
+              "outcome": "expected_foreign_rejection"
+            },
+            "observed_rows": 12,
+            "step": 14
+          },
+          {
+            "command": {
+              "limit": 5,
+              "op": "list",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "skip": 0
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "count": 6,
+                "data": [
+                  {
+                    "created_at": "2026-09-18T15:21:27.691066+00:00",
+                    "description": "seed-260918-description-10",
+                    "id": "281daf4e-a785-4aeb-8af3-cc21ac8add3e",
+                    "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                    "title": "seed-260918-title-10"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:27.655241+00:00",
+                    "description": "seed-260918-description-8",
+                    "id": "71c6de02-9d1d-4f00-9d13-2e0d777cf353",
+                    "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                    "title": "seed-260918-title-8"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:27.618017+00:00",
+                    "description": "seed-260918-description-6",
+                    "id": "1368babb-4e0d-4a2e-b9a5-1c61422eb4e5",
+                    "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                    "title": "seed-260918-title-6"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:27.576038+00:00",
+                    "description": "seed-260918-description-4",
+                    "id": "fbf4672a-5b90-4164-beda-96eef1634547",
+                    "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                    "title": "seed-260918-title-4"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:27.541099+00:00",
+                    "description": "seed-260918-description-2",
+                    "id": "1327dde4-5c41-4520-8aab-c48a101a2f64",
+                    "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                    "title": "seed-260918-title-2"
+                  }
+                ]
+              }
+            },
+            "observed_rows": 12,
+            "step": 15
+          },
+          {
+            "command": {
+              "limit": 4,
+              "op": "list",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "skip": 1
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "count": 6,
+                "data": [
+                  {
+                    "created_at": "2026-09-18T15:21:27.673332+00:00",
+                    "description": "seed-260918-description-9",
+                    "id": "ff6310da-010a-4598-bf97-a18a91501168",
+                    "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                    "title": "seed-260918-title-9"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:27.637090+00:00",
+                    "description": "seed-260918-description-7",
+                    "id": "33e1db3b-7e57-43d6-a424-c39d61f78698",
+                    "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                    "title": "seed-260918-title-7"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:27.594245+00:00",
+                    "description": "seed-260918-description-5",
+                    "id": "6c4f88b4-7010-4d5f-b989-f0b7462ca76b",
+                    "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                    "title": "seed-260918-title-5"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:27.558634+00:00",
+                    "description": "seed-260918-description-3",
+                    "id": "88f50f57-bb62-4f84-aff6-9879c185c194",
+                    "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                    "title": "seed-260918-title-3"
+                  }
+                ]
+              }
+            },
+            "observed_rows": 12,
+            "step": 16
+          },
+          {
+            "command": {
+              "fields": {
+                "title": "updated-title-260918"
+              },
+              "op": "update",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-0"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.506090+00:00",
+                "description": "seed-260918-description-0",
+                "id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "updated-title-260918"
+              }
+            },
+            "observed_rows": 12,
+            "step": 17
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "updated-description-260918"
+              },
+              "op": "update",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-1"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.523582+00:00",
+                "description": "updated-description-260918",
+                "id": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "seed-260918-title-1"
+              }
+            },
+            "observed_rows": 12,
+            "step": 18
+          },
+          {
+            "command": {
+              "op": "read",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-0"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.506090+00:00",
+                "description": "seed-260918-description-0",
+                "id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "updated-title-260918"
+              }
+            },
+            "observed_rows": 12,
+            "step": 19
+          },
+          {
+            "command": {
+              "limit": 3,
+              "op": "list",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "skip": 2
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "count": 6,
+                "data": [
+                  {
+                    "created_at": "2026-09-18T15:21:27.618017+00:00",
+                    "description": "seed-260918-description-6",
+                    "id": "1368babb-4e0d-4a2e-b9a5-1c61422eb4e5",
+                    "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                    "title": "seed-260918-title-6"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:27.576038+00:00",
+                    "description": "seed-260918-description-4",
+                    "id": "fbf4672a-5b90-4164-beda-96eef1634547",
+                    "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                    "title": "seed-260918-title-4"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:27.541099+00:00",
+                    "description": "seed-260918-description-2",
+                    "id": "1327dde4-5c41-4520-8aab-c48a101a2f64",
+                    "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                    "title": "seed-260918-title-2"
+                  }
+                ]
+              }
+            },
+            "observed_rows": 12,
+            "step": 20
+          },
+          {
+            "command": {
+              "op": "delete",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-11"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "message": "Item deleted successfully"
+              }
+            },
+            "observed_rows": 11,
+            "step": 21
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-22",
+                "title": "seed-260918-title-22"
+              },
+              "op": "create",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-22"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.929097+00:00",
+                "description": "seed-260918-description-22",
+                "id": "2182067c-dee7-43f1-9d42-a156fd5f5a32",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-22"
+              }
+            },
+            "observed_rows": 12,
+            "step": 22
+          },
+          {
+            "command": {
+              "limit": 1,
+              "op": "list",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "skip": 0
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "count": 5,
+                "data": [
+                  {
+                    "created_at": "2026-09-18T15:21:27.673332+00:00",
+                    "description": "seed-260918-description-9",
+                    "id": "ff6310da-010a-4598-bf97-a18a91501168",
+                    "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                    "title": "seed-260918-title-9"
+                  }
+                ]
+              }
+            },
+            "observed_rows": 12,
+            "step": 23
+          },
+          {
+            "command": {
+              "fields": {
+                "title": "random-title-260918-24"
+              },
+              "op": "update",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-1"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.523582+00:00",
+                "description": "updated-description-260918",
+                "id": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "random-title-260918-24"
+              }
+            },
+            "observed_rows": 12,
+            "step": 24
+          },
+          {
+            "command": {
+              "fields": {
+                "title": "random-title-260918-25"
+              },
+              "op": "update",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-1"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.523582+00:00",
+                "description": "updated-description-260918",
+                "id": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "random-title-260918-25"
+              }
+            },
+            "observed_rows": 12,
+            "step": 25
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "random-description-260918-26"
+              },
+              "op": "update",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-10"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.691066+00:00",
+                "description": "random-description-260918-26",
+                "id": "281daf4e-a785-4aeb-8af3-cc21ac8add3e",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-10"
+              }
+            },
+            "observed_rows": 12,
+            "step": 26
+          },
+          {
+            "command": {
+              "op": "read",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-10"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.691066+00:00",
+                "description": "random-description-260918-26",
+                "id": "281daf4e-a785-4aeb-8af3-cc21ac8add3e",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-10"
+              }
+            },
+            "observed_rows": 12,
+            "step": 27
+          },
+          {
+            "command": {
+              "op": "delete",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-1"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "message": "Item deleted successfully"
+              }
+            },
+            "observed_rows": 11,
+            "step": 28
+          },
+          {
+            "command": {
+              "limit": 3,
+              "op": "list",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "skip": 0
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "count": 4,
+                "data": [
+                  {
+                    "created_at": "2026-09-18T15:21:27.673332+00:00",
+                    "description": "seed-260918-description-9",
+                    "id": "ff6310da-010a-4598-bf97-a18a91501168",
+                    "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                    "title": "seed-260918-title-9"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:27.637090+00:00",
+                    "description": "seed-260918-description-7",
+                    "id": "33e1db3b-7e57-43d6-a424-c39d61f78698",
+                    "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                    "title": "seed-260918-title-7"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:27.594245+00:00",
+                    "description": "seed-260918-description-5",
+                    "id": "6c4f88b4-7010-4d5f-b989-f0b7462ca76b",
+                    "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                    "title": "seed-260918-title-5"
+                  }
+                ]
+              }
+            },
+            "observed_rows": 11,
+            "step": 29
+          },
+          {
+            "command": {
+              "fields": {
+                "title": "random-title-260918-30"
+              },
+              "op": "update",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-0"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.506090+00:00",
+                "description": "seed-260918-description-0",
+                "id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "random-title-260918-30"
+              }
+            },
+            "observed_rows": 11,
+            "step": 30
+          },
+          {
+            "command": {
+              "fields": {
+                "title": "random-title-260918-31"
+              },
+              "op": "update",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-7"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.637090+00:00",
+                "description": "seed-260918-description-7",
+                "id": "33e1db3b-7e57-43d6-a424-c39d61f78698",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "random-title-260918-31"
+              }
+            },
+            "observed_rows": 11,
+            "step": 31
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-32",
+                "title": "seed-260918-title-32"
+              },
+              "op": "create",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-32"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:28.140662+00:00",
+                "description": "seed-260918-description-32",
+                "id": "1e4f74df-607f-42ee-a9bf-2ced1b5af3f6",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-32"
+              }
+            },
+            "observed_rows": 12,
+            "step": 32
+          },
+          {
+            "command": {
+              "op": "read",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-32"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:28.140662+00:00",
+                "description": "seed-260918-description-32",
+                "id": "1e4f74df-607f-42ee-a9bf-2ced1b5af3f6",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-32"
+              }
+            },
+            "observed_rows": 12,
+            "step": 33
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-34",
+                "title": "seed-260918-title-34"
+              },
+              "op": "create",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-34"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:28.180682+00:00",
+                "description": "seed-260918-description-34",
+                "id": "1ee44873-1b74-4550-928a-ab2536add0a9",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-34"
+              }
+            },
+            "observed_rows": 13,
+            "step": 34
+          },
+          {
+            "command": {
+              "op": "delete",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-22"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "message": "Item deleted successfully"
+              }
+            },
+            "observed_rows": 12,
+            "step": 35
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-36",
+                "title": "seed-260918-title-36"
+              },
+              "op": "create",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-36"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:28.222163+00:00",
+                "description": "seed-260918-description-36",
+                "id": "aac9efc1-6d8b-412d-afd8-8f70bc1b6e41",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-36"
+              }
+            },
+            "observed_rows": 13,
+            "step": 36
+          },
+          {
+            "command": {
+              "op": "read",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-7"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.637090+00:00",
+                "description": "seed-260918-description-7",
+                "id": "33e1db3b-7e57-43d6-a424-c39d61f78698",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "random-title-260918-31"
+              }
+            },
+            "observed_rows": 13,
+            "step": 37
+          },
+          {
+            "command": {
+              "limit": 3,
+              "op": "list",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "skip": 1
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "count": 9,
+                "data": [
+                  {
+                    "created_at": "2026-09-18T15:21:28.180682+00:00",
+                    "description": "seed-260918-description-34",
+                    "id": "1ee44873-1b74-4550-928a-ab2536add0a9",
+                    "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                    "title": "seed-260918-title-34"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:28.140662+00:00",
+                    "description": "seed-260918-description-32",
+                    "id": "1e4f74df-607f-42ee-a9bf-2ced1b5af3f6",
+                    "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                    "title": "seed-260918-title-32"
+                  },
+                  {
+                    "created_at": "2026-09-18T15:21:27.691066+00:00",
+                    "description": "random-description-260918-26",
+                    "id": "281daf4e-a785-4aeb-8af3-cc21ac8add3e",
+                    "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                    "title": "seed-260918-title-10"
+                  }
+                ]
+              }
+            },
+            "observed_rows": 13,
+            "step": 38
+          },
+          {
+            "command": {
+              "op": "read",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-8"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.655241+00:00",
+                "description": "seed-260918-description-8",
+                "id": "71c6de02-9d1d-4f00-9d13-2e0d777cf353",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-8"
+              }
+            },
+            "observed_rows": 13,
+            "step": 39
+          },
+          {
+            "command": {
+              "op": "delete",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-34"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "message": "Item deleted successfully"
+              }
+            },
+            "observed_rows": 12,
+            "step": 40
+          },
+          {
+            "command": {
+              "op": "delete",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-4"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "message": "Item deleted successfully"
+              }
+            },
+            "observed_rows": 11,
+            "step": 41
+          },
+          {
+            "command": {
+              "op": "delete",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-36"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "message": "Item deleted successfully"
+              }
+            },
+            "observed_rows": 10,
+            "step": 42
+          },
+          {
+            "command": {
+              "op": "delete",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-7"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "message": "Item deleted successfully"
+              }
+            },
+            "observed_rows": 9,
+            "step": 43
+          },
+          {
+            "command": {
+              "fields": {
+                "title": "random-title-260918-44"
+              },
+              "op": "update",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-32"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:28.140662+00:00",
+                "description": "seed-260918-description-32",
+                "id": "1e4f74df-607f-42ee-a9bf-2ced1b5af3f6",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "random-title-260918-44"
+              }
+            },
+            "observed_rows": 9,
+            "step": 44
+          },
+          {
+            "command": {
+              "limit": 3,
+              "op": "list",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "skip": 3
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "count": 3,
+                "data": []
+              }
+            },
+            "observed_rows": 9,
+            "step": 45
+          },
+          {
+            "command": {
+              "op": "delete",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-9"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "message": "Item deleted successfully"
+              }
+            },
+            "observed_rows": 8,
+            "step": 46
+          },
+          {
+            "command": {
+              "fields": {
+                "title": "random-title-260918-47"
+              },
+              "op": "update",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-0"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.506090+00:00",
+                "description": "seed-260918-description-0",
+                "id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "random-title-260918-47"
+              }
+            },
+            "observed_rows": 8,
+            "step": 47
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-48",
+                "title": "seed-260918-title-48"
+              },
+              "op": "create",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-48"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:28.468274+00:00",
+                "description": "seed-260918-description-48",
+                "id": "204cfcaa-43e2-403b-93a3-f1baf582d275",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-48"
+              }
+            },
+            "observed_rows": 9,
+            "step": 48
+          },
+          {
+            "command": {
+              "op": "delete",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-10"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "message": "Item deleted successfully"
+              }
+            },
+            "observed_rows": 8,
+            "step": 49
+          },
+          {
+            "command": {
+              "fields": {
+                "title": "random-title-260918-50"
+              },
+              "op": "update",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-0"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.506090+00:00",
+                "description": "seed-260918-description-0",
+                "id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "random-title-260918-50"
+              }
+            },
+            "observed_rows": 8,
+            "step": 50
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-51",
+                "title": "seed-260918-title-51"
+              },
+              "op": "create",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-51"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:28.530708+00:00",
+                "description": "seed-260918-description-51",
+                "id": "9734e0e3-19d4-4e03-89af-f14f831ae7d6",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "seed-260918-title-51"
+              }
+            },
+            "observed_rows": 9,
+            "step": 51
+          },
+          {
+            "command": {
+              "op": "read",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-51"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:28.530708+00:00",
+                "description": "seed-260918-description-51",
+                "id": "9734e0e3-19d4-4e03-89af-f14f831ae7d6",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "seed-260918-title-51"
+              }
+            },
+            "observed_rows": 9,
+            "step": 52
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-53",
+                "title": "seed-260918-title-53"
+              },
+              "op": "create",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-53"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:28.570332+00:00",
+                "description": "seed-260918-description-53",
+                "id": "246d78d8-b60d-4400-ba0d-706c4a319fd2",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "seed-260918-title-53"
+              }
+            },
+            "observed_rows": 10,
+            "step": 53
+          },
+          {
+            "command": {
+              "op": "read",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-6"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.618017+00:00",
+                "description": "seed-260918-description-6",
+                "id": "1368babb-4e0d-4a2e-b9a5-1c61422eb4e5",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-6"
+              }
+            },
+            "observed_rows": 10,
+            "step": 54
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "random-description-260918-55"
+              },
+              "op": "update",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-8"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.655241+00:00",
+                "description": "random-description-260918-55",
+                "id": "71c6de02-9d1d-4f00-9d13-2e0d777cf353",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "seed-260918-title-8"
+              }
+            },
+            "observed_rows": 10,
+            "step": 55
+          },
+          {
+            "command": {
+              "op": "read",
+              "owner": "62bc46c7-05de-44e1-87e2-1e195090363d",
+              "ref": "item-0"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.506090+00:00",
+                "description": "seed-260918-description-0",
+                "id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+                "owner_id": "62bc46c7-05de-44e1-87e2-1e195090363d",
+                "title": "random-title-260918-50"
+              }
+            },
+            "observed_rows": 10,
+            "step": 56
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "seed-260918-description-57",
+                "title": "seed-260918-title-57"
+              },
+              "op": "create",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-57"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:28.657856+00:00",
+                "description": "seed-260918-description-57",
+                "id": "14d2533f-32dd-469f-80c1-a11b38e9ab1b",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "seed-260918-title-57"
+              }
+            },
+            "observed_rows": 11,
+            "step": 57
+          },
+          {
+            "command": {
+              "fields": {
+                "title": "random-title-260918-58"
+              },
+              "op": "update",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-5"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:27.594245+00:00",
+                "description": "seed-260918-description-5",
+                "id": "6c4f88b4-7010-4d5f-b989-f0b7462ca76b",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "random-title-260918-58"
+              }
+            },
+            "observed_rows": 11,
+            "step": 58
+          },
+          {
+            "command": {
+              "fields": {
+                "description": "random-description-260918-59"
+              },
+              "op": "update",
+              "owner": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+              "ref": "item-53"
+            },
+            "event": {
+              "outcome": "response",
+              "response": {
+                "created_at": "2026-09-18T15:21:28.570332+00:00",
+                "description": "random-description-260918-59",
+                "id": "246d78d8-b60d-4400-ba0d-706c4a319fd2",
+                "owner_id": "782d34a8-a6d4-42cb-8c86-c4586127066d",
+                "title": "seed-260918-title-53"
+              }
+            },
+            "observed_rows": 11,
+            "step": 59
+          }
+        ],
+        "seed": 260918,
+        "steps": 60
+      },
+      "obligations": [
+        {
+          "obligation": "create preserves requested content",
+          "passed": true
+        },
+        {
+          "obligation": "create commits under authenticated owner",
+          "passed": true
+        },
+        {
+          "obligation": "read returns addressed item",
+          "passed": true
+        },
+        {
+          "obligation": "partial update preserves omitted fields",
+          "passed": true
+        },
+        {
+          "obligation": "update is durable and targets one item",
+          "passed": true
+        },
+        {
+          "obligation": "explicit null clears only nullable field",
+          "passed": true
+        },
+        {
+          "obligation": "pagination has exact count and disjoint pages",
+          "passed": true
+        },
+        {
+          "obligation": "pagination is stable",
+          "passed": true
+        },
+        {
+          "obligation": "foreign read denied",
+          "passed": true
+        },
+        {
+          "obligation": "foreign update denied",
+          "passed": true
+        },
+        {
+          "obligation": "foreign delete denied",
+          "passed": true
+        },
+        {
+          "obligation": "denied operations have no committed effect",
+          "passed": true
+        },
+        {
+          "obligation": "delete removes only addressed row",
+          "passed": true
+        },
+        {
+          "obligation": "deleted item no longer readable",
+          "passed": true
+        }
+      ],
+      "role_cleanup": {
+        "ledger_rows_deleted": 4,
+        "policy_preserved": true,
+        "roles_dropped": [
+          "cell_actor_62bc46c705de44e187e21e195090363d",
+          "cell_actor_782d34a8a6d442cb8c86c4586127066d",
+          "cell_actor_81d582f7a90d44a69e27cf7fcbd1d09b",
+          "cell_actor_ce26c2ab9b38404680d295086409aa65"
+        ]
+      },
+      "runtime": {
+        "calls": [
+          {
+            "elapsed_ms": 0.5,
+            "request_id": "f31481106a4c42659d33213321d0837b"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "6b834edaab0a4dad98f620cf6763727a"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "c7c041ec682b44c190e90b3180608055"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "5c52dc3d66794bde8a25dd09e9285cff"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "47ff5cafc33e435d91286bb366dbc56c"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "a9877dd0d0994df1a4dbb830fef1a499"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "8b0e2f7aaa514819aa0fb6fd72c525f0"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "df3108cdd1874eb382d0a96b4d675e19"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "457c9c8433bc47a681328814c228d713"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "d2ac285d47914da7bb4ef2ff2fad4c7c"
+          },
+          {
+            "elapsed_ms": 0.8,
+            "request_id": "c060d1122abc4963b5acfeaf908ef26f"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "80c3ae679b4142c28882acb1ce2435fa"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "9b24dc0e0643405eb74b784e3e146109"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "a559e8953ca34152bfce16fbe853cd4e"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "91d26cdb03264bd98588b9e29fd0bd99"
+          },
+          {
+            "elapsed_ms": 0.7,
+            "request_id": "9da4d20095b34ec0a96d10e228324dae"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "c0942ba26fa8483b9f097fdb80709e4c"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "8c2e0073fd2341ae8cf98ad707140d15"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "068e1c58acce4ee6a3521e452ed9d080"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "4c8bb5f2b7764e10afd364bf54c26c51"
+          },
+          {
+            "elapsed_ms": 0.5,
+            "request_id": "616757ab6ab848b69edc9e7190a17c54"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "918c5ae50c7d4d1db71a4e2c53f22891"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "9989aa4fb3a747d3b17c0c0cc4d022f1"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "37898db7fdc149dcad0c8d6b30dc0925"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "88f266066cdd4b20b6517c16e8e82ec6"
+          },
+          {
+            "elapsed_ms": 0.5,
+            "request_id": "38ceb23d52d94ba39159ebac2ba27f29"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "35701166dbe04b2ca21abb57bd9b5868"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "902dcc6c193a4e868149ae12d1cc2966"
+          },
+          {
+            "elapsed_ms": 0.8,
+            "request_id": "6295935b7f41422aaf77cbc6c8a35bbf"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "eb4b6fad65cf4a25b85bc120f4d3d1ad"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "eca5f3ea390e4ea4af36e3a04008ee11"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "3531722f56874b73b613bb5173240e77"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "5d7017401938481aa181863af7af894b"
+          },
+          {
+            "elapsed_ms": 0.7,
+            "request_id": "eaea27ae57054099a52d7edc54c0bc1a"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "964ae38ad8d442bea4aa86105cc0eb57"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "faf3ecead500441fa30f582db90c68b7"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "8fe9ca7e95ff42f89e5a151711892614"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "fc8450d8fcc742439f66bb2cebf6807c"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "094d552adddf47c7a1737f8083d83775"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "f4d2a882510142089d58bb2295641b0f"
+          },
+          {
+            "elapsed_ms": 0.8,
+            "request_id": "307e403a33ef48089f5b51b5be299c63"
+          },
+          {
+            "elapsed_ms": 0.2,
+            "request_id": "797cae92de014e0488d2bd9b4a2193b0"
+          },
+          {
+            "elapsed_ms": 0.9,
+            "request_id": "d1e02aa8bfd742389781dfd0a12abf4c"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "59ff0950b469416d8a3f3debc23346c5"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "97de5574e43b4dd2a3d6cd1abbc5fe52"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "5750767ead9c4938b4a55c0c5360ac2d"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "fef96f8d61294228965f7ab3ed0a89d6"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "421d2f8f48794f7ebd13cc6373001b5e"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "77e038e626044c97b9befb24e6305a18"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "2d075cda72804533bf408c5e663787e9"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "ffa828a386bb44f0aad861c7bafcf1a2"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "2cc885361bd642eea51cfbda93079232"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "e7b0f0a8df534c78a67f255eaa04d242"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "34d9f711ce00499b9a678f29ebff72ca"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "64db8167d4c640daa9a192a56c4e7eac"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "86d06e482a6746ea8de2508827e53f4f"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "8f838e24e2994e64a528210f9349cbbc"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "4a27315d9a1e41d88841775ff68f0286"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "0563f14bfe7a4587ad6810454f5cd930"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "c26bd317ade244ff8ff5d952de579fd7"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "9b1231748359408ea4d925327cdfd433"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "806184c3f7744492905275908bd45611"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "8831f12c11dd4a52bdd1408e6cda07ed"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "b4a6efcf02ee4f48adcb9e6b1326d897"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "498f6b56fce64b76a2dca1aad58291a6"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "85ebff80937948e5b85e5ce84be2e709"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "e3493cd378d24c26a7b48753a8536310"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "11c9a16fb39f4769bff6449d603176a7"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "737245f58fe14b09ae90dad59f8e86d3"
+          },
+          {
+            "elapsed_ms": 0.4,
+            "request_id": "b52c763755ea4977921a351cf467d049"
+          },
+          {
+            "elapsed_ms": 1.2,
+            "request_id": "9523a621790442f88ef9a98ae6ef1ff4"
+          },
+          {
+            "elapsed_ms": 0.9,
+            "request_id": "4f6da65124374b3db2987fc5a39001e9"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "0d3ee23035f943d988f9c1a7fa7493ba"
+          },
+          {
+            "elapsed_ms": 0.3,
+            "request_id": "27661a29930d40f2a2e59e7ff69f3b59"
+          }
+        ],
+        "candidate_sha256_after": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
+        "candidate_sha256_before": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
+        "cleanup": {
+          "container_id": "e8384cee5f6656320a7d7a7658e941e378551b0b5cee17955cb6891746c9f6c3",
+          "status": "removed"
+        },
+        "container_controls": {
+          "failures": [],
+          "observed": {
+            "checks": {
+              "cap_drop": true,
+              "memory": true,
+              "mounts": true,
+              "nano_cpus": true,
+              "network": true,
+              "no_new_privileges": true,
+              "pids": true,
+              "readonly_rootfs": true,
+              "tmpfs": true,
+              "user": true
+            },
+            "host_config": {
+              "cap_drop": [
+                "ALL"
+              ],
+              "memory": 134217728,
+              "nano_cpus": 1000000000,
+              "network": "none",
+              "pids": 64,
+              "security_opt": [
+                "no-new-privileges"
+              ]
+            },
+            "mounts": [
+              {
+                "destination": "/candidate/program.py",
+                "readonly": true,
+                "source": "candidate"
+              },
+              {
+                "destination": "/worker/worker.py",
+                "readonly": true,
+                "source": "worker"
+              }
+            ],
+            "user": "65532:65532"
+          },
+          "passed": true
+        },
+        "image_digest": "sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9",
+        "image_id": "sha256:a74ddf067736251b63204a4d7a26411cffa3da75600b4e67ad54c9c79f3f81cb",
+        "image_reference": "python:3.12-slim-bookworm@sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9",
+        "source_identity_stable": true,
+        "startup_ms": 218.7,
+        "worker_sha256_after": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7",
+        "worker_sha256_before": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7"
+      },
+      "seconds": 1.793392124993261,
+      "status": "behavior_passed",
+      "trace": [
+        {
+          "command": {
+            "fields": {
+              "description": "keep this description",
+              "title": "Mixed-case caf\u00e9"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "keep this description",
+              "title": "Mixed-case caf\u00e9"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": null,
+              "title": "Second item"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": null,
+              "title": "Second item"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "private",
+              "title": "Other account's item"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "private",
+              "title": "Other account's item"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "91f6b663-897f-4f91-af87-d71a59704e72",
+            "op": "read"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "read",
+            "target": "91f6b663-897f-4f91-af87-d71a59704e72"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "title": "Renamed caf\u00e9"
+            },
+            "item_id": "91f6b663-897f-4f91-af87-d71a59704e72",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "title": "Renamed caf\u00e9"
+            },
+            "op": "update",
+            "target": "91f6b663-897f-4f91-af87-d71a59704e72"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": null
+            },
+            "item_id": "91f6b663-897f-4f91-af87-d71a59704e72",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "description": null
+            },
+            "op": "update",
+            "target": "91f6b663-897f-4f91-af87-d71a59704e72"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "limit": 1,
+              "skip": 0
+            },
+            "item_id": null,
+            "op": "list"
+          },
+          "proposal": {
+            "fields": {
+              "limit": 1,
+              "skip": 0
+            },
+            "op": "list",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "limit": 1,
+              "skip": 1
+            },
+            "item_id": null,
+            "op": "list"
+          },
+          "proposal": {
+            "fields": {
+              "limit": 1,
+              "skip": 1
+            },
+            "op": "list",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "limit": 1,
+              "skip": 0
+            },
+            "item_id": null,
+            "op": "list"
+          },
+          "proposal": {
+            "fields": {
+              "limit": 1,
+              "skip": 0
+            },
+            "op": "list",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "fc48ba2f-9096-4076-a311-411feb7a99c7",
+            "op": "read"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "read",
+            "target": "fc48ba2f-9096-4076-a311-411feb7a99c7"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "title": "stolen"
+            },
+            "item_id": "fc48ba2f-9096-4076-a311-411feb7a99c7",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "title": "stolen"
+            },
+            "op": "update",
+            "target": "fc48ba2f-9096-4076-a311-411feb7a99c7"
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "fc48ba2f-9096-4076-a311-411feb7a99c7",
+            "op": "delete"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "delete",
+            "target": "fc48ba2f-9096-4076-a311-411feb7a99c7"
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "91f6b663-897f-4f91-af87-d71a59704e72",
+            "op": "delete"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "delete",
+            "target": "91f6b663-897f-4f91-af87-d71a59704e72"
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "91f6b663-897f-4f91-af87-d71a59704e72",
+            "op": "read"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "read",
+            "target": "91f6b663-897f-4f91-af87-d71a59704e72"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-0",
+              "title": "seed-260918-title-0"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-0",
+              "title": "seed-260918-title-0"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-1",
+              "title": "seed-260918-title-1"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-1",
+              "title": "seed-260918-title-1"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-2",
+              "title": "seed-260918-title-2"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-2",
+              "title": "seed-260918-title-2"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-3",
+              "title": "seed-260918-title-3"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-3",
+              "title": "seed-260918-title-3"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-4",
+              "title": "seed-260918-title-4"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-4",
+              "title": "seed-260918-title-4"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-5",
+              "title": "seed-260918-title-5"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-5",
+              "title": "seed-260918-title-5"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-6",
+              "title": "seed-260918-title-6"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-6",
+              "title": "seed-260918-title-6"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-7",
+              "title": "seed-260918-title-7"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-7",
+              "title": "seed-260918-title-7"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-8",
+              "title": "seed-260918-title-8"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-8",
+              "title": "seed-260918-title-8"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-9",
+              "title": "seed-260918-title-9"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-9",
+              "title": "seed-260918-title-9"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-10",
+              "title": "seed-260918-title-10"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-10",
+              "title": "seed-260918-title-10"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-11",
+              "title": "seed-260918-title-11"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-11",
+              "title": "seed-260918-title-11"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd",
+            "op": "read"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "read",
+            "target": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "title": "foreign-260918"
+            },
+            "item_id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "title": "foreign-260918"
+            },
+            "op": "update",
+            "target": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42"
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd",
+            "op": "delete"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "delete",
+            "target": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "limit": 5,
+              "skip": 0
+            },
+            "item_id": null,
+            "op": "list"
+          },
+          "proposal": {
+            "fields": {
+              "limit": 5,
+              "skip": 0
+            },
+            "op": "list",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "limit": 4,
+              "skip": 1
+            },
+            "item_id": null,
+            "op": "list"
+          },
+          "proposal": {
+            "fields": {
+              "limit": 4,
+              "skip": 1
+            },
+            "op": "list",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "title": "updated-title-260918"
+            },
+            "item_id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "title": "updated-title-260918"
+            },
+            "op": "update",
+            "target": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "updated-description-260918"
+            },
+            "item_id": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "description": "updated-description-260918"
+            },
+            "op": "update",
+            "target": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd"
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+            "op": "read"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "read",
+            "target": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "limit": 3,
+              "skip": 2
+            },
+            "item_id": null,
+            "op": "list"
+          },
+          "proposal": {
+            "fields": {
+              "limit": 3,
+              "skip": 2
+            },
+            "op": "list",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "9bc95dce-2ae5-4e61-b349-564ea40f7eb0",
+            "op": "delete"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "delete",
+            "target": "9bc95dce-2ae5-4e61-b349-564ea40f7eb0"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-22",
+              "title": "seed-260918-title-22"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-22",
+              "title": "seed-260918-title-22"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "limit": 1,
+              "skip": 0
+            },
+            "item_id": null,
+            "op": "list"
+          },
+          "proposal": {
+            "fields": {
+              "limit": 1,
+              "skip": 0
+            },
+            "op": "list",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "title": "random-title-260918-24"
+            },
+            "item_id": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "title": "random-title-260918-24"
+            },
+            "op": "update",
+            "target": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "title": "random-title-260918-25"
+            },
+            "item_id": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "title": "random-title-260918-25"
+            },
+            "op": "update",
+            "target": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "random-description-260918-26"
+            },
+            "item_id": "281daf4e-a785-4aeb-8af3-cc21ac8add3e",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "description": "random-description-260918-26"
+            },
+            "op": "update",
+            "target": "281daf4e-a785-4aeb-8af3-cc21ac8add3e"
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "281daf4e-a785-4aeb-8af3-cc21ac8add3e",
+            "op": "read"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "read",
+            "target": "281daf4e-a785-4aeb-8af3-cc21ac8add3e"
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd",
+            "op": "delete"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "delete",
+            "target": "8643197c-2f04-4e6d-a92d-8fdfbf2a1edd"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "limit": 3,
+              "skip": 0
+            },
+            "item_id": null,
+            "op": "list"
+          },
+          "proposal": {
+            "fields": {
+              "limit": 3,
+              "skip": 0
+            },
+            "op": "list",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "title": "random-title-260918-30"
+            },
+            "item_id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "title": "random-title-260918-30"
+            },
+            "op": "update",
+            "target": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "title": "random-title-260918-31"
+            },
+            "item_id": "33e1db3b-7e57-43d6-a424-c39d61f78698",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "title": "random-title-260918-31"
+            },
+            "op": "update",
+            "target": "33e1db3b-7e57-43d6-a424-c39d61f78698"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-32",
+              "title": "seed-260918-title-32"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-32",
+              "title": "seed-260918-title-32"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "1e4f74df-607f-42ee-a9bf-2ced1b5af3f6",
+            "op": "read"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "read",
+            "target": "1e4f74df-607f-42ee-a9bf-2ced1b5af3f6"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-34",
+              "title": "seed-260918-title-34"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-34",
+              "title": "seed-260918-title-34"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "2182067c-dee7-43f1-9d42-a156fd5f5a32",
+            "op": "delete"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "delete",
+            "target": "2182067c-dee7-43f1-9d42-a156fd5f5a32"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-36",
+              "title": "seed-260918-title-36"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-36",
+              "title": "seed-260918-title-36"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "33e1db3b-7e57-43d6-a424-c39d61f78698",
+            "op": "read"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "read",
+            "target": "33e1db3b-7e57-43d6-a424-c39d61f78698"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "limit": 3,
+              "skip": 1
+            },
+            "item_id": null,
+            "op": "list"
+          },
+          "proposal": {
+            "fields": {
+              "limit": 3,
+              "skip": 1
+            },
+            "op": "list",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "71c6de02-9d1d-4f00-9d13-2e0d777cf353",
+            "op": "read"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "read",
+            "target": "71c6de02-9d1d-4f00-9d13-2e0d777cf353"
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "1ee44873-1b74-4550-928a-ab2536add0a9",
+            "op": "delete"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "delete",
+            "target": "1ee44873-1b74-4550-928a-ab2536add0a9"
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "fbf4672a-5b90-4164-beda-96eef1634547",
+            "op": "delete"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "delete",
+            "target": "fbf4672a-5b90-4164-beda-96eef1634547"
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "aac9efc1-6d8b-412d-afd8-8f70bc1b6e41",
+            "op": "delete"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "delete",
+            "target": "aac9efc1-6d8b-412d-afd8-8f70bc1b6e41"
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "33e1db3b-7e57-43d6-a424-c39d61f78698",
+            "op": "delete"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "delete",
+            "target": "33e1db3b-7e57-43d6-a424-c39d61f78698"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "title": "random-title-260918-44"
+            },
+            "item_id": "1e4f74df-607f-42ee-a9bf-2ced1b5af3f6",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "title": "random-title-260918-44"
+            },
+            "op": "update",
+            "target": "1e4f74df-607f-42ee-a9bf-2ced1b5af3f6"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "limit": 3,
+              "skip": 3
+            },
+            "item_id": null,
+            "op": "list"
+          },
+          "proposal": {
+            "fields": {
+              "limit": 3,
+              "skip": 3
+            },
+            "op": "list",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "ff6310da-010a-4598-bf97-a18a91501168",
+            "op": "delete"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "delete",
+            "target": "ff6310da-010a-4598-bf97-a18a91501168"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "title": "random-title-260918-47"
+            },
+            "item_id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "title": "random-title-260918-47"
+            },
+            "op": "update",
+            "target": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-48",
+              "title": "seed-260918-title-48"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-48",
+              "title": "seed-260918-title-48"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "281daf4e-a785-4aeb-8af3-cc21ac8add3e",
+            "op": "delete"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "delete",
+            "target": "281daf4e-a785-4aeb-8af3-cc21ac8add3e"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "title": "random-title-260918-50"
+            },
+            "item_id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "title": "random-title-260918-50"
+            },
+            "op": "update",
+            "target": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-51",
+              "title": "seed-260918-title-51"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-51",
+              "title": "seed-260918-title-51"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "9734e0e3-19d4-4e03-89af-f14f831ae7d6",
+            "op": "read"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "read",
+            "target": "9734e0e3-19d4-4e03-89af-f14f831ae7d6"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-53",
+              "title": "seed-260918-title-53"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-53",
+              "title": "seed-260918-title-53"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "1368babb-4e0d-4a2e-b9a5-1c61422eb4e5",
+            "op": "read"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "read",
+            "target": "1368babb-4e0d-4a2e-b9a5-1c61422eb4e5"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "random-description-260918-55"
+            },
+            "item_id": "71c6de02-9d1d-4f00-9d13-2e0d777cf353",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "description": "random-description-260918-55"
+            },
+            "op": "update",
+            "target": "71c6de02-9d1d-4f00-9d13-2e0d777cf353"
+          }
+        },
+        {
+          "command": {
+            "fields": {},
+            "item_id": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42",
+            "op": "read"
+          },
+          "proposal": {
+            "fields": {},
+            "op": "read",
+            "target": "9baa78bc-5e70-412b-b6c8-4837c2f5fd42"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "seed-260918-description-57",
+              "title": "seed-260918-title-57"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "seed-260918-description-57",
+              "title": "seed-260918-title-57"
+            },
+            "op": "create",
+            "target": null
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "title": "random-title-260918-58"
+            },
+            "item_id": "6c4f88b4-7010-4d5f-b989-f0b7462ca76b",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "title": "random-title-260918-58"
+            },
+            "op": "update",
+            "target": "6c4f88b4-7010-4d5f-b989-f0b7462ca76b"
+          }
+        },
+        {
+          "command": {
+            "fields": {
+              "description": "random-description-260918-59"
+            },
+            "item_id": "246d78d8-b60d-4400-ba0d-706c4a319fd2",
+            "op": "update"
+          },
+          "proposal": {
+            "fields": {
+              "description": "random-description-260918-59"
+            },
+            "op": "update",
+            "target": "246d78d8-b60d-4400-ba0d-706c4a319fd2"
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "bounded actor changes only; not whole-app CI or remote attestation",
+  "scope_decision": {
+    "changed": [],
+    "lane": "actor_checks_required",
+    "reason": "only the bounded actor may differ"
+  },
+  "status": "completed",
+  "subject": {
+    "frontend_sha256": "a271a8048ef3f1f8c22e498cd7fca768bea098a9cfca2c26fd600a606e8bd797",
+    "tracked_source_sha256": "c4060c6fbe345ddffa112febf194e13efdbfbb847c1e5049cc5a39f17554b6b2"
+  },
+  "total_seconds": 2.3364025829941966,
+  "trusted_inputs": {
+    "actor_runtime.py": "1b5a7cf68d0845ab5cb2e4ef380861be48733491174707f977b8bb07261f9877",
+    "admission.py": "5bf8020874a31b784afa34d836aaa11b2dd1b7540c1c0aa37a125e41299dd545",
+    "behavior.py": "c3ba119d71a2f46db104df5b6293e4793dde69245b233f6f6b7f2793551b790c",
+    "browser.mjs": "674955ae1b9c3ec4b1d565484227b5528cfbfdb6e22cb2fc159b98af2bdc03e3",
+    "candidate.py": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
+    "candidates/attack_delete_wrong_id.py": "8845bcf8963681bff840e3511d232b32abdd3d13a2e15f96fca8ae77725473cc",
+    "candidates/attack_drop_patch_field.py": "29ab644e6228327eceab3b7a948d43dea8feb65653f887f9911c9d13e771ffd4",
+    "candidates/attack_env_read.py": "95fe8b757252f4748aaf644141436b34cca68cb4c8d936f83f7b98d3dfc41b1c",
+    "candidates/attack_forge_green.py": "4c2251f3a02a973e4a2e14b80516a0f4190798aadb4919a981205465da68dbaa",
+    "candidates/attack_hang.py": "47a9114f0386308a31e225f4817f3952828dc19adcc4b37d2b3eea5844a9b5fc",
+    "candidates/attack_oracle_probe.py": "e405ae750e651ecc169d4b7176f893b441d8886629155bfac4b2e21e2968a397",
+    "candidates/attack_output_flood.py": "158654aee98d3e237a3bcbd7288ff572abc432d762607cdd6fdb8e67bb52a39d",
+    "candidates/attack_owner_id_injection.py": "4d68cd6aed4f646430bc0967e95ce50f741aa486223980cd8aefb3e026ad1140",
+    "candidates/attack_paging.py": "f1a8a60af557837ae828fc4db65a13d464b695f9a648cc9b2037e319b8c3e6c6",
+    "candidates/attack_raw_sql_unknown_op.py": "9ebeaca0e30c851980106251b42d90ce3337a1349e2d003b9c403a7e9c847e69",
+    "candidates/attack_stale_invalidation.py": "e217741953ac8c222455f7632c25858d8ccaa614556b35489d309969963f621c",
+    "candidates/attack_target_only.py": "566c6328e5d5b392ffda9da29cc9e4212fd4574069373ce70a40b10f2b22f8ab",
+    "candidates/attack_uppercase_title.py": "e2bc7f5d8758040d167b6b105c71861c6211a2b9d69da1f8fd03f46f31b1f205",
+    "candidates/attack_wrong_request_field.py": "5ec128afe928bbd80f1b862441662dcb1ba75ffa378f1c74fa4b96976cb12bd0",
+    "experiments/fullstack/repaired.patch": "a5db3157ea93d2be8bcd988f394a0b7157056a36678f55dd8752b68e4fa90b60",
+    "fixture.py": "a6724693905b7835155f6e0ad6f347fbc77c7ef08d9970267eed411d3d3cd151",
+    "gateway.py": "bf5107ce70bc8e7e5e644ef387921676508d72ba70396e3bda029b9dbcc8099a",
+    "integration.py": "d4807fe61c8c043892e241ce26fc7cfc6f35d6d6239eb4ac2ce3b79a3caada56",
+    "kernel.py": "2fbaf9ff5488d599dd25da91d0303a8b0fd0fc96c7dfc109a3a76bafb05e9148",
+    "launcher": "bfac73d1060e4f6cb8a10cfe9547fe3167f9bf8f1fa4b83e312e1659b134daf2",
+    "performance.py": "5ea36c58ddd45a0fe507ace986c24fa7b8b6f13bf8237012326af0e59c7edcba",
+    "qualify.py": "f4870c1f0f7b2d7b0f34f2d3dad8771eef1d8199aa31946c6c93fdb1606ba712",
+    "run.py": "f65920fbd0055c87e2d010c69e9d183dda22728dbcbd18d4b9e9cfaed61e593d",
+    "state_machine.py": "18d48980c6bf070895212aa0aff65f11304ee71c2f71dabbeed9fe1168b95524",
+    "subject.identity": "79384203235ae6a32c3405aa9fd107ef27f041ee9b9b6d6409501bc0bc6f94b0",
+    "test_actor_runtime.py": "ae491c6b5e401530c682be52096dcdad2a55428c9a467877b18ccc298c252984",
+    "test_admission.py": "bbe661411f1d6d8a914ddcf7866091e5b3aec4963db6229fc8e63581ae6d48c5",
+    "test_cases.json": "7c33bbfd81e80b1a8df4529fa117dcb7c3893233b805ae4f2515d7150d4f6846",
+    "test_kernel.py": "95f52276a6315008cb515a32795f75f62acb3ea2ca3e73460ca4ed50afb10281",
+    "test_performance.py": "682560344a67f2d4b35093be54b24a233790ad8a1c01affad118b78c2f1e537d",
+    "test_qualification.py": "3599fa23e9eb390daf16107b54396a06ca3a3e843437d781ff54f0c0d627e44d",
+    "test_report.py": "8ac0c92c3eaa7abb236c28a560f8a2afd0a5de52c463b5ccda89f49704634786",
+    "test_state_machine.py": "3c93ab8cfd93e8828e303bc99206ba963ba58948483cb8983c08dd70921c560b",
+    "tools/prepare_lab.py": "498acfa3bae68a0f7fffce802310bd52b80122426b3741196b1a87f408010f65",
+    "worker.py": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "challenge_expectations_met": null,
+  "dependencies_prepared": true,
+  "environment": {
+    "machine": "arm64",
+    "system": "Darwin"
+  },
+  "expected_challenge_count": 0,
+  "fixture": {
+    "cleanup": "removed",
+    "database": "assay_cell_9371ba22f8b34e5d991858ae7b3dd83a",
+    "migration_exit_code": 0,
+    "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+    "setup_seconds": 0.4256098330079112
+  },
+  "inputs_unchanged": true,
+  "merge_admission": "not_implemented",
+  "positive_gate_passed": false,
+  "runs": [
+    {
+      "candidate": "attack_uppercase_title.py",
+      "candidate_sha256": "e2bc7f5d8758040d167b6b105c71861c6211a2b9d69da1f8fd03f46f31b1f205",
+      "candidate_unchanged": true,
+      "cleanup": "removed",
+      "eligibility": {
+        "changed": [
+          "candidate.py"
+        ],
+        "lane": "actor_checks_required",
+        "reason": "only the bounded actor may differ"
+      },
+      "kind": "positive",
+      "obligations": [
+        {
+          "obligation": "create preserves requested content",
+          "passed": false
+        }
+      ],
+      "reason": "create preserves requested content",
+      "role_cleanup": {
+        "ledger_rows_deleted": 2,
+        "policy_preserved": true,
+        "roles_dropped": [
+          "cell_actor_4a078cb2ccf94ccb89434081b09887ea",
+          "cell_actor_c2569a1723194bbda26835f805a5fe73"
+        ]
+      },
+      "runtime": {
+        "calls": [
+          {
+            "elapsed_ms": 1.3,
+            "request_id": "bcb07c9e45a34b52916dca6a2d9a2262"
+          }
+        ],
+        "candidate_sha256_after": "e2bc7f5d8758040d167b6b105c71861c6211a2b9d69da1f8fd03f46f31b1f205",
+        "candidate_sha256_before": "e2bc7f5d8758040d167b6b105c71861c6211a2b9d69da1f8fd03f46f31b1f205",
+        "cleanup": {
+          "container_id": "5677df265c30b33ede469ca5a3007aa2d4bb5c9e642fdfe04e78d3a7e04fc0b6",
+          "status": "removed"
+        },
+        "container_controls": {
+          "failures": [],
+          "observed": {
+            "checks": {
+              "cap_drop": true,
+              "memory": true,
+              "mounts": true,
+              "nano_cpus": true,
+              "network": true,
+              "no_new_privileges": true,
+              "pids": true,
+              "readonly_rootfs": true,
+              "tmpfs": true,
+              "user": true
+            },
+            "host_config": {
+              "cap_drop": [
+                "ALL"
+              ],
+              "memory": 134217728,
+              "nano_cpus": 1000000000,
+              "network": "none",
+              "pids": 64,
+              "security_opt": [
+                "no-new-privileges"
+              ]
+            },
+            "mounts": [
+              {
+                "destination": "/candidate/program.py",
+                "readonly": true,
+                "source": "candidate"
+              },
+              {
+                "destination": "/worker/worker.py",
+                "readonly": true,
+                "source": "worker"
+              }
+            ],
+            "user": "65532:65532"
+          },
+          "passed": true
+        },
+        "image_digest": "sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9",
+        "image_id": "sha256:a74ddf067736251b63204a4d7a26411cffa3da75600b4e67ad54c9c79f3f81cb",
+        "image_reference": "python:3.12-slim-bookworm@sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9",
+        "source_identity_stable": true,
+        "startup_ms": 249.6,
+        "worker_sha256_after": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7",
+        "worker_sha256_before": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7"
+      },
+      "seconds": 0.3925128749979194,
+      "status": "behavior_rejected",
+      "trace": [
+        {
+          "command": {
+            "fields": {
+              "description": "keep this description",
+              "title": "Mixed-case caf\u00e9"
+            },
+            "item_id": null,
+            "op": "create"
+          },
+          "proposal": {
+            "fields": {
+              "description": "keep this description",
+              "title": {
+                "redacted_sha256": "e805d3fdebc678dcad39530c41cf67236e13f53d6e6ed84c3f0093b9b8f14933"
+              }
+            },
+            "op": "create",
+            "target": null
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "bounded actor changes only; not whole-app CI or remote attestation",
+  "scope_decision": {
+    "changed": [
+      "candidate.py"
+    ],
+    "lane": "actor_checks_required",
+    "reason": "only the bounded actor may differ"
+  },
+  "status": "rejected",
+  "subject": {
+    "frontend_sha256": "a271a8048ef3f1f8c22e498cd7fca768bea098a9cfca2c26fd600a606e8bd797",
+    "tracked_source_sha256": "c4060c6fbe345ddffa112febf194e13efdbfbb847c1e5049cc5a39f17554b6b2"
+  },
+  "total_seconds": 0.9219766659953166,
+  "trusted_inputs": {
+    "actor_runtime.py": "1b5a7cf68d0845ab5cb2e4ef380861be48733491174707f977b8bb07261f9877",
+    "admission.py": "5bf8020874a31b784afa34d836aaa11b2dd1b7540c1c0aa37a125e41299dd545",
+    "behavior.py": "c3ba119d71a2f46db104df5b6293e4793dde69245b233f6f6b7f2793551b790c",
+    "browser.mjs": "674955ae1b9c3ec4b1d565484227b5528cfbfdb6e22cb2fc159b98af2bdc03e3",
+    "candidate.py": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
+    "candidates/attack_delete_wrong_id.py": "8845bcf8963681bff840e3511d232b32abdd3d13a2e15f96fca8ae77725473cc",
+    "candidates/attack_drop_patch_field.py": "29ab644e6228327eceab3b7a948d43dea8feb65653f887f9911c9d13e771ffd4",
+    "candidates/attack_env_read.py": "95fe8b757252f4748aaf644141436b34cca68cb4c8d936f83f7b98d3dfc41b1c",
+    "candidates/attack_forge_green.py": "4c2251f3a02a973e4a2e14b80516a0f4190798aadb4919a981205465da68dbaa",
+    "candidates/attack_hang.py": "47a9114f0386308a31e225f4817f3952828dc19adcc4b37d2b3eea5844a9b5fc",
+    "candidates/attack_oracle_probe.py": "e405ae750e651ecc169d4b7176f893b441d8886629155bfac4b2e21e2968a397",
+    "candidates/attack_output_flood.py": "158654aee98d3e237a3bcbd7288ff572abc432d762607cdd6fdb8e67bb52a39d",
+    "candidates/attack_owner_id_injection.py": "4d68cd6aed4f646430bc0967e95ce50f741aa486223980cd8aefb3e026ad1140",
+    "candidates/attack_paging.py": "f1a8a60af557837ae828fc4db65a13d464b695f9a648cc9b2037e319b8c3e6c6",
+    "candidates/attack_raw_sql_unknown_op.py": "9ebeaca0e30c851980106251b42d90ce3337a1349e2d003b9c403a7e9c847e69",
+    "candidates/attack_stale_invalidation.py": "e217741953ac8c222455f7632c25858d8ccaa614556b35489d309969963f621c",
+    "candidates/attack_target_only.py": "566c6328e5d5b392ffda9da29cc9e4212fd4574069373ce70a40b10f2b22f8ab",
+    "candidates/attack_uppercase_title.py": "e2bc7f5d8758040d167b6b105c71861c6211a2b9d69da1f8fd03f46f31b1f205",
+    "candidates/attack_wrong_request_field.py": "5ec128afe928bbd80f1b862441662dcb1ba75ffa378f1c74fa4b96976cb12bd0",
+    "experiments/fullstack/repaired.patch": "a5db3157ea93d2be8bcd988f394a0b7157056a36678f55dd8752b68e4fa90b60",
+    "fixture.py": "a6724693905b7835155f6e0ad6f347fbc77c7ef08d9970267eed411d3d3cd151",
+    "gateway.py": "bf5107ce70bc8e7e5e644ef387921676508d72ba70396e3bda029b9dbcc8099a",
+    "integration.py": "d4807fe61c8c043892e241ce26fc7cfc6f35d6d6239eb4ac2ce3b79a3caada56",
+    "kernel.py": "2fbaf9ff5488d599dd25da91d0303a8b0fd0fc96c7dfc109a3a76bafb05e9148",
+    "launcher": "bfac73d1060e4f6cb8a10cfe9547fe3167f9bf8f1fa4b83e312e1659b134daf2",
+    "performance.py": "5ea36c58ddd45a0fe507ace986c24fa7b8b6f13bf8237012326af0e59c7edcba",
+    "qualify.py": "f4870c1f0f7b2d7b0f34f2d3dad8771eef1d8199aa31946c6c93fdb1606ba712",
+    "run.py": "f65920fbd0055c87e2d010c69e9d183dda22728dbcbd18d4b9e9cfaed61e593d",
+    "state_machine.py": "18d48980c6bf070895212aa0aff65f11304ee71c2f71dabbeed9fe1168b95524",
+    "subject.identity": "79384203235ae6a32c3405aa9fd107ef27f041ee9b9b6d6409501bc0bc6f94b0",
+    "test_actor_runtime.py": "ae491c6b5e401530c682be52096dcdad2a55428c9a467877b18ccc298c252984",
+    "test_admission.py": "bbe661411f1d6d8a914ddcf7866091e5b3aec4963db6229fc8e63581ae6d48c5",
+    "test_cases.json": "7c33bbfd81e80b1a8df4529fa117dcb7c3893233b805ae4f2515d7150d4f6846",
+    "test_kernel.py": "95f52276a6315008cb515a32795f75f62acb3ea2ca3e73460ca4ed50afb10281",
+    "test_performance.py": "682560344a67f2d4b35093be54b24a233790ad8a1c01affad118b78c2f1e537d",
+    "test_qualification.py": "3599fa23e9eb390daf16107b54396a06ca3a3e843437d781ff54f0c0d627e44d",
+    "test_report.py": "8ac0c92c3eaa7abb236c28a560f8a2afd0a5de52c463b5ccda89f49704634786",
+    "test_state_machine.py": "3c93ab8cfd93e8828e303bc99206ba963ba58948483cb8983c08dd70921c560b",
+    "tools/prepare_lab.py": "498acfa3bae68a0f7fffce802310bd52b80122426b3741196b1a87f408010f65",
+    "worker.py": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7"
+  }
+}

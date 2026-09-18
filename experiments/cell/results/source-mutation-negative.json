@@ -1,0 +1,513 @@
+{
+  "status": "failed",
+  "phase": "complete",
+  "records": [
+    {
+      "repeat": 0,
+      "check": "build",
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 1.252,
+      "output_tail": "12 kB \u2502 gzip:  11.19 kB\n../backend/app/frontend/assets/useRouter-Cc2uka0g.js           0.15 kB \u2502 gzip:   0.14 kB\n../backend/app/frontend/assets/_layout-D3lFoA-u.js             0.42 kB \u2502 gzip:   0.30 kB\n../backend/app/frontend/assets/AuthLayout-_RG3Zima.js          0.70 kB \u2502 gzip:   0.36 kB\n../backend/app/frontend/assets/recover-password-aezg7Nnh.js    1.64 kB \u2502 gzip:   0.82 kB\n../backend/app/frontend/assets/password-input-CmfI6913.js      1.94 kB \u2502 gzip:   0.98 kB\n../backend/app/frontend/assets/login-8JPY_MR3.js               2.11 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/reset-password-BFX4PpoD.js      2.28 kB \u2502 gzip:   0.97 kB\n../backend/app/frontend/assets/dialog-C01DT4SF.js              2.47 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/signup-BDgwnJQh.js              2.72 kB \u2502 gzip:   0.99 kB\n../backend/app/frontend/assets/_layout-qAM_DC6h.js             6.42 kB \u2502 gzip:   2.63 kB\n../backend/app/frontend/assets/items-zX6P2w6T.js               9.49 kB \u2502 gzip:   2.90 kB\n../backend/app/frontend/assets/settings-70d6TzdP.js           10.22 kB \u2502 gzip:   3.40 kB\n../backend/app/frontend/assets/useBaseQuery-CYd3-LAO.js       16.28 kB \u2502 gzip:   5.46 kB\n../backend/app/frontend/assets/admin-ve5AQa3D.js              17.05 kB \u2502 gzip:   4.79 kB\n../backend/app/frontend/assets/theme-provider-D1cxwilt.js     24.42 kB \u2502 gzip:   9.13 kB\n../backend/app/frontend/assets/Logo-BxHjgxus.js               27.94 kB \u2502 gzip:   9.43 kB\n../backend/app/frontend/assets/loading-button-BN_jWq_N.js     38.56 kB \u2502 gzip:  13.67 kB\n../backend/app/frontend/assets/dist-0WDpuApi.js               41.39 kB \u2502 gzip:  14.86 kB\n../backend/app/frontend/assets/dist-BGxl33DE.js               47.10 kB \u2502 gzip:  15.79 kB\n../backend/app/frontend/assets/DataTable-v8Qs6LEz.js          75.35 kB \u2502 gzip:  21.03 kB\n../backend/app/frontend/assets/useCustomToast-BcHfjxNI.js    114.09 kB \u2502 gzip:  37.23 kB\n../backend/app/frontend/assets/index-B_8s6WYG.js             355.00 kB \u2502 gzip: 109.29 kB\n\n\u2713 built in 375ms\n",
+      "artifact_sha256": "95372c5f78df9b1d9ca9f2baab27f04de944e8e64cd2c2b29d9b953785e9b43c"
+    },
+    {
+      "repeat": 0,
+      "mode": "baseline",
+      "status": "passed",
+      "database": "assay_cell_e1567ecac76442e1a123523d325d164a",
+      "cleanup": "removed",
+      "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+      "migration_exit_code": 0,
+      "setup_seconds": 0.6599373329954688,
+      "seed": {
+        "status": "passed",
+        "exit_code": 0,
+        "seconds": 0.298,
+        "output_tail": "INFO:__main__:Creating initial data\nINFO:__main__:Initial data created\n"
+      },
+      "browser_command": {
+        "status": "passed",
+        "exit_code": 0,
+        "seconds": 8.592,
+        "output_tail": "ct/frontend/tests/items.spec.ts\",\"title\":\"Add Item button is visible\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Create a new item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Create item with only required fields\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Cancel item creation\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Title is required\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Edit an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Delete an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Shows empty state message when no items exist\",\"status\":\"passed\"}],\"tests\":{\"expected\":10,\"actual_passed\":10,\"unexpected\":0,\"flaky\":0,\"skipped\":0},\"cross_tenant\":{\"passed\":true,\"signup\":[200,200],\"login\":[200,200],\"owner_create\":200,\"other_user_read\":403,\"owner_delete\":200},\"admin_positive_control\":{\"passed\":true,\"login\":200,\"create\":200,\"update\":200,\"read\":200,\"delete\":200},\"elapsed_seconds\":8.528150083,\"stdout_sha256\":\"aa31f1e2a2064a188cbc0b10f288cd4a7e77f463da7e96e4401d5c1b7472a91e\",\"stderr_tail\":\"\"}\n"
+      },
+      "browser": {
+        "status": "passed",
+        "exit_code": 0,
+        "timed_out": false,
+        "auth_setup": {
+          "included": true,
+          "mock_auth": false,
+          "method": "real UI login against app"
+        },
+        "inventory": {
+          "item_tests": 9,
+          "auth_setup_tests": 1,
+          "total": 10,
+          "expected_passed_stat": 10
+        },
+        "cases": [
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "authenticate",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Items page is accessible and shows correct title",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Add Item button is visible",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Create a new item successfully",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Create item with only required fields",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Cancel item creation",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Title is required",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Edit an item successfully",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Delete an item successfully",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Shows empty state message when no items exist",
+            "status": "passed"
+          }
+        ],
+        "tests": {
+          "expected": 10,
+          "actual_passed": 10,
+          "unexpected": 0,
+          "flaky": 0,
+          "skipped": 0
+        },
+        "cross_tenant": {
+          "passed": true,
+          "signup": [
+            200,
+            200
+          ],
+          "login": [
+            200,
+            200
+          ],
+          "owner_create": 200,
+          "other_user_read": 403,
+          "owner_delete": 200
+        },
+        "admin_positive_control": {
+          "passed": true,
+          "login": 200,
+          "create": 200,
+          "update": 200,
+          "read": 200,
+          "delete": 200
+        },
+        "elapsed_seconds": 8.528150083,
+        "stdout_sha256": "aa31f1e2a2064a188cbc0b10f288cd4a7e77f463da7e96e4401d5c1b7472a91e",
+        "stderr_tail": ""
+      },
+      "total_seconds": 10.177
+    },
+    {
+      "repeat": 0,
+      "mode": "cell",
+      "status": "passed",
+      "database": "assay_cell_92c67ab03cbd42d0a87d71f5924fee6e",
+      "cleanup": "removed",
+      "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+      "migration_exit_code": 0,
+      "setup_seconds": 0.44740966701647267,
+      "seed": {
+        "status": "passed",
+        "exit_code": 0,
+        "seconds": 0.281,
+        "output_tail": "INFO:__main__:Creating initial data\nINFO:__main__:Initial data created\n"
+      },
+      "browser_command": {
+        "status": "passed",
+        "exit_code": 0,
+        "seconds": 8.365,
+        "output_tail": "ct/frontend/tests/items.spec.ts\",\"title\":\"Add Item button is visible\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Create a new item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Create item with only required fields\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Cancel item creation\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Title is required\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Edit an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Delete an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Shows empty state message when no items exist\",\"status\":\"passed\"}],\"tests\":{\"expected\":10,\"actual_passed\":10,\"unexpected\":0,\"flaky\":0,\"skipped\":0},\"cross_tenant\":{\"passed\":true,\"signup\":[200,200],\"login\":[200,200],\"owner_create\":200,\"other_user_read\":403,\"owner_delete\":200},\"admin_positive_control\":{\"passed\":true,\"login\":200,\"create\":200,\"update\":200,\"read\":200,\"delete\":200},\"elapsed_seconds\":8.294090875,\"stdout_sha256\":\"526becff04f37605ddd13c116e6d4f9bb64f034fffa9316c24b6a2c95f3fa78a\",\"stderr_tail\":\"\"}\n"
+      },
+      "browser": {
+        "status": "passed",
+        "exit_code": 0,
+        "timed_out": false,
+        "auth_setup": {
+          "included": true,
+          "mock_auth": false,
+          "method": "real UI login against app"
+        },
+        "inventory": {
+          "item_tests": 9,
+          "auth_setup_tests": 1,
+          "total": 10,
+          "expected_passed_stat": 10
+        },
+        "cases": [
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "authenticate",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Items page is accessible and shows correct title",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Add Item button is visible",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Create a new item successfully",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Create item with only required fields",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Cancel item creation",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Title is required",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Edit an item successfully",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Delete an item successfully",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Shows empty state message when no items exist",
+            "status": "passed"
+          }
+        ],
+        "tests": {
+          "expected": 10,
+          "actual_passed": 10,
+          "unexpected": 0,
+          "flaky": 0,
+          "skipped": 0
+        },
+        "cross_tenant": {
+          "passed": true,
+          "signup": [
+            200,
+            200
+          ],
+          "login": [
+            200,
+            200
+          ],
+          "owner_create": 200,
+          "other_user_read": 403,
+          "owner_delete": 200
+        },
+        "admin_positive_control": {
+          "passed": true,
+          "login": 200,
+          "create": 200,
+          "update": 200,
+          "read": 200,
+          "delete": 200
+        },
+        "elapsed_seconds": 8.294090875,
+        "stdout_sha256": "526becff04f37605ddd13c116e6d4f9bb64f034fffa9316c24b6a2c95f3fa78a",
+        "stderr_tail": ""
+      },
+      "shutdown": {
+        "actor_closed": true,
+        "kernel_cleanup": {
+          "ledger_rows_deleted": 4,
+          "roles_dropped": [
+            "cell_actor_3411dbbc53e4444c922944ec6ac3ef75",
+            "cell_actor_a47c7ee632ba4a4e872e62679fb9debc",
+            "cell_actor_a52294001c9140cd8b5d216a20d26373",
+            "cell_actor_faeb70bf15a04e269717a797b34337da"
+          ],
+          "policy_preserved": true
+        },
+        "actor": {
+          "candidate_sha256_before": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
+          "worker_sha256_before": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7",
+          "calls": [
+            {
+              "request_id": "2077a6dc2ae64a9389857e6b35521a2d",
+              "elapsed_ms": 1.9
+            },
+            {
+              "request_id": "7504474cfa7c4a859ec37e8ac607acf1",
+              "elapsed_ms": 0.5
+            },
+            {
+              "request_id": "27fb148ab4134a8487379ff029c8b157",
+              "elapsed_ms": 0.5
+            },
+            {
+              "request_id": "a028523127204a4d95c2c6797b112f37",
+              "elapsed_ms": 0.9
+            },
+            {
+              "request_id": "3142269425c64a7388de56a1a843e876",
+              "elapsed_ms": 1.0
+            },
+            {
+              "request_id": "de7a39434e1d4225ba4f7b90eca7e5da",
+              "elapsed_ms": 0.5
+            },
+            {
+              "request_id": "b3ba754bfd3c4185b734ef668a30f0a1",
+              "elapsed_ms": 0.5
+            },
+            {
+              "request_id": "b72e5959cf9b4529942232cc2c9d8178",
+              "elapsed_ms": 0.6
+            },
+            {
+              "request_id": "c6083aa11e2e4840b4379c4e2730a93e",
+              "elapsed_ms": 0.4
+            },
+            {
+              "request_id": "d3c70a72f13440c7b5a8c7064caf67ca",
+              "elapsed_ms": 0.5
+            },
+            {
+              "request_id": "18af7c3582094e48887fe18657d4241d",
+              "elapsed_ms": 0.5
+            },
+            {
+              "request_id": "6ce9b9f1ba3045bc958da49a2faccef0",
+              "elapsed_ms": 0.6
+            },
+            {
+              "request_id": "3c94643341654fa3af5a976b3f9be1c7",
+              "elapsed_ms": 0.5
+            },
+            {
+              "request_id": "e82b39b8ed594cd8b4324101d72c7809",
+              "elapsed_ms": 0.5
+            },
+            {
+              "request_id": "063cf95f58c94f499f43e91c56f28f5d",
+              "elapsed_ms": 0.5
+            },
+            {
+              "request_id": "f0b09f3a4fd0495b9ee06f84b0427d9c",
+              "elapsed_ms": 0.5
+            },
+            {
+              "request_id": "3338de73c04742f38454fd2c19d17890",
+              "elapsed_ms": 1.8
+            },
+            {
+              "request_id": "6d956dacbb1742609cc7429abe3567b5",
+              "elapsed_ms": 0.5
+            },
+            {
+              "request_id": "37ea13224be644b39b9901fda4e0a50b",
+              "elapsed_ms": 0.6
+            },
+            {
+              "request_id": "d66c8e1d1f84415cac7276c009e40eda",
+              "elapsed_ms": 1.2
+            },
+            {
+              "request_id": "804489f9aae5451ebb7971ccf8670dca",
+              "elapsed_ms": 0.4
+            },
+            {
+              "request_id": "748be204a43e435c879e0a340efdce3b",
+              "elapsed_ms": 0.4
+            }
+          ],
+          "image_reference": "python:3.12-slim-bookworm@sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9",
+          "image_digest": "sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9",
+          "image_id": "sha256:a74ddf067736251b63204a4d7a26411cffa3da75600b4e67ad54c9c79f3f81cb",
+          "startup_ms": 481.0,
+          "container_controls": {
+            "passed": true,
+            "failures": [],
+            "observed": {
+              "host_config": {
+                "network": "none",
+                "memory": 134217728,
+                "pids": 64,
+                "nano_cpus": 1000000000,
+                "cap_drop": [
+                  "ALL"
+                ],
+                "security_opt": [
+                  "no-new-privileges"
+                ]
+              },
+              "user": "65532:65532",
+              "mounts": [
+                {
+                  "destination": "/candidate/program.py",
+                  "source": "candidate",
+                  "readonly": true
+                },
+                {
+                  "destination": "/worker/worker.py",
+                  "source": "worker",
+                  "readonly": true
+                }
+              ],
+              "checks": {
+                "network": true,
+                "readonly_rootfs": true,
+                "user": true,
+                "pids": true,
+                "memory": true,
+                "nano_cpus": true,
+                "cap_drop": true,
+                "no_new_privileges": true,
+                "tmpfs": true,
+                "mounts": true
+              }
+            }
+          },
+          "cleanup": {
+            "container_id": "de08129bf37ccda14d4346e79d7b2bc97da2ff7990ddf302d5540848af30a246",
+            "status": "removed"
+          },
+          "candidate_sha256_after": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
+          "worker_sha256_after": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7",
+          "source_identity_stable": true
+        },
+        "status": "passed"
+      },
+      "total_seconds": 10.304
+    }
+  ],
+  "source_unchanged": false,
+  "variant_identity": {
+    "public_revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+    "repaired_patch_sha256": "a5db3157ea93d2be8bcd988f394a0b7157056a36678f55dd8752b68e4fa90b60",
+    "source_sha256_before_build": "02ca4e27d6935c80e79cb3113ce7b58d873fabd17ea302a70c90b054f1694804",
+    "source_sha256_after_run": "02ca4e27d6935c80e79cb3113ce7b58d873fabd17ea302a70c90b054f1694804"
+  },
+  "source_identity": {
+    "before": {
+      "public_variant": "02ca4e27d6935c80e79cb3113ce7b58d873fabd17ea302a70c90b054f1694804",
+      "cell_core": {
+        "worker.py": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7",
+        "fixture.py": "c21979c2a95ef2859c1f7433a4f8d748d4de3cf7ce3c16bcd70cc8fea4d197da",
+        "run.py": "5ac54920eeb04e9a60cf2561038e5454e1982b1cd41e6723a5e685f4392c1cd6",
+        "gateway.py": "bf5107ce70bc8e7e5e644ef387921676508d72ba70396e3bda029b9dbcc8099a",
+        "kernel.py": "2fbaf9ff5488d599dd25da91d0303a8b0fd0fc96c7dfc109a3a76bafb05e9148",
+        "behavior.py": "c3ba119d71a2f46db104df5b6293e4793dde69245b233f6f6b7f2793551b790c",
+        "test_state_machine.py": "3c93ab8cfd93e8828e303bc99206ba963ba58948483cb8983c08dd70921c560b",
+        "browser.mjs": "674955ae1b9c3ec4b1d565484227b5528cfbfdb6e22cb2fc159b98af2bdc03e3",
+        "test_report.py": "8ac0c92c3eaa7abb236c28a560f8a2afd0a5de52c463b5ccda89f49704634786",
+        "test_admission.py": "bbe661411f1d6d8a914ddcf7866091e5b3aec4963db6229fc8e63581ae6d48c5",
+        "state_machine.py": "c33cad9bebdedd3d639631e0aee66e8e9e9b94bdf73656fde57896172f706e48",
+        "integration.py": "382088c2ed761845c0475be11416012d4f6a95656672a0d861dc4aec1962360b",
+        "test_performance.py": "682560344a67f2d4b35093be54b24a233790ad8a1c01affad118b78c2f1e537d",
+        "test_kernel.py": "95f52276a6315008cb515a32795f75f62acb3ea2ca3e73460ca4ed50afb10281",
+        "test_actor_runtime.py": "ae491c6b5e401530c682be52096dcdad2a55428c9a467877b18ccc298c252984",
+        "admission.py": "5bf8020874a31b784afa34d836aaa11b2dd1b7540c1c0aa37a125e41299dd545",
+        "performance.py": "5ea36c58ddd45a0fe507ace986c24fa7b8b6f13bf8237012326af0e59c7edcba",
+        "qualify.py": "7c5d2aa97ff30d55e114c565fbebe2fa4066abb804170c8cbed976df21f0325c",
+        "actor_runtime.py": "f819a0b39d8eae2e09703772e20ea25bd81de3d27604f13ea5198150edcd49b0",
+        "candidates/healthy.py": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
+        "candidates/attack_target_only.py": "566c6328e5d5b392ffda9da29cc9e4212fd4574069373ce70a40b10f2b22f8ab",
+        "candidates/attack_output_flood.py": "158654aee98d3e237a3bcbd7288ff572abc432d762607cdd6fdb8e67bb52a39d",
+        "candidates/attack_uppercase_title.py": "e2bc7f5d8758040d167b6b105c71861c6211a2b9d69da1f8fd03f46f31b1f205",
+        "candidates/attack_raw_sql_unknown_op.py": "9ebeaca0e30c851980106251b42d90ce3337a1349e2d003b9c403a7e9c847e69",
+        "candidates/attack_oracle_probe.py": "e405ae750e651ecc169d4b7176f893b441d8886629155bfac4b2e21e2968a397",
+        "candidates/attack_paging.py": "f1a8a60af557837ae828fc4db65a13d464b695f9a648cc9b2037e319b8c3e6c6",
+        "candidates/attack_wrong_request_field.py": "5ec128afe928bbd80f1b862441662dcb1ba75ffa378f1c74fa4b96976cb12bd0",
+        "candidates/attack_delete_wrong_id.py": "8845bcf8963681bff840e3511d232b32abdd3d13a2e15f96fca8ae77725473cc",
+        "candidates/attack_forge_green.py": "4c2251f3a02a973e4a2e14b80516a0f4190798aadb4919a981205465da68dbaa",
+        "candidates/attack_stale_invalidation.py": "e217741953ac8c222455f7632c25858d8ccaa614556b35489d309969963f621c",
+        "candidates/attack_hang.py": "47a9114f0386308a31e225f4817f3952828dc19adcc4b37d2b3eea5844a9b5fc",
+        "candidates/attack_drop_patch_field.py": "29ab644e6228327eceab3b7a948d43dea8feb65653f887f9911c9d13e771ffd4",
+        "candidates/attack_env_read.py": "95fe8b757252f4748aaf644141436b34cca68cb4c8d936f83f7b98d3dfc41b1c",
+        "candidates/attack_owner_id_injection.py": "4d68cd6aed4f646430bc0967e95ce50f741aa486223980cd8aefb3e026ad1140"
+      }
+    },
+    "after": {
+      "public_variant": "02ca4e27d6935c80e79cb3113ce7b58d873fabd17ea302a70c90b054f1694804",
+      "cell_core": {
+        "worker.py": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7",
+        "fixture.py": "c21979c2a95ef2859c1f7433a4f8d748d4de3cf7ce3c16bcd70cc8fea4d197da",
+        "run.py": "5ac54920eeb04e9a60cf2561038e5454e1982b1cd41e6723a5e685f4392c1cd6",
+        "gateway.py": "bf5107ce70bc8e7e5e644ef387921676508d72ba70396e3bda029b9dbcc8099a",
+        "kernel.py": "2fbaf9ff5488d599dd25da91d0303a8b0fd0fc96c7dfc109a3a76bafb05e9148",
+        "behavior.py": "c3ba119d71a2f46db104df5b6293e4793dde69245b233f6f6b7f2793551b790c",
+        "test_state_machine.py": "3c93ab8cfd93e8828e303bc99206ba963ba58948483cb8983c08dd70921c560b",
+        "browser.mjs": "674955ae1b9c3ec4b1d565484227b5528cfbfdb6e22cb2fc159b98af2bdc03e3",
+        "test_report.py": "8ac0c92c3eaa7abb236c28a560f8a2afd0a5de52c463b5ccda89f49704634786",
+        "test_admission.py": "bbe661411f1d6d8a914ddcf7866091e5b3aec4963db6229fc8e63581ae6d48c5",
+        "state_machine.py": "c33cad9bebdedd3d639631e0aee66e8e9e9b94bdf73656fde57896172f706e48",
+        "integration.py": "382088c2ed761845c0475be11416012d4f6a95656672a0d861dc4aec1962360b",
+        "test_qualification.py": "3599fa23e9eb390daf16107b54396a06ca3a3e843437d781ff54f0c0d627e44d",
+        "test_performance.py": "682560344a67f2d4b35093be54b24a233790ad8a1c01affad118b78c2f1e537d",
+        "test_kernel.py": "95f52276a6315008cb515a32795f75f62acb3ea2ca3e73460ca4ed50afb10281",
+        "test_actor_runtime.py": "ae491c6b5e401530c682be52096dcdad2a55428c9a467877b18ccc298c252984",
+        "admission.py": "5bf8020874a31b784afa34d836aaa11b2dd1b7540c1c0aa37a125e41299dd545",
+        "performance.py": "5ea36c58ddd45a0fe507ace986c24fa7b8b6f13bf8237012326af0e59c7edcba",
+        "qualify.py": "f4870c1f0f7b2d7b0f34f2d3dad8771eef1d8199aa31946c6c93fdb1606ba712",
+        "actor_runtime.py": "1b5a7cf68d0845ab5cb2e4ef380861be48733491174707f977b8bb07261f9877",
+        "candidates/healthy.py": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
+        "candidates/attack_target_only.py": "566c6328e5d5b392ffda9da29cc9e4212fd4574069373ce70a40b10f2b22f8ab",
+        "candidates/attack_output_flood.py": "158654aee98d3e237a3bcbd7288ff572abc432d762607cdd6fdb8e67bb52a39d",
+        "candidates/attack_uppercase_title.py": "e2bc7f5d8758040d167b6b105c71861c6211a2b9d69da1f8fd03f46f31b1f205",
+        "candidates/attack_raw_sql_unknown_op.py": "9ebeaca0e30c851980106251b42d90ce3337a1349e2d003b9c403a7e9c847e69",
+        "candidates/attack_oracle_probe.py": "e405ae750e651ecc169d4b7176f893b441d8886629155bfac4b2e21e2968a397",
+        "candidates/attack_paging.py": "f1a8a60af557837ae828fc4db65a13d464b695f9a648cc9b2037e319b8c3e6c6",
+        "candidates/attack_wrong_request_field.py": "5ec128afe928bbd80f1b862441662dcb1ba75ffa378f1c74fa4b96976cb12bd0",
+        "candidates/attack_delete_wrong_id.py": "8845bcf8963681bff840e3511d232b32abdd3d13a2e15f96fca8ae77725473cc",
+        "candidates/attack_forge_green.py": "4c2251f3a02a973e4a2e14b80516a0f4190798aadb4919a981205465da68dbaa",
+        "candidates/attack_stale_invalidation.py": "e217741953ac8c222455f7632c25858d8ccaa614556b35489d309969963f621c",
+        "candidates/attack_hang.py": "47a9114f0386308a31e225f4817f3952828dc19adcc4b37d2b3eea5844a9b5fc",
+        "candidates/attack_drop_patch_field.py": "29ab644e6228327eceab3b7a948d43dea8feb65653f887f9911c9d13e771ffd4",
+        "candidates/attack_env_read.py": "95fe8b757252f4748aaf644141436b34cca68cb4c8d936f83f7b98d3dfc41b1c",
+        "candidates/attack_owner_id_injection.py": "4d68cd6aed4f646430bc0967e95ce50f741aa486223980cd8aefb3e026ad1140"
+      }
+    }
+  },
+  "variant_sha256": "7ce656f64c48657a4781450c9a0c09a87d84e4e3946e08de74c03cfa8ff41573",
+  "total_seconds": 21.974
+}

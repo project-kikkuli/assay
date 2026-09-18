@@ -1,0 +1,23 @@
+{
+  "baseline_written": true,
+  "seconds": 38.61138962500263,
+  "status": "qualified_locally",
+  "steps": [
+    {
+      "exit_code": 0,
+      "name": "boundary_tests",
+      "seconds": 0.912850291992072,
+      "tests_passed": 30
+    },
+    {
+      "exit_code": 0,
+      "name": "core_challenges",
+      "seconds": 15.123346915992443
+    },
+    {
+      "exit_code": 0,
+      "name": "composition",
+      "seconds": 21.90265604198794
+    }
+  ]
+}

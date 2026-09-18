@@ -1,0 +1,334 @@
+{
+  "status": "failed",
+  "phase": "failed",
+  "records": [
+    {
+      "repeat": 0,
+      "check": "build",
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 1.241,
+      "output_tail": "12 kB \u2502 gzip:  11.19 kB\n../backend/app/frontend/assets/useRouter-Cc2uka0g.js           0.15 kB \u2502 gzip:   0.14 kB\n../backend/app/frontend/assets/_layout-D3lFoA-u.js             0.42 kB \u2502 gzip:   0.30 kB\n../backend/app/frontend/assets/AuthLayout-_RG3Zima.js          0.70 kB \u2502 gzip:   0.36 kB\n../backend/app/frontend/assets/recover-password-aezg7Nnh.js    1.64 kB \u2502 gzip:   0.82 kB\n../backend/app/frontend/assets/password-input-CmfI6913.js      1.94 kB \u2502 gzip:   0.98 kB\n../backend/app/frontend/assets/login-8JPY_MR3.js               2.11 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/reset-password-BFX4PpoD.js      2.28 kB \u2502 gzip:   0.97 kB\n../backend/app/frontend/assets/dialog-C01DT4SF.js              2.47 kB \u2502 gzip:   0.90 kB\n../backend/app/frontend/assets/signup-BDgwnJQh.js              2.72 kB \u2502 gzip:   0.99 kB\n../backend/app/frontend/assets/_layout-qAM_DC6h.js             6.42 kB \u2502 gzip:   2.63 kB\n../backend/app/frontend/assets/items-zX6P2w6T.js               9.49 kB \u2502 gzip:   2.90 kB\n../backend/app/frontend/assets/settings-70d6TzdP.js           10.22 kB \u2502 gzip:   3.40 kB\n../backend/app/frontend/assets/useBaseQuery-CYd3-LAO.js       16.28 kB \u2502 gzip:   5.46 kB\n../backend/app/frontend/assets/admin-ve5AQa3D.js              17.05 kB \u2502 gzip:   4.79 kB\n../backend/app/frontend/assets/theme-provider-D1cxwilt.js     24.42 kB \u2502 gzip:   9.13 kB\n../backend/app/frontend/assets/Logo-BxHjgxus.js               27.94 kB \u2502 gzip:   9.43 kB\n../backend/app/frontend/assets/loading-button-BN_jWq_N.js     38.56 kB \u2502 gzip:  13.67 kB\n../backend/app/frontend/assets/dist-0WDpuApi.js               41.39 kB \u2502 gzip:  14.86 kB\n../backend/app/frontend/assets/dist-BGxl33DE.js               47.10 kB \u2502 gzip:  15.79 kB\n../backend/app/frontend/assets/DataTable-v8Qs6LEz.js          75.35 kB \u2502 gzip:  21.03 kB\n../backend/app/frontend/assets/useCustomToast-BcHfjxNI.js    114.09 kB \u2502 gzip:  37.23 kB\n../backend/app/frontend/assets/index-B_8s6WYG.js             355.00 kB \u2502 gzip: 109.29 kB\n\n\u2713 built in 380ms\n",
+      "artifact_sha256": "95372c5f78df9b1d9ca9f2baab27f04de944e8e64cd2c2b29d9b953785e9b43c"
+    },
+    {
+      "repeat": 0,
+      "mode": "baseline",
+      "status": "passed",
+      "database": "assay_cell_36cf9041f20d411c9b1c31b0da0eacac",
+      "cleanup": "removed",
+      "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+      "migration_exit_code": 0,
+      "setup_seconds": 1.029235208989121,
+      "seed": {
+        "status": "passed",
+        "exit_code": 0,
+        "seconds": 0.727,
+        "output_tail": "INFO:__main__:Creating initial data\nINFO:__main__:Initial data created\n"
+      },
+      "browser_command": {
+        "status": "passed",
+        "exit_code": 0,
+        "seconds": 9.353,
+        "output_tail": "ntend/tests/items.spec.ts\",\"title\":\"Add Item button is visible\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Create a new item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Create item with only required fields\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Cancel item creation\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Title is required\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Edit an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Delete an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Shows empty state message when no items exist\",\"status\":\"passed\"}],\"tests\":{\"expected\":10,\"actual_passed\":10,\"unexpected\":0,\"flaky\":0,\"skipped\":0},\"cross_tenant\":{\"passed\":true,\"signup\":[200,200],\"login\":[200,200],\"owner_create\":200,\"other_user_read\":403,\"owner_delete\":200},\"admin_positive_control\":{\"passed\":true,\"login\":200,\"create\":200,\"update\":200,\"read\":200,\"delete\":200},\"elapsed_seconds\":9.287831957999998,\"stdout_sha256\":\"d9149972c2f0929b38a12d29b43d6e66f6939d7675ce4d088a850c1f33bbc159\",\"stderr_tail\":\"\"}\n"
+      },
+      "browser": {
+        "status": "passed",
+        "exit_code": 0,
+        "timed_out": false,
+        "auth_setup": {
+          "included": true,
+          "mock_auth": false,
+          "method": "real UI login against app"
+        },
+        "inventory": {
+          "item_tests": 9,
+          "auth_setup_tests": 1,
+          "total": 10,
+          "expected_passed_stat": 10
+        },
+        "cases": [
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "authenticate",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Items page is accessible and shows correct title",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Add Item button is visible",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Create a new item successfully",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Create item with only required fields",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Cancel item creation",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Title is required",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Edit an item successfully",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Delete an item successfully",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Shows empty state message when no items exist",
+            "status": "passed"
+          }
+        ],
+        "tests": {
+          "expected": 10,
+          "actual_passed": 10,
+          "unexpected": 0,
+          "flaky": 0,
+          "skipped": 0
+        },
+        "cross_tenant": {
+          "passed": true,
+          "signup": [
+            200,
+            200
+          ],
+          "login": [
+            200,
+            200
+          ],
+          "owner_create": 200,
+          "other_user_read": 403,
+          "owner_delete": 200
+        },
+        "admin_positive_control": {
+          "passed": true,
+          "login": 200,
+          "create": 200,
+          "update": 200,
+          "read": 200,
+          "delete": 200
+        },
+        "elapsed_seconds": 9.287831957999998,
+        "stdout_sha256": "d9149972c2f0929b38a12d29b43d6e66f6939d7675ce4d088a850c1f33bbc159",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "repeat": 0,
+      "mode": "cell",
+      "status": "failed",
+      "database": "assay_cell_e4ece97f364f46cf84971fb0eeb606b8",
+      "cleanup": "removed",
+      "revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+      "migration_exit_code": 0,
+      "setup_seconds": 0.8556306250102352,
+      "seed": {
+        "status": "passed",
+        "exit_code": 0,
+        "seconds": 0.68,
+        "output_tail": "INFO:__main__:Creating initial data\nINFO:__main__:Initial data created\n"
+      },
+      "browser_command": {
+        "status": "passed",
+        "exit_code": 0,
+        "seconds": 7.984,
+        "output_tail": "ct/frontend/tests/items.spec.ts\",\"title\":\"Add Item button is visible\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Create a new item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Create item with only required fields\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Cancel item creation\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Title is required\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Edit an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Delete an item successfully\",\"status\":\"passed\"},{\"file\":\"../../../../../../../../../private<redacted-path>\",\"title\":\"Shows empty state message when no items exist\",\"status\":\"passed\"}],\"tests\":{\"expected\":10,\"actual_passed\":10,\"unexpected\":0,\"flaky\":0,\"skipped\":0},\"cross_tenant\":{\"passed\":true,\"signup\":[200,200],\"login\":[200,200],\"owner_create\":200,\"other_user_read\":403,\"owner_delete\":200},\"admin_positive_control\":{\"passed\":true,\"login\":200,\"create\":200,\"update\":200,\"read\":200,\"delete\":200},\"elapsed_seconds\":7.922113375,\"stdout_sha256\":\"7236c6ddde052d3726268476dd1bf5dea43bee267fa05332aa4005236b5b4ba0\",\"stderr_tail\":\"\"}\n"
+      },
+      "browser": {
+        "status": "passed",
+        "exit_code": 0,
+        "timed_out": false,
+        "auth_setup": {
+          "included": true,
+          "mock_auth": false,
+          "method": "real UI login against app"
+        },
+        "inventory": {
+          "item_tests": 9,
+          "auth_setup_tests": 1,
+          "total": 10,
+          "expected_passed_stat": 10
+        },
+        "cases": [
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "authenticate",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Items page is accessible and shows correct title",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Add Item button is visible",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Create a new item successfully",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Create item with only required fields",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Cancel item creation",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Title is required",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Edit an item successfully",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Delete an item successfully",
+            "status": "passed"
+          },
+          {
+            "file": "../../../../../../../../../private<redacted-path>",
+            "title": "Shows empty state message when no items exist",
+            "status": "passed"
+          }
+        ],
+        "tests": {
+          "expected": 10,
+          "actual_passed": 10,
+          "unexpected": 0,
+          "flaky": 0,
+          "skipped": 0
+        },
+        "cross_tenant": {
+          "passed": true,
+          "signup": [
+            200,
+            200
+          ],
+          "login": [
+            200,
+            200
+          ],
+          "owner_create": 200,
+          "other_user_read": 403,
+          "owner_delete": 200
+        },
+        "admin_positive_control": {
+          "passed": true,
+          "login": 200,
+          "create": 200,
+          "update": 200,
+          "read": 200,
+          "delete": 200
+        },
+        "elapsed_seconds": 7.922113375,
+        "stdout_sha256": "7236c6ddde052d3726268476dd1bf5dea43bee267fa05332aa4005236b5b4ba0",
+        "stderr_tail": ""
+      },
+      "shutdown": {
+        "actor_closed": true,
+        "kernel_cleanup": {
+          "ledger_rows_deleted": 0,
+          "roles_dropped": [],
+          "policy_preserved": true
+        },
+        "actor": {
+          "candidate_sha256_before": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
+          "worker_sha256_before": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7",
+          "calls": [],
+          "image_reference": "python:3.12-slim-bookworm@sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9",
+          "image_digest": "sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9",
+          "image_id": "sha256:a74ddf067736251b63204a4d7a26411cffa3da75600b4e67ad54c9c79f3f81cb",
+          "startup_ms": 847.0,
+          "container_controls": {
+            "passed": true,
+            "failures": [],
+            "observed": {
+              "host_config": {
+                "network": "none",
+                "memory": 134217728,
+                "pids": 64,
+                "nano_cpus": 1000000000,
+                "cap_drop": [
+                  "ALL"
+                ],
+                "security_opt": [
+                  "no-new-privileges"
+                ]
+              },
+              "user": "65532:65532",
+              "mounts": [
+                {
+                  "destination": "/candidate/program.py",
+                  "source": "candidate",
+                  "readonly": true
+                },
+                {
+                  "destination": "/worker/worker.py",
+                  "source": "worker",
+                  "readonly": true
+                }
+              ],
+              "checks": {
+                "network": true,
+                "readonly_rootfs": true,
+                "user": true,
+                "pids": true,
+                "memory": true,
+                "nano_cpus": true,
+                "cap_drop": true,
+                "no_new_privileges": true,
+                "tmpfs": true,
+                "mounts": true
+              }
+            }
+          },
+          "cleanup": {
+            "container_id": "1c72fc09311a79e62518643cfe3de66d1fe4f56d4c01518fc91b3209fe5d3e07",
+            "status": "removed"
+          },
+          "candidate_sha256_after": "3cc6c4ace912a537f2b8e4482d49e42772989bcfaa262c2815e350cb556c7b25",
+          "worker_sha256_after": "58d0d1a54a7ed8d311d0a87219b428ce1d3d1ec668f165f53dd0363ae414bdf7",
+          "source_identity_stable": true
+        },
+        "status": "passed"
+      }
+    }
+  ],
+  "source_unchanged": null,
+  "variant_identity": {
+    "public_revision": "cb740b656d7a0a6c5e12c7bf8e50343ec94ee9c7",
+    "repaired_patch_sha256": "a5db3157ea93d2be8bcd988f394a0b7157056a36678f55dd8752b68e4fa90b60",
+    "source_sha256_before_build": "a9184e8841dc20bfec8846dbb6b8bda06b7f98de752342d8bc7ffc11ef33d38b"
+  },
+  "error": "RuntimeError: cell run did not pass"
+}

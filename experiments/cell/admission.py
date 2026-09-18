@@ -13,7 +13,8 @@ import re
 
 ACTOR = "candidate.py"
 REQUIRED = frozenset({ACTOR, "kernel.py", "actor_runtime.py", "worker.py", "behavior.py",
-                      "admission.py", "fixture.py", "run.py", "subject.identity"})
+                      "admission.py", "fixture.py", "run.py", "subject.identity",
+                      "gateway.py", "browser.mjs", "integration.py", "qualify.py", "launcher"})
 
 
 def digest(data: bytes) -> str:

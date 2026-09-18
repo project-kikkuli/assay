@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import platform
 import subprocess
@@ -16,6 +17,7 @@ from behavior import BehavioralFailure, complete, exercise
 from fixture import observe, public_fixture, seed_users
 from kernel import Kernel, KernelError
 import psycopg
+from state_machine import ModelFailure, exercise_sequence
 
 
 HERE = Path(__file__).resolve().parent
@@ -44,12 +46,20 @@ def write(path, payload):
 
 
 def source_identity(subject):
-    """All tracked public source bytes plus built browser artifact, not just HEAD."""
-    names = subprocess.check_output(["git", "ls-files", "-z"], cwd=subject).split(b"\0")
+    """Tracked and non-ignored new source, plus built browser artifact.
+
+    This does not attest installed site-packages or ignored build/tool state.
+    Those belong to the explicitly trusted prepared environment.
+    """
+    names = subprocess.check_output(
+        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"], cwd=subject
+    ).split(b"\0")
     source = hashlib.sha256()
-    for raw in sorted(n for n in names if n):
+    for raw in sorted(set(n for n in names if n)):
         path = subject / raw.decode()
-        source.update(raw + b"\0" + (path.read_bytes() if path.is_file() else b"<absent>") + b"\0")
+        contents = (b"symlink:" + os.fsencode(os.readlink(path)) if path.is_symlink()
+                    else path.read_bytes() if path.is_file() else b"<absent>")
+        source.update(raw + b"\0" + contents + b"\0")
     artifact = hashlib.sha256()
     paths = sorted((subject / "backend/app/frontend").rglob("*"))
     files = [p for p in paths if p.is_file()]
@@ -72,6 +82,8 @@ def trusted_inputs(subject_identity):
         result[path.relative_to(HERE).as_posix()] = digest(path.read_bytes())
     if (ROOT / "cell").is_file():
         result["launcher"] = digest((ROOT / "cell").read_bytes())
+    for path in (ROOT / "tools/prepare_lab.py", HERE.parent / "fullstack/repaired.patch"):
+        result[path.relative_to(ROOT).as_posix()] = digest(path.read_bytes())
     result[ACTOR] = digest((HERE / "candidates/healthy.py").read_bytes())
     return result
 
@@ -105,7 +117,7 @@ class Witness:
         return proposal
 
 
-def check_candidate(dsn, path):
+def check_candidate(dsn, path, seed=260918):
     started = time.perf_counter()
     alice, bob = seed_users(dsn)
     report = {"candidate": path.name, "candidate_sha256": digest(path.read_bytes()),
@@ -118,8 +130,20 @@ def check_candidate(dsn, path):
             kernel.setup_rls([alice, bob])
             report["obligations"] = exercise(kernel, alice, bob, lambda owner: observe(dsn, owner))
             report["status"] = "behavior_passed" if complete(report["obligations"]) else "unknown"
+            if report["status"] == "behavior_passed":
+                model_alice, model_bob = seed_users(dsn)
+                kernel.setup_rls([model_alice, model_bob])
+                report["model"] = exercise_sequence(
+                    kernel, model_alice, model_bob,
+                    lambda: observe(dsn, model_alice) + observe(dsn, model_bob), seed, steps=60)
+                if (report["model"].get("passed") is not True or report["model"].get("steps") != 60
+                        or len(report["model"].get("records", [])) != 60):
+                    report["status"] = "unknown"
     except BehavioralFailure as error:
         report.update(status="behavior_rejected", reason=str(error), obligations=error.records)
+    except ModelFailure as error:
+        report.update(status="behavior_rejected", reason=str(error),
+                      model={"passed": False, "seed": seed, "records": error.records})
     except KernelError as error:
         if isinstance(error.__cause__, ActorUnknown):
             report.update(status="execution_unknown", reason="actor transport could not complete")
@@ -157,10 +181,13 @@ def challenges_valid(runs):
     cases = [r for r in runs if r["kind"] == "challenge"]
     if len(cases) != len(CHALLENGES) or {r["candidate"] for r in cases} != set(CHALLENGES):
         return False
+    failures = {"attack_hang.py": "deadline_exceeded", "attack_output_flood.py": "output_cap_exceeded"}
     return all(r["status"] == CHALLENGES[r["candidate"]]
                and r.get("cleanup") == "removed" and r.get("candidate_unchanged") is True
                and r.get("runtime", {}).get("container_controls", {}).get("passed") is True
                and r.get("runtime", {}).get("cleanup", {}).get("status") == "removed"
+               and (r["candidate"] not in failures
+                    or r.get("runtime", {}).get("failure_kind") == failures[r["candidate"]])
                for r in cases)
 
 
@@ -181,6 +208,7 @@ def main():
     started = time.perf_counter()
     report = {"status": "unknown", "merge_admission": "not_implemented",
               "runs": [], "fixture": {}, "dependencies_prepared": True,
+              "expected_challenge_count": len(CHALLENGES) if args.challenges else 0,
               "environment": {"system": platform.system(), "machine": platform.machine()},
               "scope": "bounded actor changes only; not whole-app CI or remote attestation"}
     write(args.output, report)
@@ -203,12 +231,12 @@ def main():
                 raise ValueError("challenge inventory changed; requalify the verifier")
             candidates += [("challenge", HERE / "candidates" / name) for name in sorted(CHALLENGES)]
         with public_fixture(subject, args.admin_dsn, report["fixture"]) as dsn:
-            for kind, candidate in candidates:
+            for index, (kind, candidate) in enumerate(candidates):
                 scoped = baseline | {ACTOR: digest(candidate.read_bytes())}
                 eligibility = decide(baseline, scoped)
                 if eligibility["lane"] != "actor_checks_required":
                     raise RuntimeError("candidate scope is not eligible")
-                result = check_candidate(dsn, candidate)
+                result = check_candidate(dsn, candidate, seed=260918 + index)
                 result.update(kind=kind, eligibility=eligibility)
                 report["runs"].append(result)
                 write(args.output, report)

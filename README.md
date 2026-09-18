@@ -6,6 +6,12 @@ This repo tests parts of that argument against real Python, TypeScript, PostgreS
 browser, and authorization-policy implementations. It retains counterexamples and
 negative results. It is not a production CI replacement.
 
+Start with the [bounded business cell](experiments/cell/). It connects a real
+React/API/database feature to an authority-limited actor, independent state-model
+checks, protected-baseline invalidation, and query-cost evidence. `./cell` reads
+the recorded results; `./cell qualify` establishes a local baseline after setup;
+`./cell check experiments/cell/candidates/healthy.py` exercises its fast lane.
+
 Five complete laptop gates took 20–23 seconds; serial execution took 42–49.
 The first hosted run took 105.5 seconds and rejected a browser transport failure.
 A subsequent two-worker hosted run passed all three repetitions in 111–114
@@ -24,6 +30,7 @@ seconds. Thirty seconds is not established across environments.
 
 | Question | Experiment |
 |---|---|
+| Can architecture reduce what each change must re-prove? | [Business cell](experiments/cell/): actual UI composition, bounded effects, 60-command reference-model replay, adversarial candidates, and a baseline that rejects trusted-boundary changes. |
 | Can a whole small application be checked quickly? | [Full-stack gate](experiments/fullstack/): API and browser suites, independent behavior checks, both languages' type checkers, and a production build. No test selection or result cache. |
 | Are the tests asking the right questions? | [Blind faults](experiments/fullstack/HOLDOUT.md): a seeded signup-privilege defect survives both original suites. Added lifecycle requirements catch it. |
 | Where do language boundaries fail? | [Wire and browser probes](experiments/boundaries/): accepted TypeScript inputs, HTTP errors, persisted state, pagination, and a causally reproduced signup race. |
