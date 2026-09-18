@@ -1,0 +1,591 @@
+{
+  "evidence_status": "complete",
+  "image_tag": "python:3.12-slim-bookworm",
+  "image_reference": "python:3.12-slim-bookworm@sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9",
+  "image_digest": "sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9",
+  "docker_platform": "linux/arm64",
+  "host_machine": "arm64",
+  "image_identity": {
+    "image_id": "sha256:a74ddf067736251b63204a4d7a26411cffa3da75600b4e67ad54c9c79f3f81cb",
+    "repo_digests": [
+      "python@sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9"
+    ],
+    "size_bytes": 150102109
+  },
+  "image_pull": {
+    "status": "ok",
+    "elapsed_ms": 541.9,
+    "exit_code": 0,
+    "stdout": "docker.io/library/python@sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9: Pulling from library/python\nDigest: sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9\nStatus: Image is up to date for python@sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9\ndocker.io/library/python:3.12-slim-bookworm@sha256:d04f49f5882f49a3b91f874e75e19f0c265f7222da8659741a9d7eab148f22a9\n",
+    "stderr": ""
+  },
+  "verifier_sha256_before": {
+    "README.md": "4cad73f9ad6946afacf330d2f7b5778030e88d8a12169c72e51a6af4b3ccc36a",
+    "run.py": "ebf0728970c68df673374a0d96c78d5b7b6987c95801f279b8e02149f75f5363",
+    "test_run.py": "20f612369cf5102fec8caff657bb5b68867bf68cf89f6ad2c6e949e553b53ecb"
+  },
+  "verifier_sha256_after": {
+    "README.md": "4cad73f9ad6946afacf330d2f7b5778030e88d8a12169c72e51a6af4b3ccc36a",
+    "run.py": "ebf0728970c68df673374a0d96c78d5b7b6987c95801f279b8e02149f75f5363",
+    "test_run.py": "20f612369cf5102fec8caff657bb5b68867bf68cf89f6ad2c6e949e553b53ecb"
+  },
+  "candidate_sha256_before": {
+    "candidates/edit_oracle.py": "bd4dfbbb8d0f5dc7d93e67d07de6867f2fc47438ca98d0245d6b3d5e8d41cd8f",
+    "candidates/false_attestation.py": "f473010e0e09aef38215a6c7c7415acf4a686067d4867c11b8965bc48991dbfa",
+    "candidates/hang.py": "2a59fd156ec264bb30980c323414931bfb8c5c307196c745fd9167b4dcdd7500",
+    "candidates/healthy.py": "89d3679881552b9096433b03ca0c072c6263459ffbc10e3a29fd5c91b9506381",
+    "candidates/network.py": "4524137f1fd3757f02dccdda0510961ba5e460f62d021abf1248a5b9382468af",
+    "candidates/output_flood.py": "f6a705161c23f901bc5c696c84d670a9752816b9df722bddd9608a3a664a2acf",
+    "candidates/read_canary.py": "a335531c6ba289a9c0838c83db2970994b4180fe5928f1ded490948832498141",
+    "candidates/silent.py": "0e0e7eaed7cbb486356c6101499ffe3dfbb88d49e884aaa1d604f970fb8c214c",
+    "candidates/wrong_result.py": "fc1b25bcb6bdd46ff497012bf148af1625c034acd2c6eb84ea25c434d59d4548"
+  },
+  "candidate_sha256_after": {
+    "candidates/edit_oracle.py": "bd4dfbbb8d0f5dc7d93e67d07de6867f2fc47438ca98d0245d6b3d5e8d41cd8f",
+    "candidates/false_attestation.py": "f473010e0e09aef38215a6c7c7415acf4a686067d4867c11b8965bc48991dbfa",
+    "candidates/hang.py": "2a59fd156ec264bb30980c323414931bfb8c5c307196c745fd9167b4dcdd7500",
+    "candidates/healthy.py": "89d3679881552b9096433b03ca0c072c6263459ffbc10e3a29fd5c91b9506381",
+    "candidates/network.py": "4524137f1fd3757f02dccdda0510961ba5e460f62d021abf1248a5b9382468af",
+    "candidates/output_flood.py": "f6a705161c23f901bc5c696c84d670a9752816b9df722bddd9608a3a664a2acf",
+    "candidates/read_canary.py": "a335531c6ba289a9c0838c83db2970994b4180fe5928f1ded490948832498141",
+    "candidates/silent.py": "0e0e7eaed7cbb486356c6101499ffe3dfbb88d49e884aaa1d604f970fb8c214c",
+    "candidates/wrong_result.py": "fc1b25bcb6bdd46ff497012bf148af1625c034acd2c6eb84ea25c434d59d4548"
+  },
+  "source_identity_stable": true,
+  "request": {
+    "protocol": "confinement.v1",
+    "operation": "add",
+    "a": 2,
+    "b": 3,
+    "canary_path": "/oracle-canary.txt",
+    "network_target": "network-canary:8765"
+  },
+  "oracle_expected_result": 5,
+  "candidate_protocol": "candidate stdout must be exactly {\"result\": 5}; duplicate keys, floats, and extra fields are rejected",
+  "limits": {
+    "timeout_seconds": 2.0,
+    "max_output_bytes": 32768,
+    "memory": "128m",
+    "pids": 64
+  },
+  "container_controls": {
+    "network": "none",
+    "root_filesystem": "read-only",
+    "capabilities": "drop-all",
+    "no_new_privileges": true,
+    "uid_gid": "65532:65532",
+    "cpu": "1.0",
+    "tmpfs": "/tmp:rw,noexec,nosuid,nodev,size=16m",
+    "host_mount_policy": "only candidate read-only bind; positive probes add one deliberate read-only bind or owned network"
+  },
+  "network_canary": {
+    "name": "confinement-net-ecafb2263c9f4e55",
+    "create_elapsed_ms": 53.4,
+    "server_start_elapsed_ms": 191.4,
+    "server_cleanup": "removed",
+    "network_cleanup": "removed",
+    "external_ports": []
+  },
+  "outcomes": [
+    {
+      "name": "edit_oracle",
+      "candidate_sha256": "bd4dfbbb8d0f5dc7d93e67d07de6867f2fc47438ca98d0245d6b3d5e8d41cd8f",
+      "accepted": false,
+      "protocol_accepted": false,
+      "reason": "rejected_wrong_business_response",
+      "elapsed_ms": 303.3,
+      "returncode": 0,
+      "output_bytes": 36,
+      "stdout_preview": "{\"result\": 5, \"cache_edited\": true}\n",
+      "stderr_preview": "",
+      "canary_visible": false,
+      "host_cache_unchanged": true,
+      "container_cleanup": "removed",
+      "canary_exposed_for_positive_control": false,
+      "canary_probe_readable": false,
+      "network_exposed_for_positive_control": false,
+      "network_server_connected": null,
+      "container_controls_passed": true,
+      "container_control_failures": [],
+      "container_observed": {
+        "network_mode": "none",
+        "readonly_rootfs": true,
+        "user": "65532:65532",
+        "pids_limit": 64,
+        "memory": 134217728,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges"
+        ],
+        "nano_cpus": 1000000000,
+        "tmpfs": {
+          "/tmp": "rw,noexec,nosuid,nodev,size=16m"
+        },
+        "host_mount_destinations": [
+          "/candidate"
+        ],
+        "host_mount_read_only": true
+      },
+      "boundary_control_passed": true
+    },
+    {
+      "name": "false_attestation",
+      "candidate_sha256": "f473010e0e09aef38215a6c7c7415acf4a686067d4867c11b8965bc48991dbfa",
+      "accepted": false,
+      "protocol_accepted": false,
+      "reason": "rejected_wrong_business_response",
+      "elapsed_ms": 267.8,
+      "returncode": 0,
+      "output_bytes": 19,
+      "stdout_preview": "{\"accepted\": true}\n",
+      "stderr_preview": "",
+      "canary_visible": false,
+      "host_cache_unchanged": true,
+      "container_cleanup": "removed",
+      "canary_exposed_for_positive_control": false,
+      "canary_probe_readable": false,
+      "network_exposed_for_positive_control": false,
+      "network_server_connected": null,
+      "container_controls_passed": true,
+      "container_control_failures": [],
+      "container_observed": {
+        "network_mode": "none",
+        "readonly_rootfs": true,
+        "user": "65532:65532",
+        "pids_limit": 64,
+        "memory": 134217728,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges"
+        ],
+        "nano_cpus": 1000000000,
+        "tmpfs": {
+          "/tmp": "rw,noexec,nosuid,nodev,size=16m"
+        },
+        "host_mount_destinations": [
+          "/candidate"
+        ],
+        "host_mount_read_only": true
+      },
+      "boundary_control_passed": true
+    },
+    {
+      "name": "hang",
+      "candidate_sha256": "2a59fd156ec264bb30980c323414931bfb8c5c307196c745fd9167b4dcdd7500",
+      "accepted": false,
+      "protocol_accepted": false,
+      "reason": "candidate_unknown_timeout",
+      "elapsed_ms": 2140.3,
+      "returncode": -9,
+      "output_bytes": 0,
+      "stdout_preview": "",
+      "stderr_preview": "",
+      "canary_visible": false,
+      "host_cache_unchanged": true,
+      "container_cleanup": "removed",
+      "canary_exposed_for_positive_control": false,
+      "canary_probe_readable": false,
+      "network_exposed_for_positive_control": false,
+      "network_server_connected": null,
+      "container_controls_passed": true,
+      "container_control_failures": [],
+      "container_observed": {
+        "network_mode": "none",
+        "readonly_rootfs": true,
+        "user": "65532:65532",
+        "pids_limit": 64,
+        "memory": 134217728,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges"
+        ],
+        "nano_cpus": 1000000000,
+        "tmpfs": {
+          "/tmp": "rw,noexec,nosuid,nodev,size=16m"
+        },
+        "host_mount_destinations": [
+          "/candidate"
+        ],
+        "host_mount_read_only": true
+      },
+      "boundary_control_passed": true
+    },
+    {
+      "name": "healthy",
+      "candidate_sha256": "89d3679881552b9096433b03ca0c072c6263459ffbc10e3a29fd5c91b9506381",
+      "accepted": true,
+      "protocol_accepted": true,
+      "reason": "protocol_business_match",
+      "elapsed_ms": 247.2,
+      "returncode": 0,
+      "output_bytes": 14,
+      "stdout_preview": "{\"result\": 5}\n",
+      "stderr_preview": "",
+      "canary_visible": false,
+      "host_cache_unchanged": true,
+      "container_cleanup": "removed",
+      "canary_exposed_for_positive_control": false,
+      "canary_probe_readable": false,
+      "network_exposed_for_positive_control": false,
+      "network_server_connected": null,
+      "container_controls_passed": true,
+      "container_control_failures": [],
+      "container_observed": {
+        "network_mode": "none",
+        "readonly_rootfs": true,
+        "user": "65532:65532",
+        "pids_limit": 64,
+        "memory": 134217728,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges"
+        ],
+        "nano_cpus": 1000000000,
+        "tmpfs": {
+          "/tmp": "rw,noexec,nosuid,nodev,size=16m"
+        },
+        "host_mount_destinations": [
+          "/candidate"
+        ],
+        "host_mount_read_only": true
+      },
+      "boundary_control_passed": true
+    },
+    {
+      "name": "network",
+      "candidate_sha256": "4524137f1fd3757f02dccdda0510961ba5e460f62d021abf1248a5b9382468af",
+      "accepted": false,
+      "protocol_accepted": false,
+      "reason": "rejected_wrong_business_response",
+      "elapsed_ms": 274.6,
+      "returncode": 0,
+      "output_bytes": 32,
+      "stdout_preview": "{\"result\": 5, \"network\": false}\n",
+      "stderr_preview": "",
+      "canary_visible": false,
+      "host_cache_unchanged": true,
+      "container_cleanup": "removed",
+      "canary_exposed_for_positive_control": false,
+      "canary_probe_readable": false,
+      "network_exposed_for_positive_control": false,
+      "network_server_connected": null,
+      "container_controls_passed": true,
+      "container_control_failures": [],
+      "container_observed": {
+        "network_mode": "none",
+        "readonly_rootfs": true,
+        "user": "65532:65532",
+        "pids_limit": 64,
+        "memory": 134217728,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges"
+        ],
+        "nano_cpus": 1000000000,
+        "tmpfs": {
+          "/tmp": "rw,noexec,nosuid,nodev,size=16m"
+        },
+        "host_mount_destinations": [
+          "/candidate"
+        ],
+        "host_mount_read_only": true
+      },
+      "boundary_control_passed": true
+    },
+    {
+      "name": "output_flood",
+      "candidate_sha256": "f6a705161c23f901bc5c696c84d670a9752816b9df722bddd9608a3a664a2acf",
+      "accepted": false,
+      "protocol_accepted": false,
+      "reason": "rejected_output_limit",
+      "elapsed_ms": 241.5,
+      "returncode": -9,
+      "output_bytes": 32768,
+      "stdout_preview": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "stderr_preview": "",
+      "canary_visible": false,
+      "host_cache_unchanged": true,
+      "container_cleanup": "removed",
+      "canary_exposed_for_positive_control": false,
+      "canary_probe_readable": false,
+      "network_exposed_for_positive_control": false,
+      "network_server_connected": null,
+      "container_controls_passed": true,
+      "container_control_failures": [],
+      "container_observed": {
+        "network_mode": "none",
+        "readonly_rootfs": true,
+        "user": "65532:65532",
+        "pids_limit": 64,
+        "memory": 134217728,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges"
+        ],
+        "nano_cpus": 1000000000,
+        "tmpfs": {
+          "/tmp": "rw,noexec,nosuid,nodev,size=16m"
+        },
+        "host_mount_destinations": [
+          "/candidate"
+        ],
+        "host_mount_read_only": true
+      },
+      "boundary_control_passed": true
+    },
+    {
+      "name": "read_canary",
+      "candidate_sha256": "a335531c6ba289a9c0838c83db2970994b4180fe5928f1ded490948832498141",
+      "accepted": false,
+      "protocol_accepted": false,
+      "reason": "rejected_wrong_business_response",
+      "elapsed_ms": 268.6,
+      "returncode": 0,
+      "output_bytes": 30,
+      "stdout_preview": "{\"result\": 5, \"canary\": null}\n",
+      "stderr_preview": "",
+      "canary_visible": false,
+      "host_cache_unchanged": true,
+      "container_cleanup": "removed",
+      "canary_exposed_for_positive_control": false,
+      "canary_probe_readable": false,
+      "network_exposed_for_positive_control": false,
+      "network_server_connected": null,
+      "container_controls_passed": true,
+      "container_control_failures": [],
+      "container_observed": {
+        "network_mode": "none",
+        "readonly_rootfs": true,
+        "user": "65532:65532",
+        "pids_limit": 64,
+        "memory": 134217728,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges"
+        ],
+        "nano_cpus": 1000000000,
+        "tmpfs": {
+          "/tmp": "rw,noexec,nosuid,nodev,size=16m"
+        },
+        "host_mount_destinations": [
+          "/candidate"
+        ],
+        "host_mount_read_only": true
+      },
+      "boundary_control_passed": true
+    },
+    {
+      "name": "silent",
+      "candidate_sha256": "0e0e7eaed7cbb486356c6101499ffe3dfbb88d49e884aaa1d604f970fb8c214c",
+      "accepted": false,
+      "protocol_accepted": false,
+      "reason": "rejected_invalid_json_or_empty",
+      "elapsed_ms": 203.2,
+      "returncode": 0,
+      "output_bytes": 0,
+      "stdout_preview": "",
+      "stderr_preview": "",
+      "canary_visible": false,
+      "host_cache_unchanged": true,
+      "container_cleanup": "removed",
+      "canary_exposed_for_positive_control": false,
+      "canary_probe_readable": false,
+      "network_exposed_for_positive_control": false,
+      "network_server_connected": null,
+      "container_controls_passed": true,
+      "container_control_failures": [],
+      "container_observed": {
+        "network_mode": "none",
+        "readonly_rootfs": true,
+        "user": "65532:65532",
+        "pids_limit": 64,
+        "memory": 134217728,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges"
+        ],
+        "nano_cpus": 1000000000,
+        "tmpfs": {
+          "/tmp": "rw,noexec,nosuid,nodev,size=16m"
+        },
+        "host_mount_destinations": [
+          "/candidate"
+        ],
+        "host_mount_read_only": true
+      },
+      "boundary_control_passed": true
+    },
+    {
+      "name": "wrong_result",
+      "candidate_sha256": "fc1b25bcb6bdd46ff497012bf148af1625c034acd2c6eb84ea25c434d59d4548",
+      "accepted": false,
+      "protocol_accepted": false,
+      "reason": "rejected_wrong_business_response",
+      "elapsed_ms": 248.0,
+      "returncode": 0,
+      "output_bytes": 14,
+      "stdout_preview": "{\"result\": 6}\n",
+      "stderr_preview": "",
+      "canary_visible": false,
+      "host_cache_unchanged": true,
+      "container_cleanup": "removed",
+      "canary_exposed_for_positive_control": false,
+      "canary_probe_readable": false,
+      "network_exposed_for_positive_control": false,
+      "network_server_connected": null,
+      "container_controls_passed": true,
+      "container_control_failures": [],
+      "container_observed": {
+        "network_mode": "none",
+        "readonly_rootfs": true,
+        "user": "65532:65532",
+        "pids_limit": 64,
+        "memory": 134217728,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges"
+        ],
+        "nano_cpus": 1000000000,
+        "tmpfs": {
+          "/tmp": "rw,noexec,nosuid,nodev,size=16m"
+        },
+        "host_mount_destinations": [
+          "/candidate"
+        ],
+        "host_mount_read_only": true
+      },
+      "boundary_control_passed": true
+    },
+    {
+      "name": "exposed_canary_control",
+      "candidate_sha256": "a335531c6ba289a9c0838c83db2970994b4180fe5928f1ded490948832498141",
+      "accepted": false,
+      "protocol_accepted": false,
+      "reason": "rejected_wrong_business_response",
+      "elapsed_ms": 272.9,
+      "returncode": 0,
+      "output_bytes": 82,
+      "stdout_preview": "{\"result\": 5, \"canary\": \"synthetic-host-canary-d73b1298a3d84980ab42b3407e013d55\"}\n",
+      "stderr_preview": "",
+      "canary_visible": true,
+      "host_cache_unchanged": true,
+      "container_cleanup": "removed",
+      "canary_exposed_for_positive_control": true,
+      "canary_probe_readable": true,
+      "network_exposed_for_positive_control": false,
+      "network_server_connected": null,
+      "container_controls_passed": true,
+      "container_control_failures": [],
+      "container_observed": {
+        "network_mode": "none",
+        "readonly_rootfs": true,
+        "user": "65532:65532",
+        "pids_limit": 64,
+        "memory": 134217728,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges"
+        ],
+        "nano_cpus": 1000000000,
+        "tmpfs": {
+          "/tmp": "rw,noexec,nosuid,nodev,size=16m"
+        },
+        "host_mount_destinations": [
+          "/candidate",
+          "/oracle-canary.txt"
+        ],
+        "host_mount_read_only": true
+      },
+      "boundary_control_passed": false
+    },
+    {
+      "name": "exposed_network_control",
+      "candidate_sha256": "4524137f1fd3757f02dccdda0510961ba5e460f62d021abf1248a5b9382468af",
+      "accepted": false,
+      "protocol_accepted": false,
+      "reason": "rejected_wrong_business_response",
+      "elapsed_ms": 375.1,
+      "returncode": 0,
+      "output_bytes": 31,
+      "stdout_preview": "{\"result\": 5, \"network\": true}\n",
+      "stderr_preview": "",
+      "canary_visible": false,
+      "host_cache_unchanged": true,
+      "container_cleanup": "removed",
+      "canary_exposed_for_positive_control": false,
+      "canary_probe_readable": false,
+      "network_exposed_for_positive_control": true,
+      "network_server_connected": true,
+      "container_controls_passed": true,
+      "container_control_failures": [],
+      "container_observed": {
+        "network_mode": "confinement-net-ecafb2263c9f4e55",
+        "readonly_rootfs": true,
+        "user": "65532:65532",
+        "pids_limit": 64,
+        "memory": 134217728,
+        "cap_drop": [
+          "ALL"
+        ],
+        "security_opt": [
+          "no-new-privileges"
+        ],
+        "nano_cpus": 1000000000,
+        "tmpfs": {
+          "/tmp": "rw,noexec,nosuid,nodev,size=16m"
+        },
+        "host_mount_destinations": [
+          "/candidate"
+        ],
+        "host_mount_read_only": true
+      },
+      "boundary_control_passed": false
+    }
+  ],
+  "positive_business_behavior": true,
+  "negative_controls_passed": true,
+  "candidate_unknown_timeouts": [
+    "hang"
+  ],
+  "cleanup_unknowns": [],
+  "network_verification": {
+    "mode": "owned_docker_bridge_tcp_canary",
+    "empirical_tcp_canary": true,
+    "claim": "only the owned bridge canary was reachable by the deliberate positive-control container; normal candidates observed NetworkMode=none"
+  },
+  "checks": {
+    "passed": true,
+    "failures": [],
+    "safety_invariants_passed": true,
+    "safety_invariant_failures": [],
+    "exposed_probe_passed": true,
+    "network_probe_passed": true
+  },
+  "limitations": [
+    "This is a Docker process boundary, not a VM or complete side-channel defense.",
+    "Host Docker daemon and kernel remain trusted; no claim covers kernel escape or timing/cache channels.",
+    "The business fixture is intentionally tiny; it demonstrates authority separation, not application coverage.",
+    "A timeout, cleanup uncertainty, or local enforcement failure is non-green/unknown."
+  ],
+  "admission": "green"
+}
