@@ -1,0 +1,108 @@
+# Continuum
+
+Can verification follow a change from an agent's workspace through merge,
+deployment, and a support incident—without rerunning everything at every boundary?
+
+This is one connected, synthetic application: a Python/SQLite reservation service,
+a TypeScript/Effect fulfillment worker, a browser client, an independent Rust ledger
+auditor, and a Haskell deployment policy. It is not a claim that these four languages
+need the same testing strategy. The common interface is evidence about an artifact,
+an environment, and an obligation.
+
+## Run and inspect
+
+Requires Docker, Python 3.12+, Node 22, Rust, and OpenSSL with Ed25519 support.
+GHC runs in a pinned container. Preparation downloads images and dependencies;
+it is outside the measured verification interval.
+
+```sh
+./continuum prepare
+./continuum check --no-cache   # compile, exercise real services/browser, migrate, audit
+./continuum check              # reuse matching operator-issued evidence
+./continuum faults             # independently authored semantic defects
+./continuum lifecycle          # stale evidence attacks, actual worker death, recovery
+./continuum bench              # serial/parallel, five cache hits, source/runtime changes
+./continuum view               # open http://127.0.0.1:8765/view.html
+```
+
+Linux may need `node experiments/continuum/client/node_modules/@playwright/test/cli.js install-deps chromium`.
+Private operator keys and captured candidates stay in ignored `out/continuum/`.
+Only use synthetic candidates on a disposable development machine.
+
+## What the gate means
+
+The [contract](contract.json) defines business operations independently of their
+implementation. [The verifier](verify.py) sends real HTTP requests and checks stored
+state, including rejected operations. Browser testing is retained for one wiring
+journey; it does not carry the burden of proving every business rule.
+
+The [action graph](run.py) binds source, dependencies, compiled outputs, verifier,
+and environment to signed receipts. Descendants bind the parent's result as well
+as its input key. Admission reconstructs the target plan; it does not accept a
+candidate's list of supposedly sufficient tests. Changed merge trees and runtime
+profiles invalidate affected evidence. The deployed byte inventory must match the
+verified package. An inconclusive execution cannot become a cached pass.
+
+This borrows explicit action inputs and output addressing from
+[Bazel](https://bazel.build/remote/caching), and delegated policy verification from
+[SLSA's verification summaries](https://slsa.dev/spec/v1.2/verification_summary).
+Signatures establish who asserted what—not whether the assertions are adequate.
+A separate operator is required in a real deployment: this local signing fixture
+does not protect against an agent or administrator with access to the host key.
+
+## Verification continues after merge
+
+`lifecycle` checks admission against a newly captured target, then runs a fresh
+synthetic deployment. It kills the real worker after the provider accepted a
+delivery but before acknowledgement. The application must remain recoverable
+without delivering twice. Provider acceptance is an explicit barrier, not a sleep.
+
+The resulting support packet records observed state, containment, unknowns,
+forbidden shortcuts, and the evidence a human needs before authorizing recovery.
+An unknown outcome cannot be promoted by a generic “approve”; security findings
+and incompatible rollback require containment and escalation. Fixture-owned
+provider records justify the demonstrated retry. No actual human approval or
+external support integration is claimed.
+
+[TigerBeetle's liveness testing](https://tigerbeetle.com/blog/2023-07-06-simulation-testing-for-liveness/)
+motivates checking recovery after faults, not merely absence of corruption.
+[Google's canary guidance](https://sre.google/workbook/canarying-releases/) motivates
+fresh, release-attributable observations: old test evidence cannot establish the
+health of a live deployment. The demo is a synthetic transaction, not a statistical
+production canary or an uptime guarantee.
+
+## Read the negative results first
+
+[The initial blind campaign](results/faults-initial.json) caught six of eight faults.
+It missed wrong stored quantities and cancellation with no effect. Subsequent
+checks against those same faults are regression checks, not a new blind evaluation.
+[A loaded-host run](results/loaded-host-negative.json) exceeded thirty seconds and
+withheld admission on a policy timeout. Faster isolated runs do not erase it.
+
+Current measurements are in [results](results/). Source capture and admission are
+included; downloads, hosted queue time, and real production observation windows
+are not. Timing is diagnostic, never a correctness assertion. Eight mutants do
+not estimate production defect recall, and a handful of runs cannot establish p95.
+
+The environment boundary is deliberately smaller than “identical dev and prod”:
+pinned application runtimes, captured dependencies, fixture-controlled time and
+external effects. The migration check uses the same populated database through
+current → next → current Python environments. It does not establish arbitrary
+destructive-schema rollback compatibility.
+
+Unlike [FoundationDB's deterministic simulation](https://www.foundationdb.org/files/fdb-paper.pdf),
+this harness does not control kernel/thread scheduling. Host Rust and browser
+toolchains are only partially identified, input declarations are handwritten,
+and Docker/host failures remain possible. There is no proof of comprehensive
+sandboxing, complete input closure, or non-flakiness. A production adopter should
+reuse a mature build engine and isolate its evidence issuer, not ship this runner.
+
+## Provenance
+
+All domain code and data here are synthetic. No external application was copied.
+[environment.json](environment.json) pins upstream Python, Node and Haskell image
+digests; those images retain their upstream component licenses. The npm lockfile
+pins Effect 3.22.2 (MIT), TypeScript 5.9.3 (Apache-2.0), Playwright 1.62.1 (Apache-2.0),
+and Node types 22.18.6 (MIT). SQLite is public domain. The Rust auditor and Haskell
+policy use only their standard libraries. Host toolchain versions enter receipts;
+the hosted workflow selects Rust 1.91.1, Python 3.12.9, and Node 22.12.0 explicitly.

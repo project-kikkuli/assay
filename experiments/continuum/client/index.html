@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Continuum reservations</title>
+    <style>
+      :root { color-scheme: light; font-family: system-ui, sans-serif; line-height: 1.45; }
+      body { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; color: #18212b; background: #f6f8fa; }
+      main { display: grid; gap: 1.5rem; }
+      section { padding: 1.25rem; background: white; border: 1px solid #d5dce3; border-radius: .5rem; }
+      form { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem; align-items: end; }
+      label { display: grid; gap: .35rem; font-weight: 650; }
+      input, select, button { box-sizing: border-box; min-height: 2.5rem; padding: .45rem .6rem; font: inherit; border: 1px solid #8795a5; border-radius: .3rem; }
+      button { cursor: pointer; color: white; background: #165d9a; border-color: #165d9a; font-weight: 650; }
+      button:hover { background: #0f4777; }
+      .actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+      .actions button { min-height: 2rem; padding: .25rem .5rem; font-size: .9rem; }
+      output { display: block; min-height: 1.5rem; margin-top: 1rem; }
+      output[data-state="error"] { color: #a51c30; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { padding: .65rem .5rem; text-align: left; border-bottom: 1px solid #d5dce3; vertical-align: top; }
+      th { background: #eef2f5; }
+      .hint { margin: .2rem 0 0; color: #536273; font-size: .9rem; }
+      @media (max-width: 650px) { table { font-size: .9rem; } th, td { padding: .45rem .25rem; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Continuum reservations</h1>
+        <p>Public synthetic fixture UI. The identity selector represents the fixture token; it is not production authentication.</p>
+      </header>
+      <section aria-labelledby="reserve-heading">
+        <h2 id="reserve-heading">Reserve capacity</h2>
+        <form id="reserve-form">
+          <label for="identity">Identity
+            <select id="identity" name="identity" aria-label="Identity"></select>
+            <span id="identity-description" class="hint"></span>
+          </label>
+          <label for="quantity">Quantity
+            <input id="quantity" name="quantity" type="number" aria-label="Quantity" min="1" max="8" step="1" value="1" required>
+          </label>
+          <label for="command-key">Idempotency key
+            <input id="command-key" name="command-key" type="text" aria-label="Idempotency key" required>
+          </label>
+          <button id="reserve" type="button">Reserve</button>
+        </form>
+        <output id="status" aria-live="polite" aria-atomic="true"></output>
+      </section>
+      <section aria-labelledby="list-heading">
+        <div style="display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap">
+          <h2 id="list-heading">Tenant reservations</h2>
+          <button id="refresh" type="button">Refresh</button>
+        </div>
+        <div style="overflow-x:auto">
+          <table>
+            <caption class="hint">Only reservations for the selected identity's tenant are shown.</caption>
+            <thead><tr><th scope="col">ID</th><th scope="col">Creator</th><th scope="col">Quantity</th><th scope="col">Status</th><th scope="col">Actions</th></tr></thead>
+            <tbody id="reservations-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/static/client.js"></script>
+  </body>
+</html>

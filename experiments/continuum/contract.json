@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "domain": "synthetic reservation and fulfillment",
+  "capacity_per_tenant": 8,
+  "identities": {
+    "alpha-maker": {"tenant": "alpha", "role": "maker"},
+    "alpha-reviewer": {"tenant": "alpha", "role": "reviewer"},
+    "beta-maker": {"tenant": "beta", "role": "maker"},
+    "beta-reviewer": {"tenant": "beta", "role": "reviewer"}
+  },
+  "http": {
+    "POST /commands": "Authorization: Bearer <identity>. JSON {op: reserve|approve|cancel, key: nonempty string, quantity?: integer 1..8, reservation_id?: string}. reserve is maker-only; approve reviewer-only; cancel maker-only and creator-only while reserved. Successful mutations return 200 and {id,tenant,creator,quantity,status}; reserve starts reserved, approve becomes approved, cancel becomes cancelled. Unknown/foreign reservation: 404; invalid input: 422; capacity/status/idempotency conflict: 409; absent/unknown/revoked identity: 401; wrong role: 403. Idempotency is scoped to identity+key: identical input returns the exact saved response; changed input conflicts. All state, idempotency and outbox writes are atomic.",
+    "GET /reservations": "Authenticated tenant-scoped list, ordered by integer creation sequence; {items:[reservation], next_cursor:null|string}. limit integer 1..100 default 20; cursor is last integer sequence, keyset exclusive. Revoked identity denied. Reservation includes id,tenant,creator,quantity,status.",
+    "GET /reservations/<id>": "Authenticated owner-tenant view or 404; {id,tenant,creator,quantity,status}.",
+    "POST /worker/claim": "Authorization: Bearer synthetic-worker. JSON {}. Atomically claim first pending or expired leased outbox job; increments fencing token, lease 10 virtual seconds. Returns {job:null} or {job:{id,reservation_id,tenant,quantity,delivery_key,fence}}. Stable delivery_key across attempts. Only approved reservations have jobs.",
+    "POST /worker/ack": "Worker auth. JSON {id,fence,receipt}. Current lease/fence only: atomically mark job done and reservation fulfilled. Returns 200 {ok:true}; stale fence 409. Provider receipt must equal 'receipt:'+job.delivery_key. Duplicate successful ack idempotent.",
+    "GET /health": "200 {ok:true,schema_version:2} only after database migrations.",
+    "POST /control": "Authorization: Bearer synthetic-control, only enabled with --test-control. JSON {op:advance,seconds:nonnegative integer} increments virtual clock; {op:revoke,identity:string} revokes identity; no other commands. Synthetic test fixture only.",
+    "GET /": "Minimal functional reservation UI; static/client.js calls the actual API. No external assets. Client has identity input, quantity input, reserve button, list/status output. Accessible named controls. No production authentication claim."
+  },
+  "storage": {
+    "engine": "SQLite WAL, foreign_keys=ON, busy_timeout=5000; BEGIN IMMEDIATE writes",
+    "tables": "reservations(id TEXT PRIMARY KEY, tenant TEXT, creator TEXT, quantity INTEGER, status TEXT, seq INTEGER UNIQUE); outbox(id TEXT PRIMARY KEY,reservation_id TEXT UNIQUE,tenant TEXT,quantity INTEGER,delivery_key TEXT UNIQUE,state TEXT,fence INTEGER,lease_until INTEGER,receipt TEXT); commands(actor TEXT,key TEXT,fingerprint TEXT,response TEXT,PRIMARY KEY(actor,key)); identities(token TEXT PRIMARY KEY,tenant TEXT,role TEXT,active INTEGER); meta(key TEXT PRIMARY KEY,value TEXT)",
+    "invariant": "For each tenant, sum quantity where status IN (reserved,approved,fulfilled) <= 8. Cancelled reservations release capacity; approved cannot be cancelled. Exactly one outbox job per approval; retries must not duplicate external fulfillment. Other-tenant reads return no data. Forbidden/failed mutations change no business state.",
+    "upgrade": "v1 fixture contains reservations table above plus meta schema_version=1 and a populated reserved row. v2 adds outbox, commands, identities and virtual clock, retaining reservations. Run migration twice safely. No destructive down-migration."
+  },
+  "worker": {
+    "language": "TypeScript/Effect, native Node",
+    "invocation": "node dist/worker.js --api URL --provider URL --token synthetic-worker --once",
+    "behavior": "claim one job; if null exit 0 with JSON {kind:idle}; POST provider /deliver JSON {key:delivery_key,tenant,reservation_id,quantity}; provider responds {receipt:'receipt:'+key}; ack same job/fence/receipt. Failure exits nonzero with bounded structured diagnostic. No sleeps or automatic retry in one pass. A later invocation after lease expiry retries with same key."
+  },
+  "provider": "External fixture owns delivery records independently. /deliver deduplicates by key, rejects changed payload for same key, can persist delivery then hold response to permit real worker SIGKILL. Controller releases held responses explicitly. No wall-clock sleep as a scheduling mechanism."
+}

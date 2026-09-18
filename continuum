@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")"
+case "${1:-check}" in
+  faults|lifecycle|bench|all) exec python3 experiments/continuum/campaign.py "$@" ;;
+  view) exec python3 -m http.server 8765 --bind 127.0.0.1 --directory experiments/continuum ;;
+  *) exec python3 experiments/continuum/run.py "$@" ;;
+esac

@@ -6,6 +6,11 @@ This repo tests parts of that argument against real Python, TypeScript, PostgreS
 browser, and authorization-policy implementations. It retains counterexamples and
 negative results. It is not a production CI replacement.
 
+The newest connected experiment is [Continuum](experiments/continuum/): exact-input
+evidence reuse across a polyglot application, environment transitions, deployment
+faults, and a support handoff. `./continuum view` opens its recorded evidence locally;
+the experiment includes both missed defects and infrastructure failures.
+
 Start with the [bounded business cell](experiments/cell/). It connects a real
 React/API/database feature to an authority-limited actor, independent state-model
 checks, protected-baseline invalidation, and query-cost evidence. `./cell` reads

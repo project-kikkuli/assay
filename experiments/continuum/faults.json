@@ -1,0 +1,66 @@
+[
+  {
+    "id": "C01_quantity_persisted_plus_one",
+    "path": "experiments/continuum/app/api.py",
+    "find": "            (reservation_id, actor[\"tenant\"], actor[\"token\"], quantity, sequence),\n",
+    "replace": "            (reservation_id, actor[\"tenant\"], actor[\"token\"], quantity + 1, sequence),\n",
+    "expected_violation": "reserve persists a quantity different from the accepted request, breaking returned state, capacity accounting, and fulfillment quantity",
+    "category": "quantity_integrity"
+  },
+  {
+    "id": "C02_list_without_tenant_scope",
+    "path": "experiments/continuum/app/api.py",
+    "find": "            parameters: list[Any] = [actor[\"tenant\"]]\n            query = \"SELECT id, tenant, creator, quantity, status, seq FROM reservations WHERE tenant=?\"\n",
+    "replace": "            parameters: list[Any] = []\n            query = \"SELECT id, tenant, creator, quantity, status, seq FROM reservations WHERE 1=1\"\n",
+    "expected_violation": "an authenticated maker or reviewer can list reservations belonging to another tenant",
+    "category": "tenant_authorization"
+  },
+  {
+    "id": "C03_idempotency_conflict_replayed",
+    "path": "experiments/continuum/app/api.py",
+    "find": "            if prior:\n                if prior[\"fingerprint\"] != fingerprint:\n                    raise ApiError(409, \"idempotency conflict\")\n                return json.loads(prior[\"response\"])\n",
+    "replace": "            if prior:\n                return json.loads(prior[\"response\"])\n",
+    "expected_violation": "the same identity and key accepts changed command input instead of returning a 409 conflict",
+    "category": "idempotency"
+  },
+  {
+    "id": "C04_capacity_check_ignores_requested_quantity",
+    "path": "experiments/continuum/app/api.py",
+    "find": "        if used + quantity > CAPACITY:\n            raise ApiError(409, \"capacity exceeded\")\n",
+    "replace": "        if used > CAPACITY:\n            raise ApiError(409, \"capacity exceeded\")\n",
+    "expected_violation": "a tenant can reserve additional quantity after its current usage reaches capacity, exceeding capacity_per_tenant",
+    "category": "capacity_invariant"
+  },
+  {
+    "id": "C05_ack_ignores_stale_fence",
+    "path": "experiments/continuum/app/api.py",
+    "find": "            if (\n                row[\"state\"] != \"leased\"\n                or row[\"fence\"] != payload[\"fence\"]\n                or row[\"lease_until\"] is None\n                or row[\"lease_until\"] <= now\n            ):\n                raise ApiError(409, \"stale job fence\")\n            updated = connection.execute(\n                \"UPDATE outbox SET state='done', receipt=?, lease_until=NULL WHERE id=? \"\n                \"AND state='leased' AND fence=?\",\n                (payload[\"receipt\"], row[\"id\"], payload[\"fence\"]),\n            ).rowcount\n",
+    "replace": "            if (\n                row[\"state\"] != \"leased\"\n                or row[\"lease_until\"] is None\n                or row[\"lease_until\"] <= now\n            ):\n                raise ApiError(409, \"stale job fence\")\n            updated = connection.execute(\n                \"UPDATE outbox SET state='done', receipt=?, lease_until=NULL WHERE id=? \"\n                \"AND state='leased' AND fence=?\",\n                (payload[\"receipt\"], row[\"id\"], row[\"fence\"]),\n            ).rowcount\n",
+    "expected_violation": "an acknowledgement carrying an old fencing token can complete the current lease and mark the reservation fulfilled",
+    "category": "worker_fencing"
+  },
+  {
+    "id": "C06_cancel_is_noop",
+    "path": "experiments/continuum/app/api.py",
+    "find": "            \"UPDATE reservations SET status='cancelled' WHERE id=?\", (row[\"id\"],)\n",
+    "replace": "            \"UPDATE reservations SET status='reserved' WHERE id=?\", (row[\"id\"],)\n",
+    "expected_violation": "a successful cancel response leaves the reservation reserved and does not release capacity",
+    "category": "state_transition"
+  },
+  {
+    "id": "C07_approval_drops_outbox_job",
+    "path": "experiments/continuum/app/api.py",
+    "find": "        connection.execute(\n            \"INSERT INTO outbox(id, reservation_id, tenant, quantity, delivery_key, state, fence) \"\n            \"VALUES (?, ?, ?, ?, ?, 'pending', 0)\",\n            (\n                str(uuid.uuid4()),\n                row[\"id\"],\n                row[\"tenant\"],\n                row[\"quantity\"],\n                f\"reservation:{row['id']}\",\n            ),\n        )\n",
+    "replace": "        pass\n",
+    "expected_violation": "approval commits without exactly one pending outbox job, so approved work is never durably delivered",
+    "category": "durable_outbox"
+  },
+  {
+    "id": "C08_worker_uses_reservation_id_as_delivery_key",
+    "path": "experiments/continuum/client/src/worker.ts",
+    "find": "        key: claimed.delivery_key,\n",
+    "replace": "        key: claimed.reservation_id,\n",
+    "expected_violation": "worker delivery no longer uses the stable outbox delivery key, breaking provider deduplication and the required receipt contract",
+    "category": "delivery_idempotency"
+  }
+]

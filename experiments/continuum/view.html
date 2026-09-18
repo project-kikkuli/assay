@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Continuum evidence viewer</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #1c2733;
+        background: #f3f5f7;
+        line-height: 1.45;
+      }
+      body { max-width: 1180px; margin: 0 auto; padding: 1.5rem; }
+      main { display: grid; gap: 1rem; }
+      section { padding: 1rem 1.15rem; background: #fff; border: 1px solid #cbd3db; border-radius: .45rem; }
+      h1, h2, h3 { line-height: 1.2; }
+      h1 { margin: 0 0 .4rem; font-size: 1.65rem; }
+      h2 { margin: 0 0 .75rem; font-size: 1.2rem; }
+      h3 { margin: .9rem 0 .45rem; font-size: 1rem; }
+      p { margin: .35rem 0; }
+      .lede, .muted, .note { color: #536270; }
+      .status { padding: .65rem .75rem; background: #eef2f5; border-left: .25rem solid #758493; }
+      .status.missing { background: #fff8e5; border-color: #a66d00; }
+      .status.ready { background: #edf7ef; border-color: #2f7d45; }
+      .grid { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+      .metric { padding: .75rem; border: 1px solid #d8dee4; background: #fafbfc; }
+      .metric strong { display: block; font-size: 1.2rem; }
+      .scroll { overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { padding: .5rem .45rem; text-align: left; vertical-align: top; border-bottom: 1px solid #d8dee4; }
+      th { background: #eef2f5; font-weight: 650; }
+      code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      pre { max-width: 100%; margin: .45rem 0 0; padding: .65rem; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; background: #f3f5f7; border: 1px solid #d8dee4; }
+      details { margin: .55rem 0; border: 1px solid #d8dee4; border-radius: .3rem; }
+      summary { padding: .55rem .65rem; cursor: pointer; font-weight: 650; }
+      details > div { padding: 0 .65rem .65rem; }
+      .trace { border-left: .2rem solid #9aa7b3; padding-left: .65rem; }
+      .trace.http { border-color: #4479a6; }
+      .label { margin-top: .65rem; font-size: .82rem; font-weight: 700; color: #536270; text-transform: uppercase; letter-spacing: .03em; }
+      .pill { display: inline-block; padding: .1rem .4rem; border-radius: .25rem; background: #e7edf2; font-size: .85rem; }
+      .pill.good { color: #155b2a; background: #e5f3e8; }
+      .pill.warn { color: #704800; background: #fff0c5; }
+      .pill.bad { color: #8a1c26; background: #fbe7e9; }
+      ul { margin: .35rem 0; padding-left: 1.25rem; }
+      .empty { color: #536270; font-style: italic; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Continuum evidence viewer</h1>
+        <p class="lede">Static reader for the recorded campaign results. Timings are observations; unavailable result files remain unknown.</p>
+        <div id="load-status" class="status" role="status" aria-live="polite">Loading result files…</div>
+      </header>
+      <section id="benchmark" aria-labelledby="benchmark-heading">
+        <h2 id="benchmark-heading">Benchmark timings and critical path</h2>
+        <div id="benchmark-content"></div>
+      </section>
+      <section id="faults" aria-labelledby="faults-heading">
+        <h2 id="faults-heading">Fault detection: initial vs strengthened</h2>
+        <div id="faults-content"></div>
+      </section>
+      <section id="admission" aria-labelledby="admission-heading">
+        <h2 id="admission-heading">Admission attacks</h2>
+        <div id="admission-content"></div>
+      </section>
+      <section id="lifecycle" aria-labelledby="lifecycle-heading">
+        <h2 id="lifecycle-heading">Lifecycle evidence and human handoff</h2>
+        <div id="lifecycle-content"></div>
+      </section>
+    </main>
+    <script>
+      "use strict";
+
+      const FILES = [
+        "benchmark.json",
+        "faults-initial.json",
+        "faults.json",
+        "lifecycle.json",
+        "admission-attacks.json",
+      ];
+
+      const loaded = new Map();
+
+      function element(tag, className, text) {
+        const node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text !== undefined) node.textContent = String(text);
+        return node;
+      }
+
+      function append(parent, ...children) {
+        for (const child of children) {
+          if (child !== null && child !== undefined) parent.append(child);
+        }
+        return parent;
+      }
+
+      function jsonText(value) {
+        try {
+          return JSON.stringify(value, null, 2);
+        } catch {
+          return "[unserializable value]";
+        }
+      }
+
+      function preJson(parent, value) {
+        parent.append(element("pre", null, jsonText(value)));
+      }
+
+      function safeArray(value) {
+        return Array.isArray(value) ? value : [];
+      }
+
+      function safeObject(value) {
+        return value !== null && typeof value === "object" && !Array.isArray(value) ? value : {};
+      }
+
+      function textValue(value, fallback = "unknown") {
+        return value === null || value === undefined || value === "" ? fallback : String(value);
+      }
+
+      function numberValue(value, suffix = "") {
+        return typeof value === "number" && Number.isFinite(value) ? `${value}${suffix}` : "unknown";
+      }
+
+      function seconds(value) {
+        return numberValue(value, " s");
+      }
+
+      function statusPill(value) {
+        const text = textValue(value);
+        const className = text === "passed" || text === "admit" || text === "caught" || text === "hit"
+          ? "pill good"
+          : text === "survived" || text === "reject" || text === "miss"
+            ? "pill warn"
+            : "pill";
+        return element("span", className, text);
+      }
+
+      function unavailable(container, file, detail) {
+        const box = element("div", "status missing");
+        append(box, element("strong", null, "Not available: "), element("span", null, file), element("p", "muted", detail));
+        container.replaceChildren(box);
+      }
+
+      function readyMessage(container, message) {
+        container.replaceChildren(element("p", "empty", message));
+      }
+
+      function table(headers, rows) {
+        const tableNode = document.createElement("table");
+        const head = document.createElement("thead");
+        const headRow = document.createElement("tr");
+        for (const header of headers) append(headRow, element("th", null, header));
+        head.append(headRow);
+        tableNode.append(head);
+        const body = document.createElement("tbody");
+        for (const row of rows) {
+          const rowNode = document.createElement("tr");
+          for (const cell of row) {
+            const cellNode = document.createElement("td");
+            if (cell instanceof Node) cellNode.append(cell);
+            else cellNode.textContent = String(cell);
+            rowNode.append(cellNode);
+          }
+          body.append(rowNode);
+        }
+        tableNode.append(body);
+        return tableNode;
+      }
+
+      function renderBenchmark(result) {
+        const container = document.querySelector("#benchmark-content");
+        if (result.state !== "ready") return unavailable(container, "results/benchmark.json", result.detail);
+        const records = safeArray(result.data.records);
+        if (!records.length) return readyMessage(container, "No benchmark records were recorded.");
+
+        const intro = element("p", "note", textValue(result.data.scope, "Recorded campaign timing; scope was not supplied."));
+        const hardware = safeObject(result.data.hardware);
+        const hardwareText = Object.entries(hardware).map(([key, value]) => `${key}: ${textValue(value)}`).join(" · ");
+        const hardwareNote = element("p", "muted", hardwareText || "Hardware metadata not recorded.");
+        const rows = records.map((record) => {
+          const item = safeObject(record);
+          return [
+            textValue(item.case),
+            seconds(item.seconds),
+            seconds(item.graph_seconds),
+            statusPill(item.decision),
+            numberValue(item.cache_hits),
+            numberValue(Object.keys(safeObject(item.actions)).length),
+          ];
+        });
+        const summary = table(["Scenario", "Total", "Graph", "Admission", "Cache hits", "Receipt stages"], rows);
+        const details = element("div");
+        append(details, element("h3", null, "Receipt stages / critical path inputs"), element("p", "note", "Stages are shown in recorded action order. No unrecorded critical-path duration is inferred."));
+        for (const record of records) {
+          const item = safeObject(record);
+          const detail = document.createElement("details");
+          const actions = safeObject(item.actions);
+          const summaryNode = element("summary", null, `${textValue(item.case)} · ${seconds(item.seconds)} total · ${numberValue(item.cache_hits)} cache hits`);
+          const actionRows = Object.entries(actions).map(([name, action]) => {
+            const item = safeObject(action);
+            return [name, statusPill(item.cache), seconds(item.seconds), item.passed === true ? statusPill("passed") : item.passed === false ? statusPill("failed") : statusPill("unknown"), textValue(item.error, "—")];
+          });
+          append(detail, summaryNode, element("div", null, table(["Stage", "Cache", "Time", "Result", "Error"], actionRows)));
+          details.append(detail);
+        }
+        container.replaceChildren(intro, hardwareNote, summary, details);
+      }
+
+      function faultCount(data) {
+        const cases = safeArray(data.cases);
+        const total = typeof data.total === "number" ? data.total : cases.length;
+        const caught = typeof data.caught === "number" ? data.caught : cases.filter((item) => safeObject(item).classification === "caught").length;
+        const survived = cases.filter((item) => safeObject(item).classification === "survived").length;
+        const inconclusive = cases.filter((item) => safeObject(item).classification === "inconclusive").length;
+        return { total, caught, survived, inconclusive };
+      }
+
+      function renderFaultSummary(label, result) {
+        const card = element("div", "metric");
+        append(card, element("strong", null, label));
+        if (result.state !== "ready") {
+          append(card, element("p", "muted", `Not available: ${result.detail}`));
+          return card;
+        }
+        const count = faultCount(result.data);
+        append(card, element("p", null, `${count.caught} caught / ${count.total} total`));
+        append(card, element("p", "muted", `${count.survived} survived · ${count.inconclusive} inconclusive`));
+        return card;
+      }
+
+      function eventSummary(event) {
+        const item = safeObject(event);
+        if (item.kind === "http") return `${textValue(item.method)} ${textValue(item.path)} · status ${textValue(item.status)}`;
+        if (item.kind) return `${textValue(item.kind)} event`;
+        return "recorded event";
+      }
+
+      function renderTraceEvent(event) {
+        const item = safeObject(event);
+        const detail = document.createElement("details");
+        const trace = element("div", item.kind === "http" ? "trace http" : "trace");
+        const summary = element("summary", null, eventSummary(item));
+        if (item.kind === "http") {
+          const request = item.request === null || item.request === undefined ? "No request body recorded." : item.request;
+          const response = item.response === null || item.response === undefined ? "No response body recorded." : item.response;
+          append(trace, element("div", "label", "Request"));
+          if (typeof request === "object") preJson(trace, request); else trace.append(element("pre", null, String(request)));
+          append(trace, element("div", "label", "Response"));
+          if (typeof response === "object") preJson(trace, response); else trace.append(element("pre", null, String(response)));
+          if (item.error !== null && item.error !== undefined) append(trace, element("div", "label", "Error"), element("p", null, item.error));
+        } else {
+          preJson(trace, item);
+        }
+        append(detail, summary, element("div", null, trace));
+        return detail;
+      }
+
+      function renderFaultCase(caseData, sourceLabel) {
+        const item = safeObject(caseData);
+        const detail = document.createElement("details");
+        const failed = safeArray(item.failed_obligations);
+        const events = safeArray(item.events);
+        append(detail, element("summary", null, `${sourceLabel}: ${textValue(item.id)} · ${textValue(item.classification)} · ${failed.length} failed obligation(s)`));
+        const body = document.createElement("div");
+        append(body, element("p", "note", textValue(item.expected_violation, "No expected violation text recorded.")));
+        append(body, table(["Field", "Value"], [
+          ["Category", textValue(item.category)],
+          ["Classification", statusPill(item.classification)],
+          ["Observed time", seconds(item.seconds)],
+          ["Harness errors", numberValue(safeArray(item.harness_errors).length, " recorded")],
+        ]));
+        if (failed.length) {
+          append(body, element("h3", null, "Failed semantic obligations"));
+          const obligationRows = failed.map((failure) => [textValue(failure.id), textValue(failure.category), textValue(failure.detail)]);
+          append(body, table(["Obligation", "Category", "Observed detail"], obligationRows));
+        }
+        append(body, element("h3", null, "Request/event trace"));
+        if (events.length) {
+          for (const event of events) body.append(renderTraceEvent(event));
+        } else {
+          body.append(element("p", "empty", "No request/event trace was recorded."));
+        }
+        detail.append(body);
+        return detail;
+      }
+
+      function renderFaultTraces(container, result, label) {
+        if (result.state !== "ready") return;
+        const cases = safeArray(result.data.cases);
+        const failures = cases.filter((item) => {
+          const record = safeObject(item);
+          return safeArray(record.failed_obligations).length || safeArray(record.harness_errors).length || record.classification !== "caught";
+        });
+        append(container, element("h3", null, `${label} semantic failure traces`));
+        if (!failures.length) {
+          append(container, element("p", "empty", `No semantic failures were recorded in the ${label.toLowerCase()} result.`));
+          return;
+        }
+        for (const item of failures) container.append(renderFaultCase(item, label));
+      }
+
+      function renderFaults(initial, strengthened) {
+        const container = document.querySelector("#faults-content");
+        const cards = element("div", "grid");
+        append(cards, renderFaultSummary("Initial / blind run", initial), renderFaultSummary("Strengthened run", strengthened));
+        const explanation = element("p", "note", "Counts come from each file's recorded caught/total fields, or are derived from its cases when those fields are absent.");
+        const comparison = element("div");
+        const byId = new Map();
+        for (const [label, result] of [["Initial", initial], ["Strengthened", strengthened]]) {
+          if (result.state !== "ready") continue;
+          for (const item of safeArray(result.data.cases)) {
+            const record = safeObject(item);
+            const id = textValue(record.id);
+            if (!byId.has(id)) byId.set(id, { id });
+            byId.get(id)[label] = record.classification;
+          }
+        }
+        const comparisonRows = [...byId.values()].map((item) => [item.id, statusPill(item.Initial), statusPill(item.Strengthened)]);
+        if (comparisonRows.length) append(comparison, element("h3", null, "Case classification comparison"), table(["Case", "Initial", "Strengthened"], comparisonRows));
+        renderFaultTraces(comparison, initial, "Initial");
+        renderFaultTraces(comparison, strengthened, "Strengthened");
+        if (!comparison.childElementCount) append(comparison, element("p", "empty", "No fault case data is available to compare."));
+        container.replaceChildren(cards, explanation, comparison);
+      }
+
+      function renderAdmission(result) {
+        const container = document.querySelector("#admission-content");
+        if (result.state !== "ready") return unavailable(container, "results/admission-attacks.json", result.detail);
+        const cases = safeArray(result.data.cases);
+        append(container, element("p", null, `Overall result: `), statusPill(result.data.passed === true ? "passed" : result.data.passed === false ? "failed" : "unknown"));
+        if (!cases.length) return append(container, element("p", "empty", "No admission attack cases were recorded."));
+        const rows = cases.map((item) => {
+          const record = safeObject(item);
+          return [textValue(record.attack), statusPill(record.decision), textValue(safeArray(record.reasons).join("; "), "No reasons recorded")];
+        });
+        container.append(table(["Attack", "Decision", "Reasons"], rows));
+      }
+
+      function labeledValue(parent, label, value) {
+        append(parent, element("div", "label", label));
+        if (typeof value === "object" && value !== null) preJson(parent, value);
+        else append(parent, element("p", null, textValue(value)));
+      }
+
+      function renderLifecycleEvent(event) {
+        const item = safeObject(event);
+        const detail = document.createElement("details");
+        const body = document.createElement("div");
+        append(detail, element("summary", null, `Stage: ${textValue(item.stage)}`));
+        if (item.stage === "support" && item.packet && typeof item.packet === "object") {
+          const packet = safeObject(item.packet);
+          labeledValue(body, "Observed evidence", packet.observed);
+          labeledValue(body, "Contained", packet.contained);
+          labeledValue(body, "Unknown", packet.unknown);
+          labeledValue(body, "Required human action", packet.human_request);
+          if (Array.isArray(packet.forbidden_shortcuts)) labeledValue(body, "Forbidden shortcuts", packet.forbidden_shortcuts.join("; "));
+          if (packet.decision) labeledValue(body, "Policy decision", packet.decision);
+          if (packet.replay) labeledValue(body, "Replay context", packet.replay);
+        } else {
+          labeledValue(body, "Recorded event", item);
+        }
+        append(detail, body);
+        return detail;
+      }
+
+      function renderLifecycle(result) {
+        const container = document.querySelector("#lifecycle-content");
+        if (result.state !== "ready") return unavailable(container, "results/lifecycle.json", result.detail);
+        append(container, element("p", null, "Overall result: "), statusPill(result.data.passed === true ? "passed" : result.data.passed === false ? "failed" : "unknown"), element("p", "muted", `Observed campaign time: ${seconds(result.data.seconds)}`));
+        const events = safeArray(result.data.events);
+        if (!events.length) append(container, element("p", "empty", "No lifecycle events were recorded."));
+        for (const event of events) container.append(renderLifecycleEvent(event));
+        if (Array.isArray(result.data.limits)) {
+          append(container, element("h3", null, "Recorded limits"));
+          const list = document.createElement("ul");
+          for (const limit of result.data.limits) list.append(element("li", null, limit));
+          container.append(list);
+        }
+      }
+
+      async function loadFile(name) {
+        try {
+          const response = await fetch(`results/${name}`, { cache: "no-store" });
+          if (!response.ok) return { state: "missing", detail: `HTTP ${response.status}; no result was published.` };
+          try {
+            return { state: "ready", data: await response.json() };
+          } catch {
+            return { state: "missing", detail: "The file was present but was not valid JSON." };
+          }
+        } catch {
+          return { state: "missing", detail: "The file could not be fetched from the static result directory." };
+        }
+      }
+
+      async function start() {
+        const entries = await Promise.all(FILES.map(async (name) => [name, await loadFile(name)]));
+        for (const [name, result] of entries) loaded.set(name, result);
+        renderBenchmark(loaded.get("benchmark.json"));
+        renderFaults(loaded.get("faults-initial.json"), loaded.get("faults.json"));
+        renderAdmission(loaded.get("admission-attacks.json"));
+        renderLifecycle(loaded.get("lifecycle.json"));
+        const ready = entries.filter(([, result]) => result.state === "ready").length;
+        const status = document.querySelector("#load-status");
+        status.className = ready === FILES.length ? "status ready" : "status missing";
+        status.textContent = `${ready}/${FILES.length} result files loaded. Missing files are shown as unknown.`;
+      }
+
+      void start();
+    </script>
+  </body>
+</html>
