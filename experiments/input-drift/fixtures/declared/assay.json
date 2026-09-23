@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "name": "Correctly declared inputs fixture",
+  "tasks": [
+    {
+      "id": "greet-contracts",
+      "description": "Declares pkg/helper.py, which pkg/main.py imports, as an input",
+      "command": [
+        "{python}",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_main.py",
+        "-v"
+      ],
+      "inputs": [
+        "pkg/main.py",
+        "pkg/helper.py",
+        "pkg/__init__.py",
+        "tests/test_main.py"
+      ],
+      "timeout_s": 15,
+      "source": [
+        "pkg/main.py",
+        "tests/test_main.py"
+      ]
+    }
+  ]
+}

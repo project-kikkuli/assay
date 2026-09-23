@@ -1,0 +1,2593 @@
+{
+  "samples": [
+    {
+      "new_base": "d8758443bde22bc58a512517f21eb00573588287",
+      "new_tip": "d8758443bde22bc58a512517f21eb00573588287",
+      "old_base": "36f774a8fb2724ebe31b74fd6fed6461d188ccbd",
+      "rebase_conflict": false,
+      "stack_tip": "b3eb5d1eb78f544d27b82be4fe1cb75cccf793c0",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "93da606763a16a6964625f28a6434e2cefb99a35",
+      "old_base": "aeba66ac6a5818057d93f6de198e06a28cd6afe7",
+      "rebase_conflict": true,
+      "stack_tip": "850fd2b7f7aa7af4477c0768bea9ac6d6b7ab503"
+    },
+    {
+      "new_base": "5d4a342a7aea143c8318b7ee56a9bdf80f14c63a",
+      "old_base": "9e1add75f771904ac124bbd0e313a77febe62ce4",
+      "rebase_conflict": true,
+      "stack_tip": "24534cdd29d74e302e86db1a719c99e024d7903e"
+    },
+    {
+      "new_base": "98b008ff6ca663723767f807cb730cc6833c9034",
+      "new_tip": "98b008ff6ca663723767f807cb730cc6833c9034",
+      "old_base": "691d8fcafb4b466766ecbef7b8033d9d431c7bb7",
+      "rebase_conflict": false,
+      "stack_tip": "010ce2ab0f6d2e90f295d4e3f9e725d31dd5721d",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "fixtures.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "runner.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "b820cf2e39a3ffd9726829404eb0c7fff432204a",
+      "new_tip": "b820cf2e39a3ffd9726829404eb0c7fff432204a",
+      "old_base": "a056b41070b453da78a8eebeed83f7de18249e19",
+      "rebase_conflict": false,
+      "stack_tip": "c1759fc384ec5e4e5165d1da1694c7ccef23efe8",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "4a809d9c892f6abb5ba92b77b06f1dd878f4660a",
+      "old_base": "3422c67a3a46ccb4b5549c88821d5d768843418e",
+      "rebase_conflict": true,
+      "stack_tip": "9b27bec696048032eb8d651af8fe9170c473ef42"
+    },
+    {
+      "new_base": "cbbbfcd1011a7127761663928056e230aecbe3f2",
+      "old_base": "8a0a880294eb739d0d69324a2a76e54d9e408882",
+      "rebase_conflict": true,
+      "stack_tip": "1023390f53de8b4af95e2484b58c7ffc0781e4a3"
+    },
+    {
+      "new_base": "d1946ae978ca5479ec722dc5b9239bfa7c193dbd",
+      "old_base": "139b43dd88fa2d761157dfc9cd18143754f66fdb",
+      "rebase_conflict": true,
+      "stack_tip": "ca2c19731abf47972457338ae3ba13c3e813f4c7"
+    },
+    {
+      "new_base": "a039fe3e92b62b7963bb6642347ba80d0c7b7d72",
+      "new_tip": "a039fe3e92b62b7963bb6642347ba80d0c7b7d72",
+      "old_base": "4787fd64a4ca0dba5528b5651bddd254102fe9f3",
+      "rebase_conflict": false,
+      "stack_tip": "199f45d0a95338850f515aee37249ae6be65aca8",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "_io": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "config": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "runner.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "271bdf6c235360131ae5a3e3426f39174811c0cf",
+      "old_base": "e03f82c359ee2b6596dbf3aeece8537f4b8fb7ab",
+      "rebase_conflict": true,
+      "stack_tip": "725de3a0d3bb3554cb987940561276d5e76c828c"
+    },
+    {
+      "new_base": "03924d205dc083f446cd39b296d42f50b44e7635",
+      "old_base": "603ff3a64fc9133cb454c883475fb12857df3e1e",
+      "rebase_conflict": true,
+      "stack_tip": "5fc87acf9b3e2f7edbc2f387e98d9fe4a9429a49"
+    },
+    {
+      "new_base": "8969bd43c953674799e25979d5e83caab882654d",
+      "new_tip": "55801fac769052987386514b52156737236911a4",
+      "old_base": "71947cb4f057155679209c7e72449ce0f18ab6dd",
+      "rebase_conflict": false,
+      "stack_tip": "79097e84e2f44f4e8a9a94d7570c68a4a15a7f44",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "243d898b38d3e52523772dd619af66c82b955e97",
+      "new_tip": "243d898b38d3e52523772dd619af66c82b955e97",
+      "old_base": "d4fdf793b55de24b7812b1b9ae65f7dbdfa0eb7d",
+      "rebase_conflict": false,
+      "stack_tip": "e14ca19988bb5cb1754a82b6c404b8ae3f746ee7",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "b96e229c955cf22ebd4af50b0afb2289b8cd74c9",
+      "old_base": "a6cf0a0a0e61b1c257a563520af37fb9483482a9",
+      "rebase_conflict": true,
+      "stack_tip": "8d21df0dc6b15f5c870f26e7e9fe0ba2ea98039d"
+    },
+    {
+      "new_base": "f7efb9a01c232892fd80c86aaabefd00b0857e1a",
+      "old_base": "9fa6673222ce7cc927464578f0f94abfcbbf7b17",
+      "rebase_conflict": true,
+      "stack_tip": "30750784985bd36ef00aeb34aeb45e562e671e35"
+    },
+    {
+      "new_base": "303133f013ea8408d76b8041e955faebb46e004e",
+      "old_base": "3dcdaab1038ca5df64d54b3e2474431f7a0bdc9f",
+      "rebase_conflict": true,
+      "stack_tip": "5b186cd609ae651a5a7e4f0cf1bbef466b51345d"
+    },
+    {
+      "new_base": "2d3d16907540149a9d8bd5b58d5a767e513718d7",
+      "new_tip": "2d3d16907540149a9d8bd5b58d5a767e513718d7",
+      "old_base": "cb2eb562f040b5078cdf1abb5caaacd8ac517935",
+      "rebase_conflict": false,
+      "stack_tip": "fa643deada0fd23337ad11bb3201314b3e38a4f2",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "runner.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "fd473d400226e847cd255510240d3df37baa9737",
+      "old_base": "5dc66bb4ca1576fecffcaf907c22626095d1868e",
+      "rebase_conflict": true,
+      "stack_tip": "25ed74a77a16aa8d17338217c89bdda2f1eaa52d"
+    },
+    {
+      "new_base": "36b6384ff26582f04da27aef742e49fa0adb6e1e",
+      "new_tip": "36b6384ff26582f04da27aef742e49fa0adb6e1e",
+      "old_base": "81113c1a90e659bc7656ad96da80c26cf8a314c6",
+      "rebase_conflict": false,
+      "stack_tip": "196f01965ed264e1fd917db236c872f85403753d",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "2f2586af72dc7ca4b44556b439da0a59034240e6",
+      "old_base": "35b0b376f063d783f9937563f92180ef47ed1a46",
+      "rebase_conflict": true,
+      "stack_tip": "3004fe3915223598c6af5c0a9ce0156d63532e29"
+    },
+    {
+      "new_base": "85415135a4b2e07c0e091cc0a1d1b5599d1c1bd8",
+      "old_base": "85118e9019bf44f92029aaf6e51f1e290279d9f4",
+      "rebase_conflict": true,
+      "stack_tip": "81f4a075484d38589c28f90c5fa1a1927cc70fbb"
+    },
+    {
+      "new_base": "6cdd88eef653515c81a3ef7ebd1bfcd836e17c99",
+      "old_base": "cf007ce7c57435e076c5b04777afc7fb79d76d99",
+      "rebase_conflict": true,
+      "stack_tip": "029451edab1b3240a9b7b07f69209cc96f591db7"
+    },
+    {
+      "new_base": "79793d50e21c6f3a6af4f1006354e51a1fa266c1",
+      "old_base": "ab6f3f8c9666d487922f2a822acbbb6c2a77f3bc",
+      "rebase_conflict": true,
+      "stack_tip": "54cc93643730adaad68adddcaf0712feada8667b"
+    },
+    {
+      "new_base": "34a285986e456406b22b62aa563a64331f640e7f",
+      "new_tip": "34a285986e456406b22b62aa563a64331f640e7f",
+      "old_base": "966d4fb3e4640de721f87e4190427975ea020c67",
+      "rebase_conflict": false,
+      "stack_tip": "b83a74a3035b72c4d6fef105fac17d553947b5ab",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "9f7ba006117537b260586cd5f7046e0c6010ef25",
+      "old_base": "22cff038f87d4ef1e4324c1def81cb1fbf1efec6",
+      "rebase_conflict": true,
+      "stack_tip": "74aaf916539f7f38381d03ce289139da969ec4a7"
+    },
+    {
+      "new_base": "9ad726a9a0d93f6c821cd8d5be583d555451d766",
+      "old_base": "ef9d01826a3fa25f2773317a7aa1d3eefd24903e",
+      "rebase_conflict": true,
+      "stack_tip": "1ba5b485650d6f4ef8ef1ab6e2f782e2cf315ca8"
+    },
+    {
+      "new_base": "9cdb6fc724fe99aec0b31be61d065be3af405e2f",
+      "new_tip": "9cdb6fc724fe99aec0b31be61d065be3af405e2f",
+      "old_base": "7d9297e929289bec4fd48be187d828421b3e0bee",
+      "rebase_conflict": false,
+      "stack_tip": "0d7af592c0f669742caaed48064b35658b4603a6",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "88a187aae884fd7c56e2c619ac3b1f1d4fc8bb5c",
+      "old_base": "f551cab877fec160fcece9182217c7a2e85d83a9",
+      "rebase_conflict": true,
+      "stack_tip": "4f4c2638d0e15076bc959fa7ec87d0dd8ac2b46b"
+    },
+    {
+      "new_base": "33b283327d57ee5bef5e7a55dd6f774d3bf5389b",
+      "old_base": "82630c37a8a4338ad2652ddb22942eafe6bfb919",
+      "rebase_conflict": true,
+      "stack_tip": "d1016d7800d833b3ec367bd635219431893800aa"
+    },
+    {
+      "new_base": "a324826dfd8f2336da4f52744eae392509846d09",
+      "old_base": "2c230f910d2644c3e29e10ffbb3ca718ca61ea88",
+      "rebase_conflict": true,
+      "stack_tip": "d4fe273b2fbda2592bd1238791e782c50c4fa1c2"
+    },
+    {
+      "new_base": "4db6f4144a2ea2fbf1d47ebf56747178b19cb10a",
+      "new_tip": "4db6f4144a2ea2fbf1d47ebf56747178b19cb10a",
+      "old_base": "c4a94921c668fd26b5c6dcffa8cb2b34dd4c0d4c",
+      "rebase_conflict": false,
+      "stack_tip": "66cf52a6e22b7a3600f55fc974acf2b60435b4d2",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "cb66eeef46511d855b689e587a31faae92e24ccc",
+      "old_base": "e135d760281f343cfe01c39ffa74ba920456f96d",
+      "rebase_conflict": true,
+      "stack_tip": "80da4274398617274ff9e576339184ce77893d9b"
+    },
+    {
+      "new_base": "699892bd035b756740c08c5af1bb933c1983b4f5",
+      "new_tip": "699892bd035b756740c08c5af1bb933c1983b4f5",
+      "old_base": "66bd71a5d7eabbfc2e881e496c39249b633d0645",
+      "rebase_conflict": false,
+      "stack_tip": "fcb1749f10eca92cde2863b1c9bd4fa650e74f38",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "afb8d66e42a3449476cf9bf4526705b1e36ff5a5",
+      "old_base": "050f4028162de52413742af3678c5019bb01f698",
+      "rebase_conflict": true,
+      "stack_tip": "43d1398fc7f6af7f140afcadf9cccf569dd66ac2"
+    },
+    {
+      "new_base": "c70efaa0fb955ee4276ebd6d08ccc73d821a22ed",
+      "new_tip": "0fb4e3f4cfdacd0fa555e8092637168377ce7cf9",
+      "old_base": "d95c8a22046369732f76306ce39ddd5a5c0cb305",
+      "rebase_conflict": false,
+      "stack_tip": "4d2f05e4b967a8df6becb939fe236f5f0b3f11cb",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "f389a4e91f9c9b3ff4f4bb29ee0eb208b5a9adb6",
+      "new_tip": "de3d882cda2ebafb1f30583af47049548029daa3",
+      "old_base": "075faa5e2b860151a7680cb1d4c50590d3b619cf",
+      "rebase_conflict": false,
+      "stack_tip": "4dc5f7897d28ac236a50fbdbb3a534095ca962ab",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "cc0dfc1c3c2282b89084bc79501d2774022510be",
+      "old_base": "b68bc5b373bfc096468fef4380d7fe26d258753a",
+      "rebase_conflict": true,
+      "stack_tip": "bdf3e919c9f171379e7ae938cac17ce18afc9c15"
+    },
+    {
+      "new_base": "635fbe2bff805c86c0df1db463f4c5eea087aec6",
+      "new_tip": "635fbe2bff805c86c0df1db463f4c5eea087aec6",
+      "old_base": "8efbefb2d7968e44ea3e220ab102872c0f96ccff",
+      "rebase_conflict": false,
+      "stack_tip": "eea04c289108749ba96ed42b410baaae5932708d",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": true
+        },
+        "cacheprovider.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": false,
+          "meanwhile_touched": true,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "b66b5e2715c098338bc8f6461c41dc48d78c29fb",
+      "old_base": "fa074da5a9e06c05f4ff27ed2c98c56a730800e1",
+      "rebase_conflict": true,
+      "stack_tip": "fbcf9ec543427034fd26e15b3acdd29cd1c5702b"
+    },
+    {
+      "new_base": "0c04577f9ff51c80db7d5ef5025635695dc88343",
+      "old_base": "10baa7f8af4cd5c71161a918c7c73bbeea05964d",
+      "rebase_conflict": true,
+      "stack_tip": "804dcd3521c309a2b82ea58d1d9f3611e0d81618"
+    },
+    {
+      "new_base": "8cbfaa1a4f81254983354c3d311055acc70b174b",
+      "new_tip": "8cbfaa1a4f81254983354c3d311055acc70b174b",
+      "old_base": "4fce886def18f6a1a584eb5b982ff015b270673c",
+      "rebase_conflict": false,
+      "stack_tip": "cb53ad60108cc13af28c2bb1fef3b0dc5cf54298",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "5182c73feae59a86d9b2345b059ff9013e21a2d7",
+      "old_base": "f54ec30a6d7969eba6a2003b4409d33828cd406d",
+      "rebase_conflict": true,
+      "stack_tip": "5acc55e8386a6245c56780221cf35cc43fd02253"
+    },
+    {
+      "new_base": "c8119d89b62c07bcd3abf013e42631c34aee3923",
+      "old_base": "585147100908b9c6e0c98dbe000e4d902e124f98",
+      "rebase_conflict": true,
+      "stack_tip": "32e2bf7d08efb381744895af92ca6802748905d1"
+    },
+    {
+      "new_base": "58eace43f91f33945f59fb6dd362c3d5a6e05240",
+      "old_base": "d3c2f5c7b148c0a8fcd6d6b44069709d595b92cb",
+      "rebase_conflict": true,
+      "stack_tip": "6aaca64290f80176b28ccf50561e08644ecc4d72"
+    },
+    {
+      "new_base": "cf4e14baed7df523a287fc0547b5c95e4c7618f0",
+      "old_base": "f2670651b3444a87f52a450b136ec63de5a5519e",
+      "rebase_conflict": true,
+      "stack_tip": "007f0daeb9377850a3e73d6aa40c705b1f720f48"
+    },
+    {
+      "new_base": "0ae04ae629e0576090346ddc91e7f1cbfb122205",
+      "old_base": "72ad32411f5db346933925a07de04463ebafcbdf",
+      "rebase_conflict": true,
+      "stack_tip": "4e259590c99b75c32ab2b498b0f75cd18ee24629"
+    },
+    {
+      "new_base": "261e7f15721a02cdc7361c60183b86fa36d0f72f",
+      "old_base": "85a76b84296263eb6b13b59dd0641ff2f920dae2",
+      "rebase_conflict": true,
+      "stack_tip": "83536b4b0074ca35d90933d3ad46cb6efe7f5145"
+    },
+    {
+      "new_base": "fa0c7b18bf77a2dcc2deee21fac47361877a9546",
+      "old_base": "f02b84d528e7245c1517d4178f81139f1218f961",
+      "rebase_conflict": true,
+      "stack_tip": "30bbf3b04221a6658967752ca4142ef6962c3ce3"
+    },
+    {
+      "new_base": "c2b1d5b368a1fc829c6c06c700ae2ba9cda55794",
+      "old_base": "5f57481563893a78ab31677a1c862cf9ba531d17",
+      "rebase_conflict": true,
+      "stack_tip": "4449bdc068f598b226ad7dc72a7ea03f38a1307d"
+    },
+    {
+      "new_base": "fa15ae754500916eb5226adb1efaaf95f0ce4618",
+      "old_base": "21a09f0895f33e0279ecbd4f7f03a49927b2b256",
+      "rebase_conflict": true,
+      "stack_tip": "3e3f20380e71e183f3dce2da352cbb276bcde1f5"
+    },
+    {
+      "new_base": "622995a50130824da120e81f31a048ac38966d06",
+      "old_base": "afa899d5e1ff3636b570c6d05c84d0c8efcf2c25",
+      "rebase_conflict": true,
+      "stack_tip": "3b60e36dbb65982d0126560ba7b1f670a6210659"
+    },
+    {
+      "new_base": "b40f760cc3010758086f42d5a287d500cb020500",
+      "old_base": "22c62dbd90176472e5f77fe2a7d8f8d86581f92d",
+      "rebase_conflict": true,
+      "stack_tip": "584cccf7ec343521983b297fd520e215124e474a"
+    },
+    {
+      "new_base": "8a240d01f98bd2bd9c1766376fc67ef01983e61f",
+      "new_tip": "8053a0d41de869e1166a5283fb4aa5668cc5ac5f",
+      "old_base": "4a2d9e3f58144e2a58466e36239192929d09889b",
+      "rebase_conflict": false,
+      "stack_tip": "e94a602e593c26f46ef14d82b30549376faef1a5",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "c335a376b0f4f0f48b70b73910599049f6d84e09",
+      "old_base": "7cb7cfc704ddcbece7b65fbdc6deccff6cc51b62",
+      "rebase_conflict": true,
+      "stack_tip": "05c43afae25b8ee7da3f69978802ce0f5e562e4e"
+    },
+    {
+      "new_base": "96238a4683b12afeabee534430306dfe38fcdb7b",
+      "old_base": "e6d8374449d0862093295f131b21a0eb2ca9526b",
+      "rebase_conflict": true,
+      "stack_tip": "ed7672b9312318b3b90ffb743e2b145185fc21e3"
+    },
+    {
+      "new_base": "a1c7ab69f995c552517eed37b9e409af70e3ca91",
+      "old_base": "f13381e3f997dc5630ffd5523132abd438161bdc",
+      "rebase_conflict": true,
+      "stack_tip": "4791dd6501a46303c098abc9e11a52acde64076d"
+    },
+    {
+      "new_base": "d6266856ca7b0bcc5e4198c0ff966f4db56818a6",
+      "new_tip": "b131ee5236d74076625c767c99a0b0d37febad50",
+      "old_base": "6dbd42b60e3b5c81799a6e98dfd933bf0b2e1379",
+      "rebase_conflict": false,
+      "stack_tip": "2bdeb130698bb9c7917111cfbeb657c3f25b5be4",
+      "tasks": {
+        "_code": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_io": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "_py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "assertion": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "cacheprovider.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "capture.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "compat.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "config": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "debugging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "doctest.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "fixtures.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "logging.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "main.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "mark": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "monkeypatch.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "nodes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "outcomes.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "pathlib.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "python.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "runner.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "stash.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "terminal.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "tmpdir.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        },
+        "warnings.py": {
+          "identical": true,
+          "meanwhile_touched": false,
+          "stack_touched": false
+        }
+      }
+    },
+    {
+      "new_base": "f7a9beaefb418ae0f2655b72250d8c96831aff4a",
+      "old_base": "cf7cae0780a4f05f4702f7755365e6b1b26a4e86",
+      "rebase_conflict": true,
+      "stack_tip": "ea7a997afc24ad3081932912a3905556008a126f"
+    },
+    {
+      "new_base": "5dcd24fecb8cd7f68bf522b9e752d5972a1cf3f8",
+      "old_base": "85df6bbe26529a04d137e778264065e68dc7e036",
+      "rebase_conflict": true,
+      "stack_tip": "10e243d206b47c01fe6b813ed07743e6c15c175f"
+    },
+    {
+      "new_base": "d84ed48f39f1629a180baea29ec8ec6dac2e386b",
+      "old_base": "b735f9377a78d31b1ad1d4451837b63deeb2d8d6",
+      "rebase_conflict": true,
+      "stack_tip": "15ac0349b2c7d8dc48fe2e25a1b4fa47c9fda25c"
+    }
+  ],
+  "summary": {
+    "clean_samples": 18,
+    "measured": true,
+    "rebase_conflicts": 42,
+    "repo": "https://github.com/pytest-dev/pytest",
+    "samples_requested": 60,
+    "samples_run": 60,
+    "stack_touched_reuse_fraction": 0.6667,
+    "stack_touched_task_pairs": 21,
+    "stack_touched_task_pairs_still_reusable": 14,
+    "task_count": 24,
+    "task_pairs_evaluated": 432,
+    "task_pairs_hash_identical": 394,
+    "task_pairs_hash_identical_fraction": 0.912
+  }
+}

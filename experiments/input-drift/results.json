@@ -1,0 +1,101 @@
+{
+  "manifests": [
+    {
+      "manifest": "assay.json",
+      "tasks": [
+        {
+          "covered": 3,
+          "declared_count": 3,
+          "missed_undeclared_reads": [],
+          "over_declared_unused_inputs": [],
+          "precision": 1.0,
+          "recall": 1.0,
+          "returncode": 0,
+          "task": "report-contracts",
+          "traced_source_reads": 3
+        },
+        {
+          "covered": 3,
+          "declared_count": 3,
+          "missed_undeclared_reads": [],
+          "over_declared_unused_inputs": [],
+          "precision": 1.0,
+          "recall": 1.0,
+          "returncode": 0,
+          "task": "query-equivalence",
+          "traced_source_reads": 3
+        },
+        {
+          "covered": 3,
+          "declared_count": 3,
+          "missed_undeclared_reads": [],
+          "over_declared_unused_inputs": [],
+          "precision": 1.0,
+          "recall": 1.0,
+          "returncode": 0,
+          "task": "runner-contracts",
+          "traced_source_reads": 3
+        },
+        {
+          "covered": 4,
+          "declared_count": 4,
+          "missed_undeclared_reads": [],
+          "over_declared_unused_inputs": [],
+          "precision": 1.0,
+          "recall": 1.0,
+          "returncode": 0,
+          "task": "queue-contracts",
+          "traced_source_reads": 4
+        },
+        {
+          "covered": 7,
+          "declared_count": 8,
+          "missed_undeclared_reads": [],
+          "over_declared_unused_inputs": [
+            "examples/parcel/test_queue.py"
+          ],
+          "precision": 0.875,
+          "recall": 1.0,
+          "returncode": 0,
+          "task": "schedule-exploration",
+          "traced_source_reads": 7
+        }
+      ]
+    },
+    {
+      "manifest": "experiments/input-drift/fixtures/undeclared/assay.json",
+      "tasks": [
+        {
+          "covered": 3,
+          "declared_count": 3,
+          "missed_undeclared_reads": [
+            "pkg/helper.py"
+          ],
+          "over_declared_unused_inputs": [],
+          "precision": 1.0,
+          "recall": 0.75,
+          "returncode": 0,
+          "task": "greet-contracts",
+          "traced_source_reads": 4
+        }
+      ]
+    },
+    {
+      "manifest": "experiments/input-drift/fixtures/declared/assay.json",
+      "tasks": [
+        {
+          "covered": 4,
+          "declared_count": 4,
+          "missed_undeclared_reads": [],
+          "over_declared_unused_inputs": [],
+          "precision": 1.0,
+          "recall": 1.0,
+          "returncode": 0,
+          "task": "greet-contracts",
+          "traced_source_reads": 4
+        }
+      ]
+    }
+  ],
+  "measured": true
+}

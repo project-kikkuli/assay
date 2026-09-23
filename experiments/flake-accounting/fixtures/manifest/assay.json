@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "name": "Flake accounting fixture",
+  "tasks": [
+    {
+      "id": "flaky",
+      "description": "Fails on unseeded real entropy about 35% of the time",
+      "command": ["{python}", "-m", "unittest", "discover", "-s", "tests", "-p", "test_flaky.py"],
+      "inputs": ["tests/test_flaky.py"],
+      "timeout_s": 15,
+      "source": ["tests/test_flaky.py"]
+    },
+    {
+      "id": "broken",
+      "description": "A deterministic real regression; never flaky",
+      "command": ["{python}", "-m", "unittest", "discover", "-s", "tests", "-p", "test_broken.py"],
+      "inputs": ["tests/test_broken.py"],
+      "timeout_s": 15,
+      "source": ["tests/test_broken.py"]
+    }
+  ]
+}
