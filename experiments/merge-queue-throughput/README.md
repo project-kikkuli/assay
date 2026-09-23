@@ -28,7 +28,7 @@ a measurement):
   speculative queue would need (see [`rebase-reuse`](../rebase-reuse/)).
 
 ```sh
-python3 experiments/merge-queue/measure.py --repo-dir /path/to/itsdangerous --python /path/to/venv/bin/python3
+python3 experiments/merge-queue-throughput/measure.py --repo-dir /path/to/itsdangerous --python /path/to/venv/bin/python3
 ```
 
 ## Measured result
@@ -60,6 +60,36 @@ for that wall-clock win. Batching and speculation trade CI-minutes for
 wall-clock in opposite directions; which one a team should pick depends on
 its actual measured bad-PR rate, not a single fixed default.
 
+## Re-run at a measured real broken rate
+
+The swept rates above are synthetic because `itsdangerous`'s history has no
+broken commits to measure a rate from. `measure_real_rate.py` gets a real
+rate a different way: it fetches pytest's actual GitHub Actions history for
+its `test` workflow via the public REST API — every real `push` run on
+`main` with its real conclusion — and re-runs the same unmodified
+`simulate_serial` / `simulate_batch` / `simulate_speculative` functions
+against `itsdangerous`'s already-measured durations at that one real rate,
+not a sweep.
+
+```sh
+python3 experiments/merge-queue-throughput/measure_real_rate.py
+```
+
+**556 real push-to-main runs** of pytest's `test` workflow
+([full results](results-real-rate.json)): 456 success, 9 failure, 91
+cancelled (administrative, excluded) — a real historical failure rate of
+**1.94%**, two orders of magnitude below the synthetic sweep's 30% high end.
+At that real rate, the crossover above never appears in this range: batch-8
+stays a clean win on every axis tested, using **17.41 CI-seconds** versus
+serial's **64.58s** (3.7x fewer) and, at 10x arrival volume, also clearing
+fastest (**18.35s** makespan, beating speculative-4's **18.64s**).
+Speculative-4 buys no wall-clock advantage over batch-8 in this regime and
+still pays a CI-minutes tax — **70.19s**, 9% over serial — for it. The
+synthetic sweep's warning about batching flipping CI-negative is real, but
+it triggers at rates (15–30%) far above what one large, mature real project
+actually shows in its own history (~2%); do not read the crossover as an
+argument against batching by default.
+
 ## Limits
 
 `real_suite_failures_across_history: 0` and `flake_rate_at_head: 0.0` mean
@@ -77,3 +107,17 @@ original measured duration; a real rebase can conflict outright (measured at
 Arrival multipliers are a deliberately chosen synthetic schedule, not this
 repository's real (multi-day) commit cadence — they represent a hypothesis
 about agent-driven volume, not a measurement of it.
+
+The measured-real-rate re-run combines a duration source (`itsdangerous`)
+and a broken-rate source (pytest) that are two different real repositories
+with different contributor pools, review practices and CI maturity — it
+does not claim one project's failure rate applies to another's durations,
+only that both numbers are independently real and labeled by origin. Some
+push-triggered runs share a `head_sha` with another run in the same fetch
+(duplicate webhook deliveries, not test reruns); across the 556 sampled
+`main` runs this happened 5 times and only once showed a differing
+conclusion (`cancelled` vs `success`, an administrative supersede, not a
+flaky test) — the fetched sample shows no case of the same commit's tests
+genuinely flipping pass/fail. `cancelled` runs are excluded from the real
+rate as administrative (superseded by a later push), not test outcomes;
+including them would count ordinary push churn as failure.
