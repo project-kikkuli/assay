@@ -1,0 +1,395 @@
+{
+  "rounds": [
+    {
+      "cancel_on_red_job_s": 15789.0,
+      "jobs": 30,
+      "pr": 337189,
+      "real_total_job_s": 16691.0,
+      "repo": "microsoft/vscode",
+      "saved_job_s": 902.0
+    },
+    {
+      "cancel_on_red_job_s": 12356.0,
+      "jobs": 30,
+      "pr": 337381,
+      "real_total_job_s": 15710.0,
+      "repo": "microsoft/vscode",
+      "saved_job_s": 3354.0
+    },
+    {
+      "cancel_on_red_job_s": 15382.0,
+      "jobs": 30,
+      "pr": 337354,
+      "real_total_job_s": 16155.0,
+      "repo": "microsoft/vscode",
+      "saved_job_s": 773.0
+    },
+    {
+      "cancel_on_red_job_s": 6208.0,
+      "jobs": 26,
+      "pr": 329706,
+      "real_total_job_s": 16126.0,
+      "repo": "microsoft/vscode",
+      "saved_job_s": 9918.0
+    },
+    {
+      "cancel_on_red_job_s": 28059.0,
+      "jobs": 135,
+      "pr": 36835,
+      "real_total_job_s": 33789.0,
+      "repo": "denoland/deno",
+      "saved_job_s": 5730.0
+    },
+    {
+      "cancel_on_red_job_s": 16397.0,
+      "jobs": 135,
+      "pr": 36835,
+      "real_total_job_s": 37210.0,
+      "repo": "denoland/deno",
+      "saved_job_s": 20813.0
+    },
+    {
+      "cancel_on_red_job_s": 4361.0,
+      "jobs": 135,
+      "pr": 36845,
+      "real_total_job_s": 34803.0,
+      "repo": "denoland/deno",
+      "saved_job_s": 30442.0
+    },
+    {
+      "cancel_on_red_job_s": 27879.0,
+      "jobs": 135,
+      "pr": 36693,
+      "real_total_job_s": 35349.0,
+      "repo": "denoland/deno",
+      "saved_job_s": 7470.0
+    },
+    {
+      "cancel_on_red_job_s": 32268.0,
+      "jobs": 135,
+      "pr": 36693,
+      "real_total_job_s": 36985.0,
+      "repo": "denoland/deno",
+      "saved_job_s": 4717.0
+    },
+    {
+      "cancel_on_red_job_s": 27630.0,
+      "jobs": 135,
+      "pr": 36482,
+      "real_total_job_s": 45077.0,
+      "repo": "denoland/deno",
+      "saved_job_s": 17447.0
+    },
+    {
+      "cancel_on_red_job_s": 22863.0,
+      "jobs": 135,
+      "pr": 36482,
+      "real_total_job_s": 36200.0,
+      "repo": "denoland/deno",
+      "saved_job_s": 13337.0
+    },
+    {
+      "cancel_on_red_job_s": 10214.0,
+      "jobs": 135,
+      "pr": 36683,
+      "real_total_job_s": 37213.0,
+      "repo": "denoland/deno",
+      "saved_job_s": 26999.0
+    },
+    {
+      "cancel_on_red_job_s": 25730.0,
+      "jobs": 135,
+      "pr": 36683,
+      "real_total_job_s": 38677.0,
+      "repo": "denoland/deno",
+      "saved_job_s": 12947.0
+    },
+    {
+      "cancel_on_red_job_s": 9623.0,
+      "jobs": 135,
+      "pr": 36400,
+      "real_total_job_s": 34294.0,
+      "repo": "denoland/deno",
+      "saved_job_s": 24671.0
+    },
+    {
+      "cancel_on_red_job_s": 7513.0,
+      "jobs": 135,
+      "pr": 36400,
+      "real_total_job_s": 36959.0,
+      "repo": "denoland/deno",
+      "saved_job_s": 29446.0
+    },
+    {
+      "cancel_on_red_job_s": 11472.0,
+      "jobs": 17,
+      "pr": 21748,
+      "real_total_job_s": 14198.0,
+      "repo": "python/mypy",
+      "saved_job_s": 2726.0
+    },
+    {
+      "cancel_on_red_job_s": 11914.0,
+      "jobs": 17,
+      "pr": 21748,
+      "real_total_job_s": 14618.0,
+      "repo": "python/mypy",
+      "saved_job_s": 2704.0
+    },
+    {
+      "cancel_on_red_job_s": 4401.0,
+      "jobs": 17,
+      "pr": 21876,
+      "real_total_job_s": 14310.0,
+      "repo": "python/mypy",
+      "saved_job_s": 9909.0
+    },
+    {
+      "cancel_on_red_job_s": 12107.0,
+      "jobs": 17,
+      "pr": 21877,
+      "real_total_job_s": 14349.0,
+      "repo": "python/mypy",
+      "saved_job_s": 2242.0
+    },
+    {
+      "cancel_on_red_job_s": 436.0,
+      "jobs": 14,
+      "pr": 18127,
+      "real_total_job_s": 1355.0,
+      "repo": "sveltejs/svelte",
+      "saved_job_s": 919.0
+    },
+    {
+      "cancel_on_red_job_s": 202.0,
+      "jobs": 9,
+      "pr": 18752,
+      "real_total_job_s": 1504.0,
+      "repo": "sveltejs/svelte",
+      "saved_job_s": 1302.0
+    },
+    {
+      "cancel_on_red_job_s": 1416.0,
+      "jobs": 9,
+      "pr": 18738,
+      "real_total_job_s": 1447.0,
+      "repo": "sveltejs/svelte",
+      "saved_job_s": 31.0
+    },
+    {
+      "cancel_on_red_job_s": 1532.0,
+      "jobs": 9,
+      "pr": 18728,
+      "real_total_job_s": 1532.0,
+      "repo": "sveltejs/svelte",
+      "saved_job_s": 0.0
+    },
+    {
+      "cancel_on_red_job_s": 944.0,
+      "jobs": 9,
+      "pr": 18722,
+      "real_total_job_s": 1275.0,
+      "repo": "sveltejs/svelte",
+      "saved_job_s": 331.0
+    },
+    {
+      "cancel_on_red_job_s": 19999.0,
+      "jobs": 33,
+      "pr": 29452,
+      "real_total_job_s": 32423.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 12424.0
+    },
+    {
+      "cancel_on_red_job_s": 3463.0,
+      "jobs": 34,
+      "pr": 29425,
+      "real_total_job_s": 9839.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 6376.0
+    },
+    {
+      "cancel_on_red_job_s": 394.0,
+      "jobs": 32,
+      "pr": 29425,
+      "real_total_job_s": 12419.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 12025.0
+    },
+    {
+      "cancel_on_red_job_s": 368.0,
+      "jobs": 32,
+      "pr": 29425,
+      "real_total_job_s": 7065.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 6697.0
+    },
+    {
+      "cancel_on_red_job_s": 392.0,
+      "jobs": 32,
+      "pr": 29425,
+      "real_total_job_s": 9616.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 9224.0
+    },
+    {
+      "cancel_on_red_job_s": 305.0,
+      "jobs": 32,
+      "pr": 29425,
+      "real_total_job_s": 5669.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 5364.0
+    },
+    {
+      "cancel_on_red_job_s": 231.0,
+      "jobs": 33,
+      "pr": 29416,
+      "real_total_job_s": 3941.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 3710.0
+    },
+    {
+      "cancel_on_red_job_s": 3829.0,
+      "jobs": 34,
+      "pr": 29397,
+      "real_total_job_s": 20502.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 16673.0
+    },
+    {
+      "cancel_on_red_job_s": 3546.0,
+      "jobs": 32,
+      "pr": 29397,
+      "real_total_job_s": 9629.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 6083.0
+    },
+    {
+      "cancel_on_red_job_s": 3426.0,
+      "jobs": 32,
+      "pr": 29397,
+      "real_total_job_s": 11963.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 8537.0
+    },
+    {
+      "cancel_on_red_job_s": 3522.0,
+      "jobs": 32,
+      "pr": 29397,
+      "real_total_job_s": 7384.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 3862.0
+    },
+    {
+      "cancel_on_red_job_s": 12755.0,
+      "jobs": 32,
+      "pr": 29397,
+      "real_total_job_s": 35524.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 22769.0
+    },
+    {
+      "cancel_on_red_job_s": 882.0,
+      "jobs": 33,
+      "pr": 29389,
+      "real_total_job_s": 15703.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 14821.0
+    },
+    {
+      "cancel_on_red_job_s": 378.0,
+      "jobs": 32,
+      "pr": 29389,
+      "real_total_job_s": 28992.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 28614.0
+    },
+    {
+      "cancel_on_red_job_s": 943.0,
+      "jobs": 32,
+      "pr": 29389,
+      "real_total_job_s": 20594.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 19651.0
+    },
+    {
+      "cancel_on_red_job_s": 667.0,
+      "jobs": 32,
+      "pr": 29389,
+      "real_total_job_s": 11492.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 10825.0
+    },
+    {
+      "cancel_on_red_job_s": 495.0,
+      "jobs": 32,
+      "pr": 29389,
+      "real_total_job_s": 27064.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 26569.0
+    },
+    {
+      "cancel_on_red_job_s": 586.0,
+      "jobs": 32,
+      "pr": 29389,
+      "real_total_job_s": 19007.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 18421.0
+    },
+    {
+      "cancel_on_red_job_s": 675.0,
+      "jobs": 32,
+      "pr": 29389,
+      "real_total_job_s": 12581.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 11906.0
+    },
+    {
+      "cancel_on_red_job_s": 659.0,
+      "jobs": 32,
+      "pr": 29389,
+      "real_total_job_s": 33157.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 32498.0
+    },
+    {
+      "cancel_on_red_job_s": 257.0,
+      "jobs": 34,
+      "pr": 29389,
+      "real_total_job_s": 24645.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 24388.0
+    },
+    {
+      "cancel_on_red_job_s": 17347.0,
+      "jobs": 27,
+      "pr": 29386,
+      "real_total_job_s": 25252.0,
+      "repo": "pola-rs/polars",
+      "saved_job_s": 7905.0
+    }
+  ],
+  "summary": {
+    "fleet_wide_compute_saved_fraction": 0.5851,
+    "measured": true,
+    "note": "compute-minutes saved by a fail-fast concurrency-cancel policy, not developer wall-clock (that's fail-fast-signal's tail_s: jobs already run concurrently on GitHub Actions, so cancelling a sibling doesn't make the failure land sooner, only cheaper).",
+    "real_total_job_s_per_round": {
+      "mean": 20006.2,
+      "median": 16140.5,
+      "p90": 36985.0
+    },
+    "red_rounds_with_multiple_jobs": 46,
+    "repos": [
+      "microsoft/vscode",
+      "denoland/deno",
+      "python/mypy",
+      "sveltejs/svelte",
+      "pola-rs/polars"
+    ],
+    "saved_job_s_per_round": {
+      "mean": 11705.9,
+      "median": 9566.5,
+      "p90": 26999.0
+    }
+  }
+}

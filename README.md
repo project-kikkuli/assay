@@ -67,6 +67,7 @@ seconds. Thirty seconds is not established across environments.
 | What would a pre-push local lint/type-check have saved? | [Local pre-check](experiments/local-precheck/): from real failing-job durations on 200 sampled PRs, an estimated 12.84 developer-hours saved per 100 PRs by catching lint/format and type-check failures before push instead of in CI. |
 | Does CI-side auto-fix-and-repush beat catching it before push? | [CI auto-fix](experiments/ci-autofix/): on the same sample's lint/format rounds, only 20.8% have positive savings against a real measured human fix gap (median **−141.5s**); pre-push local checks dominate except on the slow-to-notice tail. |
 | How much of a red round's wall-clock is spent after the outcome is already known? | [Fail-fast signal](experiments/fail-fast-signal/): 68 real multi-job red rounds; on average 66.5% of total settle time comes after the first real failing job already reported red (median tail 704.5s). |
+| What does first-failure-first cancellation buy in real CI compute? | [Cancel-on-red](experiments/cancel-on-red/): 46 real multi-job red rounds; 58.5% of fleet-wide job-seconds on those rounds would never have run under a cancel-on-red policy, from 23.1% (vscode's small independent workflows) to 80.5% (polars' heavy matrix). |
 
 The [design argument](docs/verification.md) connects the measurements to primary
 research and identifies the assumptions that still need to hold in a real system.
