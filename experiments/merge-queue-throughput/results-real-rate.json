@@ -1,0 +1,231 @@
+{
+  "runs": [
+    {
+      "broken_rate": 0.0194,
+      "multiplier": 1.0,
+      "strategies": [
+        {
+          "ci_seconds": 64.583,
+          "jobs_run": 64,
+          "makespan_s": 66.41,
+          "mean_wait_s": 2.467,
+          "merged_count": 62,
+          "p95_wait_s": 4.203,
+          "rejected_count": 2,
+          "strategy": "serial",
+          "throughput_prs_per_ci_minute": 57.6002
+        },
+        {
+          "ci_seconds": 22.167,
+          "jobs_run": 24,
+          "makespan_s": 64.219,
+          "mean_wait_s": 2.916,
+          "merged_count": 62,
+          "p95_wait_s": 5.618,
+          "rejected_count": 2,
+          "strategy": "batch-4",
+          "throughput_prs_per_ci_minute": 167.8145
+        },
+        {
+          "ci_seconds": 17.408,
+          "jobs_run": 20,
+          "makespan_s": 64.219,
+          "mean_wait_s": 5.586,
+          "merged_count": 62,
+          "p95_wait_s": 11.334,
+          "rejected_count": 2,
+          "strategy": "batch-8",
+          "throughput_prs_per_ci_minute": 213.6935
+        },
+        {
+          "ci_seconds": 64.583,
+          "jobs_run": 64,
+          "makespan_s": 64.464,
+          "mean_wait_s": 1.391,
+          "merged_count": 62,
+          "p95_wait_s": 2.93,
+          "rejected_count": 2,
+          "strategy": "speculative-4",
+          "throughput_prs_per_ci_minute": 57.6002
+        }
+      ]
+    },
+    {
+      "broken_rate": 0.0194,
+      "multiplier": 2.0,
+      "strategies": [
+        {
+          "ci_seconds": 64.583,
+          "jobs_run": 64,
+          "makespan_s": 64.583,
+          "mean_wait_s": 17.346,
+          "merged_count": 62,
+          "p95_wait_s": 31.559,
+          "rejected_count": 2,
+          "strategy": "serial",
+          "throughput_prs_per_ci_minute": 57.6002
+        },
+        {
+          "ci_seconds": 22.167,
+          "jobs_run": 24,
+          "makespan_s": 32.432,
+          "mean_wait_s": 2.674,
+          "merged_count": 62,
+          "p95_wait_s": 5.618,
+          "rejected_count": 2,
+          "strategy": "batch-4",
+          "throughput_prs_per_ci_minute": 167.8145
+        },
+        {
+          "ci_seconds": 17.408,
+          "jobs_run": 20,
+          "makespan_s": 33.007,
+          "mean_wait_s": 4.315,
+          "merged_count": 62,
+          "p95_wait_s": 8.812,
+          "rejected_count": 2,
+          "strategy": "batch-8",
+          "throughput_prs_per_ci_minute": 213.6935
+        },
+        {
+          "ci_seconds": 67.076,
+          "jobs_run": 68,
+          "makespan_s": 32.538,
+          "mean_wait_s": 1.664,
+          "merged_count": 62,
+          "p95_wait_s": 2.912,
+          "rejected_count": 2,
+          "strategy": "speculative-4",
+          "throughput_prs_per_ci_minute": 55.4599
+        }
+      ]
+    },
+    {
+      "broken_rate": 0.0194,
+      "multiplier": 5.0,
+      "strategies": [
+        {
+          "ci_seconds": 64.583,
+          "jobs_run": 64,
+          "makespan_s": 64.583,
+          "mean_wait_s": 26.843,
+          "merged_count": 62,
+          "p95_wait_s": 49.421,
+          "rejected_count": 2,
+          "strategy": "serial",
+          "throughput_prs_per_ci_minute": 57.6002
+        },
+        {
+          "ci_seconds": 22.167,
+          "jobs_run": 24,
+          "makespan_s": 23.169,
+          "mean_wait_s": 5.942,
+          "merged_count": 62,
+          "p95_wait_s": 10.858,
+          "rejected_count": 2,
+          "strategy": "batch-4",
+          "throughput_prs_per_ci_minute": 167.8145
+        },
+        {
+          "ci_seconds": 17.408,
+          "jobs_run": 20,
+          "makespan_s": 20.671,
+          "mean_wait_s": 6.033,
+          "merged_count": 62,
+          "p95_wait_s": 9.369,
+          "rejected_count": 2,
+          "strategy": "batch-8",
+          "throughput_prs_per_ci_minute": 213.6935
+        },
+        {
+          "ci_seconds": 70.189,
+          "jobs_run": 72,
+          "makespan_s": 18.645,
+          "mean_wait_s": 4.209,
+          "merged_count": 62,
+          "p95_wait_s": 6.142,
+          "rejected_count": 2,
+          "strategy": "speculative-4",
+          "throughput_prs_per_ci_minute": 52.9995
+        }
+      ]
+    },
+    {
+      "broken_rate": 0.0194,
+      "multiplier": 10.0,
+      "strategies": [
+        {
+          "ci_seconds": 64.583,
+          "jobs_run": 64,
+          "makespan_s": 64.583,
+          "mean_wait_s": 30.009,
+          "merged_count": 62,
+          "p95_wait_s": 55.374,
+          "rejected_count": 2,
+          "strategy": "serial",
+          "throughput_prs_per_ci_minute": 57.6002
+        },
+        {
+          "ci_seconds": 22.167,
+          "jobs_run": 24,
+          "makespan_s": 22.47,
+          "mean_wait_s": 8.448,
+          "merged_count": 62,
+          "p95_wait_s": 16.113,
+          "rejected_count": 2,
+          "strategy": "batch-4",
+          "throughput_prs_per_ci_minute": 167.8145
+        },
+        {
+          "ci_seconds": 17.408,
+          "jobs_run": 20,
+          "makespan_s": 18.35,
+          "mean_wait_s": 7.19,
+          "merged_count": 62,
+          "p95_wait_s": 12.558,
+          "rejected_count": 2,
+          "strategy": "batch-8",
+          "throughput_prs_per_ci_minute": 213.6935
+        },
+        {
+          "ci_seconds": 70.189,
+          "jobs_run": 72,
+          "makespan_s": 18.645,
+          "mean_wait_s": 7.375,
+          "merged_count": 62,
+          "p95_wait_s": 11.91,
+          "rejected_count": 2,
+          "strategy": "speculative-4",
+          "throughput_prs_per_ci_minute": 52.9995
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "batch_sizes": [
+      4,
+      8
+    ],
+    "broken_rate_measured": {
+      "conclusions": {
+        "cancelled": 91,
+        "failure": 9,
+        "success": 456
+      },
+      "failure_rate_all_runs": 0.0162,
+      "failure_rate_excluding_cancelled": 0.0194,
+      "runs_fetched": 556,
+      "source": "https://github.com/pytest-dev/pytest actions workflow 'test', push events on 'main'"
+    },
+    "broken_rate_used": 0.0194,
+    "durations_commits": 64,
+    "durations_repo": "https://github.com/pallets/itsdangerous",
+    "multipliers": [
+      1.0,
+      2.0,
+      5.0,
+      10.0
+    ],
+    "speculative_workers": 4
+  }
+}
