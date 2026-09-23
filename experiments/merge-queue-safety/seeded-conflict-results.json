@@ -1,0 +1,41 @@
+{
+  "base": "59c775b22b5668e31169c655e5bc655eca2d48c7",
+  "change_scoped_on_merged": {
+    "failed_files": [],
+    "passed": true,
+    "selection": [
+      "tests/test_user_a.py"
+    ]
+  },
+  "concurrent_head": "30ebf18ce883c7397161699010ca52aa8dcecd23",
+  "exact_input_on_merged": {
+    "failed_files": [
+      "tests/test_user_b.py"
+    ],
+    "passed": false,
+    "selection": [
+      "tests/test_user_a.py",
+      "tests/test_user_b.py"
+    ]
+  },
+  "full_on_merged": {
+    "failed_files": [
+      "tests/test_user_b.py"
+    ],
+    "passed": false,
+    "selection": [
+      "tests/test_user_a.py",
+      "tests/test_user_b.py"
+    ]
+  },
+  "measured": true,
+  "merged": "d83192993e819eebc91378493076a7200b207a53",
+  "pr_head": "2a5b253a226f40a34de5bd15980b7c53d99ab380",
+  "pr_head_alone": {
+    "failed_files": [],
+    "passed": true,
+    "selection": [
+      "tests/test_user_a.py"
+    ]
+  }
+}
