@@ -1,0 +1,192 @@
+{
+  "records": [
+    {
+      "autofix_cost_s": 514.0,
+      "human_gap_s": 14400.0,
+      "pr": 36845,
+      "repo": "denoland/deno",
+      "savings_s": 13886.0
+    },
+    {
+      "autofix_cost_s": 315.0,
+      "human_gap_s": 2434.0,
+      "pr": 18752,
+      "repo": "sveltejs/svelte",
+      "savings_s": 2119.0
+    },
+    {
+      "autofix_cost_s": 355.0,
+      "human_gap_s": 712.0,
+      "pr": 18728,
+      "repo": "sveltejs/svelte",
+      "savings_s": 357.0
+    },
+    {
+      "autofix_cost_s": 326.0,
+      "human_gap_s": 841.0,
+      "pr": 18703,
+      "repo": "sveltejs/svelte",
+      "savings_s": 515.0
+    },
+    {
+      "autofix_cost_s": 233.0,
+      "human_gap_s": -139.0,
+      "pr": 18641,
+      "repo": "sveltejs/svelte",
+      "savings_s": -372.0
+    },
+    {
+      "autofix_cost_s": 57.0,
+      "human_gap_s": -84.0,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "savings_s": -141.0
+    },
+    {
+      "autofix_cost_s": 55.0,
+      "human_gap_s": -76.0,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "savings_s": -131.0
+    },
+    {
+      "autofix_cost_s": 58.0,
+      "human_gap_s": -84.0,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "savings_s": -142.0
+    },
+    {
+      "autofix_cost_s": 59.0,
+      "human_gap_s": -64.0,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "savings_s": -123.0
+    },
+    {
+      "autofix_cost_s": 58.0,
+      "human_gap_s": -92.0,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "savings_s": -150.0
+    },
+    {
+      "autofix_cost_s": 27.0,
+      "human_gap_s": -166.0,
+      "pr": 29416,
+      "repo": "pola-rs/polars",
+      "savings_s": -193.0
+    },
+    {
+      "autofix_cost_s": 358.0,
+      "human_gap_s": -27.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "savings_s": -385.0
+    },
+    {
+      "autofix_cost_s": 248.0,
+      "human_gap_s": -19.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "savings_s": -267.0
+    },
+    {
+      "autofix_cost_s": 383.0,
+      "human_gap_s": -22.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "savings_s": -405.0
+    },
+    {
+      "autofix_cost_s": 364.0,
+      "human_gap_s": -20.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "savings_s": -384.0
+    },
+    {
+      "autofix_cost_s": 371.0,
+      "human_gap_s": -22.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "savings_s": -393.0
+    },
+    {
+      "autofix_cost_s": 373.0,
+      "human_gap_s": -27.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "savings_s": -400.0
+    },
+    {
+      "autofix_cost_s": 55.0,
+      "human_gap_s": -20.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "savings_s": -75.0
+    },
+    {
+      "autofix_cost_s": 59.0,
+      "human_gap_s": 14400.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "savings_s": 14341.0
+    },
+    {
+      "autofix_cost_s": 27.0,
+      "human_gap_s": -26.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "savings_s": -53.0
+    },
+    {
+      "autofix_cost_s": 361.0,
+      "human_gap_s": -28.0,
+      "pr": 29371,
+      "repo": "pola-rs/polars",
+      "savings_s": -389.0
+    },
+    {
+      "autofix_cost_s": 29.0,
+      "human_gap_s": -40.0,
+      "pr": 29352,
+      "repo": "pola-rs/polars",
+      "savings_s": -69.0
+    },
+    {
+      "autofix_cost_s": 5222.0,
+      "human_gap_s": 1595.0,
+      "pr": 29312,
+      "repo": "pola-rs/polars",
+      "savings_s": -3627.0
+    },
+    {
+      "autofix_cost_s": 27.0,
+      "human_gap_s": -55.0,
+      "pr": 29289,
+      "repo": "pola-rs/polars",
+      "savings_s": -82.0
+    }
+  ],
+  "summary": {
+    "autofixable_red_rounds_found": 24,
+    "estimated_constant_s": {
+      "push_and_retrigger_overhead": 20.0
+    },
+    "estimated_hours_saved_per_100_prs": 3.26,
+    "measured": true,
+    "note": "red rounds are not eliminated (CI still runs once to detect the violation); what's removed is the human between-round gap, replaced by the CI-driven fix-commit-push-retrigger cycle. Compare against local-precheck's per-100-PR figure, which removes the round entirely but depends on developer compliance running the hook.",
+    "prs_examined": 200,
+    "rounds_per_100_prs": 12.0,
+    "rounds_with_net_positive_savings": 5,
+    "rounds_with_net_positive_savings_fraction": 0.2083,
+    "savings_s_per_round": {
+      "max": 14341.0,
+      "mean": 976.5,
+      "median": -141.5,
+      "min": -3627.0
+    },
+    "source": "experiments/local-precheck/results.json (same 200-PR sample)"
+  }
+}

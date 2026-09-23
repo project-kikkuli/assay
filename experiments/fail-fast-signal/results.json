@@ -1,0 +1,644 @@
+{
+  "rounds": [
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 30,
+      "pr": 337189,
+      "repo": "microsoft/vscode",
+      "settle_s": 1270.0,
+      "signal_s": 1004.0,
+      "tail_s": 266.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 30,
+      "pr": 337381,
+      "repo": "microsoft/vscode",
+      "settle_s": 1374.0,
+      "signal_s": 689.0,
+      "tail_s": 685.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 30,
+      "pr": 337354,
+      "repo": "microsoft/vscode",
+      "settle_s": 2089.0,
+      "signal_s": 1587.0,
+      "tail_s": 502.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 26,
+      "pr": 329706,
+      "repo": "microsoft/vscode",
+      "settle_s": 3364.0,
+      "signal_s": 571.0,
+      "tail_s": 2793.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 30,
+      "pr": 337179,
+      "repo": "microsoft/vscode",
+      "settle_s": 1554.0,
+      "signal_s": 1171.0,
+      "tail_s": 383.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 29,
+      "pr": 337179,
+      "repo": "microsoft/vscode",
+      "settle_s": 1194.0,
+      "signal_s": 1177.0,
+      "tail_s": 17.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 29,
+      "pr": 337179,
+      "repo": "microsoft/vscode",
+      "settle_s": 2539.0,
+      "signal_s": 1428.0,
+      "tail_s": 1111.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 30,
+      "pr": 337328,
+      "repo": "microsoft/vscode",
+      "settle_s": 1486.0,
+      "signal_s": 471.0,
+      "tail_s": 1015.0
+    },
+    {
+      "failed_jobs_in_round": 6,
+      "jobs_in_round": 30,
+      "pr": 337300,
+      "repo": "microsoft/vscode",
+      "settle_s": 1924.0,
+      "signal_s": 618.0,
+      "tail_s": 1306.0
+    },
+    {
+      "failed_jobs_in_round": 5,
+      "jobs_in_round": 135,
+      "pr": 36835,
+      "repo": "denoland/deno",
+      "settle_s": 3792.0,
+      "signal_s": 1588.0,
+      "tail_s": 2204.0
+    },
+    {
+      "failed_jobs_in_round": 7,
+      "jobs_in_round": 135,
+      "pr": 36835,
+      "repo": "denoland/deno",
+      "settle_s": 4557.0,
+      "signal_s": 843.0,
+      "tail_s": 3714.0
+    },
+    {
+      "failed_jobs_in_round": 3,
+      "jobs_in_round": 135,
+      "pr": 36845,
+      "repo": "denoland/deno",
+      "settle_s": 4486.0,
+      "signal_s": 276.0,
+      "tail_s": 4210.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 135,
+      "pr": 36693,
+      "repo": "denoland/deno",
+      "settle_s": 4385.0,
+      "signal_s": 1386.0,
+      "tail_s": 2999.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 135,
+      "pr": 36693,
+      "repo": "denoland/deno",
+      "settle_s": 4700.0,
+      "signal_s": 2010.0,
+      "tail_s": 2690.0
+    },
+    {
+      "failed_jobs_in_round": 3,
+      "jobs_in_round": 135,
+      "pr": 36482,
+      "repo": "denoland/deno",
+      "settle_s": 5554.0,
+      "signal_s": 1738.0,
+      "tail_s": 3816.0
+    },
+    {
+      "failed_jobs_in_round": 3,
+      "jobs_in_round": 135,
+      "pr": 36482,
+      "repo": "denoland/deno",
+      "settle_s": 4613.0,
+      "signal_s": 1135.0,
+      "tail_s": 3478.0
+    },
+    {
+      "failed_jobs_in_round": 3,
+      "jobs_in_round": 135,
+      "pr": 36683,
+      "repo": "denoland/deno",
+      "settle_s": 4073.0,
+      "signal_s": 627.0,
+      "tail_s": 3446.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 135,
+      "pr": 36683,
+      "repo": "denoland/deno",
+      "settle_s": 4627.0,
+      "signal_s": 1205.0,
+      "tail_s": 3422.0
+    },
+    {
+      "failed_jobs_in_round": 16,
+      "jobs_in_round": 135,
+      "pr": 36400,
+      "repo": "denoland/deno",
+      "settle_s": 5081.0,
+      "signal_s": 494.0,
+      "tail_s": 4587.0
+    },
+    {
+      "failed_jobs_in_round": 15,
+      "jobs_in_round": 135,
+      "pr": 36400,
+      "repo": "denoland/deno",
+      "settle_s": 4638.0,
+      "signal_s": 489.0,
+      "tail_s": 4149.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 135,
+      "pr": 36680,
+      "repo": "denoland/deno",
+      "settle_s": 4864.0,
+      "signal_s": 367.0,
+      "tail_s": 4497.0
+    },
+    {
+      "failed_jobs_in_round": 4,
+      "jobs_in_round": 135,
+      "pr": 36680,
+      "repo": "denoland/deno",
+      "settle_s": 4044.0,
+      "signal_s": 366.0,
+      "tail_s": 3678.0
+    },
+    {
+      "failed_jobs_in_round": 4,
+      "jobs_in_round": 17,
+      "pr": 21748,
+      "repo": "python/mypy",
+      "settle_s": 1982.0,
+      "signal_s": 976.0,
+      "tail_s": 1006.0
+    },
+    {
+      "failed_jobs_in_round": 4,
+      "jobs_in_round": 17,
+      "pr": 21748,
+      "repo": "python/mypy",
+      "settle_s": 2127.0,
+      "signal_s": 978.0,
+      "tail_s": 1149.0
+    },
+    {
+      "failed_jobs_in_round": 5,
+      "jobs_in_round": 17,
+      "pr": 21876,
+      "repo": "python/mypy",
+      "settle_s": 2239.0,
+      "signal_s": 298.0,
+      "tail_s": 1941.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 17,
+      "pr": 21877,
+      "repo": "python/mypy",
+      "settle_s": 2180.0,
+      "signal_s": 1108.0,
+      "tail_s": 1072.0
+    },
+    {
+      "failed_jobs_in_round": 7,
+      "jobs_in_round": 24,
+      "pr": 21702,
+      "repo": "python/mypy",
+      "settle_s": 2002.0,
+      "signal_s": 746.0,
+      "tail_s": 1256.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 14,
+      "pr": 18127,
+      "repo": "sveltejs/svelte",
+      "settle_s": 231.0,
+      "signal_s": 45.0,
+      "tail_s": 186.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 9,
+      "pr": 18752,
+      "repo": "sveltejs/svelte",
+      "settle_s": 306.0,
+      "signal_s": 25.0,
+      "tail_s": 281.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 9,
+      "pr": 18738,
+      "repo": "sveltejs/svelte",
+      "settle_s": 300.0,
+      "signal_s": 269.0,
+      "tail_s": 31.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 9,
+      "pr": 18728,
+      "repo": "sveltejs/svelte",
+      "settle_s": 338.0,
+      "signal_s": 338.0,
+      "tail_s": 0.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 9,
+      "pr": 18722,
+      "repo": "sveltejs/svelte",
+      "settle_s": 325.0,
+      "signal_s": 121.0,
+      "tail_s": 204.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 9,
+      "pr": 18703,
+      "repo": "sveltejs/svelte",
+      "settle_s": 311.0,
+      "signal_s": 23.0,
+      "tail_s": 288.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 13,
+      "pr": 18466,
+      "repo": "sveltejs/svelte",
+      "settle_s": 316.0,
+      "signal_s": 26.0,
+      "tail_s": 290.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 13,
+      "pr": 18495,
+      "repo": "sveltejs/svelte",
+      "settle_s": 334.0,
+      "signal_s": 17.0,
+      "tail_s": 317.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 9,
+      "pr": 18641,
+      "repo": "sveltejs/svelte",
+      "settle_s": 317.0,
+      "signal_s": 243.0,
+      "tail_s": 74.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 9,
+      "pr": 18641,
+      "repo": "sveltejs/svelte",
+      "settle_s": 1065.0,
+      "signal_s": 1065.0,
+      "tail_s": 0.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 33,
+      "pr": 29452,
+      "repo": "pola-rs/polars",
+      "settle_s": 12167.0,
+      "signal_s": 1577.0,
+      "tail_s": 10590.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 34,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "settle_s": 747.0,
+      "signal_s": 295.0,
+      "tail_s": 452.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 32,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "settle_s": 790.0,
+      "signal_s": 66.0,
+      "tail_s": 724.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 32,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "settle_s": 419.0,
+      "signal_s": 34.0,
+      "tail_s": 385.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 32,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "settle_s": 598.0,
+      "signal_s": 38.0,
+      "tail_s": 560.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 32,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "settle_s": 339.0,
+      "signal_s": 33.0,
+      "tail_s": 306.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 33,
+      "pr": 29416,
+      "repo": "pola-rs/polars",
+      "settle_s": 314.0,
+      "signal_s": 11.0,
+      "tail_s": 303.0
+    },
+    {
+      "failed_jobs_in_round": 5,
+      "jobs_in_round": 34,
+      "pr": 29397,
+      "repo": "pola-rs/polars",
+      "settle_s": 1530.0,
+      "signal_s": 167.0,
+      "tail_s": 1363.0
+    },
+    {
+      "failed_jobs_in_round": 3,
+      "jobs_in_round": 32,
+      "pr": 29397,
+      "repo": "pola-rs/polars",
+      "settle_s": 527.0,
+      "signal_s": 164.0,
+      "tail_s": 363.0
+    },
+    {
+      "failed_jobs_in_round": 5,
+      "jobs_in_round": 32,
+      "pr": 29397,
+      "repo": "pola-rs/polars",
+      "settle_s": 699.0,
+      "signal_s": 162.0,
+      "tail_s": 537.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 32,
+      "pr": 29397,
+      "repo": "pola-rs/polars",
+      "settle_s": 373.0,
+      "signal_s": 165.0,
+      "tail_s": 208.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 32,
+      "pr": 29397,
+      "repo": "pola-rs/polars",
+      "settle_s": 6489.0,
+      "signal_s": 747.0,
+      "tail_s": 5742.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 27,
+      "pr": 29386,
+      "repo": "pola-rs/polars",
+      "settle_s": 4991.0,
+      "signal_s": 1628.0,
+      "tail_s": 3363.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 2,
+      "pr": 29370,
+      "repo": "pola-rs/polars",
+      "settle_s": 16.0,
+      "signal_s": 12.0,
+      "tail_s": 4.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 2,
+      "pr": 29370,
+      "repo": "pola-rs/polars",
+      "settle_s": 286.0,
+      "signal_s": 137.0,
+      "tail_s": 149.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 2,
+      "pr": 29288,
+      "repo": "pola-rs/polars",
+      "settle_s": 10.0,
+      "signal_s": 9.0,
+      "tail_s": 1.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 33,
+      "pr": 29371,
+      "repo": "pola-rs/polars",
+      "settle_s": 1492.0,
+      "signal_s": 344.0,
+      "tail_s": 1148.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 4,
+      "pr": 29367,
+      "repo": "pola-rs/polars",
+      "settle_s": 238.0,
+      "signal_s": 10.0,
+      "tail_s": 228.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 28,
+      "pr": 29349,
+      "repo": "pola-rs/polars",
+      "settle_s": 1568.0,
+      "signal_s": 1232.0,
+      "tail_s": 336.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 36,
+      "pr": 29352,
+      "repo": "pola-rs/polars",
+      "settle_s": 880.0,
+      "signal_s": 236.0,
+      "tail_s": 644.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 2,
+      "pr": 29312,
+      "repo": "pola-rs/polars",
+      "settle_s": 385.0,
+      "signal_s": 141.0,
+      "tail_s": 244.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 2,
+      "pr": 29312,
+      "repo": "pola-rs/polars",
+      "settle_s": 202.0,
+      "signal_s": 139.0,
+      "tail_s": 63.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 32,
+      "pr": 29312,
+      "repo": "pola-rs/polars",
+      "settle_s": 5212.0,
+      "signal_s": 10.0,
+      "tail_s": 5202.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 34,
+      "pr": 29304,
+      "repo": "pola-rs/polars",
+      "settle_s": 1523.0,
+      "signal_s": 29.0,
+      "tail_s": 1494.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 32,
+      "pr": 29304,
+      "repo": "pola-rs/polars",
+      "settle_s": 1073.0,
+      "signal_s": 30.0,
+      "tail_s": 1043.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 32,
+      "pr": 29304,
+      "repo": "pola-rs/polars",
+      "settle_s": 30531.0,
+      "signal_s": 27.0,
+      "tail_s": 30504.0
+    },
+    {
+      "failed_jobs_in_round": 6,
+      "jobs_in_round": 36,
+      "pr": 29280,
+      "repo": "pola-rs/polars",
+      "settle_s": 26236.0,
+      "signal_s": 23282.0,
+      "tail_s": 2954.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 36,
+      "pr": 29243,
+      "repo": "pola-rs/polars",
+      "settle_s": 511.0,
+      "signal_s": 38.0,
+      "tail_s": 473.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 31,
+      "pr": 29243,
+      "repo": "pola-rs/polars",
+      "settle_s": 142.0,
+      "signal_s": 57.0,
+      "tail_s": 85.0
+    },
+    {
+      "failed_jobs_in_round": 1,
+      "jobs_in_round": 33,
+      "pr": 29278,
+      "repo": "pola-rs/polars",
+      "settle_s": 12597.0,
+      "signal_s": 12.0,
+      "tail_s": 12585.0
+    },
+    {
+      "failed_jobs_in_round": 2,
+      "jobs_in_round": 33,
+      "pr": 29289,
+      "repo": "pola-rs/polars",
+      "settle_s": 264.0,
+      "signal_s": 9.0,
+      "tail_s": 255.0
+    }
+  ],
+  "summary": {
+    "mean_tail_as_fraction_of_settle": 0.6651,
+    "measured": true,
+    "multi_run_red_rounds_found": 68,
+    "repos": [
+      "microsoft/vscode",
+      "denoland/deno",
+      "python/mypy",
+      "sveltejs/svelte",
+      "pola-rs/polars"
+    ],
+    "rounds_with_no_tail_fraction": 0.0441,
+    "settle_s": {
+      "mean": 2996.0,
+      "median": 1489.0,
+      "p90": 5212.0
+    },
+    "signal_s": {
+      "mean": 858.2,
+      "median": 296.5,
+      "p90": 1577.0
+    },
+    "tail_s": {
+      "mean": 2137.8,
+      "median": 704.5,
+      "p90": 4497.0
+    }
+  }
+}
