@@ -57,6 +57,8 @@ seconds. Thirty seconds is not established across environments.
 | What does exact-input reuse survive across a rebase? | [Rebase reuse](experiments/rebase-reuse/): replaying real pytest commit stacks onto a later real base, 66.7% of the tasks a stack itself touches still hash-identical after rebase; 70% of sampled rebases conflicted outright. |
 | Does a manifest's declared inputs miss what a task actually reads? | [Input drift](experiments/input-drift/): tracing real file opens finds zero undeclared reads across this repo's own manifest, and correctly flags a seeded missing import in a fixture. |
 | What does a quarantine policy save, and does it hide real failures? | [Flake accounting](experiments/flake-accounting/): from repeated real runs, quarantining after a flip saves 78.4% of a flaky task's CI runs while never triggering on a deterministic failure. |
+| Does test order change how fast an agent sees the first real failure? | [Failure ordering](experiments/failure-ordering/): five real orderings against a real pytest regression; every alternative to default collection order reaches the failure 5.9x-11.5x faster in wall time, real `-x` runs on a 4,556-test suite. |
+| How much of a failing CI log does an agent need to read to localize it? | [Failure context budget](experiments/failure-context-budget/): on the same real regression, reading a real log from the bottom instead of the top cuts the lines needed to identify the failing test 26x (long traceback) to 6.8x (`--tb=line`); a naive whole-JUnit-XML dump is larger than either raw log. |
 
 The [design argument](docs/verification.md) connects the measurements to primary
 research and identifies the assumptions that still need to hold in a real system.

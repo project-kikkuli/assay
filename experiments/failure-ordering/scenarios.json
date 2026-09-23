@@ -1,0 +1,28 @@
+{
+  "target": {
+    "base_ref": "b0de7356b509ed01777a485662e05a9dc8e23c67~1",
+    "overlay_ref": "b0de7356b509ed01777a485662e05a9dc8e23c67",
+    "overlay_paths": ["testing/python/approx.py"],
+    "description": "pytest #14934: approx() silently compared mismatched nested container types instead of raising. base_ref is the real pre-fix commit; overlay_ref's real regression test is applied on top of it, unmodified."
+  },
+  "priors": [
+    {
+      "base_ref": "4b5048b7a4ecb58fee453fa3a65dac3f173e3ff0",
+      "overlay_ref": "b0de7356b509ed01777a485662e05a9dc8e23c67",
+      "overlay_paths": ["testing/python/approx.py"],
+      "description": "Same #14934 bug, 60 real commits further back in history, still unfixed: the recurring-regression case."
+    },
+    {
+      "base_ref": "0c601d510c6ba370fa89d6e019cf43e2d02d22d0~1",
+      "overlay_ref": "0c601d510c6ba370fa89d6e019cf43e2d02d22d0",
+      "overlay_paths": ["testing/test_monkeypatch.py"],
+      "description": "pytest fix(monkeypatch): don't leave inherited attributes in the instance dict after undo() -- an unrelated real bug, different file."
+    },
+    {
+      "base_ref": "09d0020ff205d1166b9b541efccf19333ca69c3a~1",
+      "overlay_ref": "09d0020ff205d1166b9b541efccf19333ca69c3a",
+      "overlay_paths": ["testing/python/fixtures.py", "testing/python/show_fixtures_per_test.py"],
+      "description": "pytest fixtures: fix lineno off-by-one in --fixtures/--fixtures-per-test -- another unrelated real bug, different files."
+    }
+  ]
+}

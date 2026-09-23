@@ -1,0 +1,169 @@
+{
+  "base_sha": "75e6815c55ac66dacf033ababa40c2a91b82e99c",
+  "failure_count": 11,
+  "junit_total_chars": 549395,
+  "junit_total_failure_chars": 13778,
+  "line_log_total_chars": 8812,
+  "line_log_total_lines": 108,
+  "line_returncode": 1,
+  "long_log_total_chars": 21154,
+  "long_log_total_lines": 387,
+  "long_returncode": 1,
+  "measured": true,
+  "per_failure": {
+    "testing/python/approx.py::TestApprox::test_expected_value_type_error[dict-of-list]": {
+      "exception_type": "Failed",
+      "junit_failure_chars": 1231,
+      "line_log_which_test_from_bottom": 15,
+      "line_log_which_test_from_top": 94,
+      "line_log_why_from_top": 66,
+      "long_log_which_test_from_bottom": 15,
+      "long_log_which_test_from_top": 373,
+      "long_log_why_from_top": 90
+    },
+    "testing/python/approx.py::TestApprox::test_expected_value_type_error[dict-of-set]": {
+      "exception_type": "Failed",
+      "junit_failure_chars": 1231,
+      "line_log_which_test_from_bottom": 13,
+      "line_log_which_test_from_top": 96,
+      "line_log_why_from_top": 66,
+      "long_log_which_test_from_bottom": 13,
+      "long_log_which_test_from_top": 375,
+      "long_log_why_from_top": 90
+    },
+    "testing/python/approx.py::TestApprox::test_expected_value_type_error[dict-of-tuple]": {
+      "exception_type": "Failed",
+      "junit_failure_chars": 1232,
+      "line_log_which_test_from_bottom": 14,
+      "line_log_which_test_from_top": 95,
+      "line_log_why_from_top": 66,
+      "long_log_which_test_from_bottom": 14,
+      "long_log_which_test_from_top": 374,
+      "long_log_why_from_top": 90
+    },
+    "testing/python/approx.py::TestApprox::test_expected_value_type_error[list-of-dict]": {
+      "exception_type": "Failed",
+      "junit_failure_chars": 1234,
+      "line_log_which_test_from_bottom": 17,
+      "line_log_which_test_from_top": 92,
+      "line_log_why_from_top": 66,
+      "long_log_which_test_from_bottom": 17,
+      "long_log_which_test_from_top": 371,
+      "long_log_why_from_top": 90
+    },
+    "testing/python/approx.py::TestApprox::test_expected_value_type_error[list-of-set]": {
+      "exception_type": "Failed",
+      "junit_failure_chars": 1227,
+      "line_log_which_test_from_bottom": 18,
+      "line_log_which_test_from_top": 91,
+      "line_log_why_from_top": 66,
+      "long_log_which_test_from_bottom": 18,
+      "long_log_which_test_from_top": 370,
+      "long_log_why_from_top": 90
+    },
+    "testing/python/approx.py::TestApprox::test_expected_value_type_error[list-of-tuple]": {
+      "exception_type": "Failed",
+      "junit_failure_chars": 1228,
+      "line_log_which_test_from_bottom": 19,
+      "line_log_which_test_from_top": 90,
+      "line_log_why_from_top": 66,
+      "long_log_which_test_from_bottom": 19,
+      "long_log_which_test_from_top": 369,
+      "long_log_why_from_top": 90
+    },
+    "testing/python/approx.py::TestApprox::test_expected_value_type_error[tuple-of-dict]": {
+      "exception_type": "Failed",
+      "junit_failure_chars": 1235,
+      "line_log_which_test_from_bottom": 16,
+      "line_log_which_test_from_top": 93,
+      "line_log_why_from_top": 66,
+      "long_log_which_test_from_bottom": 16,
+      "long_log_which_test_from_top": 372,
+      "long_log_why_from_top": 90
+    },
+    "testing/python/approx.py::TestApprox::test_mixed_nested_containers_raise_instead_of_comparing_unequal[dict-of-list]": {
+      "exception_type": "Failed",
+      "junit_failure_chars": 1296,
+      "line_log_which_test_from_bottom": 11,
+      "line_log_which_test_from_top": 98,
+      "line_log_why_from_top": 66,
+      "long_log_which_test_from_bottom": 11,
+      "long_log_which_test_from_top": 377,
+      "long_log_why_from_top": 90
+    },
+    "testing/python/approx.py::TestApprox::test_mixed_nested_containers_raise_instead_of_comparing_unequal[list-of-dict]": {
+      "exception_type": "Failed",
+      "junit_failure_chars": 1296,
+      "line_log_which_test_from_bottom": 12,
+      "line_log_which_test_from_top": 97,
+      "line_log_why_from_top": 66,
+      "long_log_which_test_from_bottom": 12,
+      "long_log_which_test_from_top": 376,
+      "long_log_why_from_top": 90
+    },
+    "testing/python/approx.py::TestApprox::test_mixed_nested_containers_raise_instead_of_comparing_unequal[list-of-tuple]": {
+      "exception_type": "Failed",
+      "junit_failure_chars": 1284,
+      "line_log_which_test_from_bottom": 10,
+      "line_log_which_test_from_top": 99,
+      "line_log_why_from_top": 66,
+      "long_log_which_test_from_bottom": 10,
+      "long_log_which_test_from_top": 378,
+      "long_log_why_from_top": 90
+    },
+    "testing/python/approx.py::TestApprox::test_mixed_nested_containers_raise_instead_of_comparing_unequal[tuple-of-set]": {
+      "exception_type": "Failed",
+      "junit_failure_chars": 1284,
+      "line_log_which_test_from_bottom": 9,
+      "line_log_which_test_from_top": 100,
+      "line_log_why_from_top": 66,
+      "long_log_which_test_from_bottom": 9,
+      "long_log_which_test_from_top": 379,
+      "long_log_why_from_top": 90
+    }
+  },
+  "summary": {
+    "line_log_which_test_from_bottom": {
+      "found_for": 11,
+      "max": 19,
+      "median": 14,
+      "min": 9,
+      "of": 11
+    },
+    "line_log_which_test_from_top": {
+      "found_for": 11,
+      "max": 100,
+      "median": 95,
+      "min": 90,
+      "of": 11
+    },
+    "line_log_why_from_top": {
+      "found_for": 11,
+      "max": 66,
+      "median": 66,
+      "min": 66,
+      "of": 11
+    },
+    "long_log_which_test_from_bottom": {
+      "found_for": 11,
+      "max": 19,
+      "median": 14,
+      "min": 9,
+      "of": 11
+    },
+    "long_log_which_test_from_top": {
+      "found_for": 11,
+      "max": 379,
+      "median": 374,
+      "min": 369,
+      "of": 11
+    },
+    "long_log_why_from_top": {
+      "found_for": 11,
+      "max": 90,
+      "median": 90,
+      "min": 90,
+      "of": 11
+    }
+  }
+}
