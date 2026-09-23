@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Seeded manifest drift fixture",
+  "tasks": [
+    {
+      "id": "greet-contracts",
+      "description": "Deliberately omits pkg/helper.py, which pkg/main.py imports, from declared inputs",
+      "command": ["{python}", "-m", "unittest", "discover", "-s", "tests", "-p", "test_main.py", "-v"],
+      "inputs": ["pkg/main.py", "pkg/__init__.py", "tests/test_main.py"],
+      "timeout_s": 15,
+      "source": ["pkg/main.py", "tests/test_main.py"]
+    }
+  ]
+}
