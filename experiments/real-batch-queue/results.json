@@ -1,0 +1,945 @@
+{
+  "runs": {
+    "parallel_batched": {
+      "batches": [
+        {
+          "batch_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "finish_s": 10.3627,
+          "jobs": 7,
+          "real_cpu_s": 8.4659,
+          "start_s": 0.0002,
+          "verdicts": [
+            {
+              "index": 0,
+              "passed": true
+            },
+            {
+              "index": 1,
+              "passed": true
+            },
+            {
+              "index": 2,
+              "passed": false
+            },
+            {
+              "index": 3,
+              "passed": true
+            },
+            {
+              "index": 4,
+              "passed": true
+            },
+            {
+              "index": 5,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "finish_s": 0.5627,
+          "jobs": 1,
+          "real_cpu_s": 0.539,
+          "start_s": 0.0013,
+          "verdicts": [
+            {
+              "index": 6,
+              "passed": true
+            },
+            {
+              "index": 7,
+              "passed": true
+            },
+            {
+              "index": 8,
+              "passed": true
+            },
+            {
+              "index": 9,
+              "passed": true
+            },
+            {
+              "index": 10,
+              "passed": true
+            },
+            {
+              "index": 11,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "finish_s": 10.3084,
+          "jobs": 7,
+          "real_cpu_s": 8.4374,
+          "start_s": 0.0025,
+          "verdicts": [
+            {
+              "index": 12,
+              "passed": true
+            },
+            {
+              "index": 13,
+              "passed": true
+            },
+            {
+              "index": 14,
+              "passed": true
+            },
+            {
+              "index": 15,
+              "passed": true
+            },
+            {
+              "index": 16,
+              "passed": true
+            },
+            {
+              "index": 17,
+              "passed": false
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "finish_s": 0.5619,
+          "jobs": 1,
+          "real_cpu_s": 0.5397,
+          "start_s": 0.0038,
+          "verdicts": [
+            {
+              "index": 18,
+              "passed": true
+            },
+            {
+              "index": 19,
+              "passed": true
+            },
+            {
+              "index": 20,
+              "passed": true
+            },
+            {
+              "index": 21,
+              "passed": true
+            },
+            {
+              "index": 22,
+              "passed": true
+            },
+            {
+              "index": 23,
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "makespan_s": 10.3627,
+      "total_jobs": 16,
+      "total_real_cpu_s": 17.982
+    },
+    "parallel_unbatched": {
+      "batches": [
+        {
+          "batch_indices": [
+            0
+          ],
+          "finish_s": 0.688,
+          "jobs": 1,
+          "real_cpu_s": 0.6659,
+          "start_s": 0.0002,
+          "verdicts": [
+            {
+              "index": 0,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            1
+          ],
+          "finish_s": 0.6785,
+          "jobs": 1,
+          "real_cpu_s": 0.6528,
+          "start_s": 0.0012,
+          "verdicts": [
+            {
+              "index": 1,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            2
+          ],
+          "finish_s": 4.7714,
+          "jobs": 1,
+          "real_cpu_s": 2.1546,
+          "start_s": 0.0013,
+          "verdicts": [
+            {
+              "index": 2,
+              "passed": false
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            3
+          ],
+          "finish_s": 0.6751,
+          "jobs": 1,
+          "real_cpu_s": 0.6476,
+          "start_s": 0.0039,
+          "verdicts": [
+            {
+              "index": 3,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            4
+          ],
+          "finish_s": 1.2026,
+          "jobs": 1,
+          "real_cpu_s": 0.5061,
+          "start_s": 0.6751,
+          "verdicts": [
+            {
+              "index": 4,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            5
+          ],
+          "finish_s": 1.2041,
+          "jobs": 1,
+          "real_cpu_s": 0.5063,
+          "start_s": 0.6785,
+          "verdicts": [
+            {
+              "index": 5,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            6
+          ],
+          "finish_s": 1.1951,
+          "jobs": 1,
+          "real_cpu_s": 0.4913,
+          "start_s": 0.688,
+          "verdicts": [
+            {
+              "index": 6,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            7
+          ],
+          "finish_s": 1.7769,
+          "jobs": 1,
+          "real_cpu_s": 0.5697,
+          "start_s": 1.1952,
+          "verdicts": [
+            {
+              "index": 7,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            8
+          ],
+          "finish_s": 1.795,
+          "jobs": 1,
+          "real_cpu_s": 0.5752,
+          "start_s": 1.2027,
+          "verdicts": [
+            {
+              "index": 8,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            9
+          ],
+          "finish_s": 1.7781,
+          "jobs": 1,
+          "real_cpu_s": 0.5624,
+          "start_s": 1.2041,
+          "verdicts": [
+            {
+              "index": 9,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            10
+          ],
+          "finish_s": 2.5957,
+          "jobs": 1,
+          "real_cpu_s": 0.8024,
+          "start_s": 1.7769,
+          "verdicts": [
+            {
+              "index": 10,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            11
+          ],
+          "finish_s": 2.6213,
+          "jobs": 1,
+          "real_cpu_s": 0.8265,
+          "start_s": 1.7781,
+          "verdicts": [
+            {
+              "index": 11,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            12
+          ],
+          "finish_s": 2.6405,
+          "jobs": 1,
+          "real_cpu_s": 0.8211,
+          "start_s": 1.795,
+          "verdicts": [
+            {
+              "index": 12,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            13
+          ],
+          "finish_s": 3.6433,
+          "jobs": 1,
+          "real_cpu_s": 1.0248,
+          "start_s": 2.5957,
+          "verdicts": [
+            {
+              "index": 13,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            14
+          ],
+          "finish_s": 3.6309,
+          "jobs": 1,
+          "real_cpu_s": 0.9812,
+          "start_s": 2.6214,
+          "verdicts": [
+            {
+              "index": 14,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            15
+          ],
+          "finish_s": 3.6414,
+          "jobs": 1,
+          "real_cpu_s": 0.9764,
+          "start_s": 2.6405,
+          "verdicts": [
+            {
+              "index": 15,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            16
+          ],
+          "finish_s": 4.2028,
+          "jobs": 1,
+          "real_cpu_s": 0.5497,
+          "start_s": 3.6309,
+          "verdicts": [
+            {
+              "index": 16,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            17
+          ],
+          "finish_s": 8.5475,
+          "jobs": 1,
+          "real_cpu_s": 2.9014,
+          "start_s": 3.6414,
+          "verdicts": [
+            {
+              "index": 17,
+              "passed": false
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            18
+          ],
+          "finish_s": 4.2824,
+          "jobs": 1,
+          "real_cpu_s": 0.581,
+          "start_s": 3.6434,
+          "verdicts": [
+            {
+              "index": 18,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            19
+          ],
+          "finish_s": 4.8042,
+          "jobs": 1,
+          "real_cpu_s": 0.5715,
+          "start_s": 4.2028,
+          "verdicts": [
+            {
+              "index": 19,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            20
+          ],
+          "finish_s": 4.8549,
+          "jobs": 1,
+          "real_cpu_s": 0.5559,
+          "start_s": 4.2825,
+          "verdicts": [
+            {
+              "index": 20,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            21
+          ],
+          "finish_s": 5.7483,
+          "jobs": 1,
+          "real_cpu_s": 0.9596,
+          "start_s": 4.7715,
+          "verdicts": [
+            {
+              "index": 21,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            22
+          ],
+          "finish_s": 5.8646,
+          "jobs": 1,
+          "real_cpu_s": 1.0399,
+          "start_s": 4.8042,
+          "verdicts": [
+            {
+              "index": 22,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            23
+          ],
+          "finish_s": 6.1366,
+          "jobs": 1,
+          "real_cpu_s": 1.2551,
+          "start_s": 4.8549,
+          "verdicts": [
+            {
+              "index": 23,
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "makespan_s": 8.5475,
+      "total_jobs": 24,
+      "total_real_cpu_s": 21.1784
+    },
+    "serial": {
+      "batches": [
+        {
+          "batch_indices": [
+            0
+          ],
+          "finish_s": 0.5567,
+          "jobs": 1,
+          "real_cpu_s": 0.5285,
+          "start_s": 0.0002,
+          "verdicts": [
+            {
+              "index": 0,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            1
+          ],
+          "finish_s": 1.061,
+          "jobs": 1,
+          "real_cpu_s": 0.4855,
+          "start_s": 0.5568,
+          "verdicts": [
+            {
+              "index": 1,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            2
+          ],
+          "finish_s": 5.5887,
+          "jobs": 1,
+          "real_cpu_s": 2.6436,
+          "start_s": 1.0611,
+          "verdicts": [
+            {
+              "index": 2,
+              "passed": false
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            3
+          ],
+          "finish_s": 6.0728,
+          "jobs": 1,
+          "real_cpu_s": 0.47,
+          "start_s": 5.5887,
+          "verdicts": [
+            {
+              "index": 3,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            4
+          ],
+          "finish_s": 6.5526,
+          "jobs": 1,
+          "real_cpu_s": 0.4683,
+          "start_s": 6.0728,
+          "verdicts": [
+            {
+              "index": 4,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            5
+          ],
+          "finish_s": 7.0335,
+          "jobs": 1,
+          "real_cpu_s": 0.4628,
+          "start_s": 6.5527,
+          "verdicts": [
+            {
+              "index": 5,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            6
+          ],
+          "finish_s": 7.53,
+          "jobs": 1,
+          "real_cpu_s": 0.4844,
+          "start_s": 7.0336,
+          "verdicts": [
+            {
+              "index": 6,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            7
+          ],
+          "finish_s": 8.0221,
+          "jobs": 1,
+          "real_cpu_s": 0.4783,
+          "start_s": 7.5301,
+          "verdicts": [
+            {
+              "index": 7,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            8
+          ],
+          "finish_s": 8.5283,
+          "jobs": 1,
+          "real_cpu_s": 0.4826,
+          "start_s": 8.0222,
+          "verdicts": [
+            {
+              "index": 8,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            9
+          ],
+          "finish_s": 9.0167,
+          "jobs": 1,
+          "real_cpu_s": 0.4649,
+          "start_s": 8.5284,
+          "verdicts": [
+            {
+              "index": 9,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            10
+          ],
+          "finish_s": 9.507,
+          "jobs": 1,
+          "real_cpu_s": 0.4755,
+          "start_s": 9.0167,
+          "verdicts": [
+            {
+              "index": 10,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            11
+          ],
+          "finish_s": 10.0053,
+          "jobs": 1,
+          "real_cpu_s": 0.4758,
+          "start_s": 9.5071,
+          "verdicts": [
+            {
+              "index": 11,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            12
+          ],
+          "finish_s": 10.4832,
+          "jobs": 1,
+          "real_cpu_s": 0.4638,
+          "start_s": 10.0054,
+          "verdicts": [
+            {
+              "index": 12,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            13
+          ],
+          "finish_s": 10.9593,
+          "jobs": 1,
+          "real_cpu_s": 0.4635,
+          "start_s": 10.4833,
+          "verdicts": [
+            {
+              "index": 13,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            14
+          ],
+          "finish_s": 11.4398,
+          "jobs": 1,
+          "real_cpu_s": 0.47,
+          "start_s": 10.9593,
+          "verdicts": [
+            {
+              "index": 14,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            15
+          ],
+          "finish_s": 11.9304,
+          "jobs": 1,
+          "real_cpu_s": 0.4775,
+          "start_s": 11.4399,
+          "verdicts": [
+            {
+              "index": 15,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            16
+          ],
+          "finish_s": 12.4262,
+          "jobs": 1,
+          "real_cpu_s": 0.4794,
+          "start_s": 11.9305,
+          "verdicts": [
+            {
+              "index": 16,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            17
+          ],
+          "finish_s": 15.9048,
+          "jobs": 1,
+          "real_cpu_s": 1.7382,
+          "start_s": 12.4263,
+          "verdicts": [
+            {
+              "index": 17,
+              "passed": false
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            18
+          ],
+          "finish_s": 16.4058,
+          "jobs": 1,
+          "real_cpu_s": 0.4757,
+          "start_s": 15.9048,
+          "verdicts": [
+            {
+              "index": 18,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            19
+          ],
+          "finish_s": 16.905,
+          "jobs": 1,
+          "real_cpu_s": 0.4847,
+          "start_s": 16.4059,
+          "verdicts": [
+            {
+              "index": 19,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            20
+          ],
+          "finish_s": 17.3933,
+          "jobs": 1,
+          "real_cpu_s": 0.4743,
+          "start_s": 16.9051,
+          "verdicts": [
+            {
+              "index": 20,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            21
+          ],
+          "finish_s": 17.8742,
+          "jobs": 1,
+          "real_cpu_s": 0.4681,
+          "start_s": 17.3934,
+          "verdicts": [
+            {
+              "index": 21,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            22
+          ],
+          "finish_s": 18.3628,
+          "jobs": 1,
+          "real_cpu_s": 0.4748,
+          "start_s": 17.8742,
+          "verdicts": [
+            {
+              "index": 22,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "batch_indices": [
+            23
+          ],
+          "finish_s": 18.8472,
+          "jobs": 1,
+          "real_cpu_s": 0.4673,
+          "start_s": 18.3628,
+          "verdicts": [
+            {
+              "index": 23,
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "makespan_s": 18.8472,
+      "total_jobs": 24,
+      "total_real_cpu_s": 14.8575
+    }
+  },
+  "summary": {
+    "batch_size": 6,
+    "commits": 24,
+    "measured": true,
+    "mutated_count": 2,
+    "regimes": {
+      "parallel_Nworkers_batch1": {
+        "makespan_s": 8.5475,
+        "mean_convergence_s": 3.2908,
+        "p95_convergence_s": 5.8646,
+        "prs_resolved": 24,
+        "rejected_count": 2,
+        "total_jobs": 24,
+        "total_real_cpu_s": 21.1784,
+        "verdict_mismatches": 0
+      },
+      "parallel_Nworkers_batchN": {
+        "makespan_s": 10.3627,
+        "mean_convergence_s": 5.4489,
+        "p95_convergence_s": 10.3627,
+        "prs_resolved": 24,
+        "rejected_count": 2,
+        "total_jobs": 16,
+        "total_real_cpu_s": 17.982,
+        "verdict_mismatches": 0
+      },
+      "serial_1worker_batch1": {
+        "makespan_s": 18.8472,
+        "mean_convergence_s": 10.7669,
+        "p95_convergence_s": 17.8742,
+        "prs_resolved": 24,
+        "rejected_count": 2,
+        "total_jobs": 24,
+        "total_real_cpu_s": 14.8575,
+        "verdict_mismatches": 0
+      }
+    },
+    "repo": "https://github.com/pallets/itsdangerous",
+    "workers": 4
+  }
+}

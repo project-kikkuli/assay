@@ -1,0 +1,336 @@
+{
+  "scenarios": [
+    {
+      "base_ref": "b0de7356b509ed01777a485662e05a9dc8e23c67~1",
+      "corrected_python_files_manifest": {
+        "hit": true,
+        "selected_count": 2,
+        "selected_tasks": [
+          "testing/python/approx.py",
+          "testing/test_reports.py"
+        ],
+        "task_count_total": 116
+      },
+      "description": "pytest #14934: approx() silently compared mismatched nested container types instead of raising. base_ref is the real pre-fix commit; overlay_ref's real regression test is applied on top of it, unmodified.",
+      "naive_test_star_manifest": {
+        "hit": false,
+        "selected_count": 1,
+        "selected_tasks": [
+          "testing/test_reports.py"
+        ],
+        "task_count_total": 105
+      },
+      "overlay_ref": "b0de7356b509ed01777a485662e05a9dc8e23c67",
+      "real_base_sha": "75e6815c55ac66dacf033ababa40c2a91b82e99c",
+      "real_full_suite_test_count": 4543,
+      "real_regression_test_files": [
+        "testing/python/approx.py"
+      ],
+      "real_selected_execution_s": 0.8029,
+      "real_selected_test_count": 159,
+      "source_only_diff": [
+        "src/_pytest/approx.py"
+      ]
+    },
+    {
+      "base_ref": "4b5048b7a4ecb58fee453fa3a65dac3f173e3ff0",
+      "corrected_python_files_manifest": {
+        "hit": true,
+        "selected_count": 59,
+        "selected_tasks": [
+          "testing/acceptance_test.py",
+          "testing/code/test_code.py",
+          "testing/code/test_excinfo.py",
+          "testing/code/test_source.py",
+          "testing/deprecated_test.py",
+          "testing/examples/test_issue519.py",
+          "testing/logging/test_fixture.py",
+          "testing/logging/test_reporting.py",
+          "testing/python/approx.py",
+          "testing/python/collect.py",
+          "testing/python/fixtures.py",
+          "testing/python/integration.py",
+          "testing/python/metafunc.py",
+          "testing/python/raises.py",
+          "testing/python/raises_group.py",
+          "testing/python/show_fixtures_per_test.py",
+          "testing/test_assertion.py",
+          "testing/test_assertrewrite.py",
+          "testing/test_cacheprovider.py",
+          "testing/test_capture.py",
+          "testing/test_collect_imported_tests.py",
+          "testing/test_collection.py",
+          "testing/test_config.py",
+          "testing/test_conftest.py",
+          "testing/test_debugging.py",
+          "testing/test_doctest.py",
+          "testing/test_error_diffs.py",
+          "testing/test_faulthandler.py",
+          "testing/test_findpaths.py",
+          "testing/test_helpconfig.py",
+          "testing/test_junitxml.py",
+          "testing/test_legacypath.py",
+          "testing/test_link_resolve.py",
+          "testing/test_main.py",
+          "testing/test_mark.py",
+          "testing/test_mark_expression.py",
+          "testing/test_monkeypatch.py",
+          "testing/test_nodes.py",
+          "testing/test_parseopt.py",
+          "testing/test_pastebin.py",
+          "testing/test_pathlib.py",
+          "testing/test_pluginmanager.py",
+          "testing/test_pytester.py",
+          "testing/test_python_path.py",
+          "testing/test_reports.py",
+          "testing/test_runner.py",
+          "testing/test_runner_xunit.py",
+          "testing/test_session.py",
+          "testing/test_setuponly.py",
+          "testing/test_setupplan.py",
+          "testing/test_skipping.py",
+          "testing/test_stepwise.py",
+          "testing/test_terminal.py",
+          "testing/test_threadexception.py",
+          "testing/test_tmpdir.py",
+          "testing/test_unittest.py",
+          "testing/test_unraisableexception.py",
+          "testing/test_warning_types.py",
+          "testing/test_warnings.py"
+        ],
+        "task_count_total": 115
+      },
+      "description": "Same #14934 bug, 60 real commits further back in history, still unfixed: the recurring-regression case.",
+      "naive_test_star_manifest": {
+        "hit": false,
+        "selected_count": 49,
+        "selected_tasks": [
+          "testing/code/test_code.py",
+          "testing/code/test_excinfo.py",
+          "testing/code/test_source.py",
+          "testing/examples/test_issue519.py",
+          "testing/logging/test_fixture.py",
+          "testing/logging/test_reporting.py",
+          "testing/test_assertion.py",
+          "testing/test_assertrewrite.py",
+          "testing/test_cacheprovider.py",
+          "testing/test_capture.py",
+          "testing/test_collect_imported_tests.py",
+          "testing/test_collection.py",
+          "testing/test_config.py",
+          "testing/test_conftest.py",
+          "testing/test_debugging.py",
+          "testing/test_doctest.py",
+          "testing/test_error_diffs.py",
+          "testing/test_faulthandler.py",
+          "testing/test_findpaths.py",
+          "testing/test_helpconfig.py",
+          "testing/test_junitxml.py",
+          "testing/test_legacypath.py",
+          "testing/test_link_resolve.py",
+          "testing/test_main.py",
+          "testing/test_mark.py",
+          "testing/test_mark_expression.py",
+          "testing/test_monkeypatch.py",
+          "testing/test_nodes.py",
+          "testing/test_parseopt.py",
+          "testing/test_pastebin.py",
+          "testing/test_pathlib.py",
+          "testing/test_pluginmanager.py",
+          "testing/test_pytester.py",
+          "testing/test_python_path.py",
+          "testing/test_reports.py",
+          "testing/test_runner.py",
+          "testing/test_runner_xunit.py",
+          "testing/test_session.py",
+          "testing/test_setuponly.py",
+          "testing/test_setupplan.py",
+          "testing/test_skipping.py",
+          "testing/test_stepwise.py",
+          "testing/test_terminal.py",
+          "testing/test_threadexception.py",
+          "testing/test_tmpdir.py",
+          "testing/test_unittest.py",
+          "testing/test_unraisableexception.py",
+          "testing/test_warning_types.py",
+          "testing/test_warnings.py"
+        ],
+        "task_count_total": 104
+      },
+      "overlay_ref": "b0de7356b509ed01777a485662e05a9dc8e23c67",
+      "real_base_sha": "4b5048b7a4ecb58fee453fa3a65dac3f173e3ff0",
+      "real_full_suite_test_count": 4420,
+      "real_regression_test_files": [
+        "testing/python/approx.py"
+      ],
+      "real_selected_execution_s": 90.9162,
+      "real_selected_test_count": 3868,
+      "source_only_diff": [
+        "src/_pytest/_code/code.py",
+        "src/_pytest/_code/source.py",
+        "src/_pytest/approx.py",
+        "src/_pytest/assertion/rewrite.py",
+        "src/_pytest/assertion/util.py",
+        "src/_pytest/cacheprovider.py",
+        "src/_pytest/capture.py",
+        "src/_pytest/config/__init__.py",
+        "src/_pytest/deprecated.py",
+        "src/_pytest/fixtures.py",
+        "src/_pytest/junitxml.py",
+        "src/_pytest/mark/__init__.py",
+        "src/_pytest/mark/expression.py",
+        "src/_pytest/nodes.py",
+        "src/_pytest/pathlib.py",
+        "src/_pytest/pytester.py",
+        "src/_pytest/skipping.py",
+        "src/_pytest/terminal.py",
+        "src/_pytest/threadexception.py",
+        "src/_pytest/unittest.py",
+        "src/_pytest/unraisableexception.py"
+      ]
+    },
+    {
+      "base_ref": "0c601d510c6ba370fa89d6e019cf43e2d02d22d0~1",
+      "corrected_python_files_manifest": {
+        "hit": true,
+        "selected_count": 26,
+        "selected_tasks": [
+          "testing/acceptance_test.py",
+          "testing/code/test_excinfo.py",
+          "testing/io/test_terminalwriter.py",
+          "testing/python/collect.py",
+          "testing/python/fixtures.py",
+          "testing/test_argcomplete.py",
+          "testing/test_assertion.py",
+          "testing/test_cacheprovider.py",
+          "testing/test_capture.py",
+          "testing/test_collection.py",
+          "testing/test_config.py",
+          "testing/test_conftest.py",
+          "testing/test_debugging.py",
+          "testing/test_junitxml.py",
+          "testing/test_monkeypatch.py",
+          "testing/test_parseopt.py",
+          "testing/test_pastebin.py",
+          "testing/test_pathlib.py",
+          "testing/test_pluginmanager.py",
+          "testing/test_pytester.py",
+          "testing/test_runner.py",
+          "testing/test_session.py",
+          "testing/test_stepwise.py",
+          "testing/test_terminal.py",
+          "testing/test_tmpdir.py",
+          "testing/test_unittest.py"
+        ],
+        "task_count_total": 116
+      },
+      "description": "pytest fix(monkeypatch): don't leave inherited attributes in the instance dict after undo() -- an unrelated real bug, different file.",
+      "naive_test_star_manifest": {
+        "hit": true,
+        "selected_count": 23,
+        "selected_tasks": [
+          "testing/code/test_excinfo.py",
+          "testing/io/test_terminalwriter.py",
+          "testing/test_argcomplete.py",
+          "testing/test_assertion.py",
+          "testing/test_cacheprovider.py",
+          "testing/test_capture.py",
+          "testing/test_collection.py",
+          "testing/test_config.py",
+          "testing/test_conftest.py",
+          "testing/test_debugging.py",
+          "testing/test_junitxml.py",
+          "testing/test_monkeypatch.py",
+          "testing/test_parseopt.py",
+          "testing/test_pastebin.py",
+          "testing/test_pathlib.py",
+          "testing/test_pluginmanager.py",
+          "testing/test_pytester.py",
+          "testing/test_runner.py",
+          "testing/test_session.py",
+          "testing/test_stepwise.py",
+          "testing/test_terminal.py",
+          "testing/test_tmpdir.py",
+          "testing/test_unittest.py"
+        ],
+        "task_count_total": 105
+      },
+      "overlay_ref": "0c601d510c6ba370fa89d6e019cf43e2d02d22d0",
+      "real_base_sha": "51e9a9f148cd2509a31e3fa0d2b1b3204c2b0dd7",
+      "real_full_suite_test_count": 4578,
+      "real_regression_test_files": [
+        "testing/test_monkeypatch.py"
+      ],
+      "real_selected_execution_s": 58.6459,
+      "real_selected_test_count": 2508,
+      "source_only_diff": [
+        "src/_pytest/monkeypatch.py"
+      ]
+    },
+    {
+      "base_ref": "09d0020ff205d1166b9b541efccf19333ca69c3a~1",
+      "corrected_python_files_manifest": {
+        "hit": true,
+        "selected_count": 7,
+        "selected_tasks": [
+          "testing/python/fixtures.py",
+          "testing/python/integration.py",
+          "testing/python/metafunc.py",
+          "testing/test_cacheprovider.py",
+          "testing/test_collection.py",
+          "testing/test_compat.py",
+          "testing/test_legacypath.py"
+        ],
+        "task_count_total": 117
+      },
+      "description": "pytest fixtures: fix lineno off-by-one in --fixtures/--fixtures-per-test -- another unrelated real bug, different files.",
+      "naive_test_star_manifest": {
+        "hit": false,
+        "selected_count": 4,
+        "selected_tasks": [
+          "testing/test_cacheprovider.py",
+          "testing/test_collection.py",
+          "testing/test_compat.py",
+          "testing/test_legacypath.py"
+        ],
+        "task_count_total": 106
+      },
+      "overlay_ref": "09d0020ff205d1166b9b541efccf19333ca69c3a",
+      "real_base_sha": "99ab2acccff15f757260a1e1fbb0d2a47fc01041",
+      "real_full_suite_test_count": 4675,
+      "real_regression_test_files": [
+        "testing/python/fixtures.py",
+        "testing/python/show_fixtures_per_test.py"
+      ],
+      "real_selected_execution_s": 11.5423,
+      "real_selected_test_count": 606,
+      "source_only_diff": [
+        "src/_pytest/compat.py"
+      ]
+    }
+  ],
+  "summary": {
+    "corrected_manifest": {
+      "miss_rate": 0.0,
+      "missed_descriptions": [],
+      "misses": 0
+    },
+    "mean_real_selected_execution_s": 40.4768,
+    "mean_real_selected_test_count_on_hits": 1785.25,
+    "mean_test_count_reduction_fraction_on_hits": 0.607,
+    "measured": true,
+    "naive_manifest": {
+      "miss_rate": 0.75,
+      "missed_descriptions": [
+        "pytest #14934: approx() silently compared mismatched nested container types instead of raising. base_ref is the real pre-fix commit; overlay_ref's real regression test is applied on top of it, unmodified.",
+        "Same #14934 bug, 60 real commits further back in history, still unfixed: the recurring-regression case.",
+        "pytest fixtures: fix lineno off-by-one in --fixtures/--fixtures-per-test -- another unrelated real bug, different files."
+      ],
+      "misses": 3
+    },
+    "real_full_suite_test_count": 4543,
+    "repo": "https://github.com/pytest-dev/pytest",
+    "scenarios_scored": 4,
+    "scenarios_source": "experiments/failure-ordering/scenarios.json"
+  }
+}
