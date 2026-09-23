@@ -2,6 +2,30 @@
   "samples": [
     {
       "base": "d1675646f2d5f218cbaae5b88f3b5dee5a5061ca",
+      "change_scoped_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_module/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_module/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "change_scoped_on_merged": {
         "attempted": true,
         "failed_files": [
@@ -16,6 +40,32 @@
       },
       "change_scoped_selection_size": 36,
       "concurrent_changed_files": 7,
+      "exact_input_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_module/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_module/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "exact_input_on_merged": {
         "attempted": true,
         "failed_files": [
@@ -38,6 +88,14 @@
         "passed": false,
         "reason": "exit 2"
       },
+      "full_on_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "merge": "397769c45e384b03aeb96da3a1b61ac07db9d0bb",
       "merge_base": "a536f49d910eda84cbd0608e6edb1b70bb0868b2",
       "pr_changed_files": 7,
@@ -49,10 +107,34 @@
         ],
         "passed": false,
         "reason": "exit 2"
+      },
+      "pr_head_alone_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
       }
     },
     {
       "base": "1d7349d18c18ce6b8595e4ecf752fb30f34e7cbd",
+      "change_scoped_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/unittest/test_unittest_asynctest.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/unittest/test_unittest_asynctest.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "change_scoped_on_merged": {
         "attempted": true,
         "failed_files": [
@@ -63,6 +145,30 @@
       },
       "change_scoped_selection_size": 8,
       "concurrent_changed_files": 5,
+      "exact_input_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_module/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/example_scripts/unittest/test_unittest_asynctest.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_module/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/example_scripts/unittest/test_unittest_asynctest.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "exact_input_on_merged": {
         "attempted": true,
         "failed_files": [
@@ -84,6 +190,14 @@
         "passed": false,
         "reason": "exit 2"
       },
+      "full_on_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "merge": "851b72f2893e942a453c3327abc97ca55ade45ec",
       "merge_base": "c2a4a8d518b433b0b688d084bad09040bf774f70",
       "pr_changed_files": 1,
@@ -95,10 +209,30 @@
         ],
         "passed": false,
         "reason": "exit 2"
+      },
+      "pr_head_alone_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
       }
     },
     {
       "base": "70dc4e94a59a8f66d2dc7fc7aaa258e983bc376f",
+      "change_scoped_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
       "change_scoped_on_merged": {
         "attempted": true,
         "failed_files": [],
@@ -107,6 +241,18 @@
       },
       "change_scoped_selection_size": 9,
       "concurrent_changed_files": 1,
+      "exact_input_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "exact_input_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
       "exact_input_on_merged": {
         "attempted": true,
         "failed_files": [],
@@ -120,6 +266,16 @@
         "passed": true,
         "reason": "exit 0"
       },
+      "full_on_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/test_config.py::TestParseIni::test_tox_ini_wrong_version",
+          "testing/test_debugging.py::TestPDB::test_pdb_custom_cls_with_set_trace",
+          "testing/test_legacypath.py::test_cache_makedir"
+        ],
+        "passed": false,
+        "reason": "exit 1"
+      },
       "merge": "d776e8d72707e223330cc6c48f52a47765fac721",
       "merge_base": "eb79044cea1c2c7b6e58ebcce17c55da871fef6c",
       "pr_changed_files": 2,
@@ -129,10 +285,42 @@
         "failed_files": [],
         "passed": true,
         "reason": "exit 0"
+      },
+      "pr_head_alone_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/test_config.py::TestParseIni::test_tox_ini_wrong_version",
+          "testing/test_debugging.py::TestPDB::test_pdb_custom_cls_with_set_trace",
+          "testing/test_legacypath.py::test_cache_makedir"
+        ],
+        "passed": false,
+        "reason": "exit 1"
       }
     },
     {
       "base": "78d81ef8658f5fc058f622c76c057cf903b45f64",
+      "change_scoped_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "change_scoped_on_merged": {
         "attempted": true,
         "failed_files": [
@@ -146,6 +334,34 @@
       },
       "change_scoped_selection_size": 30,
       "concurrent_changed_files": 31,
+      "exact_input_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/conftest.py",
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/example_scripts/unittest/test_unittest_asynctest.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/conftest.py",
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/example_scripts/unittest/test_unittest_asynctest.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "exact_input_on_merged": {
         "attempted": true,
         "failed_files": [
@@ -169,6 +385,14 @@
         "passed": false,
         "reason": "exit 2"
       },
+      "full_on_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "merge": "32f480814ceb4b4b7ebfe4c2acde5ae1236434da",
       "merge_base": "b20e7f6d0cd85f439d7963b4ae7c3c3fc908452d",
       "pr_changed_files": 5,
@@ -180,10 +404,34 @@
         ],
         "passed": false,
         "reason": "exit 2"
+      },
+      "pr_head_alone_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
       }
     },
     {
       "base": "d776e8d72707e223330cc6c48f52a47765fac721",
+      "change_scoped_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/doctest/main_py/__main__.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/doctest/main_py/__main__.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "change_scoped_on_merged": {
         "attempted": true,
         "failed_files": [
@@ -194,6 +442,22 @@
       },
       "change_scoped_selection_size": 3,
       "concurrent_changed_files": 2,
+      "exact_input_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/doctest/main_py/__main__.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/doctest/main_py/__main__.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "exact_input_on_merged": {
         "attempted": true,
         "failed_files": [
@@ -222,6 +486,18 @@
     },
     {
       "base": "88ae27da085da7d59d34736234b57a280dcc9dfc",
+      "change_scoped_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
       "change_scoped_on_merged": {
         "attempted": true,
         "failed_files": [],
@@ -230,6 +506,30 @@
       },
       "change_scoped_selection_size": 5,
       "concurrent_changed_files": 5,
+      "exact_input_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/plugins_integration/bdd_wallet.py",
+          "testing/plugins_integration/pytest_anyio_integration.py",
+          "testing/plugins_integration/pytest_asyncio_integration.py",
+          "testing/plugins_integration/pytest_trio_integration.py",
+          "testing/plugins_integration/pytest_twisted_integration.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/plugins_integration/bdd_wallet.py",
+          "testing/plugins_integration/pytest_anyio_integration.py",
+          "testing/plugins_integration/pytest_asyncio_integration.py",
+          "testing/plugins_integration/pytest_trio_integration.py",
+          "testing/plugins_integration/pytest_twisted_integration.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "exact_input_on_merged": {
         "attempted": true,
         "failed_files": [
@@ -266,6 +566,24 @@
     },
     {
       "base": "90b9389af0e009bc021990919c54a3aaf3a217ca",
+      "change_scoped_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/test_tmpdir.py::test_tmp_path_fixture",
+          "tmp_path_fixture.py"
+        ],
+        "passed": false,
+        "reason": "exit 1"
+      },
+      "change_scoped_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/test_tmpdir.py::test_tmp_path_fixture",
+          "tmp_path_fixture.py"
+        ],
+        "passed": false,
+        "reason": "exit 1"
+      },
       "change_scoped_on_merged": {
         "attempted": true,
         "failed_files": [],
@@ -274,6 +592,36 @@
       },
       "change_scoped_selection_size": 2,
       "concurrent_changed_files": 3,
+      "exact_input_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "subdir/test_foo.py",
+          "test_foo.py",
+          "testing/test_config.py::TestOverrideIniArgs::test_multiple_override_ini_options",
+          "testing/test_config.py::TestParseIni::test_tox_ini_wrong_version",
+          "testing/test_config.py::test_collect_pytest_prefix_bug_integration",
+          "testing/test_config.py::test_config_in_subdirectory_colon_command_line_issue2148",
+          "testing/test_tmpdir.py::test_tmp_path_fixture",
+          "tmp_path_fixture.py"
+        ],
+        "passed": false,
+        "reason": "exit 1"
+      },
+      "exact_input_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "subdir/test_foo.py",
+          "test_foo.py",
+          "testing/test_config.py::TestOverrideIniArgs::test_multiple_override_ini_options",
+          "testing/test_config.py::TestParseIni::test_tox_ini_wrong_version",
+          "testing/test_config.py::test_collect_pytest_prefix_bug_integration",
+          "testing/test_config.py::test_config_in_subdirectory_colon_command_line_issue2148",
+          "testing/test_tmpdir.py::test_tmp_path_fixture",
+          "tmp_path_fixture.py"
+        ],
+        "passed": false,
+        "reason": "exit 1"
+      },
       "exact_input_on_merged": {
         "attempted": true,
         "failed_files": [],
@@ -300,6 +648,18 @@
     },
     {
       "base": "8f36fd5454f6d3c9fa33ecb7403641bfa713ab87",
+      "change_scoped_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
       "change_scoped_on_merged": {
         "attempted": true,
         "failed_files": [],
@@ -308,6 +668,30 @@
       },
       "change_scoped_selection_size": 1,
       "concurrent_changed_files": 2,
+      "exact_input_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/test_assertion.py::TestAssert_reprcompare_attrsclass::test_attrs",
+          "testing/test_assertion.py::TestAssert_reprcompare_attrsclass::test_attrs_recursive",
+          "testing/test_assertion.py::TestAssert_reprcompare_attrsclass::test_attrs_recursive_verbose",
+          "testing/test_assertion.py::TestAssert_reprcompare_attrsclass::test_attrs_verbose",
+          "testing/test_assertion.py::TestAssert_reprcompare_attrsclass::test_attrs_with_attribute_comparison_off"
+        ],
+        "passed": false,
+        "reason": "exit 1"
+      },
+      "exact_input_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/test_assertion.py::TestAssert_reprcompare_attrsclass::test_attrs",
+          "testing/test_assertion.py::TestAssert_reprcompare_attrsclass::test_attrs_recursive",
+          "testing/test_assertion.py::TestAssert_reprcompare_attrsclass::test_attrs_recursive_verbose",
+          "testing/test_assertion.py::TestAssert_reprcompare_attrsclass::test_attrs_verbose",
+          "testing/test_assertion.py::TestAssert_reprcompare_attrsclass::test_attrs_with_attribute_comparison_off"
+        ],
+        "passed": false,
+        "reason": "exit 1"
+      },
       "exact_input_on_merged": {
         "attempted": true,
         "failed_files": [],
@@ -338,6 +722,26 @@
     },
     {
       "base": "9033d4d3fff11e52c6812dfeba32f1cfecdea61a",
+      "change_scoped_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "change_scoped_on_merged": {
         "attempted": true,
         "failed_files": [
@@ -350,6 +754,34 @@
       },
       "change_scoped_selection_size": 25,
       "concurrent_changed_files": 15,
+      "exact_input_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_module/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_module/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
       "exact_input_on_merged": {
         "attempted": true,
         "failed_files": [
@@ -388,26 +820,50 @@
     },
     {
       "base": "c4981f5a1bf49e43e2d39c61b2bac46cae286ae5",
+      "change_scoped_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "change_scoped_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
       "change_scoped_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "change_scoped_selection_size": 1,
       "concurrent_changed_files": 2,
+      "exact_input_at_head_runtime": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "exact_input_at_merged_runtime": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
       "exact_input_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "exact_input_selection_size": 6,
       "full_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "merge": "24ef7c98e88081fbd1d4050374bb50a5a3c6cb0e",
       "merge_base": "2be1b8f3559570c456f4bf64fea8067e368dcdfd",
@@ -417,7 +873,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       }
     },
     {
@@ -426,7 +882,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "change_scoped_selection_size": 7,
       "concurrent_changed_files": 3,
@@ -434,14 +890,14 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "exact_input_selection_size": 7,
       "full_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "merge": "b893d2a0fe3e6b5c0ab5e009cf4ceba98180d384",
       "merge_base": "eff54aece16f4a6314ea64e8901cc849ea316bec",
@@ -451,7 +907,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       }
     },
     {
@@ -1095,7 +1551,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "change_scoped_selection_size": 1,
       "concurrent_changed_files": 6,
@@ -1103,14 +1559,14 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "exact_input_selection_size": 12,
       "full_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "merge": "22756c28e59aaa3e56a2b68732b19e883aa76655",
       "merge_base": "f0bf4c968195d2b17b002e866e2d0766184e02a4",
@@ -1120,7 +1576,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       }
     },
     {
@@ -1263,7 +1719,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "change_scoped_selection_size": 1,
       "concurrent_changed_files": 2,
@@ -1271,14 +1727,14 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "exact_input_selection_size": 5,
       "full_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "merge": "2b70e7f4dfa4945fe30f8d59194337578b976f35",
       "merge_base": "fab696dcd1ecd621ed05d2552b7d790ab143efe5",
@@ -1288,7 +1744,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       }
     },
     {
@@ -1381,7 +1837,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "change_scoped_selection_size": 1,
       "concurrent_changed_files": 7,
@@ -1389,14 +1845,14 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "exact_input_selection_size": 11,
       "full_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "merge": "680f3e2097712a067f08881f0e6c3c4b35cfbc61",
       "merge_base": "59b8ec3ce11f8e94d924dc97bc1e14f380824b54",
@@ -1406,7 +1862,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       }
     },
     {
@@ -1449,7 +1905,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "change_scoped_selection_size": 51,
       "concurrent_changed_files": 1,
@@ -1457,14 +1913,14 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "exact_input_selection_size": 51,
       "full_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "merge": "63d2f7f7f8ec8b09c4289f18a94178c520d93bff",
       "merge_base": "c72d2023175887fcf3fcd4d1bdaf30e0ffb1f4ff",
@@ -1474,7 +1930,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       }
     },
     {
@@ -1638,7 +2094,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "change_scoped_selection_size": 31,
       "concurrent_changed_files": 3,
@@ -1646,14 +2102,14 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "exact_input_selection_size": 33,
       "full_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "merge": "bb5a4e2d63983bd7d05864d5f1787970c1098b01",
       "merge_base": "4c8fb6f0afd9aa8d772f09545d54f3b9e13f0105",
@@ -1663,7 +2119,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       }
     },
     {
@@ -1672,7 +2128,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "change_scoped_selection_size": 8,
       "concurrent_changed_files": 8,
@@ -1680,14 +2136,14 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "exact_input_selection_size": 18,
       "full_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "merge": "2b6708b892378ca4a80c847581176ded494f81ab",
       "merge_base": "bc33ba0be95a1b66038a17329573aaa1666c1a0f",
@@ -1697,7 +2153,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       }
     },
     {
@@ -1799,7 +2255,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "change_scoped_selection_size": 1,
       "concurrent_changed_files": 3,
@@ -1807,14 +2263,14 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "exact_input_selection_size": 5,
       "full_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "merge": "44290d1f6ca422aefb632466102e33798f76db84",
       "merge_base": "bc33ba0be95a1b66038a17329573aaa1666c1a0f",
@@ -1824,7 +2280,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       }
     },
     {
@@ -1877,7 +2333,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "change_scoped_selection_size": 3,
       "concurrent_changed_files": 1,
@@ -1885,14 +2341,14 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "exact_input_selection_size": 4,
       "full_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "merge": "c326c0449433ff812e1b3b81b2590f0d1d797fde",
       "merge_base": "bc33ba0be95a1b66038a17329573aaa1666c1a0f",
@@ -1902,7 +2358,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       }
     },
     {
@@ -2151,7 +2607,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "change_scoped_selection_size": 9,
       "concurrent_changed_files": 2,
@@ -2159,14 +2615,14 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "exact_input_selection_size": 18,
       "full_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "merge": "f1aa7a25de6f3e7d4002799464130d70a19ff467",
       "merge_base": "abe2a8f4e1d84812b77e492f6505b2da0bcc1d95",
@@ -2176,7 +2632,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       }
     },
     {
@@ -2308,7 +2764,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "change_scoped_selection_size": 3,
       "concurrent_changed_files": 8,
@@ -2316,14 +2772,14 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "exact_input_selection_size": 42,
       "full_on_merged": {
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       },
       "merge": "966d4fb3e4640de721f87e4190427975ea020c67",
       "merge_base": "aa55975c7d3f6c9f6d7f68accc41bb7cadf0eb9a",
@@ -2333,7 +2789,7 @@
         "attempted": true,
         "failed_files": [],
         "passed": null,
-        "reason": "environment/layout incompatibility, not a pytest-level collection result"
+        "reason": "environment/layout incompatibility, not a pytest-level result"
       }
     },
     {
@@ -2409,18 +2865,1213 @@
         "passed": true,
         "reason": "exit 0"
       }
+    },
+    {
+      "base": "694ffffa3babfd15588cadf83079559da89be28c",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_selection_size": 1,
+      "concurrent_changed_files": 218,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": false,
+        "reason": "exit 4"
+      },
+      "exact_input_selection_size": 155,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "8ecf49ec2807768105b05dda5461b28cdad89d03",
+      "merge_base": "5af46f3d4e8264c50ffd635dbb395199670e70b7",
+      "pr_changed_files": 1,
+      "pr_head": "7ef189757eb0cc9a99b9dc79727f66f1e3c1d5c7",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      }
+    },
+    {
+      "base": "36b6384ff26582f04da27aef742e49fa0adb6e1e",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "change_scoped_selection_size": 1,
+      "concurrent_changed_files": 4,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "exact_input_selection_size": 7,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "merge": "3dac833a520cc299c20b7270db87d62412b4119a",
+      "merge_base": "15ac0349b2c7d8dc48fe2e25a1b4fa47c9fda25c",
+      "pr_changed_files": 2,
+      "pr_head": "0bc9ffcc8782fd126d0a9ce95ce130d1d760d2cb",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      }
+    },
+    {
+      "base": "070e35b1e3867803a61fc607c051c731ac5dc180",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_selection_size": 5,
+      "concurrent_changed_files": 2,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "exact_input_selection_size": 14,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "b375b79ec913630af83ceff58944347408a6534a",
+      "merge_base": "680f9f3ed3faaaa9a4fd1d8120618cd17cdee2d0",
+      "pr_changed_files": 2,
+      "pr_head": "f36b07a432100b55e4c0fd768b1d9339dd7c3415",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "43492f5707b38dab9b62dfb829bb41a13579629f",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_selection_size": 25,
+      "concurrent_changed_files": 13,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_selection_size": 48,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "merge": "f4e10251a4a003495b5228cea421d4de5fa0ce89",
+      "merge_base": "6ed005161d329cc079e6439a17e7ac935c7c02e0",
+      "pr_changed_files": 2,
+      "pr_head": "434282e17f5f1f4fcc1464a0a0921cf19804bdd7",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      }
+    },
+    {
+      "base": "55560d9d4187feecea18b1e637f43f55912d0303",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_selection_size": 25,
+      "concurrent_changed_files": 1,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": false,
+        "reason": "exit 4"
+      },
+      "exact_input_selection_size": 155,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "d889ca0f3b8c45f92ef90f34e67ddbaa2c988134",
+      "merge_base": "ced0a8d4a4317f4cb24b4ffb8138deb319dac212",
+      "pr_changed_files": 2,
+      "pr_head": "719f1ec97ef6a1a3c622e778aeab4c3f4c4514ac",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "784ffa0fad9f11043fee5e0e27317f4cd91e6243",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "change_scoped_selection_size": 4,
+      "concurrent_changed_files": 1,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "exact_input_selection_size": 4,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "merge": "eff54aece16f4a6314ea64e8901cc849ea316bec",
+      "merge_base": "61f7c27ec03099c0ed9c80b74fd37687e610ffa7",
+      "pr_changed_files": 4,
+      "pr_head": "90412827c3c87ceb1a903743110f0b892f13feec",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      }
+    },
+    {
+      "base": "e547cd565d32f7bc1db17800f38ade5077c47e03",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "change_scoped_selection_size": 25,
+      "concurrent_changed_files": 19,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "exact_input_selection_size": 51,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "merge": "c533015c56f9d966543f2b660f4d10b802ec18ae",
+      "merge_base": "0347957aa7fe18a7417f16176933c636889baa52",
+      "pr_changed_files": 1,
+      "pr_head": "e598429c7305b5fe70165c999489e04d558b0969",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      }
+    },
+    {
+      "base": "fa7ccb176fd48f5591bfb3e3525492698a1d3f25",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_selection_size": 3,
+      "concurrent_changed_files": 6,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "exact_input_selection_size": 9,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "aa4c208fc0f11f0572cf010f72fe497f46e81ec1",
+      "merge_base": "5fd2be03b1f8b5eef48d507d001ebf0a82e875a1",
+      "pr_changed_files": 2,
+      "pr_head": "f31caab723b52f61c7d8964ceb362bde5bf36c23",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "e54c6a1362589b32a2e63bb780192b86216ecec8",
+      "change_scoped_on_merged": {
+        "attempted": false,
+        "failed_files": [],
+        "passed": null,
+        "reason": "empty selection"
+      },
+      "change_scoped_selection_size": 0,
+      "concurrent_changed_files": 37,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "exact_input_selection_size": 69,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "merge": "130c954bb1ae5d25cd62dec17b0839f9061bc068",
+      "merge_base": "e580534df00884857798e857beae1130abc74256",
+      "pr_changed_files": 1,
+      "pr_head": "97383d2d5d666e4d84dea3dbc0dff4a53fe071a2",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      }
+    },
+    {
+      "base": "18bc6c9a0e06a0eea5df47ded5a8884fdcd4a66c",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/doctest/main_py/__main__.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_selection_size": 9,
+      "concurrent_changed_files": 5,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_selection_size": 41,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "merge": "b2186e245556d64b0dee522b919b0ef025c15161",
+      "merge_base": "485c555812286003d9234b5818c9852c3256bccb",
+      "pr_changed_files": 5,
+      "pr_head": "01ac13a77d6cd56a5ac20756542e59a7b14129a0",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      }
+    },
+    {
+      "base": "c9d940f12ed381320f7b21ca8f0987190cfff934",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_selection_size": 1,
+      "concurrent_changed_files": 2,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "exact_input_selection_size": 2,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "ea98f72badc085bdff17c784cfe9a611af5196a4",
+      "merge_base": "8927e35166ab410afe5002dcfa93481dc020c096",
+      "pr_changed_files": 1,
+      "pr_head": "3cd19882adacc6baeb5374f6c416962768a92ca0",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "eff54aece16f4a6314ea64e8901cc849ea316bec",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "change_scoped_selection_size": 3,
+      "concurrent_changed_files": 4,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "exact_input_selection_size": 4,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "merge": "5d1385320f3d69173cf22c84a31bd28dd00aa7b9",
+      "merge_base": "784ffa0fad9f11043fee5e0e27317f4cd91e6243",
+      "pr_changed_files": 3,
+      "pr_head": "bc1fc3f0fc2f25c19741363471b3fa0fd0a8b6ab",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      }
+    },
+    {
+      "base": "b665afc848a83f7498b9a52c467ec255bbd208a1",
+      "change_scoped_on_merged": {
+        "attempted": false,
+        "failed_files": [],
+        "passed": null,
+        "reason": "empty selection"
+      },
+      "change_scoped_selection_size": 0,
+      "concurrent_changed_files": 1,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "exact_input_selection_size": 4,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "abdb2b601d262edf6ccdaa396ee0d09a4a6bb040",
+      "merge_base": "ecac57287b679cc707fb4d22aa9d48426eaacac4",
+      "pr_changed_files": 1,
+      "pr_head": "3886a9444da6fc0afc1b8101a33a5ec109d01f3d",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "397769c45e384b03aeb96da3a1b61ac07db9d0bb",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_selection_size": 7,
+      "concurrent_changed_files": 7,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_module/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_selection_size": 40,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "merge": "c1339628d6903586a2737ed39c6b3b9f9a5a204c",
+      "merge_base": "d1675646f2d5f218cbaae5b88f3b5dee5a5061ca",
+      "pr_changed_files": 4,
+      "pr_head": "2aa8743bbeff8a983bc3e26e4f0cac155d112731",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      }
+    },
+    {
+      "base": "602fc183e54f7652d164f85782c3bba0c96d96d9",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_selection_size": 2,
+      "concurrent_changed_files": 12,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/typing_checks.py",
+          "testing/typing_raises_group.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_selection_size": 22,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "6f93bd03849570ce53f7bb3608e29442378b4d1a",
+      "merge_base": "5f7684db1f9e7141493b6447f4f026aadc30af56",
+      "pr_changed_files": 2,
+      "pr_head": "537086ad65ad988772a6da30ace686c699473704",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "d0f427aec4c885b60fc2f5c6b0ceeaeef8ad7b8f",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_selection_size": 1,
+      "concurrent_changed_files": 1,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "exact_input_selection_size": 4,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "e7b43b2121acdbead4627b239ab066b4edba2d14",
+      "merge_base": "ac2cd72e5fb00257ef1f6e17b2c16336362c6234",
+      "pr_changed_files": 1,
+      "pr_head": "eb9013d42c97c61e234aadff9651d4cedb83eae3",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "b73ec8e5d117a244b696ff4f9d2dfb74df078b2f",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_selection_size": 14,
+      "concurrent_changed_files": 74,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/collect/package_infinite_recursion/conftest.py",
+          "testing/example_scripts/collect/package_init_given_as_arg/pkg/test_foo.py",
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_module/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/example_scripts/issue88_initial_file_multinodes/conftest.py",
+          "testing/plugins_integration/bdd_wallet.py",
+          "testing/plugins_integration/pytest_anyio_integration.py",
+          "testing/plugins_integration/pytest_asyncio_integration.py",
+          "testing/plugins_integration/pytest_trio_integration.py",
+          "testing/plugins_integration/pytest_twisted_integration.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_selection_size": 108,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "merge": "fd7a4d2429d76e37a1920d0abbe670278ba84def",
+      "merge_base": "2d824329ebf5455aaf4c6f8aa29afff401abe315",
+      "pr_changed_files": 3,
+      "pr_head": "bd88a6412d7518c94ebdb4bbfcff39accd771d4f",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      }
+    },
+    {
+      "base": "5dfa38541becfb77d0f52cac4cc8cce71849ab61",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/example_scripts/unittest/test_unittest_asynctest.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_selection_size": 40,
+      "concurrent_changed_files": 1,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/example_scripts/unittest/test_unittest_asynctest.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_selection_size": 41,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "4a809d9c892f6abb5ba92b77b06f1dd878f4660a",
+      "merge_base": "a8ac094e80df788aec844794170b126eab0be7a4",
+      "pr_changed_files": 4,
+      "pr_head": "f52ff0c1778c15038cf2bbb00b7668dac674cc26",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "7cfe8aa2758c154c9355ca61e3de32a50ec78663",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/doctest/main_py/__main__.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_selection_size": 6,
+      "concurrent_changed_files": 69,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": false,
+        "reason": "exit 4"
+      },
+      "exact_input_selection_size": 154,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "d036b12bb6fa09f9a8a3b690cc7336113c93fa44",
+      "merge_base": "d2d57e3d7fc942e15136fcf0d3e50999cfe4ef76",
+      "pr_changed_files": 5,
+      "pr_head": "6764439f3fb53c64f897742865f99c7b803f20ad",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "73d754bd74ae8ddf86eb90cda29545cef495e927",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_selection_size": 35,
+      "concurrent_changed_files": 2,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/doctest/main_py/__main__.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_module/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_selection_size": 39,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "merge": "15fadd8c5cb6a4812c8b2a6ebcbb37c3d05eb7fe",
+      "merge_base": "556e075d23a91eb42821129a5d874ec3174e17ad",
+      "pr_changed_files": 5,
+      "pr_head": "9e164fc4fe46bbd43ac87fc30d0d6935f7e4d28b",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      }
+    },
+    {
+      "base": "0d6fbdeffa57c796123f62f81f7dd370d9b7ecdc",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_selection_size": 8,
+      "concurrent_changed_files": 2,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_selection_size": 11,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "5fd2be03b1f8b5eef48d507d001ebf0a82e875a1",
+      "merge_base": "006884bac1cff49d2e2908c20fbbb0f0bc8e671b",
+      "pr_changed_files": 6,
+      "pr_head": "3c474975def98688c5fca620a827ddeb9b92238b",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "3d95c2ff3676f42e411651e1f8679cd72780a49a",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_selection_size": 4,
+      "concurrent_changed_files": 3,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "exact_input_selection_size": 6,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "f1e3fee981aa1942310fa53f912487b31347cb73",
+      "merge_base": "d036b12bb6fa09f9a8a3b690cc7336113c93fa44",
+      "pr_changed_files": 3,
+      "pr_head": "d77cbfac04a99cca1520a0d3e77d4dd71cb274e4",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "420dc7824b46f1ee39d539044797ca7cbcf83dc9",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "change_scoped_selection_size": 1,
+      "concurrent_changed_files": 18,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "exact_input_selection_size": 51,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "merge": "a47e91e077815574088818b26728fff0d35273fc",
+      "merge_base": "eb8b3ad929cdbaf996be1bb16b37abd7762cceeb",
+      "pr_changed_files": 1,
+      "pr_head": "f6db7ae74900e0dbf39553ebd531b23c31d07db0",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      }
+    },
+    {
+      "base": "b9353807eb8c4d7232556138f9e81ce53556f43c",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_selection_size": 1,
+      "concurrent_changed_files": 47,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/fixtures/custom_item/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_conftest/conftest.py",
+          "testing/example_scripts/fixtures/fill_fixtures/test_extend_fixture_conftest_module/conftest.py",
+          "testing/example_scripts/fixtures/test_fixture_named_request.py",
+          "testing/example_scripts/issue88_initial_file_multinodes/conftest.py",
+          "testing/typing_raises_group.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_selection_size": 67,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "d45fc1c74989e7c71093cc8c24a775c0cf56bba6",
+      "merge_base": "344c23787cdb3431dcc441b8b63ee9950f04b921",
+      "pr_changed_files": 2,
+      "pr_head": "f4897e825b0a418861f8abaccd14cddcd59e748a",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "d4223b9ae22cfab318a30683ec4ed242d5806469",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "change_scoped_selection_size": 9,
+      "concurrent_changed_files": 4,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/unittest/test_unittest_asynctest.py",
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_selection_size": 17,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "merge": "704792ecbdd9d6550a10084fc9f0da9bacbeae6f",
+      "merge_base": "5af46f3d4e8264c50ffd635dbb395199670e70b7",
+      "pr_changed_files": 2,
+      "pr_head": "90a3ef2f36f6c282d1175ce0c13149ce57d1362d",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      }
+    },
+    {
+      "base": "2b70e7f4dfa4945fe30f8d59194337578b976f35",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "change_scoped_selection_size": 25,
+      "concurrent_changed_files": 3,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "exact_input_selection_size": 30,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "merge": "aafac5578c92d88689f8d49c004ea93e401ac2b4",
+      "merge_base": "fab696dcd1ecd621ed05d2552b7d790ab143efe5",
+      "pr_changed_files": 1,
+      "pr_head": "cdc287d21aab827d3a11981ecf26745b777e9dfe",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      }
+    },
+    {
+      "base": "127a372928cb68e2023ae3c6f8b407c4d2f1f2f7",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_selection_size": 2,
+      "concurrent_changed_files": 1,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "exact_input_selection_size": 4,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "merge": "ebc454043668016c556fd171bc6f8db37a9b48b2",
+      "merge_base": "2a809e6f8bc66b8bca4274601b617dd4e1107a15",
+      "pr_changed_files": 1,
+      "pr_head": "50d1e81713af75ab6d3608d2920ddf21bf53d765",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [
+          "testing/python/metafunc.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      }
+    },
+    {
+      "base": "d07c5d4e3956cb6b8ff7f9f49c0bc4d819a15349",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_selection_size": 1,
+      "concurrent_changed_files": 16,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/doctest/main_py/__main__.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_selection_size": 24,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "849fbda3ce87e3829b30d005979bee59928c01ff",
+      "merge_base": "eb79044cea1c2c7b6e58ebcce17c55da871fef6c",
+      "pr_changed_files": 1,
+      "pr_head": "b3b299050a785df5bab17803d8381eecb48dca3b",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "ae777851d8b324de5eb3d0e860c28b219ce3fcd8",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "change_scoped_selection_size": 1,
+      "concurrent_changed_files": 25,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [
+          "testing/example_scripts/config/collect_pytest_prefix/conftest.py",
+          "testing/example_scripts/doctest/main_py/__main__.py"
+        ],
+        "passed": false,
+        "reason": "exit 2"
+      },
+      "exact_input_selection_size": 34,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      },
+      "merge": "472b4de93d83c118e0d089a34918fd1210d9ebc8",
+      "merge_base": "51e9a9f148cd2509a31e3fa0d2b1b3204c2b0dd7",
+      "pr_changed_files": 2,
+      "pr_head": "0c601d510c6ba370fa89d6e019cf43e2d02d22d0",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": true,
+        "reason": "exit 0"
+      }
+    },
+    {
+      "base": "bc33ba0be95a1b66038a17329573aaa1666c1a0f",
+      "change_scoped_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "change_scoped_selection_size": 2,
+      "concurrent_changed_files": 1,
+      "exact_input_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "exact_input_selection_size": 2,
+      "full_on_merged": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      },
+      "merge": "efa16c2c9d9e9bbc556ee48c71c3038ca5a9148d",
+      "merge_base": "6f936aa97c393d1b1bb72508daedd5959dfc0a73",
+      "pr_changed_files": 2,
+      "pr_head": "579785b6cd201b6cb4da6bdf9be6988db0d469b2",
+      "pr_head_alone": {
+        "attempted": true,
+        "failed_files": [],
+        "passed": null,
+        "reason": "environment/layout incompatibility, not a pytest-level result"
+      }
     }
   ],
   "summary": {
+    "collect_only": {
+      "buckets": {
+        "both_failed": 31,
+        "both_passed": 38,
+        "head_failed_merged_passed": 1,
+        "head_passed_merged_failed": 0,
+        "total": 90,
+        "unresolved": 20
+      },
+      "oracle": "pytest --collect-only: pr-head-alone vs full-on-merged",
+      "target_case_change_scoped_still_missed_it": 0,
+      "target_case_exact_input_still_missed_it": 0
+    },
+    "full_suite_runtime_execution": {
+      "buckets": {
+        "both_failed": 4,
+        "both_passed": 0,
+        "head_failed_merged_passed": 0,
+        "head_passed_merged_failed": 0,
+        "total": 4,
+        "unresolved": 0
+      },
+      "oracle": "pytest (real test bodies), whole suite: head vs merged",
+      "subsample_size": 4
+    },
     "measured": true,
     "merge_window": 800,
-    "of_those_caught_by_change_scoped_selection_on_merged_tree": 0,
-    "of_those_caught_by_exact_input_selection_on_merged_tree": 0,
-    "of_those_caught_by_full_suite_on_merged_tree": 0,
-    "real_merges_where_merged_tree_broke_collection_but_pr_head_alone_passed": 0,
     "repo": "https://github.com/pytest-dev/pytest",
-    "samples_evaluated": 60,
-    "samples_requested": 60,
-    "samples_skipped_no_concurrent_change_on_one_side": 190
+    "runtime_execution": {
+      "change_scoped_buckets": {
+        "both_failed": 6,
+        "both_passed": 3,
+        "head_failed_merged_passed": 0,
+        "head_passed_merged_failed": 0,
+        "total": 10,
+        "unresolved": 1
+      },
+      "exact_input_buckets": {
+        "both_failed": 8,
+        "both_passed": 1,
+        "head_failed_merged_passed": 0,
+        "head_passed_merged_failed": 0,
+        "total": 10,
+        "unresolved": 1
+      },
+      "oracle": "pytest (real test bodies): head vs merged, for the change-scoped and exact-input selections",
+      "subsample_size": 10
+    },
+    "samples_evaluated": 90,
+    "samples_requested": 90,
+    "samples_skipped_no_concurrent_change_on_one_side": 280
   }
 }
