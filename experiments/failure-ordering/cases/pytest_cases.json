@@ -1,0 +1,223 @@
+[
+  {
+    "base_commit_date": "2026-09-16T16:40:11+03:00",
+    "base_ref": "99ab2acccff15f757260a1e1fbb0d2a47fc01041",
+    "failing_nodeids": [
+      "test_call_from_test.py::test_foo",
+      "test_external_fixture.py::test_foo",
+      "test_foos.py::test_foo",
+      "testing/python/fixtures.py::TestParameterizedSubRequest::test_call_from_fixture",
+      "testing/python/fixtures.py::TestParameterizedSubRequest::test_call_from_test",
+      "testing/python/fixtures.py::TestParameterizedSubRequest::test_external_fixture",
+      "testing/python/fixtures.py::TestParameterizedSubRequest::test_non_relative_path",
+      "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_different_files",
+      "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_indented_doc",
+      "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_indented_doc_first_line_unindented",
+      "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_indented_in_class",
+      "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_testmodule",
+      "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_trimmed_doc",
+      "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_with_same_name",
+      "testing/python/fixtures.py::test_fixture_named_request",
+      "testing/python/show_fixtures_per_test.py::test_fixtures_in_conftest",
+      "testing/python/show_fixtures_per_test.py::test_fixtures_in_module",
+      "testing/python/show_fixtures_per_test.py::test_multiline_docstring_in_module",
+      "testing/python/show_fixtures_per_test.py::test_should_show_fixtures_used_by_test",
+      "testing/python/show_fixtures_per_test.py::test_should_show_parametrized_fixtures_used_by_test",
+      "testing/python/show_fixtures_per_test.py::test_verbose_include_multiline_docstring",
+      "testing/python/show_fixtures_per_test.py::test_verbose_include_private_fixtures_and_loc"
+    ],
+    "fix_commit_date": "2026-09-17T15:18:36+03:00",
+    "fix_subject": "fixtures: fix lineno off-by-one in --fixtures/--fixtures-per-test and a couple of error messages",
+    "overlay_paths": [
+      "testing/python/fixtures.py",
+      "testing/python/show_fixtures_per_test.py"
+    ],
+    "overlay_ref": "09d0020ff205d1166b9b541efccf19333ca69c3a"
+  },
+  {
+    "base_commit_date": "2026-09-15T10:29:22+02:00",
+    "base_ref": "bb33e5c1feb7223829b9ffe43cf0b4df2bf8df50",
+    "failing_nodeids": [
+      "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename[import-lib]",
+      "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename[pure-python]"
+    ],
+    "fix_commit_date": "2026-09-16T07:19:42+02:00",
+    "fix_subject": "fix: use _imp._fix_co_filename to fix the filename in the bytecode and use a pure python implementation as fallback",
+    "overlay_paths": [
+      "testing/test_assertrewrite.py"
+    ],
+    "overlay_ref": "3261273a1f5ec51d75f5744bab41ca243d84942a"
+  },
+  {
+    "base_commit_date": "2026-09-14T22:15:02Z",
+    "base_ref": "53bc06b9933eb50b40cd904aa50bcd1b6cf2a49c",
+    "failing_nodeids": [
+      "test2/test_a.py::test_a",
+      "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename"
+    ],
+    "fix_commit_date": "2026-09-15T10:29:22+02:00",
+    "fix_subject": "fix: bytecode cache invalidation for moved test files (#14552)",
+    "overlay_paths": [
+      "testing/test_assertrewrite.py"
+    ],
+    "overlay_ref": "3d0f2cf7f48bce129471672ba25cce4c1bff31be"
+  },
+  {
+    "base_commit_date": "2026-09-09T14:46:11+03:00",
+    "base_ref": "a84e5039c6311735b44dc6518b7e8cfb00d63775",
+    "failing_nodeids": [
+      "testing/python/fixtures.py::TestFillFixtures::test_fixture_not_found_nodeid_fallback"
+    ],
+    "fix_commit_date": "2026-09-09T15:05:14+03:00",
+    "fix_subject": "SQUASH: Backward compat for register_fixture with string nodeids",
+    "overlay_paths": [
+      "testing/python/fixtures.py"
+    ],
+    "overlay_ref": "aeb5b3ebd4b1f218f1114b9a1c2e003a291f8255"
+  },
+  {
+    "base_commit_date": "2026-09-08T13:08:00+03:00",
+    "base_ref": "516aecd4abe603754fd08833a269f6dc820907b9",
+    "failing_nodeids": [
+      "test_matchfactories_string_fallback.py::test_scoped_invisible",
+      "testing/deprecated_test.py::TestFixtureNodeidDeprecations::test_matchfactories_string_fallback"
+    ],
+    "fix_commit_date": "2026-09-09T14:46:11+03:00",
+    "fix_subject": "fixtures: use a better data structure for storing FixtureDefs",
+    "overlay_paths": [
+      "testing/deprecated_test.py"
+    ],
+    "overlay_ref": "a84e5039c6311735b44dc6518b7e8cfb00d63775"
+  },
+  {
+    "base_commit_date": "2026-09-07T21:38:55+02:00",
+    "base_ref": "ae777851d8b324de5eb3d0e860c28b219ce3fcd8",
+    "failing_nodeids": [
+      "testing/test_monkeypatch.py::test_undo_inherited_attribute_on_instance",
+      "testing/test_monkeypatch.py::test_undo_inherited_method_on_instance",
+      "testing/test_monkeypatch.py::test_undo_inherited_non_data_descriptor_on_instance"
+    ],
+    "fix_commit_date": "2026-09-07T21:44:32+02:00",
+    "fix_subject": "Merge pull request #14969 from Irahan2/fix-10644-monkeypatch-inherited-attr",
+    "overlay_paths": [
+      "testing/test_monkeypatch.py"
+    ],
+    "overlay_ref": "472b4de93d83c118e0d089a34918fd1210d9ebc8"
+  },
+  {
+    "base_commit_date": "2026-09-01T13:50:22+02:00",
+    "base_ref": "51e9a9f148cd2509a31e3fa0d2b1b3204c2b0dd7",
+    "failing_nodeids": [
+      "testing/test_monkeypatch.py::test_undo_inherited_attribute_on_instance",
+      "testing/test_monkeypatch.py::test_undo_inherited_method_on_instance",
+      "testing/test_monkeypatch.py::test_undo_inherited_non_data_descriptor_on_instance"
+    ],
+    "fix_commit_date": "2026-09-04T12:16:38+02:00",
+    "fix_subject": "fix(monkeypatch): don't leave inherited attributes in the instance dict",
+    "overlay_paths": [
+      "testing/test_monkeypatch.py"
+    ],
+    "overlay_ref": "0c601d510c6ba370fa89d6e019cf43e2d02d22d0"
+  },
+  {
+    "base_commit_date": "2026-09-01T11:48:48+02:00",
+    "base_ref": "1a76d467648367377661abbf0c680a073ec04b48",
+    "failing_nodeids": [
+      "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_binop_left_operand_precedes_walrus",
+      "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_call_earlier_argument_precedes_walrus",
+      "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_chained_compare_operands_in_order",
+      "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_compare_left_operand_precedes_walrus",
+      "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_compare_reports_left_operand",
+      "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_double_star_argument_precedes_walrus",
+      "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_keyword_argument_precedes_walrus"
+    ],
+    "fix_commit_date": "2026-09-01T11:48:54+02:00",
+    "fix_subject": "fix(rewrite): freeze operands a later walrus would clobber",
+    "overlay_paths": [
+      "testing/test_assertrewrite_coverage.py"
+    ],
+    "overlay_ref": "3e7bf1dad095080edcc9b61a1aac58380d0969d6"
+  },
+  {
+    "base_commit_date": "2026-09-01T11:48:48+02:00",
+    "base_ref": "918f92bc31deb8737bca4493ac3bd0f44aba5c54",
+    "failing_nodeids": [
+      "test_assertion_walrus_operator_boolean_none_fails.py::test_walrus_operator_change_boolean_value",
+      "test_assertion_walrus_operator_compare_boolean_fails.py::test_walrus_operator_change_boolean_value",
+      "test_walrus_boolop_same_target_correct_explanation.py::test_walrus_boolop",
+      "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_boolean_none_fails",
+      "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_compare_boolean_fails",
+      "testing/test_assertrewrite.py::TestIssue14445::test_walrus_boolop_same_target_correct_explanation"
+    ],
+    "fix_commit_date": "2026-09-01T11:48:48+02:00",
+    "fix_subject": "fix(rewrite): show correct walrus values in BoolOp explanations",
+    "overlay_paths": [
+      "testing/test_assertrewrite.py"
+    ],
+    "overlay_ref": "a2f89c0c1da965d6bea8c09928aa05e0715e1eca"
+  },
+  {
+    "base_commit_date": "2026-09-01T11:48:48+02:00",
+    "base_ref": "77f93723d1cbc00b7b3ae850fb14ca4c99b26ebd",
+    "failing_nodeids": [
+      "test_walrus_no_double_eval_chained_compare.py::test_walrus_chained",
+      "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_chained_compare"
+    ],
+    "fix_commit_date": "2026-09-01T11:48:48+02:00",
+    "fix_subject": "fix(rewrite): assign walrus comparators to temps in chained comparisons",
+    "overlay_paths": [
+      "testing/test_assertrewrite.py"
+    ],
+    "overlay_ref": "918f92bc31deb8737bca4493ac3bd0f44aba5c54"
+  },
+  {
+    "base_commit_date": "2026-09-01T11:48:48+02:00",
+    "base_ref": "189ada2ddbec2bfe3a684faccf0ba484a24aeb7a",
+    "failing_nodeids": [
+      "test_walrus_no_double_eval_in_boolop.py::test_walrus_boolop",
+      "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_in_boolop"
+    ],
+    "fix_commit_date": "2026-09-01T11:48:48+02:00",
+    "fix_subject": "fix(rewrite): avoid double evaluation of walrus in BoolOp condition",
+    "overlay_paths": [
+      "testing/test_assertrewrite.py"
+    ],
+    "overlay_ref": "77f93723d1cbc00b7b3ae850fb14ca4c99b26ebd"
+  },
+  {
+    "base_commit_date": "2026-09-01T06:23:23+02:00",
+    "base_ref": "e984a9b94740697411f5a05fcdfc3299dd20f13a",
+    "failing_nodeids": [
+      "test_assertion_walrus_operator_boolean_none_fails.py::test_walrus_operator_change_boolean_value",
+      "test_assertion_walrus_operator_compare_boolean_fails.py::test_walrus_operator_change_boolean_value",
+      "test_walrus_no_double_eval_basic.py::test_walrus_in_assertion_basic",
+      "test_walrus_no_double_eval_in_function_call.py::test_walrus_side_effect",
+      "test_walrus_no_double_eval_running_counter.py::test_walrus_running_counter",
+      "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_boolean_none_fails",
+      "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_compare_boolean_fails",
+      "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_basic",
+      "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_in_function_call",
+      "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_running_counter"
+    ],
+    "fix_commit_date": "2026-09-01T11:45:55+02:00",
+    "fix_subject": "fix(rewrite): prevent walrus operator double evaluation in assertions",
+    "overlay_paths": [
+      "testing/test_assertrewrite.py"
+    ],
+    "overlay_ref": "aeade5e911c8229622475f3957062f4d46306211"
+  },
+  {
+    "base_commit_date": "2026-08-25T09:38:07+02:00",
+    "base_ref": "6a30f9e5764d106ce5a37e5bb706e797d46e318f",
+    "failing_nodeids": [
+      "testing/logging/test_fixture.py::test_with_statement_filtering_already_present",
+      "testing/logging/test_fixture.py::test_with_statement_nested_filtering"
+    ],
+    "fix_commit_date": "2026-08-26T11:07:19+02:00",
+    "fix_subject": "Merge pull request #14284 from oaksprout/fix-nested-caplog-filtering",
+    "overlay_paths": [
+      "testing/logging/test_fixture.py"
+    ],
+    "overlay_ref": "c7f9e75c5d3b04bf96e8389a9eac6d98da2be8f4"
+  }
+]

@@ -1,0 +1,150 @@
+[
+  {
+    "base_commit_date": "2026-09-10T12:29:49-07:00",
+    "base_ref": "6d5bac5c712195cbfa9666ba0ecbf0573cdea356",
+    "failing_nodeids": [
+      "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[-abbreviation inside sentence]",
+      "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[-abbreviation inside truncated sentence]",
+      "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[-lowercase after dot]",
+      "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[no-wrap mark-abbreviation inside sentence]",
+      "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[no-wrap mark-abbreviation inside truncated sentence]",
+      "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[no-wrap mark-lowercase after dot]"
+    ],
+    "fix_commit_date": "2026-09-11T11:01:09+04:00",
+    "fix_subject": "Fix short help abbreviation",
+    "overlay_paths": [
+      "tests/test_utils/test_make_default_short_help.py"
+    ],
+    "overlay_ref": "f67c2bb6c2f055c1c7a57cd46c3697fc26a7742e"
+  },
+  {
+    "base_commit_date": "2026-08-30T02:09:19-07:00",
+    "base_ref": "08a7bc6d2a2af02268b09b3b5fd8079546c81c03",
+    "failing_nodeids": [
+      "tests/test_abort_interrupt.py::test_interrupt_while_exiting_after_success",
+      "tests/test_abort_interrupt.py::test_interrupt_while_reporting_abort[body-1]",
+      "tests/test_abort_interrupt.py::test_interrupt_while_reporting_abort[body-2]",
+      "tests/test_abort_interrupt.py::test_interrupt_while_reporting_abort[prompt-1]",
+      "tests/test_abort_interrupt.py::test_interrupt_while_reporting_error"
+    ],
+    "fix_commit_date": "2026-08-31T22:34:35+02:00",
+    "fix_subject": "Fix race condition on `KeyboardInterrupt` arriving in `Command.main()`",
+    "overlay_paths": [
+      "tests/test_abort_interrupt.py"
+    ],
+    "overlay_ref": "fc518e41218b447e875fe27244ae692c269bcb77"
+  },
+  {
+    "base_commit_date": "2026-08-26T21:07:04-07:00",
+    "base_ref": "420c8fb44eeadb537cae69d2fee3796e808558dd",
+    "failing_nodeids": [
+      "tests/test_utils/test_sentinel.py::test_parameter_duplication[pickle]",
+      "tests/test_utils/test_sentinel.py::test_sentinel_duplication_preserves_identity[pickle-Sentinel.FLAG_NEEDS_VALUE]",
+      "tests/test_utils/test_sentinel.py::test_sentinel_duplication_preserves_identity[pickle-Sentinel.UNSET]"
+    ],
+    "fix_commit_date": "2026-08-29T08:53:55+02:00",
+    "fix_subject": "Fix `copy`, `deepcopy` and `pickle` of `Sentinel` members",
+    "overlay_paths": [
+      "tests/test_utils/test_sentinel.py"
+    ],
+    "overlay_ref": "f58ca3e81424a35626c8a475eb59ab95589008ce"
+  },
+  {
+    "base_commit_date": "2026-07-07T23:27:39-07:00",
+    "base_ref": "7925a3410d7098c28cfca3b2baa6c852666bbd14",
+    "failing_nodeids": [
+      "tests/test_utils/test_style.py::test_styling[styles44-\\x1b[38;5;0mx y\\x1b[0m]",
+      "tests/test_utils/test_style.py::test_styling[styles45-\\x1b[48;5;0mx y\\x1b[0m]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[-1-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[-1-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[0.0-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[0.0-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[256-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[256-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[BLACK-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[BLACK-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[False-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[False-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[True-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[True-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[banana-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[banana-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[red-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[red-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value10-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value10-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value11-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value11-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value12-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value12-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value13-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value13-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value14-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value14-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value15-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value15-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value16-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value16-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value17-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value17-fg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value9-bg]",
+      "tests/test_utils/test_style.py::test_styling_invalid_color[value9-fg]"
+    ],
+    "fix_commit_date": "2026-07-08T16:46:39+02:00",
+    "fix_subject": "Validate style() color arguments, fix explicit black color argument",
+    "overlay_paths": [
+      "tests/test_utils/test_style.py"
+    ],
+    "overlay_ref": "07c909f23f0f83b5ca137c167b9a134d66201f67"
+  },
+  {
+    "base_commit_date": "2026-06-13T12:00:09-07:00",
+    "base_ref": "916883afad450c0c9bbc4212817900949131adbd",
+    "failing_nodeids": [
+      "tests/test_basic.py::test_version_option_ambiguous_import_name_errors",
+      "tests/test_basic.py::test_version_option_resolves_import_name_to_distribution"
+    ],
+    "fix_commit_date": "2026-06-14T08:53:53+04:00",
+    "fix_subject": "Fix `package_name` resolution when top-level module differs from distribution name",
+    "overlay_paths": [
+      "tests/test_basic.py"
+    ],
+    "overlay_ref": "bec59289d8cf9b9b4010642b2fee483e5f8eeefc"
+  },
+  {
+    "base_commit_date": "2026-06-05T22:53:39-07:00",
+    "base_ref": "8929d392781c8113bc569f388c15c47b94f86581",
+    "failing_nodeids": [
+      "tests/test_basic.py::test_choice_argument_optional_metavar",
+      "tests/test_basic.py::test_datetime_argument_optional_metavar"
+    ],
+    "fix_commit_date": "2026-06-10T17:31:37+04:00",
+    "fix_subject": "Fix double-bracketing of choices in synopsis",
+    "overlay_paths": [
+      "tests/test_basic.py"
+    ],
+    "overlay_ref": "762c97eef7c1b3779678992f26a553a2a8c80793"
+  },
+  {
+    "base_commit_date": "2026-05-23T10:21:30+02:00",
+    "base_ref": "648d7c403829013ade629d63ddbfe808f6b2b770",
+    "failing_nodeids": [
+      "tests/test_commands.py::test_deprecated_empty_help_no_leading_space[-True]",
+      "tests/test_commands.py::test_deprecated_empty_help_no_leading_space[-USE OTHER COMMAND INSTEAD]",
+      "tests/test_commands.py::test_deprecated_empty_help_no_leading_space[None-True]",
+      "tests/test_commands.py::test_deprecated_empty_help_no_leading_space[None-USE OTHER COMMAND INSTEAD]",
+      "tests/test_options.py::test_deprecated_empty_help_no_leading_space[-True-(DEPRECATED)]",
+      "tests/test_options.py::test_deprecated_empty_help_no_leading_space[-USE B INSTEAD-(DEPRECATED: USE B INSTEAD)]",
+      "tests/test_options.py::test_flag_group_competition_duplicate_option_name"
+    ],
+    "fix_commit_date": "2026-05-23T15:59:39+02:00",
+    "fix_subject": "Fix deprecated label formatting",
+    "overlay_paths": [
+      "tests/test_commands.py",
+      "tests/test_options.py"
+    ],
+    "overlay_ref": "82f377c547e1867d073f02bb8f476214d07e245b"
+  }
+]

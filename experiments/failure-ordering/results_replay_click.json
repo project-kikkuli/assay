@@ -1,0 +1,86 @@
+{
+  "cases_comparable_to_default": 7,
+  "cases_plugin_beats_default": 6,
+  "cases_replayed": 7,
+  "measured": true,
+  "repo_tag": "click",
+  "results": [
+    {
+      "base_ref": "648d7c403829013ade629d63ddbfe808f6b2b770",
+      "default_tests_run_before_stop": 277,
+      "fix_subject": "Fix deprecated label formatting",
+      "plugin_order": {
+        "first_failure": "tests/test_commands.py::test_deprecated_empty_help_no_leading_space[-True]",
+        "returncode": 1,
+        "tests_run_before_stop": 73,
+        "wall_s": 1.307
+      }
+    },
+    {
+      "base_ref": "8929d392781c8113bc569f388c15c47b94f86581",
+      "default_tests_run_before_stop": 179,
+      "fix_subject": "Fix double-bracketing of choices in synopsis",
+      "plugin_order": {
+        "first_failure": "tests/test_basic.py::test_choice_argument_optional_metavar",
+        "returncode": 1,
+        "tests_run_before_stop": 81,
+        "wall_s": 1.246
+      }
+    },
+    {
+      "base_ref": "916883afad450c0c9bbc4212817900949131adbd",
+      "default_tests_run_before_stop": 190,
+      "fix_subject": "Fix `package_name` resolution when top-level module differs from distribution name",
+      "plugin_order": {
+        "first_failure": "tests/test_basic.py::test_version_option_resolves_import_name_to_distribution",
+        "returncode": 1,
+        "tests_run_before_stop": 91,
+        "wall_s": 1.154
+      }
+    },
+    {
+      "base_ref": "7925a3410d7098c28cfca3b2baa6c852666bbd14",
+      "default_tests_run_before_stop": 1719,
+      "fix_subject": "Validate style() color arguments, fix explicit black color argument",
+      "plugin_order": {
+        "first_failure": "tests/test_utils/test_style.py::test_styling[styles44-\\x1b[38;5;0mx y\\x1b[0m]",
+        "returncode": 1,
+        "tests_run_before_stop": 46,
+        "wall_s": 1.185
+      }
+    },
+    {
+      "base_ref": "420c8fb44eeadb537cae69d2fee3796e808558dd",
+      "default_tests_run_before_stop": 1916,
+      "fix_subject": "Fix `copy`, `deepcopy` and `pickle` of `Sentinel` members",
+      "plugin_order": {
+        "first_failure": "tests/test_utils/test_sentinel.py::test_sentinel_duplication_preserves_identity[pickle-Sentinel.UNSET]",
+        "returncode": 1,
+        "tests_run_before_stop": 7,
+        "wall_s": 1.344
+      }
+    },
+    {
+      "base_ref": "08a7bc6d2a2af02268b09b3b5fd8079546c81c03",
+      "default_tests_run_before_stop": 2,
+      "fix_subject": "Fix race condition on `KeyboardInterrupt` arriving in `Command.main()`",
+      "plugin_order": {
+        "first_failure": "tests/test_abort_interrupt.py::test_interrupt_while_reporting_abort[prompt-1]",
+        "returncode": 1,
+        "tests_run_before_stop": 217,
+        "wall_s": 1.27
+      }
+    },
+    {
+      "base_ref": "6d5bac5c712195cbfa9666ba0ecbf0573cdea356",
+      "default_tests_run_before_stop": 1955,
+      "fix_subject": "Fix short help abbreviation",
+      "plugin_order": {
+        "first_failure": "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[-abbreviation inside sentence]",
+        "returncode": 1,
+        "tests_run_before_stop": 10,
+        "wall_s": 1.19
+      }
+    }
+  ]
+}

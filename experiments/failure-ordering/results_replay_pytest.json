@@ -1,0 +1,152 @@
+{
+  "cases_comparable_to_default": 13,
+  "cases_plugin_beats_default": 13,
+  "cases_replayed": 13,
+  "measured": true,
+  "repo_tag": "pytest",
+  "results": [
+    {
+      "base_ref": "6a30f9e5764d106ce5a37e5bb706e797d46e318f",
+      "default_tests_run_before_stop": 606,
+      "fix_subject": "Merge pull request #14284 from oaksprout/fix-nested-caplog-filtering",
+      "plugin_order": {
+        "first_failure": "testing/logging/test_fixture.py::test_with_statement_nested_filtering",
+        "returncode": 1,
+        "tests_run_before_stop": 6,
+        "wall_s": 1.627
+      }
+    },
+    {
+      "base_ref": "e984a9b94740697411f5a05fcdfc3299dd20f13a",
+      "default_tests_run_before_stop": 2593,
+      "fix_subject": "fix(rewrite): prevent walrus operator double evaluation in assertions",
+      "plugin_order": {
+        "first_failure": "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_compare_boolean_fails",
+        "returncode": 1,
+        "tests_run_before_stop": 93,
+        "wall_s": 2.763
+      }
+    },
+    {
+      "base_ref": "1a76d467648367377661abbf0c680a073ec04b48",
+      "default_tests_run_before_stop": 1131,
+      "fix_subject": "fix(rewrite): freeze operands a later walrus would clobber",
+      "plugin_order": {
+        "first_failure": "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_compare_left_operand_precedes_walrus",
+        "returncode": 1,
+        "tests_run_before_stop": 61,
+        "wall_s": 0.984
+      }
+    },
+    {
+      "base_ref": "918f92bc31deb8737bca4493ac3bd0f44aba5c54",
+      "default_tests_run_before_stop": 2593,
+      "fix_subject": "fix(rewrite): show correct walrus values in BoolOp explanations",
+      "plugin_order": {
+        "first_failure": "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_compare_boolean_fails",
+        "returncode": 1,
+        "tests_run_before_stop": 90,
+        "wall_s": 1.44
+      }
+    },
+    {
+      "base_ref": "77f93723d1cbc00b7b3ae850fb14ca4c99b26ebd",
+      "default_tests_run_before_stop": 2608,
+      "fix_subject": "fix(rewrite): assign walrus comparators to temps in chained comparisons",
+      "plugin_order": {
+        "first_failure": "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_chained_compare",
+        "returncode": 1,
+        "tests_run_before_stop": 107,
+        "wall_s": 1.943
+      }
+    },
+    {
+      "base_ref": "189ada2ddbec2bfe3a684faccf0ba484a24aeb7a",
+      "default_tests_run_before_stop": 2607,
+      "fix_subject": "fix(rewrite): avoid double evaluation of walrus in BoolOp condition",
+      "plugin_order": {
+        "first_failure": "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_in_boolop",
+        "returncode": 1,
+        "tests_run_before_stop": 65,
+        "wall_s": 1.202
+      }
+    },
+    {
+      "base_ref": "51e9a9f148cd2509a31e3fa0d2b1b3204c2b0dd7",
+      "default_tests_run_before_stop": 1583,
+      "fix_subject": "fix(monkeypatch): don't leave inherited attributes in the instance dict",
+      "plugin_order": {
+        "first_failure": "testing/test_monkeypatch.py::test_undo_inherited_attribute_on_instance",
+        "returncode": 1,
+        "tests_run_before_stop": 31,
+        "wall_s": 1.054
+      }
+    },
+    {
+      "base_ref": "ae777851d8b324de5eb3d0e860c28b219ce3fcd8",
+      "default_tests_run_before_stop": 1587,
+      "fix_subject": "Merge pull request #14969 from Irahan2/fix-10644-monkeypatch-inherited-attr",
+      "plugin_order": {
+        "first_failure": "testing/test_monkeypatch.py::test_undo_inherited_attribute_on_instance",
+        "returncode": 1,
+        "tests_run_before_stop": 1,
+        "wall_s": 1.168
+      }
+    },
+    {
+      "base_ref": "516aecd4abe603754fd08833a269f6dc820907b9",
+      "default_tests_run_before_stop": 2032,
+      "fix_subject": "fixtures: use a better data structure for storing FixtureDefs",
+      "plugin_order": {
+        "first_failure": "testing/deprecated_test.py::TestFixtureNodeidDeprecations::test_matchfactories_string_fallback",
+        "returncode": 1,
+        "tests_run_before_stop": 26,
+        "wall_s": 1.403
+      }
+    },
+    {
+      "base_ref": "a84e5039c6311735b44dc6518b7e8cfb00d63775",
+      "default_tests_run_before_stop": 2029,
+      "fix_subject": "SQUASH: Backward compat for register_fixture with string nodeids",
+      "plugin_order": {
+        "first_failure": "testing/deprecated_test.py::TestFixtureNodeidDeprecations::test_matchfactories_string_fallback",
+        "returncode": 1,
+        "tests_run_before_stop": 1,
+        "wall_s": 0.963
+      }
+    },
+    {
+      "base_ref": "53bc06b9933eb50b40cd904aa50bcd1b6cf2a49c",
+      "default_tests_run_before_stop": 4442,
+      "fix_subject": "fix: bytecode cache invalidation for moved test files (#14552)",
+      "plugin_order": {
+        "first_failure": "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename",
+        "returncode": 1,
+        "tests_run_before_stop": 116,
+        "wall_s": 2.628
+      }
+    },
+    {
+      "base_ref": "bb33e5c1feb7223829b9ffe43cf0b4df2bf8df50",
+      "default_tests_run_before_stop": 4442,
+      "fix_subject": "fix: use _imp._fix_co_filename to fix the filename in the bytecode and use a pure python implementation as fallback",
+      "plugin_order": {
+        "first_failure": "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename[import-lib]",
+        "returncode": 1,
+        "tests_run_before_stop": 114,
+        "wall_s": 2.274
+      }
+    },
+    {
+      "base_ref": "99ab2acccff15f757260a1e1fbb0d2a47fc01041",
+      "default_tests_run_before_stop": 2390,
+      "fix_subject": "fixtures: fix lineno off-by-one in --fixtures/--fixtures-per-test and a couple of error messages",
+      "plugin_order": {
+        "first_failure": "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_testmodule",
+        "returncode": 1,
+        "tests_run_before_stop": 176,
+        "wall_s": 4.023
+      }
+    }
+  ]
+}

@@ -14,3 +14,4 @@ node_modules/
 test-results/
 playwright-report/
 _work/
+_work_*/

@@ -1,0 +1,414 @@
+{
+  "cases": [
+    {
+      "case": "99ab2acccff15f757260a1e1fbb0d2a47fc01041",
+      "failure_count": 19,
+      "localizer_output_lines": 1812,
+      "log_total_lines": 2457,
+      "overlay_paths": [
+        "testing/python/fixtures.py",
+        "testing/python/show_fixtures_per_test.py"
+      ],
+      "per_failure": {
+        "testing/python/fixtures.py::TestParameterizedSubRequest::test_call_from_fixture": {
+          "from_bottom": 13,
+          "from_top": 2445,
+          "localizer_found_it": true
+        },
+        "testing/python/fixtures.py::TestParameterizedSubRequest::test_call_from_test": {
+          "from_bottom": 12,
+          "from_top": 2446,
+          "localizer_found_it": true
+        },
+        "testing/python/fixtures.py::TestParameterizedSubRequest::test_external_fixture": {
+          "from_bottom": 11,
+          "from_top": 2447,
+          "localizer_found_it": true
+        },
+        "testing/python/fixtures.py::TestParameterizedSubRequest::test_non_relative_path": {
+          "from_bottom": 10,
+          "from_top": 2448,
+          "localizer_found_it": true
+        },
+        "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_different_files": {
+          "from_bottom": 15,
+          "from_top": 2443,
+          "localizer_found_it": true
+        },
+        "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_indented_doc": {
+          "from_bottom": 17,
+          "from_top": 2440,
+          "localizer_found_it": true
+        },
+        "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_indented_doc_first_line_unindented": {
+          "from_bottom": 17,
+          "from_top": 2441,
+          "localizer_found_it": true
+        },
+        "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_indented_in_class": {
+          "from_bottom": 16,
+          "from_top": 2442,
+          "localizer_found_it": true
+        },
+        "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_testmodule": {
+          "from_bottom": 20,
+          "from_top": 2438,
+          "localizer_found_it": true
+        },
+        "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_trimmed_doc": {
+          "from_bottom": 19,
+          "from_top": 2439,
+          "localizer_found_it": true
+        },
+        "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_with_same_name": {
+          "from_bottom": 14,
+          "from_top": 2444,
+          "localizer_found_it": true
+        },
+        "testing/python/fixtures.py::test_fixture_named_request": {
+          "from_bottom": 9,
+          "from_top": 2449,
+          "localizer_found_it": true
+        },
+        "testing/python/show_fixtures_per_test.py::test_fixtures_in_conftest": {
+          "from_bottom": 7,
+          "from_top": 2451,
+          "localizer_found_it": true
+        },
+        "testing/python/show_fixtures_per_test.py::test_fixtures_in_module": {
+          "from_bottom": 8,
+          "from_top": 2450,
+          "localizer_found_it": true
+        },
+        "testing/python/show_fixtures_per_test.py::test_multiline_docstring_in_module": {
+          "from_bottom": 4,
+          "from_top": 2454,
+          "localizer_found_it": true
+        },
+        "testing/python/show_fixtures_per_test.py::test_should_show_fixtures_used_by_test": {
+          "from_bottom": 6,
+          "from_top": 2452,
+          "localizer_found_it": true
+        },
+        "testing/python/show_fixtures_per_test.py::test_should_show_parametrized_fixtures_used_by_test": {
+          "from_bottom": 2,
+          "from_top": 2456,
+          "localizer_found_it": true
+        },
+        "testing/python/show_fixtures_per_test.py::test_verbose_include_multiline_docstring": {
+          "from_bottom": 3,
+          "from_top": 2455,
+          "localizer_found_it": true
+        },
+        "testing/python/show_fixtures_per_test.py::test_verbose_include_private_fixtures_and_loc": {
+          "from_bottom": 5,
+          "from_top": 2453,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "bb33e5c1feb7223829b9ffe43cf0b4df2bf8df50",
+      "failure_count": 2,
+      "localizer_output_lines": 8,
+      "log_total_lines": 79,
+      "overlay_paths": [
+        "testing/test_assertrewrite.py"
+      ],
+      "per_failure": {
+        "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename[import-lib]": {
+          "from_bottom": 3,
+          "from_top": 77,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename[pure-python]": {
+          "from_bottom": 2,
+          "from_top": 78,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "53bc06b9933eb50b40cd904aa50bcd1b6cf2a49c",
+      "failure_count": 1,
+      "localizer_output_lines": 37,
+      "log_total_lines": 103,
+      "overlay_paths": [
+        "testing/test_assertrewrite.py"
+      ],
+      "per_failure": {
+        "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename": {
+          "from_bottom": 2,
+          "from_top": 102,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "a84e5039c6311735b44dc6518b7e8cfb00d63775",
+      "failure_count": 1,
+      "localizer_output_lines": 104,
+      "log_total_lines": 138,
+      "overlay_paths": [
+        "testing/python/fixtures.py"
+      ],
+      "per_failure": {
+        "testing/python/fixtures.py::TestFillFixtures::test_fixture_not_found_nodeid_fallback": {
+          "from_bottom": 2,
+          "from_top": 137,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "516aecd4abe603754fd08833a269f6dc820907b9",
+      "failure_count": 1,
+      "localizer_output_lines": 37,
+      "log_total_lines": 106,
+      "overlay_paths": [
+        "testing/deprecated_test.py"
+      ],
+      "per_failure": {
+        "testing/deprecated_test.py::TestFixtureNodeidDeprecations::test_matchfactories_string_fallback": {
+          "from_bottom": 2,
+          "from_top": 105,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "ae777851d8b324de5eb3d0e860c28b219ce3fcd8",
+      "failure_count": 3,
+      "localizer_output_lines": 13,
+      "log_total_lines": 112,
+      "overlay_paths": [
+        "testing/test_monkeypatch.py"
+      ],
+      "per_failure": {
+        "testing/test_monkeypatch.py::test_undo_inherited_attribute_on_instance": {
+          "from_bottom": 4,
+          "from_top": 109,
+          "localizer_found_it": true
+        },
+        "testing/test_monkeypatch.py::test_undo_inherited_method_on_instance": {
+          "from_bottom": 2,
+          "from_top": 111,
+          "localizer_found_it": true
+        },
+        "testing/test_monkeypatch.py::test_undo_inherited_non_data_descriptor_on_instance": {
+          "from_bottom": 3,
+          "from_top": 110,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "51e9a9f148cd2509a31e3fa0d2b1b3204c2b0dd7",
+      "failure_count": 3,
+      "localizer_output_lines": 13,
+      "log_total_lines": 112,
+      "overlay_paths": [
+        "testing/test_monkeypatch.py"
+      ],
+      "per_failure": {
+        "testing/test_monkeypatch.py::test_undo_inherited_attribute_on_instance": {
+          "from_bottom": 4,
+          "from_top": 109,
+          "localizer_found_it": true
+        },
+        "testing/test_monkeypatch.py::test_undo_inherited_method_on_instance": {
+          "from_bottom": 2,
+          "from_top": 111,
+          "localizer_found_it": true
+        },
+        "testing/test_monkeypatch.py::test_undo_inherited_non_data_descriptor_on_instance": {
+          "from_bottom": 3,
+          "from_top": 110,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "1a76d467648367377661abbf0c680a073ec04b48",
+      "failure_count": 7,
+      "localizer_output_lines": 54,
+      "log_total_lines": 424,
+      "overlay_paths": [
+        "testing/test_assertrewrite_coverage.py"
+      ],
+      "per_failure": {
+        "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_binop_left_operand_precedes_walrus": {
+          "from_bottom": 5,
+          "from_top": 420,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_call_earlier_argument_precedes_walrus": {
+          "from_bottom": 6,
+          "from_top": 419,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_chained_compare_operands_in_order": {
+          "from_bottom": 4,
+          "from_top": 421,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_compare_left_operand_precedes_walrus": {
+          "from_bottom": 8,
+          "from_top": 417,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_compare_reports_left_operand": {
+          "from_bottom": 7,
+          "from_top": 418,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_double_star_argument_precedes_walrus": {
+          "from_bottom": 2,
+          "from_top": 423,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_keyword_argument_precedes_walrus": {
+          "from_bottom": 3,
+          "from_top": 422,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "918f92bc31deb8737bca4493ac3bd0f44aba5c54",
+      "failure_count": 3,
+      "localizer_output_lines": 241,
+      "log_total_lines": 215,
+      "overlay_paths": [
+        "testing/test_assertrewrite.py"
+      ],
+      "per_failure": {
+        "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_boolean_none_fails": {
+          "from_bottom": 3,
+          "from_top": 213,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_compare_boolean_fails": {
+          "from_bottom": 4,
+          "from_top": 212,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite.py::TestIssue14445::test_walrus_boolop_same_target_correct_explanation": {
+          "from_bottom": 2,
+          "from_top": 214,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "77f93723d1cbc00b7b3ae850fb14ca4c99b26ebd",
+      "failure_count": 1,
+      "localizer_output_lines": 32,
+      "log_total_lines": 75,
+      "overlay_paths": [
+        "testing/test_assertrewrite.py"
+      ],
+      "per_failure": {
+        "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_chained_compare": {
+          "from_bottom": 2,
+          "from_top": 74,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "189ada2ddbec2bfe3a684faccf0ba484a24aeb7a",
+      "failure_count": 1,
+      "localizer_output_lines": 32,
+      "log_total_lines": 74,
+      "overlay_paths": [
+        "testing/test_assertrewrite.py"
+      ],
+      "per_failure": {
+        "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_in_boolop": {
+          "from_bottom": 2,
+          "from_top": 73,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "e984a9b94740697411f5a05fcdfc3299dd20f13a",
+      "failure_count": 5,
+      "localizer_output_lines": 319,
+      "log_total_lines": 307,
+      "overlay_paths": [
+        "testing/test_assertrewrite.py"
+      ],
+      "per_failure": {
+        "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_boolean_none_fails": {
+          "from_bottom": 5,
+          "from_top": 303,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_compare_boolean_fails": {
+          "from_bottom": 6,
+          "from_top": 302,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_basic": {
+          "from_bottom": 4,
+          "from_top": 304,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_in_function_call": {
+          "from_bottom": 2,
+          "from_top": 306,
+          "localizer_found_it": true
+        },
+        "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_running_counter": {
+          "from_bottom": 3,
+          "from_top": 305,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "6a30f9e5764d106ce5a37e5bb706e797d46e318f",
+      "failure_count": 2,
+      "localizer_output_lines": 14,
+      "log_total_lines": 78,
+      "overlay_paths": [
+        "testing/logging/test_fixture.py"
+      ],
+      "per_failure": {
+        "testing/logging/test_fixture.py::test_with_statement_filtering_already_present": {
+          "from_bottom": 2,
+          "from_top": 77,
+          "localizer_found_it": true
+        },
+        "testing/logging/test_fixture.py::test_with_statement_nested_filtering": {
+          "from_bottom": 3,
+          "from_top": 76,
+          "localizer_found_it": true
+        }
+      }
+    }
+  ],
+  "measured": true,
+  "repo_tag": "pytest",
+  "summary": {
+    "from_bottom": {
+      "max": 20,
+      "mean": 6.33,
+      "median": 4,
+      "min": 2,
+      "n": 49
+    },
+    "from_top": {
+      "max": 2456,
+      "mean": 1082.67,
+      "median": 418,
+      "min": 73,
+      "n": 49
+    },
+    "localizer_found_every_failure": true,
+    "localizer_recall": 1.0,
+    "total_failures_measured": 49
+  }
+}

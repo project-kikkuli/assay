@@ -48,7 +48,7 @@ either raw log; only a caller that parses it and keeps just the `<failure>`
 elements (13.8KB) gets the structured win — naively feeding the whole file
 to an agent is worse than the compact text log.
 
-## Limits
+## Limits (n=1 build)
 
 All 11 failures share one exception shape (`Failed: DID NOT RAISE
 TypeError`) from one bug; a suite with more heterogeneous failures might
@@ -60,3 +60,50 @@ field, so file size/field-name specifics won't transfer as-is to another
 test framework's JUnit output. Localization is substring matching against
 the real nodeid and real exception text pulled from this same run, not a
 model of what a human or an agent would actually parse out of prose.
+
+## A real mechanism, and a statistical sample (n=112)
+
+`localize.py` is a real, standalone tool (not experiment-only code): given a
+pytest log and/or its JUnit XML, it prints pytest's own real "short test
+summary info" section (found by its real header, not a guessed line count)
+and/or the JUnit `<failure>`/`<error>` entries only, skipping every passing
+test. `measure_sample.py` runs it against the same 20-case real
+regression/fix sample `../failure-ordering/mine_cases.py` built (13 pytest +
+7 click cases, real pre-fix commit plus the real fix's own test overlaid, no
+seeded faults), capturing one real scoped `--tb=long --junit-xml=...` run
+per case:
+
+```sh
+python3 experiments/failure-context-budget/measure_sample.py \
+  --repo-dir /path/to/pytest --cases experiments/failure-ordering/cases/pytest_cases.json --repo-tag pytest \
+  --out experiments/failure-context-budget/results_sample_pytest.json
+python3 experiments/failure-context-budget/localize.py --log run.txt --junit run.xml
+```
+
+### Measured result
+
+112 real failures across both repos ([pytest](results_sample_pytest.json),
+[click](results_sample_click.json)):
+
+| | n | Median lines to localize | Min | Max |
+|---|---|---|---|---|
+| From the **top** | 112 | **2,076** | 59 | 2,456 |
+| From the **bottom** | 112 | **6** | 2 | 39 |
+
+Reading from the bottom instead of the top cuts the median lines needed by
+**346x** across two real, unrelated codebases — not a one-bug artifact of
+the n=1 build. `localize.py` found every one of the 112 real failures
+(recall **1.0**) by locating pytest's real summary-section header, never by
+line-counting from the end.
+
+## Limits (n=112 sample)
+
+Cases are scoped, single-file (or two-file) runs, not full-suite logs — the
+`from_top`/`from_bottom` counts are smaller in absolute terms than the n=1
+build's whole-`testing/`-directory numbers, though the *ratio* (bottom is
+where the answer is) is the same shape and, if anything, the full-suite case
+is the more extreme one. `localize.py`'s tail-summary extraction depends on
+pytest's real, currently-stable "short test summary info" header string; a
+framework or pytest version that renamed or removed that section would need
+the documented last-N-lines fallback instead, which this sample did not
+need to exercise (the header was found in all 112 cases).

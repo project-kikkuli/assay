@@ -1,0 +1,541 @@
+{
+  "cases": [
+    {
+      "case": {
+        "base_ref": "6a30f9e5764d106ce5a37e5bb706e797d46e318f",
+        "failing_count": 2,
+        "fix_subject": "Merge pull request #14284 from oaksprout/fix-nested-caplog-filtering",
+        "overlay_paths": [
+          "testing/logging/test_fixture.py"
+        ]
+      },
+      "has_prior": false,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/logging/test_fixture.py::test_with_statement_nested_filtering",
+          "returncode": 1,
+          "tests_run_before_stop": 606,
+          "wall_s": 6.009
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1164,
+          "wall_s": 1.653
+        },
+        "proximity": {
+          "first_failure": "testing/logging/test_fixture.py::test_with_statement_nested_filtering",
+          "returncode": 1,
+          "tests_run_before_stop": 6,
+          "wall_s": 1.004
+        },
+        "recent_failure": {
+          "first_failure": "testing/logging/test_fixture.py::test_with_statement_nested_filtering",
+          "returncode": 1,
+          "tests_run_before_stop": 606,
+          "wall_s": 3.583
+        }
+      }
+    },
+    {
+      "case": {
+        "base_ref": "e984a9b94740697411f5a05fcdfc3299dd20f13a",
+        "failing_count": 10,
+        "fix_subject": "fix(rewrite): prevent walrus operator double evaluation in assertions",
+        "overlay_paths": [
+          "testing/test_assertrewrite.py"
+        ]
+      },
+      "has_prior": true,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_compare_boolean_fails",
+          "returncode": 1,
+          "tests_run_before_stop": 2593,
+          "wall_s": 26.091
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1158,
+          "wall_s": 2.557
+        },
+        "proximity": {
+          "first_failure": "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_compare_boolean_fails",
+          "returncode": 1,
+          "tests_run_before_stop": 92,
+          "wall_s": 1.618
+        },
+        "recent_failure": {
+          "first_failure": "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_compare_boolean_fails",
+          "returncode": 1,
+          "tests_run_before_stop": 2593,
+          "wall_s": 26.949
+        }
+      }
+    },
+    {
+      "case": {
+        "base_ref": "1a76d467648367377661abbf0c680a073ec04b48",
+        "failing_count": 7,
+        "fix_subject": "fix(rewrite): freeze operands a later walrus would clobber",
+        "overlay_paths": [
+          "testing/test_assertrewrite_coverage.py"
+        ]
+      },
+      "has_prior": true,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_compare_left_operand_precedes_walrus",
+          "returncode": 1,
+          "tests_run_before_stop": 1131,
+          "wall_s": 5.532
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1180,
+          "wall_s": 1.456
+        },
+        "proximity": {
+          "first_failure": "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_compare_left_operand_precedes_walrus",
+          "returncode": 1,
+          "tests_run_before_stop": 60,
+          "wall_s": 0.835
+        },
+        "recent_failure": {
+          "first_failure": "testing/test_assertrewrite_coverage.py::TestEvaluationOrder::test_compare_left_operand_precedes_walrus",
+          "returncode": 1,
+          "tests_run_before_stop": 1136,
+          "wall_s": 6.229
+        }
+      }
+    },
+    {
+      "case": {
+        "base_ref": "918f92bc31deb8737bca4493ac3bd0f44aba5c54",
+        "failing_count": 6,
+        "fix_subject": "fix(rewrite): show correct walrus values in BoolOp explanations",
+        "overlay_paths": [
+          "testing/test_assertrewrite.py"
+        ]
+      },
+      "has_prior": true,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_compare_boolean_fails",
+          "returncode": 1,
+          "tests_run_before_stop": 2593,
+          "wall_s": 28.011
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1158,
+          "wall_s": 2.237
+        },
+        "proximity": {
+          "first_failure": "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_compare_boolean_fails",
+          "returncode": 1,
+          "tests_run_before_stop": 92,
+          "wall_s": 1.706
+        },
+        "recent_failure": {
+          "first_failure": "testing/test_assertrewrite.py::TestAssertionRewriteWalrusOperator::test_assertion_walrus_operator_compare_boolean_fails",
+          "returncode": 1,
+          "tests_run_before_stop": 2593,
+          "wall_s": 26.399
+        }
+      }
+    },
+    {
+      "case": {
+        "base_ref": "77f93723d1cbc00b7b3ae850fb14ca4c99b26ebd",
+        "failing_count": 2,
+        "fix_subject": "fix(rewrite): assign walrus comparators to temps in chained comparisons",
+        "overlay_paths": [
+          "testing/test_assertrewrite.py"
+        ]
+      },
+      "has_prior": true,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_chained_compare",
+          "returncode": 1,
+          "tests_run_before_stop": 2608,
+          "wall_s": 26.777
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1158,
+          "wall_s": 1.73
+        },
+        "proximity": {
+          "first_failure": "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_chained_compare",
+          "returncode": 1,
+          "tests_run_before_stop": 107,
+          "wall_s": 3.97
+        },
+        "recent_failure": {
+          "first_failure": "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_chained_compare",
+          "returncode": 1,
+          "tests_run_before_stop": 2608,
+          "wall_s": 26.884
+        }
+      }
+    },
+    {
+      "case": {
+        "base_ref": "189ada2ddbec2bfe3a684faccf0ba484a24aeb7a",
+        "failing_count": 2,
+        "fix_subject": "fix(rewrite): avoid double evaluation of walrus in BoolOp condition",
+        "overlay_paths": [
+          "testing/test_assertrewrite.py"
+        ]
+      },
+      "has_prior": true,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_in_boolop",
+          "returncode": 1,
+          "tests_run_before_stop": 2607,
+          "wall_s": 26.772
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1158,
+          "wall_s": 2.47
+        },
+        "proximity": {
+          "first_failure": "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_in_boolop",
+          "returncode": 1,
+          "tests_run_before_stop": 106,
+          "wall_s": 4.087
+        },
+        "recent_failure": {
+          "first_failure": "testing/test_assertrewrite.py::TestIssue14445::test_walrus_no_double_eval_in_boolop",
+          "returncode": 1,
+          "tests_run_before_stop": 2608,
+          "wall_s": 29.407
+        }
+      }
+    },
+    {
+      "case": {
+        "base_ref": "51e9a9f148cd2509a31e3fa0d2b1b3204c2b0dd7",
+        "failing_count": 3,
+        "fix_subject": "fix(monkeypatch): don't leave inherited attributes in the instance dict",
+        "overlay_paths": [
+          "testing/test_monkeypatch.py"
+        ]
+      },
+      "has_prior": true,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/test_monkeypatch.py::test_undo_inherited_attribute_on_instance",
+          "returncode": 1,
+          "tests_run_before_stop": 1583,
+          "wall_s": 6.547
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1158,
+          "wall_s": 2.073
+        },
+        "proximity": {
+          "first_failure": "testing/test_monkeypatch.py::test_undo_inherited_attribute_on_instance",
+          "returncode": 1,
+          "tests_run_before_stop": 30,
+          "wall_s": 2.758
+        },
+        "recent_failure": {
+          "first_failure": "testing/test_monkeypatch.py::test_undo_inherited_attribute_on_instance",
+          "returncode": 1,
+          "tests_run_before_stop": 1583,
+          "wall_s": 5.795
+        }
+      }
+    },
+    {
+      "case": {
+        "base_ref": "ae777851d8b324de5eb3d0e860c28b219ce3fcd8",
+        "failing_count": 3,
+        "fix_subject": "Merge pull request #14969 from Irahan2/fix-10644-monkeypatch-inherited-attr",
+        "overlay_paths": [
+          "testing/test_monkeypatch.py"
+        ]
+      },
+      "has_prior": true,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/test_monkeypatch.py::test_undo_inherited_attribute_on_instance",
+          "returncode": 1,
+          "tests_run_before_stop": 1587,
+          "wall_s": 5.982
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1188,
+          "wall_s": 1.398
+        },
+        "proximity": {
+          "first_failure": "testing/test_monkeypatch.py::test_undo_inherited_attribute_on_instance",
+          "returncode": 1,
+          "tests_run_before_stop": 34,
+          "wall_s": 0.909
+        },
+        "recent_failure": {
+          "first_failure": "testing/test_monkeypatch.py::test_undo_inherited_attribute_on_instance",
+          "returncode": 1,
+          "tests_run_before_stop": 1,
+          "wall_s": 0.806
+        }
+      }
+    },
+    {
+      "case": {
+        "base_ref": "516aecd4abe603754fd08833a269f6dc820907b9",
+        "failing_count": 2,
+        "fix_subject": "fixtures: use a better data structure for storing FixtureDefs",
+        "overlay_paths": [
+          "testing/deprecated_test.py"
+        ]
+      },
+      "has_prior": true,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/deprecated_test.py::TestFixtureNodeidDeprecations::test_matchfactories_string_fallback",
+          "returncode": 1,
+          "tests_run_before_stop": 2032,
+          "wall_s": 9.649
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1209,
+          "wall_s": 1.442
+        },
+        "proximity": {
+          "first_failure": "testing/deprecated_test.py::TestFixtureNodeidDeprecations::test_matchfactories_string_fallback",
+          "returncode": 1,
+          "tests_run_before_stop": 26,
+          "wall_s": 1.246
+        },
+        "recent_failure": {
+          "first_failure": "testing/deprecated_test.py::TestFixtureNodeidDeprecations::test_matchfactories_string_fallback",
+          "returncode": 1,
+          "tests_run_before_stop": 2032,
+          "wall_s": 9.711
+        }
+      }
+    },
+    {
+      "case": {
+        "base_ref": "a84e5039c6311735b44dc6518b7e8cfb00d63775",
+        "failing_count": 1,
+        "fix_subject": "SQUASH: Backward compat for register_fixture with string nodeids",
+        "overlay_paths": [
+          "testing/python/fixtures.py"
+        ]
+      },
+      "has_prior": true,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/deprecated_test.py::TestFixtureNodeidDeprecations::test_parsefactories_nodeid_deprecation",
+          "returncode": 1,
+          "tests_run_before_stop": 2029,
+          "wall_s": 9.618
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1193,
+          "wall_s": 1.402
+        },
+        "proximity": {
+          "first_failure": "testing/deprecated_test.py::TestFixtureNodeidDeprecations::test_parsefactories_nodeid_deprecation",
+          "returncode": 1,
+          "tests_run_before_stop": 2029,
+          "wall_s": 9.689
+        },
+        "recent_failure": {
+          "first_failure": "testing/deprecated_test.py::TestFixtureNodeidDeprecations::test_matchfactories_string_fallback",
+          "returncode": 1,
+          "tests_run_before_stop": 1,
+          "wall_s": 1.063
+        }
+      }
+    },
+    {
+      "case": {
+        "base_ref": "53bc06b9933eb50b40cd904aa50bcd1b6cf2a49c",
+        "failing_count": 2,
+        "fix_subject": "fix: bytecode cache invalidation for moved test files (#14552)",
+        "overlay_paths": [
+          "testing/test_assertrewrite.py"
+        ]
+      },
+      "has_prior": true,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename",
+          "returncode": 1,
+          "tests_run_before_stop": 4442,
+          "wall_s": 87.584
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1225,
+          "wall_s": 1.764
+        },
+        "proximity": {
+          "first_failure": "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename",
+          "returncode": 1,
+          "tests_run_before_stop": 114,
+          "wall_s": 2.261
+        },
+        "recent_failure": {
+          "first_failure": "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename",
+          "returncode": 1,
+          "tests_run_before_stop": 4442,
+          "wall_s": 89.008
+        }
+      }
+    },
+    {
+      "case": {
+        "base_ref": "bb33e5c1feb7223829b9ffe43cf0b4df2bf8df50",
+        "failing_count": 2,
+        "fix_subject": "fix: use _imp._fix_co_filename to fix the filename in the bytecode and use a pure python implementation as fallback",
+        "overlay_paths": [
+          "testing/test_assertrewrite.py"
+        ]
+      },
+      "has_prior": true,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename[import-lib]",
+          "returncode": 1,
+          "tests_run_before_stop": 4442,
+          "wall_s": 87.352
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1225,
+          "wall_s": 1.636
+        },
+        "proximity": {
+          "first_failure": "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename[import-lib]",
+          "returncode": 1,
+          "tests_run_before_stop": 114,
+          "wall_s": 5.069
+        },
+        "recent_failure": {
+          "first_failure": "testing/test_assertrewrite.py::TestRewriteOnImport::test_moved_test_file_updates_code_filename[import-lib]",
+          "returncode": 1,
+          "tests_run_before_stop": 4442,
+          "wall_s": 89.564
+        }
+      }
+    },
+    {
+      "case": {
+        "base_ref": "99ab2acccff15f757260a1e1fbb0d2a47fc01041",
+        "failing_count": 22,
+        "fix_subject": "fixtures: fix lineno off-by-one in --fixtures/--fixtures-per-test and a couple of error messages",
+        "overlay_paths": [
+          "testing/python/fixtures.py",
+          "testing/python/show_fixtures_per_test.py"
+        ]
+      },
+      "has_prior": true,
+      "strategies": {
+        "default": {
+          "first_failure": "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_testmodule",
+          "returncode": 1,
+          "tests_run_before_stop": 2390,
+          "wall_s": 17.35
+        },
+        "duration_asc": {
+          "first_failure": "testing/_py/test_local.py::TestLocalPath::test_visit_sort",
+          "returncode": 1,
+          "tests_run_before_stop": 1244,
+          "wall_s": 1.564
+        },
+        "proximity": {
+          "first_failure": "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_testmodule",
+          "returncode": 1,
+          "tests_run_before_stop": 175,
+          "wall_s": 6.329
+        },
+        "recent_failure": {
+          "first_failure": "testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_testmodule",
+          "returncode": 1,
+          "tests_run_before_stop": 2392,
+          "wall_s": 18.258
+        }
+      }
+    }
+  ],
+  "excluded_count": 0,
+  "measured": true,
+  "reference_test_count": 4688,
+  "repo_tag": "pytest",
+  "summary": {
+    "default": {
+      "cases_strictly_beating_default": 0,
+      "cases_total": 13,
+      "tests_run_before_stop": {
+        "max": 4442,
+        "mean": 2357.15,
+        "median": 2390,
+        "min": 606,
+        "n": 13,
+        "stdev": 1114.55
+      }
+    },
+    "duration_asc": {
+      "cases_strictly_beating_default": 11,
+      "cases_total": 13,
+      "tests_run_before_stop": {
+        "max": 1244,
+        "mean": 1186,
+        "median": 1180,
+        "min": 1158,
+        "n": 13,
+        "stdev": 30.86
+      }
+    },
+    "proximity": {
+      "cases_strictly_beating_default": 12,
+      "cases_total": 13,
+      "tests_run_before_stop": {
+        "max": 2029,
+        "mean": 229.62,
+        "median": 92,
+        "min": 6,
+        "n": 13,
+        "stdev": 542.68
+      }
+    },
+    "recent_failure": {
+      "cases_strictly_beating_default": 2,
+      "cases_total": 13,
+      "tests_run_before_stop": {
+        "max": 4442,
+        "mean": 2079.77,
+        "median": 2392,
+        "min": 1,
+        "n": 13,
+        "stdev": 1422.94
+      }
+    }
+  },
+  "valid_case_count": 13
+}

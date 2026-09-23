@@ -1,0 +1,418 @@
+{
+  "cases": [
+    {
+      "case": "6d5bac5c712195cbfa9666ba0ecbf0573cdea356",
+      "failure_count": 6,
+      "localizer_output_lines": 42,
+      "log_total_lines": 432,
+      "overlay_paths": [
+        "tests/test_utils/test_make_default_short_help.py"
+      ],
+      "per_failure": {
+        "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[-abbreviation inside sentence]": {
+          "from_bottom": 7,
+          "from_top": 426,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[-abbreviation inside truncated sentence]": {
+          "from_bottom": 6,
+          "from_top": 427,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[-lowercase after dot]": {
+          "from_bottom": 5,
+          "from_top": 428,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[no-wrap mark-abbreviation inside sentence]": {
+          "from_bottom": 4,
+          "from_top": 429,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[no-wrap mark-abbreviation inside truncated sentence]": {
+          "from_bottom": 3,
+          "from_top": 430,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_make_default_short_help.py::test_make_default_short_help[no-wrap mark-lowercase after dot]": {
+          "from_bottom": 2,
+          "from_top": 431,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "08a7bc6d2a2af02268b09b3b5fd8079546c81c03",
+      "failure_count": 5,
+      "localizer_output_lines": 14,
+      "log_total_lines": 1916,
+      "overlay_paths": [
+        "tests/test_abort_interrupt.py"
+      ],
+      "per_failure": {
+        "tests/test_abort_interrupt.py::test_interrupt_while_exiting_after_success": {
+          "from_bottom": 2,
+          "from_top": 1915,
+          "localizer_found_it": true
+        },
+        "tests/test_abort_interrupt.py::test_interrupt_while_reporting_abort[body-1]": {
+          "from_bottom": 5,
+          "from_top": 1912,
+          "localizer_found_it": true
+        },
+        "tests/test_abort_interrupt.py::test_interrupt_while_reporting_abort[body-2]": {
+          "from_bottom": 4,
+          "from_top": 1913,
+          "localizer_found_it": true
+        },
+        "tests/test_abort_interrupt.py::test_interrupt_while_reporting_abort[prompt-1]": {
+          "from_bottom": 6,
+          "from_top": 1911,
+          "localizer_found_it": true
+        },
+        "tests/test_abort_interrupt.py::test_interrupt_while_reporting_error": {
+          "from_bottom": 3,
+          "from_top": 1914,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "420c8fb44eeadb537cae69d2fee3796e808558dd",
+      "failure_count": 3,
+      "localizer_output_lines": 10,
+      "log_total_lines": 386,
+      "overlay_paths": [
+        "tests/test_utils/test_sentinel.py"
+      ],
+      "per_failure": {
+        "tests/test_utils/test_sentinel.py::test_parameter_duplication[pickle]": {
+          "from_bottom": 2,
+          "from_top": 385,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_sentinel.py::test_sentinel_duplication_preserves_identity[pickle-Sentinel.FLAG_NEEDS_VALUE]": {
+          "from_bottom": 3,
+          "from_top": 384,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_sentinel.py::test_sentinel_duplication_preserves_identity[pickle-Sentinel.UNSET]": {
+          "from_bottom": 4,
+          "from_top": 383,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "7925a3410d7098c28cfca3b2baa6c852666bbd14",
+      "failure_count": 38,
+      "localizer_output_lines": 102,
+      "log_total_lines": 2113,
+      "overlay_paths": [
+        "tests/test_utils/test_style.py"
+      ],
+      "per_failure": {
+        "tests/test_utils/test_style.py::test_styling[styles44-\\x1b[38;5;0mx y\\x1b[0m]": {
+          "from_bottom": 39,
+          "from_top": 2075,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling[styles45-\\x1b[48;5;0mx y\\x1b[0m]": {
+          "from_bottom": 38,
+          "from_top": 2076,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[-1-bg]": {
+          "from_bottom": 24,
+          "from_top": 2090,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[-1-fg]": {
+          "from_bottom": 25,
+          "from_top": 2089,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[-bg]": {
+          "from_bottom": 36,
+          "from_top": 2078,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[-fg]": {
+          "from_bottom": 37,
+          "from_top": 2077,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[0.0-bg]": {
+          "from_bottom": 20,
+          "from_top": 2094,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[0.0-fg]": {
+          "from_bottom": 21,
+          "from_top": 2093,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[256-bg]": {
+          "from_bottom": 22,
+          "from_top": 2092,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[256-fg]": {
+          "from_bottom": 23,
+          "from_top": 2091,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[BLACK-bg]": {
+          "from_bottom": 32,
+          "from_top": 2082,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[BLACK-fg]": {
+          "from_bottom": 33,
+          "from_top": 2081,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[False-bg]": {
+          "from_bottom": 26,
+          "from_top": 2088,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[False-fg]": {
+          "from_bottom": 27,
+          "from_top": 2087,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[True-bg]": {
+          "from_bottom": 28,
+          "from_top": 2086,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[True-fg]": {
+          "from_bottom": 29,
+          "from_top": 2085,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[banana-bg]": {
+          "from_bottom": 34,
+          "from_top": 2080,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[banana-fg]": {
+          "from_bottom": 35,
+          "from_top": 2079,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[red-bg]": {
+          "from_bottom": 30,
+          "from_top": 2084,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[red-fg]": {
+          "from_bottom": 31,
+          "from_top": 2083,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value10-bg]": {
+          "from_bottom": 16,
+          "from_top": 2098,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value10-fg]": {
+          "from_bottom": 17,
+          "from_top": 2097,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value11-bg]": {
+          "from_bottom": 14,
+          "from_top": 2100,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value11-fg]": {
+          "from_bottom": 15,
+          "from_top": 2099,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value12-bg]": {
+          "from_bottom": 12,
+          "from_top": 2102,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value12-fg]": {
+          "from_bottom": 13,
+          "from_top": 2101,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value13-bg]": {
+          "from_bottom": 10,
+          "from_top": 2104,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value13-fg]": {
+          "from_bottom": 11,
+          "from_top": 2103,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value14-bg]": {
+          "from_bottom": 8,
+          "from_top": 2106,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value14-fg]": {
+          "from_bottom": 9,
+          "from_top": 2105,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value15-bg]": {
+          "from_bottom": 6,
+          "from_top": 2108,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value15-fg]": {
+          "from_bottom": 7,
+          "from_top": 2107,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value16-bg]": {
+          "from_bottom": 4,
+          "from_top": 2110,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value16-fg]": {
+          "from_bottom": 5,
+          "from_top": 2109,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value17-bg]": {
+          "from_bottom": 2,
+          "from_top": 2112,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value17-fg]": {
+          "from_bottom": 3,
+          "from_top": 2111,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value9-bg]": {
+          "from_bottom": 18,
+          "from_top": 2096,
+          "localizer_found_it": true
+        },
+        "tests/test_utils/test_style.py::test_styling_invalid_color[value9-fg]": {
+          "from_bottom": 19,
+          "from_top": 2095,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "916883afad450c0c9bbc4212817900949131adbd",
+      "failure_count": 2,
+      "localizer_output_lines": 10,
+      "log_total_lines": 85,
+      "overlay_paths": [
+        "tests/test_basic.py"
+      ],
+      "per_failure": {
+        "tests/test_basic.py::test_version_option_ambiguous_import_name_errors": {
+          "from_bottom": 2,
+          "from_top": 84,
+          "localizer_found_it": true
+        },
+        "tests/test_basic.py::test_version_option_resolves_import_name_to_distribution": {
+          "from_bottom": 3,
+          "from_top": 83,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "8929d392781c8113bc569f388c15c47b94f86581",
+      "failure_count": 2,
+      "localizer_output_lines": 9,
+      "log_total_lines": 61,
+      "overlay_paths": [
+        "tests/test_basic.py"
+      ],
+      "per_failure": {
+        "tests/test_basic.py::test_choice_argument_optional_metavar": {
+          "from_bottom": 3,
+          "from_top": 59,
+          "localizer_found_it": true
+        },
+        "tests/test_basic.py::test_datetime_argument_optional_metavar": {
+          "from_bottom": 2,
+          "from_top": 60,
+          "localizer_found_it": true
+        }
+      }
+    },
+    {
+      "case": "648d7c403829013ade629d63ddbfe808f6b2b770",
+      "failure_count": 7,
+      "localizer_output_lines": 28,
+      "log_total_lines": 183,
+      "overlay_paths": [
+        "tests/test_commands.py",
+        "tests/test_options.py"
+      ],
+      "per_failure": {
+        "tests/test_commands.py::test_deprecated_empty_help_no_leading_space[-True]": {
+          "from_bottom": 8,
+          "from_top": 176,
+          "localizer_found_it": true
+        },
+        "tests/test_commands.py::test_deprecated_empty_help_no_leading_space[-USE OTHER COMMAND INSTEAD]": {
+          "from_bottom": 7,
+          "from_top": 177,
+          "localizer_found_it": true
+        },
+        "tests/test_commands.py::test_deprecated_empty_help_no_leading_space[None-True]": {
+          "from_bottom": 6,
+          "from_top": 178,
+          "localizer_found_it": true
+        },
+        "tests/test_commands.py::test_deprecated_empty_help_no_leading_space[None-USE OTHER COMMAND INSTEAD]": {
+          "from_bottom": 5,
+          "from_top": 179,
+          "localizer_found_it": true
+        },
+        "tests/test_options.py::test_deprecated_empty_help_no_leading_space[-True-(DEPRECATED)]": {
+          "from_bottom": 4,
+          "from_top": 180,
+          "localizer_found_it": true
+        },
+        "tests/test_options.py::test_deprecated_empty_help_no_leading_space[-USE B INSTEAD-(DEPRECATED: USE B INSTEAD)]": {
+          "from_bottom": 3,
+          "from_top": 181,
+          "localizer_found_it": true
+        },
+        "tests/test_options.py::test_flag_group_competition_duplicate_option_name": {
+          "from_bottom": 2,
+          "from_top": 166,
+          "localizer_found_it": true
+        }
+      }
+    }
+  ],
+  "measured": true,
+  "repo_tag": "click",
+  "summary": {
+    "from_bottom": {
+      "max": 39,
+      "mean": 13.97,
+      "median": 8,
+      "min": 2,
+      "n": 63
+    },
+    "from_top": {
+      "max": 2112,
+      "mean": 1497.84,
+      "median": 2081,
+      "min": 59,
+      "n": 63
+    },
+    "localizer_found_every_failure": true,
+    "localizer_recall": 1.0,
+    "total_failures_measured": 63
+  }
+}
