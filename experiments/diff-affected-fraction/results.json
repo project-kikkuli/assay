@@ -1,0 +1,2362 @@
+{
+  "samples": [
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "52eafdc21e033d6a24d9a290a63397f6f5d6ea41",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "b91d5a311289afc5d67ffec80ab1755e6fe6d3a2",
+      "task_count": 99
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "7-15",
+      "code_relevant": false,
+      "files_changed": 13,
+      "sha": "2f406bb9cb8538e5a43551d6eeffe2be80bccefa",
+      "task_count": 87
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "86440b18539ef3736a40f1b79cce0d124b8c96d9",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "72ebd747154a8b8640e223ee2de5a646ae82ff00",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "5701ffa8d6bbf365434a24c05503df1b9f9573ee",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0741,
+      "affected_task_count": 2,
+      "bucket": "7-15",
+      "code_relevant": true,
+      "files_changed": 8,
+      "sha": "82ba645a2ec1c64a588c58d1b12239136ee4b99f",
+      "task_count": 27
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 5,
+      "sha": "dd268c1b2bccd0813528c40ceefc4ee0dbe3b766",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.037,
+      "affected_task_count": 1,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "840eed28be22a52726a7c1ca5ece72f67404fc69",
+      "task_count": 27
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "e3f48a81c558ad2b9ad25990fa6604b97d9988fb",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.1034,
+      "affected_task_count": 3,
+      "bucket": "7-15",
+      "code_relevant": true,
+      "files_changed": 7,
+      "sha": "4e4b507472e290be44042e10c3051d7069303b90",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "bcdc3d0154b08cc70be96564e38c641375af764c",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 5,
+      "sha": "1b387bea623d442341e83c0a8b1c0427022d2d8e",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "1e802740ca4850b7a6012f3b2318d5c0ebd98ce4",
+      "task_count": 106
+    },
+    {
+      "affected_fraction": 0.0125,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "ac3a42bafdbff0de63ff75f89119594f18767dc2",
+      "task_count": 80
+    },
+    {
+      "affected_fraction": 0.0323,
+      "affected_task_count": 2,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "ed7a2d2da34ddeffd70735875803c0d966b4fdce",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "ab259a36e3359659e4568358fb0e9d43b10be5de",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "92bfb5879896ea51293903b687085e7b1ac29b42",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0097,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "ae7346114d65e3a2c0ccd77af8a0ca00012cd91d",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "33db65c112e5d76e89dd45024e272df214d2ea9c",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0098,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "6b2daaa2e9c8c325bdcb0886fc90d2df198af405",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "c30eafa2541c07153bb01aea356dbe812e1b4ebd",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "f77d606d4eeba38352bd3ea960f44b171fe06c1f",
+      "task_count": 80
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "7-15",
+      "code_relevant": true,
+      "files_changed": 10,
+      "sha": "646c2c60012a936841ffc1136d5eb00e602d2853",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "1ca59dfd6bdea33cdee3997329694f366ecd07e9",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "ab03c0c1610119a44ce3d05621f9f22bfc314f02",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0096,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "984cabfaccf8aa69fe49097ed3d07bd60d05f240",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 6,
+      "sha": "2637326782cf308c55dd40e26b4bd35e20604eb2",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.1081,
+      "affected_task_count": 8,
+      "bucket": "7-15",
+      "code_relevant": true,
+      "files_changed": 13,
+      "sha": "77b640d1b7416dcffebfaa7d1ba11b491d89bc3a",
+      "task_count": 74
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "16-30",
+      "code_relevant": false,
+      "files_changed": 23,
+      "sha": "346da57a8a508bf37e2be722937796c267f139de",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "d04505553e8e246e168a4170a7ffb4bbcf80551b",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.012,
+      "affected_task_count": 1,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "7048d5be9cd78b17baeecfdb4c278e3ddcac6a51",
+      "task_count": 83
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "31+",
+      "code_relevant": false,
+      "files_changed": 51,
+      "sha": "1df0eaa387a513c02271c88d07013d11c4dbc484",
+      "task_count": 27
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "9ddfd62848f398d45188b58367f4ac28502c55bd",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "2baa197e249a0d9efeef66763669fba270913145",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "245eefafcf417df7390457b86ad607e19686f83f",
+      "task_count": 92
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "4-6",
+      "code_relevant": false,
+      "files_changed": 4,
+      "sha": "2bd0c98801006b9975502e13a17f11585df8481c",
+      "task_count": 27
+    },
+    {
+      "affected_fraction": 0.0233,
+      "affected_task_count": 2,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 5,
+      "sha": "79701c65ed47d9fd9dbc8949a49136f25506d9e0",
+      "task_count": 86
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "b18040337a0cc9c26b0eefe6c0ac115b9a7a5dbe",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "7-15",
+      "code_relevant": false,
+      "files_changed": 13,
+      "sha": "cbf6bd9dd28d8464f7eebe32e51b398e2a5e3039",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0333,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "34df678bc3197085e0443ef0adfc7c2434d52fa8",
+      "task_count": 30
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "0cca20bef988b472e21e63cbfcad42c39d79723b",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "fd47511afeb024d2fbad9257d1b44310672c6a0f",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0303,
+      "affected_task_count": 3,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "e8a8a5f320ad7a9fc1d58ab74c2425e923634f60",
+      "task_count": 99
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "643ab120f46323fb72881443837ece1d07c8d303",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "a127767da68a8f4fbee251fa9cbff657cfb5744e",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "4e048e08278fdf4e5ed0181d442c972d271a260e",
+      "task_count": 92
+    },
+    {
+      "affected_fraction": 0.0125,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "f95c7f5803f96345e2b51f4d5289d5ebafa2c325",
+      "task_count": 80
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "77a38a3b754e6a82332a1f7bd11bc684c345af28",
+      "task_count": 97
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "3930353bb933a579eaa540e7a7267117ba9aa332",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "6f8681342bf2d41aea3fbc252b4abcb475ed2d9c",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "65ca5542302f303b82e5854a5964dcfbfb048563",
+      "task_count": 30
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "22524046cff84c66f128da9e3cdb993082445c75",
+      "task_count": 100
+    },
+    {
+      "affected_fraction": 0.2125,
+      "affected_task_count": 17,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "9928c7794ba58e01a1a82ba34687a4ec4b688f49",
+      "task_count": 80
+    },
+    {
+      "affected_fraction": 0.0333,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "e8f48198762b7032b9f301b74bc8b17daac959d0",
+      "task_count": 30
+    },
+    {
+      "affected_fraction": 0.0101,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "9bbfe995eed5c0f32a726d3c3fb98a474c87dc44",
+      "task_count": 99
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "af95858c9293e1fddf05116b1f2a38b62ebd36b5",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "85b5a289f01696ad9131213bd6045867b46c50c2",
+      "task_count": 87
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "67738403d7e14e0284f6c9f737e68de823760c33",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "44afed9b13cda220155338fe7a7d381a4c50068d",
+      "task_count": 99
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "40b172ca5a5c9ef58c36fa38f7df50c99a565dc1",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "448f1c0d9ccabfe5b63af81117cdb1b8a11bd750",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "4-6",
+      "code_relevant": false,
+      "files_changed": 6,
+      "sha": "e984a9b94740697411f5a05fcdfc3299dd20f13a",
+      "task_count": 105
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "91e5af13db33d9c1d2363290c6067ddfd1e38162",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "4-6",
+      "code_relevant": false,
+      "files_changed": 5,
+      "sha": "cb26dfdf00ed5c23246b8c9a32f4dd50f50280b9",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "bc4abe4d4b4ee9256be020a28e1da4aef90e8105",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "4-6",
+      "code_relevant": false,
+      "files_changed": 4,
+      "sha": "15e1dd0f87de3c772bc71a4e78f3f5a73f0af697",
+      "task_count": 81
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "96cb1208d34ed6865dbc35f7c7f4c5432668528d",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0288,
+      "affected_task_count": 3,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "722ef550df48bd3154241b208ce9d11c181da6bb",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "83620ced2e847c0de721b0e78092bcd0677c9c4e",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "16-30",
+      "code_relevant": false,
+      "files_changed": 21,
+      "sha": "007f0daeb9377850a3e73d6aa40c705b1f720f48",
+      "task_count": 27
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "374ff2ea60c7be3ff1cc5c76212d1f51c5469894",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.2549,
+      "affected_task_count": 26,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 6,
+      "sha": "48cb8a2b329d0e8beaf30804c503eddb5e531385",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "c55bf23cbeb17df0621a9da2a15cff06a9792de8",
+      "task_count": 79
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "f286a0258277e10dad24e8d7e3f05f64f719c60f",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.8065,
+      "affected_task_count": 50,
+      "bucket": "31+",
+      "code_relevant": true,
+      "files_changed": 190,
+      "sha": "d1aff902d58adf9d515e7c773b31b95ebfd8fcc7",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.234,
+      "affected_task_count": 22,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 6,
+      "sha": "c82bda259c1e424e04151a2fc82d5fed6438045e",
+      "task_count": 94
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "16-30",
+      "code_relevant": true,
+      "files_changed": 28,
+      "sha": "25ab906b8bd1352360c6e13cb04adb303a910a51",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "e79a312b921c7ae255bfd3b58c7780e7c3a23b9d",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "58844247f7ae4a7a213a73c8af2462253b3d8fc7",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.2323,
+      "affected_task_count": 23,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "7c231baa6400a653eb322705ffffb6385dead3dc",
+      "task_count": 99
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "de56152bf57d5b450593b8f01c231428dec6e23c",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "68a08840e1bec9ae0b94434f63101268a5426e12",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "942789bace9b52a31fbddc21dff004d85684dae6",
+      "task_count": 92
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "2589aa183c64ac050c1b07c1eecd520855a45519",
+      "task_count": 27
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "cf90008a1a3924f323543bfdfc2e86c65eeae941",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0161,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "6b0db18eca876b88359388b29195a0821ba00018",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0161,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "610cde6f8581b2eba3d1641e13a78a5600ed2c6d",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "dd0da4643a209b99180b8d831b20e5ed75d2678c",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "d3c9927fee5563fb87945bdb9424aa867d6c3de3",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "4abfdc52cb327dfb91480997efe05cc49f73a62a",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "b72f9a2d02f50b458970b8367b7d18de5baf0108",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 3,
+      "sha": "4d4344212feea7ce36a035dbf502fd2f89d40636",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "6ca3c980bfce4968e36c63cb27a5e21331c3d290",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "d306ec0a7e1711d936e5bb98352a430bff758eae",
+      "task_count": 97
+    },
+    {
+      "affected_fraction": 0.0098,
+      "affected_task_count": 1,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "0ed2d79457b499119693588b71233db957e972c0",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "f0cc122edddea0c10e4ec4139065b6137ce45ad1",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0435,
+      "affected_task_count": 4,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "48c9a96a03261e7cfa5aad0367a9186d9032904a",
+      "task_count": 92
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "b1ad6d3793fd3b560effe7c0034f55091640208b",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "d02eaa88817c634977ca857c1d54ac2494e49a1e",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0109,
+      "affected_task_count": 1,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "c4c3b6d4fd9e127c30b3b3c9e9fcd8b844aa7bca",
+      "task_count": 92
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "ab069247cd8b54f88ff8811174f99e4c6421e966",
+      "task_count": 99
+    },
+    {
+      "affected_fraction": 0.0161,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "faf0fe888719977d3141bbfc9eb66a513c7157be",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0125,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "d89b5057cadb8716e25b783fee8a1d670e043109",
+      "task_count": 80
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "1ffe0e7b829597744a33a8f6d1d01a7f8404e2d3",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "05af53d16009c05471346e1dc5583732ffbac46d",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.2353,
+      "affected_task_count": 24,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "d8d607e937bf5a36815007322bf10239f3330475",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "65de43e67d152ac901adfdc89b83b5d8b35d99e0",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0133,
+      "affected_task_count": 1,
+      "bucket": "7-15",
+      "code_relevant": true,
+      "files_changed": 7,
+      "sha": "3296939edaade233698e799eced591853b7fe725",
+      "task_count": 75
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "fc54e3523bcc828d3746befa1551103ff92191b2",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "92323895c9f5f0d1867f963f603ff2b21cf5cf7c",
+      "task_count": 34
+    },
+    {
+      "affected_fraction": 0.0096,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "36704f9b54c40b3de715f5d5d28666faf566b843",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "cd8e69e33c5a4cf3bf866491484b58a0ad0a0a7b",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.1724,
+      "affected_task_count": 5,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 6,
+      "sha": "2700a94d4940057e94ab76747a5a4986ade88726",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0109,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "febb978651de69298b29a81e6160b13ee4034233",
+      "task_count": 92
+    },
+    {
+      "affected_fraction": 0.0098,
+      "affected_task_count": 1,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 5,
+      "sha": "26a29bdade7efccdf6233942749f02cef57ce694",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0312,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "8360c1e6872b9748566951b60399295ab7090f27",
+      "task_count": 32
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "25401d0b1d1b0f89e4e58fc5aab0f18e3f3e5984",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "543b11f2534bb0edc85b86767ed239da9c5bd140",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "e378496b245d59773c86b4497fced0ac69956b9d",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0159,
+      "affected_task_count": 1,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "89068d94715e9915ebaa3d95f445a0b5e8ba5aca",
+      "task_count": 63
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "4-6",
+      "code_relevant": false,
+      "files_changed": 4,
+      "sha": "baf5b5d005dff3238a18dfc9d9d3061f67025102",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "0c8569dcb02ed9ebd936a61e2bc5d0f451afa3c7",
+      "task_count": 30
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 3,
+      "sha": "11e8e5570ebc7ddbbf92da79b4b4e1ea361a02c3",
+      "task_count": 27
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "14be71b234a617f487b58a6f277a64c6904b3164",
+      "task_count": 99
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 3,
+      "sha": "f1a1de22579c11fd1e4301e0c6648ae46a74a1d3",
+      "task_count": 92
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "3a4f69734a87be9bfd0952c3588d5a16c166c093",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "dc8225afea02550023fb96747aff6f9970c2ee8e",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "b777b05c0e845fd3d26d22348991b2d19212250b",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "6d06f55543ccea9eab7b0019579247a57f800ff7",
+      "task_count": 27
+    },
+    {
+      "affected_fraction": 0.0101,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "c9163402e046c25ad86ff94fd6606a451102efdc",
+      "task_count": 99
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "27469b99c7e220a8a143fa8aabbaf08e023b5f97",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0312,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "517d49828514553ea6a7c578e8966f442b066aba",
+      "task_count": 32
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "31c91796c6f9661024704a7916116f98488b25c0",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.1034,
+      "affected_task_count": 3,
+      "bucket": "7-15",
+      "code_relevant": true,
+      "files_changed": 12,
+      "sha": "bc8ee95e72bbcdfff2c4c72de624d31a35cbdc9e",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "b60a8c12d5b0bca57c010925bd32a2574c6afca9",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "ad2ac256de33b45f79e4edc614c79d2b5871120a",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "b57fb9fd4782ed1b2d662d3774b3a5f0be870c8c",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "5a2500800d591babb822073b1ec9497a375be023",
+      "task_count": 34
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "c5c9fb93aa26ca634bea6cbe0b4be999301a2119",
+      "task_count": 30
+    },
+    {
+      "affected_fraction": 0.0192,
+      "affected_task_count": 2,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "deb9f5f79b0537a5e80cc26dd11bfb217e263a72",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0357,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "22dd5e29e264a2b0e69531ced48f2060e1153012",
+      "task_count": 28
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "949c7711b3e22ab94110f1ae4fc307cda2f9e379",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "2f3bbdafda0781058fce07f990ac3c562919a9a1",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "9d7bf4e544f6e9d43ab0dd390a820d4dae140a53",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "77416d64f5af575460b001c768ced541564a902b",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "fefdca5787411211ba0aee89d5110664a72e02b6",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0484,
+      "affected_task_count": 3,
+      "bucket": "7-15",
+      "code_relevant": true,
+      "files_changed": 7,
+      "sha": "c8d78177b9ec2c4eb449c387e8941244d8b5c7f9",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "fc073cb81cdb7c6705c35c7136e96767900e65c8",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0137,
+      "affected_task_count": 1,
+      "bucket": "7-15",
+      "code_relevant": true,
+      "files_changed": 8,
+      "sha": "a15afb5e4879d68033a723129e62006e004694b9",
+      "task_count": 73
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "7-15",
+      "code_relevant": false,
+      "files_changed": 8,
+      "sha": "ce3b260b0b895fb7ad51137c47ec297b39456bc1",
+      "task_count": 33
+    },
+    {
+      "affected_fraction": 0.069,
+      "affected_task_count": 2,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "dc4e20587693b961ef6bfd8e97748feb5b60ff63",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0732,
+      "affected_task_count": 6,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "37d074efc8d838ee57310fc7aa26d0679a68e2d4",
+      "task_count": 82
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 3,
+      "sha": "196f01965ed264e1fd917db236c872f85403753d",
+      "task_count": 98
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "c426a67b0ebf832d4d279a6b6d99d40fa85a46f4",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0408,
+      "affected_task_count": 4,
+      "bucket": "7-15",
+      "code_relevant": true,
+      "files_changed": 8,
+      "sha": "69f2855cc8896c67c499a250c2f08fcfd408f827",
+      "task_count": 98
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 3,
+      "sha": "ae53d04780e203c0ca232f4f13856575c3b86de5",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 3,
+      "sha": "e6541ed14e945d8f49e91268b2c5fcc85b766df9",
+      "task_count": 27
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "4-6",
+      "code_relevant": false,
+      "files_changed": 4,
+      "sha": "a1241634250194e7cfe645615946e4f1e3a4d142",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0392,
+      "affected_task_count": 4,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "c6a529032231ccddd3040e8ab1a5a756eb9ea4a0",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "f263f548890f70d6c4f031fef55671efc094f398",
+      "task_count": 28
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 3,
+      "sha": "1ffc00636348d3b46647056eb1ac25cfeea92776",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "935761f09869f1144b715249a256602b0dd3f77d",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "2e230578043f3967751b0f515994f5ee42d41183",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "e866958b434512e1591049ab7ff24aef2177f1b9",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "7-15",
+      "code_relevant": false,
+      "files_changed": 7,
+      "sha": "4766497515169d40b9308825de0001b2e5766ca8",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "045274e647561d2cd9137141e20057f6167c7d3e",
+      "task_count": 30
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "597bb9376b958ad97d5533af15a72ff992db7c5c",
+      "task_count": 97
+    },
+    {
+      "affected_fraction": 0.0323,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "6686c67a411dad3ad646d271265332d094f1980a",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0968,
+      "affected_task_count": 3,
+      "bucket": "7-15",
+      "code_relevant": true,
+      "files_changed": 7,
+      "sha": "db6f347db6d3f2db5aa2cf2d27630db5ab99d589",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "f86c8469f59c7e0a2a136c529bd9e8fc289b78d0",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0196,
+      "affected_task_count": 2,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 5,
+      "sha": "23256dd9677db448a36c9e863cd1591d68c8ce94",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.2621,
+      "affected_task_count": 27,
+      "bucket": "7-15",
+      "code_relevant": true,
+      "files_changed": 8,
+      "sha": "01de0c1e4c2b6bd89e6b7e437f9e553ca4f880d2",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0714,
+      "affected_task_count": 2,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 5,
+      "sha": "fed8f19156b41a34f3b6791d323ace49b81c048e",
+      "task_count": 28
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "29222dffc9d92446f6064868c316936cd3bee162",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0645,
+      "affected_task_count": 2,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "da7133d2018ae3aeb58dd4348889e8927ed247ab",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.069,
+      "affected_task_count": 2,
+      "bucket": "7-15",
+      "code_relevant": true,
+      "files_changed": 10,
+      "sha": "6e0c30d67d984d653d9dad79a7c43e3cb21f5c4a",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "7-15",
+      "code_relevant": false,
+      "files_changed": 10,
+      "sha": "e0bca8fe519e143ab320c4567fe5de9dad8cf6e8",
+      "task_count": 75
+    },
+    {
+      "affected_fraction": 0.0127,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "5e21e39125960cf6c2d25f86fbb870d2a85eec2b",
+      "task_count": 79
+    },
+    {
+      "affected_fraction": 0.0097,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "820964732b0ed3f6782e121d3d5af8084717a9e5",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "79a9a99d1e6a21a2e747c4d1f72f9132ced52ea6",
+      "task_count": 74
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "7a90bed19b836bd0fc29ece72a443b69f7cc8dbc",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "6d0aff14ef1aea1636b543c173124a18e61772ee",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0161,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "75d80ca18331ecf9f8035a4a3d59a81eb1b5e74a",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 3,
+      "sha": "69fc6987adae78966a983eeecb8b7661d908cb48",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "3a35fcd4c0daf366c0580d903d9996b9d2dc119d",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "cb0a13a523e7d9f1e9f3bd77095a9f58adb4e7b7",
+      "task_count": 90
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "d88fe07377d76f2c6db74d1f8f3d33044e346b56",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "fe7907d78cd21a111542e8bf445526922bda9237",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "200e8c66fe2daa90eda7f4ff899b4eab6c768070",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "5f29c3e272557d3fc5c1c0eb68b76cfc41bded0b",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "b4210f3ae00a1be4157b6a0ddccbc119d0919445",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0192,
+      "affected_task_count": 2,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "46ea2a3cfc50ae42310c278387be49d165d71581",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "5a0ef7355e6329cbf20ef9c6bf7e1cd305899fe1",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0882,
+      "affected_task_count": 9,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "042625957a51b3e5eb0fc2b6f4682fa1cc3f607f",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0127,
+      "affected_task_count": 1,
+      "bucket": "16-30",
+      "code_relevant": true,
+      "files_changed": 17,
+      "sha": "6c2b1c43633cf2488dfc6294ada3cb4350069135",
+      "task_count": 79
+    },
+    {
+      "affected_fraction": 0.037,
+      "affected_task_count": 1,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "acd286f82fac4eba30c3cf26f4281e39330340ca",
+      "task_count": 27
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "504e42a62e1fe75576ae49c6e26a34370a482b19",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "31d64fc53ba12905008241afa4010472aff13bae",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.902,
+      "affected_task_count": 92,
+      "bucket": "31+",
+      "code_relevant": true,
+      "files_changed": 155,
+      "sha": "878af85aefc5a2a255395d66a38a2136aeaeb086",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "195d066ff8ab6b88920c5b94cc123444a1586b59",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "31+",
+      "code_relevant": false,
+      "files_changed": 34,
+      "sha": "30b10a6950fbb699962ada800f51010764c85f02",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0097,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "9a7dbd8a394bb47ee43be51d60ec3c4f4759789e",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0326,
+      "affected_task_count": 3,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "bcfe253f5b5367d8537e011e3a9e56bae220d411",
+      "task_count": 92
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "f0554edaddd091fd93716aaf8c8d94dc101d8b0a",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "6f5918f03b991dfb76edebc8c90678b2821b9396",
+      "task_count": 79
+    },
+    {
+      "affected_fraction": 0.0357,
+      "affected_task_count": 1,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "456731ed0ff7fb0c51660d3389d434b2436661d9",
+      "task_count": 28
+    },
+    {
+      "affected_fraction": 0.0291,
+      "affected_task_count": 3,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "636d956cdc117603b2e5f8c9cd558a207fdffc8c",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "612489e2bdf0c39818474e7c4e37b367646f79ae",
+      "task_count": 99
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "28c1700408767f87e4cf3f10c02afb1ab21f9123",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0097,
+      "affected_task_count": 1,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "7746f4f21044627e77d9bf34d27238c1a4eb16b1",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0323,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "75328b66e636e4427e04302760559eebbf10c13f",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0133,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "a4a652af857c8a33a03d6d1c13972090b32907d5",
+      "task_count": 75
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "7-15",
+      "code_relevant": false,
+      "files_changed": 7,
+      "sha": "d894bae281174471dd46c24b545ad0cd939143f0",
+      "task_count": 27
+    },
+    {
+      "affected_fraction": 0.0108,
+      "affected_task_count": 1,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "d5c62d03269f2416f26d7740b3417007c5057fe2",
+      "task_count": 93
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "962a344ad8edb8b8abb12935d6b2c0c4a3b72ecc",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0096,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "e95a843a5dbf8af618d0714705bbf97dfdb04044",
+      "task_count": 104
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "761a95e54227a3d799c00838d71537cc4fd9cca0",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "d95c8a22046369732f76306ce39ddd5a5c0cb305",
+      "task_count": 41
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "1fd14685c5860b248c51c9a39de3595ab62f45da",
+      "task_count": 83
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "e9f3a01392d944fc291633579274021dc7b2f948",
+      "task_count": 99
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "23e343af6018ef3dcf8650e9b3c4a8da0fabe566",
+      "task_count": 99
+    },
+    {
+      "affected_fraction": 0.0291,
+      "affected_task_count": 3,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 5,
+      "sha": "c02465cee0250cd8040a06032ec8732a6228bd13",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.1034,
+      "affected_task_count": 3,
+      "bucket": "16-30",
+      "code_relevant": true,
+      "files_changed": 16,
+      "sha": "91b6f2bda8668e0f74190ed223a9eec01d09a0a7",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "f2be437daadaf79a9d4bff0d8b9cec7607f9e2d7",
+      "task_count": 61
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "24db492f53a7391c2bbc660adb0c44f072dfca58",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "d0cc45d72393cb8a1eec1e76f2efaaf3a0e80aeb",
+      "task_count": 95
+    },
+    {
+      "affected_fraction": 0.2347,
+      "affected_task_count": 23,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "2e7c718373f2ddd1cfa25686abd5166f602af297",
+      "task_count": 98
+    },
+    {
+      "affected_fraction": 0.0392,
+      "affected_task_count": 4,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "70c11582aaede285c0d160c221b91f421f2d06c3",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0732,
+      "affected_task_count": 6,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "acec0b688f542ac5c80c4e703e916595cca07c64",
+      "task_count": 82
+    },
+    {
+      "affected_fraction": 0.0111,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 2,
+      "sha": "44cd8a3a86354b2b686d0b64f2ac328aca574bc7",
+      "task_count": 90
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "83536b4b0074ca35d90933d3ad46cb6efe7f5145",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "5171d167ce8e3bb5fe69544a204ac0edeeee58a7",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "6c37a51f950b6f73f31d20d7e7b9d97674674032",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "051f8f1f0fd14e77e467372fa4b83e84a329e57c",
+      "task_count": 99
+    },
+    {
+      "affected_fraction": 0.0156,
+      "affected_task_count": 1,
+      "bucket": "4-6",
+      "code_relevant": true,
+      "files_changed": 4,
+      "sha": "4a568f43fe2598ca6f521eb7424ecc50a7f2efd3",
+      "task_count": 64
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "f0541b685bb7d27ea87eb8fd8bddbd0280a9b48d",
+      "task_count": 36
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "aaea4e52efaa978c8d8b21729b053db3277e630d",
+      "task_count": 73
+    },
+    {
+      "affected_fraction": 0.1034,
+      "affected_task_count": 3,
+      "bucket": "16-30",
+      "code_relevant": true,
+      "files_changed": 17,
+      "sha": "f5d796b0933491b54b342eb0becebba33c672e03",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "fdba12e1708313f56e9cf713d260c029764ca2b7",
+      "task_count": 105
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "e8504ed49be73e516ee1559a250daec659e96b9d",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0345,
+      "affected_task_count": 1,
+      "bucket": "2-3",
+      "code_relevant": true,
+      "files_changed": 3,
+      "sha": "177637bfb91f2e586f43d812c428783fdc877273",
+      "task_count": 29
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "fda1bbd187d99e9b076eaf4b2b2a03f1c242f8d4",
+      "task_count": 102
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "a75b425635efb910eab77773357437042b80be3c",
+      "task_count": 103
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "bf7c5ea32c7935a46680d21c17d1c32fac3d3cf2",
+      "task_count": 30
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "c7a60af6667e26e2f6fd3e0b5d4ab3e48134b8b0",
+      "task_count": 30
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "2-3",
+      "code_relevant": false,
+      "files_changed": 2,
+      "sha": "f02d9425f9674a4a4bd5a766aa62b29828782f3b",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "684d7f86685ec60d7565e4e7cd58df63cdcd8653",
+      "task_count": 31
+    },
+    {
+      "affected_fraction": 0.0161,
+      "affected_task_count": 1,
+      "bucket": "1",
+      "code_relevant": true,
+      "files_changed": 1,
+      "sha": "d8fcc96563869a4b700de1f535a80a802c02f227",
+      "task_count": 62
+    },
+    {
+      "affected_fraction": 0.0,
+      "affected_task_count": 0,
+      "bucket": "1",
+      "code_relevant": false,
+      "files_changed": 1,
+      "sha": "e701df5eb6645c0aaaab385e28f6ecf98b692a31",
+      "task_count": 99
+    }
+  ],
+  "summary": {
+    "buckets_all_samples": {
+      "1": {
+        "count": 104,
+        "mean_affected_fraction": 0.005,
+        "median_affected_fraction": 0.0,
+        "p95_affected_fraction": 0.0161,
+        "share_of_samples": 0.416,
+        "zero_affected_count": 94
+      },
+      "16-30": {
+        "count": 6,
+        "mean_affected_fraction": 0.0423,
+        "median_affected_fraction": 0.0236,
+        "p95_affected_fraction": 0.1034,
+        "share_of_samples": 0.024,
+        "zero_affected_count": 2
+      },
+      "2-3": {
+        "count": 85,
+        "mean_affected_fraction": 0.0151,
+        "median_affected_fraction": 0.0096,
+        "p95_affected_fraction": 0.0357,
+        "share_of_samples": 0.34,
+        "zero_affected_count": 42
+      },
+      "31+": {
+        "count": 4,
+        "mean_affected_fraction": 0.4271,
+        "median_affected_fraction": 0.4032,
+        "p95_affected_fraction": 0.8065,
+        "share_of_samples": 0.016,
+        "zero_affected_count": 2
+      },
+      "4-6": {
+        "count": 33,
+        "mean_affected_fraction": 0.0535,
+        "median_affected_fraction": 0.0303,
+        "p95_affected_fraction": 0.234,
+        "share_of_samples": 0.132,
+        "zero_affected_count": 7
+      },
+      "7-15": {
+        "count": 18,
+        "mean_affected_fraction": 0.0538,
+        "median_affected_fraction": 0.0377,
+        "p95_affected_fraction": 0.1081,
+        "share_of_samples": 0.072,
+        "zero_affected_count": 6
+      }
+    },
+    "buckets_code_relevant_only": {
+      "1": {
+        "count": 24,
+        "mean_affected_fraction": 0.0219,
+        "median_affected_fraction": 0.0,
+        "p95_affected_fraction": 0.0732,
+        "share_of_samples": 0.2034,
+        "zero_affected_count": 14
+      },
+      "16-30": {
+        "count": 4,
+        "mean_affected_fraction": 0.0635,
+        "median_affected_fraction": 0.069,
+        "p95_affected_fraction": 0.1034,
+        "share_of_samples": 0.0339,
+        "zero_affected_count": 0
+      },
+      "2-3": {
+        "count": 49,
+        "mean_affected_fraction": 0.0261,
+        "median_affected_fraction": 0.0161,
+        "p95_affected_fraction": 0.0392,
+        "share_of_samples": 0.4153,
+        "zero_affected_count": 6
+      },
+      "31+": {
+        "count": 2,
+        "mean_affected_fraction": 0.8542,
+        "median_affected_fraction": 0.8542,
+        "p95_affected_fraction": 0.8065,
+        "share_of_samples": 0.0169,
+        "zero_affected_count": 0
+      },
+      "4-6": {
+        "count": 27,
+        "mean_affected_fraction": 0.0654,
+        "median_affected_fraction": 0.0345,
+        "p95_affected_fraction": 0.234,
+        "share_of_samples": 0.2288,
+        "zero_affected_count": 1
+      },
+      "7-15": {
+        "count": 12,
+        "mean_affected_fraction": 0.0806,
+        "median_affected_fraction": 0.0716,
+        "p95_affected_fraction": 0.1081,
+        "share_of_samples": 0.1017,
+        "zero_affected_count": 0
+      }
+    },
+    "code_relevant_fraction_of_all_samples": 0.472,
+    "code_relevant_samples": 118,
+    "measured": true,
+    "repo": "https://github.com/pytest-dev/pytest",
+    "samples_requested": 250,
+    "samples_with_data": 250
+  }
+}
