@@ -1,0 +1,1961 @@
+{
+  "prs": [
+    {
+      "between_round_waiting_s": 0,
+      "branch": "osortega/agents/support-vscode-dev-agents-session",
+      "ci_working_s": 542.0,
+      "days_pr_open": 0.09,
+      "pr": 337387,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 4,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 542.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "DileepY/fix-337262-remote-sandbox-toggle",
+      "ci_working_s": 552.0,
+      "days_pr_open": 0.07,
+      "pr": 337385,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 552.0
+    },
+    {
+      "between_round_waiting_s": 81425.0,
+      "branch": "osortega/agents/editor-cloud-sandbox-discovery",
+      "ci_working_s": 3193.0,
+      "days_pr_open": 1.03,
+      "pr": 337189,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "code oss",
+            "windows / remote",
+            "\ud83e\uddea run smoke tests (remote)"
+          ]
+        }
+      ],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 2,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 84618.0
+    },
+    {
+      "between_round_waiting_s": 849.0,
+      "branch": "connor4312/mcp-sign-in-progress",
+      "ci_working_s": 2695.0,
+      "days_pr_open": 0.08,
+      "pr": 337381,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "code oss",
+            "windows / electron-unit",
+            "\ud83e\uddea run unit tests (node.js)",
+            "windows / electron",
+            "\ud83e\uddea run integration tests (electron)"
+          ]
+        }
+      ],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 2,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 3544.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "jruales/fix-copilot-otel-file-spans",
+      "ci_working_s": 7413.0,
+      "days_pr_open": 0.11,
+      "pr": 337373,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 7413.0
+    },
+    {
+      "between_round_waiting_s": 2097.0,
+      "branch": "osortega/agents/sandbox-session-listview-delay",
+      "ci_working_s": 3661.0,
+      "days_pr_open": 0.12,
+      "pr": 337354,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "code oss",
+            "windows / electron",
+            "\ud83e\uddea run integration tests (electron)"
+          ]
+        }
+      ],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 2,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 5758.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "lramos15/agents/tabbed-model-picker-collapse-animation",
+      "ci_working_s": 599.0,
+      "days_pr_open": 0.21,
+      "pr": 337332,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 599.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "justin/zacian",
+      "ci_working_s": 538.0,
+      "days_pr_open": 0.02,
+      "pr": 329729,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 538.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "tyler/claude-first-signin-catalog",
+      "ci_working_s": 10227.0,
+      "days_pr_open": 0.12,
+      "pr": 329712,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 10227.0
+    },
+    {
+      "between_round_waiting_s": 62317.0,
+      "branch": "connor/remote-server-agent-host",
+      "ci_working_s": 4265.0,
+      "days_pr_open": 0.81,
+      "pr": 329706,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "code oss",
+            "macos / electron",
+            "\ud83e\uddea run integration tests (electron)"
+          ]
+        }
+      ],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 2,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 66582.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "dev/dmitriv/fix-mcp-allowed-server-url",
+      "ci_working_s": 918.0,
+      "days_pr_open": 0.01,
+      "pr": 329774,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 918.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "vijayu/tas-updates",
+      "ci_working_s": 572.0,
+      "days_pr_open": 0.18,
+      "pr": 329736,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 572.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "vijayu/eh-migration",
+      "ci_working_s": 966.0,
+      "days_pr_open": 0.2,
+      "pr": 329732,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 966.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "tyleonha/claude-native-setup-detection",
+      "ci_working_s": 834.0,
+      "days_pr_open": 0.06,
+      "pr": 329731,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 4,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 834.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "roblou/agents/fix-e2e-test-flake-issue",
+      "ci_working_s": 296.0,
+      "days_pr_open": 0.76,
+      "pr": 329730,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 296.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "anthonykim1/fix-truncated-shell-output-message",
+      "ci_working_s": 408.0,
+      "days_pr_open": 0.13,
+      "pr": 329725,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 408.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "dev/dmitriv/fix-agent-host-settings",
+      "ci_working_s": 742.0,
+      "days_pr_open": 0.04,
+      "pr": 329723,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 742.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "tyleonha/claude-require-github-without-byok",
+      "ci_working_s": 971.0,
+      "days_pr_open": 0.04,
+      "pr": 329718,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 971.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "sbatten/agents/resolve-issues-170799-196054",
+      "ci_working_s": 2860.0,
+      "days_pr_open": 0.13,
+      "pr": 329710,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2860.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "roblou/agents/remove-claude-preferagenthost-settings",
+      "ci_working_s": 2970.0,
+      "days_pr_open": 0.28,
+      "pr": 329697,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "microsoft/vscode",
+      "rounds_to_green": 1,
+      "rounds_total": 4,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2970.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "forward_v2.9.7",
+      "ci_working_s": 19.0,
+      "days_pr_open": 0.78,
+      "pr": 36859,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 19.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "release_2_9.7",
+      "ci_working_s": 18.0,
+      "days_pr_open": 0.11,
+      "pr": 36857,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 18.0
+    },
+    {
+      "between_round_waiting_s": 104177.0,
+      "branch": "fix/double-dash-before-entrypoint",
+      "ci_working_s": 44999.0,
+      "days_pr_open": 1.79,
+      "pr": 36835,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "ci",
+            "test integration (2/2) debug windows-aarch64",
+            "test (debug)",
+            "test integration (1/2) debug windows-aarch64",
+            "test (debug)",
+            "test specs (1/2) release linux-x86_64"
+          ]
+        },
+        {
+          "category": "test",
+          "evidence": [
+            "ci",
+            "test specs (2/2) debug windows-x86_64",
+            "test (debug)",
+            "test specs (2/2) debug macos-aarch64",
+            "test (debug)",
+            "test specs (2/2) debug macos-x86_64"
+          ]
+        }
+      ],
+      "repo": "denoland/deno",
+      "rounds_to_green": 3,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 149176.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "fix/check-node-builtin-modules-types-node",
+      "ci_working_s": 5277.0,
+      "days_pr_open": 0.06,
+      "pr": 36848,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 5277.0
+    },
+    {
+      "between_round_waiting_s": 19725.0,
+      "branch": "fix/windows-aarch64-libuv-bindings",
+      "ci_working_s": 4767.0,
+      "days_pr_open": 0.34,
+      "pr": 36845,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "ci",
+            "lint debug linux-x86_64",
+            "lint.js",
+            "test integration (1/2) debug windows-aarch64",
+            "test (debug)",
+            "ci status"
+          ]
+        }
+      ],
+      "repo": "denoland/deno",
+      "rounds_to_green": 2,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 24492.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "perf/const-op-tables",
+      "ci_working_s": 4171.0,
+      "days_pr_open": 13.33,
+      "pr": 36696,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 4171.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "fix/audit-ca-store-registry",
+      "ci_working_s": 4400.0,
+      "days_pr_open": 0.05,
+      "pr": 36797,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 4400.0
+    },
+    {
+      "between_round_waiting_s": 1158200.0,
+      "branch": "perf/opctx-split",
+      "ci_working_s": 20190.0,
+      "days_pr_open": 13.64,
+      "pr": 36693,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "ci",
+            "test specs (1/2) debug linux-x86_64",
+            "test (debug)",
+            "ci status",
+            "ensure ci success"
+          ]
+        },
+        {
+          "category": "other_or_unclassified",
+          "evidence": [
+            "ci"
+          ]
+        }
+      ],
+      "repo": "denoland/deno",
+      "rounds_to_green": 3,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 1178390.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "fix/unix-socket-permission-case-folding",
+      "ci_working_s": 4513.0,
+      "days_pr_open": 27.03,
+      "pr": 36553,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 4513.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "fix/npm-compat-types-node-race",
+      "ci_working_s": 3890.0,
+      "days_pr_open": 13.12,
+      "pr": 36697,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 3890.0
+    },
+    {
+      "between_round_waiting_s": 2754529.0,
+      "branch": "fix/node-tcp-wrap-bind-deny-net",
+      "ci_working_s": 13056.0,
+      "days_pr_open": 32.12,
+      "pr": 36482,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "ci",
+            "test specs (1/2) debug windows-x86_64",
+            "test (debug)",
+            "test specs (1/2) debug windows-aarch64",
+            "test (debug)",
+            "ci status"
+          ]
+        },
+        {
+          "category": "test",
+          "evidence": [
+            "ci",
+            "test specs (2/2) debug windows-x86_64",
+            "test (debug)",
+            "test specs (2/2) debug windows-aarch64",
+            "test (debug)",
+            "ci status"
+          ]
+        }
+      ],
+      "repo": "denoland/deno",
+      "rounds_to_green": 3,
+      "rounds_total": 4,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2767585.0
+    },
+    {
+      "between_round_waiting_s": 93991.0,
+      "branch": "perf/module-map-retention",
+      "ci_working_s": 21091.0,
+      "days_pr_open": 14.8,
+      "pr": 36683,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "ci",
+            "deno_core test linux-x86_64",
+            "cargo nextest (release)",
+            "test integration (2/2) debug macos-x86_64",
+            "test (debug)",
+            "ci status"
+          ]
+        },
+        {
+          "category": "test",
+          "evidence": [
+            "ci",
+            "test integration (2/2) debug macos-x86_64",
+            "test (debug)",
+            "ci status",
+            "ensure ci success"
+          ]
+        }
+      ],
+      "repo": "denoland/deno",
+      "rounds_to_green": 3,
+      "rounds_total": 6,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 115082.0
+    },
+    {
+      "between_round_waiting_s": 2649214.0,
+      "branch": "fix/node-compat-26.5.1-followups",
+      "ci_working_s": 14146.0,
+      "days_pr_open": 35.75,
+      "pr": 36400,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "ci",
+            "test specs (1/2) debug linux-aarch64",
+            "test (debug)",
+            "test specs (2/2) debug linux-aarch64",
+            "test (debug)",
+            "test specs (1/2) debug macos-aarch64"
+          ]
+        },
+        {
+          "category": "test",
+          "evidence": [
+            "ci",
+            "test specs (2/2) debug linux-aarch64",
+            "test (debug)",
+            "test specs (1/2) debug linux-aarch64",
+            "test (debug)",
+            "test specs (1/2) debug macos-aarch64"
+          ]
+        }
+      ],
+      "repo": "denoland/deno",
+      "rounds_to_green": 3,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2663360.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "fix/desktop-close-and-napi-globals",
+      "ci_working_s": 1583.0,
+      "days_pr_open": 0.18,
+      "pr": 36718,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 1583.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "ci/drop-gcloud-auth-steps",
+      "ci_working_s": 3921.0,
+      "days_pr_open": 0.05,
+      "pr": 36765,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 3921.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "fix/schema-canonical-ids",
+      "ci_working_s": 276.0,
+      "days_pr_open": 1.94,
+      "pr": 36747,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 276.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "fix/v8-code-cache-source-hash",
+      "ci_working_s": 2478.0,
+      "days_pr_open": 0.42,
+      "pr": 36743,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 4,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2478.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "remove-dead-links",
+      "ci_working_s": 5036.0,
+      "days_pr_open": 0.06,
+      "pr": 36372,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 5036.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "fix/node-compat-per-test-timeout",
+      "ci_working_s": 4025.0,
+      "days_pr_open": 0.05,
+      "pr": 36745,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 4025.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "fix/zsh-completions-short-flag",
+      "ci_working_s": 3931.0,
+      "days_pr_open": 2.94,
+      "pr": 36720,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "denoland/deno",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 3931.0
+    },
+    {
+      "between_round_waiting_s": 3979317.0,
+      "branch": "mypyc-safe-attr-3",
+      "ci_working_s": 6275.0,
+      "days_pr_open": 61.06,
+      "pr": 21748,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "type_check",
+          "evidence": [
+            "tests",
+            "test suite with py315-ubuntu, mypyc-compiled",
+            "test",
+            "test suite with py310-ubuntu, mypyc-compiled",
+            "test",
+            "test suite with py313-ubuntu, mypyc-compiled"
+          ]
+        },
+        {
+          "category": "type_check",
+          "evidence": [
+            "tests",
+            "test suite with py315-ubuntu, mypyc-compiled",
+            "test",
+            "test suite with py314-ubuntu, mypyc-compiled",
+            "test",
+            "test suite with py313-ubuntu, mypyc-compiled"
+          ]
+        }
+      ],
+      "repo": "python/mypy",
+      "rounds_to_green": 3,
+      "rounds_total": 5,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 3985592.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "no-threads-fallback",
+      "ci_working_s": 1119.0,
+      "days_pr_open": 0.05,
+      "pr": 21993,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 1119.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-async-5",
+      "ci_working_s": 2140.0,
+      "days_pr_open": 0.08,
+      "pr": 21991,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2140.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-generator-env-layout-fix",
+      "ci_working_s": 2180.0,
+      "days_pr_open": 0.03,
+      "pr": 21990,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2180.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-generator-opt-borrow",
+      "ci_working_s": 2060.0,
+      "days_pr_open": 0.11,
+      "pr": 21987,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2060.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-fix-borrowed-spill",
+      "ci_working_s": 2301.0,
+      "days_pr_open": 0.08,
+      "pr": 21986,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2301.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-fix-async-with-spill",
+      "ci_working_s": 2397.0,
+      "days_pr_open": 0.62,
+      "pr": 21984,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2397.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-generator-opt-reg2",
+      "ci_working_s": 2099.0,
+      "days_pr_open": 0.07,
+      "pr": 21982,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2099.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-async-3",
+      "ci_working_s": 2236.0,
+      "days_pr_open": 0.04,
+      "pr": 21979,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2236.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-async-5c",
+      "ci_working_s": 2129.0,
+      "days_pr_open": 0.06,
+      "pr": 21958,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2129.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-async-5b",
+      "ci_working_s": 2109.0,
+      "days_pr_open": 0.03,
+      "pr": 21957,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2109.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-async-5b",
+      "ci_working_s": 1824.0,
+      "days_pr_open": 0.02,
+      "pr": 21956,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 1824.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-async-5a",
+      "ci_working_s": 2113.0,
+      "days_pr_open": 0.05,
+      "pr": 21955,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2113.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-async-1",
+      "ci_working_s": 1911.0,
+      "days_pr_open": 0.06,
+      "pr": 21954,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 1911.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-tuple-unbox-fix",
+      "ci_working_s": 2163.0,
+      "days_pr_open": 0.03,
+      "pr": 21952,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2163.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-async-2",
+      "ci_working_s": 2057.0,
+      "days_pr_open": 0.13,
+      "pr": 21939,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2057.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "mypyc-final-class-body",
+      "ci_working_s": 2171.0,
+      "days_pr_open": 0.03,
+      "pr": 21932,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2171.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "ast-serialize-test",
+      "ci_working_s": 1875.0,
+      "days_pr_open": 2.65,
+      "pr": 21882,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "python/mypy",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 1875.0
+    },
+    {
+      "between_round_waiting_s": 66648.0,
+      "branch": "librt-lock-fix-check",
+      "ci_working_s": 4085.0,
+      "days_pr_open": 0.83,
+      "pr": 21876,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "type_check",
+          "evidence": [
+            "tests",
+            "test mypyc suite with 32-bit python",
+            "test",
+            "test suite with py312-ubuntu",
+            "test",
+            "test suite with py311-ubuntu"
+          ]
+        }
+      ],
+      "repo": "python/mypy",
+      "rounds_to_green": 2,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 70733.0
+    },
+    {
+      "between_round_waiting_s": 338.0,
+      "branch": "fix-setter-refcounting",
+      "ci_working_s": 4142.0,
+      "days_pr_open": 0.08,
+      "pr": 21877,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "type_check",
+          "evidence": [
+            "tests",
+            "test suite with py314t-ubuntu, mypyc-compiled",
+            "test"
+          ]
+        }
+      ],
+      "repo": "python/mypy",
+      "rounds_to_green": 2,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 4480.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "remove-icss-handling",
+      "ci_working_s": 464.0,
+      "days_pr_open": 0.01,
+      "pr": 18839,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 464.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "scope-validates",
+      "ci_working_s": 312.0,
+      "days_pr_open": 4.47,
+      "pr": 18787,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 312.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "phase-boundaries",
+      "ci_working_s": 313.0,
+      "days_pr_open": 4.48,
+      "pr": 18786,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 313.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "tidy-compiler-utils",
+      "ci_working_s": 424.0,
+      "days_pr_open": 4.49,
+      "pr": 18785,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 424.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "each-fallback-scope",
+      "ci_working_s": 315.0,
+      "days_pr_open": 1.36,
+      "pr": 18803,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 315.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "effect-tree-crosstalk-fix",
+      "ci_working_s": 302.0,
+      "days_pr_open": 64.98,
+      "pr": 18508,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 302.0
+    },
+    {
+      "between_round_waiting_s": 0.0,
+      "branch": "remove-was-marked",
+      "ci_working_s": 502.0,
+      "days_pr_open": 141.56,
+      "pr": 18127,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "build_or_compile",
+          "evidence": [
+            "pkg.pr.new",
+            "build",
+            "run pnpx pkg-pr-new publish --comment=off --json output.json --compact --no-template './packages/svelte'"
+          ]
+        }
+      ],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 2,
+      "rounds_total": 7,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 297.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "bench-and-profile",
+      "ci_working_s": 267.0,
+      "days_pr_open": 0.01,
+      "pr": 18767,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 267.0
+    },
+    {
+      "between_round_waiting_s": 2434.0,
+      "branch": "bump-versions",
+      "ci_working_s": 562.0,
+      "days_pr_open": 0.08,
+      "pr": 18752,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "ci",
+            "tsgo",
+            "type check",
+            "lint",
+            "type check"
+          ]
+        }
+      ],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 2,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 2996.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "regression-test-old-values",
+      "ci_working_s": 299.0,
+      "days_pr_open": 0.0,
+      "pr": 18751,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 299.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "perf-parse",
+      "ci_working_s": 339.0,
+      "days_pr_open": 2.66,
+      "pr": 18736,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 339.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "perf-parse-simple-expressions",
+      "ci_working_s": 328.0,
+      "days_pr_open": 2.21,
+      "pr": 18740,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 328.0
+    },
+    {
+      "between_round_waiting_s": 275.0,
+      "branch": "perf-parse-prefix",
+      "ci_working_s": 637.0,
+      "days_pr_open": 2.24,
+      "pr": 18738,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "ci",
+            "tests (20, windows-latest)",
+            "run pnpm test"
+          ]
+        }
+      ],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 2,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 912.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "bump-playwright",
+      "ci_working_s": 767.0,
+      "days_pr_open": 0.01,
+      "pr": 18729,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 767.0
+    },
+    {
+      "between_round_waiting_s": 712.0,
+      "branch": "map-get-or-insert-fns",
+      "ci_working_s": 658.0,
+      "days_pr_open": 0.02,
+      "pr": 18728,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "ci",
+            "lint",
+            "build and check generated types"
+          ]
+        }
+      ],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 2,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 1370.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "textarea-static-value-fix",
+      "ci_working_s": 521.0,
+      "days_pr_open": 0.02,
+      "pr": 18727,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 521.0
+    },
+    {
+      "between_round_waiting_s": 298.0,
+      "branch": "reporter-fix",
+      "ci_working_s": 658.0,
+      "days_pr_open": 0.01,
+      "pr": 18722,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "ci",
+            "tests (24, ubuntu-latest)",
+            "run pnpm test"
+          ]
+        }
+      ],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 2,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 956.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "simplify-boundary-error-handling",
+      "ci_working_s": 456.0,
+      "days_pr_open": 43.81,
+      "pr": 18539,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 456.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "writable-derived-more-fixes",
+      "ci_working_s": 458.0,
+      "days_pr_open": 5.96,
+      "pr": 18669,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 458.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "ce-slots-fix",
+      "ci_working_s": 295.0,
+      "days_pr_open": 0.0,
+      "pr": 18710,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "sveltejs/svelte",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 295.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "nxs/resolver-descr",
+      "ci_working_s": 17131.0,
+      "days_pr_open": 0.04,
+      "pr": 29451,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 17131.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "fix/sql-window-nulls-last",
+      "ci_working_s": 4888.0,
+      "days_pr_open": 0.44,
+      "pr": 29434,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 4888.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "nxs/iceberg-dec-endian",
+      "ci_working_s": 12168.0,
+      "days_pr_open": 0.07,
+      "pr": 29452,
+      "reached_green": false,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "test python",
+            "test-python (ubuntu-latest, 3.14, 4)",
+            "run tests"
+          ]
+        }
+      ],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": null,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 12168.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "semi",
+      "ci_working_s": 7461.0,
+      "days_pr_open": 0.07,
+      "pr": 29443,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 7461.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "nxs/select-len-regression",
+      "ci_working_s": 52981.0,
+      "days_pr_open": 0.73,
+      "pr": 29427,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 52981.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "outer-join-key-downgrade",
+      "ci_working_s": 4695.0,
+      "days_pr_open": 0.24,
+      "pr": 29432,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 4695.0
+    },
+    {
+      "between_round_waiting_s": 0.0,
+      "branch": "worktree-is-in-perf",
+      "ci_working_s": 5419.0,
+      "days_pr_open": 0.07,
+      "pr": 29425,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint python",
+            "type-check (3.10)",
+            "run mypy",
+            "type-check (3.14)",
+            "run mypy"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint python",
+            "type-check (3.10)",
+            "run mypy",
+            "type-check (3.14)",
+            "run mypy"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint python",
+            "type-check (3.14)",
+            "run mypy",
+            "type-check (3.10)",
+            "run mypy"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint python",
+            "type-check (3.10)",
+            "run mypy",
+            "type-check (3.14)",
+            "run mypy"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint python",
+            "type-check (3.14)",
+            "run mypy",
+            "type-check (3.10)",
+            "run mypy"
+          ]
+        }
+      ],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 6,
+      "rounds_total": 7,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 5019.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "bloom-runtime-filter",
+      "ci_working_s": 3700.0,
+      "days_pr_open": 0.08,
+      "pr": 29423,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 4,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 3700.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "fix/sql-window-nulls-last",
+      "ci_working_s": 5480.0,
+      "days_pr_open": 0.03,
+      "pr": 29417,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 5480.0
+    },
+    {
+      "between_round_waiting_s": 0.0,
+      "branch": "anti-join-left-build",
+      "ci_working_s": 7308.0,
+      "days_pr_open": 0.04,
+      "pr": 29416,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint python",
+            "ruff",
+            "run ruff format --diff"
+          ]
+        }
+      ],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 2,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 7142.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "nxs/from-arrow-perf",
+      "ci_working_s": 1856.0,
+      "days_pr_open": 0.16,
+      "pr": 29412,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 3,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 1856.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "semi-join-left-build",
+      "ci_working_s": 249869.0,
+      "days_pr_open": 3.04,
+      "pr": 29375,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 4,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 249869.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "staged-predicate-cleanup",
+      "ci_working_s": 765.0,
+      "days_pr_open": 0.72,
+      "pr": 29408,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 765.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "row-encoding-simd",
+      "ci_working_s": 1886.0,
+      "days_pr_open": 0.65,
+      "pr": 29405,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 4,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 1886.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "dsprenkels/approximate-quantile-bias",
+      "ci_working_s": 6735.0,
+      "days_pr_open": 5.0,
+      "pr": 29326,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 8,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 6735.0
+    },
+    {
+      "between_round_waiting_s": 0.0,
+      "branch": "staged-predicate-runtime-selectivity",
+      "ci_working_s": 9622.0,
+      "days_pr_open": 0.05,
+      "pr": 29397,
+      "reached_green": false,
+      "red_causes": [
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint rust",
+            "clippy-stable",
+            "run cargo clippy",
+            "clippy-nightly",
+            "run cargo clippy with all features enabled",
+            "test rust"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint rust",
+            "clippy-nightly",
+            "run cargo clippy with all features enabled",
+            "clippy-stable",
+            "run cargo clippy"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint rust",
+            "clippy-stable",
+            "run cargo clippy",
+            "clippy-nightly",
+            "run cargo clippy with all features enabled"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint rust",
+            "clippy-stable",
+            "run cargo clippy",
+            "clippy-nightly",
+            "run cargo clippy with all features enabled"
+          ]
+        },
+        {
+          "category": "test",
+          "evidence": [
+            "test rust",
+            "test (windows-latest)",
+            "run tests"
+          ]
+        }
+      ],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": null,
+      "rounds_total": 5,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 9520.0
+    },
+    {
+      "between_round_waiting_s": 34306.0,
+      "branch": "fixes",
+      "ci_working_s": 25920.0,
+      "days_pr_open": 0.64,
+      "pr": 29389,
+      "reached_green": true,
+      "red_causes": [
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint rust",
+            "clippy-stable",
+            "run cargo clippy",
+            "clippy-nightly",
+            "run cargo clippy with all features enabled",
+            "lint python"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint python",
+            "type-check (3.14)",
+            "run mypy",
+            "type-check (3.10)",
+            "run mypy",
+            "lint rust"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint rust",
+            "clippy-nightly",
+            "run cargo clippy with all features enabled",
+            "clippy-stable",
+            "run cargo clippy",
+            "lint python"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint python",
+            "type-check (3.10)",
+            "run mypy",
+            "type-check (3.14)",
+            "run mypy",
+            "lint rust"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint python",
+            "type-check (3.10)",
+            "run mypy",
+            "type-check (3.14)",
+            "run mypy",
+            "lint rust"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint rust",
+            "clippy-stable",
+            "run cargo clippy",
+            "clippy-nightly",
+            "run cargo clippy with all features enabled",
+            "lint python"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint python",
+            "type-check (3.10)",
+            "run mypy",
+            "type-check (3.14)",
+            "run mypy"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint python",
+            "type-check (3.10)",
+            "run mypy",
+            "type-check (3.14)",
+            "run mypy"
+          ]
+        },
+        {
+          "category": "lint_or_format",
+          "evidence": [
+            "lint python",
+            "ruff",
+            "run ruff format --diff"
+          ]
+        }
+      ],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 10,
+      "rounds_total": 10,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 60043.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "row-encoding-simd",
+      "ci_working_s": 308.0,
+      "days_pr_open": 0.04,
+      "pr": 29391,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 308.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "fix/delta-windows-table-root",
+      "ci_working_s": 4992.0,
+      "days_pr_open": 0.06,
+      "pr": 29386,
+      "reached_green": false,
+      "red_causes": [
+        {
+          "category": "test",
+          "evidence": [
+            "test python",
+            "test-python (ubuntu-latest, 3.13, 100000)",
+            "run tests"
+          ]
+        }
+      ],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": null,
+      "rounds_total": 1,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 4992.0
+    },
+    {
+      "between_round_waiting_s": 0,
+      "branch": "perf/sql-correlated-aggregates",
+      "ci_working_s": 62.0,
+      "days_pr_open": 0.53,
+      "pr": 29383,
+      "reached_green": true,
+      "red_causes": [],
+      "repo": "pola-rs/polars",
+      "rounds_to_green": 1,
+      "rounds_total": 2,
+      "runner_queue_s": 0.0,
+      "wall_clock_s": 62.0
+    }
+  ],
+  "summary": {
+    "between_round_waiting_s_multi_round_only": {
+      "mean": 183514.2,
+      "median": 0.0,
+      "p90": 93991.0
+    },
+    "ci_working_s_multi_round_only": {
+      "mean": 8243.6,
+      "median": 1719.5,
+      "p90": 14146.0
+    },
+    "fast_iteration_multi_round_only": {
+      "between_round_waiting_s": {
+        "mean": 8165.2,
+        "median": 0.0,
+        "p90": 34306.0
+      },
+      "ci_working_s": {
+        "mean": 3238.3,
+        "median": 968.5,
+        "p90": 4767.0
+      },
+      "n": 46,
+      "note": "same multi-round PRs, restricted to days_pr_open <= 3 (excludes long-lived/stacked PRs where between-round time is dominated by review/merge-queue latency, not fix time)",
+      "waiting_fraction_of_wall_clock": 0.1639,
+      "wall_clock_s": {
+        "mean": 11387.3,
+        "median": 1244.5,
+        "p90": 60043.0
+      }
+    },
+    "measured": true,
+    "prs_never_observed_green": 3,
+    "prs_reached_green": 97,
+    "prs_sampled": 100,
+    "red_round_causes": {
+      "counts": {
+        "build_or_compile": 1,
+        "lint_or_format": 22,
+        "other_or_unclassified": 1,
+        "test": 18,
+        "type_check": 4
+      },
+      "fractions": {
+        "build_or_compile": 0.0217,
+        "lint_or_format": 0.4783,
+        "other_or_unclassified": 0.0217,
+        "test": 0.3913,
+        "type_check": 0.087
+      },
+      "total_classified": 46
+    },
+    "repos": [
+      "microsoft/vscode",
+      "denoland/deno",
+      "python/mypy",
+      "sveltejs/svelte",
+      "pola-rs/polars"
+    ],
+    "rounds_to_green": {
+      "mean": 1.4,
+      "median": 1,
+      "p90": 2
+    },
+    "rounds_to_green_histogram": {
+      "1": 76,
+      "2": 13,
+      "3": 6,
+      "6": 1,
+      "10": 1
+    },
+    "runner_queue_fraction_of_ci_working_multi_round_only": 0.0,
+    "single_round_fraction": 0.7835,
+    "waiting_fraction_of_wall_clock_multi_round_only": 0.2055,
+    "wall_clock_s_all_converged": {
+      "mean": 120326.1,
+      "median": 2113.0,
+      "p90": 66582.0
+    },
+    "wall_clock_s_multi_round_only": {
+      "mean": 191741.9,
+      "median": 1871.0,
+      "p90": 149176.0
+    }
+  }
+}

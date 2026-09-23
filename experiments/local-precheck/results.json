@@ -1,0 +1,274 @@
+{
+  "caught_rounds": [
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 494.0,
+      "pr": 36845,
+      "repo": "denoland/deno",
+      "round_ci_duration_s": 4487.0,
+      "round_cost_s": 18887.0,
+      "savings_s": 18393.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 295.0,
+      "pr": 18752,
+      "repo": "sveltejs/svelte",
+      "round_ci_duration_s": 307.0,
+      "round_cost_s": 2741.0,
+      "savings_s": 2446.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 335.0,
+      "pr": 18728,
+      "repo": "sveltejs/svelte",
+      "round_ci_duration_s": 339.0,
+      "round_cost_s": 1051.0,
+      "savings_s": 716.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 306.0,
+      "pr": 18703,
+      "repo": "sveltejs/svelte",
+      "round_ci_duration_s": 311.0,
+      "round_cost_s": 1152.0,
+      "savings_s": 846.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 213.0,
+      "pr": 18641,
+      "repo": "sveltejs/svelte",
+      "round_ci_duration_s": 1066.0,
+      "round_cost_s": 927.0,
+      "savings_s": 714.0
+    },
+    {
+      "category": "type_check",
+      "local_check_duration_s": 1020.0,
+      "pr": 21876,
+      "repo": "python/mypy",
+      "round_ci_duration_s": 2239.0,
+      "round_cost_s": 16639.0,
+      "savings_s": 15619.0
+    },
+    {
+      "category": "type_check",
+      "local_check_duration_s": 1102.0,
+      "pr": 21877,
+      "repo": "python/mypy",
+      "round_ci_duration_s": 2181.0,
+      "round_cost_s": 2519.0,
+      "savings_s": 1417.0
+    },
+    {
+      "category": "type_check",
+      "local_check_duration_s": 1869.0,
+      "pr": 21702,
+      "repo": "python/mypy",
+      "round_ci_duration_s": 2002.0,
+      "round_cost_s": 16402.0,
+      "savings_s": 14533.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 37.0,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 748.0,
+      "round_cost_s": 664.0,
+      "savings_s": 627.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 35.0,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 790.0,
+      "round_cost_s": 714.0,
+      "savings_s": 679.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 38.0,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 420.0,
+      "round_cost_s": 336.0,
+      "savings_s": 298.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 39.0,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 599.0,
+      "round_cost_s": 535.0,
+      "savings_s": 496.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 38.0,
+      "pr": 29425,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 340.0,
+      "round_cost_s": 248.0,
+      "savings_s": 210.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 7.0,
+      "pr": 29416,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 315.0,
+      "round_cost_s": 149.0,
+      "savings_s": 142.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 338.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 975.0,
+      "round_cost_s": 948.0,
+      "savings_s": 610.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 228.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 3341.0,
+      "round_cost_s": 3322.0,
+      "savings_s": 3094.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 363.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 1540.0,
+      "round_cost_s": 1518.0,
+      "savings_s": 1155.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 344.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 642.0,
+      "round_cost_s": 622.0,
+      "savings_s": 278.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 351.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 2225.0,
+      "round_cost_s": 2203.0,
+      "savings_s": 1852.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 353.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 1272.0,
+      "round_cost_s": 1245.0,
+      "savings_s": 892.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 35.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 753.0,
+      "round_cost_s": 733.0,
+      "savings_s": 698.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 39.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 6790.0,
+      "round_cost_s": 21190.0,
+      "savings_s": 21151.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 7.0,
+      "pr": 29389,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 1885.0,
+      "round_cost_s": 1859.0,
+      "savings_s": 1852.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 341.0,
+      "pr": 29371,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 1493.0,
+      "round_cost_s": 1465.0,
+      "savings_s": 1124.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 9.0,
+      "pr": 29352,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 881.0,
+      "round_cost_s": 841.0,
+      "savings_s": 832.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 5202.0,
+      "pr": 29312,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 5213.0,
+      "round_cost_s": 6808.0,
+      "savings_s": 1606.0
+    },
+    {
+      "category": "lint_or_format",
+      "local_check_duration_s": 7.0,
+      "pr": 29289,
+      "repo": "pola-rs/polars",
+      "round_ci_duration_s": 265.0,
+      "round_cost_s": 210.0,
+      "savings_s": 203.0
+    }
+  ],
+  "summary": {
+    "estimated_hours_saved_per_100_prs": 12.84,
+    "local_check_duration_s": {
+      "mean": 498.0
+    },
+    "locally_catchable_red_rounds_found": 27,
+    "measured": true,
+    "prs_examined": 200,
+    "red_rounds_by_category": {
+      "lint_or_format": 24,
+      "type_check": 3
+    },
+    "repos": [
+      "denoland/deno",
+      "sveltejs/svelte",
+      "python/mypy",
+      "pola-rs/polars",
+      "microsoft/vscode"
+    ],
+    "rounds_per_100_prs": 13.5,
+    "savings_s_per_caught_round": {
+      "max": 21151.0,
+      "mean": 3425.3,
+      "median": 846.0,
+      "min": 142.0
+    }
+  }
+}
